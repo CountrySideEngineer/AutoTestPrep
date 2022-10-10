@@ -13,6 +13,7 @@
   </DriverIncludeUserHeaderFiles>
   <StubIncludeStandardHeaderFiles>
     <StubIncludeStandardHeaderFilesItem>stdio.h</StubIncludeStandardHeaderFilesItem>
+    <StubIncludeStandardHeaderFilesItem>string.h</StubIncludeStandardHeaderFilesItem>
   </StubIncludeStandardHeaderFiles>
   <StubIncludeUserHeaderFiles>
     <StubIncludeUserHeaderFilesItem />
