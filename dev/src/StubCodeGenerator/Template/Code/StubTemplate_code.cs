@@ -53,7 +53,7 @@ namespace CodeGenerator.Stub.Template
 					Log.GetInstance().WARN("SKIP : Empty header file name has been detected.");
 					continue;
 				}
-				includeHeaderFiles += $"#include {openTag}{headerFileItem}{closeTag}";
+				includeHeaderFiles += $"#include {openTag}{headerFileItem}{closeTag}\r\n";
 			}
 			return includeHeaderFiles;
 		}
