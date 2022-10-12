@@ -5,7 +5,7 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#@ import namespace="TestParser.Target" #>
-LONG <#= Rule.GetCalledCounter(Target) #>;
+long <#= Rule.GetCalledCounter(Target) #>;
 <#
 	if (Target.HasReturn()) {
 		WriteLine($"{Target.ActualDataType()} {Rule.GetReturnValue(Target)}[STUB_BUFFER_SIZE_1];");

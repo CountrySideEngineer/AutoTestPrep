@@ -29,7 +29,7 @@ namespace CodeGenerator.Stub.Template
         /// </summary>
         public override string TransformText()
         {
-            this.Write("LONG ");
+            this.Write("long ");
             
             #line 8 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\FunctionBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Rule.GetCalledCounter(Target)));
