@@ -37,7 +37,7 @@ namespace CodeGenerator.Stub.Template
 		foreach (var item in Config.StandardHeaderFiles) {
 			if (true == isTop) {
 				_standardHeaderInclude = string.Empty;
-				isTop = true;
+				isTop = false;
 			}
 			_standardHeaderInclude += $"#include <{item}>";
 			_standardHeaderInclude += "\r\n";
@@ -50,23 +50,22 @@ namespace CodeGenerator.Stub.Template
 		Write(_standardHeaderInclude);
 	}
 
-
             
             #line default
             #line hidden
             
-            #line 27 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\IncludeHeaderTemplate.tt"
+            #line 26 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\IncludeHeaderTemplate.tt"
 
 	string _userHeaderInclude = "No user header files specified to include.\r\n";
 	try {
 		bool isTop = true;
-		foreach (var item in Config.StandardHeaderFiles) {
+		foreach (var item in Config.UserHeaderFiles) {
 			if (true == isTop) {
-				_standardHeaderInclude = string.Empty;
-				isTop = true;
+				_userHeaderInclude = string.Empty;
+				isTop = false;
 			}
-			_standardHeaderInclude += $"#include \"{item}\"";
-			_standardHeaderInclude += "\r\n";
+			_userHeaderInclude += $"#include \"{item}\"";
+			_userHeaderInclude += "\r\n";
 		}
 	}
 	catch (NullReferenceException) {

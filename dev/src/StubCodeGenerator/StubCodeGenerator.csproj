@@ -69,6 +69,11 @@
     <Compile Include="Template\Code\StubSourceBodyTemplate_code.cs" />
     <Compile Include="Template\Code\StubSourceTemplate_code.cs" />
     <Compile Include="Template\Code\StubTemplate_code.cs" />
+    <Compile Include="Template\FunctionBufferTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FunctionBufferTemplate.tt</DependentUpon>
+    </Compile>
     <Compile Include="Template\IncludeHeaderTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -107,10 +112,17 @@
     <Content Include="Template\ABufferTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ABufferTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>CodeGenerator.Stub.Template</CustomToolNamespace>
+    </Content>
+    <Content Include="Template\FunctionBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>FunctionBufferTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>CodeGenerator.Stub.Template</CustomToolNamespace>
     </Content>
     <Content Include="Template\IncludeHeaderTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>IncludeHeaderTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>CodeGenerator.Stub.Template</CustomToolNamespace>
     </Content>
     <Content Include="Template\StubHeaderBodyTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
