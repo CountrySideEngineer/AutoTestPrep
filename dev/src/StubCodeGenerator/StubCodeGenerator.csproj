@@ -62,7 +62,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ABufferTemplate.tt</DependentUpon>
     </Compile>
+    <Compile Include="Template\ArgumentBufferTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ArgumentBufferTemplate.tt</DependentUpon>
+    </Compile>
     <Compile Include="Template\Code\ABufferTemplate_code.cs" />
+    <Compile Include="Template\Code\ArgumentBufferTemplate_code.cs" />
     <Compile Include="Template\Code\IncludeHeaderTemplate_code.cs" />
     <Compile Include="Template\Code\StubHeaderBodyTemplate_code.cs" />
     <Compile Include="Template\Code\StubHeaderTemplate_code.cs" />
@@ -112,6 +118,11 @@
     <Content Include="Template\ABufferTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ABufferTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>CodeGenerator.Stub.Template</CustomToolNamespace>
+    </Content>
+    <Content Include="Template\ArgumentBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ArgumentBufferTemplate.cs</LastGenOutput>
       <CustomToolNamespace>CodeGenerator.Stub.Template</CustomToolNamespace>
     </Content>
     <Content Include="Template\FunctionBufferTemplate.tt">

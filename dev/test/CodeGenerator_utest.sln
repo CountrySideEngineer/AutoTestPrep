@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StubCodeGenerator.FunctionB
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StubCodeGenerator.IncludeHeaderTemplate.utest", "StubCodeGenerator.IncludeHeaderTemplate.utest\StubCodeGenerator.IncludeHeaderTemplate.utest.csproj", "{907E584F-C01D-45D8-8217-07563D5DC6F6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StubCodeGenerator.ArgumentBufferTemplate.utest", "StubCodeGenerator.ArgumentBufferTemplate.utest\StubCodeGenerator.ArgumentBufferTemplate.utest.csproj", "{792FBCBD-924D-42BD-A63B-571C788870C0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{907E584F-C01D-45D8-8217-07563D5DC6F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{907E584F-C01D-45D8-8217-07563D5DC6F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{907E584F-C01D-45D8-8217-07563D5DC6F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{792FBCBD-924D-42BD-A63B-571C788870C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{792FBCBD-924D-42BD-A63B-571C788870C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{792FBCBD-924D-42BD-A63B-571C788870C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{792FBCBD-924D-42BD-A63B-571C788870C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
