@@ -18,7 +18,7 @@ namespace CodeGenerator.Stub.Template
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "E:\development\TestSupportTools_v0\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSourceTemplate.tt"
+    #line 1 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSourceTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class StubSourceTemplate : StubTemplate
     {
@@ -29,14 +29,14 @@ namespace CodeGenerator.Stub.Template
         public override string TransformText()
         {
             
-            #line 7 "E:\development\TestSupportTools_v0\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSourceTemplate.tt"
+            #line 7 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSourceTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(CreateStdHeaderInclude(Config.StandardHeaderFiles)));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 8 "E:\development\TestSupportTools_v0\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSourceTemplate.tt"
+            #line 8 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSourceTemplate.tt"
 
 	if ((!string.IsNullOrEmpty(StubHeaderFileName)) && (!string.IsNullOrWhiteSpace(StubHeaderFileName))) {
 
@@ -45,14 +45,14 @@ namespace CodeGenerator.Stub.Template
             #line hidden
             this.Write("#include \"");
             
-            #line 11 "E:\development\TestSupportTools_v0\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSourceTemplate.tt"
+            #line 11 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSourceTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(StubHeaderFileName));
             
             #line default
             #line hidden
             this.Write("\"\r\n");
             
-            #line 12 "E:\development\TestSupportTools_v0\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSourceTemplate.tt"
+            #line 12 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSourceTemplate.tt"
 
 	}
 
@@ -60,14 +60,14 @@ namespace CodeGenerator.Stub.Template
             #line default
             #line hidden
             
-            #line 15 "E:\development\TestSupportTools_v0\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSourceTemplate.tt"
+            #line 15 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSourceTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(CreateUserHeaderInclude(Config.UserHeaderFiles)));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 16 "E:\development\TestSupportTools_v0\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSourceTemplate.tt"
+            #line 16 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSourceTemplate.tt"
 
 	if (null != this.ParentFunction.SubFunctions) {
 		foreach (var subFunction in this.ParentFunction.SubFunctions) {
@@ -76,14 +76,14 @@ namespace CodeGenerator.Stub.Template
             #line default
             #line hidden
             
-            #line 20 "E:\development\TestSupportTools_v0\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSourceTemplate.tt"
+            #line 20 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSourceTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.CreateStubBody(subFunction)));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 21 "E:\development\TestSupportTools_v0\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSourceTemplate.tt"
+            #line 21 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSourceTemplate.tt"
 	
 		}
 	}
