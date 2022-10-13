@@ -40,7 +40,7 @@ namespace CodeGenerator.Stub.Template
             
             #line default
             #line hidden
-            this.Write("* ");
+            this.Write(" ");
             
             #line 8 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\SinglePointerArgumentBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Rule.GetSinglePointerArgumentValueBuffer(Target, Argument)));
