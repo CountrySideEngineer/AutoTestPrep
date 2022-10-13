@@ -90,6 +90,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SinglePointerArgumentBufferTemplate.tt</DependentUpon>
     </Compile>
+    <Compile Include="Template\SinglePointerArgumentWithOutputBufferTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SinglePointerArgumentWithOutputBufferTemplate.tt</DependentUpon>
+    </Compile>
     <Compile Include="Template\StubHeaderBodyTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -143,6 +148,12 @@
     <Content Include="Template\SinglePointerArgumentBufferTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>SinglePointerArgumentBufferTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>CodeGenerator.Stub.Template</CustomToolNamespace>
+    </Content>
+    <Content Include="Template\SinglePointerArgumentWithOutputBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>SinglePointerArgumentWithOutputBufferTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>CodeGenerator.Stub.Template</CustomToolNamespace>
     </Content>
     <Content Include="Template\StubHeaderBodyTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
