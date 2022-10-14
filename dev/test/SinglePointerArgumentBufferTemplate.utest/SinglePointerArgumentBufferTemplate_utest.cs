@@ -20,6 +20,7 @@ namespace SinglePointerArgumentBufferTemplate.utest
 			{
 				DataType = "int",
 				Name = "Argument",
+				PointerNum = 1,
 			};
 			var rule = new NameRule();
 			var template = new CodeGenerator.Stub.Template.SinglePointerArgumentBufferTemplate()
@@ -30,7 +31,7 @@ namespace SinglePointerArgumentBufferTemplate.utest
 			};
 			string output = template.TransformText();
 			Assert.AreEqual(
-				"int Function_Argument[STUB_BUFFER_SIZE_1];\r\n" +
+				"int* Function_Argument[STUB_BUFFER_SIZE_1];\r\n" +
 				"int Function_Argument_value[STUB_BUFFER_SIZE_1][STUB_BUFFER_SIZE_2];\r\n" +
 				"long Function_Argument_value_size[STUB_BUFFER_SIZE_1];\r\n",
 				output);
@@ -48,6 +49,7 @@ namespace SinglePointerArgumentBufferTemplate.utest
 			{
 				DataType = "short",
 				Name = "Argument",
+				PointerNum = 1,
 			};
 			var rule = new NameRule();
 			var template = new CodeGenerator.Stub.Template.SinglePointerArgumentBufferTemplate()
@@ -58,7 +60,7 @@ namespace SinglePointerArgumentBufferTemplate.utest
 			};
 			string output = template.TransformText();
 			Assert.AreEqual(
-				"short Function_Argument[STUB_BUFFER_SIZE_1];\r\n" +
+				"short* Function_Argument[STUB_BUFFER_SIZE_1];\r\n" +
 				"short Function_Argument_value[STUB_BUFFER_SIZE_1][STUB_BUFFER_SIZE_2];\r\n" +
 				"long Function_Argument_value_size[STUB_BUFFER_SIZE_1];\r\n",
 				output);
