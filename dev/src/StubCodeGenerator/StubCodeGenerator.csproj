@@ -75,6 +75,16 @@
     <Compile Include="Template\Code\StubSourceBodyTemplate_code.cs" />
     <Compile Include="Template\Code\StubSourceTemplate_code.cs" />
     <Compile Include="Template\Code\StubTemplate_code.cs" />
+    <Compile Include="Template\DoublePointerArgumentBufferTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoublePointerArgumentBufferTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\DoublePointerArgumentWithOutputBufferTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoublePointerArgumentWithOutputBufferTemplate.tt</DependentUpon>
+    </Compile>
     <Compile Include="Template\FunctionBufferTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -133,6 +143,16 @@
     <Content Include="Template\ArgumentBufferTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ArgumentBufferTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>CodeGenerator.Stub.Template</CustomToolNamespace>
+    </Content>
+    <Content Include="Template\DoublePointerArgumentBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>DoublePointerArgumentBufferTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>CodeGenerator.Stub.Template</CustomToolNamespace>
+    </Content>
+    <Content Include="Template\DoublePointerArgumentWithOutputBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>DoublePointerArgumentWithOutputBufferTemplate.cs</LastGenOutput>
       <CustomToolNamespace>CodeGenerator.Stub.Template</CustomToolNamespace>
     </Content>
     <Content Include="Template\FunctionBufferTemplate.tt">

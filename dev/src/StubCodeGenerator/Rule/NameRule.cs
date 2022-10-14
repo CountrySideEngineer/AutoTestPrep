@@ -58,16 +58,16 @@ namespace CodeGenerator.Stub.Rule
 			return bufferName;
 		}
 
-		public string GetDoublePointerArgumentBuffer(Function function, Parameter argument)
+		public string GetDoublePointerArgumentReturnValueBuffer(Function function, Parameter argument)
 		{
-			string bufferName = GetArgumentBuffer(function, argument);
+			string bufferName = GetSinglePointerArgumentReturnValueBuffer(function, argument);
 
 			return bufferName;
 		}
 
-		public string GetDoublePointerArgumentReturnValueBuffer(Function function, Parameter argument)
+		public string GetDoublePointerArgumentReturnValueSizeBuffer(Function function, Parameter argument)
 		{
-			string bufferName = GetSinglePointerArgumentReturnValueBuffer(function, argument);
+			string bufferName = GetSinglePointerArgumentReturnValueSizeBuffer(function, argument);
 
 			return bufferName;
 		}
