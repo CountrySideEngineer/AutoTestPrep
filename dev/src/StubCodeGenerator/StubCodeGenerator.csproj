@@ -85,6 +85,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DoublePointerArgumentWithOutputBufferTemplate.tt</DependentUpon>
     </Compile>
+    <Compile Include="Template\Factory\AbstractDeclareBufferTemplateFactory.cs" />
+    <Compile Include="Template\Factory\ATemplateFactory.cs" />
     <Compile Include="Template\FunctionBufferTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -205,8 +207,6 @@
     <None Include="diagrams\CodeGenerator.cd" />
     <None Include="diagrams\Template.cd" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Template\Factory\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
