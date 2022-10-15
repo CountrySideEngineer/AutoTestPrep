@@ -7,7 +7,7 @@
 //     コードが再生成されると失われます。
 // </auto-generated>
 // ------------------------------------------------------------------------------
-namespace CodeGenerator.Stub.Template
+namespace CodeGenerator.Stub.Template.BufferDeclare
 {
     using System.Linq;
     using System.Text;
@@ -18,9 +18,9 @@ namespace CodeGenerator.Stub.Template
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\DoublePointerArgumentBufferTemplate.tt"
+    #line 1 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\ArgumentBufferTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
-    public partial class DoublePointerArgumentBufferTemplate : ArgumentBufferTemplate
+    public partial class ArgumentBufferTemplate : ABufferTemplate
     {
 #line hidden
         /// <summary>
@@ -29,11 +29,19 @@ namespace CodeGenerator.Stub.Template
         public override string TransformText()
         {
             
-            #line 7 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\DoublePointerArgumentBufferTemplate.tt"
- base.TransformText(); 
+            #line 7 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\ArgumentBufferTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(Argument.ActualDataType()));
             
             #line default
             #line hidden
+            this.Write(" ");
+            
+            #line 7 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\ArgumentBufferTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(Rule.GetArgumentBuffer(Target, Argument)));
+            
+            #line default
+            #line hidden
+            this.Write("[STUB_BUFFER_SIZE_1];\r\n");
             return this.GenerationEnvironment.ToString();
         }
     }

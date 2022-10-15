@@ -1,7 +1,9 @@
 ﻿using CodeGenerator.Stub.Rule;
+using CodeGenerator.Stub.Template;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using TestParser.Target;
+using Declare = CodeGenerator.Stub.Template.BufferDeclare;
 
 namespace StubCodeGenerator.ArgumentBufferTemplate.utest
 {
@@ -22,7 +24,7 @@ namespace StubCodeGenerator.ArgumentBufferTemplate.utest
 				Name = "Argument",
 			};
 			var rule = new NameRule();
-			var template = new CodeGenerator.Stub.Template.ArgumentBufferTemplate()
+			var template = new Declare.ArgumentBufferTemplate()
 			{
 				Rule = rule,
 				Target = function,

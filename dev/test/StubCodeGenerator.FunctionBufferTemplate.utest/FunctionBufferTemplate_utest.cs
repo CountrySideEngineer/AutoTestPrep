@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using TestParser.Target;
-
+using Declare = CodeGenerator.Stub.Template.BufferDeclare;
 namespace StubCodeGenerator.FunctionBufferTemplate.utest
 {
 	[TestClass]
@@ -17,7 +17,7 @@ namespace StubCodeGenerator.FunctionBufferTemplate.utest
 				DataType = "void",
 				Name = "TestFunction"
 			};
-			var template = new CodeGenerator.Stub.Template.FunctionBufferTemplate()
+			var template = new Declare.FunctionBufferTemplate()
 			{
 				Target = function,
 				Rule = new NameRule(),
@@ -37,7 +37,7 @@ namespace StubCodeGenerator.FunctionBufferTemplate.utest
 				DataType = "int",
 				Name = "TestFunction"
 			};
-			var template = new CodeGenerator.Stub.Template.FunctionBufferTemplate()
+			var template = new Declare.FunctionBufferTemplate()
 			{
 				Target = function,
 				Rule = new NameRule(),
@@ -59,7 +59,7 @@ namespace StubCodeGenerator.FunctionBufferTemplate.utest
 				PointerNum = 1,
 				Name = "TestFunction"
 			};
-			var template = new CodeGenerator.Stub.Template.FunctionBufferTemplate()
+			var template = new Declare.FunctionBufferTemplate()
 			{
 				Target = function,
 				Rule = new NameRule(),
@@ -81,7 +81,7 @@ namespace StubCodeGenerator.FunctionBufferTemplate.utest
 				PointerNum = 1,
 				Name = "TestFunction"
 			};
-			var template = new CodeGenerator.Stub.Template.FunctionBufferTemplate()
+			var template = new Declare.FunctionBufferTemplate()
 			{
 				Target = function,
 				Rule = new NameRule(),

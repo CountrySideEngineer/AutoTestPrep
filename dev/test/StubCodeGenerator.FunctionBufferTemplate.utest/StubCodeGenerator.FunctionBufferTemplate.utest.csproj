@@ -54,14 +54,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ABufferTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="..\..\src\StubCodeGenerator\Template\Code\ABufferTemplate_code.cs">
-      <Link>ABufferTemplate_code.cs</Link>
-    </Compile>
-    <Compile Include="..\..\src\StubCodeGenerator\Template\FunctionBufferTemplate.cs">
+    <Compile Include="..\..\src\StubCodeGenerator\Template\BufferDeclare\FunctionBufferTemplate.cs">
       <Link>FunctionBufferTemplate.cs</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>FunctionBufferTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\src\StubCodeGenerator\Template\Code\ABufferTemplate_code.cs">
+      <Link>ABufferTemplate_code.cs</Link>
     </Compile>
     <Compile Include="FunctionBufferTemplate_utest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -80,10 +80,11 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ABufferTemplate.cs</LastGenOutput>
     </Content>
-    <Content Include="..\..\src\StubCodeGenerator\Template\FunctionBufferTemplate.tt">
+    <Content Include="..\..\src\StubCodeGenerator\Template\BufferDeclare\FunctionBufferTemplate.tt">
       <Link>FunctionBufferTemplate.tt</Link>
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>FunctionBufferTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>CodeGenerator.Stub.Template.BufferDeclare</CustomToolNamespace>
     </Content>
   </ItemGroup>
   <ItemGroup>

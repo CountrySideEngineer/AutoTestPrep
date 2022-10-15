@@ -54,29 +54,29 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ABufferTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="..\..\src\StubCodeGenerator\Template\ArgumentBufferTemplate.cs">
+    <Compile Include="..\..\src\StubCodeGenerator\Template\BufferDeclare\ArgumentBufferTemplate.cs">
       <Link>ArgumentBufferTemplate.cs</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ArgumentBufferTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="..\..\src\StubCodeGenerator\Template\Code\ABufferTemplate_code.cs">
-      <Link>ABufferTemplate_code.cs</Link>
-    </Compile>
-    <Compile Include="..\..\src\StubCodeGenerator\Template\Code\ArgumentBufferTemplate_code.cs">
+    <Compile Include="..\..\src\StubCodeGenerator\Template\BufferDeclare\Code\ArgumentBufferTemplate_code.cs">
       <Link>ArgumentBufferTemplate_code.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\StubCodeGenerator\Template\SinglePointerArgumentBufferTemplate.cs">
+    <Compile Include="..\..\src\StubCodeGenerator\Template\BufferDeclare\SinglePointerArgumentBufferTemplate.cs">
       <Link>SinglePointerArgumentBufferTemplate.cs</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SinglePointerArgumentBufferTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="..\..\src\StubCodeGenerator\Template\SinglePointerArgumentWithOutputBufferTemplate.cs">
+    <Compile Include="..\..\src\StubCodeGenerator\Template\BufferDeclare\SinglePointerArgumentWithOutputBufferTemplate.cs">
       <Link>SinglePointerArgumentWithOutputBufferTemplate.cs</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SinglePointerArgumentWithOutputBufferTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\src\StubCodeGenerator\Template\Code\ABufferTemplate_code.cs">
+      <Link>ABufferTemplate_code.cs</Link>
     </Compile>
     <Compile Include="SinglePointerArgumentBufferTemplate_utes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -95,20 +95,23 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ABufferTemplate.cs</LastGenOutput>
     </Content>
-    <Content Include="..\..\src\StubCodeGenerator\Template\ArgumentBufferTemplate.tt">
+    <Content Include="..\..\src\StubCodeGenerator\Template\BufferDeclare\ArgumentBufferTemplate.tt">
       <Link>ArgumentBufferTemplate.tt</Link>
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ArgumentBufferTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>CodeGenerator.Stub.Template.BufferDeclare</CustomToolNamespace>
     </Content>
-    <Content Include="..\..\src\StubCodeGenerator\Template\SinglePointerArgumentBufferTemplate.tt">
+    <Content Include="..\..\src\StubCodeGenerator\Template\BufferDeclare\SinglePointerArgumentBufferTemplate.tt">
       <Link>SinglePointerArgumentBufferTemplate.tt</Link>
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>SinglePointerArgumentBufferTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>CodeGenerator.Stub.Template.BufferDeclare</CustomToolNamespace>
     </Content>
-    <Content Include="..\..\src\StubCodeGenerator\Template\SinglePointerArgumentWithOutputBufferTemplate.tt">
+    <Content Include="..\..\src\StubCodeGenerator\Template\BufferDeclare\SinglePointerArgumentWithOutputBufferTemplate.tt">
       <Link>SinglePointerArgumentWithOutputBufferTemplate.tt</Link>
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>SinglePointerArgumentWithOutputBufferTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>CodeGenerator.Stub.Template.BufferDeclare</CustomToolNamespace>
     </Content>
   </ItemGroup>
   <ItemGroup>

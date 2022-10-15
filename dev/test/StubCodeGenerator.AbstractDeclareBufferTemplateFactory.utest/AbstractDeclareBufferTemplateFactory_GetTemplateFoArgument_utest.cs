@@ -1,5 +1,6 @@
 ﻿using CodeGenerator.Stub.Rule;
 using CodeGenerator.Stub.Template;
+using CodeGenerator.Stub.Template.BufferDeclare;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using TestParser.Target;

@@ -7,7 +7,7 @@
 //     コードが再生成されると失われます。
 // </auto-generated>
 // ------------------------------------------------------------------------------
-namespace CodeGenerator.Stub.Template
+namespace CodeGenerator.Stub.Template.BufferDeclare
 {
     using System.Linq;
     using System.Text;
@@ -18,7 +18,7 @@ namespace CodeGenerator.Stub.Template
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\SinglePointerArgumentBufferTemplate.tt"
+    #line 1 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\SinglePointerArgumentBufferTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class SinglePointerArgumentBufferTemplate : ArgumentBufferTemplate
     {
@@ -29,27 +29,27 @@ namespace CodeGenerator.Stub.Template
         public override string TransformText()
         {
             
-            #line 7 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\SinglePointerArgumentBufferTemplate.tt"
+            #line 7 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\SinglePointerArgumentBufferTemplate.tt"
  base.TransformText(); 
             
             #line default
             #line hidden
             
-            #line 8 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\SinglePointerArgumentBufferTemplate.tt"
+            #line 8 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\SinglePointerArgumentBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Argument.DataType));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 8 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\SinglePointerArgumentBufferTemplate.tt"
+            #line 8 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\SinglePointerArgumentBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Rule.GetSinglePointerArgumentValueBuffer(Target, Argument)));
             
             #line default
             #line hidden
             this.Write("[STUB_BUFFER_SIZE_1][STUB_BUFFER_SIZE_2];\r\nlong ");
             
-            #line 9 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\SinglePointerArgumentBufferTemplate.tt"
+            #line 9 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\SinglePointerArgumentBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Rule.GetSinglePointerArgumentValueSizeBuffer(Target, Argument)));
             
             #line default

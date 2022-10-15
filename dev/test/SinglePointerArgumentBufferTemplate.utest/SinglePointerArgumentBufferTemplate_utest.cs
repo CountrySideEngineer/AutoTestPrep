@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using TestParser.Target;
+using BufferDeclare = CodeGenerator.Stub.Template.BufferDeclare;
 
 namespace SinglePointerArgumentBufferTemplate.utest
 {
@@ -23,7 +24,7 @@ namespace SinglePointerArgumentBufferTemplate.utest
 				PointerNum = 1,
 			};
 			var rule = new NameRule();
-			var template = new CodeGenerator.Stub.Template.SinglePointerArgumentBufferTemplate()
+			var template = new BufferDeclare.SinglePointerArgumentBufferTemplate()
 			{
 				Rule = rule,
 				Target = function,
@@ -52,7 +53,7 @@ namespace SinglePointerArgumentBufferTemplate.utest
 				PointerNum = 1,
 			};
 			var rule = new NameRule();
-			var template = new CodeGenerator.Stub.Template.SinglePointerArgumentBufferTemplate()
+			var template = new BufferDeclare.SinglePointerArgumentBufferTemplate()
 			{
 				Rule = rule,
 				Target = function,

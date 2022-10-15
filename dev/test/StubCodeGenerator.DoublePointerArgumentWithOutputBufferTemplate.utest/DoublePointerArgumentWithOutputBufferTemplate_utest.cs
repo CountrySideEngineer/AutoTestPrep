@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using TestParser.Target;
-
+using Declare = CodeGenerator.Stub.Template.BufferDeclare;
 namespace StubCodeGenerator.DoublePointerArgumentWithOutputBufferTemplate.utest
 {
 	[TestClass]
@@ -23,7 +23,7 @@ namespace StubCodeGenerator.DoublePointerArgumentWithOutputBufferTemplate.utest
 				PointerNum = 2,
 			};
 			var rule = new NameRule();
-			var template = new CodeGenerator.Stub.Template.DoublePointerArgumentWithOutputBufferTemplate()
+			var template = new Declare.DoublePointerArgumentWithOutputBufferTemplate()
 			{
 				Rule = rule,
 				Target = function,

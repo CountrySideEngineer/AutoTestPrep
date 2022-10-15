@@ -7,21 +7,20 @@
 //     コードが再生成されると失われます。
 // </auto-generated>
 // ------------------------------------------------------------------------------
-namespace CodeGenerator.Stub.Template
+namespace CodeGenerator.Stub.Template.BufferDeclare
 {
     using System.Linq;
     using System.Text;
     using System.Collections.Generic;
-    using TestParser.Target;
     using System;
     
     /// <summary>
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\FunctionBufferTemplate.tt"
+    #line 1 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\DoublePointerArgumentBufferTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
-    public partial class FunctionBufferTemplate : ABufferTemplate
+    public partial class DoublePointerArgumentBufferTemplate : ArgumentBufferTemplate
     {
 #line hidden
         /// <summary>
@@ -29,21 +28,9 @@ namespace CodeGenerator.Stub.Template
         /// </summary>
         public override string TransformText()
         {
-            this.Write("long ");
             
-            #line 8 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\FunctionBufferTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(Rule.GetCalledCounter(Target)));
-            
-            #line default
-            #line hidden
-            this.Write(";\r\n");
-            
-            #line 9 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\FunctionBufferTemplate.tt"
-
-	if (Target.HasReturn()) {
-		WriteLine($"{Target.ActualDataType()} {Rule.GetReturnValue(Target)}[STUB_BUFFER_SIZE_1];");
-	}
-
+            #line 7 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\DoublePointerArgumentBufferTemplate.tt"
+ base.TransformText(); 
             
             #line default
             #line hidden
