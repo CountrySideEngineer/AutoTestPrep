@@ -109,10 +109,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FunctionReturnValueBufferTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="Template\BufferInit\SinglePointerArgumentInitBufferTemplate.cs">
+    <Compile Include="Template\BufferInit\SinglePointerArgumentBufferTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SinglePointerArgumentInitBufferTemplate.tt</DependentUpon>
+      <DependentUpon>SinglePointerArgumentBufferTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\BufferInit\SinglePointerArgumentWithOutputBufferTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SinglePointerArgumentWithOutputBufferTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Template\Code\ABufferTemplate_code.cs" />
     <Compile Include="Template\Code\IncludeHeaderTemplate_code.cs" />
@@ -208,9 +213,14 @@
       <LastGenOutput>FunctionReturnValueBufferTemplate.cs</LastGenOutput>
       <CustomToolNamespace>CodeGenerator.Stub.Template.BufferInit</CustomToolNamespace>
     </Content>
-    <Content Include="Template\BufferInit\SinglePointerArgumentInitBufferTemplate.tt">
+    <Content Include="Template\BufferInit\SinglePointerArgumentBufferTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>SinglePointerArgumentInitBufferTemplate.cs</LastGenOutput>
+      <LastGenOutput>SinglePointerArgumentBufferTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>CodeGenerator.Stub.Template.BufferInit</CustomToolNamespace>
+    </Content>
+    <Content Include="Template\BufferInit\SinglePointerArgumentWithOutputBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>SinglePointerArgumentWithOutputBufferTemplate.cs</LastGenOutput>
       <CustomToolNamespace>CodeGenerator.Stub.Template.BufferInit</CustomToolNamespace>
     </Content>
     <Content Include="Template\IncludeHeaderTemplate.tt">
