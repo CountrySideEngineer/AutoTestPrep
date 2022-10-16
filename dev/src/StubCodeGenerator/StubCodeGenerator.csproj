@@ -109,6 +109,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FunctionReturnValueBufferTemplate.tt</DependentUpon>
     </Compile>
+    <Compile Include="Template\BufferInit\SinglePointerArgumentInitBufferTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SinglePointerArgumentInitBufferTemplate.tt</DependentUpon>
+    </Compile>
     <Compile Include="Template\Code\ABufferTemplate_code.cs" />
     <Compile Include="Template\Code\IncludeHeaderTemplate_code.cs" />
     <Compile Include="Template\Code\StubHeaderBodyTemplate_code.cs" />
@@ -201,6 +206,12 @@
     <Content Include="Template\BufferInit\FunctionReturnValueBufferTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>FunctionReturnValueBufferTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>CodeGenerator.Stub.Template.BufferInit</CustomToolNamespace>
+    </Content>
+    <Content Include="Template\BufferInit\SinglePointerArgumentInitBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>SinglePointerArgumentInitBufferTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>CodeGenerator.Stub.Template.BufferInit</CustomToolNamespace>
     </Content>
     <Content Include="Template\IncludeHeaderTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>

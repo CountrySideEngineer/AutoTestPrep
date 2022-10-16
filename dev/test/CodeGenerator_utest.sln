@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StubCodeGenerator.BuffInit.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StubCodeGenerator.BuffInit.ArgumentBufferTemplate.utest", "StubCodeGenerator.BuffInit.ArgumentBufferTemplate.utest\StubCodeGenerator.BuffInit.ArgumentBufferTemplate.utest.csproj", "{3B459BDF-D269-4E11-B43F-689FB254FFCE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StubCodeGenerator.BuffInit.SinglePointerArgumentInitBufferTemplate.utest", "StubCodeGenerator.BuffInit.SinglePointerArgumentInitBufferTemplate.utest\StubCodeGenerator.BuffInit.SinglePointerArgumentInitBufferTemplate.utest.csproj", "{7F337FD5-9342-4532-B476-D45E4F806A13}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{3B459BDF-D269-4E11-B43F-689FB254FFCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B459BDF-D269-4E11-B43F-689FB254FFCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B459BDF-D269-4E11-B43F-689FB254FFCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F337FD5-9342-4532-B476-D45E4F806A13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F337FD5-9342-4532-B476-D45E4F806A13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F337FD5-9342-4532-B476-D45E4F806A13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F337FD5-9342-4532-B476-D45E4F806A13}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
