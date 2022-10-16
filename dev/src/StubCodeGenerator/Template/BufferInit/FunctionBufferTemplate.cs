@@ -19,9 +19,9 @@ namespace CodeGenerator.Stub.Template.BufferInit
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferInit\FunctionBufferInitTemplate.tt"
+    #line 1 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferInit\FunctionBufferTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
-    public partial class FunctionBufferInitTemplate : ABufferTemplate
+    public partial class FunctionBufferTemplate : ABufferTemplate
     {
 #line hidden
         /// <summary>
@@ -31,7 +31,7 @@ namespace CodeGenerator.Stub.Template.BufferInit
         {
             this.Write("\t");
             
-            #line 8 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferInit\FunctionBufferInitTemplate.tt"
+            #line 8 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferInit\FunctionBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Rule.GetCalledCounter(Target)));
             
             #line default

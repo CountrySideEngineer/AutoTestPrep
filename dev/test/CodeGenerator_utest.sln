@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StubCodeGenerator.AbstractD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StubCodeGenerator.BuffInit.FunctionBufferInitTemplate.utest", "StubCodeGenerator.BuffInit.FunctionBufferTemplate.utest\StubCodeGenerator.BuffInit.FunctionBufferInitTemplate.utest.csproj", "{15094CE6-2D4E-4B65-A3BA-751D10EF5E82}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StubCodeGenerator.BuffInit.FunctionReturnValueBufferTemplate.utest", "StubCodeGenerator.FunctionReturnValueBufferInitTemplate.utest\StubCodeGenerator.BuffInit.FunctionReturnValueBufferTemplate.utest.csproj", "{4EE6F8CA-7C12-44C9-8C8E-4D824549C347}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{15094CE6-2D4E-4B65-A3BA-751D10EF5E82}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15094CE6-2D4E-4B65-A3BA-751D10EF5E82}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15094CE6-2D4E-4B65-A3BA-751D10EF5E82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EE6F8CA-7C12-44C9-8C8E-4D824549C347}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EE6F8CA-7C12-44C9-8C8E-4D824549C347}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EE6F8CA-7C12-44C9-8C8E-4D824549C347}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EE6F8CA-7C12-44C9-8C8E-4D824549C347}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

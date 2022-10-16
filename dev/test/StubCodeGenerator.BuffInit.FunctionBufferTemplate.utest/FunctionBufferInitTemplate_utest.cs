@@ -3,6 +3,7 @@ using CodeGenerator.Stub.Template.BufferInit;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using TestParser.Target;
+using BufferInit = CodeGenerator.Stub.Template.BufferInit;
 
 namespace StubCodeGenerator.BuffInit.FunctionBufferTemplate.utest
 {
@@ -19,7 +20,7 @@ namespace StubCodeGenerator.BuffInit.FunctionBufferTemplate.utest
 				Name = "SampleFunction",
 			};
 			var rule = new NameRule();
-			var template = new FunctionBufferInitTemplate()
+			var template = new BufferInit.FunctionBufferTemplate()
 			{
 				Target = function,
 				Rule = rule,
@@ -41,7 +42,7 @@ namespace StubCodeGenerator.BuffInit.FunctionBufferTemplate.utest
 				Name = "SampleFunction",
 			};
 			var rule = new NameRule();
-			var template = new FunctionBufferInitTemplate()
+			var template = new BufferInit.FunctionBufferTemplate()
 			{
 				Target = function,
 				Rule = rule,
