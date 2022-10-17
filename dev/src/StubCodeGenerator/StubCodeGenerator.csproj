@@ -104,6 +104,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DoublePointerArgumentBufferTemplate.tt</DependentUpon>
     </Compile>
+    <Compile Include="Template\BufferInit\DoublePointerArgumentWithOutputBufferTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoublePointerArgumentWithOutputBufferTemplate.tt</DependentUpon>
+    </Compile>
     <Compile Include="Template\BufferInit\FunctionBufferTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -211,6 +216,12 @@
     <Content Include="Template\BufferInit\DoublePointerArgumentBufferTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>DoublePointerArgumentBufferTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>CodeGenerator.Stub.Template.BufferInit</CustomToolNamespace>
+    </Content>
+    <Content Include="Template\BufferInit\DoublePointerArgumentWithOutputBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>DoublePointerArgumentWithOutputBufferTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>CodeGenerator.Stub.Template.BufferInit</CustomToolNamespace>
     </Content>
     <Content Include="Template\BufferInit\FunctionBufferTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
