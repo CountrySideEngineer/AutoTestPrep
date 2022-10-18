@@ -1,0 +1,45 @@
+﻿using CodeGenerator.Stub.Rule;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using TestParser.Target;
+using BufferInit = CodeGenerator.Stub.Template.BufferInit;
+
+namespace BuffInit.DoublePointerArgumentWithOutputBufferTemplate.utest
+{
+	[TestClass]
+	public class DoublePointerArgumentWithOutputBufferTemplate_utest
+	{
+		[TestMethod]
+		public void TransformText_utest_001()
+		{
+			var function = new Function()
+			{
+				DataType = "short",
+				Name = "SampleFunction"
+			};
+			var argument = new Parameter()
+			{
+				DataType = "long",
+				PointerNum = 1,
+				Name = "SampleArgument",
+			};
+			var rule = new NameRule();
+			var template = new BufferInit.DoublePointerArgumentWithOutputBufferTemplate()
+			{
+				Target = function,
+				Argument = argument,
+				Rule = rule,
+			};
+			string output = template.TransformText();
+			Assert.AreEqual(
+				"	for (int index = 0; index < STUB_BUFFER_SIZE_1; index++) {\r\n" +
+				"		SampleFunction_SampleArgument[index] = NULL;\r\n" +
+				"		for (int index2 = 0; index2 < STUB_BUFFER_SIZE_2; index2++) {\r\n" +
+				"			SampleFunction_SampleArgument_return_value[index][index2] = 0;\r\n" +
+				"		}\r\n" +
+				"		SampleFunction_SampleArgument_return_value_size[index] = 0;\r\n" +
+				"	}\r\n",
+				output);
+		}
+	}
+}

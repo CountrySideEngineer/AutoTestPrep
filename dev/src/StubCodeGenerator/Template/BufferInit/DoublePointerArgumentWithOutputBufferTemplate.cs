@@ -35,8 +35,8 @@ namespace CodeGenerator.Stub.Template.BufferInit
             
             #line default
             #line hidden
-            this.Write("[index] = 0;\r\n\t\tfor (int index2 = 0; index2 < STUB_BUFFER_SIZE_2; index2++) {\r\n\t\t" +
-                    "\t");
+            this.Write("[index] = NULL;\r\n\t\tfor (int index2 = 0; index2 < STUB_BUFFER_SIZE_2; index2++) {\r" +
+                    "\n\t\t\t");
             
             #line 10 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferInit\DoublePointerArgumentWithOutputBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Rule.GetDoublePointerArgumentReturnValueBuffer(Target, Argument)));
