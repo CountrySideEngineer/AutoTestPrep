@@ -163,6 +163,32 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>StubSourceTemplate.tt</DependentUpon>
     </Compile>
+    <Compile Include="Template\StubSource\ArgumentBufferTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ArgumentBufferTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\StubSource\Code\ArgumentBufferTemplate_code.cs" />
+    <Compile Include="Template\StubSource\FunctionBufferTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FunctionBufferTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\StubSource\FunctionReturnValueLatchTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FunctionReturnValueLatchTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\StubSource\SinglePointerArgumentBufferTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SinglePointerArgumentBufferTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\StubSource\SinglePointerArgumentWithOutputBufferTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SinglePointerArgumentWithOutputBufferTemplate.tt</DependentUpon>
+    </Compile>
     <Compile Include="Template\StubTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -267,6 +293,31 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>StubSourceTemplate.cs</LastGenOutput>
       <CustomToolNamespace>CodeGenerator.Stub.Template</CustomToolNamespace>
+    </Content>
+    <Content Include="Template\StubSource\ArgumentBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ArgumentBufferTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>CodeGenerator.Stub.Template.StubSource</CustomToolNamespace>
+    </Content>
+    <Content Include="Template\StubSource\FunctionBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>FunctionBufferTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>CodeGenerator.Stub.Template.StubSource</CustomToolNamespace>
+    </Content>
+    <Content Include="Template\StubSource\FunctionReturnValueLatchTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>FunctionReturnValueLatchTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>CodeGenerator.Stub.Template.StubSource</CustomToolNamespace>
+    </Content>
+    <Content Include="Template\StubSource\SinglePointerArgumentBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>SinglePointerArgumentBufferTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>CodeGenerator.Stub.Template.StubSource</CustomToolNamespace>
+    </Content>
+    <Content Include="Template\StubSource\SinglePointerArgumentWithOutputBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>SinglePointerArgumentWithOutputBufferTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>CodeGenerator.Stub.Template.StubSource</CustomToolNamespace>
     </Content>
     <Content Include="Template\StubTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
