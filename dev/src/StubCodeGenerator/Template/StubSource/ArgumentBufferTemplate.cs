@@ -46,7 +46,7 @@ namespace CodeGenerator.Stub.Template.StubSource
             this.Write("] = ");
             
             #line 8 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSource\ArgumentBufferTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(Target.Name));
+            this.Write(this.ToStringHelper.ToStringWithCulture(Argument.Name));
             
             #line default
             #line hidden

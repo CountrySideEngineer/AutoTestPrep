@@ -5,4 +5,4 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#@	import namespace="CodeGenerator.Stub.Template" #>
-	<#= Rule.GetArgumentBuffer(Target, Argument) #>[<#= Rule.GetCalledCounter(Target) #>] = <#= Target.Name #>;
+	<#= Rule.GetArgumentBuffer(Target, Argument) #>[<#= Rule.GetCalledCounter(Target) #>] = <#= Argument.Name #>;
