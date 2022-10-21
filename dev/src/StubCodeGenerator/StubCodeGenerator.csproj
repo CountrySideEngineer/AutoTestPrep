@@ -153,6 +153,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>StubHeaderTemplate.tt</DependentUpon>
     </Compile>
+    <Compile Include="Template\StubSource\DoublePointerArgumentBufferTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoublePointerArgumentBufferTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\StubSource\DoublePointerArgumentWithOutputBufferTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoublePointerArgumentWithOutputBufferTemplate.tt</DependentUpon>
+    </Compile>
     <Compile Include="Template\StubSourceBodyTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -283,6 +293,14 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>StubHeaderTemplate.cs</LastGenOutput>
       <CustomToolNamespace>CodeGenerator.Stub.Template</CustomToolNamespace>
+    </Content>
+    <Content Include="Template\StubSource\DoublePointerArgumentBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>DoublePointerArgumentBufferTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\StubSource\DoublePointerArgumentWithOutputBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>DoublePointerArgumentWithOutputBufferTemplate.cs</LastGenOutput>
     </Content>
     <Content Include="Template\StubSourceBodyTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
