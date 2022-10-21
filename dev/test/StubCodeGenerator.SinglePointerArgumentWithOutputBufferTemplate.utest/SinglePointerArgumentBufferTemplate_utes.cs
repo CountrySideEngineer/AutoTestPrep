@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using TestParser.Target;
 using Declare = CodeGenerator.Stub.Template.BufferDeclare;
+
 namespace StubCodeGenerator.SinglePointerArgumentWithOutputBufferTemplate.utest
 {
 	[TestClass]

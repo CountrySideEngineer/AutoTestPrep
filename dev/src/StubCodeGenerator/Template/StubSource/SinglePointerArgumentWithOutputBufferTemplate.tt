@@ -6,8 +6,8 @@
 <#@ import namespace="System.Collections.Generic" #>
 <# base.TransformText(); #>
 	for (int index = 0;
-		index < <#= Rule.GetSinglePointerArgumentReturnValueSizeBuffer(Target, Argument) #>[<#= Rule.GetCalledCounter(Target) #>;
+		index < <#= Rule.GetSinglePointerArgumentReturnValueSizeBuffer(Target, Argument) #>[<#= Rule.GetCalledCounter(Target) #>];
 		index++)
 	{
-		*(<#= Target.Name #> + index) = <#= Rule.GetSinglePointerArgumentReturnValueBuffer(Target, Argument) #>[<#= Rule.GetCalledCounter(Target) #>][index];
+		*(<#= Argument.Name #> + index) = <#= Rule.GetSinglePointerArgumentReturnValueBuffer(Target, Argument) #>[<#= Rule.GetCalledCounter(Target) #>][index];
 	}

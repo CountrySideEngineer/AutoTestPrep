@@ -48,10 +48,10 @@ namespace CodeGenerator.Stub.Template.StubSource
             
             #line default
             #line hidden
-            this.Write(";\r\n\t\tindex++)\r\n\t{\r\n\t\t*(");
+            this.Write("];\r\n\t\tindex++)\r\n\t{\r\n\t\t*(");
             
             #line 12 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSource\SinglePointerArgumentWithOutputBufferTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(Target.Name));
+            this.Write(this.ToStringHelper.ToStringWithCulture(Argument.Name));
             
             #line default
             #line hidden
