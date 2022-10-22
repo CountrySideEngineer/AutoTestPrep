@@ -141,6 +141,7 @@
     <Compile Include="Template\Factory\ArgBufferInStubSourceTemplateFactory.cs" />
     <Compile Include="Template\Factory\ATemplateFactory.cs" />
     <Compile Include="Template\Factory\FuncBufferDecTemplateFactory.cs" />
+    <Compile Include="Template\Factory\FuncBufferInitTemplateFactory.cs" />
     <Compile Include="Template\IncludeHeaderTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -218,6 +219,7 @@
       <DependentUpon>BufferInitMethodTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Template\Stub\Source\Part\Code\BufferDeclareTemplate_code.cs" />
+    <Compile Include="Template\Stub\Source\Part\Code\BufferInitMethodTemplate_code.cs" />
     <Compile Include="Template\Stub\Source\Part\Code\TemplateCommonBase_code.cs" />
     <Compile Include="Template\Stub\Source\Part\TemplateCommonBase.cs">
       <DependentUpon>TemplateCommonBase.tt</DependentUpon>
