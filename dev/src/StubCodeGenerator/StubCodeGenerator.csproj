@@ -136,7 +136,9 @@
     <Compile Include="Template\Code\StubSourceBodyTemplate_code.cs" />
     <Compile Include="Template\Code\StubSourceTemplate_code.cs" />
     <Compile Include="Template\Code\StubTemplate_code.cs" />
-    <Compile Include="Template\Factory\AbstractDeclareBufferTemplateFactory.cs" />
+    <Compile Include="Template\Factory\ArgBufferDecTemplateFactory.cs" />
+    <Compile Include="Template\Factory\ArgBufferInitTemplateFactory.cs" />
+    <Compile Include="Template\Factory\ArgBufferInStubSourceTemplateFactory.cs" />
     <Compile Include="Template\Factory\ATemplateFactory.cs" />
     <Compile Include="Template\IncludeHeaderTemplate.cs">
       <AutoGen>True</AutoGen>
@@ -203,6 +205,17 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>StubTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Stub\Source\Part\Code\TemplateCommonBase_code.cs" />
+    <Compile Include="Template\Stub\Source\Part\TemplateCommonBase.cs">
+      <DependentUpon>TemplateCommonBase.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Template\Stub\Source\StubSourceTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StubSourceTemplate.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -341,6 +354,14 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>StubTemplate.cs</LastGenOutput>
       <CustomToolNamespace>CodeGenerator.Stub.Template</CustomToolNamespace>
+    </Content>
+    <Content Include="Template\Stub\Source\Part\TemplateCommonBase.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>TemplateCommonBase.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\Stub\Source\StubSourceTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>StubSourceTemplate.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>
