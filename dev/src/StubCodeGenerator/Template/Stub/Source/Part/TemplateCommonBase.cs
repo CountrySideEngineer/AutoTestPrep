@@ -31,9 +31,18 @@ namespace CodeGenerator.Stub.Template.Stub.Source.Part
             
             #line 6 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\Stub\Source\Part\TemplateCommonBase.tt"
 
+	var funcTemplate = FunctionBufferTemplateFactory.Create(Target, null);
+	Write(funcTemplate.TransformText());
+
+            
+            #line default
+            #line hidden
+            
+            #line 10 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\Stub\Source\Part\TemplateCommonBase.tt"
+
 	foreach (var argument in Target.Arguments)
 	{
-		var template = TemplateFactory.Create(Target, argument);
+		var template = ArgumentBufferTemplateFactory.Create(Target, argument);
 		Write(template.TransformText());
 	}
 

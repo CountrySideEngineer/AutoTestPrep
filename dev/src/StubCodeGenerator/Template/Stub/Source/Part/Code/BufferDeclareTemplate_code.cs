@@ -11,18 +11,13 @@ namespace CodeGenerator.Stub.Template.Stub.Source.Part
 	public partial class BufferDeclareTemplate
 	{
 		/// <summary>
-		/// Template factory of function buffer.
-		/// </summary>
-		public ATemplateFactory FunctionBufferTemplateFactory { get; set; }
-
-		/// <summary>
 		/// Default constructor.
 		/// </summary>
 		public BufferDeclareTemplate() : base()
 		{
 			var rule = new Rule.NameRule();
 			FunctionBufferTemplateFactory = new FuncBufferDecTemplateFactory(rule);
-			TemplateFactory = new ArgBufferDecTemplateFactory(rule);
+			ArgumentBufferTemplateFactory = new ArgBufferDecTemplateFactory(rule);
 		}
 
 		/// <summary>
@@ -33,7 +28,7 @@ namespace CodeGenerator.Stub.Template.Stub.Source.Part
 		public BufferDeclareTemplate(Rule.NameRule rule) : base()
 		{
 			FunctionBufferTemplateFactory = new FuncBufferDecTemplateFactory(rule);
-			TemplateFactory = new ArgBufferDecTemplateFactory(rule);
+			ArgumentBufferTemplateFactory = new ArgBufferDecTemplateFactory(rule);
 		}
 	}
 }

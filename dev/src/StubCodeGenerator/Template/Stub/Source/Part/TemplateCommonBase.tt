@@ -4,9 +4,13 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#
+	var funcTemplate = FunctionBufferTemplateFactory.Create(Target, null);
+	Write(funcTemplate.TransformText());
+#>
+<#
 	foreach (var argument in Target.Arguments)
 	{
-		var template = TemplateFactory.Create(Target, argument);
+		var template = ArgumentBufferTemplateFactory.Create(Target, argument);
 		Write(template.TransformText());
 	}
 #>

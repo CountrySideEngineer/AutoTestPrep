@@ -12,6 +12,14 @@ namespace CodeGenerator.Stub.Template.Stub.Source.Part
 	{
 		public Function Target { get; set; }
 
-		public ATemplateFactory TemplateFactory { get; set; }
+		/// <summary>
+		/// Template factory of function buffer.
+		/// </summary>
+		public ATemplateFactory FunctionBufferTemplateFactory { get; set; }
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public ATemplateFactory ArgumentBufferTemplateFactory { get; set; }
 	}
 }
