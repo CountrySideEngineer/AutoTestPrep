@@ -24,8 +24,6 @@ namespace CodeGenerator.Stub.Template.Factory
 			Rule = rule;
 		}
 
-		public abstract ABufferTemplate GetTemplateForFunc(Function target);
-
-		public abstract ABufferTemplate GetTemplateForArgument(Function function, Parameter argument);
+		public abstract ABufferTemplate Create(Function function, Parameter argument);
 	}
 }
