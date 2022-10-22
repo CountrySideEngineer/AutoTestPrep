@@ -24,7 +24,7 @@ namespace StubCodeGenerator.BuffInit.SinglePointerArgumentInitBufferTemplate.ute
 				Name = "SampleArgument",
 			};
 			var rule = new NameRule();
-			var template = new BufferInit.SinglePointerArgumentInitBufferTemplate()
+			var template = new BufferInit.SinglePointerArgumentBufferTemplate()
 			{
 				Target = function,
 				Argument = argument,

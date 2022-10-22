@@ -206,6 +206,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>StubTemplate.tt</DependentUpon>
     </Compile>
+    <Compile Include="Template\Stub\Source\Part\BufferDeclareTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BufferDeclareTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Stub\Source\Part\Code\BufferDeclareTemplate_code.cs" />
     <Compile Include="Template\Stub\Source\Part\Code\TemplateCommonBase_code.cs" />
     <Compile Include="Template\Stub\Source\Part\TemplateCommonBase.cs">
       <DependentUpon>TemplateCommonBase.tt</DependentUpon>
@@ -354,6 +360,10 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>StubTemplate.cs</LastGenOutput>
       <CustomToolNamespace>CodeGenerator.Stub.Template</CustomToolNamespace>
+    </Content>
+    <Content Include="Template\Stub\Source\Part\BufferDeclareTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>BufferDeclareTemplate.cs</LastGenOutput>
     </Content>
     <Content Include="Template\Stub\Source\Part\TemplateCommonBase.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>

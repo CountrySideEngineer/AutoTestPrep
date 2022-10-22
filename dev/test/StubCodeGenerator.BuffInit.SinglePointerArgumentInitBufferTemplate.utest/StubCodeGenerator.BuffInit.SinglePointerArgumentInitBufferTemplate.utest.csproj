@@ -60,11 +60,8 @@
     <Compile Include="..\..\src\StubCodeGenerator\Template\BufferInit\Code\ArgumentBufferTemplate_code.cs">
       <Link>ArgumentBufferTemplate_code.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\StubCodeGenerator\Template\BufferInit\SinglePointerArgumentInitBufferTemplate.cs">
-      <Link>SinglePointerArgumentInitBufferTemplate.cs</Link>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SinglePointerArgumentInitBufferTemplate.tt</DependentUpon>
+    <Compile Include="..\..\src\StubCodeGenerator\Template\BufferInit\SinglePointerArgumentBufferTemplate.cs">
+      <Link>SinglePointerArgumentBufferTemplate.cs</Link>
     </Compile>
     <Compile Include="..\..\src\StubCodeGenerator\Template\Code\ABufferTemplate_code.cs">
       <Link>ABufferTemplate_code.cs</Link>
@@ -85,11 +82,6 @@
       <Link>ArgumentBufferTemplate.tt</Link>
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ArgumentBufferTemplate.cs</LastGenOutput>
-    </Content>
-    <Content Include="..\..\src\StubCodeGenerator\Template\BufferInit\SinglePointerArgumentInitBufferTemplate.tt">
-      <Link>SinglePointerArgumentInitBufferTemplate.tt</Link>
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>SinglePointerArgumentInitBufferTemplate.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

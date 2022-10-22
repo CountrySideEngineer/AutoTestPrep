@@ -34,7 +34,7 @@ namespace CodeGenerator.Stub.Template.Stub.Source.Part
 	foreach (var argument in Target.Arguments)
 	{
 		var template = TemplateFactory.Create(Target, argument);
-		template.TransformText();
+		Write(template.TransformText());
 	}
 
             
