@@ -1,5 +1,4 @@
 ﻿using CodeGenerator.Stub.Rule;
-using CodeGenerator.Stub.Template.BufferDeclare;
 using System;
 using System.Collections.Generic;
 using System.Linq;

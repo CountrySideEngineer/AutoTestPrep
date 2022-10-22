@@ -42,7 +42,7 @@ namespace CodeGenerator.Stub.Template.Stub.Source.Part
             
             #line default
             #line hidden
-            this.Write("}");
+            this.Write("}\r\n");
             return this.GenerationEnvironment.ToString();
         }
     }
