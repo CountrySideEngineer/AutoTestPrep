@@ -30,6 +30,15 @@ namespace CodeGenerator.Stub.Template.Stub.Source.Part
         {
             
             #line 7 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\Stub\Source\Part\BufferDeclareTemplate.tt"
+
+	var funcTemplate = FunctionBufferTemplateFactory.Create(Target, null);
+	Write(funcTemplate.TransformText());
+
+            
+            #line default
+            #line hidden
+            
+            #line 11 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\Stub\Source\Part\BufferDeclareTemplate.tt"
  base.TransformText(); 
             
             #line default

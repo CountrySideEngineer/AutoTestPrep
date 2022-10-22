@@ -4,4 +4,8 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
+<#
+	var funcTemplate = FunctionBufferTemplateFactory.Create(Target, null);
+	Write(funcTemplate.TransformText());
+#>
 <# base.TransformText(); #>

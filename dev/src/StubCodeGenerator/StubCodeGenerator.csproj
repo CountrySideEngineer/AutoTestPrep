@@ -140,6 +140,7 @@
     <Compile Include="Template\Factory\ArgBufferInitTemplateFactory.cs" />
     <Compile Include="Template\Factory\ArgBufferInStubSourceTemplateFactory.cs" />
     <Compile Include="Template\Factory\ATemplateFactory.cs" />
+    <Compile Include="Template\Factory\FuncBufferDecTemplateFactory.cs" />
     <Compile Include="Template\IncludeHeaderTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -210,6 +211,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BufferDeclareTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Stub\Source\Part\BufferInitMethodTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BufferInitMethodTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Template\Stub\Source\Part\Code\BufferDeclareTemplate_code.cs" />
     <Compile Include="Template\Stub\Source\Part\Code\TemplateCommonBase_code.cs" />
@@ -364,6 +370,10 @@
     <Content Include="Template\Stub\Source\Part\BufferDeclareTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>BufferDeclareTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\Stub\Source\Part\BufferInitMethodTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>BufferInitMethodTemplate.cs</LastGenOutput>
     </Content>
     <Content Include="Template\Stub\Source\Part\TemplateCommonBase.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
