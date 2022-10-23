@@ -1,8 +1,32 @@
-﻿<#@ template language="C#" #>
+﻿<#@ template language="C#" 
+	inherits="TemplateCommonBase" #>
 <#@ assembly name="System.Core" #>
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
-<# Target.ToString(); #>
+<#= Target.ToString() #>
 {
+<#
+	//戻り値をラッチする処理
+	var funcReturnLatchTemplate = FuncReturnLatchFactory.Create(Target, null);
+	Write(funcReturnLatchTemplate.TransformText());
+#>
+<#
+	//引数の処理
+	foreach (var item in Target.Arguments) 
+	{
+		var argTemplate = ArgumentFactory.Create(Target, item);
+		Write(argTemplate.TransformText());
+	}
+#>
+<#
+	//呼び出し回数更新
+	var calledCountTemplate = CalledCountFactory.Create(Target, null);
+	Write(calledCountTemplate.TransformText());
+#>
+<#
+	//戻り値の処理
+	var retCodeTemplate = ReturnCodeFactory.Create(Target, null);
+	Write(retCodeTemplate.TransformText());
+#>
 }

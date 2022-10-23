@@ -12,16 +12,15 @@ namespace CodeGenerator.Stub.Template.StubSource
     using System.Linq;
     using System.Text;
     using System.Collections.Generic;
-    using CodeGenerator.Stub.Template;
     using System;
     
     /// <summary>
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSource\FunctionBufferTemplate.tt"
+    #line 1 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSource\FunctionCalledCountUpdateTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
-    public partial class FunctionBufferTemplate : ABufferTemplate
+    public partial class FunctionCalledCountUpdateTemplate : FunctionBufferTemplate
     {
 #line hidden
         /// <summary>
@@ -29,6 +28,14 @@ namespace CodeGenerator.Stub.Template.StubSource
         /// </summary>
         public override string TransformText()
         {
+            this.Write("\t");
+            
+            #line 7 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSource\FunctionCalledCountUpdateTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(Rule.GetCalledCounter(Target)));
+            
+            #line default
+            #line hidden
+            this.Write("++;\r\n");
             return this.GenerationEnvironment.ToString();
         }
     }

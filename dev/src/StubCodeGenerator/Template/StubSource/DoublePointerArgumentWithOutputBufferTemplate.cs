@@ -34,35 +34,42 @@ namespace CodeGenerator.Stub.Template.StubSource
             
             #line default
             #line hidden
-            this.Write("\tfor (int index = 0;\r\n\t\tindex < ");
+            this.Write("\r\n\tfor (int index = 0;\r\n\t\tindex < ");
             
-            #line 9 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSource\DoublePointerArgumentWithOutputBufferTemplate.tt"
+            #line 10 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSource\DoublePointerArgumentWithOutputBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Rule.GetDoublePointerArgumentReturnValueSizeBuffer(Target, Argument)));
             
             #line default
             #line hidden
-            this.Write(";\r\n\t\tindex++)\r\n\t{\r\n\t\t*(");
+            this.Write("[");
             
-            #line 12 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSource\DoublePointerArgumentWithOutputBufferTemplate.tt"
+            #line 10 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSource\DoublePointerArgumentWithOutputBufferTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(Rule.GetCalledCounter(Target)));
+            
+            #line default
+            #line hidden
+            this.Write("];\r\n\t\tindex++)\r\n\t{\r\n\t\t*(");
+            
+            #line 13 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSource\DoublePointerArgumentWithOutputBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Argument.Name));
             
             #line default
             #line hidden
             this.Write(" + index) = ");
             
-            #line 12 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSource\DoublePointerArgumentWithOutputBufferTemplate.tt"
+            #line 13 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSource\DoublePointerArgumentWithOutputBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Rule.GetDoublePointerArgumentReturnValueBuffer(Target, Argument)));
             
             #line default
             #line hidden
             this.Write("[");
             
-            #line 12 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSource\DoublePointerArgumentWithOutputBufferTemplate.tt"
+            #line 13 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSource\DoublePointerArgumentWithOutputBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Rule.GetCalledCounter(Target)));
             
             #line default
             #line hidden
-            this.Write("][index];\r\n\t}\r\n\r\n");
+            this.Write("][index];\r\n\t}\r\n");
             return this.GenerationEnvironment.ToString();
         }
     }

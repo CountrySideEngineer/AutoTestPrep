@@ -12,16 +12,15 @@ namespace CodeGenerator.Stub.Template.StubSource
     using System.Linq;
     using System.Text;
     using System.Collections.Generic;
-    using CodeGenerator.Stub.Template;
     using System;
     
     /// <summary>
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSource\FunctionBufferTemplate.tt"
+    #line 1 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSource\FunctionReturnValueCodeTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
-    public partial class FunctionBufferTemplate : ABufferTemplate
+    public partial class FunctionReturnValueCodeTemplate : FunctionBufferTemplate
     {
 #line hidden
         /// <summary>
@@ -29,6 +28,23 @@ namespace CodeGenerator.Stub.Template.StubSource
         /// </summary>
         public override string TransformText()
         {
+            
+            #line 7 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSource\FunctionReturnValueCodeTemplate.tt"
+
+	if (Target.HasReturn()) {
+
+            
+            #line default
+            #line hidden
+            this.Write("\treturn latchReturn;\r\n");
+            
+            #line 11 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSource\FunctionReturnValueCodeTemplate.tt"
+
+	}
+
+            
+            #line default
+            #line hidden
             return this.GenerationEnvironment.ToString();
         }
     }

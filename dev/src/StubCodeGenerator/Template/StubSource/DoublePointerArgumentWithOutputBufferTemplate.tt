@@ -5,10 +5,10 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 <# base.TransformText(); #>
+
 	for (int index = 0;
-		index < <#= Rule.GetDoublePointerArgumentReturnValueSizeBuffer(Target, Argument) #>;
+		index < <#= Rule.GetDoublePointerArgumentReturnValueSizeBuffer(Target, Argument) #>[<#= Rule.GetCalledCounter(Target) #>];
 		index++)
 	{
 		*(<#= Argument.Name #> + index) = <#= Rule.GetDoublePointerArgumentReturnValueBuffer(Target, Argument) #>[<#= Rule.GetCalledCounter(Target) #>][index];
 	}
-

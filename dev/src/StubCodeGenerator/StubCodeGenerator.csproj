@@ -142,6 +142,9 @@
     <Compile Include="Template\Factory\ATemplateFactory.cs" />
     <Compile Include="Template\Factory\FuncBufferDecTemplateFactory.cs" />
     <Compile Include="Template\Factory\FuncBufferInitTemplateFactory.cs" />
+    <Compile Include="Template\Factory\FuncCalledCountUpdateTemplateFactory.cs" />
+    <Compile Include="Template\Factory\FuncReturnLatchTemplateFactory.cs" />
+    <Compile Include="Template\Factory\FuncReturnValueCodeFactory.cs" />
     <Compile Include="Template\IncludeHeaderTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -188,6 +191,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FunctionBufferTemplate.tt</DependentUpon>
     </Compile>
+    <Compile Include="Template\StubSource\FunctionCalledCountUpdateTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FunctionCalledCountUpdateTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\StubSource\FunctionReturnValueCodeTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FunctionReturnValueCodeTemplate.tt</DependentUpon>
+    </Compile>
     <Compile Include="Template\StubSource\FunctionReturnValueLatchTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -220,7 +233,13 @@
     </Compile>
     <Compile Include="Template\Stub\Source\Part\Code\BufferDeclareTemplate_code.cs" />
     <Compile Include="Template\Stub\Source\Part\Code\BufferInitMethodTemplate_code.cs" />
+    <Compile Include="Template\Stub\Source\Part\Code\StubMethodTemplate_code.cs" />
     <Compile Include="Template\Stub\Source\Part\Code\TemplateCommonBase_code.cs" />
+    <Compile Include="Template\Stub\Source\Part\StubMethodTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StubMethodTemplate.tt</DependentUpon>
+    </Compile>
     <Compile Include="Template\Stub\Source\Part\TemplateCommonBase.cs">
       <DependentUpon>TemplateCommonBase.tt</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -349,6 +368,14 @@
       <LastGenOutput>FunctionBufferTemplate.cs</LastGenOutput>
       <CustomToolNamespace>CodeGenerator.Stub.Template.StubSource</CustomToolNamespace>
     </Content>
+    <Content Include="Template\StubSource\FunctionCalledCountUpdateTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>FunctionCalledCountUpdateTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\StubSource\FunctionReturnValueCodeTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>FunctionReturnValueCodeTemplate.cs</LastGenOutput>
+    </Content>
     <Content Include="Template\StubSource\FunctionReturnValueLatchTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>FunctionReturnValueLatchTemplate.cs</LastGenOutput>
@@ -376,6 +403,10 @@
     <Content Include="Template\Stub\Source\Part\BufferInitMethodTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>BufferInitMethodTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\Stub\Source\Part\StubMethodTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>StubMethodTemplate.cs</LastGenOutput>
     </Content>
     <Content Include="Template\Stub\Source\Part\TemplateCommonBase.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
