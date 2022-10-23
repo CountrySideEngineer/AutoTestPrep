@@ -43,6 +43,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Source.Part.BufferInitMetho
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Source.Part.StubMethodTemplate.test", "Source.Part.StubMethodTemplate.test\Source.Part.StubMethodTemplate.test.csproj", "{47BB0ABD-E15C-4417-B773-E6B9D799A810}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stub.Source.StubSourceTemplate.test", "Stub.Source.StubSourceTemplate.test\Stub.Source.StubSourceTemplate.test.csproj", "{45F87CB3-AC35-4E30-9F74-EB93C6BBA8FD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -129,6 +131,10 @@ Global
 		{47BB0ABD-E15C-4417-B773-E6B9D799A810}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47BB0ABD-E15C-4417-B773-E6B9D799A810}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47BB0ABD-E15C-4417-B773-E6B9D799A810}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45F87CB3-AC35-4E30-9F74-EB93C6BBA8FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45F87CB3-AC35-4E30-9F74-EB93C6BBA8FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45F87CB3-AC35-4E30-9F74-EB93C6BBA8FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45F87CB3-AC35-4E30-9F74-EB93C6BBA8FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

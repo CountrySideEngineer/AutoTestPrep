@@ -26,11 +26,7 @@ namespace CodeGenerator.Stub.Template
 		/// <param name="config">Include configuration information.</param>
 		public IncludeHeaderTemplate(CodeConfiguration config)
 		{
-			Debug.Assert(null != config);
-
 			Config = config;
-
-			WriteLine("");
 		}
 	}
 }

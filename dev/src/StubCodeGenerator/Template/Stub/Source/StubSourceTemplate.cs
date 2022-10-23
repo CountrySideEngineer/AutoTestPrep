@@ -12,6 +12,7 @@ namespace CodeGenerator.Stub.Template.Stub.Source
     using System.Linq;
     using System.Text;
     using System.Collections.Generic;
+    using CodeGenerator.Stub.Template.Stub.Source.Part;
     using System;
     
     /// <summary>
@@ -28,6 +29,41 @@ namespace CodeGenerator.Stub.Template.Stub.Source
         /// </summary>
         public virtual string TransformText()
         {
+            
+            #line 7 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\Stub\Source\StubSourceTemplate.tt"
+
+	//ヘッダインクルード部分
+	var includeTemplate = new IncludeHeaderTemplate(Config);
+	Write(includeTemplate.TransformText());
+
+            
+            #line default
+            #line hidden
+            this.Write("\r\n");
+            
+            #line 13 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\Stub\Source\StubSourceTemplate.tt"
+
+	foreach (var targetFunctionItem in ParentFunction.SubFunctions)
+	{
+		//Declare buffers
+		var buffDecTemplate = new BufferDeclareTemplate();
+		buffDecTemplate.Target = targetFunctionItem;
+		Write(buffDecTemplate.TransformText());
+
+		//Implement buffer initialize method.
+		var buffInitMethodTemplate = new BufferDeclareTemplate();
+		buffInitMethodTemplate.Target = targetFunctionItem;
+		Write(buffInitMethodTemplate.TransformText());
+
+		//Implement stub body.
+		var stubMethodTemplate = new StubMethodTemplate();
+		stubMethodTemplate.Target = targetFunctionItem;
+		Write(stubMethodTemplate.TransformText());
+	}
+
+            
+            #line default
+            #line hidden
             return this.GenerationEnvironment.ToString();
         }
     }

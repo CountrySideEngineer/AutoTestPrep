@@ -221,6 +221,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>StubTemplate.tt</DependentUpon>
     </Compile>
+    <Compile Include="Template\Stub\Source\Code\StubSourceTemplate_code.cs" />
     <Compile Include="Template\Stub\Source\Part\BufferDeclareTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

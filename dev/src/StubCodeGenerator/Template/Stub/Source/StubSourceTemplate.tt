@@ -3,3 +3,29 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="CodeGenerator.Stub.Template.Stub.Source.Part" #>
+<#
+	//ヘッダインクルード部分
+	var includeTemplate = new IncludeHeaderTemplate(Config);
+	Write(includeTemplate.TransformText());
+#>
+
+<#
+	foreach (var targetFunctionItem in ParentFunction.SubFunctions)
+	{
+		//Declare buffers
+		var buffDecTemplate = new BufferDeclareTemplate();
+		buffDecTemplate.Target = targetFunctionItem;
+		Write(buffDecTemplate.TransformText());
+
+		//Implement buffer initialize method.
+		var buffInitMethodTemplate = new BufferDeclareTemplate();
+		buffInitMethodTemplate.Target = targetFunctionItem;
+		Write(buffInitMethodTemplate.TransformText());
+
+		//Implement stub body.
+		var stubMethodTemplate = new StubMethodTemplate();
+		stubMethodTemplate.Target = targetFunctionItem;
+		Write(stubMethodTemplate.TransformText());
+	}
+#>
