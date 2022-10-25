@@ -12,16 +12,15 @@ namespace CodeGenerator.Stub.Template.BufferDeclare
     using System.Linq;
     using System.Text;
     using System.Collections.Generic;
-    using TestParser.Target;
     using System;
     
     /// <summary>
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\FunctionBufferTemplate.tt"
+    #line 1 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\ExternFunctionReturnValueBufferTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
-    public partial class FunctionBufferTemplate : ABufferTemplate
+    public partial class ExternFunctionReturnValueBufferTemplate : FunctionReturnValueBufferTemplate
     {
 #line hidden
         /// <summary>
@@ -29,14 +28,28 @@ namespace CodeGenerator.Stub.Template.BufferDeclare
         /// </summary>
         public override string TransformText()
         {
-            this.Write("long ");
+            this.Write("extern long ");
             
-            #line 8 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\FunctionBufferTemplate.tt"
+            #line 7 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\ExternFunctionReturnValueBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Rule.GetCalledCounter(Target)));
             
             #line default
             #line hidden
-            this.Write(";\r\n");
+            this.Write(";\r\nextern ");
+            
+            #line 8 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\ExternFunctionReturnValueBufferTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(Target.ActualDataType()));
+            
+            #line default
+            #line hidden
+            this.Write(" ");
+            
+            #line 8 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\ExternFunctionReturnValueBufferTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(Rule.GetReturnValue(Target)));
+            
+            #line default
+            #line hidden
+            this.Write("[];\r\n");
             return this.GenerationEnvironment.ToString();
         }
     }

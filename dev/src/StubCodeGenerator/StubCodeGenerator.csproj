@@ -78,10 +78,40 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DoublePointerArgumentWithOutputBufferTemplate.tt</DependentUpon>
     </Compile>
+    <Compile Include="Template\BufferDeclare\ExternArgumentBufferTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExternArgumentBufferTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\BufferDeclare\ExternFunctionBufferTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExternFunctionBufferTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\BufferDeclare\ExternFunctionReturnValueBufferTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExternFunctionReturnValueBufferTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\BufferDeclare\ExternSinglePointerArgumentBufferTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExternSinglePointerArgumentBufferTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\BufferDeclare\ExternSinglePointerArgumentWithOutputBufferTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExternSinglePointerArgumentWithOutputBufferTemplate.tt</DependentUpon>
+    </Compile>
     <Compile Include="Template\BufferDeclare\FunctionBufferTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>FunctionBufferTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\BufferDeclare\FunctionReturnValueBufferTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FunctionReturnValueBufferTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Template\BufferDeclare\SinglePointerArgumentBufferTemplate.cs">
       <AutoGen>True</AutoGen>
@@ -276,10 +306,34 @@
       <LastGenOutput>DoublePointerArgumentWithOutputBufferTemplate.cs</LastGenOutput>
       <CustomToolNamespace>CodeGenerator.Stub.Template.BufferDeclare</CustomToolNamespace>
     </Content>
+    <Content Include="Template\BufferDeclare\ExternArgumentBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ExternArgumentBufferTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\BufferDeclare\ExternFunctionBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ExternFunctionBufferTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\BufferDeclare\ExternFunctionReturnValueBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ExternFunctionReturnValueBufferTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\BufferDeclare\ExternSinglePointerArgumentBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ExternSinglePointerArgumentBufferTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\BufferDeclare\ExternSinglePointerArgumentWithOutputBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ExternSinglePointerArgumentWithOutputBufferTemplate.cs</LastGenOutput>
+    </Content>
     <Content Include="Template\BufferDeclare\FunctionBufferTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>FunctionBufferTemplate.cs</LastGenOutput>
       <CustomToolNamespace>CodeGenerator.Stub.Template.BufferDeclare</CustomToolNamespace>
+    </Content>
+    <Content Include="Template\BufferDeclare\FunctionReturnValueBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>FunctionReturnValueBufferTemplate.cs</LastGenOutput>
     </Content>
     <Content Include="Template\BufferDeclare\SinglePointerArgumentBufferTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
