@@ -26,6 +26,14 @@ namespace CodeGenerator.Stub.Template.Factory
 		public override ABufferTemplate Create(Function function, Parameter argument)
 		{
 			ABufferTemplate template = null;
+			if (function.HasReturn())
+			{
+				template = new BufferTemplate.FunctionReturnValueBufferTemplate();
+			}
+			else
+			{
+				template = new BufferTemplate.FunctionBufferTemplate();
+			}
 			template = new BufferTemplate.FunctionBufferTemplate();
 			template.Rule = Rule;
 			template.Target = function;
