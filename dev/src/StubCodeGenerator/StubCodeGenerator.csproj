@@ -68,6 +68,7 @@
       <DependentUpon>ArgumentBufferTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Template\BufferDeclare\Code\ArgumentBufferTemplate_code.cs" />
+    <Compile Include="Template\BufferDeclare\Code\FunctionBufferSizeMacroTemplate_code.cs" />
     <Compile Include="Template\BufferDeclare\DoublePointerArgumentBufferTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -112,6 +113,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ExternSinglePointerArgumentWithOutputBufferTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\BufferDeclare\FunctionBufferSizeMacroTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FunctionBufferSizeMacroTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Template\BufferDeclare\FunctionBufferTemplate.cs">
       <AutoGen>True</AutoGen>
@@ -343,6 +349,10 @@
     <Content Include="Template\BufferDeclare\ExternSinglePointerArgumentWithOutputBufferTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ExternSinglePointerArgumentWithOutputBufferTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\BufferDeclare\FunctionBufferSizeMacroTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>FunctionBufferSizeMacroTemplate.cs</LastGenOutput>
     </Content>
     <Content Include="Template\BufferDeclare\FunctionBufferTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>

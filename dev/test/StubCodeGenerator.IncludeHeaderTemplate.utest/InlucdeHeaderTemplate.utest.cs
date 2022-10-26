@@ -18,9 +18,8 @@ namespace StubCodeGenerator.IncludeHeaderTemplate.utest
 
 			string output = template.TransformText();
 			Assert.AreEqual(
-				"\r\n" +
-				"No standard header files specified to include.\r\n" +
-				"No user header files specified to include.\r\n",
+				"//No standard header files specified to include.\r\n" +
+				"//No user header files specified to include.\r\n",
 				output);
 		}
 
@@ -36,9 +35,8 @@ namespace StubCodeGenerator.IncludeHeaderTemplate.utest
 
 			string output = template.TransformText();
 			Assert.AreEqual(
-				"\r\n" +
 				"#include <standardHeader>\r\n" +
-				"No user header files specified to include.\r\n",
+				"//No user header files specified to include.\r\n",
 				output);
 		}
 
@@ -55,10 +53,9 @@ namespace StubCodeGenerator.IncludeHeaderTemplate.utest
 
 			string output = template.TransformText();
 			Assert.AreEqual(
-				"\r\n" +
 				"#include <standardHeader_001>\r\n" +
 				"#include <standardHeader_002>\r\n" +
-				"No user header files specified to include.\r\n",
+				"//No user header files specified to include.\r\n",
 				output);
 		}
 
@@ -74,8 +71,7 @@ namespace StubCodeGenerator.IncludeHeaderTemplate.utest
 
 			string output = template.TransformText();
 			Assert.AreEqual(
-				"\r\n" +
-				"No standard header files specified to include.\r\n" +
+				"//No standard header files specified to include.\r\n" +
 				"#include \"userHeader_001\"\r\n",
 				output);
 		}
@@ -93,8 +89,7 @@ namespace StubCodeGenerator.IncludeHeaderTemplate.utest
 
 			string output = template.TransformText();
 			Assert.AreEqual(
-				"\r\n" +
-				"No standard header files specified to include.\r\n" +
+				"//No standard header files specified to include.\r\n" +
 				"#include \"userHeader_001\"\r\n" +
 				"#include \"userHeader_002\"\r\n",
 				output);
@@ -116,7 +111,6 @@ namespace StubCodeGenerator.IncludeHeaderTemplate.utest
 
 			string output = template.TransformText();
 			Assert.AreEqual(
-				"\r\n" +
 				"#include <standardHeader_001>\r\n" +
 				"#include \"userHeader_001\"\r\n",
 				output);
@@ -139,7 +133,6 @@ namespace StubCodeGenerator.IncludeHeaderTemplate.utest
 
 			string output = template.TransformText();
 			Assert.AreEqual(
-				"\r\n" +
 				"#include <standardHeader_001>\r\n" +
 				"#include <standardHeader_002>\r\n" +
 				"#include \"userHeader_001\"\r\n",
@@ -163,7 +156,6 @@ namespace StubCodeGenerator.IncludeHeaderTemplate.utest
 
 			string output = template.TransformText();
 			Assert.AreEqual(
-				"\r\n" +
 				"#include <standardHeader_001>\r\n" +
 				"#include \"userHeader_001\"\r\n" +
 				"#include \"userHeader_002\"\r\n",
@@ -188,7 +180,6 @@ namespace StubCodeGenerator.IncludeHeaderTemplate.utest
 
 			string output = template.TransformText();
 			Assert.AreEqual(
-				"\r\n" +
 				"#include <standardHeader_001>\r\n" +
 				"#include <standardHeader_002>\r\n" +
 				"#include \"userHeader_001\"\r\n" +

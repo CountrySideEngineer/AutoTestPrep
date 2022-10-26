@@ -34,7 +34,6 @@ namespace CodeGenerator.Stub.Template.Factory
 			{
 				template = new BufferTemplate.FunctionBufferTemplate();
 			}
-			template = new BufferTemplate.FunctionBufferTemplate();
 			template.Rule = Rule;
 			template.Target = function;
 

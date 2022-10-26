@@ -56,6 +56,7 @@ namespace Stub.Source.StubSourceTemplate.test
 				"long Function1_called_count;\r\n" +
 				"FuncType1 Function1_return_value[STUB_BUFFER_SIZE_1];\r\n" +
 				"ArgType1 Function1_Arg1[STUB_BUFFER_SIZE_1];\r\n" +
+				"\r\n" +
 				"void Function1_init()\r\n" +
 				"{\r\n" +
 				"	Function1_called_count = 0;\r\n" +
@@ -66,13 +67,15 @@ namespace Stub.Source.StubSourceTemplate.test
 				"		Function1_Arg1[index] = 0;\r\n" +
 				"	}\r\n" +
 				"}\r\n" +
+				"\r\n" +
 				"FuncType1 Function1(ArgType1 Arg1)\r\n" +
 				"{\r\n" +
 				"	FuncType1 latchReturn = Function1_return_value[Function1_called_count];\r\n" +
 				"	Function1_Arg1[Function1_called_count] = Arg1;\r\n" +
 				"	Function1_called_count++;\r\n" +
 				"	return latchReturn;\r\n" +
-				"}\r\n",
+				"}\r\n" +
+				"\r\n",
 			output);
 		}
 
@@ -137,6 +140,7 @@ namespace Stub.Source.StubSourceTemplate.test
 				"long Function1_called_count;\r\n" +
 				"FuncType1 Function1_return_value[STUB_BUFFER_SIZE_1];\r\n" +
 				"ArgType1 Function1_Arg1[STUB_BUFFER_SIZE_1];\r\n" +
+				"\r\n" +
 				"void Function1_init()\r\n" +
 				"{\r\n" +
 				"	Function1_called_count = 0;\r\n" +
@@ -147,6 +151,7 @@ namespace Stub.Source.StubSourceTemplate.test
 				"		Function1_Arg1[index] = 0;\r\n" +
 				"	}\r\n" +
 				"}\r\n" +
+				"\r\n" +
 				"FuncType1 Function1(ArgType1 Arg1)\r\n" +
 				"{\r\n" +
 				"	FuncType1 latchReturn = Function1_return_value[Function1_called_count];\r\n" +
@@ -160,6 +165,7 @@ namespace Stub.Source.StubSourceTemplate.test
 				"ArgType2* Function2_Arg2[STUB_BUFFER_SIZE_1];\r\n" +
 				"ArgType2 Function2_Arg2_value[STUB_BUFFER_SIZE_1][STUB_BUFFER_SIZE_2];\r\n" +
 				"long Function2_Arg2_value_size[STUB_BUFFER_SIZE_1];\r\n" +
+				"\r\n" +
 				"void Function2_init()\r\n" +
 				"{\r\n" +
 				"	Function2_called_count = 0;\r\n" +
@@ -174,19 +180,22 @@ namespace Stub.Source.StubSourceTemplate.test
 				"		Function2_Arg2_value_size[index] = 0;\r\n" +
 				"	}\r\n" +
 				"}\r\n" +
-				"FuncType2 Function2(ArgType2 Arg2)\r\n" +
+				"\r\n" +
+				"FuncType2 Function2(ArgType2* Arg2)\r\n" +
 				"{\r\n" +
 				"	FuncType2 latchReturn = Function2_return_value[Function2_called_count];\r\n" +
-				"	Function2_Arg2[Function1_called_count] = Arg1;\r\n" +
+				"	Function2_Arg2[Function2_called_count] = Arg2;\r\n" +
+				"\r\n" +
 				"	for (int index = 0;\r\n" +
 				"		index < Function2_Arg2_value_size[Function2_called_count];\r\n" +
 				"		index++)\r\n" +
 				"	{\r\n" +
-				"		Function2_Arg2_value[index] = *(Arg2 + index);\r\n" +
+				"		Function2_Arg2_value[Function2_called_count][index] = *(Arg2 + index);\r\n" +
 				"	}\r\n" +
 				"	Function2_called_count++;\r\n" +
 				"	return latchReturn;\r\n" +
-				"}\r\n",
+				"}\r\n" +
+				"\r\n",
 			output);
 		}
 	}

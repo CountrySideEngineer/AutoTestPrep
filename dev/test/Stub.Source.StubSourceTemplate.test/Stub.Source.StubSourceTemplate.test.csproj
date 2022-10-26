@@ -69,6 +69,9 @@
     <Compile Include="..\..\src\StubCodeGenerator\Template\BufferDeclare\FunctionBufferTemplate.cs">
       <Link>BufferDeclare\FunctionBufferTemplate.cs</Link>
     </Compile>
+    <Compile Include="..\..\src\StubCodeGenerator\Template\BufferDeclare\FunctionReturnValueBufferTemplate.cs">
+      <Link>BufferDeclare\FunctionReturnValueBufferTemplate.cs</Link>
+    </Compile>
     <Compile Include="..\..\src\StubCodeGenerator\Template\BufferDeclare\SinglePointerArgumentBufferTemplate.cs">
       <Link>BufferDeclare\SinglePointerArgumentBufferTemplate.cs</Link>
     </Compile>
@@ -136,7 +139,7 @@
       <Link>Factory\FuncReturnValueCodeFactory.cs</Link>
     </Compile>
     <Compile Include="..\..\src\StubCodeGenerator\Template\IncludeHeaderTemplate.cs">
-      <Link>BufferDeclare\IncludeHeaderTemplate.cs</Link>
+      <Link>IncludeHeaderTemplate.cs</Link>
     </Compile>
     <Compile Include="..\..\src\StubCodeGenerator\Template\StubSource\ArgumentBufferTemplate.cs">
       <Link>StubSource\ArgumentBufferTemplate.cs</Link>
@@ -167,6 +170,9 @@
     </Compile>
     <Compile Include="..\..\src\StubCodeGenerator\Template\StubSource\SinglePointerArgumentWithOutputBufferTemplate.cs">
       <Link>StubSource\SinglePointerArgumentWithOutputBufferTemplate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\StubCodeGenerator\Template\StubTemplate.cs">
+      <Link>StubTemplate.cs</Link>
     </Compile>
     <Compile Include="..\..\src\StubCodeGenerator\Template\Stub\Source\Code\StubSourceTemplate_code.cs">
       <Link>Stub\StubSourceTemplate_code.cs</Link>

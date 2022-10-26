@@ -66,6 +66,9 @@
     <Compile Include="..\..\src\StubCodeGenerator\Template\BufferDeclare\FunctionBufferTemplate.cs">
       <Link>FunctionBufferTemplate.cs</Link>
     </Compile>
+    <Compile Include="..\..\src\StubCodeGenerator\Template\BufferDeclare\FunctionReturnValueBufferTemplate.cs">
+      <Link>FunctionReturnValueBufferTemplate.cs</Link>
+    </Compile>
     <Compile Include="..\..\src\StubCodeGenerator\Template\BufferDeclare\SinglePointerArgumentBufferTemplate.cs">
       <Link>SinglePointerArgumentBufferTemplate.cs</Link>
     </Compile>

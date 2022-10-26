@@ -12,8 +12,8 @@ namespace CodeGenerator.Stub.Template.Stub.Source
     using System.Linq;
     using System.Text;
     using System.Collections.Generic;
-    using CodeGenerator.Stub.Template.Stub.Source.Part;
-    using CodeGenerator.Stub.Template;
+    using SourceTemplate = CodeGenerator.Stub.Template;
+    using SourceTemplatePart = CodeGenerator.Stub.Template.Stub.Source.Part;
     using System;
     
     /// <summary>
@@ -47,19 +47,26 @@ namespace CodeGenerator.Stub.Template.Stub.Source
 	foreach (var targetFunctionItem in ParentFunction.SubFunctions)
 	{
 		//Declare buffers
-		var buffDecTemplate = new BufferDeclareTemplate();
+		var buffDecTemplate = new SourceTemplatePart.BufferDeclareTemplate();
 		buffDecTemplate.Target = targetFunctionItem;
 		Write(buffDecTemplate.TransformText());
 
+		WriteLine("");
+
 		//Implement buffer initialize method.
-		var buffInitMethodTemplate = new BufferDeclareTemplate();
+		var buffInitMethodTemplate = new SourceTemplatePart.BufferInitMethodTemplate();
 		buffInitMethodTemplate.Target = targetFunctionItem;
 		Write(buffInitMethodTemplate.TransformText());
 
+		WriteLine("");
+
 		//Implement stub body.
-		var stubMethodTemplate = new StubMethodTemplate();
+		var stubMethodTemplate = new SourceTemplatePart.StubMethodTemplate();
 		stubMethodTemplate.Target = targetFunctionItem;
 		Write(stubMethodTemplate.TransformText());
+
+		WriteLine("");
+
 	}
 
             

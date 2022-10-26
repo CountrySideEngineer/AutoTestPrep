@@ -31,7 +31,7 @@ namespace CodeGenerator.Stub.Template
             
             #line 7 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\IncludeHeaderTemplate.tt"
 
-	string _standardHeaderInclude = "No standard header files specified to include.\r\n";
+	string _standardHeaderInclude = "//No standard header files specified to include.\r\n";
 	try {
 		bool isTop = true;
 		foreach (var item in Config.StandardHeaderFiles) {
@@ -39,12 +39,11 @@ namespace CodeGenerator.Stub.Template
 				_standardHeaderInclude = string.Empty;
 				isTop = false;
 			}
-			_standardHeaderInclude += $"#include <{item}>";
-			_standardHeaderInclude += "\r\n";
+			_standardHeaderInclude += $"#include <{item}>\r\n";
 		}
 	}
 	catch (NullReferenceException) {
-		_standardHeaderInclude = "No standard header files specified to include.\r\n";
+		_standardHeaderInclude = "//No standard header files specified to include.\r\n";
 	}
 	finally {
 		Write(_standardHeaderInclude);
@@ -54,9 +53,9 @@ namespace CodeGenerator.Stub.Template
             #line default
             #line hidden
             
-            #line 27 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\IncludeHeaderTemplate.tt"
+            #line 26 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\IncludeHeaderTemplate.tt"
 
-	string _userHeaderInclude = "No user header files specified to include.\r\n";
+	string _userHeaderInclude = "//No user header files specified to include.\r\n";
 	try {
 		bool isTop = true;
 		foreach (var item in Config.UserHeaderFiles) {
@@ -64,12 +63,11 @@ namespace CodeGenerator.Stub.Template
 				_userHeaderInclude = string.Empty;
 				isTop = false;
 			}
-			_userHeaderInclude += $"#include \"{item}\"";
-			_userHeaderInclude += "\r\n";
+			_userHeaderInclude += $"#include \"{item}\"\r\n";
 		}
 	}
 	catch (NullReferenceException) {
-		_userHeaderInclude = "No user header files specified to include.\r\n";
+		_userHeaderInclude = "//No user header files specified to include.\r\n";
 	}
 	finally {
 		Write(_userHeaderInclude);
