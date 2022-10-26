@@ -83,6 +83,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ExternArgumentBufferTemplate.tt</DependentUpon>
     </Compile>
+    <Compile Include="Template\BufferDeclare\ExternDoublePointerArgumentBufferTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExternDoublePointerArgumentBufferTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\BufferDeclare\ExternDoublePointerArgumentWithOutputBufferTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExternDoublePointerArgumentWithOutputBufferTemplate.tt</DependentUpon>
+    </Compile>
     <Compile Include="Template\BufferDeclare\ExternFunctionBufferTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -309,6 +319,14 @@
     <Content Include="Template\BufferDeclare\ExternArgumentBufferTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ExternArgumentBufferTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\BufferDeclare\ExternDoublePointerArgumentBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ExternDoublePointerArgumentBufferTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\BufferDeclare\ExternDoublePointerArgumentWithOutputBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ExternDoublePointerArgumentWithOutputBufferTemplate.cs</LastGenOutput>
     </Content>
     <Content Include="Template\BufferDeclare\ExternFunctionBufferTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
