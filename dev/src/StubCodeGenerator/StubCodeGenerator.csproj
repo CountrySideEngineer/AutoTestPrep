@@ -68,7 +68,6 @@
       <DependentUpon>ArgumentBufferTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Template\BufferDeclare\Code\ArgumentBufferTemplate_code.cs" />
-    <Compile Include="Template\BufferDeclare\Code\FunctionBufferSizeMacroTemplate_code.cs" />
     <Compile Include="Template\BufferDeclare\DoublePointerArgumentBufferTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -113,11 +112,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ExternSinglePointerArgumentWithOutputBufferTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Template\BufferDeclare\FunctionBufferSizeMacroTemplate.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FunctionBufferSizeMacroTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Template\BufferDeclare\FunctionBufferTemplate.cs">
       <AutoGen>True</AutoGen>
@@ -176,21 +170,29 @@
       <DependentUpon>SinglePointerArgumentWithOutputBufferTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Template\Code\ABufferTemplate_code.cs" />
+    <Compile Include="Template\Code\FunctionBufferSizeMacroTemplate_code.cs" />
     <Compile Include="Template\Code\IncludeHeaderTemplate_code.cs" />
     <Compile Include="Template\Code\StubHeaderBodyTemplate_code.cs" />
     <Compile Include="Template\Code\StubHeaderTemplate_code.cs" />
     <Compile Include="Template\Code\StubSourceBodyTemplate_code.cs" />
     <Compile Include="Template\Code\StubSourceTemplate_code.cs" />
     <Compile Include="Template\Code\StubTemplate_code.cs" />
+    <Compile Include="Template\Factory\ArgBufferDecExternTemplateFactory.cs" />
     <Compile Include="Template\Factory\ArgBufferDecTemplateFactory.cs" />
     <Compile Include="Template\Factory\ArgBufferInitTemplateFactory.cs" />
     <Compile Include="Template\Factory\ArgBufferInStubSourceTemplateFactory.cs" />
     <Compile Include="Template\Factory\ATemplateFactory.cs" />
+    <Compile Include="Template\Factory\FuncBufferDecExternTemplateFactory.cs" />
     <Compile Include="Template\Factory\FuncBufferDecTemplateFactory.cs" />
     <Compile Include="Template\Factory\FuncBufferInitTemplateFactory.cs" />
     <Compile Include="Template\Factory\FuncCalledCountUpdateTemplateFactory.cs" />
     <Compile Include="Template\Factory\FuncReturnLatchTemplateFactory.cs" />
     <Compile Include="Template\Factory\FuncReturnValueCodeFactory.cs" />
+    <Compile Include="Template\FunctionBufferSizeMacroTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FunctionBufferSizeMacroTemplate.tt</DependentUpon>
+    </Compile>
     <Compile Include="Template\IncludeHeaderTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -267,18 +269,31 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>StubTemplate.tt</DependentUpon>
     </Compile>
+    <Compile Include="Template\Stub\Source\Code\StubHeaderTemplate_code.cs" />
     <Compile Include="Template\Stub\Source\Code\StubSourceTemplate_code.cs" />
+    <Compile Include="Template\Stub\Source\Part\BufferDeclareExternTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BufferDeclareExternTemplate.tt</DependentUpon>
+    </Compile>
     <Compile Include="Template\Stub\Source\Part\BufferDeclareTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BufferDeclareTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Stub\Source\Part\BufferInitMethodDeclareTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BufferInitMethodDeclareTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Template\Stub\Source\Part\BufferInitMethodTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BufferInitMethodTemplate.tt</DependentUpon>
     </Compile>
+    <Compile Include="Template\Stub\Source\Part\Code\BufferDeclareExternTemplate_code.cs" />
     <Compile Include="Template\Stub\Source\Part\Code\BufferDeclareTemplate_code.cs" />
+    <Compile Include="Template\Stub\Source\Part\Code\BufferInitMethodDeclareTemplate_code.cs" />
     <Compile Include="Template\Stub\Source\Part\Code\BufferInitMethodTemplate_code.cs" />
     <Compile Include="Template\Stub\Source\Part\Code\StubMethodTemplate_code.cs" />
     <Compile Include="Template\Stub\Source\Part\Code\TemplateCommonBase_code.cs" />
@@ -291,6 +306,11 @@
       <DependentUpon>TemplateCommonBase.tt</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Template\Stub\Source\StubHeaderTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StubHeaderTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Template\Stub\Source\StubSourceTemplate.cs">
       <AutoGen>True</AutoGen>
@@ -350,10 +370,6 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ExternSinglePointerArgumentWithOutputBufferTemplate.cs</LastGenOutput>
     </Content>
-    <Content Include="Template\BufferDeclare\FunctionBufferSizeMacroTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>FunctionBufferSizeMacroTemplate.cs</LastGenOutput>
-    </Content>
     <Content Include="Template\BufferDeclare\FunctionBufferTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>FunctionBufferTemplate.cs</LastGenOutput>
@@ -407,6 +423,11 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>SinglePointerArgumentWithOutputBufferTemplate.cs</LastGenOutput>
       <CustomToolNamespace>CodeGenerator.Stub.Template.BufferInit</CustomToolNamespace>
+    </Content>
+    <Content Include="Template\FunctionBufferSizeMacroTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>FunctionBufferSizeMacroTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>CodeGenerator.Stub.Template</CustomToolNamespace>
     </Content>
     <Content Include="Template\IncludeHeaderTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
@@ -479,9 +500,17 @@
       <LastGenOutput>StubTemplate.cs</LastGenOutput>
       <CustomToolNamespace>CodeGenerator.Stub.Template</CustomToolNamespace>
     </Content>
+    <Content Include="Template\Stub\Source\Part\BufferDeclareExternTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>BufferDeclareExternTemplate.cs</LastGenOutput>
+    </Content>
     <Content Include="Template\Stub\Source\Part\BufferDeclareTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>BufferDeclareTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\Stub\Source\Part\BufferInitMethodDeclareTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>BufferInitMethodDeclareTemplate.cs</LastGenOutput>
     </Content>
     <Content Include="Template\Stub\Source\Part\BufferInitMethodTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
@@ -494,6 +523,10 @@
     <Content Include="Template\Stub\Source\Part\TemplateCommonBase.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>TemplateCommonBase.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\Stub\Source\StubHeaderTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>StubHeaderTemplate.cs</LastGenOutput>
     </Content>
     <Content Include="Template\Stub\Source\StubSourceTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>

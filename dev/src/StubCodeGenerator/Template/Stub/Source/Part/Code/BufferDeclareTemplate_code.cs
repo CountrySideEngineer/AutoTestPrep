@@ -23,7 +23,6 @@ namespace CodeGenerator.Stub.Template.Stub.Source.Part
 		/// <summary>
 		/// Constructor with argument.
 		/// </summary>
-		/// <param name="target">Target function data.</param>
 		/// <param name="templateFactory">Template factory class.</param>
 		public BufferDeclareTemplate(Rule.NameRule rule) : base()
 		{

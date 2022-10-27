@@ -7,7 +7,7 @@
 //     コードが再生成されると失われます。
 // </auto-generated>
 // ------------------------------------------------------------------------------
-namespace CodeGenerator.Stub.Template.BufferDeclare
+namespace CodeGenerator.Stub.Template
 {
     using System.Linq;
     using System.Text;
@@ -18,7 +18,7 @@ namespace CodeGenerator.Stub.Template.BufferDeclare
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\FunctionBufferSizeMacroTemplate.tt"
+    #line 1 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\FunctionBufferSizeMacroTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class FunctionBufferSizeMacroTemplate : ABufferTemplate
     {
@@ -30,14 +30,14 @@ namespace CodeGenerator.Stub.Template.BufferDeclare
         {
             this.Write("#ifndef\tSTUB_BUFFER_SIZE_1\r\n#define\tSTUB_BUFFER_SIZE_1\t\t\t(");
             
-            #line 8 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\FunctionBufferSizeMacroTemplate.tt"
+            #line 8 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\FunctionBufferSizeMacroTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Config.BufferSize1));
             
             #line default
             #line hidden
             this.Write(")\r\n#endif\r\n#ifndef\tSTUB_BUFFER_SIZE_2\r\n#define\tSTUB_BUFFER_SIZE_2\t\t\t(");
             
-            #line 11 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\FunctionBufferSizeMacroTemplate.tt"
+            #line 11 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\FunctionBufferSizeMacroTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Config.BufferSize2));
             
             #line default

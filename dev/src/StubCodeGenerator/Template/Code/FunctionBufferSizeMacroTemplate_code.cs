@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CodeGenerator.Stub.Template.BufferDeclare
+namespace CodeGenerator.Stub.Template
 {
 	public partial class FunctionBufferSizeMacroTemplate
 	{
