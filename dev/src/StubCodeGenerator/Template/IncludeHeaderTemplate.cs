@@ -85,7 +85,7 @@ namespace CodeGenerator.Stub.Template
             
             #line 51 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\IncludeHeaderTemplate.tt"
 
-	if ((string.IsNullOrEmpty(StubHeaderFileName)) || (string.IsNullOrWhiteSpace(StubHeaderFileName))) {
+	if (!(string.IsNullOrEmpty(StubHeaderFileName)) && (!(string.IsNullOrWhiteSpace(StubHeaderFileName)))) {
 
             
             #line default

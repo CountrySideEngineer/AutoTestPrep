@@ -11,9 +11,6 @@
 	var includeTemplate = new IncludeHeaderTemplate(Config);
 	includeTemplate.StubHeaderFileName = StubHeaderFileName;
 	Write(includeTemplate.TransformText());
-	if (!(string.IsNullOrEmpty(StubHeaderFileName))) {
-		Write($"#include \"{StubHeaderFileName}\"\r\n");
-	}
 #>
 
 <#

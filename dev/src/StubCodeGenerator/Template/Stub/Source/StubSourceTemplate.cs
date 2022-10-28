@@ -37,16 +37,13 @@ namespace CodeGenerator.Stub.Template.Stub.Source
 	var includeTemplate = new IncludeHeaderTemplate(Config);
 	includeTemplate.StubHeaderFileName = StubHeaderFileName;
 	Write(includeTemplate.TransformText());
-	if (!(string.IsNullOrEmpty(StubHeaderFileName))) {
-		Write($"#include \"{StubHeaderFileName}\"\r\n");
-	}
 
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 19 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\Stub\Source\StubSourceTemplate.tt"
+            #line 16 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\Stub\Source\StubSourceTemplate.tt"
 
 	foreach (var targetFunctionItem in ParentFunction.SubFunctions)
 	{
