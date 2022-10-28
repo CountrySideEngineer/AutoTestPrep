@@ -33,6 +33,7 @@ namespace Source.Part.BufferDeclareTemplate.test
 			string output = template.TransformText();
 			Assert.AreEqual(
 				"long TargetFunction_called_count;\r\n" +
+				"FuncType TargetFunction_return_value[STUB_BUFFER_SIZE_1];\r\n" +
 				"ArgType1 TargetFunction_Arg1[STUB_BUFFER_SIZE_1];\r\n",
 				output);
 		}
@@ -67,6 +68,7 @@ namespace Source.Part.BufferDeclareTemplate.test
 			string output = template.TransformText();
 			Assert.AreEqual(
 				"long TargetFunction_called_count;\r\n" +
+				"FuncType TargetFunction_return_value[STUB_BUFFER_SIZE_1];\r\n" +
 				"ArgType1 TargetFunction_Arg1[STUB_BUFFER_SIZE_1];\r\n" +
 				"ArgType2 TargetFunction_Arg2[STUB_BUFFER_SIZE_1];\r\n",
 				output);
@@ -141,6 +143,7 @@ namespace Source.Part.BufferDeclareTemplate.test
 			string output = template.TransformText();
 			Assert.AreEqual(
 				"long TargetFunction_called_count;\r\n" +
+				"FuncType TargetFunction_return_value[STUB_BUFFER_SIZE_1];\r\n" +
 				"ArgType1 TargetFunction_Arg1[STUB_BUFFER_SIZE_1];\r\n" +
 				"ArgType2* TargetFunction_Arg2[STUB_BUFFER_SIZE_1];\r\n" +
 				"ArgType2 TargetFunction_Arg2_value[STUB_BUFFER_SIZE_1][STUB_BUFFER_SIZE_2];\r\n" +
