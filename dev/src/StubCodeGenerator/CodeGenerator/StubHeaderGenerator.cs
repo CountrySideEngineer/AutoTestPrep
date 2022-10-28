@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using StubSrc = CodeGenerator.Stub.Template.Stub.Source;
 
 namespace CodeGenerator.Stub
 {
@@ -26,10 +27,10 @@ namespace CodeGenerator.Stub
 
 			INFO("Generate stub header code template.");
 
-			var template = new StubHeaderTemplate()
+			var template = new StubSrc.StubHeaderTemplate()
 			{
 				ParentFunction = writeData.Test.Target,
-				Config = writeData.CodeConfig
+				Config = writeData.CodeConfig,
 			};
 			return template;
 		}

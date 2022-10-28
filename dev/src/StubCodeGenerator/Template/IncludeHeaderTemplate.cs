@@ -35,6 +35,9 @@ namespace CodeGenerator.Stub.Template
 	try {
 		bool isTop = true;
 		foreach (var item in Config.StandardHeaderFiles) {
+			if ((string.IsNullOrEmpty(item)) || (string.IsNullOrWhiteSpace(item))) {
+				continue;
+			}
 			if (true == isTop) {
 				_standardHeaderInclude = string.Empty;
 				isTop = false;
@@ -53,12 +56,15 @@ namespace CodeGenerator.Stub.Template
             #line default
             #line hidden
             
-            #line 26 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\IncludeHeaderTemplate.tt"
+            #line 29 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\IncludeHeaderTemplate.tt"
 
 	string _userHeaderInclude = "//No user header files specified to include.\r\n";
 	try {
 		bool isTop = true;
 		foreach (var item in Config.UserHeaderFiles) {
+			if ((string.IsNullOrEmpty(item)) || (string.IsNullOrWhiteSpace(item))) {
+				continue;
+			}
 			if (true == isTop) {
 				_userHeaderInclude = string.Empty;
 				isTop = false;
@@ -71,6 +77,30 @@ namespace CodeGenerator.Stub.Template
 	}
 	finally {
 		Write(_userHeaderInclude);
+	}
+
+            
+            #line default
+            #line hidden
+            
+            #line 51 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\IncludeHeaderTemplate.tt"
+
+	if ((string.IsNullOrEmpty(StubHeaderFileName)) || (string.IsNullOrWhiteSpace(StubHeaderFileName))) {
+
+            
+            #line default
+            #line hidden
+            this.Write("#include \"");
+            
+            #line 54 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\IncludeHeaderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(StubHeaderFileName));
+            
+            #line default
+            #line hidden
+            this.Write("\"\r\n");
+            
+            #line 55 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\IncludeHeaderTemplate.tt"
+
 	}
 
             

@@ -9,6 +9,7 @@
 <#
 	//ヘッダインクルード部分
 	var includeTemplate = new IncludeHeaderTemplate(Config);
+	includeTemplate.StubHeaderFileName = StubHeaderFileName;
 	Write(includeTemplate.TransformText());
 #>
 

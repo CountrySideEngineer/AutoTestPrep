@@ -30,10 +30,11 @@ namespace CodeGenerator.Stub.Template.Stub.Source
         /// </summary>
         public override string TransformText()
         {
+            this.Write("#pragma once\r\n");
             
-            #line 9 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\Stub\Source\StubHeaderTemplate.tt"
+            #line 10 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\Stub\Source\StubHeaderTemplate.tt"
 
-	//マクロ宣下部分
+	//Declare buffer size macro.
 	var bufferSizeMacroTemplate = new FunctionBufferSizeMacroTemplate(Config);
 	Write(bufferSizeMacroTemplate.TransformText());
 
@@ -42,7 +43,7 @@ namespace CodeGenerator.Stub.Template.Stub.Source
             #line hidden
             this.Write("\r\n");
             
-            #line 15 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\Stub\Source\StubHeaderTemplate.tt"
+            #line 16 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\Stub\Source\StubHeaderTemplate.tt"
 
 	foreach (var targetFunctionItem in ParentFunction.SubFunctions)
 	{
@@ -54,7 +55,7 @@ namespace CodeGenerator.Stub.Template.Stub.Source
 		WriteLine("");
 
 		//Declare initialize argument.
-		var bufferInitMethodTemplate = new SourceTemplatePart.BufferInitMethodTemplate();
+		var bufferInitMethodTemplate = new SourceTemplatePart.BufferInitMethodDeclareTemplate();
 		bufferInitMethodTemplate.Target = targetFunctionItem;
 		Write(bufferInitMethodTemplate.TransformText());
 

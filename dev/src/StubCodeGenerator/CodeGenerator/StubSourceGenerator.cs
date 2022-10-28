@@ -42,6 +42,7 @@ namespace CodeGenerator.Stub
 			{
 				ParentFunction = writeData.Test.Target,
 				Config = writeData.CodeConfig,
+				StubHeaderFileName = StubHeaderFileName,
 			};
 			return template;
 		}

@@ -18,11 +18,11 @@ namespace CodeGenerator.Stub.Template.Factory
 			ABufferTemplate template = null;
 			if (function.HasReturn())
 			{
-				template = new ExternFunctionBufferTemplate();
+				template = new ExternFunctionReturnValueBufferTemplate();
 			}
 			else
 			{
-				template = new ExternFunctionReturnValueBufferTemplate();
+				template = new ExternFunctionBufferTemplate();
 			}
 			template.Rule = Rule;
 			template.Target = function;

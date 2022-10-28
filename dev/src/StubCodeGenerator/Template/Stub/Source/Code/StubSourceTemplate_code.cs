@@ -15,6 +15,8 @@ namespace CodeGenerator.Stub.Template.Stub.Source
 
 		public CodeConfiguration Config { get; set; }
 
+		public string StubHeaderFileName { get; set; }
+
 		/// <summary>
 		/// Default constructor.
 		/// </summary>

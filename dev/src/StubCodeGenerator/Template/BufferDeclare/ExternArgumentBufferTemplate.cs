@@ -31,10 +31,18 @@ namespace CodeGenerator.Stub.Template.BufferDeclare
             this.Write("extern ");
             
             #line 7 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\ExternArgumentBufferTemplate.tt"
- base.TransformText(); 
+            this.Write(this.ToStringHelper.ToStringWithCulture(Argument.ActualDataType()));
             
             #line default
             #line hidden
+            this.Write(" ");
+            
+            #line 7 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\ExternArgumentBufferTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(Rule.GetArgumentBuffer(Target, Argument)));
+            
+            #line default
+            #line hidden
+            this.Write("[];\r\n");
             return this.GenerationEnvironment.ToString();
         }
     }

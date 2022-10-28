@@ -6,8 +6,9 @@
 <#@ import namespace="System.Collections.Generic" #>
 <#@ import namespace="SourceTemplate = CodeGenerator.Stub.Template" #>
 <#@ import namespace="SourceTemplatePart = CodeGenerator.Stub.Template.Stub.Source.Part" #>
+#pragma once
 <#
-	//マクロ宣下部分
+	//Declare buffer size macro.
 	var bufferSizeMacroTemplate = new FunctionBufferSizeMacroTemplate(Config);
 	Write(bufferSizeMacroTemplate.TransformText());
 #>
@@ -23,7 +24,7 @@
 		WriteLine("");
 
 		//Declare initialize argument.
-		var bufferInitMethodTemplate = new SourceTemplatePart.BufferInitMethodTemplate();
+		var bufferInitMethodTemplate = new SourceTemplatePart.BufferInitMethodDeclareTemplate();
 		bufferInitMethodTemplate.Target = targetFunctionItem;
 		Write(bufferInitMethodTemplate.TransformText());
 
