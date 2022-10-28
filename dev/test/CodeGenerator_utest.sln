@@ -47,6 +47,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stub.Source.StubSourceTempl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BufferDeclare.FunctionBufferSizeMacroTemplate_utest", "BufferDeclare.FunctionBufferSizeMacroTemplate_utest\BufferDeclare.FunctionBufferSizeMacroTemplate_utest.csproj", "{4E2B84AF-933F-4942-B1C1-FCA7192E8270}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stub.Source.StubHeaderTemplate.test", "Stub.Source.StubHeaderTemplate.test\Stub.Source.StubHeaderTemplate.test.csproj", "{D99F6500-7742-46F7-8B6C-99D404F4D69F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -141,6 +143,10 @@ Global
 		{4E2B84AF-933F-4942-B1C1-FCA7192E8270}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E2B84AF-933F-4942-B1C1-FCA7192E8270}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E2B84AF-933F-4942-B1C1-FCA7192E8270}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D99F6500-7742-46F7-8B6C-99D404F4D69F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D99F6500-7742-46F7-8B6C-99D404F4D69F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D99F6500-7742-46F7-8B6C-99D404F4D69F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D99F6500-7742-46F7-8B6C-99D404F4D69F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
