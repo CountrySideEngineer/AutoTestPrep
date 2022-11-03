@@ -105,8 +105,6 @@ namespace StubDriverPlugin.GTestStubDriver
 			catch (Exception ex)
 			when ((ex is ArgumentException) || (ex is ArgumentNullException))
 			{
-				Debug.WriteLine(ex.StackTrace);
-
 				throw;
 			}
 		}
@@ -131,8 +129,6 @@ namespace StubDriverPlugin.GTestStubDriver
 			catch (Exception ex)
 			when ((ex is ArgumentException) || (ex is ArgumentNullException))
 			{
-				Debug.WriteLine(ex.StackTrace);
-
 				throw;
 			}
 		}
@@ -183,8 +179,6 @@ namespace StubDriverPlugin.GTestStubDriver
 			catch (Exception ex)
 			when ((ex is ArgumentException) || (ex is ArgumentNullException))
 			{
-				Debug.WriteLine(ex.StackTrace);
-
 				throw;
 			}
 		}
@@ -275,7 +269,7 @@ namespace StubDriverPlugin.GTestStubDriver
 		{
 			var parser = new TestParser.Parser.TestParser();
 			parser.NotifyProcessAndProgressDelegate += ReceiveTestParseProgress;
-			IEnumerable<Test> tests = this.ParseExecute(parser, data);
+			IEnumerable<Test> tests = ParseExecute(parser, data);
 
 			return tests;
 		}
@@ -332,10 +326,12 @@ namespace StubDriverPlugin.GTestStubDriver
 			NotifyPluginProgressDelegate?.Invoke(processName, testIndex, tests.Count());
 			foreach (var testItem in tests)
 			{
+				string progName = $"{processName} : {testItem.Name}";
+				NotifyPluginProgressDelegate?.Invoke(processName, testIndex, tests.Count());
+
 				this.CreateStubCode(testItem, rootDirInfo, codeConfig);
 
 				testIndex++;
-				string progName = $"{processName} : {testItem.Name}";
 				NotifyPluginProgressDelegate?.Invoke(processName, testIndex, tests.Count());
 			}
 		}
@@ -355,10 +351,12 @@ namespace StubDriverPlugin.GTestStubDriver
 			NotifyPluginProgressDelegate?.Invoke(processName, testIndex, tests.Count());
 			foreach (var testItem in tests)
 			{
+				string progName = $"{processName} : {testItem.Name}";
+				NotifyPluginProgressDelegate?.Invoke(processName, testIndex, tests.Count());
+
 				this.CreateDriverCode(testItem, rootDirInfo, codeConfig);
 
 				testIndex++;
-				string progName = $"{processName} : {testItem.Name}";
 				NotifyPluginProgressDelegate?.Invoke(processName, testIndex, tests.Count());
 			}
 		}
