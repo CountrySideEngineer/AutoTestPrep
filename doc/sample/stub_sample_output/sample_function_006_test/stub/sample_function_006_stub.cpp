@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 //No user header files specified to include.
+#include "sample_function_006_stub.h"
 
 long subFunction_called_count;
 int subFunction_return_value[STUB_BUFFER_SIZE_1];

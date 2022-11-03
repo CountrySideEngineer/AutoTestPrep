@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 //No user header files specified to include.
+#include "sample_function_008_stub.h"
 
 long subFunction_called_count;
 int subFunction_return_value[STUB_BUFFER_SIZE_1];
@@ -32,7 +33,7 @@ int subFunction(int** subInput1)
 		index < subFunction_subInput1_return_value_size[subFunction_called_count];
 		index++)
 	{
-		*(subInput1 + index) = subFunction_subInput1_return_value[subFunction_called_count][index];
+		*(subInput1 + index) = &subFunction_subInput1_return_value[subFunction_called_count][index];
 	}
 	subFunction_called_count++;
 	return latchReturn;
