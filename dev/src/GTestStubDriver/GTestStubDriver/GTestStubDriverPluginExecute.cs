@@ -67,15 +67,11 @@ namespace StubDriverPlugin.GTestStubDriver
 			catch (Exception ex)
 			when ((ex is ArgumentException) || (ex is ArgumentNullException))
 			{
-				Debug.WriteLine(ex.StackTrace);
-
 				pluginOutput = new PluginOutput(outputAbout, "Google Testフレームワークを使用したコードの生成中に\r\nエラーが発生しました。");
 			}
 			catch (Exception ex)
 			when (ex is IOException)
 			{
-				Debug.WriteLine(ex.StackTrace);
-
 				pluginOutput = new PluginOutput(outputAbout, "指定されたファイルを開けませんでした。");
 			}
 			catch (Exception ex)
@@ -238,8 +234,6 @@ namespace StubDriverPlugin.GTestStubDriver
 			catch (Exception ex)
 			when ((ex is ArgumentException) || (ex is ArgumentNullException))
 			{
-				Debug.WriteLine(ex.StackTrace);
-
 				throw;
 			}
 		}
