@@ -56,11 +56,148 @@
     <Compile Include="CodeGenerator\StubHeaderGenerator.cs" />
     <Compile Include="CodeGenerator\StubSourceGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rule\NameRule.cs" />
+    <Compile Include="Template\ABufferTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ABufferTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\BufferDeclare\ArgumentBufferTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ArgumentBufferTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\BufferDeclare\Code\ArgumentBufferTemplate_code.cs" />
+    <Compile Include="Template\BufferDeclare\DoublePointerArgumentBufferTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoublePointerArgumentBufferTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\BufferDeclare\DoublePointerArgumentWithOutputBufferTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoublePointerArgumentWithOutputBufferTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\BufferDeclare\ExternArgumentBufferTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExternArgumentBufferTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\BufferDeclare\ExternDoublePointerArgumentBufferTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExternDoublePointerArgumentBufferTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\BufferDeclare\ExternDoublePointerArgumentWithOutputBufferTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExternDoublePointerArgumentWithOutputBufferTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\BufferDeclare\ExternFunctionBufferTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExternFunctionBufferTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\BufferDeclare\ExternFunctionReturnValueBufferTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExternFunctionReturnValueBufferTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\BufferDeclare\ExternSinglePointerArgumentBufferTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExternSinglePointerArgumentBufferTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\BufferDeclare\ExternSinglePointerArgumentWithOutputBufferTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExternSinglePointerArgumentWithOutputBufferTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\BufferDeclare\FunctionBufferTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FunctionBufferTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\BufferDeclare\FunctionReturnValueBufferTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FunctionReturnValueBufferTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\BufferDeclare\SinglePointerArgumentBufferTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SinglePointerArgumentBufferTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\BufferDeclare\SinglePointerArgumentWithOutputBufferTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SinglePointerArgumentWithOutputBufferTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\BufferInit\ArgumentBufferTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ArgumentBufferTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\BufferInit\Code\ArgumentBufferTemplate_code.cs" />
+    <Compile Include="Template\BufferInit\DoublePointerArgumentBufferTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoublePointerArgumentBufferTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\BufferInit\DoublePointerArgumentWithOutputBufferTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoublePointerArgumentWithOutputBufferTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\BufferInit\FunctionBufferTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FunctionBufferTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\BufferInit\FunctionReturnValueBufferTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FunctionReturnValueBufferTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\BufferInit\SinglePointerArgumentBufferTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SinglePointerArgumentBufferTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\BufferInit\SinglePointerArgumentWithOutputBufferTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SinglePointerArgumentWithOutputBufferTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Code\ABufferTemplate_code.cs" />
+    <Compile Include="Template\Code\FunctionBufferSizeMacroTemplate_code.cs" />
+    <Compile Include="Template\Code\IncludeHeaderTemplate_code.cs" />
     <Compile Include="Template\Code\StubHeaderBodyTemplate_code.cs" />
     <Compile Include="Template\Code\StubHeaderTemplate_code.cs" />
     <Compile Include="Template\Code\StubSourceBodyTemplate_code.cs" />
     <Compile Include="Template\Code\StubSourceTemplate_code.cs" />
     <Compile Include="Template\Code\StubTemplate_code.cs" />
+    <Compile Include="Template\Factory\ArgBufferDecExternTemplateFactory.cs" />
+    <Compile Include="Template\Factory\ArgBufferDecTemplateFactory.cs" />
+    <Compile Include="Template\Factory\ArgBufferInitTemplateFactory.cs" />
+    <Compile Include="Template\Factory\ArgBufferInStubSourceTemplateFactory.cs" />
+    <Compile Include="Template\Factory\ATemplateFactory.cs" />
+    <Compile Include="Template\Factory\FuncBufferDecExternTemplateFactory.cs" />
+    <Compile Include="Template\Factory\FuncBufferDecTemplateFactory.cs" />
+    <Compile Include="Template\Factory\FuncBufferInitTemplateFactory.cs" />
+    <Compile Include="Template\Factory\FuncCalledCountUpdateTemplateFactory.cs" />
+    <Compile Include="Template\Factory\FuncReturnLatchTemplateFactory.cs" />
+    <Compile Include="Template\Factory\FuncReturnValueCodeFactory.cs" />
+    <Compile Include="Template\FunctionBufferSizeMacroTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FunctionBufferSizeMacroTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\IncludeHeaderTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IncludeHeaderTemplate.tt</DependentUpon>
+    </Compile>
     <Compile Include="Template\StubHeaderBodyTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -70,6 +207,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>StubHeaderTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\StubSource\DoublePointerArgumentBufferTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoublePointerArgumentBufferTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\StubSource\DoublePointerArgumentWithOutputBufferTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoublePointerArgumentWithOutputBufferTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Template\StubSourceBodyTemplate.cs">
       <AutoGen>True</AutoGen>
@@ -81,16 +228,212 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>StubSourceTemplate.tt</DependentUpon>
     </Compile>
+    <Compile Include="Template\StubSource\ArgumentBufferTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ArgumentBufferTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\StubSource\Code\ArgumentBufferTemplate_code.cs" />
+    <Compile Include="Template\StubSource\FunctionBufferTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FunctionBufferTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\StubSource\FunctionCalledCountUpdateTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FunctionCalledCountUpdateTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\StubSource\FunctionReturnValueCodeTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FunctionReturnValueCodeTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\StubSource\FunctionReturnValueLatchTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FunctionReturnValueLatchTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\StubSource\SinglePointerArgumentBufferTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SinglePointerArgumentBufferTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\StubSource\SinglePointerArgumentWithOutputBufferTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SinglePointerArgumentWithOutputBufferTemplate.tt</DependentUpon>
+    </Compile>
     <Compile Include="Template\StubTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>StubTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Stub\Source\Code\StubHeaderTemplate_code.cs" />
+    <Compile Include="Template\Stub\Source\Code\StubSourceTemplate_code.cs" />
+    <Compile Include="Template\Stub\Source\Part\BufferDeclareExternTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BufferDeclareExternTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Stub\Source\Part\BufferDeclareTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BufferDeclareTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Stub\Source\Part\BufferInitMethodDeclareTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BufferInitMethodDeclareTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Stub\Source\Part\BufferInitMethodTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BufferInitMethodTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Stub\Source\Part\Code\BufferDeclareExternTemplate_code.cs" />
+    <Compile Include="Template\Stub\Source\Part\Code\BufferDeclareTemplate_code.cs" />
+    <Compile Include="Template\Stub\Source\Part\Code\BufferInitMethodDeclareTemplate_code.cs" />
+    <Compile Include="Template\Stub\Source\Part\Code\BufferInitMethodTemplate_code.cs" />
+    <Compile Include="Template\Stub\Source\Part\Code\StubMethodTemplate_code.cs" />
+    <Compile Include="Template\Stub\Source\Part\Code\TemplateCommonBase_code.cs" />
+    <Compile Include="Template\Stub\Source\Part\StubMethodTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StubMethodTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Stub\Source\Part\TemplateCommonBase.cs">
+      <DependentUpon>TemplateCommonBase.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Template\Stub\Source\StubHeaderTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StubHeaderTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Stub\Source\StubSourceTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StubSourceTemplate.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Template\ABufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ABufferTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>CodeGenerator.Stub.Template</CustomToolNamespace>
+    </Content>
+    <Content Include="Template\BufferDeclare\ArgumentBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ArgumentBufferTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>CodeGenerator.Stub.Template.BufferDeclare</CustomToolNamespace>
+    </Content>
+    <Content Include="Template\BufferDeclare\DoublePointerArgumentBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>DoublePointerArgumentBufferTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>CodeGenerator.Stub.Template.BufferDeclare</CustomToolNamespace>
+    </Content>
+    <Content Include="Template\BufferDeclare\DoublePointerArgumentWithOutputBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>DoublePointerArgumentWithOutputBufferTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>CodeGenerator.Stub.Template.BufferDeclare</CustomToolNamespace>
+    </Content>
+    <Content Include="Template\BufferDeclare\ExternArgumentBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ExternArgumentBufferTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\BufferDeclare\ExternDoublePointerArgumentBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ExternDoublePointerArgumentBufferTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\BufferDeclare\ExternDoublePointerArgumentWithOutputBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ExternDoublePointerArgumentWithOutputBufferTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\BufferDeclare\ExternFunctionBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ExternFunctionBufferTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\BufferDeclare\ExternFunctionReturnValueBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ExternFunctionReturnValueBufferTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\BufferDeclare\ExternSinglePointerArgumentBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ExternSinglePointerArgumentBufferTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\BufferDeclare\ExternSinglePointerArgumentWithOutputBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ExternSinglePointerArgumentWithOutputBufferTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\BufferDeclare\FunctionBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>FunctionBufferTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>CodeGenerator.Stub.Template.BufferDeclare</CustomToolNamespace>
+    </Content>
+    <Content Include="Template\BufferDeclare\FunctionReturnValueBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>FunctionReturnValueBufferTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\BufferDeclare\SinglePointerArgumentBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>SinglePointerArgumentBufferTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>CodeGenerator.Stub.Template.BufferDeclare</CustomToolNamespace>
+    </Content>
+    <Content Include="Template\BufferDeclare\SinglePointerArgumentWithOutputBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>SinglePointerArgumentWithOutputBufferTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>CodeGenerator.Stub.Template.BufferDeclare</CustomToolNamespace>
+    </Content>
+    <Content Include="Template\BufferInit\ArgumentBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ArgumentBufferTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>CodeGenerator.Stub.Template.BufferInit</CustomToolNamespace>
+    </Content>
+    <Content Include="Template\BufferInit\DoublePointerArgumentBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>DoublePointerArgumentBufferTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>CodeGenerator.Stub.Template.BufferInit</CustomToolNamespace>
+    </Content>
+    <Content Include="Template\BufferInit\DoublePointerArgumentWithOutputBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>DoublePointerArgumentWithOutputBufferTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>CodeGenerator.Stub.Template.BufferInit</CustomToolNamespace>
+    </Content>
+    <Content Include="Template\BufferInit\FunctionBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>FunctionBufferTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>CodeGenerator.Stub.Template.BufferInit</CustomToolNamespace>
+    </Content>
+    <Content Include="Template\BufferInit\FunctionReturnValueBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>FunctionReturnValueBufferTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>CodeGenerator.Stub.Template.BufferInit</CustomToolNamespace>
+    </Content>
+    <Content Include="Template\BufferInit\SinglePointerArgumentBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>SinglePointerArgumentBufferTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>CodeGenerator.Stub.Template.BufferInit</CustomToolNamespace>
+    </Content>
+    <Content Include="Template\BufferInit\SinglePointerArgumentWithOutputBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>SinglePointerArgumentWithOutputBufferTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>CodeGenerator.Stub.Template.BufferInit</CustomToolNamespace>
+    </Content>
+    <Content Include="Template\FunctionBufferSizeMacroTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>FunctionBufferSizeMacroTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>CodeGenerator.Stub.Template</CustomToolNamespace>
+    </Content>
+    <Content Include="Template\IncludeHeaderTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>IncludeHeaderTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>CodeGenerator.Stub.Template</CustomToolNamespace>
+    </Content>
     <Content Include="Template\StubHeaderBodyTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>StubHeaderBodyTemplate.cs</LastGenOutput>
@@ -100,6 +443,14 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>StubHeaderTemplate.cs</LastGenOutput>
       <CustomToolNamespace>CodeGenerator.Stub.Template</CustomToolNamespace>
+    </Content>
+    <Content Include="Template\StubSource\DoublePointerArgumentBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>DoublePointerArgumentBufferTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\StubSource\DoublePointerArgumentWithOutputBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>DoublePointerArgumentWithOutputBufferTemplate.cs</LastGenOutput>
     </Content>
     <Content Include="Template\StubSourceBodyTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
@@ -111,15 +462,81 @@
       <LastGenOutput>StubSourceTemplate.cs</LastGenOutput>
       <CustomToolNamespace>CodeGenerator.Stub.Template</CustomToolNamespace>
     </Content>
+    <Content Include="Template\StubSource\ArgumentBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ArgumentBufferTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>CodeGenerator.Stub.Template.StubSource</CustomToolNamespace>
+    </Content>
+    <Content Include="Template\StubSource\FunctionBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>FunctionBufferTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>CodeGenerator.Stub.Template.StubSource</CustomToolNamespace>
+    </Content>
+    <Content Include="Template\StubSource\FunctionCalledCountUpdateTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>FunctionCalledCountUpdateTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\StubSource\FunctionReturnValueCodeTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>FunctionReturnValueCodeTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\StubSource\FunctionReturnValueLatchTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>FunctionReturnValueLatchTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>CodeGenerator.Stub.Template.StubSource</CustomToolNamespace>
+    </Content>
+    <Content Include="Template\StubSource\SinglePointerArgumentBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>SinglePointerArgumentBufferTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>CodeGenerator.Stub.Template.StubSource</CustomToolNamespace>
+    </Content>
+    <Content Include="Template\StubSource\SinglePointerArgumentWithOutputBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>SinglePointerArgumentWithOutputBufferTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>CodeGenerator.Stub.Template.StubSource</CustomToolNamespace>
+    </Content>
     <Content Include="Template\StubTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>StubTemplate.cs</LastGenOutput>
       <CustomToolNamespace>CodeGenerator.Stub.Template</CustomToolNamespace>
+    </Content>
+    <Content Include="Template\Stub\Source\Part\BufferDeclareExternTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>BufferDeclareExternTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\Stub\Source\Part\BufferDeclareTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>BufferDeclareTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\Stub\Source\Part\BufferInitMethodDeclareTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>BufferInitMethodDeclareTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\Stub\Source\Part\BufferInitMethodTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>BufferInitMethodTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\Stub\Source\Part\StubMethodTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>StubMethodTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\Stub\Source\Part\TemplateCommonBase.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>TemplateCommonBase.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\Stub\Source\StubHeaderTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>StubHeaderTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\Stub\Source\StubSourceTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>StubSourceTemplate.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>
     <None Include="diagrams\CodeGenerator.cd" />
     <None Include="diagrams\Template.cd" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

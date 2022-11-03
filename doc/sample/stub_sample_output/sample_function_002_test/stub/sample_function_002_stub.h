@@ -1,5 +1,4 @@
 #pragma once
-//Buffer size macro
 #ifndef	STUB_BUFFER_SIZE_1
 #define	STUB_BUFFER_SIZE_1			(200)
 #endif
@@ -7,20 +6,8 @@
 #define	STUB_BUFFER_SIZE_2			(300)
 #endif
 
-/*
- *	Buffer for stub of subFuncA_002.
- */
-extern int subFuncA_002_called_count;
+extern long subFunction_called_count;
+extern int subFunction_return_value[];
 
-//External declaration of the buffer to store value the method should return.
-extern int subFuncA_002_return_value[];
-
-//External declaration of the buffers which store the value of arguments. 
-extern int subFuncA_002_subInput1[]
-
-//External declaration of the buffers that store the values the method should return via a pointer argument.
-//subInput1 is not output.
-
-//Function to initialize buffers.
-void subFuncA_002_init();
+void subFunction_init();
 

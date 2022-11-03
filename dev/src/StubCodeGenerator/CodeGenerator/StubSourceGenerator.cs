@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using StubSrc = CodeGenerator.Stub.Template.Stub.Source;
 
 namespace CodeGenerator.Stub
 {
@@ -37,7 +38,7 @@ namespace CodeGenerator.Stub
 
 			INFO("Generate stub source code template.");
 
-			var template = new StubSourceTemplate()
+			var template = new StubSrc.StubSourceTemplate()
 			{
 				ParentFunction = writeData.Test.Target,
 				Config = writeData.CodeConfig,

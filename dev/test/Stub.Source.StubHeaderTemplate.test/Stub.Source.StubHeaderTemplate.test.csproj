@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D99F6500-7742-46F7-8B6C-99D404F4D69F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Stub.Source.StubHeaderTemplate.test</RootNamespace>
+    <AssemblyName>Stub.Source.StubHeaderTemplate.test</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">15.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CodeGenerator.SDK">
+      <HintPath>..\..\..\..\TestSupportTools_v0\AutoTestPrep\dev\bin\CodeGenerator.SDK.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="TestParser.SDK">
+      <HintPath>..\..\..\..\TestSupportTools_v0\AutoTestPrep\dev\bin\TestParser.SDK.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\src\StubCodeGenerator\Rule\NameRule.cs">
+      <Link>NameRule.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\StubCodeGenerator\Template\ABufferTemplate.cs">
+      <Link>ABufferTemplate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\stubcodegenerator\template\bufferdeclare\ArgumentBufferTemplate.cs">
+      <Link>BufferDeclare\ArgumentBufferTemplate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\stubcodegenerator\template\bufferdeclare\code\ArgumentBufferTemplate_code.cs">
+      <Link>BufferDeclare\ArgumentBufferTemplate_code.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\stubcodegenerator\template\bufferdeclare\DoublePointerArgumentBufferTemplate.cs">
+      <Link>BufferDeclare\DoublePointerArgumentBufferTemplate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\stubcodegenerator\template\bufferdeclare\DoublePointerArgumentWithOutputBufferTemplate.cs">
+      <Link>BufferDeclare\DoublePointerArgumentWithOutputBufferTemplate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\StubCodeGenerator\Template\BufferDeclare\ExternArgumentBufferTemplate.cs">
+      <Link>BufferDeclare\ExternArgumentBufferTemplate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\StubCodeGenerator\Template\BufferDeclare\ExternDoublePointerArgumentBufferTemplate.cs">
+      <Link>BufferDeclare\ExternDoublePointerArgumentBufferTemplate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\StubCodeGenerator\Template\BufferDeclare\ExternDoublePointerArgumentWithOutputBufferTemplate.cs">
+      <Link>BufferDeclare\ExternDoublePointerArgumentWithOutputBufferTemplate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\StubCodeGenerator\Template\BufferDeclare\ExternFunctionBufferTemplate.cs">
+      <Link>BufferDeclare\ExternFunctionBufferTemplate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\StubCodeGenerator\Template\BufferDeclare\ExternFunctionReturnValueBufferTemplate.cs">
+      <Link>BufferDeclare\ExternFunctionReturnValueBufferTemplate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\StubCodeGenerator\Template\BufferDeclare\ExternSinglePointerArgumentBufferTemplate.cs">
+      <Link>BufferDeclare\ExternSinglePointerArgumentBufferTemplate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\StubCodeGenerator\Template\BufferDeclare\ExternSinglePointerArgumentWithOutputBufferTemplate.cs">
+      <Link>BufferDeclare\ExternSinglePointerArgumentWithOutputBufferTemplate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\stubcodegenerator\template\bufferdeclare\FunctionBufferTemplate.cs">
+      <Link>BufferDeclare\FunctionBufferTemplate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\stubcodegenerator\template\bufferdeclare\FunctionReturnValueBufferTemplate.cs">
+      <Link>BufferDeclare\FunctionReturnValueBufferTemplate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\stubcodegenerator\template\bufferdeclare\SinglePointerArgumentBufferTemplate.cs">
+      <Link>BufferDeclare\SinglePointerArgumentBufferTemplate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\stubcodegenerator\template\bufferdeclare\SinglePointerArgumentWithOutputBufferTemplate.cs">
+      <Link>BufferDeclare\SinglePointerArgumentWithOutputBufferTemplate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\stubcodegenerator\template\bufferinit\ArgumentBufferTemplate.cs">
+      <Link>BufferInit\ArgumentBufferTemplate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\stubcodegenerator\template\bufferinit\code\ArgumentBufferTemplate_code.cs">
+      <Link>BufferInit\ArgumentBufferTemplate_code.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\stubcodegenerator\template\bufferinit\DoublePointerArgumentBufferTemplate.cs">
+      <Link>BufferInit\DoublePointerArgumentBufferTemplate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\stubcodegenerator\template\bufferinit\DoublePointerArgumentWithOutputBufferTemplate.cs">
+      <Link>BufferInit\DoublePointerArgumentWithOutputBufferTemplate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\stubcodegenerator\template\bufferinit\FunctionBufferTemplate.cs">
+      <Link>BufferInit\FunctionBufferTemplate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\stubcodegenerator\template\bufferinit\FunctionReturnValueBufferTemplate.cs">
+      <Link>BufferInit\FunctionReturnValueBufferTemplate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\stubcodegenerator\template\bufferinit\SinglePointerArgumentBufferTemplate.cs">
+      <Link>BufferInit\SinglePointerArgumentBufferTemplate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\stubcodegenerator\template\bufferinit\SinglePointerArgumentWithOutputBufferTemplate.cs">
+      <Link>BufferInit\SinglePointerArgumentWithOutputBufferTemplate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\stubcodegenerator\template\code\ABufferTemplate_code.cs">
+      <Link>Code\ABufferTemplate_code.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\StubCodeGenerator\Template\Code\FunctionBufferSizeMacroTemplate_code.cs">
+      <Link>FunctionBufferSizeMacroTemplate_code.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\stubcodegenerator\template\code\IncludeHeaderTemplate_code.cs">
+      <Link>Code\IncludeHeaderTemplate_code.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\stubcodegenerator\template\factory\AbstractInitBufferTemplateFactory.cs">
+      <Link>Factory\AbstractInitBufferTemplateFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\StubCodeGenerator\Template\Factory\ArgBufferDecExternTemplateFactory.cs">
+      <Link>Factory\ArgBufferDecExternTemplateFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\stubcodegenerator\template\factory\ArgBufferDecTemplateFactory.cs">
+      <Link>Factory\ArgBufferDecTemplateFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\stubcodegenerator\template\factory\ArgBufferInitTemplateFactory.cs">
+      <Link>Factory\ArgBufferInitTemplateFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\stubcodegenerator\template\factory\ArgBufferInStubSourceTemplateFactory.cs">
+      <Link>Factory\ArgBufferInStubSourceTemplateFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\stubcodegenerator\template\factory\ATemplateFactory.cs">
+      <Link>Factory\ATemplateFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\StubCodeGenerator\Template\Factory\FuncBufferDecExternTemplateFactory.cs">
+      <Link>Factory\FuncBufferDecExternTemplateFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\stubcodegenerator\template\factory\FuncBufferDecTemplateFactory.cs">
+      <Link>Factory\FuncBufferDecTemplateFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\stubcodegenerator\template\factory\FuncBufferInitTemplateFactory.cs">
+      <Link>Factory\FuncBufferInitTemplateFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\stubcodegenerator\template\factory\FuncCalledCountUpdateTemplateFactory.cs">
+      <Link>Factory\FuncCalledCountUpdateTemplateFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\stubcodegenerator\template\factory\FuncReturnLatchTemplateFactory.cs">
+      <Link>Factory\FuncReturnLatchTemplateFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\stubcodegenerator\template\factory\FuncReturnValueCodeFactory.cs">
+      <Link>Factory\FuncReturnValueCodeFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\StubCodeGenerator\Template\FunctionBufferSizeMacroTemplate.cs">
+      <Link>FunctionBufferSizeMacroTemplate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\stubcodegenerator\template\stubsource\ArgumentBufferTemplate.cs">
+      <Link>StubSource\ArgumentBufferTemplate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\stubcodegenerator\template\stubsource\code\ArgumentBufferTemplate_code.cs">
+      <Link>StubSource\ArgumentBufferTemplate_code.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\stubcodegenerator\template\stubsource\DoublePointerArgumentBufferTemplate.cs">
+      <Link>StubSource\DoublePointerArgumentBufferTemplate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\stubcodegenerator\template\stubsource\DoublePointerArgumentWithOutputBufferTemplate.cs">
+      <Link>StubSource\DoublePointerArgumentWithOutputBufferTemplate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\stubcodegenerator\template\stubsource\FunctionBufferTemplate.cs">
+      <Link>StubSource\FunctionBufferTemplate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\stubcodegenerator\template\stubsource\FunctionCalledCountUpdateTemplate.cs">
+      <Link>StubSource\FunctionCalledCountUpdateTemplate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\stubcodegenerator\template\stubsource\FunctionReturnValueCodeTemplate.cs">
+      <Link>StubSource\FunctionReturnValueCodeTemplate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\stubcodegenerator\template\stubsource\FunctionReturnValueLatchTemplate.cs">
+      <Link>StubSource\FunctionReturnValueLatchTemplate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\stubcodegenerator\template\stubsource\SinglePointerArgumentBufferTemplate.cs">
+      <Link>StubSource\SinglePointerArgumentBufferTemplate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\stubcodegenerator\template\stubsource\SinglePointerArgumentWithOutputBufferTemplate.cs">
+      <Link>StubSource\SinglePointerArgumentWithOutputBufferTemplate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\StubCodeGenerator\Template\StubTemplate.cs">
+      <Link>StubTemplate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\StubCodeGenerator\Template\Stub\Source\Code\StubHeaderTemplate_code.cs">
+      <Link>Stub\StubHeaderTemplate_code.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\stubcodegenerator\template\stub\source\part\BuffDecTemplate.cs">
+      <Link>Stub\BuffDecTemplate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\StubCodeGenerator\Template\Stub\Source\Part\BufferDeclareExternTemplate.cs">
+      <Link>Stub\BufferDeclareExternTemplate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\stubcodegenerator\template\stub\source\part\BufferDeclareTemplate.cs">
+      <Link>Stub\BufferDeclareTemplate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\StubCodeGenerator\Template\Stub\Source\Part\BufferInitMethodDeclareTemplate.cs">
+      <Link>Stub\BufferInitMethodDeclareTemplate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\stubcodegenerator\template\stub\source\part\BufferInitMethodTemplate.cs">
+      <Link>Stub\BufferInitMethodTemplate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\stubcodegenerator\template\stub\source\part\BuffInitMethodTemplate.cs">
+      <Link>Stub\BuffInitMethodTemplate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\StubCodeGenerator\Template\Stub\Source\Part\Code\BufferDeclareExternTemplate_code.cs">
+      <Link>BufferDeclareExternTemplate_code.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\stubcodegenerator\template\stub\source\part\code\BufferDeclareTemplate_code.cs">
+      <Link>Stub\BufferDeclareTemplate_code.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\StubCodeGenerator\Template\Stub\Source\Part\Code\BufferInitMethodDeclareTemplate_code.cs">
+      <Link>BufferInitMethodDeclareTemplate_code.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\stubcodegenerator\template\stub\source\part\code\BufferInitMethodTemplate_code.cs">
+      <Link>Stub\BufferInitMethodTemplate_code.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\stubcodegenerator\template\stub\source\part\code\BuffInitMethodTemplate_code.cs">
+      <Link>Stub\BuffInitMethodTemplate_code.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\stubcodegenerator\template\stub\source\part\code\StubMethodTemplate_code.cs">
+      <Link>Stub\StubMethodTemplate_code.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\stubcodegenerator\template\stub\source\part\code\TemplateCommonBase_code.cs">
+      <Link>Stub\TemplateCommonBase_code.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\stubcodegenerator\template\stub\source\part\StubMethodTemplate.cs">
+      <Link>Stub\StubMethodTemplate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\stubcodegenerator\template\stub\source\part\TemplateCommonBase.cs">
+      <Link>Stub\TemplateCommonBase.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\StubCodeGenerator\Template\Stub\Source\StubHeaderTemplate.cs">
+      <Link>Stub\StubHeaderTemplate.cs</Link>
+    </Compile>
+    <Compile Include="StubHeaderTemplate_test.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="MSTest.TestAdapter">
+      <Version>2.1.2</Version>
+    </PackageReference>
+    <PackageReference Include="MSTest.TestFramework">
+      <Version>2.1.2</Version>
+    </PackageReference>
+  </ItemGroup>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

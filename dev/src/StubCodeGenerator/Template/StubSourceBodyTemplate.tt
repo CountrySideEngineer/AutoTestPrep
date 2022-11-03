@@ -7,10 +7,13 @@
 /*
  *	Stub of <#= this.TargetFunction.Name #>.
  */
-//Declare buffers to store a value passed and pass.
+/*
+ *	Declare buffers to store a value passed and pass.
+ */
+//Declare a buffer to store the number of function calls.
 <#= CreateFunctoinCalledCountBufferDeclare(this.TargetFunction) #>;
 
-//Declare buffer to store a value the stub method should return.
+//Declare a buffer to store a value the stub method should return.
 <#= CreateFunctionReturnBufferDeclare(this.TargetFunction) #>;
 
 <#	if (null != this.TargetFunction.Arguments) {	#>
