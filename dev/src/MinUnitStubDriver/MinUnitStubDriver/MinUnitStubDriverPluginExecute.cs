@@ -301,10 +301,11 @@ namespace MinUnitStubDriver.MinUnitStubDriver
 			NotifyPluginProgressDelegate?.Invoke(processName, testIndex, tests.Count());
 			foreach (var testItem in tests)
 			{
+				string progName = $"{processName} : {testItem.Name}";
+				NotifyPluginProgressDelegate?.Invoke(processName, testIndex, tests.Count());
 				this.CreateStubCode(testItem, rootDirInfo, codeConfig);
 
 				testIndex++;
-				string progName = $"{processName} : {testItem.Name}";
 				NotifyPluginProgressDelegate?.Invoke(processName, testIndex, tests.Count());
 			}
 		}
@@ -324,10 +325,12 @@ namespace MinUnitStubDriver.MinUnitStubDriver
 			NotifyPluginProgressDelegate?.Invoke(processName, testIndex, tests.Count());
 			foreach (var testItem in tests)
 			{
+				string progName = $"{processName} : {testItem.Name}";
+				NotifyPluginProgressDelegate?.Invoke(processName, testIndex, tests.Count());
+
 				this.CreateDriverCode(testItem, rootDirInfo, codeConfig);
 
 				testIndex++;
-				string progName = $"{processName} : {testItem.Name}";
 				NotifyPluginProgressDelegate?.Invoke(processName, testIndex, tests.Count());
 			}
 		}
