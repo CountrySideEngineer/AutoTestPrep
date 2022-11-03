@@ -97,7 +97,7 @@ namespace StubDriverPlugin.StubCodePlugin
 					Test = test,
 					CodeConfig = config
 				};
-				this.CreateStubCode(rootDirInfo, writeData);
+				CreateStubCode(rootDirInfo, writeData);
 			}
 			catch (Exception ex)
 			when ((ex is ArgumentException) || (ex is ArgumentNullException))
@@ -128,7 +128,7 @@ namespace StubDriverPlugin.StubCodePlugin
 					return;
 				}
 				//Create output directory.
-				DirectoryInfo parentDirInfo = this.CreateOutputDirInfo(outputRootDirInfo, data);
+				DirectoryInfo parentDirInfo = CreateOutputDirInfo(outputRootDirInfo, data);
 				DirectoryInfo outputDirInfo = new DirectoryInfo($@"{parentDirInfo.FullName}\stub");
 				Directory.CreateDirectory(outputDirInfo.FullName);
 
@@ -142,13 +142,13 @@ namespace StubDriverPlugin.StubCodePlugin
 					StubHeaderFileName = stubHeaderFileName,
 				};
 				FileInfo outputFileInfo = new FileInfo(stubSourceFilePath);
-				this.CreateCode(data, codeGenerator, outputFileInfo);
+				CreateCode(data, codeGenerator, outputFileInfo);
 
 				//Create stub header file.
 				codeGenerator = new StubHeaderGenerator();
 				string stubHeaderFilePath = outputDirInfo.FullName + $@"\{stubHeaderFileName}";
 				outputFileInfo = new FileInfo(stubHeaderFilePath);
-				this.CreateCode(data, codeGenerator, outputFileInfo);
+				CreateCode(data, codeGenerator, outputFileInfo);
 			}
 			catch (Exception ex)
 			when ((ex is ArgumentException) || (ex is ArgumentNullException))
@@ -194,7 +194,7 @@ namespace StubDriverPlugin.StubCodePlugin
 		{
 			var parser = new TestParser.Parser.TestParser();
 			parser.NotifyProcessAndProgressDelegate += ReceiveTestParseProgress;
-			IEnumerable<Test> tests = this.ParseExecute(parser, data);
+			IEnumerable<Test> tests = ParseExecute(parser, data);
 
 			return tests;
 		}
@@ -236,17 +236,19 @@ namespace StubDriverPlugin.StubCodePlugin
 		/// <param name="rootDirInfo">Code output root directory information.</param>
 		protected virtual void CreateStubCodeExeucte(PluginInput data, IEnumerable<Test> tests, DirectoryInfo rootDirInfo)
 		{
-			CodeConfiguration codeConfig = this.Input2CodeConfigForStub(data);
+			CodeConfiguration codeConfig = Input2CodeConfigForStub(data);
 
 			int testIndex = 0;
 			string processName = "スタブコード生成：";
 			NotifyParseProgressDelegate?.Invoke(processName, testIndex, tests.Count());
 			foreach (var testItem in tests)
 			{
-				this.CreateStubCode(testItem, rootDirInfo, codeConfig);
+				string progName = $"{processName} : {testItem.Name}";
+				NotifyParseProgressDelegate?.Invoke(processName, testIndex, tests.Count());
+
+				CreateStubCode(testItem, rootDirInfo, codeConfig);
 
 				testIndex++;
-				string progName = $"{processName} : {testItem.Name}";
 				NotifyParseProgressDelegate?.Invoke(processName, testIndex, tests.Count());
 			}
 		}
