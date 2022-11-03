@@ -10,5 +10,5 @@
 		index < <#= Rule.GetDoublePointerArgumentReturnValueSizeBuffer(Target, Argument) #>[<#= Rule.GetCalledCounter(Target) #>];
 		index++)
 	{
-		*(<#= Argument.Name #> + index) = <#= Rule.GetDoublePointerArgumentReturnValueBuffer(Target, Argument) #>[<#= Rule.GetCalledCounter(Target) #>][index];
+		*(<#= Argument.Name #> + index) = &<#= Rule.GetDoublePointerArgumentReturnValueBuffer(Target, Argument) #>[<#= Rule.GetCalledCounter(Target) #>][index];
 	}

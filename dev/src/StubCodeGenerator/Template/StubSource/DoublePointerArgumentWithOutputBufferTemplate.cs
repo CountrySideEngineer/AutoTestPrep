@@ -55,7 +55,7 @@ namespace CodeGenerator.Stub.Template.StubSource
             
             #line default
             #line hidden
-            this.Write(" + index) = ");
+            this.Write(" + index) = &");
             
             #line 13 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSource\DoublePointerArgumentWithOutputBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Rule.GetDoublePointerArgumentReturnValueBuffer(Target, Argument)));
