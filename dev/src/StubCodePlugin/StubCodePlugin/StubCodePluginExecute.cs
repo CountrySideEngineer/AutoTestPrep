@@ -64,20 +64,20 @@ namespace StubDriverPlugin.StubCodePlugin
 			catch (Exception ex)
 			when ((ex is ArgumentException) || (ex is ArgumentNullException))
 			{
-				Debug.WriteLine(ex.StackTrace);
-
-				pluginOutput = new PluginOutput(outputAbout, "Google Testフレームワークを使用したコードの生成中に\r\nエラーが発生しました。");
+				pluginOutput = new PluginOutput(outputAbout, "スタブコードの生成中にエラーが発生しました。");
 			}
 			catch (Exception ex)
 			when (ex is IOException)
 			{
-				Debug.WriteLine(ex.StackTrace);
-
 				pluginOutput = new PluginOutput(outputAbout, "指定されたファイルを開けませんでした。");
 			}
 			catch (Exception ex)
 			{
 				pluginOutput = new PluginOutput(outputAbout, $"プラグイン実行中にエラーが発生しました。\n{ex.Message}");
+			}
+			finally
+			{
+				CompleteExecute(data);
 			}
 			return pluginOutput;
 		}
@@ -133,22 +133,26 @@ namespace StubDriverPlugin.StubCodePlugin
 				Directory.CreateDirectory(outputDirInfo.FullName);
 
 				//Create stub source file.
-				ICodeGenerator codeGenerator = new StubSourceGenerator();
-				string outputName = outputDirInfo.FullName + $@"\{data.Test.Target.Name}_stub.cpp";
-				FileInfo outputFileInfo = new FileInfo(outputName);
+				string stubFileName = CreateStubFileName(data);
+				string stubSourceFileName = $"{stubFileName}.cpp";
+				string stubHeaderFileName = $"{stubFileName}.h";
+				string stubSourceFilePath = outputDirInfo.FullName + $@"\{stubSourceFileName}";
+				ICodeGenerator codeGenerator = new StubSourceGenerator()
+				{
+					StubHeaderFileName = stubHeaderFileName,
+				};
+				FileInfo outputFileInfo = new FileInfo(stubSourceFilePath);
 				this.CreateCode(data, codeGenerator, outputFileInfo);
 
 				//Create stub header file.
 				codeGenerator = new StubHeaderGenerator();
-				outputName = outputDirInfo.FullName + $@"\{data.Test.Target.Name}_stub.h";
-				outputFileInfo = new FileInfo(outputName);
+				string stubHeaderFilePath = outputDirInfo.FullName + $@"\{stubHeaderFileName}";
+				outputFileInfo = new FileInfo(stubHeaderFilePath);
 				this.CreateCode(data, codeGenerator, outputFileInfo);
 			}
 			catch (Exception ex)
 			when ((ex is ArgumentException) || (ex is ArgumentNullException))
 			{
-				Debug.WriteLine(ex.StackTrace);
-
 				throw;
 			}
 		}
@@ -285,6 +289,26 @@ namespace StubDriverPlugin.StubCodePlugin
 		protected void ReceiveTestParseProgress(string name, int numerator, int denominator)
 		{
 			NotifyParseProgressDelegate?.Invoke(name, numerator, denominator);
+		}
+
+		/// <summary>
+		/// Notify that execution is complete.
+		/// </summary>
+		/// <param name="data"></param>
+		protected virtual void CompleteExecute(PluginInput data)
+		{
+			NotifyPluginFinishDelegate?.Invoke();
+		}
+
+		/// <summary>
+		/// Create stub file name.
+		/// </summary>
+		/// <param name="writeData">Write data.</param>
+		/// <returns>Stub file name without extention.</returns>
+		protected string CreateStubFileName(WriteData writeData)
+		{
+			string fileName = $"{writeData.Test.Target.Name}_stub";
+			return fileName;
 		}
 	}
 }

@@ -192,7 +192,7 @@ namespace TestParser.Parser
 					{
 						throw ex;
 					}
-					WARN($"Skip reading row {range.StartRow} because an invalid data has been set.");
+					WARN($"Skip reading row {rangeToRead.StartRow} because an invalid data has been set.");
 				}
 				rangeToRead.StartRow++;
 			}

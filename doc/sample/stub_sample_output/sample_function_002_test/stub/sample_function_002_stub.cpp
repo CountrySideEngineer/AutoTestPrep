@@ -1,49 +1,23 @@
 #include <stdio.h>
-#include "UserStubHeader.h"
-/*
- *	Stub of subFuncA_002.
- */
-//Declare buffers to store a value passed and pass.
-int subFuncA_002_called_count;
+#include <string.h>
+//No user header files specified to include.
+#include "sample_function_002_stub.h"
 
-//Declare buffer to store a value the stub method should return.
-int subFuncA_002_return_value[STUB_BUFFER_SIZE_1];
+long subFunction_called_count;
+int subFunction_return_value[STUB_BUFFER_SIZE_1];
 
-//Declare buffer to store a value passed via arguments.
-int subFuncA_002_subInput1[STUB_BUFFER_SIZE_1];
-
-//Declare buffer to store values the stub should return via argument, pointer.
-//subInput1 is not output.
-
-//Initialize buffers.
-void subFuncA_002_init()
+void subFunction_init()
 {
-	subFuncA_002_called_count = 0; 
-	for (int index = 0; index < STUB_BUFFER_SIZE_1; index++)
-	{
-		subFuncA_002_return_value[index] = 0;
-		subFuncA_002_subInput1
-		for (int index2 = 0; index < STUB_BUFFER_SIZE_2; index2++)
-		{
-			//subInput1 is not output.
-		}
+	subFunction_called_count = 0;
+	for (int index = 0; index < STUB_BUFFER_SIZE_1; index++) {
+		subFunction_return_value[index] = 0;
 	}
 }
 
-//Body of stub function.
-int subFuncA_002(int subInput1)
+int subFunction()
 {
-	int latchReturn = subFuncA_002_return_value[subFuncA_002_called_count];
-
-	//Set argument into buffer.
-	subFuncA_002_subInput1[subFuncA_002_called_count] = subInput1;
-
-	//Set back buffer value into argument.
-	//subInput1 is not output.
-
-	//Increment called count;
-	subFuncA_002_called_count++;
-
+	int latchReturn = subFunction_return_value[subFunction_called_count];
+	subFunction_called_count++;
 	return latchReturn;
 }
 
