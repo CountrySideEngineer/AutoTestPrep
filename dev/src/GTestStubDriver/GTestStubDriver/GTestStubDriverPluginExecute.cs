@@ -327,12 +327,12 @@ namespace StubDriverPlugin.GTestStubDriver
 			foreach (var testItem in tests)
 			{
 				string progName = $"{processName} : {testItem.Name}";
-				NotifyPluginProgressDelegate?.Invoke(processName, testIndex, tests.Count());
+				NotifyPluginProgressDelegate?.Invoke(progName, testIndex, tests.Count());
 
 				this.CreateStubCode(testItem, rootDirInfo, codeConfig);
 
 				testIndex++;
-				NotifyPluginProgressDelegate?.Invoke(processName, testIndex, tests.Count());
+				NotifyPluginProgressDelegate?.Invoke(progName, testIndex, tests.Count());
 			}
 		}
 
@@ -352,12 +352,12 @@ namespace StubDriverPlugin.GTestStubDriver
 			foreach (var testItem in tests)
 			{
 				string progName = $"{processName} : {testItem.Name}";
-				NotifyPluginProgressDelegate?.Invoke(processName, testIndex, tests.Count());
+				NotifyPluginProgressDelegate?.Invoke(progName, testIndex, tests.Count());
 
 				this.CreateDriverCode(testItem, rootDirInfo, codeConfig);
 
 				testIndex++;
-				NotifyPluginProgressDelegate?.Invoke(processName, testIndex, tests.Count());
+				NotifyPluginProgressDelegate?.Invoke(progName, testIndex, tests.Count());
 			}
 		}
 

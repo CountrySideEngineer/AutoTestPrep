@@ -244,12 +244,12 @@ namespace StubDriverPlugin.StubCodePlugin
 			foreach (var testItem in tests)
 			{
 				string progName = $"{processName} : {testItem.Name}";
-				NotifyParseProgressDelegate?.Invoke(processName, testIndex, tests.Count());
+				NotifyParseProgressDelegate?.Invoke(progName, testIndex, tests.Count());
 
 				CreateStubCode(testItem, rootDirInfo, codeConfig);
 
 				testIndex++;
-				NotifyParseProgressDelegate?.Invoke(processName, testIndex, tests.Count());
+				NotifyParseProgressDelegate?.Invoke(progName, testIndex, tests.Count());
 			}
 		}
 
