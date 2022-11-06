@@ -69,7 +69,7 @@ namespace TestParser.Parser
 				{
 					try
 					{
-						IEnumerable<ParameterInfo> functionInfoList = this.ReadFunctionList(stream);
+						IEnumerable<ParameterInfo> functionInfoList = ReadFunctionList(stream);
 						return functionInfoList;
 					}
 					catch (TestParserException)
