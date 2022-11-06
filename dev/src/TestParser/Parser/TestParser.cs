@@ -140,11 +140,13 @@ namespace TestParser.Parser
 				int index = 0;
 				foreach (var paramInfoItem in testTargetFunctionInfos)
 				{
+					string processName = $"{procName} : {paramInfoItem.Name}";
+					NotifyProcessAndProgressDelegate?.Invoke(processName, index, testTargetFunctionInfos.Count());
+
 					Test test = Read(stream, paramInfoItem);
 					tests.Add(test);
 
 					index++;
-					string processName = $"{procName} : {paramInfoItem.Name}";
 					NotifyProcessAndProgressDelegate?.Invoke(processName, index, testTargetFunctionInfos.Count());
 				}
 
@@ -219,12 +221,12 @@ namespace TestParser.Parser
 				var targetFunction = (Function)FunctionParser.Parse(stream);
 
 				INFO("Start reading test case data.");
-				if (null == this.TestCaseParser)
+				if (null == TestCaseParser)
 				{
-					this.TestCaseParser = new TestCaseParser(_testConfig.Test);
+					TestCaseParser = new TestCaseParser(_testConfig.Test);
 				}
 				this.TestCaseParser.Target = paramInfo.InfoName;
-				var testCases = (IEnumerable<TestCase>)this.TestCaseParser.Parse(stream);
+				var testCases = (IEnumerable<TestCase>)TestCaseParser.Parse(stream);
 				var test = new Test
 				{
 					Name = paramInfo.Name,
