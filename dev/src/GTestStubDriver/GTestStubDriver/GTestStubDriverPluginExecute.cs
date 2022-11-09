@@ -124,7 +124,7 @@ namespace StubDriverPlugin.GTestStubDriver
 					Test = test,
 					CodeConfig = config
 				};
-				this.CreateDriverCode(rootDirInfo, writeData);
+				CreateDriverCode(rootDirInfo, writeData);
 			}
 			catch (Exception ex)
 			when ((ex is ArgumentException) || (ex is ArgumentNullException))
@@ -344,7 +344,7 @@ namespace StubDriverPlugin.GTestStubDriver
 		/// <param name="rootDirInfo">Code output root directory information.</param>
 		protected virtual void CreateDriverCodeExecute(PluginInput data, IEnumerable<Test> tests, DirectoryInfo rootDirInfo)
 		{
-			CodeConfiguration codeConfig = this.Input2CodeConfigForDriver(data);
+			CodeConfiguration codeConfig = Input2CodeConfigForDriver(data);
 
 			int testIndex = 0;
 			string processName = "テストドライバ生成：";
@@ -354,7 +354,7 @@ namespace StubDriverPlugin.GTestStubDriver
 				string progName = $"{processName} : {testItem.Name}";
 				NotifyPluginProgressDelegate?.Invoke(progName, testIndex, tests.Count());
 
-				this.CreateDriverCode(testItem, rootDirInfo, codeConfig);
+				CreateDriverCode(testItem, rootDirInfo, codeConfig);
 
 				testIndex++;
 				NotifyPluginProgressDelegate?.Invoke(progName, testIndex, tests.Count());

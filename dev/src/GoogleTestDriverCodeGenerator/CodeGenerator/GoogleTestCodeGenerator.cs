@@ -27,7 +27,7 @@ namespace CodeGenerator.TestDriver.GoogleTest
 			{
 				INFO("Start generating test driver codes using google test framework.");
 
-				var template = this.CreateTemplate(data);
+				var template = CreateTemplate(data);
 
 				INFO("    Generate test driver codes of function using template.");
 				INFO($"        {data.Test.Target.ToString()}");
@@ -37,7 +37,6 @@ namespace CodeGenerator.TestDriver.GoogleTest
 			catch (Exception ex)
 			when ((ex is ArgumentNullException) || (ex is NullReferenceException))
 			{
-				DEBUG($"ex.StackTrace");
 				throw;
 			}
 		}
