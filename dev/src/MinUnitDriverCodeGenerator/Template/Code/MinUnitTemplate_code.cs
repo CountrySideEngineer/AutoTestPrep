@@ -60,7 +60,7 @@ namespace CodeGenerator.TestDriver.Template
 			}
 			else if (2 == argument.PointerNum)
 			{
-				code = $"{argument.PointerNum}*";
+				code = $"{argument.DataType}*";
 			}
 			else
 			{
