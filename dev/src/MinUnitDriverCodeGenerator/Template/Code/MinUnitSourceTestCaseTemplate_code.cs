@@ -97,5 +97,27 @@ namespace CodeGenerator.TestDriver.Template
 			functionCall += ")";
 			return functionCall;
 		}
+
+		/// <summary>
+		/// Create codes to declare argument variable.s
+		/// </summary>
+		/// <param name="argument">Argument data.</param>
+		/// <returns>Codes to declare argument.</returns>
+		protected virtual string CreateCodeToDeclareArgument(Parameter argument)
+		{
+			string declare = string.Empty;
+			if (1 == argument.PointerNum)
+			{
+				declare = $"\t{argument.DataType} _{argument.Name}[100];"
+					+ Environment.NewLine;
+			}
+			else if (2 == argument.PointerNum)
+			{
+				declare = $"\t{argument.DataType}* _{argument.Name}[100];"
+					+ Environment.NewLine;
+			}
+			declare += $"\t{argument.ActualDataType()} {argument.Name};";
+			return declare;
+		}
 	}
 }
