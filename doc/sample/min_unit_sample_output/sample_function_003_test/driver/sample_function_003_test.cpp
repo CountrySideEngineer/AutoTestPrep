@@ -17,12 +17,14 @@ static char* sample_function_003_utest_1()
 {
 	//Declare argument for target
 	int input1;
-	int input2;
+	int _input2[100];
+	int* input2;
 	SHORT input3;
 
 	//Setup test parameters.
 	input1 = 0;
-	input2 = 0;
+	_input2[0] = 0;
+	input2 = &_input2[0];
 	input3 = 1;
 
 	//Initialize stub parameters.
@@ -38,12 +40,14 @@ static char* sample_function_003_utest_2()
 {
 	//Declare argument for target
 	int input1;
-	int input2;
+	int _input2[100];
+	int* input2;
 	SHORT input3;
 
 	//Setup test parameters.
 	input1 = 0;
-	input2 = 0;
+	_input2[0] = 0;
+	input2 = &_input2[0];
 	input3 = 2;
 
 	//Initialize stub parameters.
@@ -59,12 +63,14 @@ static char* sample_function_003_utest_3()
 {
 	//Declare argument for target
 	int input1;
-	int input2;
+	int _input2[100];
+	int* input2;
 	SHORT input3;
 
 	//Setup test parameters.
 	input1 = 0;
-	input2 = 0;
+	_input2[0] = 0;
+	input2 = &_input2[0];
 	input3 = 3;
 
 	//Initialize stub parameters.
@@ -80,12 +86,14 @@ static char* sample_function_003_utest_4()
 {
 	//Declare argument for target
 	int input1;
-	int input2;
+	int _input2[100];
+	int* input2;
 	SHORT input3;
 
 	//Setup test parameters.
 	input1 = 1;
-	input2 = 0;
+	_input2[0] = 0;
+	input2 = &_input2[0];
 	input3 = 1;
 
 	//Initialize stub parameters.
@@ -101,12 +109,14 @@ static char* sample_function_003_utest_5()
 {
 	//Declare argument for target
 	int input1;
-	int input2;
+	int _input2[100];
+	int* input2;
 	SHORT input3;
 
 	//Setup test parameters.
 	input1 = 1;
-	input2 = 0;
+	_input2[0] = 0;
+	input2 = &_input2[0];
 	input3 = 2;
 
 	//Initialize stub parameters.
@@ -122,12 +132,14 @@ static char* sample_function_003_utest_6()
 {
 	//Declare argument for target
 	int input1;
-	int input2;
+	int _input2[100];
+	int* input2;
 	SHORT input3;
 
 	//Setup test parameters.
 	input1 = 1;
-	input2 = 0;
+	_input2[0] = 0;
+	input2 = &_input2[0];
 	input3 = 3;
 
 	//Initialize stub parameters.
@@ -143,12 +155,14 @@ static char* sample_function_003_utest_7()
 {
 	//Declare argument for target
 	int input1;
-	int input2;
+	int _input2[100];
+	int* input2;
 	SHORT input3;
 
 	//Setup test parameters.
 	input1 = 2;
-	input2 = 0;
+	_input2[0] = 0;
+	input2 = &_input2[0];
 	input3 = 1;
 
 	//Initialize stub parameters.
@@ -164,12 +178,14 @@ static char* sample_function_003_utest_8()
 {
 	//Declare argument for target
 	int input1;
-	int input2;
+	int _input2[100];
+	int* input2;
 	SHORT input3;
 
 	//Setup test parameters.
 	input1 = 2;
-	input2 = 0;
+	_input2[0] = 0;
+	input2 = &_input2[0];
 	input3 = 2;
 
 	//Initialize stub parameters.
@@ -185,12 +201,14 @@ static char* sample_function_003_utest_9()
 {
 	//Declare argument for target
 	int input1;
-	int input2;
+	int _input2[100];
+	int* input2;
 	SHORT input3;
 
 	//Setup test parameters.
 	input1 = 2;
-	input2 = 0;
+	_input2[0] = 0;
+	input2 = &_input2[0];
 	input3 = 3;
 
 	//Initialize stub parameters.
@@ -206,12 +224,14 @@ static char* sample_function_003_utest_10()
 {
 	//Declare argument for target
 	int input1;
-	int input2;
+	int _input2[100];
+	int* input2;
 	SHORT input3;
 
 	//Setup test parameters.
 	input1 = 3;
-	input2 = 0;
+	_input2[0] = 0;
+	input2 = &_input2[0];
 	input3 = 1;
 
 	//Initialize stub parameters.
@@ -227,12 +247,14 @@ static char* sample_function_003_utest_11()
 {
 	//Declare argument for target
 	int input1;
-	int input2;
+	int _input2[100];
+	int* input2;
 	SHORT input3;
 
 	//Setup test parameters.
 	input1 = 3;
-	input2 = 0;
+	_input2[0] = 0;
+	input2 = &_input2[0];
 	input3 = 2;
 
 	//Initialize stub parameters.
@@ -248,12 +270,14 @@ static char* sample_function_003_utest_12()
 {
 	//Declare argument for target
 	int input1;
-	int input2;
+	int _input2[100];
+	int* input2;
 	SHORT input3;
 
 	//Setup test parameters.
 	input1 = 3;
-	input2 = 0;
+	_input2[0] = 0;
+	input2 = &_input2[0];
 	input3 = 3;
 
 	//Initialize stub parameters.
