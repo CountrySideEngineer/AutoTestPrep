@@ -122,19 +122,7 @@ namespace CodeGenerator.TestDriver.Template
 					{
 						targetFunctionCall += ", ";
 					}
-					string argumentCode = string.Empty;
-					if (0 == argument.PointerNum)
-					{
-						argumentCode = $"{argument.Name}";
-					}
-					else if ((1 == argument.PointerNum) || (2 == argument.PointerNum))
-					{
-						argumentCode = $"&{argument.Name}";
-					}
-					else
-					{
-						throw new ArgumentOutOfRangeException();
-					}
+					string argumentCode = $"{argument.Name}";
 					targetFunctionCall += argumentCode;
 					isTop = false;
 				}
