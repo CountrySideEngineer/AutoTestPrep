@@ -78,20 +78,7 @@ namespace CodeGenerator.TestDriver.Template
 				{
 					functionCall += ", ";
 				}
-				string argumentCode = string.Empty;
-				if (0 == argument.PointerNum)
-				{
-					argumentCode = argument.Name;
-				}
-				else if ((1 == argument.PointerNum) || (2 == argument.PointerNum))
-				{
-					argumentCode = $"&{argument.Name}";
-				}
-				else
-				{
-					throw new ArgumentOutOfRangeException();
-				}
-				functionCall += $"{argumentCode}";
+				functionCall += argument.Name;
 				isTop = false;
 			}
 			functionCall += ")";
