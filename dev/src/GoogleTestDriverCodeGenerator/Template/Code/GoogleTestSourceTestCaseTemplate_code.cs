@@ -122,8 +122,7 @@ namespace CodeGenerator.TestDriver.Template
 					{
 						targetFunctionCall += ", ";
 					}
-					string argumentCode = $"{argument.Name}";
-					targetFunctionCall += argumentCode;
+					targetFunctionCall += argument.Name;
 					isTop = false;
 				}
 				targetFunctionCall += ")";
