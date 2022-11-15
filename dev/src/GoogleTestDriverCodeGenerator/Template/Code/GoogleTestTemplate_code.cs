@@ -68,8 +68,16 @@ namespace CodeGenerator.TestDriver.Template
         /// <returns>Test function name for unit test.</returns>
         protected virtual string TestCaseMethodName(Function function, TestCase testCase)
 		{
+            int testCaseId = 0;
             string testCaseMethodName = string.Empty;
-            testCaseMethodName = $"{function.Name}_utest_{testCase.Id}";
+            if (int.TryParse(testCase.Id, out testCaseId))
+			{
+                testCaseMethodName = $"{function.Name}_utest_{testCaseId.ToString("D3")}";
+			}
+			else
+			{
+                testCaseMethodName = $"{function.Name}_utest_{testCase.Id}";
+            }
             return testCaseMethodName;
         }
 
