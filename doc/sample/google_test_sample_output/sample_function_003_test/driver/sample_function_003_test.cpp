@@ -23,10 +23,10 @@ TEST_F(sample_function_003_utest, sample_function_003_utest_001)
 	//Setup test parameters.
 	_input1[0] = 0;
 	_input1[1] = 1;
-	input1 = &input1[0];
+	input1 = &_input1[0];
 	_input2[0] = 0;
 	_input2[1] = 0;
-	input2 = &input2[0];
+	input2 = &_input2[0];
 
 	int _ret_val = sample_function_003(input1, input2);
 
@@ -44,10 +44,10 @@ TEST_F(sample_function_003_utest, sample_function_003_utest_002)
 	//Setup test parameters.
 	_input1[0] = 0;
 	_input1[1] = 0;
-	input1 = &input1[0];
+	input1 = &_input1[0];
 	_input2[0] = 1;
 	_input2[1] = 1;
-	input2 = &input2[0];
+	input2 = &_input2[0];
 
 	int _ret_val = sample_function_003(input1, input2);
 
@@ -65,10 +65,10 @@ TEST_F(sample_function_003_utest, sample_function_003_utest_003)
 	//Setup test parameters.
 	_input1[0] = 0;
 	_input1[1] = 0;
-	input1 = &input1[0];
+	input1 = &_input1[0];
 	_input2[0] = 2;
 	_input2[1] = -1;
-	input2 = &input2[0];
+	input2 = &_input2[0];
 
 	int _ret_val = sample_function_003(input1, input2);
 
@@ -86,10 +86,10 @@ TEST_F(sample_function_003_utest, sample_function_003_utest_004)
 	//Setup test parameters.
 	_input1[0] = 0;
 	_input1[1] = 1;
-	input1 = &input1[0];
+	input1 = &_input1[0];
 	_input2[0] = 3;
 	_input2[1] = 0;
-	input2 = &input2[0];
+	input2 = &_input2[0];
 
 	int _ret_val = sample_function_003(input1, input2);
 
@@ -107,10 +107,10 @@ TEST_F(sample_function_003_utest, sample_function_003_utest_005)
 	//Setup test parameters.
 	_input1[0] = 1;
 	_input1[1] = 1;
-	input1 = &input1[0];
+	input1 = &_input1[0];
 	_input2[0] = 0;
 	_input2[1] = 0;
-	input2 = &input2[0];
+	input2 = &_input2[0];
 
 	int _ret_val = sample_function_003(input1, input2);
 
@@ -128,10 +128,10 @@ TEST_F(sample_function_003_utest, sample_function_003_utest_006)
 	//Setup test parameters.
 	_input1[0] = 1;
 	_input1[1] = -1;
-	input1 = &input1[0];
+	input1 = &_input1[0];
 	_input2[0] = 1;
 	_input2[1] = 0;
-	input2 = &input2[0];
+	input2 = &_input2[0];
 
 	int _ret_val = sample_function_003(input1, input2);
 
@@ -149,14 +149,14 @@ TEST_F(sample_function_003_utest, sample_function_003_utest_007)
 	//Setup test parameters.
 	_input1[0] = 1;
 	_input1[1] = 1;
-	input1 = &input1[0];
+	input1 = &_input1[0];
 	_input2[0] = 2;
 	_input2[1] = 0;
-	input2 = &input2[0];
+	input2 = &_input2[0];
 
 	int _ret_val = sample_function_003(input1, input2);
 
-	ASSERT_EQ(1, _ret_val);
+	ASSERT_EQ(0, _ret_val);
 }
 
 TEST_F(sample_function_003_utest, sample_function_003_utest_008)
@@ -170,14 +170,14 @@ TEST_F(sample_function_003_utest, sample_function_003_utest_008)
 	//Setup test parameters.
 	_input1[0] = 1;
 	_input1[1] = 1;
-	input1 = &input1[0];
+	input1 = &_input1[0];
 	_input2[0] = 3;
 	_input2[1] = 0;
-	input2 = &input2[0];
+	input2 = &_input2[0];
 
 	int _ret_val = sample_function_003(input1, input2);
 
-	ASSERT_EQ(1, _ret_val);
+	ASSERT_EQ(0, _ret_val);
 }
 
 TEST_F(sample_function_003_utest, sample_function_003_utest_009)
@@ -191,10 +191,10 @@ TEST_F(sample_function_003_utest, sample_function_003_utest_009)
 	//Setup test parameters.
 	_input1[0] = 2;
 	_input1[1] = 1;
-	input1 = &input1[0];
+	input1 = &_input1[0];
 	_input2[0] = 0;
 	_input2[1] = 0;
-	input2 = &input2[0];
+	input2 = &_input2[0];
 
 	int _ret_val = sample_function_003(input1, input2);
 
@@ -212,10 +212,10 @@ TEST_F(sample_function_003_utest, sample_function_003_utest_010)
 	//Setup test parameters.
 	_input1[0] = 2;
 	_input1[1] = -1;
-	input1 = &input1[0];
+	input1 = &_input1[0];
 	_input2[0] = 1;
 	_input2[1] = 0;
-	input2 = &input2[0];
+	input2 = &_input2[0];
 
 	int _ret_val = sample_function_003(input1, input2);
 
@@ -233,10 +233,10 @@ TEST_F(sample_function_003_utest, sample_function_003_utest_011)
 	//Setup test parameters.
 	_input1[0] = 2;
 	_input1[1] = 1;
-	input1 = &input1[0];
+	input1 = &_input1[0];
 	_input2[0] = 2;
 	_input2[1] = 0;
-	input2 = &input2[0];
+	input2 = &_input2[0];
 
 	int _ret_val = sample_function_003(input1, input2);
 
@@ -254,10 +254,10 @@ TEST_F(sample_function_003_utest, sample_function_003_utest_012)
 	//Setup test parameters.
 	_input1[0] = 2;
 	_input1[1] = 0;
-	input1 = &input1[0];
+	input1 = &_input1[0];
 	_input2[0] = 3;
 	_input2[1] = 1;
-	input2 = &input2[0];
+	input2 = &_input2[0];
 
 	int _ret_val = sample_function_003(input1, input2);
 
@@ -275,10 +275,10 @@ TEST_F(sample_function_003_utest, sample_function_003_utest_013)
 	//Setup test parameters.
 	_input1[0] = 3;
 	_input1[1] = 1;
-	input1 = &input1[0];
+	input1 = &_input1[0];
 	_input2[0] = 0;
 	_input2[1] = 0;
-	input2 = &input2[0];
+	input2 = &_input2[0];
 
 	int _ret_val = sample_function_003(input1, input2);
 
@@ -296,10 +296,10 @@ TEST_F(sample_function_003_utest, sample_function_003_utest_014)
 	//Setup test parameters.
 	_input1[0] = 3;
 	_input1[1] = -1;
-	input1 = &input1[0];
+	input1 = &_input1[0];
 	_input2[0] = 1;
 	_input2[1] = 0;
-	input2 = &input2[0];
+	input2 = &_input2[0];
 
 	int _ret_val = sample_function_003(input1, input2);
 
@@ -317,10 +317,10 @@ TEST_F(sample_function_003_utest, sample_function_003_utest_015)
 	//Setup test parameters.
 	_input1[0] = 3;
 	_input1[1] = 1;
-	input1 = &input1[0];
+	input1 = &_input1[0];
 	_input2[0] = 2;
 	_input2[1] = 0;
-	input2 = &input2[0];
+	input2 = &_input2[0];
 
 	int _ret_val = sample_function_003(input1, input2);
 
@@ -338,10 +338,10 @@ TEST_F(sample_function_003_utest, sample_function_003_utest_016)
 	//Setup test parameters.
 	_input1[0] = 3;
 	_input1[1] = 1;
-	input1 = &input1[0];
+	input1 = &_input1[0];
 	_input2[0] = 3;
 	_input2[1] = 0;
-	input2 = &input2[0];
+	input2 = &_input2[0];
 
 	int _ret_val = sample_function_003(input1, input2);
 
