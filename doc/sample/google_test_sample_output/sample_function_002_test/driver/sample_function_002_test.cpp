@@ -2,15 +2,13 @@
 #include <windows.h>
 #include "gtest/gtest.h"
 #include "sample_function_002_test.h"
-#include "sample_function_002_stub.h"
 //No global variables are refered by function sample_function_002.
 
 //Test target function declare
-int sample_function_002(int input1, int input2);
+int sample_function_002(int* input1, int* input2);
 
 void sample_function_002_utest::SetUp()
 {
-	subFuncA_002_init();
 }
 
 
@@ -21,15 +19,14 @@ TEST_F(sample_function_002_utest, sample_function_002_utest_1)
 	int input2;
 
 	//Setup test parameters.
-	input1 = 0;
-	input2 = 0;
-	subFuncA_002_return_value[0] = 1;
+	_input1[0] = 0;
+	input1 = &_input1[0];
+	_input2[0] = 0;
+	input2 = &_input2[0];
 
-	int _ret_val = sample_function_002(input1, input2);
+	int _ret_val = sample_function_002(&input1, &input2);
 
-	ASSERT_EQ(1, _ret_val);
-	ASSERT_EQ(1, subFuncA_002_called_count);
-	ASSERT_EQ(0, subFuncA_002_subInput1[0]);
+	ASSERT_EQ(0, _ret_val);
 }
 
 TEST_F(sample_function_002_utest, sample_function_002_utest_2)
@@ -39,15 +36,14 @@ TEST_F(sample_function_002_utest, sample_function_002_utest_2)
 	int input2;
 
 	//Setup test parameters.
-	input1 = 0;
-	input2 = 1;
-	subFuncA_002_return_value[0] = 2;
+	_input1[0] = 0;
+	input1 = &_input1[0];
+	_input2[0] = 1;
+	input2 = &_input2[0];
 
-	int _ret_val = sample_function_002(input1, input2);
+	int _ret_val = sample_function_002(&input1, &input2);
 
-	ASSERT_EQ(2, _ret_val);
-	ASSERT_EQ(1, subFuncA_002_called_count);
-	ASSERT_EQ(1, subFuncA_002_subInput1[0]);
+	ASSERT_EQ(1, _ret_val);
 }
 
 TEST_F(sample_function_002_utest, sample_function_002_utest_3)
@@ -57,15 +53,14 @@ TEST_F(sample_function_002_utest, sample_function_002_utest_3)
 	int input2;
 
 	//Setup test parameters.
-	input1 = 0;
-	input2 = 2;
-	subFuncA_002_return_value[0] = 4;
+	_input1[0] = 0;
+	input1 = &_input1[0];
+	_input2[0] = 2;
+	input2 = &_input2[0];
 
-	int _ret_val = sample_function_002(input1, input2);
+	int _ret_val = sample_function_002(&input1, &input2);
 
-	ASSERT_EQ(4, _ret_val);
-	ASSERT_EQ(1, subFuncA_002_called_count);
-	ASSERT_EQ(2, subFuncA_002_subInput1[0]);
+	ASSERT_EQ(2, _ret_val);
 }
 
 TEST_F(sample_function_002_utest, sample_function_002_utest_4)
@@ -75,15 +70,14 @@ TEST_F(sample_function_002_utest, sample_function_002_utest_4)
 	int input2;
 
 	//Setup test parameters.
-	input1 = 0;
-	input2 = 3;
-	subFuncA_002_return_value[0] = 8;
+	_input1[0] = 0;
+	input1 = &_input1[0];
+	_input2[0] = 3;
+	input2 = &_input2[0];
 
-	int _ret_val = sample_function_002(input1, input2);
+	int _ret_val = sample_function_002(&input1, &input2);
 
-	ASSERT_EQ(8, _ret_val);
-	ASSERT_EQ(1, subFuncA_002_called_count);
-	ASSERT_EQ(3, subFuncA_002_subInput1[0]);
+	ASSERT_EQ(3, _ret_val);
 }
 
 TEST_F(sample_function_002_utest, sample_function_002_utest_5)
@@ -93,15 +87,14 @@ TEST_F(sample_function_002_utest, sample_function_002_utest_5)
 	int input2;
 
 	//Setup test parameters.
-	input1 = 1;
-	input2 = 0;
-	subFuncA_002_return_value[0] = 1;
+	_input1[0] = 1;
+	input1 = &_input1[0];
+	_input2[0] = 0;
+	input2 = &_input2[0];
 
-	int _ret_val = sample_function_002(input1, input2);
+	int _ret_val = sample_function_002(&input1, &input2);
 
 	ASSERT_EQ(1, _ret_val);
-	ASSERT_EQ(1, subFuncA_002_called_count);
-	ASSERT_EQ(1, subFuncA_002_subInput1[0]);
 }
 
 TEST_F(sample_function_002_utest, sample_function_002_utest_6)
@@ -111,15 +104,14 @@ TEST_F(sample_function_002_utest, sample_function_002_utest_6)
 	int input2;
 
 	//Setup test parameters.
-	input1 = 1;
-	input2 = 1;
-	subFuncA_002_return_value[0] = 2;
+	_input1[0] = 1;
+	input1 = &_input1[0];
+	_input2[0] = 1;
+	input2 = &_input2[0];
 
-	int _ret_val = sample_function_002(input1, input2);
+	int _ret_val = sample_function_002(&input1, &input2);
 
-	ASSERT_EQ(2, _ret_val);
-	ASSERT_EQ(1, subFuncA_002_called_count);
-	ASSERT_EQ(1, subFuncA_002_subInput1[0]);
+	ASSERT_EQ(0, _ret_val);
 }
 
 TEST_F(sample_function_002_utest, sample_function_002_utest_7)
@@ -129,15 +121,14 @@ TEST_F(sample_function_002_utest, sample_function_002_utest_7)
 	int input2;
 
 	//Setup test parameters.
-	input1 = 1;
-	input2 = 2;
-	subFuncA_002_return_value[0] = 4;
+	_input1[0] = 1;
+	input1 = &_input1[0];
+	_input2[0] = 2;
+	input2 = &_input2[0];
 
-	int _ret_val = sample_function_002(input1, input2);
+	int _ret_val = sample_function_002(&input1, &input2);
 
-	ASSERT_EQ(4, _ret_val);
-	ASSERT_EQ(1, subFuncA_002_called_count);
-	ASSERT_EQ(2, subFuncA_002_subInput1[0]);
+	ASSERT_EQ(1, _ret_val);
 }
 
 TEST_F(sample_function_002_utest, sample_function_002_utest_8)
@@ -147,15 +138,14 @@ TEST_F(sample_function_002_utest, sample_function_002_utest_8)
 	int input2;
 
 	//Setup test parameters.
-	input1 = 1;
-	input2 = 3;
-	subFuncA_002_return_value[0] = 8;
+	_input1[0] = 1;
+	input1 = &_input1[0];
+	_input2[0] = 3;
+	input2 = &_input2[0];
 
-	int _ret_val = sample_function_002(input1, input2);
+	int _ret_val = sample_function_002(&input1, &input2);
 
-	ASSERT_EQ(8, _ret_val);
-	ASSERT_EQ(1, subFuncA_002_called_count);
-	ASSERT_EQ(3, subFuncA_002_subInput1[0]);
+	ASSERT_EQ(2, _ret_val);
 }
 
 TEST_F(sample_function_002_utest, sample_function_002_utest_9)
@@ -165,15 +155,14 @@ TEST_F(sample_function_002_utest, sample_function_002_utest_9)
 	int input2;
 
 	//Setup test parameters.
-	input1 = 2;
-	input2 = 0;
-	subFuncA_002_return_value[0] = 1;
+	_input1[0] = 2;
+	input1 = &_input1[0];
+	_input2[0] = 0;
+	input2 = &_input2[0];
 
-	int _ret_val = sample_function_002(input1, input2);
+	int _ret_val = sample_function_002(&input1, &input2);
 
-	ASSERT_EQ(1, _ret_val);
-	ASSERT_EQ(1, subFuncA_002_called_count);
-	ASSERT_EQ(2, subFuncA_002_subInput1[0]);
+	ASSERT_EQ(2, _ret_val);
 }
 
 TEST_F(sample_function_002_utest, sample_function_002_utest_10)
@@ -183,15 +172,14 @@ TEST_F(sample_function_002_utest, sample_function_002_utest_10)
 	int input2;
 
 	//Setup test parameters.
-	input1 = 2;
-	input2 = 1;
-	subFuncA_002_return_value[0] = 2;
+	_input1[0] = 2;
+	input1 = &_input1[0];
+	_input2[0] = 1;
+	input2 = &_input2[0];
 
-	int _ret_val = sample_function_002(input1, input2);
+	int _ret_val = sample_function_002(&input1, &input2);
 
-	ASSERT_EQ(2, _ret_val);
-	ASSERT_EQ(1, subFuncA_002_called_count);
-	ASSERT_EQ(2, subFuncA_002_subInput1[0]);
+	ASSERT_EQ(1, _ret_val);
 }
 
 TEST_F(sample_function_002_utest, sample_function_002_utest_11)
@@ -201,15 +189,14 @@ TEST_F(sample_function_002_utest, sample_function_002_utest_11)
 	int input2;
 
 	//Setup test parameters.
-	input1 = 2;
-	input2 = 2;
-	subFuncA_002_return_value[0] = 4;
+	_input1[0] = 2;
+	input1 = &_input1[0];
+	_input2[0] = 2;
+	input2 = &_input2[0];
 
-	int _ret_val = sample_function_002(input1, input2);
+	int _ret_val = sample_function_002(&input1, &input2);
 
-	ASSERT_EQ(4, _ret_val);
-	ASSERT_EQ(1, subFuncA_002_called_count);
-	ASSERT_EQ(2, subFuncA_002_subInput1[0]);
+	ASSERT_EQ(0, _ret_val);
 }
 
 TEST_F(sample_function_002_utest, sample_function_002_utest_12)
@@ -219,15 +206,14 @@ TEST_F(sample_function_002_utest, sample_function_002_utest_12)
 	int input2;
 
 	//Setup test parameters.
-	input1 = 2;
-	input2 = 3;
-	subFuncA_002_return_value[0] = 8;
+	_input1[0] = 2;
+	input1 = &_input1[0];
+	_input2[0] = 3;
+	input2 = &_input2[0];
 
-	int _ret_val = sample_function_002(input1, input2);
+	int _ret_val = sample_function_002(&input1, &input2);
 
-	ASSERT_EQ(8, _ret_val);
-	ASSERT_EQ(1, subFuncA_002_called_count);
-	ASSERT_EQ(3, subFuncA_002_subInput1[0]);
+	ASSERT_EQ(1, _ret_val);
 }
 
 TEST_F(sample_function_002_utest, sample_function_002_utest_13)
@@ -237,15 +223,14 @@ TEST_F(sample_function_002_utest, sample_function_002_utest_13)
 	int input2;
 
 	//Setup test parameters.
-	input1 = 3;
-	input2 = 0;
-	subFuncA_002_return_value[0] = 1;
+	_input1[0] = 3;
+	input1 = &_input1[0];
+	_input2[0] = 0;
+	input2 = &_input2[0];
 
-	int _ret_val = sample_function_002(input1, input2);
+	int _ret_val = sample_function_002(&input1, &input2);
 
-	ASSERT_EQ(1, _ret_val);
-	ASSERT_EQ(1, subFuncA_002_called_count);
-	ASSERT_EQ(3, subFuncA_002_subInput1[0]);
+	ASSERT_EQ(3, _ret_val);
 }
 
 TEST_F(sample_function_002_utest, sample_function_002_utest_14)
@@ -255,15 +240,14 @@ TEST_F(sample_function_002_utest, sample_function_002_utest_14)
 	int input2;
 
 	//Setup test parameters.
-	input1 = 3;
-	input2 = 1;
-	subFuncA_002_return_value[0] = 2;
+	_input1[0] = 3;
+	input1 = &_input1[0];
+	_input2[0] = 1;
+	input2 = &_input2[0];
 
-	int _ret_val = sample_function_002(input1, input2);
+	int _ret_val = sample_function_002(&input1, &input2);
 
 	ASSERT_EQ(2, _ret_val);
-	ASSERT_EQ(1, subFuncA_002_called_count);
-	ASSERT_EQ(3, subFuncA_002_subInput1[0]);
 }
 
 TEST_F(sample_function_002_utest, sample_function_002_utest_15)
@@ -273,15 +257,14 @@ TEST_F(sample_function_002_utest, sample_function_002_utest_15)
 	int input2;
 
 	//Setup test parameters.
-	input1 = 3;
-	input2 = 2;
-	subFuncA_002_return_value[0] = 4;
+	_input1[0] = 3;
+	input1 = &_input1[0];
+	_input2[0] = 2;
+	input2 = &_input2[0];
 
-	int _ret_val = sample_function_002(input1, input2);
+	int _ret_val = sample_function_002(&input1, &input2);
 
-	ASSERT_EQ(4, _ret_val);
-	ASSERT_EQ(1, subFuncA_002_called_count);
-	ASSERT_EQ(3, subFuncA_002_subInput1[0]);
+	ASSERT_EQ(1, _ret_val);
 }
 
 TEST_F(sample_function_002_utest, sample_function_002_utest_16)
@@ -291,14 +274,13 @@ TEST_F(sample_function_002_utest, sample_function_002_utest_16)
 	int input2;
 
 	//Setup test parameters.
-	input1 = 3;
-	input2 = 3;
-	subFuncA_002_return_value[0] = 8;
+	_input1[0] = 3;
+	input1 = &_input1[0];
+	_input2[0] = 3;
+	input2 = &_input2[0];
 
-	int _ret_val = sample_function_002(input1, input2);
+	int _ret_val = sample_function_002(&input1, &input2);
 
-	ASSERT_EQ(8, _ret_val);
-	ASSERT_EQ(1, subFuncA_002_called_count);
-	ASSERT_EQ(3, subFuncA_002_subInput1[0]);
+	ASSERT_EQ(0, _ret_val);
 }
 
