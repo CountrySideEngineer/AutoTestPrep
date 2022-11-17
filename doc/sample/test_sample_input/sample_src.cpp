@@ -43,7 +43,7 @@ int sample_function_002(int* input1, int* input2)
 }
 
 /*
- *	Sample function 3 : Reutrn Value - YES / Argument - Pointer / Subfunctoin - NO
+ *	Sample function 2 : Reutrn Value - YES / Argument - Pointer / Subfunctoin - NO
  *	The argument pointer is array.
  *	@param	*input1	Poitner input 1.
  *	@param	*input2	Pointer input 2.

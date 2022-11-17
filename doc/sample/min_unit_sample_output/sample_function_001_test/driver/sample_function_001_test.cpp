@@ -13,7 +13,7 @@ void sample_function_001_utest_SetUp()
 }
 
 
-static char* sample_function_001_utest_1()
+static char* sample_function_001_utest_001()
 {
 	//Declare argument for target
 	int input1;
@@ -31,7 +31,7 @@ static char* sample_function_001_utest_1()
 	mu_assert(0 == _ret_val);
 }
 
-static char* sample_function_001_utest_2()
+static char* sample_function_001_utest_002()
 {
 	//Declare argument for target
 	int input1;
@@ -49,7 +49,7 @@ static char* sample_function_001_utest_2()
 	mu_assert(1 == _ret_val);
 }
 
-static char* sample_function_001_utest_3()
+static char* sample_function_001_utest_003()
 {
 	//Declare argument for target
 	int input1;
@@ -67,7 +67,7 @@ static char* sample_function_001_utest_3()
 	mu_assert(2 == _ret_val);
 }
 
-static char* sample_function_001_utest_4()
+static char* sample_function_001_utest_004()
 {
 	//Declare argument for target
 	int input1;
@@ -85,7 +85,7 @@ static char* sample_function_001_utest_4()
 	mu_assert(3 == _ret_val);
 }
 
-static char* sample_function_001_utest_5()
+static char* sample_function_001_utest_005()
 {
 	//Declare argument for target
 	int input1;
@@ -103,7 +103,7 @@ static char* sample_function_001_utest_5()
 	mu_assert(1 == _ret_val);
 }
 
-static char* sample_function_001_utest_6()
+static char* sample_function_001_utest_006()
 {
 	//Declare argument for target
 	int input1;
@@ -121,7 +121,7 @@ static char* sample_function_001_utest_6()
 	mu_assert(0 == _ret_val);
 }
 
-static char* sample_function_001_utest_7()
+static char* sample_function_001_utest_007()
 {
 	//Declare argument for target
 	int input1;
@@ -139,7 +139,7 @@ static char* sample_function_001_utest_7()
 	mu_assert(1 == _ret_val);
 }
 
-static char* sample_function_001_utest_8()
+static char* sample_function_001_utest_008()
 {
 	//Declare argument for target
 	int input1;
@@ -157,7 +157,7 @@ static char* sample_function_001_utest_8()
 	mu_assert(2 == _ret_val);
 }
 
-static char* sample_function_001_utest_9()
+static char* sample_function_001_utest_009()
 {
 	//Declare argument for target
 	int input1;
@@ -175,7 +175,7 @@ static char* sample_function_001_utest_9()
 	mu_assert(2 == _ret_val);
 }
 
-static char* sample_function_001_utest_10()
+static char* sample_function_001_utest_010()
 {
 	//Declare argument for target
 	int input1;
@@ -193,7 +193,7 @@ static char* sample_function_001_utest_10()
 	mu_assert(1 == _ret_val);
 }
 
-static char* sample_function_001_utest_11()
+static char* sample_function_001_utest_011()
 {
 	//Declare argument for target
 	int input1;
@@ -211,7 +211,7 @@ static char* sample_function_001_utest_11()
 	mu_assert(0 == _ret_val);
 }
 
-static char* sample_function_001_utest_12()
+static char* sample_function_001_utest_012()
 {
 	//Declare argument for target
 	int input1;
@@ -229,7 +229,7 @@ static char* sample_function_001_utest_12()
 	mu_assert(1 == _ret_val);
 }
 
-static char* sample_function_001_utest_13()
+static char* sample_function_001_utest_013()
 {
 	//Declare argument for target
 	int input1;
@@ -247,7 +247,7 @@ static char* sample_function_001_utest_13()
 	mu_assert(3 == _ret_val);
 }
 
-static char* sample_function_001_utest_14()
+static char* sample_function_001_utest_014()
 {
 	//Declare argument for target
 	int input1;
@@ -265,7 +265,7 @@ static char* sample_function_001_utest_14()
 	mu_assert(2 == _ret_val);
 }
 
-static char* sample_function_001_utest_15()
+static char* sample_function_001_utest_015()
 {
 	//Declare argument for target
 	int input1;
@@ -283,7 +283,7 @@ static char* sample_function_001_utest_15()
 	mu_assert(1 == _ret_val);
 }
 
-static char* sample_function_001_utest_16()
+static char* sample_function_001_utest_016()
 {
 	//Declare argument for target
 	int input1;
@@ -303,22 +303,22 @@ static char* sample_function_001_utest_16()
 
 char* sample_function_001_utest_run_all()
 {
-	mu_run_test("sample_function_001_utest_1", sample_function_001_utest_1);
-	mu_run_test("sample_function_001_utest_2", sample_function_001_utest_2);
-	mu_run_test("sample_function_001_utest_3", sample_function_001_utest_3);
-	mu_run_test("sample_function_001_utest_4", sample_function_001_utest_4);
-	mu_run_test("sample_function_001_utest_5", sample_function_001_utest_5);
-	mu_run_test("sample_function_001_utest_6", sample_function_001_utest_6);
-	mu_run_test("sample_function_001_utest_7", sample_function_001_utest_7);
-	mu_run_test("sample_function_001_utest_8", sample_function_001_utest_8);
-	mu_run_test("sample_function_001_utest_9", sample_function_001_utest_9);
-	mu_run_test("sample_function_001_utest_10", sample_function_001_utest_10);
-	mu_run_test("sample_function_001_utest_11", sample_function_001_utest_11);
-	mu_run_test("sample_function_001_utest_12", sample_function_001_utest_12);
-	mu_run_test("sample_function_001_utest_13", sample_function_001_utest_13);
-	mu_run_test("sample_function_001_utest_14", sample_function_001_utest_14);
-	mu_run_test("sample_function_001_utest_15", sample_function_001_utest_15);
-	mu_run_test("sample_function_001_utest_16", sample_function_001_utest_16);
+	mu_run_test("sample_function_001_utest_001", sample_function_001_utest_001);
+	mu_run_test("sample_function_001_utest_002", sample_function_001_utest_002);
+	mu_run_test("sample_function_001_utest_003", sample_function_001_utest_003);
+	mu_run_test("sample_function_001_utest_004", sample_function_001_utest_004);
+	mu_run_test("sample_function_001_utest_005", sample_function_001_utest_005);
+	mu_run_test("sample_function_001_utest_006", sample_function_001_utest_006);
+	mu_run_test("sample_function_001_utest_007", sample_function_001_utest_007);
+	mu_run_test("sample_function_001_utest_008", sample_function_001_utest_008);
+	mu_run_test("sample_function_001_utest_009", sample_function_001_utest_009);
+	mu_run_test("sample_function_001_utest_010", sample_function_001_utest_010);
+	mu_run_test("sample_function_001_utest_011", sample_function_001_utest_011);
+	mu_run_test("sample_function_001_utest_012", sample_function_001_utest_012);
+	mu_run_test("sample_function_001_utest_013", sample_function_001_utest_013);
+	mu_run_test("sample_function_001_utest_014", sample_function_001_utest_014);
+	mu_run_test("sample_function_001_utest_015", sample_function_001_utest_015);
+	mu_run_test("sample_function_001_utest_016", sample_function_001_utest_016);
 
 	return 0;
 }
