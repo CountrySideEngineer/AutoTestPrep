@@ -19,20 +19,20 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\google_test_sample_output\sample_function_002_002_test\driver\sample_function_002_002_test.cpp" />
+    <ClCompile Include="..\..\google_test_sample_output\sample_function_002_002_test\stub\sample_function_002_002_stub.cpp" />
     <ClCompile Include="..\..\test_sample_input\sample_src_002.cpp" />
-    <ClCompile Include="driver\sample_function_002_003_test.cpp" />
     <ClCompile Include="dummy.cpp" />
-    <ClCompile Include="stub\sample_function_002_003_stub.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="driver\sample_function_002_003_test.h" />
-    <ClInclude Include="stub\sample_function_002_003_stub.h" />
+    <ClInclude Include="..\..\google_test_sample_output\sample_function_002_002_test\driver\sample_function_002_002_test.h" />
+    <ClInclude Include="..\..\google_test_sample_output\sample_function_002_002_test\stub\sample_function_002_002_stub.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{0a17c586-fdbe-4a8c-a9f0-87c984afe713}</ProjectGuid>
-    <RootNamespace>samplefunction002003test</RootNamespace>
+    <ProjectGuid>{0aa0e326-d27d-429f-a863-25de16dddbe0}</ProjectGuid>
+    <RootNamespace>samplefunction002002test</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -98,7 +98,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\framework\google_test\include;$(ProjectDir)stub</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\framework\google_test\include;$(SolutionDir)..\google_test_sample_output\$(ProjectName)\stub</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -115,7 +115,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\framework\google_test\include;$(ProjectDir)stub</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\framework\google_test\include;$(SolutionDir)..\google_test_sample_output\$(ProjectName)\stub</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -132,7 +132,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\framework\google_test\include;$(ProjectDir)stub</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\framework\google_test\include;$(SolutionDir)..\google_test_sample_output\$(ProjectName)\stub</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -149,7 +149,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\framework\google_test\include;$(ProjectDir)stub</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\framework\google_test\include;$(SolutionDir)..\google_test_sample_output\$(ProjectName)\stub</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

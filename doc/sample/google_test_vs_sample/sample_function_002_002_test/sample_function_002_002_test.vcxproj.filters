@@ -15,24 +15,24 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="driver\sample_function_002_001_test.cpp">
+    <ClCompile Include="dummy.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="stub\sample_function_002_001_stub.cpp">
+    <ClCompile Include="..\..\google_test_sample_output\sample_function_002_002_test\driver\sample_function_002_002_test.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\google_test_sample_output\sample_function_002_002_test\stub\sample_function_002_002_stub.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="..\..\test_sample_input\sample_src_002.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="dummy.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="driver\sample_function_002_001_test.h">
+    <ClInclude Include="..\..\google_test_sample_output\sample_function_002_002_test\driver\sample_function_002_002_test.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="stub\sample_function_002_001_stub.h">
+    <ClInclude Include="..\..\google_test_sample_output\sample_function_002_002_test\stub\sample_function_002_002_stub.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>

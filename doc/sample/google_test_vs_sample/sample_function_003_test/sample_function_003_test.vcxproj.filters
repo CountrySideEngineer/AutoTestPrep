@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="driver\sample_function_002_test.cpp">
+    <ClCompile Include="..\..\google_test_sample_output\sample_function_003_test\driver\sample_function_003_test.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="..\..\test_sample_input\sample_src.cpp">
@@ -23,10 +23,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="driver\sample_function_002_test.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="stub\sample_function_002_stub.h">
+    <ClInclude Include="..\..\google_test_sample_output\sample_function_003_test\driver\sample_function_003_test.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>
