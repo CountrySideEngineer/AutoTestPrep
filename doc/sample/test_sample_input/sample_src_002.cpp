@@ -58,6 +58,13 @@ int sample_function_002_003(int input1)
 	return result;
 }
 
+/*
+ *	Sample function which calls a sub function multiple times.
+ *
+ *	@param	input1	Number of subfunction calls.
+ *
+ *	@returns	Returns the value the sub function returned last time.
+ */
 int sample_function_002_004(int input1)
 {
 	int result = 0;
@@ -68,19 +75,26 @@ int sample_function_002_004(int input1)
 	return result;
 }
 
+/**
+ *	Sample function which calls a sub functions multiple times.
+ *
+ *	@param	input1	The number of sub function calls.
+ *
+ *	return The number of sub function called.
+ */
 int sample_function_002_005(int input1)
 {
 	int buf[100] = { 0 };
 	
 	for (int index = 0; index < input1; index++) {
-		buf[index] = 0;
+		buf[index] = index;
 		subfunction_002(buf);
 	}
 	
 	return input1;
 }
 
-int sample_functoin_002_006(int input1)
+int sample_function_002_006(int input1)
 {
 	int buf[100] = { 0 };
 	int result = 0;
