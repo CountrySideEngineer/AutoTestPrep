@@ -30,8 +30,16 @@ namespace CodeGenerator.TestDriver.Template
 		/// <returns>Test case method name.</returns>
 		public virtual string CreateTestCaseMethodName(Function function, TestCase testCase)
 		{
+			int testCaseNo = 0;
 			string testName = string.Empty;
-			testName = $"{function.Name}_utest_{testCase.Id}";
+			if (int.TryParse(testCase.Id, out testCaseNo))
+			{
+				testName = $"{function.Name}_utest_{testCaseNo.ToString("D3")}";
+			}
+			else
+			{
+				testName = $"{function.Name}_utest_{testCase.Id}";
+			}
 			return testName;
 		}
 
@@ -60,7 +68,7 @@ namespace CodeGenerator.TestDriver.Template
 			}
 			else if (2 == argument.PointerNum)
 			{
-				code = $"{argument.PointerNum}*";
+				code = $"{argument.DataType}*";
 			}
 			else
 			{

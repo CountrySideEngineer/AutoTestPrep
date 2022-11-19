@@ -6,9 +6,9 @@
 #define	STUB_BUFFER_SIZE_2			(300)
 #endif
 
-extern long subFuncA_called_count;
-extern int subFuncA_return_value[];
-extern int** subFuncA_subInput1[];
+extern long subFunc_001_called_count;
+extern int subFunc_001_return_value[];
+extern int subFunc_001_input[];
 
-void subFuncA_init();
+void subFunc_001_init();
 
