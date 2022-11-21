@@ -110,30 +110,31 @@ namespace CodeGenerator.TestDriver.Template
             
             #line default
             #line hidden
-            this.Write(";\r\n\r\n");
+            this.Write(";\r\n\r\n\t//Check the test reult\r\n\t//by comparing the output with the expected value." +
+                    "\r\n");
             
-            #line 24 "E:\development\AutoTestPrep\dev\src\GoogleTestDriverCodeGenerator\Template\GoogleTestSourceTestCaseTemplate.tt"
+            #line 26 "E:\development\AutoTestPrep\dev\src\GoogleTestDriverCodeGenerator\Template\GoogleTestSourceTestCaseTemplate.tt"
  foreach (var expect in TestCase.Expects) {	
             
             #line default
             #line hidden
             this.Write("\tASSERT_EQ(");
             
-            #line 25 "E:\development\AutoTestPrep\dev\src\GoogleTestDriverCodeGenerator\Template\GoogleTestSourceTestCaseTemplate.tt"
+            #line 27 "E:\development\AutoTestPrep\dev\src\GoogleTestDriverCodeGenerator\Template\GoogleTestSourceTestCaseTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(expect.Value));
             
             #line default
             #line hidden
             this.Write(", ");
             
-            #line 25 "E:\development\AutoTestPrep\dev\src\GoogleTestDriverCodeGenerator\Template\GoogleTestSourceTestCaseTemplate.tt"
+            #line 27 "E:\development\AutoTestPrep\dev\src\GoogleTestDriverCodeGenerator\Template\GoogleTestSourceTestCaseTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(expect.Name));
             
             #line default
             #line hidden
             this.Write(");\r\n");
             
-            #line 26 "E:\development\AutoTestPrep\dev\src\GoogleTestDriverCodeGenerator\Template\GoogleTestSourceTestCaseTemplate.tt"
+            #line 28 "E:\development\AutoTestPrep\dev\src\GoogleTestDriverCodeGenerator\Template\GoogleTestSourceTestCaseTemplate.tt"
 	}	
             
             #line default
