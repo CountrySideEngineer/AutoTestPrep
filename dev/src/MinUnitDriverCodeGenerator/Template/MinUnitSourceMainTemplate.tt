@@ -4,6 +4,9 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
+/*
+ *	<#= TargetFunction.Name #> test driver main function source code.
+ */
 #include <stdio.h>
 #include "min_unit.h"
 

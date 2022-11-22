@@ -28,23 +28,31 @@ namespace CodeGenerator.TestDriver.Template
         /// </summary>
         public override string TransformText()
         {
-            this.Write("#include <stdio.h>\r\n#include \"min_unit.h\"\r\n\r\nint test_run = 0;\r\n\r\nchar* ");
+            this.Write("/*\r\n *\t");
             
-            #line 12 "E:\development\AutoTestPrep\dev\src\MinUnitDriverCodeGenerator\Template\MinUnitSourceMainTemplate.tt"
+            #line 8 "E:\development\AutoTestPrep\dev\src\MinUnitDriverCodeGenerator\Template\MinUnitSourceMainTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(TargetFunction.Name));
+            
+            #line default
+            #line hidden
+            this.Write(" test driver main function source code.\r\n */\r\n#include <stdio.h>\r\n#include \"min_u" +
+                    "nit.h\"\r\n\r\nint test_run = 0;\r\n\r\nchar* ");
+            
+            #line 15 "E:\development\AutoTestPrep\dev\src\MinUnitDriverCodeGenerator\Template\MinUnitSourceMainTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.TargetFunction.Name));
             
             #line default
             #line hidden
             this.Write("_utest_run_all();\r\n\r\nint main()\r\n{\r\n\t//Run all test.\r\n\tmu_run_all_test(\"");
             
-            #line 17 "E:\development\AutoTestPrep\dev\src\MinUnitDriverCodeGenerator\Template\MinUnitSourceMainTemplate.tt"
+            #line 20 "E:\development\AutoTestPrep\dev\src\MinUnitDriverCodeGenerator\Template\MinUnitSourceMainTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.TargetFunction.Name));
             
             #line default
             #line hidden
             this.Write("_utest_run_all\", ");
             
-            #line 17 "E:\development\AutoTestPrep\dev\src\MinUnitDriverCodeGenerator\Template\MinUnitSourceMainTemplate.tt"
+            #line 20 "E:\development\AutoTestPrep\dev\src\MinUnitDriverCodeGenerator\Template\MinUnitSourceMainTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.TargetFunction.Name));
             
             #line default
