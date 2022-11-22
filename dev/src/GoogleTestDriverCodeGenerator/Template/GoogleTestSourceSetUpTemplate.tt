@@ -4,6 +4,7 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
+//Initialize test stub by calling methods to initialize them.
 void <#= TestClassName(this.TargetFunction) #>::SetUp()
 {
 <# 

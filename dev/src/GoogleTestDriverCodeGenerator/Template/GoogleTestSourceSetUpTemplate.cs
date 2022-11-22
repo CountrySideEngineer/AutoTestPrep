@@ -18,7 +18,7 @@ namespace CodeGenerator.TestDriver.Template
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "E:\development\TestSupportTools_0_3\AutoTestPrep\dev\src\GoogleTestDriverCodeGenerator\Template\GoogleTestSourceSetUpTemplate.tt"
+    #line 1 "E:\development\AutoTestPrep\dev\src\GoogleTestDriverCodeGenerator\Template\GoogleTestSourceSetUpTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class GoogleTestSourceSetUpTemplate : GoogleTestTemplate
     {
@@ -28,16 +28,16 @@ namespace CodeGenerator.TestDriver.Template
         /// </summary>
         public override string TransformText()
         {
-            this.Write("void ");
+            this.Write("//Initialize test stub by calling methods to initialize them.\r\nvoid ");
             
-            #line 7 "E:\development\TestSupportTools_0_3\AutoTestPrep\dev\src\GoogleTestDriverCodeGenerator\Template\GoogleTestSourceSetUpTemplate.tt"
+            #line 8 "E:\development\AutoTestPrep\dev\src\GoogleTestDriverCodeGenerator\Template\GoogleTestSourceSetUpTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TestClassName(this.TargetFunction)));
             
             #line default
             #line hidden
             this.Write("::SetUp()\r\n{\r\n");
             
-            #line 9 "E:\development\TestSupportTools_0_3\AutoTestPrep\dev\src\GoogleTestDriverCodeGenerator\Template\GoogleTestSourceSetUpTemplate.tt"
+            #line 10 "E:\development\AutoTestPrep\dev\src\GoogleTestDriverCodeGenerator\Template\GoogleTestSourceSetUpTemplate.tt"
  
 	if (null != this.TargetFunction.SubFunctions) {
 		foreach (var subFunction in this.TargetFunction.SubFunctions) {	
@@ -47,14 +47,14 @@ namespace CodeGenerator.TestDriver.Template
             #line hidden
             this.Write("\t");
             
-            #line 13 "E:\development\TestSupportTools_0_3\AutoTestPrep\dev\src\GoogleTestDriverCodeGenerator\Template\GoogleTestSourceSetUpTemplate.tt"
+            #line 14 "E:\development\AutoTestPrep\dev\src\GoogleTestDriverCodeGenerator\Template\GoogleTestSourceSetUpTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.CreateStubInitializeMethodName(subFunction)));
             
             #line default
             #line hidden
             this.Write("();\r\n");
             
-            #line 14 "E:\development\TestSupportTools_0_3\AutoTestPrep\dev\src\GoogleTestDriverCodeGenerator\Template\GoogleTestSourceSetUpTemplate.tt"
+            #line 15 "E:\development\AutoTestPrep\dev\src\GoogleTestDriverCodeGenerator\Template\GoogleTestSourceSetUpTemplate.tt"
 
 		}
 	}

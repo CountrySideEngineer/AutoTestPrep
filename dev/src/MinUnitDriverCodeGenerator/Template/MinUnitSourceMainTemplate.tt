@@ -4,6 +4,9 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
+/*
+ *	<#= TargetFunction.Name #> test driver main function source code.
+ */
 #include <stdio.h>
 #include "min_unit.h"
 
@@ -13,6 +16,7 @@ char* <#= this.TargetFunction.Name #>_utest_run_all();
 
 int main()
 {
+	//Run all test.
 	mu_run_all_test("<#= this.TargetFunction.Name #>_utest_run_all", <#= this.TargetFunction.Name #>_utest_run_all);
 
 	return 0;
