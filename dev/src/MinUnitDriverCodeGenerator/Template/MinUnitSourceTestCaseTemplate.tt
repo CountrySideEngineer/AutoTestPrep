@@ -28,6 +28,8 @@ static char* <#= CreateTestCaseMethodName(this.TargetFunction, this.TestCase) #>
 
 	<#=	CreateTargetFunctionCall(this.TargetFunction) #>;
 
+	//Check the test result
+	//by comparing the output with the expected value.
 <# foreach (var expect in TestCase.Expects) {	#>
 	mu_assert(<#= expect.Value #> == <#= expect.Name #>);
 <#	}	#>
