@@ -6,15 +6,17 @@
 <#@ import namespace="System.Collections.Generic" #>
 <#@ import namespace="CodeGenerator.Stub.Template" #>
 <# base.TransformText(); #>
+
+	//Initialize the buffer to hold the value the <#= Target.Name #> stub method will return.
 	for (int index = 0; index < STUB_BUFFER_SIZE_1; index++) {
 <#
 	if (0 == Target.PointerNum) {
 #>
-		<#= Rule.GetReturnValue(Target) #>[index] = 0;
+		<#= Rule.GetReturnValue(Target) #>[index] = 0;	//The data type is not pointer.
 <#
 	} else {
 #>
-		<#= Rule.GetReturnValue(Target) #>[index] = NULL;
+		<#= Rule.GetReturnValue(Target) #>[index] = NULL;	//The data type is pointer.
 <#
 	}
 #>

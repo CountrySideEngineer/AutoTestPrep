@@ -4,4 +4,5 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
+//A buffer to store the value of argument <#= Argument.Name #> of the function <#= Target.Name #>.
 <#= Argument.ActualDataType() #> <#= Rule.GetArgumentBuffer(Target, Argument) #>[STUB_BUFFER_SIZE_1];

@@ -5,4 +5,5 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#@ import namespace="CodeGenerator.Stub.Template" #>
+	//Initialize the buffer to hold the number of times the <#= Target.Name #> stub method has been called by 0.
 	<#= Rule.GetCalledCounter(Target) #> = 0;

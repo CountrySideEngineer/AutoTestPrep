@@ -34,15 +34,23 @@ namespace CodeGenerator.Stub.Template.BufferDeclare
             
             #line default
             #line hidden
+            this.Write("//A buffer to hold the value returned by ");
             
             #line 8 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\FunctionReturnValueBufferTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(Target.Name));
+            
+            #line default
+            #line hidden
+            this.Write(" stub method call.\r\n");
+            
+            #line 9 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\FunctionReturnValueBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Target.ActualDataType()));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 8 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\FunctionReturnValueBufferTemplate.tt"
+            #line 9 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\FunctionReturnValueBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Rule.GetReturnValue(Target)));
             
             #line default

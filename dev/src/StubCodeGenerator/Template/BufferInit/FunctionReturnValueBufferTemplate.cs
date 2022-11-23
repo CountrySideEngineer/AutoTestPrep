@@ -35,9 +35,17 @@ namespace CodeGenerator.Stub.Template.BufferInit
             
             #line default
             #line hidden
-            this.Write("\tfor (int index = 0; index < STUB_BUFFER_SIZE_1; index++) {\r\n");
+            this.Write("\r\n\t//Initialize the buffer to hold the value the ");
             
             #line 10 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferInit\FunctionReturnValueBufferTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(Target.Name));
+            
+            #line default
+            #line hidden
+            this.Write(" stub method will return.\r\n\tfor (int index = 0; index < STUB_BUFFER_SIZE_1; index" +
+                    "++) {\r\n");
+            
+            #line 12 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferInit\FunctionReturnValueBufferTemplate.tt"
 
 	if (0 == Target.PointerNum) {
 
@@ -46,14 +54,14 @@ namespace CodeGenerator.Stub.Template.BufferInit
             #line hidden
             this.Write("\t\t");
             
-            #line 13 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferInit\FunctionReturnValueBufferTemplate.tt"
+            #line 15 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferInit\FunctionReturnValueBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Rule.GetReturnValue(Target)));
             
             #line default
             #line hidden
-            this.Write("[index] = 0;\r\n");
+            this.Write("[index] = 0;\t//The data type is not pointer.\r\n");
             
-            #line 14 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferInit\FunctionReturnValueBufferTemplate.tt"
+            #line 16 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferInit\FunctionReturnValueBufferTemplate.tt"
 
 	} else {
 
@@ -62,14 +70,14 @@ namespace CodeGenerator.Stub.Template.BufferInit
             #line hidden
             this.Write("\t\t");
             
-            #line 17 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferInit\FunctionReturnValueBufferTemplate.tt"
+            #line 19 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferInit\FunctionReturnValueBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Rule.GetReturnValue(Target)));
             
             #line default
             #line hidden
-            this.Write("[index] = NULL;\r\n");
+            this.Write("[index] = NULL;\t//The data type is pointer.\r\n");
             
-            #line 18 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferInit\FunctionReturnValueBufferTemplate.tt"
+            #line 20 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferInit\FunctionReturnValueBufferTemplate.tt"
 
 	}
 

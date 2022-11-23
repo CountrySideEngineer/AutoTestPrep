@@ -5,4 +5,5 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#@ import namespace="TestParser.Target" #>
+//A buffer to hold the number of times the <#= Target.Name #> stub method has been called.
 long <#= Rule.GetCalledCounter(Target) #>;
