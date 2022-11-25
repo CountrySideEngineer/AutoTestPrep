@@ -4,4 +4,7 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
+/*
+ *	Buffers for the <#= Target.Name #> stub method.
+ */
 <# base.TransformText(); #>
