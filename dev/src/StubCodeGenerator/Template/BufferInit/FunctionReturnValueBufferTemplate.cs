@@ -59,7 +59,7 @@ namespace CodeGenerator.Stub.Template.BufferInit
             
             #line default
             #line hidden
-            this.Write("[index] = 0;\t//The data type is not pointer.\r\n");
+            this.Write("[index] = 0;\r\n");
             
             #line 16 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferInit\FunctionReturnValueBufferTemplate.tt"
 
@@ -75,7 +75,7 @@ namespace CodeGenerator.Stub.Template.BufferInit
             
             #line default
             #line hidden
-            this.Write("[index] = NULL;\t//The data type is pointer.\r\n");
+            this.Write("[index] = NULL;\r\n");
             
             #line 20 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferInit\FunctionReturnValueBufferTemplate.tt"
 

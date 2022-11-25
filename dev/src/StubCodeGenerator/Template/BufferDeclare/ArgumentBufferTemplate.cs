@@ -28,30 +28,15 @@ namespace CodeGenerator.Stub.Template.BufferDeclare
         /// </summary>
         public override string TransformText()
         {
-            this.Write("//A buffer to store the value of argument ");
             
             #line 7 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\ArgumentBufferTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(Argument.Name));
-            
-            #line default
-            #line hidden
-            this.Write(" of the function ");
-            
-            #line 7 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\ArgumentBufferTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(Target.Name));
-            
-            #line default
-            #line hidden
-            this.Write(".\r\n");
-            
-            #line 8 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\ArgumentBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Argument.ActualDataType()));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 8 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\ArgumentBufferTemplate.tt"
+            #line 7 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\ArgumentBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Rule.GetArgumentBuffer(Target, Argument)));
             
             #line default

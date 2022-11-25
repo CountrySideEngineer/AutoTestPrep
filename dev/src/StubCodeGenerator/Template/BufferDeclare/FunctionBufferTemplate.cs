@@ -29,16 +29,9 @@ namespace CodeGenerator.Stub.Template.BufferDeclare
         /// </summary>
         public override string TransformText()
         {
-            this.Write("//A buffer to hold the number of times the ");
+            this.Write("long ");
             
             #line 8 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\FunctionBufferTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(Target.Name));
-            
-            #line default
-            #line hidden
-            this.Write(" stub method has been called.\r\nlong ");
-            
-            #line 9 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\FunctionBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Rule.GetCalledCounter(Target)));
             
             #line default

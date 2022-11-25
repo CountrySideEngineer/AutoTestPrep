@@ -12,11 +12,11 @@
 <#
 	if (0 == Target.PointerNum) {
 #>
-		<#= Rule.GetReturnValue(Target) #>[index] = 0;	//The data type is not pointer.
+		<#= Rule.GetReturnValue(Target) #>[index] = 0;
 <#
 	} else {
 #>
-		<#= Rule.GetReturnValue(Target) #>[index] = NULL;	//The data type is pointer.
+		<#= Rule.GetReturnValue(Target) #>[index] = NULL;
 <#
 	}
 #>

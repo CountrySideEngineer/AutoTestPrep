@@ -4,7 +4,9 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
-//A function to initialize the buffer of the stub of function <#= Target.Name #>.
+/*
+ *	A function to initialize the buffers for the <#= Target.Name #> stub method.
+ */
 void <#= Target.Name #>_init()
 {
 <#	base.TransformText(); #>
