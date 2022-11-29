@@ -1,10 +1,10 @@
-﻿<#@ template language="C#" 
+﻿<#@ template language="C#"
 	inherits="TemplateCommonBase" #>
 <#@ assembly name="System.Core" #>
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 /*
- *	Buffers for the <#= Target.Name #> stub method.
+ *	A function to initialize the buffers for the <#= Target.Name #> stub method.
  */
-<# base.TransformText(); #>
+void <#= Target.Name #>_init();

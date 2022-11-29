@@ -28,8 +28,16 @@ namespace CodeGenerator.Stub.Template.Stub.Source.Part
         /// </summary>
         public override string TransformText()
         {
+            this.Write("/*\r\n *\tBuffers for the ");
             
-            #line 7 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\Stub\Source\Part\BufferDeclareExternTemplate.tt"
+            #line 8 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\Stub\Source\Part\BufferDeclareExternTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(Target.Name));
+            
+            #line default
+            #line hidden
+            this.Write(" stub method.\r\n */\r\n");
+            
+            #line 10 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\Stub\Source\Part\BufferDeclareExternTemplate.tt"
  base.TransformText(); 
             
             #line default
