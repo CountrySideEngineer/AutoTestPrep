@@ -103,30 +103,31 @@ namespace CodeGenerator.TestDriver.Template
             
             #line default
             #line hidden
-            this.Write(";\r\n\r\n");
+            this.Write(";\r\n\r\n\t//Check the test result\r\n\t//by comparing the output with the expected value" +
+                    ".\r\n");
             
-            #line 31 "E:\development\AutoTestPrep\dev\src\MinUnitDriverCodeGenerator\Template\MinUnitSourceTestCaseTemplate.tt"
+            #line 33 "E:\development\AutoTestPrep\dev\src\MinUnitDriverCodeGenerator\Template\MinUnitSourceTestCaseTemplate.tt"
  foreach (var expect in TestCase.Expects) {	
             
             #line default
             #line hidden
             this.Write("\tmu_assert(");
             
-            #line 32 "E:\development\AutoTestPrep\dev\src\MinUnitDriverCodeGenerator\Template\MinUnitSourceTestCaseTemplate.tt"
+            #line 34 "E:\development\AutoTestPrep\dev\src\MinUnitDriverCodeGenerator\Template\MinUnitSourceTestCaseTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(expect.Value));
             
             #line default
             #line hidden
             this.Write(" == ");
             
-            #line 32 "E:\development\AutoTestPrep\dev\src\MinUnitDriverCodeGenerator\Template\MinUnitSourceTestCaseTemplate.tt"
+            #line 34 "E:\development\AutoTestPrep\dev\src\MinUnitDriverCodeGenerator\Template\MinUnitSourceTestCaseTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(expect.Name));
             
             #line default
             #line hidden
             this.Write(");\r\n");
             
-            #line 33 "E:\development\AutoTestPrep\dev\src\MinUnitDriverCodeGenerator\Template\MinUnitSourceTestCaseTemplate.tt"
+            #line 35 "E:\development\AutoTestPrep\dev\src\MinUnitDriverCodeGenerator\Template\MinUnitSourceTestCaseTemplate.tt"
 	}	
             
             #line default

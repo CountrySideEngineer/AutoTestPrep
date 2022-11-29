@@ -203,11 +203,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>StubHeaderBodyTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="Template\StubHeaderTemplate.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>StubHeaderTemplate.tt</DependentUpon>
-    </Compile>
     <Compile Include="Template\StubSource\DoublePointerArgumentBufferTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -222,11 +217,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>StubSourceBodyTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Template\StubSourceTemplate.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>StubSourceTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Template\StubSource\ArgumentBufferTemplate.cs">
       <AutoGen>True</AutoGen>
@@ -439,11 +429,6 @@
       <LastGenOutput>StubHeaderBodyTemplate.cs</LastGenOutput>
       <CustomToolNamespace>CodeGenerator.Stub.Template</CustomToolNamespace>
     </Content>
-    <Content Include="Template\StubHeaderTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>StubHeaderTemplate.cs</LastGenOutput>
-      <CustomToolNamespace>CodeGenerator.Stub.Template</CustomToolNamespace>
-    </Content>
     <Content Include="Template\StubSource\DoublePointerArgumentBufferTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>DoublePointerArgumentBufferTemplate.cs</LastGenOutput>
@@ -455,11 +440,6 @@
     <Content Include="Template\StubSourceBodyTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>StubSourceBodyTemplate.cs</LastGenOutput>
-      <CustomToolNamespace>CodeGenerator.Stub.Template</CustomToolNamespace>
-    </Content>
-    <Content Include="Template\StubSourceTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>StubSourceTemplate.cs</LastGenOutput>
       <CustomToolNamespace>CodeGenerator.Stub.Template</CustomToolNamespace>
     </Content>
     <Content Include="Template\StubSource\ArgumentBufferTemplate.tt">

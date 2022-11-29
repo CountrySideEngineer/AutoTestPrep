@@ -28,16 +28,23 @@ namespace CodeGenerator.Stub.Template.Stub.Source.Part
         /// </summary>
         public override string TransformText()
         {
-            this.Write("void ");
+            this.Write("/*\r\n *\tA function to initialize the buffers for the ");
             
-            #line 7 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\Stub\Source\Part\BufferInitMethodTemplate.tt"
+            #line 8 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\Stub\Source\Part\BufferInitMethodTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(Target.Name));
+            
+            #line default
+            #line hidden
+            this.Write(" stub method.\r\n */\r\nvoid ");
+            
+            #line 10 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\Stub\Source\Part\BufferInitMethodTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Target.Name));
             
             #line default
             #line hidden
             this.Write("_init()\r\n{\r\n");
             
-            #line 9 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\Stub\Source\Part\BufferInitMethodTemplate.tt"
+            #line 12 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\Stub\Source\Part\BufferInitMethodTemplate.tt"
 	base.TransformText(); 
             
             #line default
