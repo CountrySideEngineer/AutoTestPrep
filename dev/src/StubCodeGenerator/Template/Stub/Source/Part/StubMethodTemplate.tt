@@ -4,6 +4,9 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
+/*
+ *	Stub method of <#= Target.Name #>
+ */
 <#= Target.ToString() #>
 {
 <#

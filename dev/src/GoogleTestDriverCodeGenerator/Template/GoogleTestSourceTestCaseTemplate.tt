@@ -21,6 +21,7 @@ TEST_F(<#= TestClassName(this.TargetFunction) #>, <#= TestCaseMethodName(this.Ta
 
 	<#=	CreateTargetFunctionCall(this.TargetFunction)	#>;
 
+	//Check the test result by comparing the output with the expected value.
 <# foreach (var expect in TestCase.Expects) {	#>
 	ASSERT_EQ(<#= expect.Value #>, <#= expect.Name #>);
 <#	}	#>
