@@ -50,8 +50,8 @@ namespace TestParser.Target
 		{
 			this.Name = string.Empty;
 			this.DataType = string.Empty;
-			this.Prefix = string.Empty;
-			this.Postifx = string.Empty;
+			this.Prefix = new List<string>();
+			this.Postfix = new List<string>();
 			this.PointerNum = 0;
 			this.Mode = AccessMode.None;
 			this.Overview = string.Empty;
@@ -66,8 +66,8 @@ namespace TestParser.Target
 		{
 			this.Name = src.Name;
 			this.DataType = src.DataType;
-			this.Prefix = src.Prefix;
-			this.Postifx = src.Postifx;
+			this.Prefix = new List<string>(src.Prefix);
+			this.Postfix = new List<string>(src.Postfix);
 			this.PointerNum = src.PointerNum;
 			this.Mode = src.Mode;
 			this.Overview = src.Overview;
@@ -102,12 +102,12 @@ namespace TestParser.Target
 		/// <summary>
 		/// Prefix of data type.
 		/// </summary>
-		public string Prefix { get; set; }
+		public IEnumerable<string> Prefix { get; set; }
 
 		/// <summary>
 		/// Postfix of data type.
 		/// </summary>
-		public string Postifx { get; set; }
+		public IEnumerable<string> Postfix { get; set; }
 
 		/// <summary>
 		/// Number of pointer.
@@ -137,26 +137,46 @@ namespace TestParser.Target
 		{
 			//Create data type string with prefix, postfix, and pointer code.
 			string toString = string.Empty;
-			if (!(string.IsNullOrEmpty(this.Prefix)) &&
-				(!(string.IsNullOrWhiteSpace(this.Prefix))))
+			try
 			{
-				toString += this.Prefix;
-				toString += " ";
+				foreach (var item in Prefix)
+				{
+					if (!(string.IsNullOrEmpty(item)) &&
+						(!(string.IsNullOrWhiteSpace(item))))
+					{
+						toString += item;
+						toString += " ";
+					}
+				}
+			}
+			catch (Exception)
+			{
+				//Skip prefix.
 			}
 			toString += this.DataType;
-			for (int index = 0; index < this.PointerNum; index++)
+			try
 			{
-				toString += "*";
+				bool isTop = true;
+				foreach (var item in Postfix)
+				{
+					if (!(string.IsNullOrEmpty(item)) &&
+						(!(string.IsNullOrWhiteSpace(item))))
+					{
+						if (!((isTop) && (item.Equals("*"))))
+						{
+							toString += " ";
+						}
+						toString += item;
+						isTop = false;
+					}
+				}
+			}
+			catch (Exception)
+			{
+				//Skip postfix
 			}
 			toString += " ";
 			toString += this.Name;
-			if (!(string.IsNullOrEmpty(this.Postifx)) &&
-				(!(string.IsNullOrWhiteSpace(this.Postifx))))
-			{
-				toString += " ";
-				toString += this.Postifx;
-			}
-
 			return toString;
 		}
 
@@ -174,6 +194,41 @@ namespace TestParser.Target
 				actualDataType += "*";
 			}
 			return actualDataType;
+		}
+
+		/// <summary>
+		/// Add prefix string.
+		/// </summary>
+		/// <param name="prefix">Prefix data in string.</param>
+		public virtual void AddPrefix(string prefix)
+		{
+			if ((string.IsNullOrEmpty(prefix)) || (string.IsNullOrWhiteSpace(prefix)))
+			{
+				return;
+			}
+			else
+			{
+				var newPrefix = new List<string>(Prefix);
+				newPrefix.Add(prefix);
+				Prefix = newPrefix;
+			}
+		}
+
+		/// <summary>
+		/// Add postfix string.
+		/// </summary>
+		/// <param name="postfix">Prefix data in string.</param>
+		public virtual void AddPostfix(string postfix)
+		{
+			if ((string.IsNullOrEmpty(postfix)) || (string.IsNullOrWhiteSpace(postfix)))
+			{
+				return;
+			}else
+			{
+				var newPostfix = new List<string>(Postfix);
+				newPostfix.Add(postfix);
+				Postfix = newPostfix;
+			}
 		}
 	}
 }

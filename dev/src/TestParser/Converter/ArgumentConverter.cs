@@ -49,9 +49,10 @@ namespace TestParser.Converter
 					argument.Mode = Parameter.AccessMode.In;
 				}
 
-				dst.Prefix = argument.Prefix;
+				dst.Prefix = new List<string>(argument.Prefix);
 				dst.DataType = argument.DataType;
 				dst.PointerNum = argument.PointerNum;
+				dst.Postfix = new List<string>(argument.Postfix);
 				dst.Name = argument.Name;
 				dst.Description = argument.Description;
 				dst.Mode = argument.Mode;
