@@ -21,6 +21,7 @@ namespace TestParser.Data
 			TestCases = null;
 			Name = string.Empty;
 			TestInformation = string.Empty;
+			SourceName = string.Empty;
 			SourcePath = string.Empty;
 		}
 
@@ -43,6 +44,11 @@ namespace TestParser.Data
 		/// About test
 		/// </summary>
 		public string TestInformation { get; set; }
+
+		/// <summary>
+		/// Test source name.
+		/// </summary>
+		public string SourceName { get; set; }
 
 		/// <summary>
 		/// Path to file to test.
