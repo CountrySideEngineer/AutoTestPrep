@@ -20,6 +20,15 @@ namespace TestParser.Parser
 	/// </summary>
 	public class FunctionListParser : AParser
 	{
+		protected enum FUNC_LIST_TABLE_COL_INDEX : int
+		{
+			COL_INDEX_NO,
+			COL_INDEX_TEST_NAME,
+			COL_INDEX_TEST_SHEET_NAME,
+			COL_INDEX_TEST_SRC_FILE_NAME,
+			COL_INDEX_TEST_SRC_FILE_PATH,
+		};
+
 		/// <summary>
 		/// Configuration for test list reading.
 		/// </summary>
@@ -184,6 +193,14 @@ namespace TestParser.Parser
 				try
 				{
 					ParameterInfo parameterInfo = this.ReadFunctionInfoItem(reader, rangeToRead);
+
+					DEBUG($"Function list item({index, 3}):");
+					DEBUG($"              No = {parameterInfo.Index}");
+					DEBUG($"            Name = {parameterInfo.Name}");
+					DEBUG($"      Sheet name = {parameterInfo.InfoName}");
+					DEBUG($"     Source name = {parameterInfo.FileName}");
+					DEBUG($"     Source path = {parameterInfo.FilePath}");
+
 					parameterInfoList.Add(parameterInfo);
 				}
 				catch (TestParserException ex)
@@ -266,41 +283,73 @@ namespace TestParser.Parser
 		/// <exception cref="TestParserException"></exception>
 		protected ParameterInfo ReadFunctionInfoItem(ExcelTableReader reader, Range range)
 		{
-			IEnumerable<string> rowItem = reader.ReadRow(range);
-			if (0 == rowItem.Count())
-			{
-				WARN($"No item found in row ({range.StartRow}).");
-				throw new TestParserException(TestParserException.Code.PARSER_ERROR_INVALID_DATA_INPUT_IN_TEST_FUNCTION_TABLE);
-			}
-			foreach (var item in rowItem)
-			{
-				if ((string.IsNullOrWhiteSpace(item)) || (string.IsNullOrEmpty(item)))
-				{
-					WARN("Invalid data found in function list.");
-					throw new TestParserException(TestParserException.Code.PARSER_ERROR_INVALID_DATA_INPUT_IN_TEST_FUNCTION_TABLE);
-				}
-			}
-
 			try
 			{
-				ParameterInfo parameterInfo = new ParameterInfo();
-				parameterInfo.Index = Convert.ToInt32(rowItem.ElementAt(0));
-				parameterInfo.Name = rowItem.ElementAt(1);
-				parameterInfo.InfoName = rowItem.ElementAt(2);
-				parameterInfo.FileName = rowItem.ElementAt(3);
-
-				INFO($"Function table info:");
-				INFO($"    Index    = {parameterInfo.Index}");
-				INFO($"    Name     = {parameterInfo.Name}");
-				INFO($"    InfoName = {parameterInfo.InfoName}");
-				INFO($"    FileName = {parameterInfo.FileName}");
-
-				return parameterInfo;
+				IEnumerable<string> rowItem = reader.ReadRow(range);
+				if (0 == rowItem.Count())
+				{
+					WARN($"No item found in row ({range.StartRow}).");
+					throw new TestParserException(
+						TestParserException.Code.PARSER_ERROR_INVALID_DATA_INPUT_IN_TEST_FUNCTION_TABLE);
+				}
+				ParameterInfo paramInfo = Item2Info(rowItem, ItemConverter);
+				return paramInfo;
 			}
-			catch (FormatException)
+			catch (ArgumentException)
+			{
+				WARN("Invalid data found in function list.");
+				throw new TestParserException(
+					TestParserException.Code.PARSER_ERROR_INVALID_DATA_INPUT_IN_TEST_FUNCTION_TABLE);
+			}
+			catch (Exception ex)
+			when (
+				(ex is FormatException) ||
+				(ex is ArgumentOutOfRangeException))
 			{
 				ERROR("Invalid data found in function table.");
 				throw new TestParserException(TestParserException.Code.PARSER_ERROR_INVALID_DATA_INPUT_IN_TEST_FUNCTION_TABLE);
+			}
+		}
+
+		/// <summary>
+		/// Convert function list informatin into a ParmaeterInfo object using the specified function for conversion.
+		/// </summary>
+		/// <param name="src">Collection of function informatino read from the table.</param>
+		/// <param name="converter">Function to convert the items.</param>
+		/// <returns>Converted ParameterInfo object.</returns>
+		/// <exception cref="FormatException">Input item format invalid.</exception>
+		protected ParameterInfo Item2Info(IEnumerable<string> src, Func<IEnumerable<string>, int, string> converter)
+		{
+			try {
+				string indexString = converter(src, (int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_NO);
+				int index = Convert.ToInt32(indexString);
+				string name = converter(src, (int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_TEST_NAME);
+				string sheetName = converter(src, (int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_TEST_SHEET_NAME);
+				string fileName = converter(src, (int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_TEST_SRC_FILE_NAME);
+				string filePath = string.Empty;
+				try
+				{
+					filePath = converter(src, (int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_TEST_SRC_FILE_PATH);
+				}
+				catch (Exception ex)
+				when ((ex is ArgumentException) || (ex is ArgumentOutOfRangeException))
+				{
+					filePath = string.Empty;
+				}
+
+				var paramInfo = new ParameterInfo()
+				{
+					Index = index,
+					Name = name,
+					InfoName = sheetName,
+					FileName = fileName,
+					FilePath = filePath,
+				};
+				return paramInfo;
+			}
+			catch (FormatException)
+			{
+				throw;
 			}
 		}
 	}
