@@ -91,5 +91,21 @@ namespace TestParser.Parser
 			var logger = Log.GetInstance();
 			logger.FATAL(message);
 		}
+
+		protected virtual string ItemConverter(IEnumerable<string> src, int index)
+		{
+			try {
+				string item = src.ElementAt(index);
+				if ((string.IsNullOrEmpty(item)) || (string.IsNullOrWhiteSpace(item)))
+				{
+					throw new ArgumentException();
+				}
+				return item;
+			}
+			catch (ArgumentOutOfRangeException)
+			{
+				throw;
+			}
+		}
 	}
 }
