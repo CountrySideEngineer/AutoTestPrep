@@ -5,6 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CSEngineer.Logger;
+using TableReader.Excel;
+using TableReader.Interface;
+using TestParser.Reader;
 
 namespace TestParser.Parser
 {
@@ -90,6 +93,25 @@ namespace TestParser.Parser
 		{
 			var logger = Log.GetInstance();
 			logger.FATAL(message);
+		}
+
+		/// <summary>
+		/// Returns an object to read table, which implements ITableReader interface.
+		/// </summary>
+		/// <param name="stream">Stream to file to read table.</param>
+		/// <returns>An object to read table.</returns>
+		/// <exception cref="InvalidDataException">Sheet name to read is null, empty, or all white space.</exception>
+		protected virtual ITableReader GetTableReader(Stream stream)
+		{
+			if (string.IsNullOrEmpty(Target) || (string.IsNullOrWhiteSpace(Target)))
+			{
+				throw new InvalidDataException();
+			}
+			var reader = new ExcelTableReader(stream)
+			{
+				SheetName = Target
+			};
+			return reader;
 		}
 
 		protected virtual string ItemConverter(IEnumerable<string> src, int index)

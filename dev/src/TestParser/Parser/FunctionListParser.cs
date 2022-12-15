@@ -12,6 +12,7 @@ using TableReader.Excel;
 using TableReader.TableData;
 using TestParser.ParserException;
 using System.Security;
+using TableReader.Interface;
 
 namespace TestParser.Parser
 {
@@ -78,8 +79,8 @@ namespace TestParser.Parser
 				{
 					try
 					{
-						IEnumerable<ParameterInfo> functionInfoList = ReadFunctionList(stream);
-						return functionInfoList;
+						object funcInfoList = Parse(stream);
+						return funcInfoList;
 					}
 					catch (TestParserException)
 					{
@@ -125,8 +126,14 @@ namespace TestParser.Parser
 		{
 			try
 			{
-				IEnumerable<ParameterInfo> functionInfoList = ReadFunctionList(stream);
-				return functionInfoList;
+				ITableReader reader = GetTableReader(stream);
+				IEnumerable<ParameterInfo> funcInfoList = ReadFunctionInfo(reader);
+				return funcInfoList;
+			}
+			catch (InvalidDataException)
+			{
+				FATAL("The name of sheet with the list of target functions is not specified.");
+				throw new TestParserException(TestParserException.Code.PARSER_ERROR_TEST_FUNCTION_LIST_SHEET_NOT_FOUND);
 			}
 			catch (TestParserException)
 			{
@@ -135,35 +142,14 @@ namespace TestParser.Parser
 		}
 
 		/// <summary>
-		/// Read function information from stream, FileStream object.
-		/// </summary>
-		/// <param name="stream">Stream object from file.</param>
-		/// <returns>List of ParameterInfo object.</returns>
-		/// <exception cref="TestParserException"></exception>
-		protected IEnumerable<ParameterInfo> ReadFunctionList(Stream stream)
-		{
-			if (string.IsNullOrEmpty(Target) || (string.IsNullOrWhiteSpace(Target)))
-			{
-				FATAL("The name of sheet with the list of target functions is not specified.");
-				throw new TestParserException(TestParserException.Code.PARSER_ERROR_TEST_FUNCTION_LIST_SHEET_NOT_FOUND);
-			}
-			var reader = new ExcelTableReader(stream)
-			{
-				SheetName = this.Target
-			};
-			IEnumerable<ParameterInfo> parameterInfolist = ReadFunctionInfo(reader);
-			return parameterInfolist;
-		}
-
-		/// <summary>
 		/// Read function informations from 
 		/// </summary>
 		/// <param name="reader">Object to read test data information from excel file.</param>
 		/// <returns>List of function information.</returns>
 		/// <exception cref="TestParserException"></exception>
-		protected IEnumerable<ParameterInfo> ReadFunctionInfo(ExcelTableReader reader)
+		protected IEnumerable<ParameterInfo> ReadFunctionInfo(ITableReader reader)
 		{
-			INFO($"Start getting target function list from \"{reader.SheetName}\" sheet.");
+			INFO($"Start getting target function list from \"{Target}\" sheet.");
 
 			Range tableItemRange = GetRangeToRead(reader);
 
@@ -184,7 +170,7 @@ namespace TestParser.Parser
 		/// <param name="range">Range to read.</param>
 		/// <returns>Read function informations.</returns>
 		/// <exception cref="TestParserException"></exception>
-		public IEnumerable<ParameterInfo> ReadFunctionInfo(ExcelTableReader reader, Range range)
+		public IEnumerable<ParameterInfo> ReadFunctionInfo(ITableReader reader, Range range)
 		{
 			var rangeToRead = new Range(range);
 			var parameterInfoList = new List<ParameterInfo>();
@@ -192,7 +178,7 @@ namespace TestParser.Parser
 			{
 				try
 				{
-					ParameterInfo parameterInfo = this.ReadFunctionInfoItem(reader, rangeToRead);
+					ParameterInfo parameterInfo = ReadFunctionInfoItem(reader, rangeToRead);
 
 					DEBUG($"Function list item({index, 3}):");
 					DEBUG($"              No = {parameterInfo.Index}");
@@ -222,13 +208,13 @@ namespace TestParser.Parser
 		/// </summary>
 		/// <param name="reader">ExcelTableReader object</param>
 		/// <returns>Range to read to get function information.</returns>
-		protected Range GetRangeToRead(ExcelTableReader reader)
+		protected Range GetRangeToRead(ITableReader reader)
 		{
 			try
 			{
 				Range tableNameRange = reader.FindFirstItem(Config.TableConfig.Name);
 
-				INFO($"    Find \"{Config.TableConfig.Name}\" in \"{reader.SheetName}\" sheet at ({tableNameRange.StartRow}, {tableNameRange.StartColumn}).");
+				INFO($"    Find \"{Config.TableConfig.Name}\" in \"{Target}\" sheet at ({tableNameRange.StartRow}, {tableNameRange.StartColumn}).");
 
 				Range tableEndRange = new Range();
 				reader.GetRowRange(ref tableEndRange);
@@ -263,7 +249,7 @@ namespace TestParser.Parser
 			}
 			catch (ArgumentException)
 			{
-				ERROR($"The table can not found in {reader.SheetName}.");
+				ERROR($"The table can not found in {Target}.");
 				throw new TestParserException(TestParserException.Code.PARSER_ERROR_TEST_FUNCTION_TABLE_NOT_FOUND);
 			}
 			catch (InvalidDataException)
@@ -281,7 +267,7 @@ namespace TestParser.Parser
 		/// <param name="range">Range to read.</param>
 		/// <returns><para>ParameterInfo</para> object read from excel.</returns>
 		/// <exception cref="TestParserException"></exception>
-		protected ParameterInfo ReadFunctionInfoItem(ExcelTableReader reader, Range range)
+		protected ParameterInfo ReadFunctionInfoItem(ITableReader reader, Range range)
 		{
 			try
 			{
