@@ -26,18 +26,23 @@ namespace TestParser.Converter
 				string dataType = src.ElementAt(3);
 				if ((string.IsNullOrEmpty(dataType)) || (string.IsNullOrWhiteSpace(dataType)))
 				{
+					ERROR("Variable data type has not been set.");
 					throw new TestParserException(TestParserException.Code.PARSER_ERROR_TEST_FUNCTION_DATA_INVALID);
 				}
 				string name = src.ElementAt(5);
 				if ((string.IsNullOrEmpty(name)) || (string.IsNullOrWhiteSpace(name)))
 				{
+					ERROR("Variable name has not been set.");
 					throw new TestParserException(TestParserException.Code.PARSER_ERROR_TEST_FUNCTION_DATA_INVALID);
 				}
 
-				dst.Prefix = src.ElementAt(2);
+				char[] deliminaters = { ' ', '\t', '\r', '\n', };
+
+				dst.Prefix = src.ElementAt(2).Split(deliminaters);
 				dst.DataType = dataType;
-				string postFix = src.ElementAt(4);
-				dst.PointerNum = Util.GetPointerNum(postFix);
+				string postfix = src.ElementAt(4);
+				dst.Postfix = postfix.Split(deliminaters);
+				dst.PointerNum = Util.GetPointerNum(postfix);
 				dst.Name = name;
 				try
 				{

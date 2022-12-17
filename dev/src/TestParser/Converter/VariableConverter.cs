@@ -33,10 +33,13 @@ namespace TestParser.Converter
 					throw new TestParserException(TestParserException.Code.PARSER_ERROR_TEST_FUNCTION_VARIABLE_DATA_INVALID);
 				}
 
-				dst.Prefix = src.ElementAt(2);
+				char[] deliminaters = { ' ', '\t', '\r', '\n', };
+
+				dst.Prefix = src.ElementAt(2).Split(deliminaters);
 				dst.DataType = dataType;
-				string postFix = src.ElementAt(4);
-				dst.PointerNum = Util.GetPointerNum(postFix);
+				string postfix = src.ElementAt(4);
+				dst.Postfix = postfix.Split(deliminaters);
+				dst.PointerNum = Util.GetPointerNum(postfix);
 				dst.Name = name;
 				try
 				{
