@@ -30,14 +30,20 @@ namespace TestParser.Target
 		public string FileName { get; set; }
 
 		/// <summary>
+		/// Path of file.
+		/// </summary>
+		public string FilePath { get; set; }
+
+		/// <summary>
 		/// Default constructor.
 		/// </summary>
 		public ParameterInfo()
 		{
-			this.Index = 0;
-			this.Name = string.Empty;
-			this.InfoName = string.Empty;
-			this.FileName = string.Empty;
+			Index = 0;
+			Name = string.Empty;
+			InfoName = string.Empty;
+			FileName = string.Empty;
+			FilePath = string.Empty;
 		}
 	}
 }

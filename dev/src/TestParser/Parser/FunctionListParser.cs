@@ -12,6 +12,7 @@ using TableReader.Excel;
 using TableReader.TableData;
 using TestParser.ParserException;
 using System.Security;
+using TableReader.Interface;
 
 namespace TestParser.Parser
 {
@@ -20,6 +21,15 @@ namespace TestParser.Parser
 	/// </summary>
 	public class FunctionListParser : AParser
 	{
+		protected enum FUNC_LIST_TABLE_COL_INDEX : int
+		{
+			COL_INDEX_NO,
+			COL_INDEX_TEST_NAME,
+			COL_INDEX_TEST_SHEET_NAME,
+			COL_INDEX_TEST_SRC_FILE_NAME,
+			COL_INDEX_TEST_SRC_FILE_PATH,
+		};
+
 		/// <summary>
 		/// Configuration for test list reading.
 		/// </summary>
@@ -69,8 +79,8 @@ namespace TestParser.Parser
 				{
 					try
 					{
-						IEnumerable<ParameterInfo> functionInfoList = ReadFunctionList(stream);
-						return functionInfoList;
+						object funcInfoList = Parse(stream);
+						return funcInfoList;
 					}
 					catch (TestParserException)
 					{
@@ -116,8 +126,14 @@ namespace TestParser.Parser
 		{
 			try
 			{
-				IEnumerable<ParameterInfo> functionInfoList = ReadFunctionList(stream);
-				return functionInfoList;
+				ITableReader reader = GetTableReader(stream);
+				IEnumerable<ParameterInfo> funcInfoList = ReadFunctionInfo(reader);
+				return funcInfoList;
+			}
+			catch (InvalidDataException)
+			{
+				FATAL("The name of sheet with the list of target functions is not specified.");
+				throw new TestParserException(TestParserException.Code.PARSER_ERROR_TEST_FUNCTION_LIST_SHEET_NOT_FOUND);
 			}
 			catch (TestParserException)
 			{
@@ -126,35 +142,14 @@ namespace TestParser.Parser
 		}
 
 		/// <summary>
-		/// Read function information from stream, FileStream object.
-		/// </summary>
-		/// <param name="stream">Stream object from file.</param>
-		/// <returns>List of ParameterInfo object.</returns>
-		/// <exception cref="TestParserException"></exception>
-		protected IEnumerable<ParameterInfo> ReadFunctionList(Stream stream)
-		{
-			if (string.IsNullOrEmpty(Target) || (string.IsNullOrWhiteSpace(Target)))
-			{
-				FATAL("The name of sheet with the list of target functions is not specified.");
-				throw new TestParserException(TestParserException.Code.PARSER_ERROR_TEST_FUNCTION_LIST_SHEET_NOT_FOUND);
-			}
-			var reader = new ExcelTableReader(stream)
-			{
-				SheetName = this.Target
-			};
-			IEnumerable<ParameterInfo> parameterInfolist = ReadFunctionInfo(reader);
-			return parameterInfolist;
-		}
-
-		/// <summary>
 		/// Read function informations from 
 		/// </summary>
 		/// <param name="reader">Object to read test data information from excel file.</param>
 		/// <returns>List of function information.</returns>
 		/// <exception cref="TestParserException"></exception>
-		protected IEnumerable<ParameterInfo> ReadFunctionInfo(ExcelTableReader reader)
+		protected IEnumerable<ParameterInfo> ReadFunctionInfo(ITableReader reader)
 		{
-			INFO($"Start getting target function list from \"{reader.SheetName}\" sheet.");
+			INFO($"Start getting target function list from \"{Target}\" sheet.");
 
 			Range tableItemRange = GetRangeToRead(reader);
 
@@ -175,7 +170,7 @@ namespace TestParser.Parser
 		/// <param name="range">Range to read.</param>
 		/// <returns>Read function informations.</returns>
 		/// <exception cref="TestParserException"></exception>
-		public IEnumerable<ParameterInfo> ReadFunctionInfo(ExcelTableReader reader, Range range)
+		public IEnumerable<ParameterInfo> ReadFunctionInfo(ITableReader reader, Range range)
 		{
 			var rangeToRead = new Range(range);
 			var parameterInfoList = new List<ParameterInfo>();
@@ -183,7 +178,15 @@ namespace TestParser.Parser
 			{
 				try
 				{
-					ParameterInfo parameterInfo = this.ReadFunctionInfoItem(reader, rangeToRead);
+					ParameterInfo parameterInfo = ReadFunctionInfoItem(reader, rangeToRead);
+
+					DEBUG($"Function list item({index, 3}):");
+					DEBUG($"              No = {parameterInfo.Index}");
+					DEBUG($"            Name = {parameterInfo.Name}");
+					DEBUG($"      Sheet name = {parameterInfo.InfoName}");
+					DEBUG($"     Source name = {parameterInfo.FileName}");
+					DEBUG($"     Source path = {parameterInfo.FilePath}");
+
 					parameterInfoList.Add(parameterInfo);
 				}
 				catch (TestParserException ex)
@@ -205,13 +208,13 @@ namespace TestParser.Parser
 		/// </summary>
 		/// <param name="reader">ExcelTableReader object</param>
 		/// <returns>Range to read to get function information.</returns>
-		protected Range GetRangeToRead(ExcelTableReader reader)
+		protected Range GetRangeToRead(ITableReader reader)
 		{
 			try
 			{
 				Range tableNameRange = reader.FindFirstItem(Config.TableConfig.Name);
 
-				INFO($"    Find \"{Config.TableConfig.Name}\" in \"{reader.SheetName}\" sheet at ({tableNameRange.StartRow}, {tableNameRange.StartColumn}).");
+				INFO($"    Find \"{Config.TableConfig.Name}\" in \"{Target}\" sheet at ({tableNameRange.StartRow}, {tableNameRange.StartColumn}).");
 
 				Range tableEndRange = new Range();
 				reader.GetRowRange(ref tableEndRange);
@@ -246,7 +249,7 @@ namespace TestParser.Parser
 			}
 			catch (ArgumentException)
 			{
-				ERROR($"The table can not found in {reader.SheetName}.");
+				ERROR($"The table can not found in {Target}.");
 				throw new TestParserException(TestParserException.Code.PARSER_ERROR_TEST_FUNCTION_TABLE_NOT_FOUND);
 			}
 			catch (InvalidDataException)
@@ -264,43 +267,75 @@ namespace TestParser.Parser
 		/// <param name="range">Range to read.</param>
 		/// <returns><para>ParameterInfo</para> object read from excel.</returns>
 		/// <exception cref="TestParserException"></exception>
-		protected ParameterInfo ReadFunctionInfoItem(ExcelTableReader reader, Range range)
+		protected ParameterInfo ReadFunctionInfoItem(ITableReader reader, Range range)
 		{
-			IEnumerable<string> rowItem = reader.ReadRow(range);
-			if (0 == rowItem.Count())
-			{
-				WARN($"No item found in row ({range.StartRow}).");
-				throw new TestParserException(TestParserException.Code.PARSER_ERROR_INVALID_DATA_INPUT_IN_TEST_FUNCTION_TABLE);
-			}
-			foreach (var item in rowItem)
-			{
-				if ((string.IsNullOrWhiteSpace(item)) || (string.IsNullOrEmpty(item)))
-				{
-					WARN("Invalid data found in function list.");
-					throw new TestParserException(TestParserException.Code.PARSER_ERROR_INVALID_DATA_INPUT_IN_TEST_FUNCTION_TABLE);
-				}
-			}
-
 			try
 			{
-				ParameterInfo parameterInfo = new ParameterInfo();
-				parameterInfo.Index = Convert.ToInt32(rowItem.ElementAt(0));
-				parameterInfo.Name = rowItem.ElementAt(1);
-				parameterInfo.InfoName = rowItem.ElementAt(2);
-				parameterInfo.FileName = rowItem.ElementAt(3);
-
-				INFO($"Function table info:");
-				INFO($"    Index    = {parameterInfo.Index}");
-				INFO($"    Name     = {parameterInfo.Name}");
-				INFO($"    InfoName = {parameterInfo.InfoName}");
-				INFO($"    FileName = {parameterInfo.FileName}");
-
-				return parameterInfo;
+				IEnumerable<string> rowItem = reader.ReadRow(range);
+				if (0 == rowItem.Count())
+				{
+					WARN($"No item found in row ({range.StartRow}).");
+					throw new TestParserException(
+						TestParserException.Code.PARSER_ERROR_INVALID_DATA_INPUT_IN_TEST_FUNCTION_TABLE);
+				}
+				ParameterInfo paramInfo = Item2Info(rowItem, ItemConverter);
+				return paramInfo;
 			}
-			catch (FormatException)
+			catch (ArgumentException)
+			{
+				WARN("Invalid data found in function list.");
+				throw new TestParserException(
+					TestParserException.Code.PARSER_ERROR_INVALID_DATA_INPUT_IN_TEST_FUNCTION_TABLE);
+			}
+			catch (Exception ex)
+			when (
+				(ex is FormatException) ||
+				(ex is ArgumentOutOfRangeException))
 			{
 				ERROR("Invalid data found in function table.");
 				throw new TestParserException(TestParserException.Code.PARSER_ERROR_INVALID_DATA_INPUT_IN_TEST_FUNCTION_TABLE);
+			}
+		}
+
+		/// <summary>
+		/// Convert function list informatin into a ParmaeterInfo object using the specified function for conversion.
+		/// </summary>
+		/// <param name="src">Collection of function informatino read from the table.</param>
+		/// <param name="converter">Function to convert the items.</param>
+		/// <returns>Converted ParameterInfo object.</returns>
+		/// <exception cref="FormatException">Input item format invalid.</exception>
+		protected ParameterInfo Item2Info(IEnumerable<string> src, Func<IEnumerable<string>, int, string> converter)
+		{
+			try {
+				string indexString = converter(src, (int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_NO);
+				int index = Convert.ToInt32(indexString);
+				string name = converter(src, (int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_TEST_NAME);
+				string sheetName = converter(src, (int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_TEST_SHEET_NAME);
+				string fileName = converter(src, (int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_TEST_SRC_FILE_NAME);
+				string filePath = string.Empty;
+				try
+				{
+					filePath = converter(src, (int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_TEST_SRC_FILE_PATH);
+				}
+				catch (Exception ex)
+				when ((ex is ArgumentException) || (ex is ArgumentOutOfRangeException))
+				{
+					filePath = string.Empty;
+				}
+
+				var paramInfo = new ParameterInfo()
+				{
+					Index = index,
+					Name = name,
+					InfoName = sheetName,
+					FileName = fileName,
+					FilePath = filePath,
+				};
+				return paramInfo;
+			}
+			catch (FormatException)
+			{
+				throw;
 			}
 		}
 	}
