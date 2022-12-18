@@ -86,6 +86,8 @@
     <Compile Include="Converter\ConverterFactory.cs" />
     <Compile Include="Converter\ExternalVariableConverter.cs" />
     <Compile Include="Converter\FunctionConverter.cs" />
+    <Compile Include="Converter\Function\FunctionListConverter.cs" />
+    <Compile Include="Converter\IContentConverter.cs" />
     <Compile Include="Converter\IFunctionTableItemConverter.cs" />
     <Compile Include="Converter\InternalVariableConverter.cs" />
     <Compile Include="Converter\ITestCaseTableItemConverter.cs" />

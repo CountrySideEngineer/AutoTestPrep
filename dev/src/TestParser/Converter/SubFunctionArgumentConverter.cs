@@ -29,9 +29,9 @@ namespace TestParser.Converter
 					argument.Mode = Parameter.AccessMode.In;
 				}
 
-				Function dstFunction = (Function)dst;
+				Target.Function dstFunction = (Target.Function)dst;
 				int dstSubfunctionIndex = dstFunction.SubFunctions.Count() - 1;
-				Function dstSubfunction = dstFunction.SubFunctions.ElementAt(dstSubfunctionIndex);
+				Target.Function dstSubfunction = dstFunction.SubFunctions.ElementAt(dstSubfunctionIndex);
 				dstSubfunction.Arguments = dstSubfunction.Arguments.Append(argument);
 			}
 			catch (TestParserException)

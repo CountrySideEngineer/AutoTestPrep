@@ -19,11 +19,11 @@ namespace TestParser.Converter
 		{
 			try
 			{
-				Parameter function = new Function();
+				Parameter function = new Target.Function();
 				base.Convert(src, ref function);
 
-				Function dstFunc = (Function)dst;
-				dstFunc.SubFunctions = dstFunc.SubFunctions.Append((Function)function);
+				Target.Function dstFunc = (Target.Function)dst;
+				dstFunc.SubFunctions = dstFunc.SubFunctions.Append((Target.Function)function);
 			}
 			catch (TestParserException)
 			{

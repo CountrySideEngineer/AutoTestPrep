@@ -22,7 +22,7 @@ namespace TestParser.Converter
 				Parameter argument = new Parameter();
 				base.Convert(src, ref argument);
 
-				Function dstFunction = (Function)dst;
+				Target.Function dstFunction = (Target.Function)dst;
 				dstFunction.Arguments = dstFunction.Arguments.Append(argument);
 			}
 			catch (TestParserException)

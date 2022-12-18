@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 using CSEngineer.Logger;
 using TableReader.Excel;
 using TableReader.Interface;
+using TestParser.ParserException;
 using TestParser.Reader;
 
 namespace TestParser.Parser
@@ -20,8 +22,16 @@ namespace TestParser.Parser
 		/// <param name="messgae">Message</param>
 		/// <param name="numerator">Progress numerator</param>
 		/// <param name="denominator">Progress denominator</param>
-		public delegate void NotifyParseProgress(string stage, string messgae, int numerator, int denominator);
+		public delegate void NotifyParseProgress(string stage, string message, int numerator, int denominator);
 		public NotifyParseProgress NotifyParseProgressDelegate;
+
+		public delegate void NotifyProcessAndProgress(string procName, int numerator, int denominator);
+		public NotifyProcessAndProgress NotifyProcessAndProgressDelegate;
+
+		/// <summary>
+		/// Target name to parse.
+		/// </summary>
+		public string Target { get; set; }
 
 		/// <summary>
 		/// Default constructor.
@@ -41,23 +51,66 @@ namespace TestParser.Parser
 		}
 
 		/// <summary>
-		/// Target name to parse.
-		/// </summary>
-		public string Target { get; set; }
-
-		/// <summary>
 		/// Abstract function to read function.
 		/// </summary>
 		/// <param name="path">Paht to file designing test.</param>
 		/// <returns>Object about test.</returns>
-		public abstract object Parse(string path);
+		public virtual object Parse(string path)
+		{
+			try
+			{
+				TRACE($"Start parsing file : {path}");
+				using (var stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+				{
+					TRACE($"{path} opened.");
+					TRACE($"Start reading file : {path}");
+					object parsedObj = Parse(stream);
+
+					return parsedObj;
+				}
+			}
+			catch (System.Exception ex)
+			when (ex is ArgumentNullException)
+			{
+				ERROR("No test file path has been set.");
+				throw new TestParserException(TestParserException.Code.PARSER_ERROR_FILE_CAN_NOT_OPEN);
+			}
+			catch (System.Exception ex)
+			when ((ex is ArgumentException) ||
+				(ex is FileNotFoundException) ||
+				(ex is SecurityException) ||
+				(ex is DirectoryNotFoundException) ||
+				(ex is PathTooLongException))
+			{
+				ERROR($"File path {path} is invalid.");
+				throw new TestParserException(TestParserException.Code.PARSER_ERROR_FILE_CAN_NOT_OPEN);
+			}
+			catch (SecurityException)
+			{
+				ERROR($"File {path} can not access.");
+				throw new TestParserException(TestParserException.Code.PARSER_ERROR_FILE_CAN_NOT_OPEN);
+			}
+			catch (System.Exception ex)
+			when ((ex is NotSupportedException) || (ex is ArgumentOutOfRangeException))
+			{
+				ERROR($"File path {path} is not supported.");
+				throw new TestParserException(TestParserException.Code.PARSER_ERROR_FILE_CAN_NOT_OPEN);
+			}
+		}
 
 		/// <summary>
 		/// Abstract function to read function.
 		/// </summary>
 		/// <param name="path">Stream to read from data to parse.</param>
 		/// <returns>Object about test.</returns>
-		public abstract object Parse(Stream stream);
+		public virtual object Parse(Stream stream)
+		{
+			object readObject = Read(stream);
+
+			return readObject;
+		}
+
+		protected abstract object Read(Stream stream);
 
 		public void TRACE(string message)
 		{
@@ -101,7 +154,7 @@ namespace TestParser.Parser
 		/// <param name="stream">Stream to file to read table.</param>
 		/// <returns>An object to read table.</returns>
 		/// <exception cref="InvalidDataException">Sheet name to read is null, empty, or all white space.</exception>
-		protected virtual ITableReader GetTableReader(Stream stream)
+		protected virtual ITableReader GetReader(Stream stream)
 		{
 			if (string.IsNullOrEmpty(Target) || (string.IsNullOrWhiteSpace(Target)))
 			{
