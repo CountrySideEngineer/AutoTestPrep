@@ -7,37 +7,34 @@ using System.Xml.Serialization;
 
 namespace TestParser.Config
 {
-	/// <summary>
-	/// Function configuration.
-	/// </summary>
-	public class FunctionConfig
+	public class VariableConfig
 	{
 		/// <summary>
 		/// Default constructor.
 		/// </summary>
-		public FunctionConfig()
+		public VariableConfig()
 		{
 			Category = string.Empty;
-			Function = string.Empty;
-			Argument = string.Empty;
+			External = string.Empty;
+			Internal = string.Empty;
 		}
 
 		/// <summary>
-		/// Category tag content.
+		/// Category tag content
 		/// </summary>
 		[XmlElement("Category")]
 		public string Category { get; set; }
 
 		/// <summary>
-		/// Function tag content.
+		/// Global variable type, defined out of the file the target function is implemented.
 		/// </summary>
-		[XmlElement("Body")]
-		public string Function { get; set; }
+		[XmlElement("External")]
+		public string External { get; set; }
 
 		/// <summary>
-		/// Argument tag argument.
+		/// Gloval variable type, define in the file the target function is implemented.
 		/// </summary>
-		[XmlElement("Argument")]
-		public string Argument { get; set; }
+		[XmlElement("Internal")]
+		public string Internal { get; set; }
 	}
 }

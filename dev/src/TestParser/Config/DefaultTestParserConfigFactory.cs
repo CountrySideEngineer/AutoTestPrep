@@ -14,112 +14,84 @@ namespace TestParser.Config
 		/// <returns>TestParserConfig object with default parameter.</returns>
 		public static TestParserConfig Create()
 		{
-			TestListConfig testListConfig = CreateTestList();
-			TargetFunctionConfig targetFunctionConfig = CreateTargetFunctionConfig();
-			TestConfig testConfig = CreateTestConfig();
-			var testParserConfig = new TestParserConfig()
+			TableConfig testFunctionListTable = CreateTestFunctionTableConfig();
+			FunctionTableConfig functionTableConfig = CreateFunctionTableConfig();
+			TestCaseTableConfig testCaseTableConfig = CreateTestCaseTableConfig();
+			TestParserConfig config = new TestParserConfig()
 			{
-				TestList = testListConfig,
-				TargetFunction = targetFunctionConfig,
-				Test = testConfig
+				TestFunctoinListTable = testFunctionListTable,
+				FunctionTable = functionTableConfig,
+				TestCaseTable = testCaseTableConfig
 			};
-			return testParserConfig;
+			return config;
 		}
 
 		/// <summary>
-		/// Create default TestListConfig object.
+		/// Create test function list table configuration with default values.
 		/// </summary>
-		/// <returns>TestListConfig object with default parameter.</returns>
-		protected static TestListConfig CreateTestList()
+		/// <returns>FunctionTableConfig object with default configuration.</returns>
+		protected static FunctionTableConfig CreateTestFunctionTableConfig()
 		{
-			var tableConfig = new TableConfig()
+			var config = new FunctionTableConfig()
 			{
-				Name = "○テスト対象関数一覧",
+				Title = "○テスト対象関数一覧",
 				TableTopRowOffset = 1,
 				TableTopColOffset = 1,
-				RowDataOffset = 1,
-				ColDataOffset = 0,
 			};
-			var testListConfig = new TestListConfig()
-			{
-				SheetName = "テスト一覧",
-				TableConfig = tableConfig
-			};
-			return testListConfig;
+			return config;
 		}
 
 		/// <summary>
-		/// Create TargetFunctionConfig object.
+		/// Create function table configuration with default values.
 		/// </summary>
-		/// <returns>TargetFunctionConfig object with default parameter.</returns>
-		protected static TargetFunctionConfig CreateTargetFunctionConfig()
+		/// <returns>Function table configuratoin with default values.</returns>
+		protected static FunctionTableConfig CreateFunctionTableConfig()
 		{
-			var tableConfig = new TableConfig()
+			var targetFunction = new FunctionConfig()
 			{
-				Name = "○対象関数情報",
-				TableTopRowOffset = 1,
-				TableTopColOffset = 1,
-				RowDataOffset = 1,
-				ColDataOffset = 0,
+				Category = "テスト対象関数",
+				Function = "本体",
+				Argument = "引数"
 			};
-			var functionCofig = new FunctionConfig()
+			var subFunction = new FunctionConfig()
 			{
-				Type = "テスト対象関数",
-				Body = "本体",
-				Argument = "引数",
+				Category = "子関数",
+				Function = "本体",
+				Argument = "引数"
 			};
-			var subFunctionCofig = new FunctionConfig()
+			var variable = new VariableConfig()
 			{
-				Type = "子関数",
-				Body = "本体",
-				Argument = "引数",
-			};
-			var globalVariableConfig = new GlobalVariableConfig()
-			{
-				Type = "グローバル変数",
+				Category = "グローバル変数",
+				Internal = "内部",
 				External = "外部",
-				Internal = "内部"
 			};
-			var targetFunctionConfig = new TargetFunctionConfig()
+			var config = new FunctionTableConfig()
 			{
-				TableConfig = tableConfig,
-				TestFunctionConfig = functionCofig,
-				SubFunctionConfig = subFunctionCofig,
-				GlobalVariableConfig = globalVariableConfig,
+				Title = "○対象関数情報",
+				TableTopRowOffset = 1,
+				TableTopColOffset = 1,
+				TargetFunction = targetFunction,
+				SubFunction = subFunction,
+				Variable = variable
 			};
-			return targetFunctionConfig;
+			return config;
 		}
 
 		/// <summary>
-		/// Create TestConfig object.
+		/// Create test case table configuration with default values.
 		/// </summary>
-		/// <returns>TestConfig object with default parameter.</returns>
-		protected static TestConfig CreateTestConfig()
+		/// <returns>Test case table configuration with default values.</returns>
+		protected static TestCaseTableConfig CreateTestCaseTableConfig()
 		{
-			var tableConfig = new TestCaseTableConfig()
+			var config = new TestCaseTableConfig()
 			{
-				Name = "○テスト/デシジョンテーブル",
+				Title = "○テスト/デシジョンテーブル",
 				TableTopRowOffset = 1,
 				TableTopColOffset = 1,
-				RowDataOffset = 1,
-				ColDataOffset = 0,
-				TestCaseRowOffset = 0,
-				TestCaseColOffset = 5
-			};
-			var testCaseConfig = new TestCaseConfig()
-			{
-				InputExpect = "入力/期待値",
 				Input = "入力",
-				Expect = "期待値",
-				ReturnValue = "戻り値",
-				ReturnVariableName = "_ret_val",
+				Exepct = "期待値"
 			};
-			var testConfig = new TestConfig()
-			{
-				TableConfig = tableConfig,
-				TestCaseConfig = testCaseConfig
-			};
-			return testConfig;
+			return config;
 		}
 	}
 }
