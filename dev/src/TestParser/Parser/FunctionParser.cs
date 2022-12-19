@@ -43,9 +43,15 @@ namespace TestParser.Parser
 			Config = config;
 		}
 
+		/// <summary>
+		/// Returns object IContentConverter interface derived and implemented.
+		/// </summary>
+		/// <returns>Converter to convert function data read from function table.</returns>
 		public override IContentConverter GetConverter()
 		{
-			throw new NotImplementedException();
+			var converter = new Converter.Function.FunctionConverter();
+
+			return converter;
 		}
 	}
 }
