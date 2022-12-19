@@ -47,6 +47,11 @@ namespace TestParser.Parser
 			Target = target;
 		}
 
+		/// <summary>
+		/// Common read sequence.
+		/// </summary>
+		/// <param name="stream">Stream to read.</param>
+		/// <returns>Object read data from stream converted.</returns>
 		protected override object Read(Stream stream)
 		{
 			ITableReader reader = GetReader(stream);
@@ -57,6 +62,10 @@ namespace TestParser.Parser
 			return converted;
 		}
 
+		/// <summary>
+		/// Abstract method which returns 
+		/// </summary>
+		/// <returns>Converter to convert read data.</returns>
 		public abstract IContentConverter GetConverter();
 	}
 }
