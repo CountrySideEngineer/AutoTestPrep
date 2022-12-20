@@ -97,6 +97,7 @@
     <Compile Include="Converter\TargetFunctionArgumentConverter.cs" />
     <Compile Include="Converter\TargetFunctionConverter.cs" />
     <Compile Include="Converter\TestCaseTableItemConverter.cs" />
+    <Compile Include="Converter\Test\TestConverter.cs" />
     <Compile Include="Converter\VariableConverter.cs" />
     <Compile Include="Parameter\ParameterInfo.cs" />
     <Compile Include="Parser\AParser.cs" />
