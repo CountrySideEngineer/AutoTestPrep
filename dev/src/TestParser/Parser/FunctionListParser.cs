@@ -23,7 +23,6 @@ namespace TestParser.Parser
 	/// </summary>
 	public class FunctionListParser : ATestParser
 	{
-
 		/// <summary>
 		/// Configuration for test list reading.
 		/// </summary>
