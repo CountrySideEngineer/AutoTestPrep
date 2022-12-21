@@ -24,11 +24,6 @@ namespace TestParser.Parser
 	public class FunctionListParser : ATestParser
 	{
 		/// <summary>
-		/// Configuration for test list reading.
-		/// </summary>
-		public TableConfig Config { get; set; }
-
-		/// <summary>
 		/// Default constructor
 		/// </summary>
 		public FunctionListParser() : base() { }
@@ -40,25 +35,6 @@ namespace TestParser.Parser
 		public FunctionListParser(string target) : base(target) { }
 
 		/// <summary>
-		/// Constructor with argument.
-		/// </summary>
-		/// <param name="config"></param>
-		public FunctionListParser(TableConfig config) : base()
-		{
-			Config = config;
-		}
-
-		/// <summary>
-		/// Constructor with argument.
-		/// </summary>
-		/// <param name="target">Sheet name to parser.</param>
-		/// <param name="config">Parser configuration.</param>
-		public FunctionListParser(string target, TableConfig config) : base(target)
-		{
-			Config = config;
-		}
-
-		/// <summary>
 		/// Returns obejcet IContentConverter interface derived and implemented.
 		/// </summary>
 		/// <returns>Converter to convert function list table.</returns>
@@ -67,6 +43,18 @@ namespace TestParser.Parser
 			var converter = new FunctionListConverter();
 
 			return converter;
+		}
+
+		/// <summary>
+		/// Returns function list table name.
+		/// </summary>
+		/// <returns>Function list table name.</returns>
+		protected override string GetTableName()
+		{
+			TestParserConfig testParserConfig = TestParserConfig.LoadConfig();
+			var tableName = testParserConfig.TestFunctoinListTable.Title;
+
+			return tableName;
 		}
 	}
 }

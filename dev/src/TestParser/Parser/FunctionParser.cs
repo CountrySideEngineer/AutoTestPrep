@@ -53,5 +53,17 @@ namespace TestParser.Parser
 
 			return converter;
 		}
+
+		/// <summary>
+		/// Returns table name.
+		/// </summary>
+		/// <returns>Function table name.</returns>
+		protected override string GetTableName()
+		{
+			TestParserConfig testParserConfig = TestParserConfig.LoadConfig();
+			string tableName = testParserConfig.FunctionTable.Title;
+
+			return tableName;
+		}
 	}
 }

@@ -57,5 +57,17 @@ namespace TestParser.Parser
 		{
 			throw new NotImplementedException();
 		}
+
+		/// <summary>
+		/// Return test case table name.
+		/// </summary>
+		/// <returns>Test case table name.</returns>
+		protected override string GetTableName()
+		{
+			TestParserConfig testParserConfig = TestParserConfig.LoadConfig();
+			var tableName = testParserConfig.TestCaseTable.Title;
+
+			return tableName;
+		}
 	}
 }

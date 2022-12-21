@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using CSEngineer.Logger;
 using TableReader.Excel;
 using TableReader.Interface;
+using TestParser.Config;
 using TestParser.ParserException;
 using TestParser.Reader;
 
@@ -32,6 +33,8 @@ namespace TestParser.Parser
 		/// Target name to parse.
 		/// </summary>
 		public string Target { get; set; }
+
+		protected TableConfig _tableConfig;
 
 		/// <summary>
 		/// Default constructor.

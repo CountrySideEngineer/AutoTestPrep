@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using CSEngineer.Logger;
 using TableReader.Interface;
 using TableReader.TableData;
+using TestParser.Config;
 using TestParser.Converter;
 using TestParser.ParserException;
 
@@ -42,10 +43,7 @@ namespace TestParser.Parser
 		/// Constructor with target.
 		/// </summary>
 		/// <param name="target"></param>
-		public ATestParser(string target)
-		{
-			Target = target;
-		}
+		public ATestParser(string target) : base(target) { }
 
 		/// <summary>
 		/// Common read sequence.
@@ -55,7 +53,8 @@ namespace TestParser.Parser
 		protected override object Read(Stream stream)
 		{
 			ITableReader reader = GetReader(stream);
-			Content content = reader.GetTable(Target);
+			string tableName = GetTableName();
+			Content content = reader.GetTable(tableName);
 			IContentConverter converter = GetConverter();
 			object converted = converter.Convert(content);
 
@@ -67,5 +66,7 @@ namespace TestParser.Parser
 		/// </summary>
 		/// <returns>Converter to convert read data.</returns>
 		public abstract IContentConverter GetConverter();
+
+		protected abstract string GetTableName();
 	}
 }
