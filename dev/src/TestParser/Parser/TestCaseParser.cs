@@ -13,6 +13,7 @@ using TestParser.ParserException;
 using TableReader.TableData;
 using TableReader.Excel;
 using TestParser.Converter;
+using TestParser.Converter.Test;
 
 namespace TestParser.Parser
 {
@@ -53,9 +54,15 @@ namespace TestParser.Parser
 			Config = config;
 		}
 
+		/// <summary>
+		/// Returns object IContentConverter interface implements.
+		/// </summary>
+		/// <returns>Test converter.</returns>
 		public override IContentConverter GetConverter()
 		{
-			throw new NotImplementedException();
+			var converter = new TestConverter();
+
+			return converter;
 		}
 
 		/// <summary>
