@@ -1,7 +1,7 @@
-﻿using AutoTestPrep.Model;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
+using TestParser.Target;
 
 namespace Function_test
 {
