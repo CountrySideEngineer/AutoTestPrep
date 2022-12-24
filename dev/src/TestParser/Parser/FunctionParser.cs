@@ -49,8 +49,7 @@ namespace TestParser.Parser
 		/// <returns>Converter to convert function data read from function table.</returns>
 		public override IContentConverter GetConverter()
 		{
-			var converter = new Converter.Function.FunctionConverter();
-
+			var converter = new Converter.Function.FunctionConverter(Config);
 			return converter;
 		}
 
