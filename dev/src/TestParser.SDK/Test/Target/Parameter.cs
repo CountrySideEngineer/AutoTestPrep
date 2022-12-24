@@ -254,7 +254,7 @@ namespace TestParser.Target
 		/// Copy data to other Parameter object.
 		/// </summary>
 		/// <param name="dst">Parameter object to copy to.</param>
-		public virtual void CopyTo(Parameter dst)
+		public virtual void CopyTo(ref Parameter dst)
 		{
 			dst.Name = Name;
 			dst.DataType = DataType;

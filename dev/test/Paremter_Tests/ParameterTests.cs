@@ -205,7 +205,7 @@ namespace Paremter_Tests
 			};
 
 			var dst = new Parameter();
-			src.CopyTo(dst);
+			src.CopyTo(ref dst);
 
 			Assert.AreEqual("Base_name", dst.Name);
 			Assert.AreEqual("Base_data_type", dst.DataType);
@@ -267,7 +267,7 @@ namespace Paremter_Tests
 				Overview = "overview",
 				Description = "description"
 			};
-			src.CopyTo(dst);
+			src.CopyTo(ref dst);
 
 			Assert.AreEqual("Base_name", dst.Name);
 			Assert.AreEqual("Base_data_type", dst.DataType);

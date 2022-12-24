@@ -98,6 +98,20 @@ namespace TestParser.Target
 		}
 
 		/// <summary>
+		/// Copy data to other Function object.
+		/// </summary>
+		/// <param name="dst">Function object to copy to.</param>
+		public virtual void CopyTo(ref Function dst)
+		{
+			Parameter param = dst as Parameter;
+			base.CopyTo(ref param);
+
+			dst.SubFunctions = new List<Function>(SubFunctions);
+			dst.InternalVariables = new List<Parameter>(InternalVariables);
+			dst.ExternalVariables = new List<Parameter>(ExternalVariables);
+		}
+
+		/// <summary>
 		/// Global variables declared in code the function is implemented.
 		/// </summary>
 		public IEnumerable<Parameter> InternalVariables { get; set; }
