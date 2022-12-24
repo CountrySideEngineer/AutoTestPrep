@@ -176,5 +176,111 @@ namespace Paremter_Tests
 
 			Assert.AreEqual("const DataType* Name", paramString);
 		}
+
+		[TestMethod]
+		[TestCategory("Parameter")]
+		[TestCategory("UnitTest")]
+		[TestCategory("OK_Case")]
+		[Description("ToString")]
+		public void Parameter_CopyTo_001()
+		{
+			var src = new Parameter()
+			{
+				DataType = "Base_data_type",
+				Name = "Base_name",
+				PointerNum = 1,
+				Prefix = new List<string>()
+				{
+					"BasePrefix_001",
+					"BasePrefix_002"
+				},
+				Postfix = new List<string>()
+				{
+					"BasePostfix_001",
+					"BasePostfix_002",
+				},
+				Mode = Parameter.AccessMode.In,
+				Overview = "BaseOverview",
+				Description = "BaseDescription"
+			};
+
+			var dst = new Parameter();
+			src.CopyTo(dst);
+
+			Assert.AreEqual("Base_name", dst.Name);
+			Assert.AreEqual("Base_data_type", dst.DataType);
+			Assert.AreEqual(1, dst.PointerNum);
+			Assert.AreEqual(2, dst.Prefix.Count());
+			Assert.AreEqual("BasePrefix_001", dst.Prefix.ElementAt(0));
+			Assert.AreEqual("BasePrefix_002", dst.Prefix.ElementAt(1));
+			Assert.AreEqual(2, dst.Postfix.Count());
+			Assert.AreEqual("BasePostfix_001", dst.Postfix.ElementAt(0));
+			Assert.AreEqual("BasePostfix_002", dst.Postfix.ElementAt(1));
+			Assert.AreEqual(Parameter.AccessMode.In, dst.Mode);
+			Assert.AreEqual("BaseOverview", dst.Overview);
+			Assert.AreEqual("BaseDescription", dst.Description);
+		}
+
+		[TestMethod]
+		[TestCategory("Parameter")]
+		[TestCategory("UnitTest")]
+		[TestCategory("OK_Case")]
+		[Description("ToString")]
+		public void Parameter_CopyTo_002()
+		{
+			var src = new Parameter()
+			{
+				DataType = "Base_data_type",
+				Name = "Base_name",
+				PointerNum = 1,
+				Prefix = new List<string>()
+				{
+					"BasePrefix_001",
+					"BasePrefix_002"
+				},
+				Postfix = new List<string>()
+				{
+					"BasePostfix_001",
+					"BasePostfix_002",
+				},
+				Mode = Parameter.AccessMode.Out,
+				Overview = "BaseOverview",
+				Description = "BaseDescription"
+			};
+
+			var dst = new Parameter()
+			{
+				DataType = "data_type",
+				Name = "base_name",
+				PointerNum = 1,
+				Prefix = new List<string>()
+				{
+					"prefix_1",
+					"prefix_2"
+				},
+				Postfix = new List<string>()
+				{
+					"postfix_1",
+					"postfix_2"
+				},
+				Mode = Parameter.AccessMode.None,
+				Overview = "overview",
+				Description = "description"
+			};
+			src.CopyTo(dst);
+
+			Assert.AreEqual("Base_name", dst.Name);
+			Assert.AreEqual("Base_data_type", dst.DataType);
+			Assert.AreEqual(1, dst.PointerNum);
+			Assert.AreEqual(2, dst.Prefix.Count());
+			Assert.AreEqual("BasePrefix_001", dst.Prefix.ElementAt(0));
+			Assert.AreEqual("BasePrefix_002", dst.Prefix.ElementAt(1));
+			Assert.AreEqual(2, dst.Postfix.Count());
+			Assert.AreEqual("BasePostfix_001", dst.Postfix.ElementAt(0));
+			Assert.AreEqual("BasePostfix_002", dst.Postfix.ElementAt(1));
+			Assert.AreEqual(Parameter.AccessMode.Out, dst.Mode);
+			Assert.AreEqual("BaseOverview", dst.Overview);
+			Assert.AreEqual("BaseDescription", dst.Description);
+		}
 	}
 }

@@ -228,6 +228,11 @@ namespace TestParser.Target
 			return postfix;
 		}
 
+		/// <summary>
+		/// Convert collection of script into a single string.
+		/// </summary>
+		/// <param name="scripts"></param>
+		/// <returns></returns>
 		protected virtual string PScritpToString(IEnumerable<string> scripts)
 		{
 			try
@@ -245,7 +250,11 @@ namespace TestParser.Target
 			}
 		}
 
-		public virtual void CopyTo(ref Parameter dst)
+		/// <summary>
+		/// Copy data to other Parameter object.
+		/// </summary>
+		/// <param name="dst">Parameter object to copy to.</param>
+		public virtual void CopyTo(Parameter dst)
 		{
 			dst.Name = Name;
 			dst.DataType = DataType;
