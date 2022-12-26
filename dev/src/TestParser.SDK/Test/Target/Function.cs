@@ -112,6 +112,19 @@ namespace TestParser.Target
 		}
 
 		/// <summary>
+		/// Copy data from ohter Function object.
+		/// </summary>
+		/// <param name="src"></param>
+		public virtual void CopyFrom(Function src)
+		{
+			base.CopyFrom(src);
+
+			SubFunctions = new List<Function>(src.SubFunctions);
+			InternalVariables = new List<Parameter>(src.InternalVariables);
+			ExternalVariables = new List<Parameter>(src.ExternalVariables);
+		}
+
+		/// <summary>
 		/// Global variables declared in code the function is implemented.
 		/// </summary>
 		public IEnumerable<Parameter> InternalVariables { get; set; }

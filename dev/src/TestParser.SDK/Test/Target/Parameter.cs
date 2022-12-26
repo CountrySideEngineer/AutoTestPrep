@@ -265,5 +265,21 @@ namespace TestParser.Target
 			dst.Overview = Overview;
 			dst.Description = Description;
 		}
+
+		/// <summary>
+		/// Copy data from ohter Parameter object.
+		/// </summary>
+		/// <param name="src"></param>
+		public virtual void CopyFrom(Parameter src)
+		{
+			Name = src.Name;
+			DataType = src.DataType;
+			Prefix = new List<string>(src.Prefix);
+			Postfix = new List<string>(src.Postfix);
+			PointerNum = src.PointerNum;
+			Mode = src.Mode;
+			Overview = src.Overview;
+			Description = src.Description;
+		}
 	}
 }
