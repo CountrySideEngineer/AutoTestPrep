@@ -21,7 +21,7 @@ namespace TestParser.Parser
 		/// <summary>
 		/// Configuration of target function table parser.
 		/// </summary>
-		public FunctionTableConfig Config;
+		public FunctionTableConfig Config { get; set; }
 
 		/// <summary>
 		/// Default constructor.
