@@ -18,10 +18,26 @@ namespace TestParser.Parser
 {
 	public class FunctionParser : ATestParser
 	{
+		protected FunctionTableConfig _config;
+
 		/// <summary>
 		/// Configuration of target function table parser.
 		/// </summary>
-		public FunctionTableConfig Config { get; set; }
+		public FunctionTableConfig Config
+		{
+			get
+			{
+				if (null == _config)
+				{
+					_config = TestParserConfig.LoadConfig().FunctionTable;
+				}
+				return _config;
+			}
+			set
+			{
+				_config = value;
+			}
+		}
 
 		/// <summary>
 		/// Default constructor.
@@ -59,8 +75,7 @@ namespace TestParser.Parser
 		/// <returns>Function table name.</returns>
 		protected override string GetTableName()
 		{
-			TestParserConfig testParserConfig = TestParserConfig.LoadConfig();
-			string tableName = testParserConfig.FunctionTable.Title;
+			string tableName = Config.Title;
 
 			return tableName;
 		}
