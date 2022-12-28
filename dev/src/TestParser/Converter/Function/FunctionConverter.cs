@@ -95,7 +95,7 @@ namespace TestParser.Converter.Function
 					{
 						setter = new SubFunctionSetter();
 					}
-					else if (type.Equals(_config.SubFunction.Category))
+					else if (type.Equals(_config.SubFunction.Argument))
 					{
 						setter = new SubFunctionArgSetter();
 					}
@@ -138,12 +138,28 @@ namespace TestParser.Converter.Function
 		{
 			try
 			{
-				IEnumerable<string> prefixes = src.ElementAt(2).Split(' ');
+				IEnumerable<string> prefixes = 
+					src
+					.ElementAt(2)
+					.Split(' ')
+					.Where(_ => ((!string.IsNullOrEmpty(_)) && (!string.IsNullOrWhiteSpace(_))));
 				string dataType = src.ElementAt(3);
-				IEnumerable<string> postfixes = src.ElementAt(4).Split(' ');
+				IEnumerable<string> postfixes =
+					src
+					.ElementAt(4)
+					.Split(' ')
+					.Where(_ => ((!string.IsNullOrEmpty(_)) && (!string.IsNullOrWhiteSpace(_))));
 				string name = src.ElementAt(5);
 				string in_out = src.ElementAt(6);
-				Parameter.AccessMode mode = Parameter.ToMode(in_out);
+				Parameter.AccessMode mode = Parameter.AccessMode.None;
+				try
+				{
+					mode = Parameter.ToMode(in_out);
+				}
+				catch (ArgumentException)
+				{
+					mode = Parameter.AccessMode.In;
+				}
 				string description = src.ElementAt(7);
 				int pointerNum = 0;
 				try
@@ -229,7 +245,14 @@ namespace TestParser.Converter.Function
 			{
 				try
 				{
-					dst.SubFunctions = dst.SubFunctions.Append((Target.Function)src);
+					Target.Function func = dst.SubFunctions.Last();
+					func.CopyFrom(src);
+				}
+				catch (InvalidOperationException)
+				{
+					var srcFunction = new Target.Function();
+					srcFunction.CopyFrom(src);
+					dst.SubFunctions = dst.SubFunctions.Append(srcFunction);
 				}
 				catch (InvalidCastException)
 				{
@@ -249,10 +272,18 @@ namespace TestParser.Converter.Function
 			/// </summary>
 			/// <param name="src">Source object to set.</param>
 			/// <param name="dst">Destination object to be set.</param>
+			/// <exception cref="InvalidOperationException"></exception>
 			public void Set(Parameter src, ref Target.Function dst)
 			{
-				dst.SubFunctions.Last().Arguments = dst.SubFunctions.Last().Arguments.Append(src);
-				throw new NotImplementedException();
+				try
+				{
+					Target.Function lastItem = dst.SubFunctions.Last();
+					lastItem.Arguments = lastItem.Arguments.Append(src);
+				}
+				catch (InvalidOperationException)
+				{
+					throw;
+				}
 			}
 		}
 
