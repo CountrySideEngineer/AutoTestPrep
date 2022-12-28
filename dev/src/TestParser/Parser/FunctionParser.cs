@@ -18,6 +18,9 @@ namespace TestParser.Parser
 {
 	public class FunctionParser : ATestParser
 	{
+		/// <summary>
+		/// Configuration field of functin table parser.
+		/// </summary>
 		protected FunctionTableConfig _config;
 
 		/// <summary>
@@ -42,13 +45,19 @@ namespace TestParser.Parser
 		/// <summary>
 		/// Default constructor.
 		/// </summary>
-		public FunctionParser() : base() { }
+		public FunctionParser() : base()
+		{
+			Config = null;
+		}
 
 		/// <summary>
 		/// Constructor with argument, target sheet name.
 		/// </summary>
 		/// <param name="targe">Target sheet name.</param>
-		public FunctionParser(string targe) : base(targe) { }
+		public FunctionParser(string targe) : base(targe)
+		{
+			Config = null;
+		}
 
 		/// <summary>
 		/// Constructor with arguments, parsing configuration.
@@ -76,7 +85,6 @@ namespace TestParser.Parser
 		protected override string GetTableName()
 		{
 			string tableName = Config.Title;
-
 			return tableName;
 		}
 	}

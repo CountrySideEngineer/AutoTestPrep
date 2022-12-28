@@ -50,13 +50,19 @@ namespace TestParser.Parser
 		/// <summary>
 		/// Default constructor
 		/// </summary>
-		public FunctionListParser() : base() { }
+		public FunctionListParser() : base()
+		{
+			Config = null;
+		}
 
 		/// <summary>
 		/// Constructor with argument.
 		/// </summary>
 		/// <param name="target">Function list parser sheet name in excel.</param>
-		public FunctionListParser(string target) : base(target) { }
+		public FunctionListParser(string target) : base(target)
+		{
+			Config = null;
+		}
 
 		/// <summary>
 		/// Constructor with arguments, parser configuration.
@@ -74,7 +80,6 @@ namespace TestParser.Parser
 		public override IContentConverter GetConverter()
 		{
 			var converter = new FunctionListConverter();
-
 			return converter;
 		}
 

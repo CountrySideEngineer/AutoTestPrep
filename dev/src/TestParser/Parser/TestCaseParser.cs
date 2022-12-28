@@ -19,7 +19,29 @@ namespace TestParser.Parser
 {
 	public class TestCaseParser : ATestParser
 	{
-		public TestCaseTableConfig Config;
+		/// <summary>
+		/// Test case table configuration field.
+		/// </summary>
+		protected TestCaseTableConfig _config;
+
+		/// <summary>
+		/// Test case configuration property.
+		/// </summary>
+		public TestCaseTableConfig Config
+		{
+			get
+			{
+				if (null == _config)
+				{
+					_config = TestParserConfig.LoadConfig().TestCaseTable;
+				}
+				return _config;
+			}
+			set
+			{
+				_config = value;
+			}
+		}
 
 		/// <summary>
 		/// Default constructor.
@@ -33,7 +55,10 @@ namespace TestParser.Parser
 		/// Constructor with argument about sheet name to parse.
 		/// </summary>
 		/// <param name="target">Sheet name the test case are defined.</param>
-		public TestCaseParser(string target) : base(target) { }
+		public TestCaseParser(string target) : base(target)
+		{
+			Config = null;
+		}
 
 		/// <summary>
 		/// Constructor with argument.
@@ -61,7 +86,6 @@ namespace TestParser.Parser
 		public override IContentConverter GetConverter()
 		{
 			var converter = new TestConverter();
-
 			return converter;
 		}
 
@@ -71,9 +95,7 @@ namespace TestParser.Parser
 		/// <returns>Test case table name.</returns>
 		protected override string GetTableName()
 		{
-			TestParserConfig testParserConfig = TestParserConfig.LoadConfig();
-			var tableName = testParserConfig.TestCaseTable.Title;
-
+			string tableName = Config.Title;
 			return tableName;
 		}
 	}
