@@ -61,13 +61,9 @@ namespace TestParser.Converter.Function
 			{
 				string indexValue = src.ElementAt((int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_NO);
 				int index = System.Convert.ToInt32(indexValue);
-
 				string name = src.ElementAt((int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_TEST_NAME);
-
 				string sheetName = src.ElementAt((int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_TEST_SHEET_NAME);
-
 				string fileName = src.ElementAt((int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_TEST_SRC_FILE_NAME);
-
 				string filePath = string.Empty;
 				try
 				{
