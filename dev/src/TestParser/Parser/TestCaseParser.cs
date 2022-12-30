@@ -85,7 +85,7 @@ namespace TestParser.Parser
 		/// <returns>Test converter.</returns>
 		public override IContentConverter GetConverter()
 		{
-			var converter = new TestConverter();
+			var converter = new TestConverter(Config);
 			return converter;
 		}
 
