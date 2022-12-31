@@ -53,7 +53,8 @@ namespace TestParser.Converter.Test
 			(Content param, Content apply) = SplitToParamAndApply(src);
 			IEnumerable<IEnumerable<int>> appliedIndexes = GetAppliedIndexes(apply);
 			IEnumerable<IEnumerable<TestData>> testDatas = GetTestData(param, appliedIndexes);
-			IEnumerable<TestCase> testCase = ConvertToTestCase(testDatas);
+			IEnumerable<string> testIds = GetTestId(apply);
+			IEnumerable<TestCase> testCase = ConvertToTestCase(testDatas, testIds);
 
 			testCases = testCase.ToList();
 		}
@@ -111,12 +112,15 @@ namespace TestParser.Converter.Test
 		/// </summary>
 		/// <param name="testDatas">Collection of TestData to be converted.</param>
 		/// <returns>Collection of TestCase obejcts.</returns>
-		protected IEnumerable<TestCase> ConvertToTestCase(IEnumerable<IEnumerable<TestData>> testDatas)
+		protected IEnumerable<TestCase> ConvertToTestCase(
+			IEnumerable<IEnumerable<TestData>> testDatas, 
+			IEnumerable<string> testIds)
 		{
 			var testCases = new List<TestCase>();
-			foreach (var testData in testDatas)
+			foreach (var indexedData in testDatas.Select((Item, Index) => new { Item, Index }))
 			{
-				TestCase testCase = ConvertToTestCase(testData);
+				TestCase testCase = ConvertToTestCase(indexedData.Item);
+				testCase.Id = testIds.ElementAt(indexedData.Index);
 				testCases.Add(testCase);
 			}
 			return testCases;
@@ -138,6 +142,13 @@ namespace TestParser.Converter.Test
 				Expects = expects
 			};
 			return testCase;
+		}
+
+		protected IEnumerable<string> GetTestId(Content src)
+		{
+			IEnumerable<string> testIds = src.GetContentsInRow(0);
+
+			return testIds;
 		}
 
 		/// <summary>
