@@ -55,7 +55,7 @@ namespace TestParser.Target
 			try
 			{
 				bool isTop = true;
-				foreach (var argument in this.Arguments)
+				foreach (var argument in Arguments)
 				{
 					if (!isTop)
 					{

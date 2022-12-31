@@ -144,10 +144,6 @@ namespace TestParser.Target
 				toString += " ";
 			}
 			toString += DataType;
-			for (int index = 0; index < PointerNum; index++)
-			{
-				toString += "*";
-			}
 			toString += " ";
 			string postfix = PostfixToString();
 			if (!string.IsNullOrEmpty(postfix))
