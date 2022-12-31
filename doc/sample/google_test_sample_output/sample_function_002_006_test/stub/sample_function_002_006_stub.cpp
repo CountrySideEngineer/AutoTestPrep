@@ -38,7 +38,7 @@ void subfunction_003_init()
 /*
  *	Stub method of subfunction_003
  */
-int subfunction_003(int* input1)
+int subfunction_003(int * input1)
 {
 	int latchReturn = subfunction_003_return_value[subfunction_003_called_count];
 	subfunction_003_input1[subfunction_003_called_count] = input1;
