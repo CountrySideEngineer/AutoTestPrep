@@ -78,14 +78,6 @@ namespace TestParser.Parser
 			return function;
 		}
 
-		protected IEnumerable<TestCase> ReadTestCase(Stream stream, ParameterInfo paramInfo)
-		{
-			IParser parser = new TestCaseParser(paramInfo.Name);
-			IEnumerable<TestCase> testCases = (IEnumerable<TestCase>)parser.Parse(stream);
-
-			return testCases;
-		}
-
 		protected Test ReadTest(Stream stream, ParameterInfo parameterInfo)
 		{
 			Function function = ReadFunction(stream, parameterInfo);
@@ -101,6 +93,15 @@ namespace TestParser.Parser
 				SourcePath = parameterInfo.FilePath
 			};
 			return test;
+		}
+
+		protected IEnumerable<TestCase> ReadTestCase(Stream stream, ParameterInfo paramInfo)
+		{
+			string sheetName = paramInfo.InfoName;
+			IParser parser = new TestCaseParser(sheetName);
+			IEnumerable<TestCase> testCases = (IEnumerable<TestCase>)parser.Parse(stream);
+
+			return testCases;
 		}
 
 		protected object ReadTable(Stream tableStream, IParser parser)
