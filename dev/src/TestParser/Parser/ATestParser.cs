@@ -34,10 +34,7 @@ namespace TestParser.Parser
 		/// <summary>
 		/// Default constructor.
 		/// </summary>
-		public ATestParser()
-		{
-			Target = string.Empty;
-		}
+		public ATestParser() : base(string.Empty) { }
 
 		/// <summary>
 		/// Constructor with target.
