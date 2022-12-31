@@ -26,7 +26,7 @@
 		</Variable>
 	</FunctionTable>
 	<TestCaseTable>
-		<Title>○対象関数情報</Title>
+		<Title>○テスト/デシジョンテーブル</Title>
 		<TableRowOffset>1</TableRowOffset>
 		<TableColOffset>1</TableColOffset>
 		<Input>入力</Input>
