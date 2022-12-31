@@ -72,7 +72,10 @@
     <Compile Include="..\FunctionConverter_utest\Content_test_jig.cs">
       <Link>Content_test_jig.cs</Link>
     </Compile>
-    <Compile Include="TestConverter_GetApplied_utest.cs" />
+    <Compile Include="TestConverter_ConvertToTestCase_utest.cs" />
+    <Compile Include="TestConverter_GetAppliedIndexes_utest.cs" />
+    <Compile Include="TestConverter_GetTestData_utest.cs" />
+    <Compile Include="TestConverter_SplitToParamAndApply_utest.cs" />
     <Compile Include="TestConverter_utest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

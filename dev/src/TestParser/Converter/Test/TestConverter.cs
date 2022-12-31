@@ -125,12 +125,12 @@ namespace TestParser.Converter.Test
 		/// <summary>
 		/// Convert collection of TestData to TestCase object.
 		/// </summary>
-		/// <param name="testData">Collection of TestData object.</param>
+		/// <param name="testDatas">Collection of TestData object.</param>
 		/// <returns>Converted TestCase object.</returns>
-		protected TestCase ConvertToTestCase(IEnumerable<TestData> testData)
+		protected TestCase ConvertToTestCase(IEnumerable<TestData> testDatas)
 		{
-			var inputs = testData.Where(_ => _.Condition.Equals(_config.Input));
-			var expects = testData.Where(_ => _.Condition.Equals(_config.Exepct));
+			var inputs = testDatas.Where(_ => _.Condition.Equals(_config.Input));
+			var expects = testDatas.Where(_ => _.Condition.Equals(_config.Exepct));
 
 			var testCase = new TestCase()
 			{

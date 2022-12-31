@@ -13,7 +13,7 @@ namespace TestConverter_utest
 	{
 		[TestMethod]
 		[TestCategory("TestConverter")]
-		[TestCategory("GetApplied")]
+		[TestCategory("GetAppliedIndexes")]
 		public void GetApplied_test_001()
 		{
 			var content = new Content_test_jig();
@@ -47,7 +47,7 @@ namespace TestConverter_utest
 
 		[TestMethod]
 		[TestCategory("TestConverter")]
-		[TestCategory("GetApplied")]
+		[TestCategory("GetAppliedIndexes")]
 		public void GetApplied_test_002()
 		{
 			var content = new Content_test_jig();
