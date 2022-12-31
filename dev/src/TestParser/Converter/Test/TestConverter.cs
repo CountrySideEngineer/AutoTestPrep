@@ -43,6 +43,11 @@ namespace TestParser.Converter.Test
 			return testCases;
 		}
 
+		/// <summary>
+		/// Set test data as Content object to collection of TestCase object.
+		/// </summary>
+		/// <param name="src">Test case data as Content object.</param>
+		/// <param name="testCases">Reference to collection of TestCase objet to set converted test data.</param>
 		protected void SetTo(Content src, ref List<TestCase> testCases)
 		{
 			(Content param, Content apply) = SplitToParamAndApply(src);
@@ -53,6 +58,11 @@ namespace TestParser.Converter.Test
 			testCase = testCase.ToList();
 		}
 
+		/// <summary>
+		/// Split test case table content into test parameter and applied datas.
+		/// </summary>
+		/// <param name="src">Content of test data as Content object.</param>
+		/// <returns>Tuple of Content object parameter and applied information.</returns>
 		protected (Content, Content) SplitToParamAndApply(Content src)
 		{
 			Content testParam = src.Take(_paramColCount);
@@ -61,6 +71,11 @@ namespace TestParser.Converter.Test
 			return (testParam, testApply);
 		}
 
+		/// <summary>
+		/// Get collection of index of applied test data.
+		/// </summary>
+		/// <param name="src">Content object of applied test data.</param>
+		/// <returns>Collection of index applied test data.</returns>
 		protected IEnumerable<IEnumerable<int>> GetAppliedIndexes(Content src)
 		{
 			var converter = new TestApplyConverter();
@@ -69,6 +84,12 @@ namespace TestParser.Converter.Test
 			return appliedIndexs;
 		}
 
+		/// <summary>
+		/// Get TestData from Content 
+		/// </summary>
+		/// <param name="src">Test data table content to be converted.</param>
+		/// <param name="appliedIndexes">Collection of index to apply as test data.</param>
+		/// <returns>Collection of TestData.</returns>
 		protected IEnumerable<IEnumerable<TestData>> GetTestData(Content src, IEnumerable<IEnumerable<int>> appliedIndexes)
 		{
 			TestDataConverter converter = new TestDataConverter(
@@ -85,6 +106,11 @@ namespace TestParser.Converter.Test
 			return testDatas;
 		}
 
+		/// <summary>
+		/// Convert collection of TestData to collection of TestCase object.
+		/// </summary>
+		/// <param name="testDatas">Collection of TestData to be converted.</param>
+		/// <returns>Collection of TestCase obejcts.</returns>
 		protected IEnumerable<TestCase> ConvertToTestCase(IEnumerable<IEnumerable<TestData>> testDatas)
 		{
 			var testCases = new List<TestCase>();
@@ -96,6 +122,11 @@ namespace TestParser.Converter.Test
 			return testCases;
 		}
 
+		/// <summary>
+		/// Convert collection of TestData to TestCase object.
+		/// </summary>
+		/// <param name="testData">Collection of TestData object.</param>
+		/// <returns>Converted TestCase object.</returns>
 		protected TestCase ConvertToTestCase(IEnumerable<TestData> testData)
 		{
 			var inputs = testData.Where(_ => _.Condition.Equals(_config.Input));
@@ -109,6 +140,12 @@ namespace TestParser.Converter.Test
 			return testCase;
 		}
 
+		/// <summary>
+		/// Convert content using conveter specified argument converter.
+		/// </summary>
+		/// <param name="src">Content to be converted.</param>
+		/// <param name="converter">Converter which inherits IContentConverter interface.</param>
+		/// <returns>Converted object.</returns>
 		protected object Convert(Content src, IContentConverter converter)
 		{
 			return converter.Convert(src);
