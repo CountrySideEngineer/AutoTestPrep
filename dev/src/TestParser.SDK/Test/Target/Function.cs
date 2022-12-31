@@ -67,7 +67,7 @@ namespace TestParser.Target
 			}
 			catch (NullReferenceException)
 			{
-				//No argumetn -> Skip!
+				//No argument -> Skip!
 			}
 			toString += ")";
 
