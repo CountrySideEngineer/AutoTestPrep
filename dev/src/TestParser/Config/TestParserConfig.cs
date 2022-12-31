@@ -19,7 +19,7 @@ namespace TestParser.Config
 		/// </summary>
 		public TestParserConfig()
 		{
-			TestFunctoinListTable = new FunctionTableConfig();
+			TestFunctionListTable = new FunctionTableConfig();
 			FunctionTable = new FunctionTableConfig();
 			TestCaseTable = new TestCaseTableConfig();
 		}
@@ -27,13 +27,13 @@ namespace TestParser.Config
 		/// <summary>
 		/// Configuration about list of test.
 		/// </summary>
-		[XmlElement("TestFunctoinListTable")]
-		public TableConfig TestFunctoinListTable { get; set; }
+		[XmlElement("TestFunctionListTable")]
+		public TableConfig TestFunctionListTable { get; set; }
 
 		/// <summary>
 		/// Configuration about target test definition table.
 		/// </summary>
-		[XmlElement("TargetFunction")]
+		[XmlElement("FunctionTable")]
 		public FunctionTableConfig FunctionTable { get; set; }
 
 		/// <summary>

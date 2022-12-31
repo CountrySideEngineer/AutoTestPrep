@@ -37,7 +37,7 @@ namespace TestParser.Parser
 			{
 				if (null == _config)
 				{
-					_config = TestParserConfig.LoadConfig().TestFunctoinListTable;
+					_config = TestParserConfig.LoadConfig().TestFunctionListTable;
 				}
 				return _config;
 			}

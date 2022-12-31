@@ -19,7 +19,7 @@ namespace TestParser.Config
 			TestCaseTableConfig testCaseTableConfig = CreateTestCaseTableConfig();
 			TestParserConfig config = new TestParserConfig()
 			{
-				TestFunctoinListTable = testFunctionListTable,
+				TestFunctionListTable = testFunctionListTable,
 				FunctionTable = functionTableConfig,
 				TestCaseTable = testCaseTableConfig
 			};

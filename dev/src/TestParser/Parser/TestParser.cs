@@ -57,7 +57,8 @@ namespace TestParser.Parser
 		{
 			try
 			{
-				IParser parser = new FunctionListParser();
+				string sheetName = _testConfig.TestFunctionListTable.Section;
+				IParser parser = new FunctionListParser(sheetName);
 				IEnumerable<ParameterInfo> functionList = (IEnumerable<ParameterInfo>)ReadTable(stream, parser);
 
 				return functionList;
@@ -70,7 +71,8 @@ namespace TestParser.Parser
 
 		protected Function ReadFunction(Stream stream, ParameterInfo paramInfo)
 		{
-			IParser parser = new FunctionListParser(paramInfo.InfoName);
+			string sheetName = paramInfo.InfoName;
+			IParser parser = new FunctionParser(sheetName);
 			Function function = (Function)ReadTable(stream, parser);
 
 			return function;
