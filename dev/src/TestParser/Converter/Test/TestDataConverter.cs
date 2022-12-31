@@ -49,41 +49,84 @@ namespace TestParser.Converter.Test
 			Indexes = null;
 		}
 
+		/// <summary>
+		/// Convert Content object about test data into TestData object.
+		/// </summary>
+		/// <param name="src">Content object to be converted.</param>
+		/// <returns>Collection of TestData converted from Content object.</returns>
+		/// <exception cref="InvalidOperationException"></exception>
+		/// <exception cref="NullReferenceException"></exception>
+		/// <exception cref="ArgumentNullException"></exception>
+		/// <exception cref="FormatException"></exception>
 		public object Convert(Content src)
 		{
-			var testDatas = new List<TestData>();
-			foreach (var item in Indexes)
+			try
 			{
-				TestData testData = Convert(src, item);
-				testDatas.Add(testData);
+				if (0 == Indexes.Count())
+				{
+					throw new InvalidOperationException(); 
+				}
+				var testDatas = new List<TestData>();
+				foreach (var item in Indexes)
+				{
+					TestData testData = Convert(src, item);
+					testDatas.Add(testData);
+				}
+				return testDatas;
 			}
-			return testDatas;
+			catch (Exception ex)
+			when ((ex is NullReferenceException) ||
+				(ex is ArgumentNullException) ||
+				(ex is FormatException))
+			{
+				throw;
+			}
 		}
 
+		/// <summary>
+		/// Convert Content about test parameter into TestData object.
+		/// </summary>
+		/// <param name="src">Content object of test data table.</param>
+		/// <param name="index">Index applied.</param>
+		/// <returns>TestData object.</returns>
+		/// <exception cref="NullReferenceException"></exception>
+		/// <exception cref="FormatException"></exception>
 		protected TestData Convert(Content src, int index)
 		{
-			IEnumerable<string> content = src.GetContentsInRow(index);
-			string condition = content.ElementAt((int)TEST_DATA_TABLE_INDEX.COL_CONDITION);
-			string description = content.ElementAt((int)TEST_DATA_TABLE_INDEX.COL_DESCRIPTION);
-			string name = string.Empty;
-			if ((condition.Equals(_expectName)) && (description.Equals(_returnName)))
+			try
 			{
-				name = _returnVariableName;
-			}
-			else
-			{
-				name = content.ElementAt((int)TEST_DATA_TABLE_INDEX.COL_VARIABLE_NAME);
-			}
-			string theValue = content.ElementAt((int)TEST_DATA_TABLE_INDEX.COL_REPRESENTATIVE_VALUE);
+				IEnumerable<string> content = src.GetContentsInRow(index);
+				string condition = content.ElementAt((int)TEST_DATA_TABLE_INDEX.COL_CONDITION);
+				string description = content.ElementAt((int)TEST_DATA_TABLE_INDEX.COL_DESCRIPTION);
+				string name = string.Empty;
+				if ((condition.Equals(_expectName)) && (description.Equals(_returnName)))
+				{
+					name = _returnVariableName;
+				}
+				else
+				{
+					name = content.ElementAt((int)TEST_DATA_TABLE_INDEX.COL_VARIABLE_NAME);
+				}
+				string theValue = content.ElementAt((int)TEST_DATA_TABLE_INDEX.COL_REPRESENTATIVE_VALUE);
 
-			var testData = new TestData()
+				var testData = new TestData()
+				{
+					Condition = condition,
+					Descriotion = description,
+					Name = name,
+					Value = theValue
+				};
+				return testData;
+			}
+			catch (NullReferenceException)
 			{
-				Condition = condition,
-				Descriotion = description,
-				Name = name,
-				Value = theValue
-			};
-			return testData;
+				throw new ArgumentNullException();
+			}
+			catch (ArgumentOutOfRangeException)
+			{
+				//Test data content is invalid.
+				throw new FormatException();
+			}
 		}
 	}
 }
