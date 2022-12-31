@@ -42,7 +42,10 @@ namespace TestParser.Converter.Function
 		/// <param name="dst"></param>
 		protected void SetTo(Content src, ref TestParser.Target.Function dst)
 		{
-			for (int rowIndex = 0; rowIndex < src.RowCount(); rowIndex++)
+			int rowCount = src.RowCount();
+
+			//Skip 1st row, it will be a header.
+			for (int rowIndex = 1; rowIndex < rowCount; rowIndex++)
 			{
 				IEnumerable<string> item = src.GetContentsInRow(rowIndex);
 				SetTo(item, ref dst);
@@ -118,6 +121,10 @@ namespace TestParser.Converter.Function
 					{
 						throw new ArgumentOutOfRangeException();
 					}
+				}
+				else
+				{
+					throw new ArgumentOutOfRangeException();
 				}
 				return setter;
 			}

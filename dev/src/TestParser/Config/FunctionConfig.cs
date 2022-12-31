@@ -31,7 +31,7 @@ namespace TestParser.Config
 		/// <summary>
 		/// Function tag content.
 		/// </summary>
-		[XmlElement("Body")]
+		[XmlElement("Function")]
 		public string Function { get; set; }
 
 		/// <summary>

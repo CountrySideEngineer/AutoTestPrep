@@ -30,14 +30,23 @@ namespace TestParser.Converter.Function
 		{
 			try
 			{
-				int rowCount = src.GetContentsInCol(0).Count();
+				int rowCount = src.RowCount();
 				var tableContent = new List<ParameterInfo>();
-				for (int index = 0; index < rowCount; index++)
-				{
-					IEnumerable<string> rowData = src.GetContentsInRow(index);
-					ParameterInfo paramInfo = Convert(rowData);
 
-					tableContent.Add(paramInfo);
+				//Skip 1st row because it will be a header.
+				for (int index = 1; index < rowCount; index++)
+				{
+					try
+					{
+						IEnumerable<string> rowData = src.GetContentsInRow(index);
+						ParameterInfo paramInfo = Convert(rowData);
+
+						tableContent.Add(paramInfo);
+					}
+					catch (FormatException)
+					{
+						//Skip format exception.
+					}
 				}
 
 				return tableContent;
@@ -55,6 +64,7 @@ namespace TestParser.Converter.Function
 		/// <returns>ParameterInfo object a row data converted.</returns>
 		/// <exception cref="NullReferenceException"></exception>
 		/// <exception cref="ArgumentOutOfRangeException"></exception>
+		/// <exception cref="FormatException"></exception>
 		protected ParameterInfo Convert(IEnumerable<string> src)
 		{
 			try
