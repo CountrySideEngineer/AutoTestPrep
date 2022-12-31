@@ -55,7 +55,7 @@ namespace TestParser.Converter.Test
 			IEnumerable<IEnumerable<TestData>> testDatas = GetTestData(param, appliedIndexes);
 			IEnumerable<TestCase> testCase = ConvertToTestCase(testDatas);
 
-			testCase = testCase.ToList();
+			testCases = testCase.ToList();
 		}
 
 		/// <summary>
