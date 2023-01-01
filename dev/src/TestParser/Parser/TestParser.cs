@@ -59,7 +59,7 @@ namespace TestParser.Parser
 			{
 				string sheetName = _testConfig.TestFunctionListTable.Section;
 				IParser parser = new FunctionListParser(sheetName);
-				IEnumerable<ParameterInfo> functionList = (IEnumerable<ParameterInfo>)ReadTable(stream, parser);
+				IEnumerable<ParameterInfo> functionList = ReadTable<IEnumerable<ParameterInfo>>(stream, parser);
 
 				return functionList;
 			}
@@ -69,15 +69,42 @@ namespace TestParser.Parser
 			}
 		}
 
+		/// <summary>
+		/// Read function data.
+		/// </summary>
+		/// <param name="stream">Stream to read.</param>
+		/// <param name="paramInfo">Information about to read.</param>
+		/// <returns>Function data read from a sheet.</returns>
 		protected Function ReadFunction(Stream stream, ParameterInfo paramInfo)
 		{
 			string sheetName = paramInfo.InfoName;
 			IParser parser = new FunctionParser(sheetName);
-			Function function = (Function)ReadTable(stream, parser);
+			Function function = ReadTable<Function>(stream, parser);
 
 			return function;
 		}
 
+		/// <summary>
+		/// Read test case.
+		/// </summary>
+		/// <param name="stream">Stream to read.</param>
+		/// <param name="paramInfo">Informatin about to read.</param>
+		/// <returns>Collection of test case data.</returns>
+		protected IEnumerable<TestCase> ReadTestCase(Stream stream, ParameterInfo paramInfo)
+		{
+			string sheetName = paramInfo.InfoName;
+			IParser parser = new TestCaseParser(sheetName);
+			IEnumerable<TestCase> testCases = ReadTable<IEnumerable<TestCase>>(stream, parser);
+
+			return testCases;
+		}
+
+		/// <summary>
+		/// Read test case data.
+		/// </summary>
+		/// <param name="stream">Stream data to read.</param>
+		/// <param name="parameterInfo">Parameter information.</param>
+		/// <returns>Tes data read from stream.</returns>
 		protected Test ReadTest(Stream stream, ParameterInfo parameterInfo)
 		{
 			Function function = ReadFunction(stream, parameterInfo);
@@ -95,19 +122,16 @@ namespace TestParser.Parser
 			return test;
 		}
 
-		protected IEnumerable<TestCase> ReadTestCase(Stream stream, ParameterInfo paramInfo)
+		/// <summary>
+		/// Read table from tableStream using parser. 
+		/// </summary>
+		/// <param name="tableStream">Stream to read table from.</param>
+		/// <param name="parser">Parser used to read table.</param>
+		/// <returns>Object contains table data.</returns>
+		protected T ReadTable<T>(Stream tableStream, IParser parser)
 		{
-			string sheetName = paramInfo.InfoName;
-			IParser parser = new TestCaseParser(sheetName);
-			IEnumerable<TestCase> testCases = (IEnumerable<TestCase>)parser.Parse(stream);
-
-			return testCases;
-		}
-
-		protected object ReadTable(Stream tableStream, IParser parser)
-		{
-			object tableContent = parser.Parse(tableStream);
-			return tableContent;
+			T content = (T)parser.Parse(tableStream);
+			return content;
 		}
 
 		/// <summary>
