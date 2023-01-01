@@ -7,24 +7,33 @@ using System.Xml.Serialization;
 
 namespace TestParser.Config
 {
-	public class GlobalVariableConfig
+	public class VariableConfig
 	{
 		/// <summary>
 		/// Default constructor.
 		/// </summary>
-		public GlobalVariableConfig()
+		public VariableConfig()
 		{
-			Type = string.Empty;
+			Category = string.Empty;
 			External = string.Empty;
 			Internal = string.Empty;
 		}
 
-		[XmlElement("Type")]
-		public string Type { get; set; }
+		/// <summary>
+		/// Category tag content
+		/// </summary>
+		[XmlElement("Category")]
+		public string Category { get; set; }
 
+		/// <summary>
+		/// Global variable type, defined out of the file the target function is implemented.
+		/// </summary>
 		[XmlElement("External")]
 		public string External { get; set; }
 
+		/// <summary>
+		/// Gloval variable type, define in the file the target function is implemented.
+		/// </summary>
 		[XmlElement("Internal")]
 		public string Internal { get; set; }
 	}

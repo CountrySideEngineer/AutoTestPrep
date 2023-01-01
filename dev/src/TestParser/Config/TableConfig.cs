@@ -17,18 +17,23 @@ namespace TestParser.Config
 		/// </summary>
 		public TableConfig()
 		{
-			Name = string.Empty;
+			Section = string.Empty;
+			Title = string.Empty;
 			TableTopRowOffset = 0;
 			TableTopColOffset = 0;
-			RowDataOffset = 0;
-			ColDataOffset = 0;
 		}
 
 		/// <summary>
-		/// Table name.
+		/// Table section name.
 		/// </summary>
-		[XmlElement("Name")]
-		public string Name { get; set; }
+		[XmlElement("Section")]
+		public string Section { get; set; }
+
+		/// <summary>
+		/// Table title, table name.
+		/// </summary>
+		[XmlElement("Title")]
+		public string Title { get; set; }
 
 		/// <summary>
 		/// Offset of table top in row from "name" cell.
@@ -41,17 +46,5 @@ namespace TestParser.Config
 		/// </summary>
 		[XmlElement("TableTopColOffset")]
 		public int TableTopColOffset { get; set; }
-
-		/// <summary>
-		/// Offset to data in column from table top.
-		/// </summary>
-		[XmlElement("RowDataOffset")]
-		public int RowDataOffset { get; set; }
-
-		/// <summary>
-		/// Offset to data in row from table top.
-		/// </summary>
-		[XmlElement("ColDataOffset")]
-		public int ColDataOffset { get; set; }
 	}
 }
