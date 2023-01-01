@@ -20,7 +20,7 @@ namespace TestParser.Target
 
 		/// <summary>
 		/// Information about parameter.
-		/// (A "function" case, this means name of sheet the datas are defined.
+		/// (A "function" case, this means name of sheet the datas are defined.)
 		/// </summary>
 		public string InfoName { get; set; }
 
