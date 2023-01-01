@@ -23,7 +23,7 @@ namespace TestParser.Parser
 		/// <param name="messgae">Message</param>
 		/// <param name="numerator">Progress numerator</param>
 		/// <param name="denominator">Progress denominator</param>
-		public delegate void NotifyParseProgress(string stage, string message, int numerator, int denominator);
+		public delegate void NotifyParseProgress(int numerator, int denominator);
 		public NotifyParseProgress NotifyParseProgressDelegate;
 
 		public delegate void NotifyProcessAndProgress(string procName, int numerator, int denominator);

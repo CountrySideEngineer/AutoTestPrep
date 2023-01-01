@@ -36,16 +36,28 @@ namespace TestParser.Parser
 		/// </exception>
 		protected override object Read(Stream stream)
 		{
-			LoadConfig();
-
-			IEnumerable<ParameterInfo> functionList = ReadFunctionList(stream);
-			var tests = new List<Test>();
-			foreach (var item in functionList)
+			try
 			{
-				Test test = ReadTest(stream, item);
-				tests.Add(test);
+				LoadConfig();
+
+				IEnumerable<ParameterInfo> functionList = ReadFunctionList(stream);
+				IEnumerable<Test> tests = ReadTests(stream, functionList);
+
+				return tests;
 			}
-			return tests;
+			catch (System.Exception ex)
+			{
+				if (!string.IsNullOrEmpty(ex.Message))
+				{
+					ERROR($"{ex.Message}");
+				}
+
+				throw ex;
+			}
+			finally
+			{
+				NotifyParseProgressDelegate?.Invoke(100, 100);
+			}
 		}
 
 		/// <summary>
@@ -55,18 +67,51 @@ namespace TestParser.Parser
 		/// <returns>Collection of ParameterInfo object about test target function.</returns>
 		protected IEnumerable<ParameterInfo> ReadFunctionList(Stream stream)
 		{
-			try
-			{
-				string sheetName = _testConfig.TestFunctionListTable.Section;
-				IParser parser = new FunctionListParser(sheetName);
-				IEnumerable<ParameterInfo> functionList = ReadTable<IEnumerable<ParameterInfo>>(stream, parser);
+			string procName = "対象関数一覧読出し";
+			NotifyProcessAndProgressDelegate?.Invoke(procName, 0, 0);
+			INFO("Start function list.");
 
-				return functionList;
-			}
-			catch (Exception)
+			string sheetName = _testConfig.TestFunctionListTable.Section;
+			IParser parser = new FunctionListParser(sheetName);
+			IEnumerable<ParameterInfo> functionList = ReadTable<IEnumerable<ParameterInfo>>(stream, parser);
+
+			NotifyProcessAndProgressDelegate?.Invoke(procName, 100, 100);
+
+			if (0 == functionList.Count())
 			{
-				throw;
+				ERROR("No test function data has been set in function table.");
+				throw new TestParserException(TestParserException.Code.PARSER_ERROR_NO_TEST_FUNCTION_SET);
 			}
+
+			return functionList;
+		}
+
+		/// <summary>
+		/// Read test datas.
+		/// </summary>
+		/// <param name="stream">Stream to read from data.</param>
+		/// <param name="functions">Collection of Test object about test data.</param>
+		/// <returns>Collection of Test object.</returns>
+		protected IEnumerable<Test> ReadTests(Stream stream, IEnumerable<ParameterInfo> functions)
+		{
+			string procName = "テスト設計情報読出し";
+			int index = 0;
+			int count = functions.Count();
+			var tests = new List<Test>();
+
+			foreach (var item in functions)
+			{
+				string processName = $"{procName} : {item.Name}";
+				NotifyProcessAndProgressDelegate?.Invoke(processName, index, count);
+
+				Test test = ReadTest(stream, item);
+				tests.Add(test);
+
+				index++;
+				NotifyProcessAndProgressDelegate?.Invoke(processName, index, count);
+			}
+			return tests;
+
 		}
 
 		/// <summary>
