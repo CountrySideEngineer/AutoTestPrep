@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestDataInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TestDataFilePath>..\..\doc\sample\test_sample_input\google_test_sample_data_003.xlsx</TestDataFilePath>
+  <OutputDirectoryPath>..\..\doc\sample\google_test_sample_output</OutputDirectoryPath>
+  <StubBufferSize1>200</StubBufferSize1>
+  <StubBufferSize2>300</StubBufferSize2>
+  <DriverIncludeStandardHeaderFiles>
+    <DriverIncludeStandardHeaderFilesItem>stdio.h</DriverIncludeStandardHeaderFilesItem>
+    <DriverIncludeStandardHeaderFilesItem>windows.h</DriverIncludeStandardHeaderFilesItem>
+  </DriverIncludeStandardHeaderFiles>
+  <DriverIncludeUserHeaderFiles>
+    <DriverIncludeUserHeaderFilesItem />
+  </DriverIncludeUserHeaderFiles>
+  <StubIncludeStandardHeaderFiles>
+    <StubIncludeStandardHeaderFilesItem>stdio.h</StubIncludeStandardHeaderFilesItem>
+  </StubIncludeStandardHeaderFiles>
+  <StubIncludeUserHeaderFiles>
+    <StubIncludeUserHeaderFilesItem />
+  </StubIncludeUserHeaderFiles>
+  <IncludeDirectoryPath>
+    <IncludeDirectoryPathItem />
+  </IncludeDirectoryPath>
+  <LibraryNames>
+    <LibraryNamesItem />
+  </LibraryNames>
+  <LibraryDirectoryPath>
+    <LibraryDirectoryPathItem />
+  </LibraryDirectoryPath>
+  <DefineMacros>
+    <DefineMacrosItem />
+  </DefineMacros>
+</TestDataInfo>

@@ -55,7 +55,7 @@ namespace TestParser.Target
 			try
 			{
 				bool isTop = true;
-				foreach (var argument in this.Arguments)
+				foreach (var argument in Arguments)
 				{
 					if (!isTop)
 					{
@@ -67,7 +67,7 @@ namespace TestParser.Target
 			}
 			catch (NullReferenceException)
 			{
-				//No argumetn -> Skip!
+				//No argument -> Skip!
 			}
 			toString += ")";
 
@@ -95,6 +95,33 @@ namespace TestParser.Target
 				hasReturn = true;
 			}
 			return hasReturn;
+		}
+
+		/// <summary>
+		/// Copy data to other Function object.
+		/// </summary>
+		/// <param name="dst">Function object to copy to.</param>
+		public virtual void CopyTo(ref Function dst)
+		{
+			Parameter param = dst as Parameter;
+			base.CopyTo(ref param);
+
+			dst.SubFunctions = new List<Function>(SubFunctions);
+			dst.InternalVariables = new List<Parameter>(InternalVariables);
+			dst.ExternalVariables = new List<Parameter>(ExternalVariables);
+		}
+
+		/// <summary>
+		/// Copy data from ohter Function object.
+		/// </summary>
+		/// <param name="src"></param>
+		public virtual void CopyFrom(Function src)
+		{
+			base.CopyFrom(src);
+
+			SubFunctions = new List<Function>(src.SubFunctions);
+			InternalVariables = new List<Parameter>(src.InternalVariables);
+			ExternalVariables = new List<Parameter>(src.ExternalVariables);
 		}
 
 		/// <summary>

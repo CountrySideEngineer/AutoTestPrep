@@ -17,11 +17,12 @@ namespace TestParser.Data
 		/// </summary>
 		public Test()
 		{
-			this.Target = null;
-			this.TestCases = null;
-			this.Name = string.Empty;
-			this.TestInformation = string.Empty;
-			this.SourcePath = string.Empty;
+			Target = null;
+			TestCases = null;
+			Name = string.Empty;
+			TestInformation = string.Empty;
+			SourceName = string.Empty;
+			SourcePath = string.Empty;
 		}
 
 		/// <summary>
@@ -43,6 +44,11 @@ namespace TestParser.Data
 		/// About test
 		/// </summary>
 		public string TestInformation { get; set; }
+
+		/// <summary>
+		/// Test source name.
+		/// </summary>
+		public string SourceName { get; set; }
 
 		/// <summary>
 		/// Path to file to test.
