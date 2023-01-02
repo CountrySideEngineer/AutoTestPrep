@@ -17,22 +17,22 @@ namespace TestParser.Config
 		/// </summary>
 		public FunctionConfig()
 		{
-			Type = string.Empty;
-			Body = string.Empty;
+			Category = string.Empty;
+			Function = string.Empty;
 			Argument = string.Empty;
 		}
 
 		/// <summary>
-		/// Type tag content.
+		/// Category tag content.
 		/// </summary>
-		[XmlElement("Type")]
-		public string Type { get; set; }
+		[XmlElement("Category")]
+		public string Category { get; set; }
 
 		/// <summary>
-		/// Body tag content.
+		/// Function tag content.
 		/// </summary>
-		[XmlElement("Body")]
-		public string Body { get; set; }
+		[XmlElement("Function")]
+		public string Function { get; set; }
 
 		/// <summary>
 		/// Argument tag argument.

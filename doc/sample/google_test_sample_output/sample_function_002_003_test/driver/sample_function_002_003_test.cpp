@@ -1,3 +1,6 @@
+/*
+ *	sample_function_002_003 test driver source code.
+ */
 #include <stdio.h>
 #include <windows.h>
 #include "gtest/gtest.h"
@@ -8,6 +11,7 @@
 //Test target function declare
 int sample_function_002_003(int input1);
 
+//Initialize test stub by calling methods to initialize them.
 void sample_function_002_003_utest::SetUp()
 {
 	subfunction_003_init();
@@ -26,6 +30,7 @@ TEST_F(sample_function_002_003_utest, sample_function_002_003_utest_001)
 
 	int _ret_val = sample_function_002_003(input1);
 
+	//Check the test result by comparing the output with the expected value.
 	ASSERT_EQ(1, _ret_val);
 	ASSERT_EQ(1, subfunction_003_called_count);
 }
@@ -42,6 +47,7 @@ TEST_F(sample_function_002_003_utest, sample_function_002_003_utest_002)
 
 	int _ret_val = sample_function_002_003(input1);
 
+	//Check the test result by comparing the output with the expected value.
 	ASSERT_EQ(2, _ret_val);
 	ASSERT_EQ(1, subfunction_003_called_count);
 }
@@ -58,6 +64,7 @@ TEST_F(sample_function_002_003_utest, sample_function_002_003_utest_003)
 
 	int _ret_val = sample_function_002_003(input1);
 
+	//Check the test result by comparing the output with the expected value.
 	ASSERT_EQ(99, _ret_val);
 	ASSERT_EQ(1, subfunction_003_called_count);
 }
@@ -74,6 +81,7 @@ TEST_F(sample_function_002_003_utest, sample_function_002_003_utest_004)
 
 	int _ret_val = sample_function_002_003(input1);
 
+	//Check the test result by comparing the output with the expected value.
 	ASSERT_EQ(100, _ret_val);
 	ASSERT_EQ(1, subfunction_003_called_count);
 }

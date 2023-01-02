@@ -50,8 +50,8 @@ namespace TestParser.Target
 		{
 			this.Name = string.Empty;
 			this.DataType = string.Empty;
-			this.Prefix = string.Empty;
-			this.Postifx = string.Empty;
+			this.Prefix = new List<string>();
+			this.Postfix = new List<string>();
 			this.PointerNum = 0;
 			this.Mode = AccessMode.None;
 			this.Overview = string.Empty;
@@ -66,8 +66,8 @@ namespace TestParser.Target
 		{
 			this.Name = src.Name;
 			this.DataType = src.DataType;
-			this.Prefix = src.Prefix;
-			this.Postifx = src.Postifx;
+			this.Prefix = new List<string>(src.Prefix);
+			this.Postfix = new List<string>(src.Postfix);
 			this.PointerNum = src.PointerNum;
 			this.Mode = src.Mode;
 			this.Overview = src.Overview;
@@ -102,12 +102,12 @@ namespace TestParser.Target
 		/// <summary>
 		/// Prefix of data type.
 		/// </summary>
-		public string Prefix { get; set; }
+		public IEnumerable<string> Prefix { get; set; }
 
 		/// <summary>
 		/// Postfix of data type.
 		/// </summary>
-		public string Postifx { get; set; }
+		public IEnumerable<string> Postfix { get; set; }
 
 		/// <summary>
 		/// Number of pointer.
@@ -137,25 +137,21 @@ namespace TestParser.Target
 		{
 			//Create data type string with prefix, postfix, and pointer code.
 			string toString = string.Empty;
-			if (!(string.IsNullOrEmpty(this.Prefix)) &&
-				(!(string.IsNullOrWhiteSpace(this.Prefix))))
+			string prefix = PrefixToString();
+			if (!string.IsNullOrEmpty(prefix))
 			{
-				toString += this.Prefix;
+				toString += prefix;
 				toString += " ";
 			}
-			toString += this.DataType;
-			for (int index = 0; index < this.PointerNum; index++)
-			{
-				toString += "*";
-			}
+			toString += DataType;
 			toString += " ";
-			toString += this.Name;
-			if (!(string.IsNullOrEmpty(this.Postifx)) &&
-				(!(string.IsNullOrWhiteSpace(this.Postifx))))
+			string postfix = PostfixToString();
+			if (!string.IsNullOrEmpty(postfix))
 			{
+				toString += postfix;
 				toString += " ";
-				toString += this.Postifx;
 			}
+			toString += Name;
 
 			return toString;
 		}
@@ -174,6 +170,112 @@ namespace TestParser.Target
 				actualDataType += "*";
 			}
 			return actualDataType;
+		}
+
+		/// <summary>
+		/// Add prefix string.
+		/// </summary>
+		/// <param name="prefix">Prefix data in string.</param>
+		public virtual void AddPrefix(string prefix)
+		{
+			if ((string.IsNullOrEmpty(prefix)) || (string.IsNullOrWhiteSpace(prefix)))
+			{
+				return;
+			}
+			else
+			{
+				Prefix = Prefix.Append(prefix);
+			}
+		}
+
+		/// <summary>
+		/// Add postfix string.
+		/// </summary>
+		/// <param name="postfix">Prefix data in string.</param>
+		public virtual void AddPostfix(string postfix)
+		{
+			if ((string.IsNullOrEmpty(postfix)) || (string.IsNullOrWhiteSpace(postfix)))
+			{
+				return;
+			}
+			else
+			{
+				Postfix = Postfix.Append(postfix);
+			}
+		}
+
+		/// <summary>
+		/// Convert collection of prefix modifier to string.
+		/// </summary>
+		/// <returns>Prefix modifier in a string.</returns>
+		protected virtual string PrefixToString()
+		{
+			string prefix = PScritpToString(Prefix);
+			return prefix;
+		}
+
+		/// <summary>
+		/// Converts a set of prepositions into a single string.
+		/// </summary>
+		/// <returns>Prefix modifier in a string.</returns>
+		protected virtual string PostfixToString()
+		{
+			string postfix = PScritpToString(Postfix);
+			return postfix;
+		}
+
+		/// <summary>
+		/// Convert collection of script into a single string.
+		/// </summary>
+		/// <param name="scripts"></param>
+		/// <returns></returns>
+		protected virtual string PScritpToString(IEnumerable<string> scripts)
+		{
+			try
+			{
+				IEnumerable<string> scriptsWithoutEmpty =
+					scripts.Where(_ => ((!string.IsNullOrEmpty(_)) && (!string.IsNullOrWhiteSpace(_))));
+				string script = string.Join(" ", scriptsWithoutEmpty);
+				return script;
+			}
+			catch (Exception ex)
+			when ((ex is NullReferenceException) || (ex is ArgumentNullException))
+			{
+				string script = string.Empty;
+				return script;
+			}
+		}
+
+		/// <summary>
+		/// Copy data to other Parameter object.
+		/// </summary>
+		/// <param name="dst">Parameter object to copy to.</param>
+		public virtual void CopyTo(ref Parameter dst)
+		{
+			dst.Name = Name;
+			dst.DataType = DataType;
+			dst.Prefix = new List<string>(Prefix);
+			dst.Postfix = new List<string>(Postfix);
+			dst.PointerNum = PointerNum;
+			dst.Mode = Mode;
+			dst.Overview = Overview;
+			dst.Description = Description;
+		}
+
+		/// <summary>
+		/// Copy data from ohter Parameter object.
+		/// </summary>
+		/// <param name="src"></param>
+		public virtual void CopyFrom(Parameter src)
+		{
+			Name = src.Name;
+			DataType = src.DataType;
+			Prefix = new List<string>(src.Prefix);
+			Postfix = new List<string>(src.Postfix);
+			PointerNum = src.PointerNum;
+			Mode = src.Mode;
+			Overview = src.Overview;
+			Description = src.Description;
 		}
 	}
 }

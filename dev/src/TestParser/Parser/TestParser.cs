@@ -11,7 +11,7 @@ using System.Security;
 
 namespace TestParser.Parser
 {
-	public class TestParser : ATestParser
+	public class TestParser : AParser
 	{
 		protected TestParserConfig _testConfig;
 
@@ -24,101 +24,6 @@ namespace TestParser.Parser
 		{
 			_testConfig = null;
 			_configFilePath = @".\TestParserConfg.xml";
-			this.FunctionListParser = null;
-			this.FunctionParser = null;
-			this.TestCaseParser = null;
-		}
-
-		/// <summary>
-		/// Returns the test data, test case data, input and expect value, 
-		/// </summary>
-		/// <param name="srcPath">Input src file path.</param>
-		/// <returns>Collection of test.</returns>
-		/// <exception cref="NullReferenceException">
-		/// Object to parse function list, function, or test case has not been set.
-		/// </exception>
-		public override object Parse(string srcPath)
-		{
-			try
-			{
-				return this.Read(srcPath);
-			}
-			catch (NullReferenceException)
-			{
-				throw;
-			}
-		}
-
-		/// <summary>
-		/// Returns the test data, test case data, input and expect value, 
-		/// </summary>
-		/// <param name="stream">Stream of input data.</param>
-		/// <returns>Collection of test data including target function and test case.</returns>
-		/// <exception cref="NullReferenceException">
-		/// Object to parse function list, function, or test case has not been set.
-		/// </exception>
-		public override object Parse(Stream stream)
-		{
-			try
-			{
-				return this.Read(stream);
-			}
-			catch(NullReferenceException)
-			{
-				throw;
-			}
-		}
-
-		/// <summary>
-		/// Read data from file.
-		/// </summary>
-		/// <param name="srcPath">Input src file path.</param>
-		/// <returns>Object read from file <para>srcFile.</para></returns>
-		/// <exception cref="TestParserException">Error while opening and reading input file.</exception>
-		protected object Read(string srcPath)
-		{
-			try
-			{
-				using (var stream = new FileStream(srcPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
-				{
-					INFO($"Start reading input file : {srcPath}");
-					try
-					{
-						return Read(stream);
-					}
-					catch (NullReferenceException)
-					{
-						throw;
-					}
-				}
-			}
-			catch (System.Exception ex)
-			when (ex is ArgumentNullException)
-			{
-				ERROR("No test file path has been set.");
-				throw new TestParserException(TestParserException.Code.PARSER_ERROR_FILE_CAN_NOT_OPEN);
-			}
-			catch (System.Exception ex)
-			when ((ex is ArgumentException) ||
-				(ex is FileNotFoundException) ||
-				(ex is SecurityException) ||
-				(ex is DirectoryNotFoundException) ||
-				(ex is PathTooLongException))
-			{
-				ERROR($"File path {srcPath} is invalid.");
-				throw new TestParserException(TestParserException.Code.PARSER_ERROR_FILE_CAN_NOT_OPEN);
-			}
-			catch (SecurityException)
-			{
-				ERROR($"File {srcPath} can not access.");
-				throw new TestParserException(TestParserException.Code.PARSER_ERROR_FILE_CAN_NOT_OPEN);
-			}
-			catch (System.Exception ex)
-			when ((ex is NotSupportedException) || (ex is ArgumentOutOfRangeException))
-			{
-				ERROR($"File path {srcPath} is not supported.");
-				throw new TestParserException(TestParserException.Code.PARSER_ERROR_FILE_CAN_NOT_OPEN);
-			}
 		}
 
 		/// <summary>
@@ -129,33 +34,16 @@ namespace TestParser.Parser
 		/// <exception cref="NullReferenceException">
 		/// Object to parse function list, function, or test case has not been set.
 		/// </exception>
-		protected object Read(Stream stream)
+		protected override object Read(Stream stream)
 		{
 			try
 			{
-				IEnumerable<ParameterInfo> testTargetFunctionInfos = ReadFunctionList(stream);
+				LoadConfig();
 
-				string procName = "テスト設計情報読出し";
-				var tests = new List<Test>();
-				int index = 0;
-				foreach (var paramInfoItem in testTargetFunctionInfos)
-				{
-					string processName = $"{procName} : {paramInfoItem.Name}";
-					NotifyProcessAndProgressDelegate?.Invoke(processName, index, testTargetFunctionInfos.Count());
-
-					Test test = Read(stream, paramInfoItem);
-					tests.Add(test);
-
-					index++;
-					NotifyProcessAndProgressDelegate?.Invoke(processName, index, testTargetFunctionInfos.Count());
-				}
+				IEnumerable<ParameterInfo> functionList = ReadFunctionList(stream);
+				IEnumerable<Test> tests = ReadTests(stream, functionList);
 
 				return tests;
-			}
-			catch (NullReferenceException)
-			{
-				ERROR($"NullReferenceException detected while reading data.");
-				throw;
 			}
 			catch (System.Exception ex)
 			{
@@ -164,8 +52,11 @@ namespace TestParser.Parser
 					ERROR($"{ex.Message}");
 				}
 
-				NotifyParseProgressDelegate?.Invoke(100, 100);
 				throw ex;
+			}
+			finally
+			{
+				NotifyParseProgressDelegate?.Invoke(100, 100);
 			}
 		}
 
@@ -179,74 +70,113 @@ namespace TestParser.Parser
 			string procName = "対象関数一覧読出し";
 			NotifyProcessAndProgressDelegate?.Invoke(procName, 0, 0);
 			INFO("Start function list.");
-			LoadConfig();
 
-			if (null == FunctionListParser)
-			{
-				FunctionListParser = new FunctionListParser(
-					_testConfig.TestList.SheetName, 
-					_testConfig.TestList);
-			}
-			var testTargetFunctionInfos = (IEnumerable<ParameterInfo>)FunctionListParser.Parse(stream);
+			string sheetName = _testConfig.TestFunctionListTable.Section;
+			IParser parser = new FunctionListParser(sheetName);
+			IEnumerable<ParameterInfo> functionList = ReadTable<IEnumerable<ParameterInfo>>(stream, parser);
 
 			NotifyProcessAndProgressDelegate?.Invoke(procName, 100, 100);
-			if (0 == testTargetFunctionInfos.Count())
+
+			if (0 == functionList.Count())
 			{
 				ERROR("No test function data has been set in function table.");
 				throw new TestParserException(TestParserException.Code.PARSER_ERROR_NO_TEST_FUNCTION_SET);
 			}
 
-			return testTargetFunctionInfos;
+			return functionList;
 		}
 
 		/// <summary>
-		/// Read test data from <para>stream</para> and specified by <para>paramInfo</para>.
+		/// Read test datas.
 		/// </summary>
-		/// <param name="stream">Stream to read test data from.</param>
-		/// <param name="paramInfo">Parameter information to read.</param>
-		/// <returns>Test data read from <para>stream</para> and <para>paramInfo</para>.</returns>
-		/// <exception cref="NullReferenceException">Object to parse function or test case has not been set.</exception>
-		protected Test Read(Stream stream, ParameterInfo paramInfo)
+		/// <param name="stream">Stream to read from data.</param>
+		/// <param name="functions">Collection of Test object about test data.</param>
+		/// <returns>Collection of Test object.</returns>
+		protected IEnumerable<Test> ReadTests(Stream stream, IEnumerable<ParameterInfo> functions)
 		{
-			try
-			{
-				INFO("Start reading target function data.");
-				if (null == FunctionParser)
-				{
-					FunctionParser = new FunctionParser(
-						_testConfig.TargetFunction.TableConfig.Name,
-						_testConfig.TargetFunction);
-				}
-				this.FunctionParser.Target = paramInfo.InfoName;
-				var targetFunction = (Function)FunctionParser.Parse(stream);
+			string procName = "テスト設計情報読出し";
+			int index = 0;
+			int count = functions.Count();
+			var tests = new List<Test>();
 
-				INFO("Start reading test case data.");
-				if (null == TestCaseParser)
-				{
-					TestCaseParser = new TestCaseParser(_testConfig.Test);
-				}
-				this.TestCaseParser.Target = paramInfo.InfoName;
-				var testCases = (IEnumerable<TestCase>)TestCaseParser.Parse(stream);
-				var test = new Test
-				{
-					Name = paramInfo.Name,
-					TestCases = testCases,
-					Target = targetFunction,
-					TestInformation = paramInfo.InfoName,
-					SourcePath = paramInfo.FileName
-				};
-				return test;
-			}
-			catch (NullReferenceException)
+			foreach (var item in functions)
 			{
-				ERROR("protected Test Read(Stream stream, ParameterInfo paramInfo)");
-				throw;
+				string processName = $"{procName} : {item.Name}";
+				NotifyProcessAndProgressDelegate?.Invoke(processName, index, count);
+
+				Test test = ReadTest(stream, item);
+				tests.Add(test);
+
+				index++;
+				NotifyProcessAndProgressDelegate?.Invoke(processName, index, count);
 			}
-			catch (InvalidCastException ex)
+			return tests;
+
+		}
+
+		/// <summary>
+		/// Read function data.
+		/// </summary>
+		/// <param name="stream">Stream to read.</param>
+		/// <param name="paramInfo">Information about to read.</param>
+		/// <returns>Function data read from a sheet.</returns>
+		protected Function ReadFunction(Stream stream, ParameterInfo paramInfo)
+		{
+			string sheetName = paramInfo.InfoName;
+			IParser parser = new FunctionParser(sheetName);
+			Function function = ReadTable<Function>(stream, parser);
+
+			return function;
+		}
+
+		/// <summary>
+		/// Read test case.
+		/// </summary>
+		/// <param name="stream">Stream to read.</param>
+		/// <param name="paramInfo">Informatin about to read.</param>
+		/// <returns>Collection of test case data.</returns>
+		protected IEnumerable<TestCase> ReadTestCase(Stream stream, ParameterInfo paramInfo)
+		{
+			string sheetName = paramInfo.InfoName;
+			IParser parser = new TestCaseParser(sheetName);
+			IEnumerable<TestCase> testCases = ReadTable<IEnumerable<TestCase>>(stream, parser);
+
+			return testCases;
+		}
+
+		/// <summary>
+		/// Read test case data.
+		/// </summary>
+		/// <param name="stream">Stream data to read.</param>
+		/// <param name="parameterInfo">Parameter information.</param>
+		/// <returns>Tes data read from stream.</returns>
+		protected Test ReadTest(Stream stream, ParameterInfo parameterInfo)
+		{
+			Function function = ReadFunction(stream, parameterInfo);
+			IEnumerable<TestCase> testCases = ReadTestCase(stream, parameterInfo);
+
+			Test test = new Test()
 			{
-				ERROR(ex.Message);
-				throw;
-			}
+				Name = parameterInfo.Name,
+				Target = function,
+				TestCases = testCases,
+				TestInformation = parameterInfo.InfoName,
+				SourceName = parameterInfo.FileName,
+				SourcePath = parameterInfo.FilePath
+			};
+			return test;
+		}
+
+		/// <summary>
+		/// Read table from tableStream using parser. 
+		/// </summary>
+		/// <param name="tableStream">Stream to read table from.</param>
+		/// <param name="parser">Parser used to read table.</param>
+		/// <returns>Object contains table data.</returns>
+		protected T ReadTable<T>(Stream tableStream, IParser parser)
+		{
+			T content = (T)parser.Parse(tableStream);
+			return content;
 		}
 
 		/// <summary>
@@ -272,10 +202,10 @@ namespace TestParser.Parser
 			}
 			finally
 			{
-				DEBUG("TestParserConfig");
-				DEBUG($"    Sheet name : {_testConfig.TestList.SheetName}");
-				DEBUG($"    Row offset : {_testConfig.TestList.TableConfig.TableTopRowOffset}");
-				DEBUG($"    Col offset : {_testConfig.TestList.TableConfig.TableTopColOffset}");
+				//DEBUG("TestParserConfig");
+				//DEBUG($"    Sheet name : {_testConfig.TestList.SheetName}");
+				//DEBUG($"    Row offset : {_testConfig.TestList.TableConfig.TableTopRowOffset}");
+				//DEBUG($"    Col offset : {_testConfig.TestList.TableConfig.TableTopColOffset}");
 			}
 		}
 	}
