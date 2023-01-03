@@ -1,3 +1,6 @@
+/*
+ *	sample_function_001 test driver source code.
+ */
 #include <stdio.h>
 #include <windows.h>
 #include "min_unit.h"
@@ -28,6 +31,8 @@ static char* sample_function_001_utest_001()
 
 	int _ret_val = sample_function_001(input1, input2);
 
+	//Check the test result
+	//by comparing the output with the expected value.
 	mu_assert(0 == _ret_val);
 }
 
@@ -46,6 +51,8 @@ static char* sample_function_001_utest_002()
 
 	int _ret_val = sample_function_001(input1, input2);
 
+	//Check the test result
+	//by comparing the output with the expected value.
 	mu_assert(1 == _ret_val);
 }
 
@@ -64,6 +71,8 @@ static char* sample_function_001_utest_003()
 
 	int _ret_val = sample_function_001(input1, input2);
 
+	//Check the test result
+	//by comparing the output with the expected value.
 	mu_assert(2 == _ret_val);
 }
 
@@ -82,6 +91,8 @@ static char* sample_function_001_utest_004()
 
 	int _ret_val = sample_function_001(input1, input2);
 
+	//Check the test result
+	//by comparing the output with the expected value.
 	mu_assert(3 == _ret_val);
 }
 
@@ -100,6 +111,8 @@ static char* sample_function_001_utest_005()
 
 	int _ret_val = sample_function_001(input1, input2);
 
+	//Check the test result
+	//by comparing the output with the expected value.
 	mu_assert(1 == _ret_val);
 }
 
@@ -118,6 +131,8 @@ static char* sample_function_001_utest_006()
 
 	int _ret_val = sample_function_001(input1, input2);
 
+	//Check the test result
+	//by comparing the output with the expected value.
 	mu_assert(0 == _ret_val);
 }
 
@@ -136,6 +151,8 @@ static char* sample_function_001_utest_007()
 
 	int _ret_val = sample_function_001(input1, input2);
 
+	//Check the test result
+	//by comparing the output with the expected value.
 	mu_assert(1 == _ret_val);
 }
 
@@ -154,6 +171,8 @@ static char* sample_function_001_utest_008()
 
 	int _ret_val = sample_function_001(input1, input2);
 
+	//Check the test result
+	//by comparing the output with the expected value.
 	mu_assert(2 == _ret_val);
 }
 
@@ -172,6 +191,8 @@ static char* sample_function_001_utest_009()
 
 	int _ret_val = sample_function_001(input1, input2);
 
+	//Check the test result
+	//by comparing the output with the expected value.
 	mu_assert(2 == _ret_val);
 }
 
@@ -190,6 +211,8 @@ static char* sample_function_001_utest_010()
 
 	int _ret_val = sample_function_001(input1, input2);
 
+	//Check the test result
+	//by comparing the output with the expected value.
 	mu_assert(1 == _ret_val);
 }
 
@@ -208,6 +231,8 @@ static char* sample_function_001_utest_011()
 
 	int _ret_val = sample_function_001(input1, input2);
 
+	//Check the test result
+	//by comparing the output with the expected value.
 	mu_assert(0 == _ret_val);
 }
 
@@ -226,6 +251,8 @@ static char* sample_function_001_utest_012()
 
 	int _ret_val = sample_function_001(input1, input2);
 
+	//Check the test result
+	//by comparing the output with the expected value.
 	mu_assert(1 == _ret_val);
 }
 
@@ -244,6 +271,8 @@ static char* sample_function_001_utest_013()
 
 	int _ret_val = sample_function_001(input1, input2);
 
+	//Check the test result
+	//by comparing the output with the expected value.
 	mu_assert(3 == _ret_val);
 }
 
@@ -262,6 +291,8 @@ static char* sample_function_001_utest_014()
 
 	int _ret_val = sample_function_001(input1, input2);
 
+	//Check the test result
+	//by comparing the output with the expected value.
 	mu_assert(2 == _ret_val);
 }
 
@@ -280,6 +311,8 @@ static char* sample_function_001_utest_015()
 
 	int _ret_val = sample_function_001(input1, input2);
 
+	//Check the test result
+	//by comparing the output with the expected value.
 	mu_assert(1 == _ret_val);
 }
 
@@ -298,6 +331,8 @@ static char* sample_function_001_utest_016()
 
 	int _ret_val = sample_function_001(input1, input2);
 
+	//Check the test result
+	//by comparing the output with the expected value.
 	mu_assert(0 == _ret_val);
 }
 
