@@ -17,18 +17,25 @@
     <UserControl.DataContext>
         <vm:LibraryInformationInputViewModel/>
     </UserControl.DataContext>
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
-        </Grid.RowDefinitions>
-        <local:MultiLineInputView Grid.Row="0"
-                                  Margin="8"
-                                  DataContext="{Binding Path=LibraryInputVM}"
+    <ScrollViewer
+        VerticalScrollBarVisibility="Auto"
+        HorizontalScrollBarVisibility="Auto"
+        >
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <local:MultiLineInputView Grid.Row="0"
+                                      Margin="8"
+                                      DataContext="{Binding Path=LibraryInputVM}"
+                                      MinHeight="200"
                                   />
-        <local:MultiLineInputView Grid.Row="1"
-                                  Margin="8"
-                                  DataContext="{Binding Path=LibraryDirectoryVM}"
+            <local:MultiLineInputView Grid.Row="1"
+                                      Margin="8" 
+                                      DataContext="{Binding Path=LibraryDirectoryVM}"
+                                      MinHeight="200"
                                   />
-    </Grid>
+        </Grid>
+    </ScrollViewer>
 </UserControl>
