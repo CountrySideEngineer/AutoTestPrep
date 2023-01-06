@@ -2,25 +2,20 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 using CSEngineer.Logger;
+using TableReader.Interface;
+using TableReader.TableData;
+using TestParser.Config;
+using TestParser.Converter;
+using TestParser.ParserException;
 
 namespace TestParser.Parser
 {
-	public abstract class ATestParser : IParser, CSEngineer.Logger.Interface.ILog
+	public abstract class ATestParser : AParser
 	{
-		/// <summary>
-		/// Delegate to notify progress of parsing test.
-		/// </summary>
-		/// <param name="numerator">Progress numerator</param>
-		/// <param name="denominator">Progress denominator</param>
-		public delegate void NotifyParseProgress(int numerator, int denominator);
-		public NotifyParseProgress NotifyParseProgressDelegate;
-
-		public delegate void NotifyProcessAndProgress(string procName, int numerator, int denominator);
-		public NotifyProcessAndProgress NotifyProcessAndProgressDelegate;
-
 		/// <summary>
 		/// Parser to read function list.
 		/// </summary>
@@ -37,71 +32,38 @@ namespace TestParser.Parser
 		public AParser TestCaseParser { get; set; }
 
 		/// <summary>
-		/// Abstract function to read function.
+		/// Default constructor.
 		/// </summary>
-		/// <param name="path">Paht to file designing test.</param>
-		/// <returns>Object about test.</returns>
-		public abstract object Parse(string path);
+		public ATestParser() : base(string.Empty) { }
 
 		/// <summary>
-		/// Abstract function to read function.
+		/// Constructor with target.
 		/// </summary>
-		/// <param name="path">Stream to read from data to parse.</param>
-		/// <returns>Object about test.</returns>
-		public abstract object Parse(Stream stream);
+		/// <param name="target"></param>
+		public ATestParser(string target) : base(target) { }
 
 		/// <summary>
-		/// Output TRACE level log message.
+		/// Common read sequence.
 		/// </summary>
-		/// <param name="message">Output message.</param>
-		public void TRACE(string message)
+		/// <param name="stream">Stream to read.</param>
+		/// <returns>Object read data from stream converted.</returns>
+		protected override object Read(Stream stream)
 		{
-			Log.GetInstance().TRACE(message);
+			ITableReader reader = GetReader(stream);
+			string tableName = GetTableName();
+			Content content = reader.GetTable(tableName);
+			IContentConverter converter = GetConverter();
+			object converted = converter.Convert(content);
+
+			return converted;
 		}
 
 		/// <summary>
-		/// Output DEBUG level log message.
+		/// Abstract method which returns 
 		/// </summary>
-		/// <param name="message">Output message.</param>
-		public void DEBUG(string message)
-		{
-			Log.GetInstance().DEBUG(message);
-		}
+		/// <returns>Converter to convert read data.</returns>
+		public abstract IContentConverter GetConverter();
 
-		/// <summary>
-		/// Output INFO (information) level log message.
-		/// </summary>
-		/// <param name="message">Output message.</param>
-		public void INFO(string message)
-		{
-			Log.GetInstance().INFO(message);
-		}
-
-		/// <summary>
-		/// Output WARN (warning) level log message.
-		/// </summary>
-		/// <param name="message">Output message.</param>
-		public void WARN(string message)
-		{
-			Log.GetInstance().WARN(message);
-		}
-
-		/// <summary>
-		/// Output ERROR level log message.
-		/// </summary>
-		/// <param name="message">Output message.</param>
-		public void ERROR(string message)
-		{
-			Log.GetInstance().ERROR(message);
-		}
-
-		/// <summary>
-		/// Output FATAL level log message.
-		/// </summary>
-		/// <param name="message">Output message.</param>
-		public void FATAL(string message)
-		{
-			Log.GetInstance().FATAL(message);
-		}
+		protected abstract string GetTableName();
 	}
 }

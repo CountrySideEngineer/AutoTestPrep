@@ -10,24 +10,23 @@ namespace TestParser.Config
 	public class TestCaseTableConfig : TableConfig
 	{
 		/// <summary>
-		/// Offset to test case top in row.
-		/// </summary>
-		[XmlElement("TestCaseRowOffset")]
-		public int TestCaseRowOffset { get; set; }
-
-		/// <summary>
-		/// Offset to test case top in column.
-		/// </summary>
-		[XmlElement("TestCaseColOffset")]
-		public int TestCaseColOffset { get; set; }
-
-		/// <summary>
 		/// Default constructor.
 		/// </summary>
-		public TestCaseTableConfig() : base()
+		public TestCaseTableConfig()
 		{
-			TestCaseRowOffset = 0;
-			TestCaseColOffset = 0;
+			Input = string.Empty;
+			Exepct = string.Empty;
 		}
+		/// <summary>
+		/// Configuration about Input.
+		/// </summary>
+		[XmlElement("Input")]
+		public string Input { get; set; }
+
+		/// <summary>
+		/// Configuration about Expect.
+		/// </summary>
+		[XmlElement("Expect")]
+		public string Exepct { get; set; }
 	}
 }

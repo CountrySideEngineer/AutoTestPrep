@@ -26,8 +26,8 @@
     </Window.DataContext>
     <Grid Style="{StaticResource Grid_AboutArea}">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="135*"/>
-            <ColumnDefinition Width="61*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="112"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>

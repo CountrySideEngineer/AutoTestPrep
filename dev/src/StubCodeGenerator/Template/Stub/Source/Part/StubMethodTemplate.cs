@@ -28,15 +28,23 @@ namespace CodeGenerator.Stub.Template.Stub.Source.Part
         /// </summary>
         public override string TransformText()
         {
+            this.Write("/*\r\n *\tStub method of ");
             
-            #line 7 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\Stub\Source\Part\StubMethodTemplate.tt"
+            #line 8 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\Stub\Source\Part\StubMethodTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(Target.Name));
+            
+            #line default
+            #line hidden
+            this.Write("\r\n */\r\n");
+            
+            #line 10 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\Stub\Source\Part\StubMethodTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Target.ToString()));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n");
             
-            #line 9 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\Stub\Source\Part\StubMethodTemplate.tt"
+            #line 12 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\Stub\Source\Part\StubMethodTemplate.tt"
 
 	//戻り値をラッチする処理
 	var funcReturnLatchTemplate = FuncReturnLatchFactory.Create(Target, null);
@@ -46,7 +54,7 @@ namespace CodeGenerator.Stub.Template.Stub.Source.Part
             #line default
             #line hidden
             
-            #line 14 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\Stub\Source\Part\StubMethodTemplate.tt"
+            #line 17 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\Stub\Source\Part\StubMethodTemplate.tt"
 
 	//引数の処理
 	foreach (var item in Target.Arguments) 
@@ -59,7 +67,7 @@ namespace CodeGenerator.Stub.Template.Stub.Source.Part
             #line default
             #line hidden
             
-            #line 22 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\Stub\Source\Part\StubMethodTemplate.tt"
+            #line 25 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\Stub\Source\Part\StubMethodTemplate.tt"
 
 	//呼び出し回数更新
 	var calledCountTemplate = CalledCountFactory.Create(Target, null);
@@ -69,7 +77,7 @@ namespace CodeGenerator.Stub.Template.Stub.Source.Part
             #line default
             #line hidden
             
-            #line 27 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\Stub\Source\Part\StubMethodTemplate.tt"
+            #line 30 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\Stub\Source\Part\StubMethodTemplate.tt"
 
 	//戻り値の処理
 	var retCodeTemplate = ReturnCodeFactory.Create(Target, null);
