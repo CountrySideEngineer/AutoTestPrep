@@ -18,7 +18,7 @@
         <vm:LibraryInformationInputViewModel/>
     </UserControl.DataContext>
     <ScrollViewer
-        VerticalScrollBarVisibility="Auto"
+        VerticalScrollBarVisibility="Visible"
         HorizontalScrollBarVisibility="Auto"
         >
         <Grid>
