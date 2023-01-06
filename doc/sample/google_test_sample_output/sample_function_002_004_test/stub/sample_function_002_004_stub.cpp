@@ -5,9 +5,9 @@
 /*
  *	Buffers for the subfunction_001 stub method.
  */
-long subfunction_001_called_count;
-int subfunction_001_return_value[STUB_BUFFER_SIZE_1];
-int subfunction_001_input1[STUB_BUFFER_SIZE_1];
+long                 subfunction_001_called_count;
+int                  subfunction_001_return_value[STUB_BUFFER_SIZE_1];
+int                  subfunction_001_input1[STUB_BUFFER_SIZE_1];
 
 /*
  *	A function to initialize the buffers for the subfunction_001 stub method.
