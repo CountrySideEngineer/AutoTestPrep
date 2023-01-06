@@ -19,28 +19,28 @@ namespace TestParser.Config
 		/// </summary>
 		public TestParserConfig()
 		{
-			TestList = new TestListConfig();
-			TargetFunction = new TargetFunctionConfig();
-			Test = new TestConfig();
+			TestFunctionListTable = new FunctionTableConfig();
+			FunctionTable = new FunctionTableConfig();
+			TestCaseTable = new TestCaseTableConfig();
 		}
 
 		/// <summary>
 		/// Configuration about list of test.
 		/// </summary>
-		[XmlElement("TestList")]
-		public TestListConfig TestList { get; set; }
+		[XmlElement("TestFunctionListTable")]
+		public TableConfig TestFunctionListTable { get; set; }
 
 		/// <summary>
 		/// Configuration about target test definition table.
 		/// </summary>
-		[XmlElement("TargetFunction")]
-		public TargetFunctionConfig TargetFunction { get; set; }
+		[XmlElement("FunctionTable")]
+		public FunctionTableConfig FunctionTable { get; set; }
 
 		/// <summary>
 		/// Configuration about test.
 		/// </summary>
-		[XmlElement("Test")]
-		public TestConfig Test { get; set; }
+		[XmlElement("TestCaseTable")]
+		public TestCaseTableConfig TestCaseTable { get; set; }
 
 		/// <summary>
 		/// Load configuration file from default config file.
@@ -52,6 +52,11 @@ namespace TestParser.Config
 			return LoadConfig(configFilePath);
 		}
 
+		/// <summary>
+		/// Load test parser configuration file.
+		/// </summary>
+		/// <param name="path">Paht to test parser configuration file.</param>
+		/// <returns>Test parser configuration.</returns>
 		public static TestParserConfig LoadConfig(string path)
 		{
 			try
@@ -71,6 +76,10 @@ namespace TestParser.Config
 			}
 		}
 
+		/// <summary>
+		/// Load configuration about test parser with default data.
+		/// </summary>
+		/// <returns>Default test parser configuration.</returns>
 		public static TestParserConfig LoadDefaultConfig()
 		{
 			TestParserConfig config = DefaultTestParserConfigFactory.Create();
