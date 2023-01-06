@@ -12,5 +12,12 @@ namespace CodeGenerator.Stub.Template
 	{
 		public NameRule Rule { get; set; }
 		public Function Target { get; set; }
+
+		public string DataTypeFormat(string dataType)
+		{
+			string formatted = string.Format("{0, -20}", dataType);
+
+			return formatted;
+		}
 	}
 }
