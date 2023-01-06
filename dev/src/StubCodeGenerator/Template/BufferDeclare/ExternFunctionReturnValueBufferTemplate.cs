@@ -28,7 +28,14 @@ namespace CodeGenerator.Stub.Template.BufferDeclare
         /// </summary>
         public override string TransformText()
         {
-            this.Write("extern long ");
+            this.Write("extern ");
+            
+            #line 7 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\ExternFunctionReturnValueBufferTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(DataTypeFormat("long")));
+            
+            #line default
+            #line hidden
+            this.Write(" ");
             
             #line 7 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\ExternFunctionReturnValueBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Rule.GetCalledCounter(Target)));
@@ -38,7 +45,7 @@ namespace CodeGenerator.Stub.Template.BufferDeclare
             this.Write(";\r\nextern ");
             
             #line 8 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\ExternFunctionReturnValueBufferTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(Target.ActualDataType()));
+            this.Write(this.ToStringHelper.ToStringWithCulture(DataTypeFormat(Target.ActualDataType())));
             
             #line default
             #line hidden

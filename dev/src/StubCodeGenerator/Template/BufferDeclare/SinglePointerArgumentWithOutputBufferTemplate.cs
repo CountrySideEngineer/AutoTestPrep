@@ -47,7 +47,14 @@ namespace CodeGenerator.Stub.Template.BufferDeclare
             
             #line default
             #line hidden
-            this.Write("[STUB_BUFFER_SIZE_1][STUB_BUFFER_SIZE_2];\r\nlong ");
+            this.Write("[STUB_BUFFER_SIZE_1][STUB_BUFFER_SIZE_2];\r\n");
+            
+            #line 9 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\SinglePointerArgumentWithOutputBufferTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(DataTypeFormat("long")));
+            
+            #line default
+            #line hidden
+            this.Write(" ");
             
             #line 9 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\SinglePointerArgumentWithOutputBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Rule.GetSinglePointerArgumentReturnValueSizeBuffer(Target, Argument)));

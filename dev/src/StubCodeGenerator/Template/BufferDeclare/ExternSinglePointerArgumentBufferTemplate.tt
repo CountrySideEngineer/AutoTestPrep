@@ -4,6 +4,6 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
-extern <#= Argument.ActualDataType() #> <#= Rule.GetArgumentBuffer(Target, Argument) #>[];
-extern <#= Argument.DataType #> <#= Rule.GetSinglePointerArgumentValueBuffer(Target, Argument) #>[][STUB_BUFFER_SIZE_2];
-extern long <#= Rule.GetSinglePointerArgumentValueSizeBuffer(Target, Argument) #>[];
+extern <#= DataTypeFormat(Argument.ActualDataType()) #> <#= Rule.GetArgumentBuffer(Target, Argument) #>[];
+extern <#= DataTypeFormat(Argument.DataType) #> <#= Rule.GetSinglePointerArgumentValueBuffer(Target, Argument) #>[][STUB_BUFFER_SIZE_2];
+extern <#= DataTypeFormat("long") #> <#= Rule.GetSinglePointerArgumentValueSizeBuffer(Target, Argument) #>[];

@@ -6,4 +6,4 @@
 <#@ import namespace="System.Collections.Generic" #>
 <# base.TransformText(); #>
 <#= Argument.DataType #> <#= Rule.GetSinglePointerArgumentReturnValueBuffer(Target, Argument) #>[STUB_BUFFER_SIZE_1][STUB_BUFFER_SIZE_2];
-long <#= Rule.GetSinglePointerArgumentReturnValueSizeBuffer(Target, Argument) #>[STUB_BUFFER_SIZE_1];
+<#= DataTypeFormat("long") #> <#= Rule.GetSinglePointerArgumentReturnValueSizeBuffer(Target, Argument) #>[STUB_BUFFER_SIZE_1];

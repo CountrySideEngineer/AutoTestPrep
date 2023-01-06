@@ -30,7 +30,7 @@ namespace CodeGenerator.Stub.Template.BufferDeclare
         {
             
             #line 7 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\ArgumentBufferTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(Argument.ActualDataType()));
+            this.Write(this.ToStringHelper.ToStringWithCulture(DataTypeFormat(Argument.ActualDataType())));
             
             #line default
             #line hidden

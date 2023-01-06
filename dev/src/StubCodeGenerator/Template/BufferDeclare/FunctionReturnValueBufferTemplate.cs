@@ -36,7 +36,7 @@ namespace CodeGenerator.Stub.Template.BufferDeclare
             #line hidden
             
             #line 8 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\FunctionReturnValueBufferTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(Target.ActualDataType()));
+            this.Write(this.ToStringHelper.ToStringWithCulture(DataTypeFormat(Target.ActualDataType())));
             
             #line default
             #line hidden
