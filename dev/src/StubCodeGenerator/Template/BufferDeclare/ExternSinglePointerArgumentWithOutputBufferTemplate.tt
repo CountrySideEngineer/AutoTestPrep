@@ -4,8 +4,8 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
-extern <#= DataTypeFormat(Argument.ActualDataType()) #> <#= Rule.GetArgumentBuffer(Target, Argument) #>[];
-extern <#= DataTypeFormat(Argument.DataType) #> <#= Rule.GetSinglePointerArgumentValueBuffer(Target, Argument) #>[][STUB_BUFFER_SIZE_2];
-extern <#= DataTypeFormat("long") #> <#= Rule.GetSinglePointerArgumentValueSizeBuffer(Target, Argument) #>[];
-extern <#= DataTypeFormat(Argument.DataType) #> <#= Rule.GetSinglePointerArgumentReturnValueBuffer(Target, Argument) #>[][STUB_BUFFER_SIZE_2];
-extern <#= DataTypeFormat("long") #> <#= Rule.GetSinglePointerArgumentReturnValueSizeBuffer(Target, Argument) #>[];
+extern	<#= DataTypeFormat(Argument.ActualDataType()) #> <#= Rule.GetArgumentBuffer(Target, Argument) #>[];
+extern	<#= DataTypeFormat(Argument.DataType) #> <#= Rule.GetSinglePointerArgumentValueBuffer(Target, Argument) #>[][STUB_BUFFER_SIZE_2];
+extern	<#= DataTypeFormat("long") #> <#= Rule.GetSinglePointerArgumentValueSizeBuffer(Target, Argument) #>[];
+extern	<#= DataTypeFormat(Argument.DataType) #> <#= Rule.GetSinglePointerArgumentReturnValueBuffer(Target, Argument) #>[][STUB_BUFFER_SIZE_2];
+extern	<#= DataTypeFormat("long") #> <#= Rule.GetSinglePointerArgumentReturnValueSizeBuffer(Target, Argument) #>[];

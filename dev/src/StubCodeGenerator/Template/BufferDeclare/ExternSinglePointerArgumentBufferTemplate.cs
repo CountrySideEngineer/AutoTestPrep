@@ -28,7 +28,7 @@ namespace CodeGenerator.Stub.Template.BufferDeclare
         /// </summary>
         public override string TransformText()
         {
-            this.Write("extern ");
+            this.Write("extern\t");
             
             #line 7 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\ExternSinglePointerArgumentBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(DataTypeFormat(Argument.ActualDataType())));
@@ -42,7 +42,7 @@ namespace CodeGenerator.Stub.Template.BufferDeclare
             
             #line default
             #line hidden
-            this.Write("[];\r\nextern ");
+            this.Write("[];\r\nextern\t");
             
             #line 8 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\ExternSinglePointerArgumentBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(DataTypeFormat(Argument.DataType)));
@@ -56,7 +56,7 @@ namespace CodeGenerator.Stub.Template.BufferDeclare
             
             #line default
             #line hidden
-            this.Write("[][STUB_BUFFER_SIZE_2];\r\nextern ");
+            this.Write("[][STUB_BUFFER_SIZE_2];\r\nextern\t");
             
             #line 9 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\ExternSinglePointerArgumentBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(DataTypeFormat("long")));

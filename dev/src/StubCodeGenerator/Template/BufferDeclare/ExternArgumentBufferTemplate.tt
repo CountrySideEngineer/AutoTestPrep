@@ -4,4 +4,4 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
-extern <#= DataTypeFormat(Argument.ActualDataType()) #> <#= Rule.GetArgumentBuffer(Target, Argument) #>[];
+extern	<#= DataTypeFormat(Argument.ActualDataType()) #> <#= Rule.GetArgumentBuffer(Target, Argument) #>[];
