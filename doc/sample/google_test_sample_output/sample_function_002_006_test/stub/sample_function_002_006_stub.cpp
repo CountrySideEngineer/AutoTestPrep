@@ -5,13 +5,13 @@
 /*
  *	Buffers for the subfunction_003 stub method.
  */
-long		 subfunction_003_called_count;
-int			 subfunction_003_return_value[STUB_BUFFER_SIZE_1];
-int*		 subfunction_003_input1[STUB_BUFFER_SIZE_1];
-int			 subfunction_003_input1_value[STUB_BUFFER_SIZE_1][STUB_BUFFER_SIZE_2];
-long		 subfunction_003_input1_value_size[STUB_BUFFER_SIZE_1];
-int subfunction_003_input1_return_value[STUB_BUFFER_SIZE_1][STUB_BUFFER_SIZE_2];
-long		 subfunction_003_input1_return_value_size[STUB_BUFFER_SIZE_1];
+long			subfunction_003_called_count;
+int				subfunction_003_return_value[STUB_BUFFER_SIZE_1];
+int*			subfunction_003_input1[STUB_BUFFER_SIZE_1];
+int				subfunction_003_input1_value[STUB_BUFFER_SIZE_1][STUB_BUFFER_SIZE_2];
+long			subfunction_003_input1_value_size[STUB_BUFFER_SIZE_1];
+int				subfunction_003_input1_return_value[STUB_BUFFER_SIZE_1][STUB_BUFFER_SIZE_2];
+long			subfunction_003_input1_return_value_size[STUB_BUFFER_SIZE_1];
 
 /*
  *	A function to initialize the buffers for the subfunction_003 stub method.
