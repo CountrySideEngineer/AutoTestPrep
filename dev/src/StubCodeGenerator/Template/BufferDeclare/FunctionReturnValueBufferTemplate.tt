@@ -5,4 +5,4 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 <# base.TransformText(); #>
-<#= DataTypeFormat(Target.ActualDataType()) #> <#= Rule.GetReturnValue(Target) #>[STUB_BUFFER_SIZE_1];
+<#= DataTypeFormat(Target.ActualDataType()) #>	<#= Rule.GetReturnValue(Target) #>[STUB_BUFFER_SIZE_1];

@@ -40,7 +40,7 @@ namespace CodeGenerator.Stub.Template.BufferDeclare
             
             #line default
             #line hidden
-            this.Write(" ");
+            this.Write("\t");
             
             #line 8 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\DoublePointerArgumentWithOutputBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Rule.GetDoublePointerArgumentReturnValueBuffer(Target, Argument)));
@@ -54,7 +54,7 @@ namespace CodeGenerator.Stub.Template.BufferDeclare
             
             #line default
             #line hidden
-            this.Write(" ");
+            this.Write("\t");
             
             #line 9 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\DoublePointerArgumentWithOutputBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Rule.GetDoublePointerArgumentReturnValueSizeBuffer(Target, Argument)));

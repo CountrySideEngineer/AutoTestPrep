@@ -35,7 +35,7 @@ namespace CodeGenerator.Stub.Template.BufferDeclare
             
             #line default
             #line hidden
-            this.Write(" ");
+            this.Write("\t");
             
             #line 8 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\FunctionBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Rule.GetCalledCounter(Target)));

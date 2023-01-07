@@ -4,5 +4,5 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
-extern	<#= DataTypeFormat("long") #> <#= Rule.GetCalledCounter(Target) #>;
-extern	<#= DataTypeFormat(Target.ActualDataType()) #> <#= Rule.GetReturnValue(Target) #>[];
+extern	<#= DataTypeFormat("long") #>	<#= Rule.GetCalledCounter(Target) #>;
+extern	<#= DataTypeFormat(Target.ActualDataType()) #>	<#= Rule.GetReturnValue(Target) #>[];
