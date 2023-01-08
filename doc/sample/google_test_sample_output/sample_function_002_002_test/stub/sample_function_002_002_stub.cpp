@@ -16,12 +16,15 @@ long			subfunction_002_input1_value_size[STUB_BUFFER_SIZE_1];
  */
 void subfunction_002_init()
 {
+	//Initialize the number of function calls.
 	subfunction_002_called_count = 0;
 
-	//Initialize the buffer to hold the value the subfunction_002 stub method will return.
+	//Initialize the buffer to hold the values the subfunction_002 stub method will return.
 	for (int index = 0; index < STUB_BUFFER_SIZE_1; index++) {
 		subfunction_002_return_value[index] = 0;
 	}
+
+	//Initialize the buffers for argument input1.
 	for (int index = 0; index < STUB_BUFFER_SIZE_1; index++) {
 		subfunction_002_input1[index] = 0;
 		for (int index2 = 0; index2 < STUB_BUFFER_SIZE_2; index2++) {
@@ -29,6 +32,7 @@ void subfunction_002_init()
 		}
 		subfunction_002_input1_value_size[index] = 0;
 	}
+
 }
 
 /*
@@ -36,16 +40,24 @@ void subfunction_002_init()
  */
 int subfunction_002(int * input1)
 {
+	//Get and latch the value from buffer.
 	int latchReturn = subfunction_002_return_value[subfunction_002_called_count];
+
+	//Set argument value to buffer.
 	subfunction_002_input1[subfunction_002_called_count] = input1;
 
+	//Set values in an area specified by pointer argument to buffer.
 	for (int index = 0;
 		index < subfunction_002_input1_value_size[subfunction_002_called_count];
 		index++)
 	{
 		subfunction_002_input1_value[subfunction_002_called_count][index] = *(input1 + index);
 	}
+
+	//Update function call count variable.
 	subfunction_002_called_count++;
+
+	//Return latched value.
 	return latchReturn;
 }
 
