@@ -34,42 +34,43 @@ namespace CodeGenerator.Stub.Template.StubSource
             
             #line default
             #line hidden
-            this.Write("\tfor (int index = 0;\r\n\t\tindex < ");
+            this.Write("\t//Set values in buffer to area specified by pointer argument.\r\n\tfor (int index =" +
+                    " 0;\r\n\t\tindex < ");
             
-            #line 9 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSource\SinglePointerArgumentWithOutputBufferTemplate.tt"
+            #line 10 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSource\SinglePointerArgumentWithOutputBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Rule.GetSinglePointerArgumentReturnValueSizeBuffer(Target, Argument)));
             
             #line default
             #line hidden
             this.Write("[");
             
-            #line 9 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSource\SinglePointerArgumentWithOutputBufferTemplate.tt"
+            #line 10 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSource\SinglePointerArgumentWithOutputBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Rule.GetCalledCounter(Target)));
             
             #line default
             #line hidden
             this.Write("];\r\n\t\tindex++)\r\n\t{\r\n\t\t*(");
             
-            #line 12 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSource\SinglePointerArgumentWithOutputBufferTemplate.tt"
+            #line 13 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSource\SinglePointerArgumentWithOutputBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Argument.Name));
             
             #line default
             #line hidden
             this.Write(" + index) = ");
             
-            #line 12 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSource\SinglePointerArgumentWithOutputBufferTemplate.tt"
+            #line 13 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSource\SinglePointerArgumentWithOutputBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Rule.GetSinglePointerArgumentReturnValueBuffer(Target, Argument)));
             
             #line default
             #line hidden
             this.Write("[");
             
-            #line 12 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSource\SinglePointerArgumentWithOutputBufferTemplate.tt"
+            #line 13 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSource\SinglePointerArgumentWithOutputBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Rule.GetCalledCounter(Target)));
             
             #line default
             #line hidden
-            this.Write("][index];\r\n\t}\r\n");
+            this.Write("][index];\r\n\t}\r\n\r\n");
             return this.GenerationEnvironment.ToString();
         }
     }

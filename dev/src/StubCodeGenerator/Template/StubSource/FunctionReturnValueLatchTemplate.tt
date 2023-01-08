@@ -5,4 +5,6 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#@ import namespace="CodeGenerator.Stub.Template" #>
+	//Get and latch the value from buffer.
 	<#= Target.ActualDataType() #> latchReturn = <#= Rule.GetReturnValue(Target) #>[<#= Rule.GetCalledCounter(Target) #>];
+

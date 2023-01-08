@@ -28,14 +28,14 @@ namespace CodeGenerator.Stub.Template.StubSource
         /// </summary>
         public override string TransformText()
         {
-            this.Write("\t");
+            this.Write("\t//Update function call count variable.\r\n\t");
             
-            #line 7 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSource\FunctionCalledCountUpdateTemplate.tt"
+            #line 8 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSource\FunctionCalledCountUpdateTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Rule.GetCalledCounter(Target)));
             
             #line default
             #line hidden
-            this.Write("++;\r\n");
+            this.Write("++;\r\n\r\n");
             return this.GenerationEnvironment.ToString();
         }
     }
