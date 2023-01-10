@@ -9,9 +9,9 @@
 /*
  *	Buffers for the GetLastError stub method.
  */
-extern long GetLastError_called_count;
-extern DWORD GetLastError_return_value[];
-extern DWORD GetLastError_dwErrCode[];
+extern	long			GetLastError_called_count;
+extern	DWORD			GetLastError_return_value[];
+extern	DWORD			GetLastError_dwErrCode[];
 
 /*
  *	A function to initialize the buffers for the GetLastError stub method.

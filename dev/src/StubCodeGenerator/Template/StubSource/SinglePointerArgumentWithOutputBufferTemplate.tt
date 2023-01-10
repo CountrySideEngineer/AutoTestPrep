@@ -5,9 +5,11 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 <# base.TransformText(); #>
+	//Set values in buffer to area specified by pointer argument.
 	for (int index = 0;
 		index < <#= Rule.GetSinglePointerArgumentReturnValueSizeBuffer(Target, Argument) #>[<#= Rule.GetCalledCounter(Target) #>];
 		index++)
 	{
 		*(<#= Argument.Name #> + index) = <#= Rule.GetSinglePointerArgumentReturnValueBuffer(Target, Argument) #>[<#= Rule.GetCalledCounter(Target) #>][index];
 	}
+

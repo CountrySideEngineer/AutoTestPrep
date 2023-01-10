@@ -36,9 +36,9 @@ namespace CodeGenerator.Stub.Template.StubSource
             
             #line default
             #line hidden
-            this.Write("\treturn latchReturn;\r\n");
+            this.Write("\t//Return latched value.\r\n\treturn latchReturn;\r\n");
             
-            #line 11 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSource\FunctionReturnValueCodeTemplate.tt"
+            #line 12 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSource\FunctionReturnValueCodeTemplate.tt"
 
 	}
 

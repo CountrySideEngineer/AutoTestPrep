@@ -5,9 +5,9 @@
 /*
  *	Buffers for the GetLastError stub method.
  */
-long GetLastError_called_count;
-DWORD GetLastError_return_value[STUB_BUFFER_SIZE_1];
-DWORD GetLastError_dwErrCode[STUB_BUFFER_SIZE_1];
+long			GetLastError_called_count;
+DWORD			GetLastError_return_value[STUB_BUFFER_SIZE_1];
+DWORD			GetLastError_dwErrCode[STUB_BUFFER_SIZE_1];
 
 /*
  *	A function to initialize the buffers for the GetLastError stub method.

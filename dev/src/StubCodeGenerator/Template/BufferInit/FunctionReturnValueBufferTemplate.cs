@@ -35,7 +35,7 @@ namespace CodeGenerator.Stub.Template.BufferInit
             
             #line default
             #line hidden
-            this.Write("\r\n\t//Initialize the buffer to hold the value the ");
+            this.Write("\r\n\t//Initialize the buffer to hold the values the ");
             
             #line 10 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferInit\FunctionReturnValueBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Target.Name));
@@ -84,7 +84,7 @@ namespace CodeGenerator.Stub.Template.BufferInit
             
             #line default
             #line hidden
-            this.Write("\t}\r\n");
+            this.Write("\t}\r\n\r\n");
             return this.GenerationEnvironment.ToString();
         }
     }

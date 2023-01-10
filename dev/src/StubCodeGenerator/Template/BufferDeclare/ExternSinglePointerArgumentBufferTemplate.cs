@@ -28,35 +28,42 @@ namespace CodeGenerator.Stub.Template.BufferDeclare
         /// </summary>
         public override string TransformText()
         {
-            this.Write("extern ");
+            this.Write("extern\t");
             
             #line 7 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\ExternSinglePointerArgumentBufferTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(Argument.ActualDataType()));
+            this.Write(this.ToStringHelper.ToStringWithCulture(DataTypeFormat(Argument.ActualDataType())));
             
             #line default
             #line hidden
-            this.Write(" ");
+            this.Write("\t");
             
             #line 7 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\ExternSinglePointerArgumentBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Rule.GetArgumentBuffer(Target, Argument)));
             
             #line default
             #line hidden
-            this.Write("[];\r\nextern ");
+            this.Write("[];\r\nextern\t");
             
             #line 8 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\ExternSinglePointerArgumentBufferTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(Argument.DataType));
+            this.Write(this.ToStringHelper.ToStringWithCulture(DataTypeFormat(Argument.DataType)));
             
             #line default
             #line hidden
-            this.Write(" ");
+            this.Write("\t");
             
             #line 8 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\ExternSinglePointerArgumentBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Rule.GetSinglePointerArgumentValueBuffer(Target, Argument)));
             
             #line default
             #line hidden
-            this.Write("[][STUB_BUFFER_SIZE_2];\r\nextern long ");
+            this.Write("[][STUB_BUFFER_SIZE_2];\r\nextern\t");
+            
+            #line 9 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\ExternSinglePointerArgumentBufferTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(DataTypeFormat("long")));
+            
+            #line default
+            #line hidden
+            this.Write("\t");
             
             #line 9 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\ExternSinglePointerArgumentBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Rule.GetSinglePointerArgumentValueSizeBuffer(Target, Argument)));

@@ -5,19 +5,19 @@
 /*
  *	Buffers for the fclose stub method.
  */
-long fclose_called_count;
-int fclose_return_value[STUB_BUFFER_SIZE_1];
-char* fclose__FileName[STUB_BUFFER_SIZE_1];
-char fclose__FileName_value[STUB_BUFFER_SIZE_1][STUB_BUFFER_SIZE_2];
-long fclose__FileName_value_size[STUB_BUFFER_SIZE_1];
-char* fclose__Mode[STUB_BUFFER_SIZE_1];
-char fclose__Mode_value[STUB_BUFFER_SIZE_1][STUB_BUFFER_SIZE_2];
-long fclose__Mode_value_size[STUB_BUFFER_SIZE_1];
-FILE* fclose__Stream[STUB_BUFFER_SIZE_1];
-FILE fclose__Stream_value[STUB_BUFFER_SIZE_1][STUB_BUFFER_SIZE_2];
-long fclose__Stream_value_size[STUB_BUFFER_SIZE_1];
-FILE fclose__Stream_return_value[STUB_BUFFER_SIZE_1][STUB_BUFFER_SIZE_2];
-long fclose__Stream_return_value_size[STUB_BUFFER_SIZE_1];
+long			fclose_called_count;
+int				fclose_return_value[STUB_BUFFER_SIZE_1];
+char*			fclose__FileName[STUB_BUFFER_SIZE_1];
+char			fclose__FileName_value[STUB_BUFFER_SIZE_1][STUB_BUFFER_SIZE_2];
+long			fclose__FileName_value_size[STUB_BUFFER_SIZE_1];
+char*			fclose__Mode[STUB_BUFFER_SIZE_1];
+char			fclose__Mode_value[STUB_BUFFER_SIZE_1][STUB_BUFFER_SIZE_2];
+long			fclose__Mode_value_size[STUB_BUFFER_SIZE_1];
+FILE*			fclose__Stream[STUB_BUFFER_SIZE_1];
+FILE			fclose__Stream_value[STUB_BUFFER_SIZE_1][STUB_BUFFER_SIZE_2];
+long			fclose__Stream_value_size[STUB_BUFFER_SIZE_1];
+FILE			fclose__Stream_return_value[STUB_BUFFER_SIZE_1][STUB_BUFFER_SIZE_2];
+long			fclose__Stream_return_value_size[STUB_BUFFER_SIZE_1];
 
 /*
  *	A function to initialize the buffers for the fclose stub method.
