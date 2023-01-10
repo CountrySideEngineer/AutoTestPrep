@@ -28,21 +28,28 @@ namespace CodeGenerator.Stub.Template.BufferDeclare
         /// </summary>
         public override string TransformText()
         {
-            this.Write("extern long ");
+            this.Write("extern\t");
+            
+            #line 7 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\ExternFunctionReturnValueBufferTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(DataTypeFormat("long")));
+            
+            #line default
+            #line hidden
+            this.Write("\t");
             
             #line 7 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\ExternFunctionReturnValueBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Rule.GetCalledCounter(Target)));
             
             #line default
             #line hidden
-            this.Write(";\r\nextern ");
+            this.Write(";\r\nextern\t");
             
             #line 8 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\ExternFunctionReturnValueBufferTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(Target.ActualDataType()));
+            this.Write(this.ToStringHelper.ToStringWithCulture(DataTypeFormat(Target.ActualDataType())));
             
             #line default
             #line hidden
-            this.Write(" ");
+            this.Write("\t");
             
             #line 8 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\ExternFunctionReturnValueBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Rule.GetReturnValue(Target)));

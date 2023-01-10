@@ -18,23 +18,23 @@
     <UserControl.DataContext>
         <vm:HeaderInformationInputViewModel/>
     </UserControl.DataContext>
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
-        </Grid.RowDefinitions>
-        <local:MultiLineInputView Grid.Row="0"
-                                  Margin="8"
-                                  DataContext="{Binding Path=StandartHeaderVM}"
-                                  />
-        <local:MultiLineInputView Grid.Row="1"
-                                  Margin="8"
-                                  DataContext="{Binding Path=UserHeaderVM}"
-                                  />
-        <local:MultiLineInputView Grid.Row="2"
-                                  Margin="8"
-                                  DataContext="{Binding Path=IncludeDirectoryVM}"
-                                  />
-    </Grid>
+    <ScrollViewer VerticalScrollBarVisibility="Visible">
+        <StackPanel>
+            <local:MultiLineInputView Grid.Row="0"
+                                      Margin="8"
+                                      DataContext="{Binding Path=StandartHeaderVM}"
+                                      MinHeight="150"
+                                      />
+            <local:MultiLineInputView Grid.Row="1"
+                                      Margin="8"
+                                      DataContext="{Binding Path=UserHeaderVM}"
+                                      MinHeight="150"
+                                      />
+            <local:MultiLineInputView Grid.Row="2"
+                                      Margin="8"
+                                      DataContext="{Binding Path=IncludeDirectoryVM}"
+                                      MinHeight="150"
+                                      />
+        </StackPanel>
+    </ScrollViewer>
 </UserControl>

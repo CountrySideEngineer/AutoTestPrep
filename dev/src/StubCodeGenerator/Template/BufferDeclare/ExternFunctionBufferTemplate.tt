@@ -4,4 +4,4 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
-extern <# base.TransformText(); #>
+extern	<# base.TransformText(); #>

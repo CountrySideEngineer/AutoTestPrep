@@ -28,14 +28,14 @@ namespace CodeGenerator.Stub.Template.BufferDeclare
         /// </summary>
         public override string TransformText()
         {
-            this.Write("extern ");
+            this.Write("extern\t");
             
             #line 7 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\ExternDoublePointerArgumentBufferTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(Argument.ActualDataType()));
+            this.Write(this.ToStringHelper.ToStringWithCulture(DataTypeFormat(Argument.ActualDataType())));
             
             #line default
             #line hidden
-            this.Write(" ");
+            this.Write("\t");
             
             #line 7 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\ExternDoublePointerArgumentBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Rule.GetArgumentBuffer(Target, Argument)));

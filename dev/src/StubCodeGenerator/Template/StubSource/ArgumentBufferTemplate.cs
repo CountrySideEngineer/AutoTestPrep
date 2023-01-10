@@ -29,28 +29,28 @@ namespace CodeGenerator.Stub.Template.StubSource
         /// </summary>
         public override string TransformText()
         {
-            this.Write("\t");
+            this.Write("\t//Set argument value to buffer.\r\n\t");
             
-            #line 8 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSource\ArgumentBufferTemplate.tt"
+            #line 9 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSource\ArgumentBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Rule.GetArgumentBuffer(Target, Argument)));
             
             #line default
             #line hidden
             this.Write("[");
             
-            #line 8 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSource\ArgumentBufferTemplate.tt"
+            #line 9 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSource\ArgumentBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Rule.GetCalledCounter(Target)));
             
             #line default
             #line hidden
             this.Write("] = ");
             
-            #line 8 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSource\ArgumentBufferTemplate.tt"
+            #line 9 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSource\ArgumentBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Argument.Name));
             
             #line default
             #line hidden
-            this.Write(";\r\n");
+            this.Write(";\r\n\r\n");
             return this.GenerationEnvironment.ToString();
         }
     }

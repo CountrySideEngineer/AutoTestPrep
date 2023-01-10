@@ -29,14 +29,21 @@ namespace CodeGenerator.Stub.Template.BufferInit
         /// </summary>
         public override string TransformText()
         {
-            this.Write("\tfor (int index = 0; index < STUB_BUFFER_SIZE_1; index++) {\r\n\t\t");
+            this.Write("\t//Initialize the buffer for argument ");
             
-            #line 9 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferInit\ArgumentBufferTemplate.tt"
+            #line 8 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferInit\ArgumentBufferTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(Argument.Name));
+            
+            #line default
+            #line hidden
+            this.Write(".\r\n\tfor (int index = 0; index < STUB_BUFFER_SIZE_1; index++) {\r\n\t\t");
+            
+            #line 10 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferInit\ArgumentBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Rule.GetArgumentBuffer(Target, Argument)));
             
             #line default
             #line hidden
-            this.Write("[index] = 0;\r\n\t}\r\n");
+            this.Write("[index] = 0;\r\n\t}\r\n\r\n");
             return this.GenerationEnvironment.ToString();
         }
     }
