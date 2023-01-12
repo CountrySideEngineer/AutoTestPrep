@@ -5,10 +5,11 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 <# base.TransformText(); #>
-
+	//Set addresses to area specified by double pointer arguments.
 	for (int index = 0;
 		index < <#= Rule.GetDoublePointerArgumentReturnValueSizeBuffer(Target, Argument) #>[<#= Rule.GetCalledCounter(Target) #>];
 		index++)
 	{
 		*(<#= Argument.Name #> + index) = &<#= Rule.GetDoublePointerArgumentReturnValueBuffer(Target, Argument) #>[<#= Rule.GetCalledCounter(Target) #>][index];
 	}
+

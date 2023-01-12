@@ -4,4 +4,4 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
-<#= Argument.ActualDataType() #> <#= Rule.GetArgumentBuffer(Target, Argument) #>[STUB_BUFFER_SIZE_1];
+<#= DataTypeFormat(Argument.ActualDataType()) #>	<#= Rule.GetArgumentBuffer(Target, Argument) #>[STUB_BUFFER_SIZE_1];
