@@ -1,3 +1,6 @@
+/*
+ *	sample_function_002 test driver source code.
+ */
 #include <stdio.h>
 #include <windows.h>
 #include "min_unit.h"
@@ -31,6 +34,8 @@ static char* sample_function_002_utest_001()
 
 	int _ret_val = sample_function_002(input1, input2);
 
+	//Check the test result
+	//by comparing the output with the expected value.
 	mu_assert(1 == _ret_val);
 	mu_assert(1 == subFuncA_002_called_count);
 	mu_assert(0 == subFuncA_002_subInput1[0]);
@@ -52,6 +57,8 @@ static char* sample_function_002_utest_002()
 
 	int _ret_val = sample_function_002(input1, input2);
 
+	//Check the test result
+	//by comparing the output with the expected value.
 	mu_assert(2 == _ret_val);
 	mu_assert(1 == subFuncA_002_called_count);
 	mu_assert(1 == subFuncA_002_subInput1[0]);
@@ -73,6 +80,8 @@ static char* sample_function_002_utest_003()
 
 	int _ret_val = sample_function_002(input1, input2);
 
+	//Check the test result
+	//by comparing the output with the expected value.
 	mu_assert(4 == _ret_val);
 	mu_assert(1 == subFuncA_002_called_count);
 	mu_assert(2 == subFuncA_002_subInput1[0]);
@@ -94,6 +103,8 @@ static char* sample_function_002_utest_004()
 
 	int _ret_val = sample_function_002(input1, input2);
 
+	//Check the test result
+	//by comparing the output with the expected value.
 	mu_assert(8 == _ret_val);
 	mu_assert(1 == subFuncA_002_called_count);
 	mu_assert(3 == subFuncA_002_subInput1[0]);
@@ -115,6 +126,8 @@ static char* sample_function_002_utest_005()
 
 	int _ret_val = sample_function_002(input1, input2);
 
+	//Check the test result
+	//by comparing the output with the expected value.
 	mu_assert(1 == _ret_val);
 	mu_assert(1 == subFuncA_002_called_count);
 	mu_assert(1 == subFuncA_002_subInput1[0]);
@@ -136,6 +149,8 @@ static char* sample_function_002_utest_006()
 
 	int _ret_val = sample_function_002(input1, input2);
 
+	//Check the test result
+	//by comparing the output with the expected value.
 	mu_assert(2 == _ret_val);
 	mu_assert(1 == subFuncA_002_called_count);
 	mu_assert(1 == subFuncA_002_subInput1[0]);
@@ -157,6 +172,8 @@ static char* sample_function_002_utest_007()
 
 	int _ret_val = sample_function_002(input1, input2);
 
+	//Check the test result
+	//by comparing the output with the expected value.
 	mu_assert(4 == _ret_val);
 	mu_assert(1 == subFuncA_002_called_count);
 	mu_assert(2 == subFuncA_002_subInput1[0]);
@@ -178,6 +195,8 @@ static char* sample_function_002_utest_008()
 
 	int _ret_val = sample_function_002(input1, input2);
 
+	//Check the test result
+	//by comparing the output with the expected value.
 	mu_assert(8 == _ret_val);
 	mu_assert(1 == subFuncA_002_called_count);
 	mu_assert(3 == subFuncA_002_subInput1[0]);
@@ -199,6 +218,8 @@ static char* sample_function_002_utest_009()
 
 	int _ret_val = sample_function_002(input1, input2);
 
+	//Check the test result
+	//by comparing the output with the expected value.
 	mu_assert(1 == _ret_val);
 	mu_assert(1 == subFuncA_002_called_count);
 	mu_assert(2 == subFuncA_002_subInput1[0]);
@@ -220,6 +241,8 @@ static char* sample_function_002_utest_010()
 
 	int _ret_val = sample_function_002(input1, input2);
 
+	//Check the test result
+	//by comparing the output with the expected value.
 	mu_assert(2 == _ret_val);
 	mu_assert(1 == subFuncA_002_called_count);
 	mu_assert(2 == subFuncA_002_subInput1[0]);
@@ -241,6 +264,8 @@ static char* sample_function_002_utest_011()
 
 	int _ret_val = sample_function_002(input1, input2);
 
+	//Check the test result
+	//by comparing the output with the expected value.
 	mu_assert(4 == _ret_val);
 	mu_assert(1 == subFuncA_002_called_count);
 	mu_assert(2 == subFuncA_002_subInput1[0]);
@@ -262,6 +287,8 @@ static char* sample_function_002_utest_012()
 
 	int _ret_val = sample_function_002(input1, input2);
 
+	//Check the test result
+	//by comparing the output with the expected value.
 	mu_assert(8 == _ret_val);
 	mu_assert(1 == subFuncA_002_called_count);
 	mu_assert(3 == subFuncA_002_subInput1[0]);
@@ -283,6 +310,8 @@ static char* sample_function_002_utest_013()
 
 	int _ret_val = sample_function_002(input1, input2);
 
+	//Check the test result
+	//by comparing the output with the expected value.
 	mu_assert(1 == _ret_val);
 	mu_assert(1 == subFuncA_002_called_count);
 	mu_assert(3 == subFuncA_002_subInput1[0]);
@@ -304,6 +333,8 @@ static char* sample_function_002_utest_014()
 
 	int _ret_val = sample_function_002(input1, input2);
 
+	//Check the test result
+	//by comparing the output with the expected value.
 	mu_assert(2 == _ret_val);
 	mu_assert(1 == subFuncA_002_called_count);
 	mu_assert(3 == subFuncA_002_subInput1[0]);
@@ -325,6 +356,8 @@ static char* sample_function_002_utest_015()
 
 	int _ret_val = sample_function_002(input1, input2);
 
+	//Check the test result
+	//by comparing the output with the expected value.
 	mu_assert(4 == _ret_val);
 	mu_assert(1 == subFuncA_002_called_count);
 	mu_assert(3 == subFuncA_002_subInput1[0]);
@@ -346,6 +379,8 @@ static char* sample_function_002_utest_016()
 
 	int _ret_val = sample_function_002(input1, input2);
 
+	//Check the test result
+	//by comparing the output with the expected value.
 	mu_assert(8 == _ret_val);
 	mu_assert(1 == subFuncA_002_called_count);
 	mu_assert(3 == subFuncA_002_subInput1[0]);

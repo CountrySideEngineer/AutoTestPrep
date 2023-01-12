@@ -34,7 +34,8 @@ namespace CodeGenerator.Stub.Template.StubSource
             
             #line default
             #line hidden
-            this.Write("\r\n\tfor (int index = 0;\r\n\t\tindex < ");
+            this.Write("\t//Set values in an area specified by pointer argument to buffer.\r\n\tfor (int inde" +
+                    "x = 0;\r\n\t\tindex < ");
             
             #line 10 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSource\SinglePointerArgumentBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Rule.GetSinglePointerArgumentValueSizeBuffer(Target, Argument)));
@@ -69,7 +70,7 @@ namespace CodeGenerator.Stub.Template.StubSource
             
             #line default
             #line hidden
-            this.Write(" + index);\r\n\t}\r\n");
+            this.Write(" + index);\r\n\t}\r\n\r\n");
             return this.GenerationEnvironment.ToString();
         }
     }

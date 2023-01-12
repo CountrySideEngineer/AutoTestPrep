@@ -5,6 +5,8 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#@ import namespace="CodeGenerator.Stub.Template" #>
+	//Initialize the buffer for argument <#= Argument.Name #>.
 	for (int index = 0; index < STUB_BUFFER_SIZE_1; index++) {
 		<#= Rule.GetArgumentBuffer(Target, Argument) #>[index] = 0;
 	}
+

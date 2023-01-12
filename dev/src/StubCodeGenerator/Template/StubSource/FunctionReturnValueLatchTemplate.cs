@@ -29,28 +29,28 @@ namespace CodeGenerator.Stub.Template.StubSource
         /// </summary>
         public override string TransformText()
         {
-            this.Write("\t");
+            this.Write("\t//Get and latch the value from buffer.\r\n\t");
             
-            #line 8 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSource\FunctionReturnValueLatchTemplate.tt"
+            #line 9 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSource\FunctionReturnValueLatchTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Target.ActualDataType()));
             
             #line default
             #line hidden
             this.Write(" latchReturn = ");
             
-            #line 8 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSource\FunctionReturnValueLatchTemplate.tt"
+            #line 9 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSource\FunctionReturnValueLatchTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Rule.GetReturnValue(Target)));
             
             #line default
             #line hidden
             this.Write("[");
             
-            #line 8 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSource\FunctionReturnValueLatchTemplate.tt"
+            #line 9 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\StubSource\FunctionReturnValueLatchTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Rule.GetCalledCounter(Target)));
             
             #line default
             #line hidden
-            this.Write("];\r\n");
+            this.Write("];\r\n\r\n");
             return this.GenerationEnvironment.ToString();
         }
     }
