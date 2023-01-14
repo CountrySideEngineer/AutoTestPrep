@@ -24,7 +24,7 @@ namespace StubCodeGenerator.FunctionBufferTemplate.utest
 			};
 			string output = template.TransformText();
 			Assert.AreEqual(
-				"long TestFunction_called_count;\r\n",
+				"long			TestFunction_called_count;\r\n",
 				output);
 		}
 
@@ -44,7 +44,7 @@ namespace StubCodeGenerator.FunctionBufferTemplate.utest
 			};
 			string output = template.TransformText();
 			Assert.AreEqual(
-				"long TestFunction_called_count;\r\n",
+				"long			TestFunction_called_count;\r\n",
 				output);
 		}
 
@@ -65,7 +65,7 @@ namespace StubCodeGenerator.FunctionBufferTemplate.utest
 			};
 			string output = template.TransformText();
 			Assert.AreEqual(
-				"long TestFunction_called_count;\r\n",
+				"long			TestFunction_called_count;\r\n",
 				output);
 		}
 
@@ -86,7 +86,7 @@ namespace StubCodeGenerator.FunctionBufferTemplate.utest
 			};
 			string output = template.TransformText();
 			Assert.AreEqual(
-				"long TestFunction_called_count;\r\n",
+				"long			TestFunction_called_count;\r\n",
 				output);
 		}
 	}
