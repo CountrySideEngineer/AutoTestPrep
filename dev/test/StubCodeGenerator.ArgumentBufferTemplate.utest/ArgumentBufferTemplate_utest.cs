@@ -32,7 +32,7 @@ namespace StubCodeGenerator.ArgumentBufferTemplate.utest
 			};
 			string output = template.TransformText();
 			Assert.AreEqual(
-				"int Function_Argument[STUB_BUFFER_SIZE_1];\r\n",
+				"int				Function_Argument[STUB_BUFFER_SIZE_1];\r\n",
 				output);
 
 		}
