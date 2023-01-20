@@ -46,9 +46,15 @@ namespace Stub.Source.StubHeaderTemplate.test
 				"#define	STUB_BUFFER_SIZE_2			(100)\r\n" +
 				"#endif\r\n" +
 				"\r\n" +
-				"extern long Function1_called_count;\r\n" +
-				"extern FuncType1 Function1_return_value[];\r\n" +
+				"/*\r\n" +
+				" *	Buffers for the Function1 stub method.\r\n" +
+				" */\r\n" +
+				"extern	long			Function1_called_count;\r\n" +
+				"extern	FuncType1		Function1_return_value[];\r\n" +
 				"\r\n" +
+				"/*\r\n" +
+				" *	A function to initialize the buffers for the Function1 stub method.\r\n" +
+				" */\r\n" +
 				"void Function1_init();\r\n" +
 				"\r\n"
 				, output);
@@ -95,10 +101,16 @@ namespace Stub.Source.StubHeaderTemplate.test
 				"#define	STUB_BUFFER_SIZE_2			(100)\r\n" +
 				"#endif\r\n" +
 				"\r\n" +
-				"extern long Function1_called_count;\r\n" +
-				"extern FuncType1 Function1_return_value[];\r\n" +
-				"extern ArgType1 Function1_Arg1[];\r\n" +
+				"/*\r\n" +
+				" *	Buffers for the Function1 stub method.\r\n" +
+				" */\r\n" +
+				"extern	long			Function1_called_count;\r\n" +
+				"extern	FuncType1		Function1_return_value[];\r\n" +
+				"extern	ArgType1		Function1_Arg1[];\r\n" +
 				"\r\n" +
+				"/*\r\n" +
+				" *	A function to initialize the buffers for the Function1 stub method.\r\n" +
+				" */\r\n" +
 				"void Function1_init();\r\n" +
 				"\r\n"
 				, output);
@@ -147,12 +159,18 @@ namespace Stub.Source.StubHeaderTemplate.test
 				"#define	STUB_BUFFER_SIZE_2			(100)\r\n" +
 				"#endif\r\n" +
 				"\r\n" +
-				"extern long Function1_called_count;\r\n" +
-				"extern FuncType1 Function1_return_value[];\r\n" +
-				"extern ArgType1* Function1_Arg1[];\r\n" +
-				"extern ArgType1 Function1_Arg1_value[][STUB_BUFFER_SIZE_2];\r\n" +
-				"extern long Function1_Arg1_value_size[];\r\n" +
+				"/*\r\n" +
+				" *	Buffers for the Function1 stub method.\r\n" +
+				" */\r\n" +
+				"extern	long			Function1_called_count;\r\n" +
+				"extern	FuncType1		Function1_return_value[];\r\n" +
+				"extern	ArgType1*		Function1_Arg1[];\r\n" +
+				"extern	ArgType1		Function1_Arg1_value[][STUB_BUFFER_SIZE_2];\r\n" +
+				"extern	long			Function1_Arg1_value_size[];\r\n" +
 				"\r\n" +
+				"/*\r\n" +
+				" *	A function to initialize the buffers for the Function1 stub method.\r\n" +
+				" */\r\n" +
 				"void Function1_init();\r\n" +
 				"\r\n"
 				, output);
@@ -201,10 +219,16 @@ namespace Stub.Source.StubHeaderTemplate.test
 				"#define	STUB_BUFFER_SIZE_2			(100)\r\n" +
 				"#endif\r\n" +
 				"\r\n" +
-				"extern long Function1_called_count;\r\n" +
-				"extern FuncType1 Function1_return_value[];\r\n" +
-				"extern ArgType1** Function1_Arg1[];\r\n" +
+				"/*\r\n" +
+				" *	Buffers for the Function1 stub method.\r\n" +
+				" */\r\n" +
+				"extern	long			Function1_called_count;\r\n" +
+				"extern	FuncType1		Function1_return_value[];\r\n" +
+				"extern	ArgType1**		Function1_Arg1[];\r\n" +
 				"\r\n" +
+				"/*\r\n" +
+				" *	A function to initialize the buffers for the Function1 stub method.\r\n" +
+				" */\r\n" +
 				"void Function1_init();\r\n" +
 				"\r\n"
 				, output);
@@ -253,12 +277,18 @@ namespace Stub.Source.StubHeaderTemplate.test
 				"#define	STUB_BUFFER_SIZE_2			(100)\r\n" +
 				"#endif\r\n" +
 				"\r\n" +
-				"extern long Function1_called_count;\r\n" +
-				"extern FuncType1 Function1_return_value[];\r\n" +
-				"extern ArgType1** Function1_Arg1[];\r\n" +
-				"extern ArgType1 Function1_Arg1_return_value[][STUB_BUFFER_SIZE_2];\r\n" +
-				"extern long Function1_Arg1_return_value_size[];\r\n" +
+				"/*\r\n" +
+				" *	Buffers for the Function1 stub method.\r\n" +
+				" */\r\n" +
+				"extern	long			Function1_called_count;\r\n" +
+				"extern	FuncType1		Function1_return_value[];\r\n" +
+				"extern	ArgType1**		Function1_Arg1[];\r\n" +
+				"extern	ArgType1		Function1_Arg1_return_value[][STUB_BUFFER_SIZE_2];\r\n" +
+				"extern	long			Function1_Arg1_return_value_size[];\r\n" +
 				"\r\n" +
+				"/*\r\n" +
+				" *	A function to initialize the buffers for the Function1 stub method.\r\n" +
+				" */\r\n" +
 				"void Function1_init();\r\n" +
 				"\r\n"
 				, output);
@@ -318,16 +348,28 @@ namespace Stub.Source.StubHeaderTemplate.test
 				"#define	STUB_BUFFER_SIZE_2			(100)\r\n" +
 				"#endif\r\n" +
 				"\r\n" +
-				"extern long Function1_called_count;\r\n" +
-				"extern FuncType1 Function1_return_value[];\r\n" +
-				"extern ArgType1 Function1_Arg1[];\r\n" +
+				"/*\r\n" +
+				" *	Buffers for the Function1 stub method.\r\n" +
+				" */\r\n" +
+				"extern	long			Function1_called_count;\r\n" +
+				"extern	FuncType1		Function1_return_value[];\r\n" +
+				"extern	ArgType1		Function1_Arg1[];\r\n" +
 				"\r\n" +
+				"/*\r\n" +
+				" *	A function to initialize the buffers for the Function1 stub method.\r\n" +
+				" */\r\n" +
 				"void Function1_init();\r\n" +
 				"\r\n" +
-				"extern long Function2_called_count;\r\n" +
-				"extern FuncType2 Function2_return_value[];\r\n" +
-				"extern ArgType2_1 Function2_Arg2_1[];\r\n" +
+				"/*\r\n" +
+				" *	Buffers for the Function2 stub method.\r\n" +
+				" */\r\n" +
+				"extern	long			Function2_called_count;\r\n" +
+				"extern	FuncType2		Function2_return_value[];\r\n" +
+				"extern	ArgType2_1		Function2_Arg2_1[];\r\n" +
 				"\r\n" +
+				"/*\r\n" +
+				" *	A function to initialize the buffers for the Function2 stub method.\r\n" +
+				" */\r\n" +
 				"void Function2_init();\r\n" +
 				"\r\n"
 				, output);
@@ -389,18 +431,30 @@ namespace Stub.Source.StubHeaderTemplate.test
 				"#define	STUB_BUFFER_SIZE_2			(100)\r\n" +
 				"#endif\r\n" +
 				"\r\n" +
-				"extern long Function1_called_count;\r\n" +
-				"extern FuncType1 Function1_return_value[];\r\n" +
-				"extern ArgType1 Function1_Arg1[];\r\n" +
+				"/*\r\n" +
+				" *	Buffers for the Function1 stub method.\r\n" +
+				" */\r\n" +
+				"extern	long			Function1_called_count;\r\n" +
+				"extern	FuncType1		Function1_return_value[];\r\n" +
+				"extern	ArgType1		Function1_Arg1[];\r\n" +
 				"\r\n" +
+				"/*\r\n" +
+				" *	A function to initialize the buffers for the Function1 stub method.\r\n" +
+				" */\r\n" +
 				"void Function1_init();\r\n" +
 				"\r\n" +
-				"extern long Function2_called_count;\r\n" +
-				"extern FuncType2 Function2_return_value[];\r\n" +
-				"extern ArgType2_1* Function2_Arg2_1[];\r\n" +
-				"extern ArgType2_1 Function2_Arg2_1_value[][STUB_BUFFER_SIZE_2];\r\n" +
-				"extern long Function2_Arg2_1_value_size[];\r\n" +
+				"/*\r\n" +
+				" *	Buffers for the Function2 stub method.\r\n" +
+				" */\r\n" +
+				"extern	long			Function2_called_count;\r\n" +
+				"extern	FuncType2		Function2_return_value[];\r\n" +
+				"extern	ArgType2_1*		Function2_Arg2_1[];\r\n" +
+				"extern	ArgType2_1		Function2_Arg2_1_value[][STUB_BUFFER_SIZE_2];\r\n" +
+				"extern	long			Function2_Arg2_1_value_size[];\r\n" +
 				"\r\n" +
+				"/*\r\n" +
+				" *	A function to initialize the buffers for the Function2 stub method.\r\n" +
+				" */\r\n" +
 				"void Function2_init();\r\n" +
 				"\r\n"
 				, output);
@@ -462,20 +516,32 @@ namespace Stub.Source.StubHeaderTemplate.test
 				"#define	STUB_BUFFER_SIZE_2			(100)\r\n" +
 				"#endif\r\n" +
 				"\r\n" +
-				"extern long Function1_called_count;\r\n" +
-				"extern FuncType1 Function1_return_value[];\r\n" +
-				"extern ArgType1 Function1_Arg1[];\r\n" +
+				"/*\r\n" +
+				" *	Buffers for the Function1 stub method.\r\n" +
+				" */\r\n" +
+				"extern	long			Function1_called_count;\r\n" +
+				"extern	FuncType1		Function1_return_value[];\r\n" +
+				"extern	ArgType1		Function1_Arg1[];\r\n" +
 				"\r\n" +
+				"/*\r\n" +
+				" *	A function to initialize the buffers for the Function1 stub method.\r\n" +
+				" */\r\n" +
 				"void Function1_init();\r\n" +
 				"\r\n" +
-				"extern long Function2_called_count;\r\n" +
-				"extern FuncType2 Function2_return_value[];\r\n" +
-				"extern ArgType2_1* Function2_Arg2_1[];\r\n" +
-				"extern ArgType2_1 Function2_Arg2_1_value[][STUB_BUFFER_SIZE_2];\r\n" +
-				"extern long Function2_Arg2_1_value_size[];\r\n" +
-				"extern ArgType2_1 Function2_Arg2_1_return_value[][STUB_BUFFER_SIZE_2];\r\n" +
-				"extern long Function2_Arg2_1_return_value_size[];\r\n" +
+				"/*\r\n" +
+				" *	Buffers for the Function2 stub method.\r\n" +
+				" */\r\n" +
+				"extern	long			Function2_called_count;\r\n" +
+				"extern	FuncType2		Function2_return_value[];\r\n" +
+				"extern	ArgType2_1*		Function2_Arg2_1[];\r\n" +
+				"extern	ArgType2_1		Function2_Arg2_1_value[][STUB_BUFFER_SIZE_2];\r\n" +
+				"extern	long			Function2_Arg2_1_value_size[];\r\n" +
+				"extern	ArgType2_1		Function2_Arg2_1_return_value[][STUB_BUFFER_SIZE_2];\r\n" +
+				"extern	long			Function2_Arg2_1_return_value_size[];\r\n" +
 				"\r\n" +
+				"/*\r\n" +
+				" *	A function to initialize the buffers for the Function2 stub method.\r\n" +
+				" */\r\n" +
 				"void Function2_init();\r\n" +
 				"\r\n"
 				, output);
@@ -537,20 +603,32 @@ namespace Stub.Source.StubHeaderTemplate.test
 				"#define	STUB_BUFFER_SIZE_2			(100)\r\n" +
 				"#endif\r\n" +
 				"\r\n" +
-				"extern long Function1_called_count;\r\n" +
-				"extern FuncType1 Function1_return_value[];\r\n" +
-				"extern ArgType1 Function1_Arg1[];\r\n" +
+				"/*\r\n" +
+				" *	Buffers for the Function1 stub method.\r\n" +
+				" */\r\n" +
+				"extern	long			Function1_called_count;\r\n" +
+				"extern	FuncType1		Function1_return_value[];\r\n" +
+				"extern	ArgType1		Function1_Arg1[];\r\n" +
 				"\r\n" +
+				"/*\r\n" +
+				" *	A function to initialize the buffers for the Function1 stub method.\r\n" +
+				" */\r\n" +
 				"void Function1_init();\r\n" +
 				"\r\n" +
-				"extern long Function2_called_count;\r\n" +
-				"extern FuncType2 Function2_return_value[];\r\n" +
-				"extern ArgType2_1* Function2_Arg2_1[];\r\n" +
-				"extern ArgType2_1 Function2_Arg2_1_value[][STUB_BUFFER_SIZE_2];\r\n" +
-				"extern long Function2_Arg2_1_value_size[];\r\n" +
-				"extern ArgType2_1 Function2_Arg2_1_return_value[][STUB_BUFFER_SIZE_2];\r\n" +
-				"extern long Function2_Arg2_1_return_value_size[];\r\n" +
+				"/*\r\n" +
+				" *	Buffers for the Function2 stub method.\r\n" +
+				" */\r\n" +
+				"extern	long			Function2_called_count;\r\n" +
+				"extern	FuncType2		Function2_return_value[];\r\n" +
+				"extern	ArgType2_1*		Function2_Arg2_1[];\r\n" +
+				"extern	ArgType2_1		Function2_Arg2_1_value[][STUB_BUFFER_SIZE_2];\r\n" +
+				"extern	long			Function2_Arg2_1_value_size[];\r\n" +
+				"extern	ArgType2_1		Function2_Arg2_1_return_value[][STUB_BUFFER_SIZE_2];\r\n" +
+				"extern	long			Function2_Arg2_1_return_value_size[];\r\n" +
 				"\r\n" +
+				"/*\r\n" +
+				" *	A function to initialize the buffers for the Function2 stub method.\r\n" +
+				" */\r\n" +
 				"void Function2_init();\r\n" +
 				"\r\n"
 				, output);
