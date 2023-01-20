@@ -32,9 +32,11 @@ namespace StubCodeGenerator.BuffInit.ArgumentBufferTemplate.utest
 			};
 			string output = template.TransformText();
 			Assert.AreEqual(
+				"	//Initialize the buffer for argument SampleArgument.\r\n" +
 				"	for (int index = 0; index < STUB_BUFFER_SIZE_1; index++) {\r\n" +
 				"		SampleFunction_SampleArgument[index] = 0;\r\n" +
-				"	}\r\n",
+				"	}\r\n" +
+				"\r\n",
 				output);
 		}
 	}
