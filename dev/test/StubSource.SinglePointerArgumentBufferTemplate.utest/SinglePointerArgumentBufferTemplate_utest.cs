@@ -32,14 +32,17 @@ namespace StubSource.SinglePointerArgumentBufferTemplate.utest
 			};
 			string output = template.TransformText();
 			Assert.AreEqual(
+				"	//Set argument value to buffer.\r\n" +
 				"	Function_Argument[Function_called_count] = Argument;\r\n" +
 				"\r\n" +
+				"	//Set values in an area specified by pointer argument to buffer.\r\n" +
 				"	for (int index = 0;\r\n" +
 				"		index < Function_Argument_value_size[Function_called_count];\r\n" +
 				"		index++)\r\n" +
 				"	{\r\n" +
 				"		Function_Argument_value[Function_called_count][index] = *(Argument + index);\r\n" +
-				"	}\r\n",
+				"	}\r\n" +
+				"\r\n",
 				output);
 		}
 	}

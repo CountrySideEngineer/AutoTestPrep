@@ -31,7 +31,9 @@ namespace StubSource.ArgumentBufferTemplate.utest
 			};
 			string output = template.TransformText();
 			Assert.AreEqual(
-				"	Function_Argument[Function_called_count] = Argument;\r\n",
+				"	//Set argument value to buffer.\r\n" +
+				"	Function_Argument[Function_called_count] = Argument;\r\n" +
+				"\r\n",
 				output);
 		}
 	}

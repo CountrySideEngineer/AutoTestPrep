@@ -26,7 +26,9 @@ namespace StubSource.FunctionReturnValueLatchTemplate.utest
 			};
 			string output = template.TransformText();
 			Assert.AreEqual(
-				"	int latchReturn = Function_return_value[Function_called_count];\r\n", 
+				"	//Get and latch the value from buffer.\r\n" +
+				"	int latchReturn = Function_return_value[Function_called_count];\r\n" +
+				"\r\n",
 				output);
 		}
 	}
