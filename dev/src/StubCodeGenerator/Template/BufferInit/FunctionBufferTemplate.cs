@@ -29,14 +29,14 @@ namespace CodeGenerator.Stub.Template.BufferInit
         /// </summary>
         public override string TransformText()
         {
-            this.Write("\t");
+            this.Write("\t//Initialize the number of function calls.\r\n\t");
             
-            #line 8 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferInit\FunctionBufferTemplate.tt"
+            #line 9 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferInit\FunctionBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Rule.GetCalledCounter(Target)));
             
             #line default
             #line hidden
-            this.Write(" = 0;\r\n");
+            this.Write(" = 0;\r\n\r\n");
             return this.GenerationEnvironment.ToString();
         }
     }

@@ -36,18 +36,25 @@ namespace CodeGenerator.Stub.Template.BufferDeclare
             #line hidden
             
             #line 8 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\DoublePointerArgumentWithOutputBufferTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(Argument.DataType));
+            this.Write(this.ToStringHelper.ToStringWithCulture(DataTypeFormat(Argument.DataType)));
             
             #line default
             #line hidden
-            this.Write(" ");
+            this.Write("\t");
             
             #line 8 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\DoublePointerArgumentWithOutputBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Rule.GetDoublePointerArgumentReturnValueBuffer(Target, Argument)));
             
             #line default
             #line hidden
-            this.Write("[STUB_BUFFER_SIZE_1][STUB_BUFFER_SIZE_2];\r\nlong ");
+            this.Write("[STUB_BUFFER_SIZE_1][STUB_BUFFER_SIZE_2];\r\n");
+            
+            #line 9 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\DoublePointerArgumentWithOutputBufferTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(DataTypeFormat("long")));
+            
+            #line default
+            #line hidden
+            this.Write("\t");
             
             #line 9 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\DoublePointerArgumentWithOutputBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Rule.GetDoublePointerArgumentReturnValueSizeBuffer(Target, Argument)));

@@ -376,7 +376,7 @@ namespace MinUnitStubDriver.MinUnitStubDriver
 		/// <returns><para>DirectoryInfo</para> object about output.</returns>
 		protected virtual DirectoryInfo CreateOutputDirInfo(DirectoryInfo rootDir, WriteData data)
 		{
-			string outputDirPath = $@"{rootDir.FullName}\{data.Test.Target.Name}_test";
+			string outputDirPath = $@"{rootDir.FullName}\{data.Test.TestInformation}_test";
 			var outputDirInfo = new DirectoryInfo(outputDirPath);
 			return outputDirInfo;
 		}

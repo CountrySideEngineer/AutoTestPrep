@@ -28,7 +28,7 @@ namespace CodeGenerator.Stub.Template.BufferDeclare
         /// </summary>
         public override string TransformText()
         {
-            this.Write("extern ");
+            this.Write("extern\t");
             
             #line 7 "E:\development\AutoTestPrep\dev\src\StubCodeGenerator\Template\BufferDeclare\ExternFunctionBufferTemplate.tt"
  base.TransformText(); 

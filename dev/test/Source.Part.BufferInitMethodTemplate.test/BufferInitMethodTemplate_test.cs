@@ -32,15 +32,24 @@ namespace Source.Part.BufferInitMethodTemplate.test
 			};
 			string output = template.TransformText();
 			Assert.AreEqual(
+				"/*\r\n" +
+				" *	A function to initialize the buffers for the TargetFunction stub method.\r\n" +
+				" */\r\n" +
 				"void TargetFunction_init()\r\n" +
 				"{\r\n" +
+				"	//Initialize the number of function calls.\r\n" +
 				"	TargetFunction_called_count = 0;\r\n" +
+				"\r\n" +
+				"	//Initialize the buffer to hold the values the TargetFunction stub method will return.\r\n" +
 				"	for (int index = 0; index < STUB_BUFFER_SIZE_1; index++) {\r\n" +
 				"		TargetFunction_return_value[index] = 0;\r\n" +
 				"	}\r\n" +
+				"\r\n" +
+				"	//Initialize the buffer for argument Arg1.\r\n" +
 				"	for (int index = 0; index < STUB_BUFFER_SIZE_1; index++) {\r\n" +
 				"		TargetFunction_Arg1[index] = 0;\r\n" +
 				"	}\r\n" +
+				"\r\n" +
 				"}\r\n",
 				output);
 		}
@@ -73,15 +82,24 @@ namespace Source.Part.BufferInitMethodTemplate.test
 			};
 			string output = template.TransformText();
 			Assert.AreEqual(
+				"/*\r\n" +
+				" *	A function to initialize the buffers for the TargetFunction stub method.\r\n" +
+				" */\r\n" +
 				"void TargetFunction_init()\r\n" +
 				"{\r\n" +
+				"	//Initialize the number of function calls.\r\n" +
 				"	TargetFunction_called_count = 0;\r\n" +
+				"\r\n" +
+				"	//Initialize the buffer for argument Arg1.\r\n" +
 				"	for (int index = 0; index < STUB_BUFFER_SIZE_1; index++) {\r\n" +
 				"		TargetFunction_Arg1[index] = 0;\r\n" +
 				"	}\r\n" +
+				"\r\n" +
+				"	//Initialize the buffer for argument Arg2.\r\n" +
 				"	for (int index = 0; index < STUB_BUFFER_SIZE_1; index++) {\r\n" +
 				"		TargetFunction_Arg2[index] = 0;\r\n" +
 				"	}\r\n" +
+				"\r\n" +
 				"}\r\n",
 				output);
 		}
@@ -116,12 +134,20 @@ namespace Source.Part.BufferInitMethodTemplate.test
 			};
 			string output = template.TransformText();
 			Assert.AreEqual(
+				"/*\r\n" +
+				" *	A function to initialize the buffers for the TargetFunction stub method.\r\n" +
+				" */\r\n" +
 				"void TargetFunction_init()\r\n" +
 				"{\r\n" +
+				"	//Initialize the number of function calls.\r\n" +
 				"	TargetFunction_called_count = 0;\r\n" +
+				"\r\n" +
+				"	//Initialize the buffer for argument Arg1.\r\n" +
 				"	for (int index = 0; index < STUB_BUFFER_SIZE_1; index++) {\r\n" +
 				"		TargetFunction_Arg1[index] = 0;\r\n" +
 				"	}\r\n" +
+				"\r\n" +
+				"	//Initialize the buffers for argument Arg2.\r\n" +
 				"	for (int index = 0; index < STUB_BUFFER_SIZE_1; index++) {\r\n" +
 				"		TargetFunction_Arg2[index] = 0;\r\n" +
 				"		for (int index2 = 0; index2 < STUB_BUFFER_SIZE_2; index2++) {\r\n" +
@@ -129,6 +155,7 @@ namespace Source.Part.BufferInitMethodTemplate.test
 				"		}\r\n" +
 				"		TargetFunction_Arg2_value_size[index] = 0;\r\n" +
 				"	}\r\n" +
+				"\r\n" +
 				"}\r\n",
 				output);
 		}
@@ -163,12 +190,20 @@ namespace Source.Part.BufferInitMethodTemplate.test
 			};
 			string output = template.TransformText();
 			Assert.AreEqual(
+				"/*\r\n" +
+				" *	A function to initialize the buffers for the TargetFunction stub method.\r\n" +
+				" */\r\n" +
 				"void TargetFunction_init()\r\n" +
 				"{\r\n" +
+				"	//Initialize the number of function calls.\r\n" +
 				"	TargetFunction_called_count = 0;\r\n" +
+				"\r\n" +
+				"	//Initialize the buffer for argument Arg1.\r\n" +
 				"	for (int index = 0; index < STUB_BUFFER_SIZE_1; index++) {\r\n" +
 				"		TargetFunction_Arg1[index] = 0;\r\n" +
 				"	}\r\n" +
+				"\r\n" +
+				"	//Initialize the buffers for argument Arg2.\r\n" +
 				"	for (int index = 0; index < STUB_BUFFER_SIZE_1; index++) {\r\n" +
 				"		TargetFunction_Arg2[index] = 0;\r\n" +
 				"		for (int index2 = 0; index2 < STUB_BUFFER_SIZE_2; index2++) {\r\n" +
@@ -178,6 +213,7 @@ namespace Source.Part.BufferInitMethodTemplate.test
 				"		TargetFunction_Arg2_value_size[index] = 0;\r\n" +
 				"		TargetFunction_Arg2_return_value_size[index] = 0;\r\n" +
 				"	}\r\n" +
+				"\r\n" +
 				"}\r\n",
 				output);
 		}
@@ -213,15 +249,25 @@ namespace Source.Part.BufferInitMethodTemplate.test
 			};
 			string output = template.TransformText();
 			Assert.AreEqual(
+				"/*\r\n" +
+				" *	A function to initialize the buffers for the TargetFunction stub method.\r\n" +
+				" */\r\n" +
 				"void TargetFunction_init()\r\n" +
 				"{\r\n" +
+				"	//Initialize the number of function calls.\r\n" +
 				"	TargetFunction_called_count = 0;\r\n" +
+				"\r\n" +
+				"	//Initialize the buffer to hold the values the TargetFunction stub method will return.\r\n" +
 				"	for (int index = 0; index < STUB_BUFFER_SIZE_1; index++) {\r\n" +
 				"		TargetFunction_return_value[index] = NULL;\r\n" +
 				"	}\r\n" +
+				"\r\n" +
+				"	//Initialize the buffer for argument Arg1.\r\n" +
 				"	for (int index = 0; index < STUB_BUFFER_SIZE_1; index++) {\r\n" +
 				"		TargetFunction_Arg1[index] = 0;\r\n" +
 				"	}\r\n" +
+				"\r\n" +
+				"	//Initialize the buffers for argument Arg2.\r\n" +
 				"	for (int index = 0; index < STUB_BUFFER_SIZE_1; index++) {\r\n" +
 				"		TargetFunction_Arg2[index] = 0;\r\n" +
 				"		for (int index2 = 0; index2 < STUB_BUFFER_SIZE_2; index2++) {\r\n" +
@@ -231,6 +277,7 @@ namespace Source.Part.BufferInitMethodTemplate.test
 				"		TargetFunction_Arg2_value_size[index] = 0;\r\n" +
 				"		TargetFunction_Arg2_return_value_size[index] = 0;\r\n" +
 				"	}\r\n" +
+				"\r\n" +
 				"}\r\n",
 				output);
 		}

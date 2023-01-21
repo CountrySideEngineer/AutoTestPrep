@@ -5,4 +5,6 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#@ import namespace="CodeGenerator.Stub.Template" #>
+	//Initialize the number of function calls.
 	<#= Rule.GetCalledCounter(Target) #> = 0;
+

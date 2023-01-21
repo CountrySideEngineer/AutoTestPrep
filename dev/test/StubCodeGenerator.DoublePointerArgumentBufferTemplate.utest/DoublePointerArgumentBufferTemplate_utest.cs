@@ -30,7 +30,7 @@ namespace StubCodeGenerator.DoublePointerArgumentBufferTemplate.utest
 			};
 			string output = template.TransformText();
 			Assert.AreEqual(
-				"short** TestFunction_Argument[STUB_BUFFER_SIZE_1];\r\n",
+				"short**			TestFunction_Argument[STUB_BUFFER_SIZE_1];\r\n",
 				output
 				);
 		}

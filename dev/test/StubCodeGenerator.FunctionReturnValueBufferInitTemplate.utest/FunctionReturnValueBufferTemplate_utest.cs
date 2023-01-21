@@ -28,10 +28,14 @@ namespace StubCodeGenerator.FunctionReturnValueBufferInitTemplate.utest
 			string output = template.TransformText();
 
 			Assert.AreEqual(
+				"	//Initialize the number of function calls.\r\n" +
 				"	SampleFunction_called_count = 0;\r\n" +
+				"\r\n" +
+				"	//Initialize the buffer to hold the values the SampleFunction stub method will return.\r\n" + 
 				"	for (int index = 0; index < STUB_BUFFER_SIZE_1; index++) {\r\n" +
 				"		SampleFunction_return_value[index] = 0;\r\n" +
-				"	}\r\n",
+				"	}\r\n" +
+				"\r\n",
 				output
 				);
 		}
@@ -55,10 +59,14 @@ namespace StubCodeGenerator.FunctionReturnValueBufferInitTemplate.utest
 			string output = template.TransformText();
 
 			Assert.AreEqual(
+				"	//Initialize the number of function calls.\r\n" +
 				"	SampleFunction_called_count = 0;\r\n" +
+				"\r\n" +
+				"	//Initialize the buffer to hold the values the SampleFunction stub method will return.\r\n" +
 				"	for (int index = 0; index < STUB_BUFFER_SIZE_1; index++) {\r\n" +
 				"		SampleFunction_return_value[index] = NULL;\r\n" +
-				"	}\r\n",
+				"	}\r\n" +
+				"\r\n",
 				output
 				);
 		}

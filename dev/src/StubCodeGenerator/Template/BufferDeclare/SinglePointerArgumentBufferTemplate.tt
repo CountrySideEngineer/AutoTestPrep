@@ -5,5 +5,5 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 <# base.TransformText(); #>
-<#= Argument.DataType #> <#= Rule.GetSinglePointerArgumentValueBuffer(Target, Argument) #>[STUB_BUFFER_SIZE_1][STUB_BUFFER_SIZE_2];
-long <#= Rule.GetSinglePointerArgumentValueSizeBuffer(Target, Argument) #>[STUB_BUFFER_SIZE_1];
+<#= DataTypeFormat(Argument.DataType) #>	<#= Rule.GetSinglePointerArgumentValueBuffer(Target, Argument) #>[STUB_BUFFER_SIZE_1][STUB_BUFFER_SIZE_2];
+<#= DataTypeFormat("long") #>	<#= Rule.GetSinglePointerArgumentValueSizeBuffer(Target, Argument) #>[STUB_BUFFER_SIZE_1];

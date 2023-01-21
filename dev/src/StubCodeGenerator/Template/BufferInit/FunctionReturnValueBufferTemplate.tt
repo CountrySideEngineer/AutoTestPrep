@@ -6,8 +6,7 @@
 <#@ import namespace="System.Collections.Generic" #>
 <#@ import namespace="CodeGenerator.Stub.Template" #>
 <# base.TransformText(); #>
-
-	//Initialize the buffer to hold the value the <#= Target.Name #> stub method will return.
+	//Initialize the buffer to hold the values the <#= Target.Name #> stub method will return.
 	for (int index = 0; index < STUB_BUFFER_SIZE_1; index++) {
 <#
 	if (0 == Target.PointerNum) {
@@ -21,3 +20,4 @@
 	}
 #>
 	}
+
