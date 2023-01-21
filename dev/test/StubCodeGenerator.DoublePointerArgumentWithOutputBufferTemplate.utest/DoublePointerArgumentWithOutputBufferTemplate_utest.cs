@@ -31,9 +31,9 @@ namespace StubCodeGenerator.DoublePointerArgumentWithOutputBufferTemplate.utest
 			};
 			string output = template.TransformText();
 			Assert.AreEqual(
-				"int** Function_Argument[STUB_BUFFER_SIZE_1];\r\n" +
-				"int Function_Argument_return_value[STUB_BUFFER_SIZE_1][STUB_BUFFER_SIZE_2];\r\n" +
-				"long Function_Argument_return_value_size[STUB_BUFFER_SIZE_1];\r\n",
+				"int**			Function_Argument[STUB_BUFFER_SIZE_1];\r\n" +
+				"int				Function_Argument_return_value[STUB_BUFFER_SIZE_1][STUB_BUFFER_SIZE_2];\r\n" +
+				"long			Function_Argument_return_value_size[STUB_BUFFER_SIZE_1];\r\n",
 				output);
 		}
 	}

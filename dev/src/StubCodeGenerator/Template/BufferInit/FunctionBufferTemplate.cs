@@ -36,7 +36,7 @@ namespace CodeGenerator.Stub.Template.BufferInit
             
             #line default
             #line hidden
-            this.Write(" = 0;\r\n");
+            this.Write(" = 0;\r\n\r\n");
             return this.GenerationEnvironment.ToString();
         }
     }

@@ -28,7 +28,9 @@ namespace StubCodeGenerator.BuffInit.FunctionBufferTemplate.utest
 			string output = template.TransformText();
 
 			Assert.AreEqual(
-				"	SampleFunction_called_count = 0;\r\n",
+				"	//Initialize the number of function calls.\r\n"  +
+				"	SampleFunction_called_count = 0;\r\n" +
+				"\r\n",
 				output);
 		}
 
@@ -50,7 +52,9 @@ namespace StubCodeGenerator.BuffInit.FunctionBufferTemplate.utest
 			string output = template.TransformText();
 
 			Assert.AreEqual(
-				"	SampleFunction_called_count = 0;\r\n",
+				"	//Initialize the number of function calls.\r\n" +
+				"	SampleFunction_called_count = 0;\r\n" +
+				"\r\n",
 				output);
 		}
 	}
