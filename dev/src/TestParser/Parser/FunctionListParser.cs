@@ -92,5 +92,41 @@ namespace TestParser.Parser
 			string tableName = Config.Title;
 			return tableName;
 		}
+
+		/// <summary>
+		/// Read function list table.
+		/// </summary>
+		/// <param name="stream">Stream to read</param>
+		/// <returns>Collection of ParameterInfo object.</returns>
+		protected override object Read(Stream stream)
+		{
+			INFO($"Start reading table \"{GetTableName()}\" in {Target}.");
+
+			object readItems = base.Read(stream);
+
+			try
+			{
+				var paramInfos = (IEnumerable<ParameterInfo>)readItems;
+
+				INFO($"Get {paramInfos.Count()} function information in the table.");
+
+				int itemIndex = 1;
+				foreach (var item in paramInfos)
+				{
+					INFO($"Function info {itemIndex}:");
+					INFO($"    Index    = {item.Index}");
+					INFO($"    Name     = {item.Name}");
+					INFO($"    InfoName = {item.InfoName}");
+					INFO($"    FileName = {item.FileName}");
+					itemIndex++;
+				}
+			}
+			catch (InvalidCastException)
+			{
+				DEBUG("FunctionList object data type invalid.");
+				DEBUG("Skip data output.");
+			}
+			return base.Read(stream);
+		}
 	}
 }
