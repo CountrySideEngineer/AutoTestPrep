@@ -13,6 +13,7 @@ using TestParser.Converter;
 using TableReader.Excel;
 using TableReader.TableData;
 using System.Security;
+using TableReader.Interface;
 
 namespace TestParser.Parser
 {
@@ -87,5 +88,32 @@ namespace TestParser.Parser
 			string tableName = Config.Title;
 			return tableName;
 		}
+
+		/// <summary>
+		/// Read function data from table.
+		/// </summary>
+		/// <param name="stream">Stream to read.</param>
+		/// <returns>Function object read from table in stream.</returns>
+		protected override object Read(Stream stream)
+		{
+			INFO($"Start reading table \"{GetTableName()}\" in {Target}.");
+
+			try
+			{
+				Function function = (Function)base.Read(stream);
+
+				INFO("Get the function below in the table:");
+				INFO($"\t{function.ToString()}");
+
+				return function;
+			}
+			catch (InvalidCastException)
+			{
+				FATAL($"Function talbe object data type invalid.");
+
+				throw;
+			}
+		}
+
 	}
 }
