@@ -123,8 +123,9 @@ namespace TestParser.Parser
 			}
 			catch (InvalidCastException)
 			{
-				DEBUG("FunctionList object data type invalid.");
-				DEBUG("Skip data output.");
+				FATAL("FunctionList object data type invalid.");
+
+				throw;
 			}
 			return base.Read(stream);
 		}
