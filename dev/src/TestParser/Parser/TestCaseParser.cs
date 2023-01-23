@@ -98,5 +98,30 @@ namespace TestParser.Parser
 			string tableName = Config.Title;
 			return tableName;
 		}
+
+		/// <summary>
+		/// Read test data from table.
+		/// </summary>
+		/// <param name="stream">Stream to read.</param>
+		/// <returns>Collection of TestCase object read from table in stream.</returns>
+		protected override object Read(Stream stream)
+		{
+			INFO($"Start reading table \"{GetTableName()}\" in \"{Target}\".");
+
+			try
+			{
+				IEnumerable<TestCase> testCases = (IEnumerable<TestCase>)base.Read(stream);
+
+				INFO($"Get {testCases.Count()} case from the table.");
+
+				return testCases;
+			}
+			catch (InvalidCastException)
+			{
+				FATAL("Test case table object data type invalid.");
+
+				throw;
+			}
+		}
 	}
 }
