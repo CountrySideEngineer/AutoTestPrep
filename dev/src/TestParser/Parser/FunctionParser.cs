@@ -96,7 +96,7 @@ namespace TestParser.Parser
 		/// <returns>Function object read from table in stream.</returns>
 		protected override object Read(Stream stream)
 		{
-			INFO($"Start reading table \"{GetTableName()}\" in {Target}.");
+			INFO($"Start reading table \"{GetTableName()}\" in \"{Target}\".");
 
 			try
 			{
@@ -109,7 +109,7 @@ namespace TestParser.Parser
 			}
 			catch (InvalidCastException)
 			{
-				FATAL($"Function talbe object data type invalid.");
+				FATAL("Function talbe object data type invalid.");
 
 				throw;
 			}
