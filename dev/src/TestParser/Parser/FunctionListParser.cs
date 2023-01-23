@@ -100,7 +100,7 @@ namespace TestParser.Parser
 		/// <returns>Collection of ParameterInfo object.</returns>
 		protected override object Read(Stream stream)
 		{
-			INFO($"Start reading table \"{GetTableName()}\" in {Target}.");
+			INFO($"Start reading table \"{GetTableName()}\" in \"{Target}\".");
 
 			object readItems = base.Read(stream);
 
@@ -114,10 +114,10 @@ namespace TestParser.Parser
 				foreach (var item in paramInfos)
 				{
 					INFO($"Function info {itemIndex}:");
-					INFO($"    Index    = {item.Index}");
-					INFO($"    Name     = {item.Name}");
-					INFO($"    InfoName = {item.InfoName}");
-					INFO($"    FileName = {item.FileName}");
+					INFO($"       Index : {item.Index}");
+					INFO($"        Name : {item.Name}");
+					INFO($"    InfoName : {item.InfoName}");
+					INFO($"    FileName : {item.FileName}");
 					itemIndex++;
 				}
 			}
