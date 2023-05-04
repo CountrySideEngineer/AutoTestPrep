@@ -146,6 +146,8 @@ namespace TestParser.Parser
 			{
 				FATAL($"Unknown exception has been raised while reading function list.");
 				FATAL($"The exceptino is {ex.GetType()}");
+
+				throw;
 			}
 		}
 	}
