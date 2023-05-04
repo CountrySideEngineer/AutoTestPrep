@@ -98,12 +98,29 @@ namespace TestParser.Parser
 		/// </summary>
 		/// <param name="stream">Stream to read</param>
 		/// <returns>Collection of ParameterInfo object.</returns>
+		/// <exception cref="InvalidCastException"></exception>
+		/// <exception cref="NullReferenceException"></exception>
+		/// <exception cref="System.Exception"></exception>
 		protected override object Read(Stream stream)
 		{
 			INFO($"Start reading table \"{GetTableName()}\" in \"{Target}\".");
 
 			object readItems = base.Read(stream);
 
+			OutputToLog(readItems);
+
+			return readItems;
+		}
+
+		/// <summary>
+		/// Output items data read from stream into log.
+		/// </summary>
+		/// <param name="readItems">Items read from from stream.</param>
+		/// <exception cref="InvalidCastException"></exception>
+		/// <exception cref="NullReferenceException"></exception>
+		/// <exception cref="System.Exception"></exception>
+		protected virtual void OutputToLog(object readItems)
+		{
 			try
 			{
 				var paramInfos = (IEnumerable<ParameterInfo>)readItems;
@@ -114,20 +131,22 @@ namespace TestParser.Parser
 				foreach (var item in paramInfos)
 				{
 					INFO($"Function info {itemIndex}:");
-					INFO($"       Index : {item.Index}");
-					INFO($"        Name : {item.Name}");
-					INFO($"    InfoName : {item.InfoName}");
-					INFO($"    FileName : {item.FileName}");
+					item.ToString(INFO);
 					itemIndex++;
 				}
 			}
-			catch (InvalidCastException)
+			catch (System.Exception ex)
+			when ((ex is InvalidCastException) ||
+				(ex is NullReferenceException))
 			{
 				FATAL("FunctionList object data type invalid.");
-
 				throw;
 			}
-			return base.Read(stream);
+			catch (System.Exception ex)
+			{
+				FATAL($"Unknown exception has been raised while reading function list.");
+				FATAL($"The exceptino is {ex.GetType()}");
+			}
 		}
 	}
 }
