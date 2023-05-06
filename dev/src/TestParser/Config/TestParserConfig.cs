@@ -49,7 +49,8 @@ namespace TestParser.Config
 		public static TestParserConfig LoadConfig()
 		{
 			string configFilePath = @".\TestParserConfg.xml";
-			return LoadConfig(configFilePath);
+			TestParserConfig config = LoadConfig(configFilePath);
+			return config;
 		}
 
 		/// <summary>
