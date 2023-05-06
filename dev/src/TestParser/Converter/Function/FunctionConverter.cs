@@ -11,6 +11,18 @@ namespace TestParser.Converter.Function
 {
 	public class FunctionConverter : IContentConverter
 	{
+		protected enum FUNC_TABLE_COL_INDEX : int
+		{
+			COL_INDEX_CATEGORY = 0,
+			COL_INDEX_TYPE,
+			COL_INDEX_PREFIXES,
+			COL_INDEX_DATA_TYPE,
+			COL_INDEX_POSTFIXES,
+			COL_INDEX_NAME,
+			COL_INDEX_IN_OUT,
+			COL_INDEX_DESCRIPTION,
+		};
+
 		protected FunctionTableConfig _config;
 
 		/// <summary>
@@ -74,8 +86,8 @@ namespace TestParser.Converter.Function
 			try
 			{
 				IParameterSetter setter = null;
-				string category = src.ElementAt(0);
-				string type = src.ElementAt(1);
+				string category = src.ElementAt((int)FUNC_TABLE_COL_INDEX.COL_INDEX_CATEGORY);
+				string type = src.ElementAt((int)FUNC_TABLE_COL_INDEX.COL_INDEX_TYPE);
 
 				if (category.Equals(_config.TargetFunction.Category))
 				{
@@ -147,17 +159,17 @@ namespace TestParser.Converter.Function
 			{
 				IEnumerable<string> prefixes = 
 					src
-					.ElementAt(2)
+					.ElementAt((int)FUNC_TABLE_COL_INDEX.COL_INDEX_PREFIXES)
 					.Split(' ')
 					.Where(_ => ((!string.IsNullOrEmpty(_)) && (!string.IsNullOrWhiteSpace(_))));
-				string dataType = src.ElementAt(3);
+				string dataType = src.ElementAt((int)FUNC_TABLE_COL_INDEX.COL_INDEX_DATA_TYPE);
 				IEnumerable<string> postfixes =
 					src
-					.ElementAt(4)
+					.ElementAt((int)FUNC_TABLE_COL_INDEX.COL_INDEX_POSTFIXES)
 					.Split(' ')
 					.Where(_ => ((!string.IsNullOrEmpty(_)) && (!string.IsNullOrWhiteSpace(_))));
-				string name = src.ElementAt(5);
-				string in_out = src.ElementAt(6);
+				string name = src.ElementAt((int)FUNC_TABLE_COL_INDEX.COL_INDEX_NAME);
+				string in_out = src.ElementAt((int)FUNC_TABLE_COL_INDEX.COL_INDEX_IN_OUT);
 				Parameter.AccessMode mode = Parameter.AccessMode.None;
 				try
 				{
@@ -167,11 +179,15 @@ namespace TestParser.Converter.Function
 				{
 					mode = Parameter.AccessMode.In;
 				}
-				string description = src.ElementAt(7);
+				string description = src.ElementAt((int)FUNC_TABLE_COL_INDEX.COL_INDEX_DESCRIPTION);
 				int pointerNum = 0;
 				try
 				{
-					pointerNum = src.ElementAt(4).Where(_ => _ == '*').Count();
+					pointerNum =
+						src
+						.ElementAt((int)FUNC_TABLE_COL_INDEX.COL_INDEX_POSTFIXES)
+						.Where(_ => _ == '*')
+						.Count();
 				}
 				catch (ArgumentNullException)
 				{

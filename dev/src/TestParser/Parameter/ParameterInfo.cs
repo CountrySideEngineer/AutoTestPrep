@@ -45,5 +45,17 @@ namespace TestParser.Target
 			FileName = string.Empty;
 			FilePath = string.Empty;
 		}
+
+		/// <summary>
+		/// Convert to string with action.
+		/// </summary>
+		/// <param name="act">Action to convert and output.</param>
+		public void ToString(Action<string> act)
+		{
+			act($"       Index : {Index}");
+			act($"        Name : {Name}");
+			act($"    InfoName : {InfoName}");
+			act($"    FileName : {FileName}");
+		}
 	}
 }

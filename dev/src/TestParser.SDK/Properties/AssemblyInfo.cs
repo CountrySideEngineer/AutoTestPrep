@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // 制御されます。アセンブリに関連付けられている情報を変更するには、
 // これらの属性値を変更してください。
 [assembly: AssemblyTitle("TestParser.SDK")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("TestParse SDK")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("CountrySideEngineer")]
 [assembly: AssemblyProduct("TestParser.SDK")]
-[assembly: AssemblyCopyright("Copyright ©  2021")]
+[assembly: AssemblyCopyright("Copyright (c)  2021 CountrySideEngineer")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
