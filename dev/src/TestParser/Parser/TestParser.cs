@@ -69,7 +69,6 @@ namespace TestParser.Parser
 		{
 			string procName = "対象関数一覧読出し";
 			NotifyProcessAndProgressDelegate?.Invoke(procName, 0, 0);
-			INFO("Start function list.");
 
 			string sheetName = _testConfig.TestFunctionListTable.Section;
 			IParser parser = new FunctionListParser(sheetName);

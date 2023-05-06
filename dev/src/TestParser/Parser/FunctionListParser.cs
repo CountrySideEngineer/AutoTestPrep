@@ -92,5 +92,63 @@ namespace TestParser.Parser
 			string tableName = Config.Title;
 			return tableName;
 		}
+
+		/// <summary>
+		/// Read function list table.
+		/// </summary>
+		/// <param name="stream">Stream to read</param>
+		/// <returns>Collection of ParameterInfo object.</returns>
+		/// <exception cref="InvalidCastException"></exception>
+		/// <exception cref="NullReferenceException"></exception>
+		/// <exception cref="System.Exception"></exception>
+		protected override object Read(Stream stream)
+		{
+			INFO($"Start reading table \"{GetTableName()}\" in \"{Target}\".");
+
+			object readItems = base.Read(stream);
+
+			OutputToLog(readItems);
+
+			return readItems;
+		}
+
+		/// <summary>
+		/// Output items data read from stream into log.
+		/// </summary>
+		/// <param name="readItems">Items read from from stream.</param>
+		/// <exception cref="InvalidCastException"></exception>
+		/// <exception cref="NullReferenceException"></exception>
+		/// <exception cref="System.Exception"></exception>
+		protected virtual void OutputToLog(object readItems)
+		{
+			try
+			{
+				var paramInfos = (IEnumerable<ParameterInfo>)readItems;
+
+				INFO($"Get {paramInfos.Count()} function information in the table.");
+
+				int itemIndex = 1;
+				foreach (var item in paramInfos)
+				{
+					INFO($"Function info {itemIndex}:");
+					item.ToString(INFO);
+					itemIndex++;
+				}
+			}
+			catch (System.Exception ex)
+			when ((ex is InvalidCastException) ||
+				(ex is NullReferenceException))
+			{
+				FATAL("FunctionList object data type invalid.");
+				throw;
+			}
+			catch (System.Exception ex)
+			{
+				FATAL($"Unknown exception has been raised while reading function list.");
+				FATAL($"The exceptino is {ex.GetType()}");
+
+				throw;
+			}
+		}
 	}
 }

@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // 制御されます。アセンブリに関連付けられている情報を変更するには、
 // これらの属性値を変更してください。
 [assembly: AssemblyTitle("TestParse")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Parse test design document in Excel, xlsx format.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("CountrySideEngineer")]
 [assembly: AssemblyProduct("TestParse")]
-[assembly: AssemblyCopyright("Copyright ©  2021")]
+[assembly: AssemblyCopyright("Copyright (c) 2021 CountrySideEngineer")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // すべての値を指定するか、次を使用してビルド番号とリビジョン番号を既定に設定できます
 // 既定値にすることができます:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("2.7.3.0")]
-[assembly: AssemblyFileVersion("2.7.3.0")]
+[assembly: AssemblyVersion("2.7.4.0")]
+[assembly: AssemblyFileVersion("2.7.4.0")]
