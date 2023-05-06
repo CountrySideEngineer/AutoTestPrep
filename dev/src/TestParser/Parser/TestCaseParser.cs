@@ -104,24 +104,50 @@ namespace TestParser.Parser
 		/// </summary>
 		/// <param name="stream">Stream to read.</param>
 		/// <returns>Collection of TestCase object read from table in stream.</returns>
+		/// <exception cref="InvalidCastException"></exception>
+		/// <exception cref="NullReferenceException"></exception>
+		/// <exception cref="System.Exception"></exception>
 		protected override object Read(Stream stream)
 		{
 			INFO($"Start reading table \"{GetTableName()}\" in \"{Target}\".");
 
+			object readItems = base.Read(stream);
+
+			OutputToLog(readItems);
+
+			return readItems;
+		}
+
+		/// <summary>
+		/// Output item datas read from stream into log.
+		/// </summary>
+		/// <param name="readItems">Items read from stream.</param>
+		/// <exception cref="InvalidCastException"></exception>
+		/// <exception cref="NullReferenceException"></exception>
+		/// <exception cref="System.Exception"></exception>
+		protected virtual void OutputToLog(object readItems)
+		{
 			try
 			{
-				IEnumerable<TestCase> testCases = (IEnumerable<TestCase>)base.Read(stream);
+				IEnumerable<TestCase> testCases = (IEnumerable<TestCase>)readItems;
 
 				INFO($"Get {testCases.Count()} case from the table.");
-
-				return testCases;
 			}
-			catch (InvalidCastException)
+			catch (System.Exception ex)
+			when ((ex is InvalidCastException) ||
+				(ex is NullReferenceException))
 			{
 				FATAL("Test case table object data type invalid.");
+				throw;
+			}
+			catch (System.Exception ex)
+			{
+				FATAL($"Unknown exception has been raised while reading function list.");
+				FATAL($"The exceptino is {ex.GetType()}");
 
 				throw;
 			}
+
 		}
 	}
 }
