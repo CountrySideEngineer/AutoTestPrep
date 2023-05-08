@@ -117,14 +117,18 @@ namespace TestParser.Parser
 
 		public void TRACE(string message)
 		{
+#if DEBUG
 			var logger = Log.GetInstance();
 			logger.TRACE(message);
+#endif
 		}
 
 		public void DEBUG(string message)
 		{
+#if DEBUG
 			var logger = Log.GetInstance();
 			logger.DEBUG(message);
+#endif
 		}
 
 		public void INFO(string message)
