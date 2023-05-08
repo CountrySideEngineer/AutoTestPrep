@@ -62,11 +62,11 @@ namespace TestParser.Parser
 		{
 			try
 			{
-				TRACE($"Start parsing file : {path}");
+				INFO($"Start parsing file : {path}");
 				using (var stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
 				{
-					TRACE($"{path} opened.");
-					TRACE($"Start reading file : {path}");
+					DEBUG($"{path} opened.");
+					DEBUG($"Start reading file : {path}");
 					object parsedObj = Parse(stream);
 
 					return parsedObj;

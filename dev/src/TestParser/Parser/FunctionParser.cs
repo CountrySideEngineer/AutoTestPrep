@@ -101,7 +101,7 @@ namespace TestParser.Parser
 		{
 			try
 			{
-				INFO($"Start reading table \"{GetTableName()}\" in \"{Target}\".");
+				INFO($"Start reading table \"{GetTableName()}\" in \"{Target}\" sheet.");
 
 				var readItem = base.Read(stream);
 
@@ -130,8 +130,8 @@ namespace TestParser.Parser
 			{
 				Function function = (Function)readItem;
 
-				INFO("Get the function below in the table:");
-				INFO($"\t{function.ToString()}");
+				INFO("\tGet the function below in the table:");
+				INFO($"\t\t{function.ToString()}");
 			}
 			catch (Exception ex)
 			when ((ex is InvalidCastException) ||

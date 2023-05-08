@@ -109,7 +109,7 @@ namespace TestParser.Parser
 		/// <exception cref="System.Exception"></exception>
 		protected override object Read(Stream stream)
 		{
-			INFO($"Start reading table \"{GetTableName()}\" in \"{Target}\".");
+			INFO($"Start reading table \"{GetTableName()}\" in \"{Target}\" sheet.");
 
 			object readItems = base.Read(stream);
 
@@ -131,7 +131,7 @@ namespace TestParser.Parser
 			{
 				IEnumerable<TestCase> testCases = (IEnumerable<TestCase>)readItems;
 
-				INFO($"Get {testCases.Count()} case from the table.");
+				INFO($"Get {testCases.Count()} test case(s) from the table.");
 			}
 			catch (System.Exception ex)
 			when ((ex is InvalidCastException) ||
