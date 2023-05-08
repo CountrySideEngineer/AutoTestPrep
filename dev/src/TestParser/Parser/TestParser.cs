@@ -201,10 +201,10 @@ namespace TestParser.Parser
 			}
 			finally
 			{
-				//DEBUG("TestParserConfig");
-				//DEBUG($"    Sheet name : {_testConfig.TestList.SheetName}");
-				//DEBUG($"    Row offset : {_testConfig.TestList.TableConfig.TableTopRowOffset}");
-				//DEBUG($"    Col offset : {_testConfig.TestList.TableConfig.TableTopColOffset}");
+				DEBUG("TestParserConfig");
+				DEBUG($"    Sheet name : {_testConfig.TestFunctionListTable.Section}");
+				DEBUG($"    Row offset : {_testConfig.TestFunctionListTable.TableTopRowOffset}");
+				DEBUG($"    Col offset : {_testConfig.TestFunctionListTable.TableTopColOffset}");
 			}
 		}
 	}
