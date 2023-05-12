@@ -141,7 +141,29 @@ namespace TestParser.Parser
 			{
 				IEnumerable<TestCase> testCases = (IEnumerable<TestCase>)readItems;
 
-				INFO($"Get {testCases.Count()} test case(s) from {GetTableName()}");
+				INFO($"Get {testCases.Count()} test case(s) from \"{GetTableName()}\"");
+
+				int itemIndex = 1;
+				foreach (var testCase in testCases)
+				{
+					INFO($"\t\tTest case {itemIndex}:");
+					INFO($"\t\t\tInput(s)  = {testCase.Input.Count()}");
+					int inputIndex = 1;
+					foreach (var inputItem in testCase.Input)
+					{
+						INFO($"\t\t\tInput {inputIndex} : {inputItem.Name} = {inputItem.Value}:");
+						inputIndex++;
+					}
+
+					INFO($"\t\t\tExpect(s) = {testCase.Expects.Count()}");
+					int expectIndex = 1;
+					foreach (var expectItem in testCase.Expects)
+					{
+						INFO($"\t\t\tExepct {expectIndex} : {expectItem.Name} = {expectItem.Value}:");
+						expectIndex++;
+					}
+					itemIndex++;
+				}
 			}
 			catch (System.Exception ex)
 			when ((ex is InvalidCastException) ||
