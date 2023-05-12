@@ -9,7 +9,7 @@ using TestParser.Target;
 
 namespace TestParser.Converter.Function
 {
-	public class FunctionConverter : IContentConverter
+	public class FunctionConverter : AContentConverter
 	{
 		protected enum FUNC_TABLE_COL_INDEX : int
 		{
@@ -39,8 +39,10 @@ namespace TestParser.Converter.Function
 		/// </summary>
 		/// <param name="src">Content of function table.</param>
 		/// <returns>Function information data.</returns>
-		public object Convert(Content src)
+		public override object Convert(Content src)
 		{
+			TRACE($"{nameof(Convert)} in {nameof(FunctionConverter)} called.");
+
 			var function = new TestParser.Target.Function();
 			SetTo(src, ref function);
 
@@ -54,6 +56,8 @@ namespace TestParser.Converter.Function
 		/// <param name="dst"></param>
 		protected void SetTo(Content src, ref TestParser.Target.Function dst)
 		{
+			TRACE($"{nameof(SetTo)} in {nameof(FunctionConverter)} called.");
+
 			int rowCount = src.RowCount();
 
 			//Skip 1st row, it will be a header.
@@ -71,6 +75,8 @@ namespace TestParser.Converter.Function
 		/// <param name="dst">Function object to be set to.</param>
 		protected void SetTo(IEnumerable<string> src, ref TestParser.Target.Function dst)
 		{
+			TRACE($"{nameof(SetTo)} in {nameof(FunctionConverter)} called.");
+
 			Parameter item = Convert(src);
 			IParameterSetter setter = GetSetter(src);
 			setter.Set(item, ref dst);
@@ -83,6 +89,8 @@ namespace TestParser.Converter.Function
 		/// <returns>IParmaeterSetter implement object.</returns>
 		protected IParameterSetter GetSetter(IEnumerable<string> src)
 		{
+			TRACE($"{nameof(GetSetter)} in {nameof(FunctionConverter)} called.");
+
 			try
 			{
 				IParameterSetter setter = null;
@@ -155,6 +163,8 @@ namespace TestParser.Converter.Function
 		/// <exception cref="ArgumentException">Argument or argument vaue is invalid.</exception>
 		protected Parameter Convert(IEnumerable<string> src)
 		{
+			TRACE($"{nameof(Convert)} in {nameof(FunctionConverter)} called.");
+
 			try
 			{
 				IEnumerable<string> prefixes = 

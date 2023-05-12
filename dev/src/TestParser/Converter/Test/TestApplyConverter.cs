@@ -7,7 +7,7 @@ using TableReader.TableData;
 
 namespace TestParser.Converter.Test
 {
-	class TestApplyConverter : IContentConverter
+	class TestApplyConverter : AContentConverter
 	{
 		protected const string _applySign = "A";
 
@@ -21,8 +21,10 @@ namespace TestParser.Converter.Test
 		/// </summary>
 		/// <param name="src">Content object to be converted.</param>
 		/// <returns>Collection of applied data indexes.</returns>
-		public object Convert(Content src)
+		public override object Convert(Content src)
 		{
+			TRACE($"{nameof(Convert)} in {nameof(TestApplyConverter)} called.");
+
 			IEnumerable<IEnumerable<int>> content = GetApplied(src);
 			return content;
 		}
@@ -34,6 +36,8 @@ namespace TestParser.Converter.Test
 		/// <returns>Collecton of index of applied test data.</returns>
 		protected IEnumerable<IEnumerable<int>> GetApplied(Content src)
 		{
+			TRACE($"{nameof(GetApplied)} in {nameof(TestApplyConverter)} called.");
+
 			var indexes = new List<List<int>>();
 			for (int index = 0; index < src.ColCount(); index++)
 			{
@@ -51,6 +55,8 @@ namespace TestParser.Converter.Test
 		/// <returns>Collection of index of applied test data.</returns>
 		protected IEnumerable<int> GetApplied(IEnumerable<string> src)
 		{
+			TRACE($"{nameof(GetApplied)} in {nameof(TestApplyConverter)} called.");
+
 			IEnumerable<int> indexes = src.Select((item, i) => new { Item = item, Index = i })
 				.Where(_ => _.Item.ToLower().Equals(_applySign.ToLower()))
 				.Select(_ => _.Index);

@@ -79,6 +79,8 @@ namespace TestParser.Parser
 		/// <returns>Converter to convert function list table.</returns>
 		public override IContentConverter GetConverter()
 		{
+			TRACE($"{nameof(GetConverter)} in {nameof(FunctionListParser)} called.");
+
 			var converter = new FunctionListConverter();
 			return converter;
 		}
@@ -89,6 +91,8 @@ namespace TestParser.Parser
 		/// <returns>Function list table name.</returns>
 		protected override string GetTableName()
 		{
+			TRACE($"{nameof(GetTableName)} in {nameof(FunctionListParser)} called.");
+
 			string tableName = Config.Title;
 			return tableName;
 		}
@@ -103,9 +107,13 @@ namespace TestParser.Parser
 		/// <exception cref="System.Exception"></exception>
 		protected override object Read(Stream stream)
 		{
+			TRACE($"{nameof(Read)} in {nameof(FunctionListParser)} called.");
+
 			INFO($"Start reading table \"{GetTableName()}\" in \"{Target}\" sheet.");
 
 			object readItems = base.Read(stream);
+
+			INFO($"Stop reading table \"{GetTableName()}\" in \"{Target}\" sheet.");
 
 			OutputToLog(readItems);
 
@@ -121,6 +129,8 @@ namespace TestParser.Parser
 		/// <exception cref="System.Exception"></exception>
 		protected virtual void OutputToLog(object readItems)
 		{
+			TRACE($"{nameof(OutputToLog)} in {nameof(FunctionListParser)} called.");
+
 			try
 			{
 				var paramInfos = (IEnumerable<ParameterInfo>)readItems;

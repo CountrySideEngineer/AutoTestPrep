@@ -36,6 +36,8 @@ namespace TestParser.Parser
 		/// </exception>
 		protected override object Read(Stream stream)
 		{
+			TRACE($"{nameof(Read)} in {nameof(TestParser)} called.");
+
 			try
 			{
 				LoadConfig();
@@ -67,6 +69,8 @@ namespace TestParser.Parser
 		/// <returns>Collection of ParameterInfo object about test target function.</returns>
 		protected IEnumerable<ParameterInfo> ReadFunctionList(Stream stream)
 		{
+			TRACE($"{nameof(ReadFunctionList)} in {nameof(TestParser)} called.");
+
 			string procName = "対象関数一覧読出し";
 			NotifyProcessAndProgressDelegate?.Invoke(procName, 0, 0);
 
@@ -93,6 +97,8 @@ namespace TestParser.Parser
 		/// <returns>Collection of Test object.</returns>
 		protected IEnumerable<Test> ReadTests(Stream stream, IEnumerable<ParameterInfo> functions)
 		{
+			TRACE($"{nameof(ReadTests)} in {nameof(TestParser)} called.");
+
 			string procName = "テスト設計情報読出し";
 			int index = 0;
 			int count = functions.Count();
@@ -121,6 +127,8 @@ namespace TestParser.Parser
 		/// <returns>Function data read from a sheet.</returns>
 		protected Function ReadFunction(Stream stream, ParameterInfo paramInfo)
 		{
+			TRACE($"{nameof(ReadFunction)} in {nameof(TestParser)} called.");
+
 			string sheetName = paramInfo.InfoName;
 			IParser parser = new FunctionParser(sheetName);
 			Function function = ReadTable<Function>(stream, parser);
@@ -136,6 +144,8 @@ namespace TestParser.Parser
 		/// <returns>Collection of test case data.</returns>
 		protected IEnumerable<TestCase> ReadTestCase(Stream stream, ParameterInfo paramInfo)
 		{
+			TRACE($"{nameof(ReadTestCase)} in {nameof(TestParser)} called.");
+
 			string sheetName = paramInfo.InfoName;
 			IParser parser = new TestCaseParser(sheetName);
 			IEnumerable<TestCase> testCases = ReadTable<IEnumerable<TestCase>>(stream, parser);
@@ -151,6 +161,8 @@ namespace TestParser.Parser
 		/// <returns>Tes data read from stream.</returns>
 		protected Test ReadTest(Stream stream, ParameterInfo parameterInfo)
 		{
+			TRACE($"{nameof(ReadTest)} in {nameof(TestParser)} called.");
+
 			Function function = ReadFunction(stream, parameterInfo);
 			IEnumerable<TestCase> testCases = ReadTestCase(stream, parameterInfo);
 
@@ -174,6 +186,8 @@ namespace TestParser.Parser
 		/// <returns>Object contains table data.</returns>
 		protected T ReadTable<T>(Stream tableStream, IParser parser)
 		{
+			TRACE($"{nameof(ReadTable)} in {nameof(TestParser)} called.");
+
 			T content = (T)parser.Parse(tableStream);
 			return content;
 		}
@@ -183,6 +197,8 @@ namespace TestParser.Parser
 		/// </summary>
 		protected void LoadConfig()
 		{
+			TRACE($"{nameof(LoadConfig)} in {nameof(TestParser)} called.");
+
 			try
 			{
 				_testConfig = TestParserConfig.LoadConfig(_configFilePath);

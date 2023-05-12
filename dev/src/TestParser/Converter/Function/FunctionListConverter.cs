@@ -8,7 +8,7 @@ using TestParser.Target;
 
 namespace TestParser.Converter.Function
 {
-	public class FunctionListConverter : IContentConverter
+	public class FunctionListConverter : AContentConverter
 	{
 		protected enum FUNC_LIST_TABLE_COL_INDEX : int
 		{
@@ -26,8 +26,10 @@ namespace TestParser.Converter.Function
 		/// <returns>Collection of Parameter info object parsed from table content.</returns>
 		/// <exception cref="NullReferenceException"></exception>
 		/// <exception cref="ArgumentOutOfRangeException"></exception>
-		public object Convert(Content src)
+		public override object Convert(Content src)
 		{
+			TRACE($"{nameof(Convert)} in {nameof(FunctionListConverter)} called.");
+
 			try
 			{
 				int rowCount = src.RowCount();
@@ -67,6 +69,8 @@ namespace TestParser.Converter.Function
 		/// <exception cref="FormatException"></exception>
 		protected ParameterInfo Convert(IEnumerable<string> src)
 		{
+			TRACE($"{nameof(Convert)} in {nameof(FunctionListConverter)} called.");
+
 			try
 			{
 				string indexValue = src.ElementAt((int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_NO);

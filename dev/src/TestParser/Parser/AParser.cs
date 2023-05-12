@@ -60,6 +60,8 @@ namespace TestParser.Parser
 		/// <returns>Object about test.</returns>
 		public virtual object Parse(string path)
 		{
+			TRACE($"{nameof(Parse)} in {nameof(AParser)} called.");
+
 			try
 			{
 				INFO($"Start parsing file : {path}");
@@ -108,6 +110,8 @@ namespace TestParser.Parser
 		/// <returns>Object about test.</returns>
 		public virtual object Parse(Stream stream)
 		{
+			TRACE($"{nameof(Parse)} in {nameof(AParser)} called.");
+
 			object readObject = Read(stream);
 
 			return readObject;
@@ -163,6 +167,8 @@ namespace TestParser.Parser
 		/// <exception cref="InvalidDataException">Sheet name to read is null, empty, or all white space.</exception>
 		protected virtual ITableReader GetReader(Stream stream)
 		{
+			TRACE($"{nameof(GetReader)} in {nameof(AParser)} called.");
+
 			if (string.IsNullOrEmpty(Target) || (string.IsNullOrWhiteSpace(Target)))
 			{
 				throw new InvalidDataException();
@@ -176,7 +182,10 @@ namespace TestParser.Parser
 
 		protected virtual string ItemConverter(IEnumerable<string> src, int index)
 		{
-			try {
+			TRACE($"{nameof(ItemConverter)} in {nameof(AParser)} called.");
+
+			try
+			{
 				string item = src.ElementAt(index);
 				if ((string.IsNullOrEmpty(item)) || (string.IsNullOrWhiteSpace(item)))
 				{
