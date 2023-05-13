@@ -13,6 +13,7 @@ using TestParser.Converter;
 using TableReader.Excel;
 using TableReader.TableData;
 using System.Security;
+using TableReader.Interface;
 
 namespace TestParser.Parser
 {
@@ -87,5 +88,65 @@ namespace TestParser.Parser
 			string tableName = Config.Title;
 			return tableName;
 		}
+
+		/// <summary>
+		/// Read function data from table.
+		/// </summary>
+		/// <param name="stream">Stream to read.</param>
+		/// <returns>Function object read from table in stream.</returns>
+		/// <exception cref="InvalidCastException"></exception>
+		/// <exception cref="NullReferenceException"></exception>
+		/// <exception cref="System.Exception"></exception>
+		protected override object Read(Stream stream)
+		{
+			try
+			{
+				INFO($"Start reading table \"{GetTableName()}\" in \"{Target}\".");
+
+				var readItem = base.Read(stream);
+
+				OutputToLog(readItem);
+
+				return readItem;
+			}
+			catch (InvalidCastException)
+			{
+				FATAL("Function talbe object data type invalid.");
+
+				throw;
+			}
+		}
+
+		/// <summary>
+		/// Output function data read from stream into log.
+		/// </summary>
+		/// <param name="readItem">Item read from stream.</param>
+		/// <exception cref="InvalidCastException"></exception>
+		/// <exception cref="NullReferenceException"></exception>
+		/// <exception cref="System.Exception"></exception>
+		protected virtual void OutputToLog(object readItem)
+		{
+			try
+			{
+				Function function = (Function)readItem;
+
+				INFO("Get the function below in the table:");
+				INFO($"\t{function.ToString()}");
+			}
+			catch (Exception ex)
+			when ((ex is InvalidCastException) ||
+				(ex is NullReferenceException))
+			{
+				FATAL("Function talbe object data type invalid.");
+
+				throw;
+			}
+			catch (System.Exception ex)
+			{
+				FATAL($"Unknown exception has been raised while reading function list.");
+				FATAL($"The exceptino is {ex.GetType()}");
+			}
+		}
+
 	}
 }

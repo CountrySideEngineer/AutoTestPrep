@@ -139,25 +139,74 @@ namespace CodeGenerator.TestDriver.Template
 		}
 
 		/// <summary>
-		/// Create codes to declare argument variable.s
+		/// Create codes to declare argument variable.
 		/// </summary>
 		/// <param name="argument">Argument data.</param>
 		/// <returns>Codes to declare argument.</returns>
 		protected virtual string CreateCodeToDeclareArgument(Parameter argument)
 		{
 			string declare = string.Empty;
-			if (1 == argument.PointerNum)
+			if (0 < argument.PointerNum)
 			{
-				declare = $"\t{argument.DataType} _{argument.Name}[100];"
-					+ Environment.NewLine;
-			}
-			else if (2 == argument.PointerNum)
-			{
-				declare = $"\t{argument.DataType}* _{argument.Name}[100];"
-					+ Environment.NewLine;
+				declare = CreateCodeToDeclareArgumentWithPointer(argument);
 			}
 			declare += $"\t{argument.ActualDataType()} {argument.Name};";
 			return declare;
+		}
+
+		protected virtual string CreateCodeToDeclareArgumentWithPointer(Parameter argument)
+		{
+			string dataType = string.Empty;
+			if ("void".Equals(argument.DataType.ToLower()))
+			{
+				dataType = "int";
+			}
+			else
+			{
+				dataType = argument.DataType;
+			}
+
+			string declare = string.Empty;
+			if (1 == argument.PointerNum)
+			{
+				declare = $"\t{dataType} _{argument.Name}[100];" + Environment.NewLine;
+			}
+			else if (2 == argument.PointerNum)
+			{
+				declare = $"\t{dataType}* _{argument.Name}[100];" + Environment.NewLine;
+			}
+			else
+			{
+				throw new ArgumentOutOfRangeException();
+			}
+			return declare;
+		}
+
+		/// <summary>
+		/// Create code to set input value into variable.
+		/// </summary>
+		/// <param name="input">Input information.</param>
+		/// <returns>Code to set input value into variable.</returns>
+		protected virtual string SetInputValues(TestData input)
+		{
+			string code = string.Empty;
+			try
+			{
+				Parameter argument = TargetFunction.Arguments.Where(_ => _.Name.Equals(input.Name)).First();
+				if (("void".Equals(argument.DataType.ToLower())) && (0 < argument.PointerNum))
+				{
+					code = $"{input.Name} = ({argument.DataType}*){input.Value}";
+				}
+				else
+				{
+					code = $"{input.Name} = {input.Value}";
+				}
+			}
+			catch (InvalidOperationException)
+			{
+				code = $"{input.Name} = {input.Value}";
+			}
+			return code;
 		}
 	}
 }
