@@ -36,7 +36,7 @@ namespace CodeGenerator.Stub
 			Debug.Assert(null != writeData.Test.Target, $"{nameof(StubSourceGenerator)}.{nameof(CreateTemplate)}.writeData.Test.Target");
 			Debug.Assert(null != writeData.CodeConfig, $"{nameof(StubSourceGenerator)}.{nameof(CreateTemplate)}.writeData.CodeConfig");
 
-			INFO("Generate stub source code template.");
+			INFO($"Generate stub source code template of {writeData.Test.Target.ToString()}.");
 
 			var template = new StubSrc.StubSourceTemplate()
 			{

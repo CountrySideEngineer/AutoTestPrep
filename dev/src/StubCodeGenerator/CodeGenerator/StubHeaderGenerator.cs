@@ -25,7 +25,7 @@ namespace CodeGenerator.Stub
 			Debug.Assert(null != writeData.Test.Target, $"{nameof(StubHeaderGenerator)}.{nameof(CreateTemplate)}.writeData.Test.Target");
 			Debug.Assert(null != writeData.CodeConfig, $"{nameof(StubHeaderGenerator)}.{nameof(CreateTemplate)}.writeData.CodeConfig");
 
-			INFO("Generate stub header code template.");
+			INFO($"Generate stub header code template of {writeData.Test.Target.ToString()}.");
 
 			var template = new StubSrc.StubHeaderTemplate()
 			{
