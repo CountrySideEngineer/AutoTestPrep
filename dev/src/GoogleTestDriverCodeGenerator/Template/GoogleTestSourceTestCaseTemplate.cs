@@ -85,14 +85,7 @@ namespace CodeGenerator.TestDriver.Template
             this.Write("\t");
             
             #line 19 "E:\development\AutoTestPrep\dev\src\GoogleTestDriverCodeGenerator\Template\GoogleTestSourceTestCaseTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(input.Name));
-            
-            #line default
-            #line hidden
-            this.Write(" = ");
-            
-            #line 19 "E:\development\AutoTestPrep\dev\src\GoogleTestDriverCodeGenerator\Template\GoogleTestSourceTestCaseTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(input.Value));
+            this.Write(this.ToStringHelper.ToStringWithCulture(SetInputValues(input)));
             
             #line default
             #line hidden
