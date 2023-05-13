@@ -146,17 +146,39 @@ namespace CodeGenerator.TestDriver.Template
 		protected virtual string CreateCodeToDeclareArgument(Parameter argument)
 		{
 			string declare = string.Empty;
+			if (0 < argument.PointerNum)
+			{
+				declare = CreateCodeToDeclareArgumentWithPointer(argument);
+			}
+			declare += $"\t{argument.ActualDataType()} {argument.Name};";
+			return declare;
+		}
+
+		protected virtual string CreateCodeToDeclareArgumentWithPointer(Parameter argument)
+		{
+			string dataType = string.Empty;
+			if ("void".Equals(argument.DataType.ToLower()))
+			{
+				dataType = "int";
+			}
+			else
+			{
+				dataType = argument.DataType;
+			}
+
+			string declare = string.Empty;
 			if (1 == argument.PointerNum)
 			{
-				declare = $"\t{argument.DataType} _{argument.Name}[100];"
-					+ Environment.NewLine;
+				declare = $"\t{dataType} _{argument.Name}[100];" + Environment.NewLine;
 			}
 			else if (2 == argument.PointerNum)
 			{
-				declare = $"\t{argument.DataType}* _{argument.Name}[100];"
-					+ Environment.NewLine;
+				declare = $"\t{dataType}* _{argument.Name}[100];" + Environment.NewLine;
 			}
-			declare += $"\t{argument.ActualDataType()} {argument.Name};";
+			else
+			{
+				throw new ArgumentOutOfRangeException();
+			}
 			return declare;
 		}
 	}
