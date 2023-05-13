@@ -182,6 +182,11 @@ namespace CodeGenerator.TestDriver.Template
 			return declare;
 		}
 
+		/// <summary>
+		/// Create code to set input value into variable.
+		/// </summary>
+		/// <param name="input">Input information.</param>
+		/// <returns>Code to set input value into variable.</returns>
 		protected virtual string SetInputValues(TestData input)
 		{
 			string code = string.Empty;
