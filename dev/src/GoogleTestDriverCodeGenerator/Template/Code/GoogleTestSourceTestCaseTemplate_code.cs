@@ -181,5 +181,27 @@ namespace CodeGenerator.TestDriver.Template
 			}
 			return declare;
 		}
+
+		protected virtual string SetInputValues(TestData input)
+		{
+			string code = string.Empty;
+			try
+			{
+				Parameter argument = TargetFunction.Arguments.Where(_ => _.Name.Equals(input.Name)).First();
+				if (("void".Equals(argument.DataType.ToLower())) && (0 < argument.PointerNum))
+				{
+					code = $"{input.Name} = ({argument.DataType}*){input.Value}";
+				}
+				else
+				{
+					code = $"{input.Name} = {input.Value}";
+				}
+			}
+			catch (InvalidOperationException)
+			{
+				code = $"{input.Name} = {input.Value}";
+			}
+			return code;
+		}
 	}
 }
