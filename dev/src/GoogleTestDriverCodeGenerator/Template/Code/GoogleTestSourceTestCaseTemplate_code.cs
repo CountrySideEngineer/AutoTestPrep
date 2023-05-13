@@ -139,7 +139,7 @@ namespace CodeGenerator.TestDriver.Template
 		}
 
 		/// <summary>
-		/// Create codes to declare argument variable.s
+		/// Create codes to declare argument variable.
 		/// </summary>
 		/// <param name="argument">Argument data.</param>
 		/// <returns>Codes to declare argument.</returns>
