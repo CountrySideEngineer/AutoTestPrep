@@ -85,6 +85,8 @@ namespace TestParser.Parser
 		/// <returns>Test converter.</returns>
 		public override IContentConverter GetConverter()
 		{
+			TRACE($"{nameof(GetConverter)} in {nameof(TestCaseParser)} called.");
+
 			var converter = new TestConverter(Config);
 			return converter;
 		}
@@ -95,6 +97,8 @@ namespace TestParser.Parser
 		/// <returns>Test case table name.</returns>
 		protected override string GetTableName()
 		{
+			TRACE($"{nameof(GetTableName)} in {nameof(TestCaseParser)} called.");
+
 			string tableName = Config.Title;
 			return tableName;
 		}
@@ -109,9 +113,13 @@ namespace TestParser.Parser
 		/// <exception cref="System.Exception"></exception>
 		protected override object Read(Stream stream)
 		{
-			INFO($"Start reading table \"{GetTableName()}\" in \"{Target}\".");
+			TRACE($"{nameof(Read)} in {nameof(TestCaseParser)} called.");
+
+			INFO($"Start reading table \"{GetTableName()}\" in \"{Target}\" sheet.");
 
 			object readItems = base.Read(stream);
+
+			INFO($"Stop reading table \"{GetTableName()}\" in \"{Target}\" sheet.");
 
 			OutputToLog(readItems);
 
@@ -127,11 +135,35 @@ namespace TestParser.Parser
 		/// <exception cref="System.Exception"></exception>
 		protected virtual void OutputToLog(object readItems)
 		{
+			TRACE($"{nameof(OutputToLog)} in {nameof(TestCaseParser)} called.");
+
 			try
 			{
 				IEnumerable<TestCase> testCases = (IEnumerable<TestCase>)readItems;
 
-				INFO($"Get {testCases.Count()} case from the table.");
+				INFO($"Get {testCases.Count()} test case(s) from \"{GetTableName()}\"");
+
+				int itemIndex = 1;
+				foreach (var testCase in testCases)
+				{
+					INFO($"\t\tTest case {itemIndex}:");
+					INFO($"\t\t\tInput(s)  = {testCase.Input.Count()}");
+					int inputIndex = 1;
+					foreach (var inputItem in testCase.Input)
+					{
+						INFO($"\t\t\tInput {inputIndex} : {inputItem.Name} = {inputItem.Value}:");
+						inputIndex++;
+					}
+
+					INFO($"\t\t\tExpect(s) = {testCase.Expects.Count()}");
+					int expectIndex = 1;
+					foreach (var expectItem in testCase.Expects)
+					{
+						INFO($"\t\t\tExepct {expectIndex} : {expectItem.Name} = {expectItem.Value}:");
+						expectIndex++;
+					}
+					itemIndex++;
+				}
 			}
 			catch (System.Exception ex)
 			when ((ex is InvalidCastException) ||
