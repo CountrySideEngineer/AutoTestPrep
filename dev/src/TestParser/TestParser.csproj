@@ -80,6 +80,7 @@
     <Compile Include="Config\TestCaseTableConfig.cs" />
     <Compile Include="Config\TestParserConfig.cs" />
     <Compile Include="Config\VariableConfig.cs" />
+    <Compile Include="Converter\AContentConverter.cs" />
     <Compile Include="Converter\Function\FunctionConverter.cs" />
     <Compile Include="Converter\Function\FunctionListConverter.cs" />
     <Compile Include="Converter\IContentConverter.cs" />

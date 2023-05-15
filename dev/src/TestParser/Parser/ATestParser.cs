@@ -49,6 +49,8 @@ namespace TestParser.Parser
 		/// <returns>Object read data from stream converted.</returns>
 		protected override object Read(Stream stream)
 		{
+			TRACE($"{nameof(Read)} in {nameof(ATestParser)} called.");
+
 			ITableReader reader = GetReader(stream);
 			string tableName = GetTableName();
 			Content content = reader.GetTable(tableName);

@@ -16,6 +16,7 @@ using System.Diagnostics;
 using CountrySideEngineer.ProgressWindow.Model;
 using CountrySideEngineer.ProgressWindow.Task;
 using CountrySideEngineer.ProgressWindow.Task.Interface;
+using CSProgressWindow = CountrySideEngineer.ProgressWindow;
 using System.Threading;
 
 namespace StubDriverPlugin.GTestStubDriver
@@ -47,7 +48,7 @@ namespace StubDriverPlugin.GTestStubDriver
 			pluginInput = data;
 			var task = new AsyncTask<ProgressInfo>();
 			SetupAction(ref task);
-			var progressWindow = new CountrySideEngineer.ProgressWindow.ProgressWindow();
+			var progressWindow = new CSProgressWindow.ProgressWindow();
 			progressWindow.Start(task);
 			return pluginOutput;
 		}
