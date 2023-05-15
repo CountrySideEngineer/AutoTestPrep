@@ -8,7 +8,7 @@ using TestParser.Data;
 
 namespace TestParser.Converter.Test
 {
-	class TestDataConverter : IContentConverter
+	class TestDataConverter : AContentConverter
 	{
 		enum TEST_DATA_TABLE_INDEX {
 			COL_CONDITION = 0,
@@ -58,8 +58,10 @@ namespace TestParser.Converter.Test
 		/// <exception cref="NullReferenceException"></exception>
 		/// <exception cref="ArgumentNullException"></exception>
 		/// <exception cref="FormatException"></exception>
-		public object Convert(Content src)
+		public override object Convert(Content src)
 		{
+			TRACE($"{nameof(Convert)} in {nameof(TestDataConverter)} called.");
+
 			try
 			{
 				if (0 == Indexes.Count())
@@ -93,6 +95,8 @@ namespace TestParser.Converter.Test
 		/// <exception cref="FormatException"></exception>
 		protected TestData Convert(Content src, int index)
 		{
+			TRACE($"{nameof(Convert)} in {nameof(TestDataConverter)} called.");
+
 			try
 			{
 				IEnumerable<string> content = src.GetContentsInRow(index);

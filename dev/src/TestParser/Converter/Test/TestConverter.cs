@@ -9,7 +9,7 @@ using TestParser.Data;
 
 namespace TestParser.Converter.Test
 {
-	public class TestConverter : IContentConverter
+	public class TestConverter : AContentConverter
 	{
 		protected TestCaseTableConfig _config;
 
@@ -35,8 +35,10 @@ namespace TestParser.Converter.Test
 		/// </summary>
 		/// <param name="src">Content of test table.</param>
 		/// <returns>Test object converted from the Content object.</returns>
-		public object Convert(Content src)
+		public override object Convert(Content src)
 		{
+			TRACE($"{nameof(Convert)} in {nameof(TestConverter)} called.");
+
 			var testCases = new List<TestCase>();
 			SetTo(src, ref testCases);
 
@@ -50,6 +52,8 @@ namespace TestParser.Converter.Test
 		/// <param name="testCases">Reference to collection of TestCase objet to set converted test data.</param>
 		protected void SetTo(Content src, ref List<TestCase> testCases)
 		{
+			TRACE($"{nameof(SetTo)} in {nameof(TestConverter)} called.");
+
 			(Content param, Content apply) = SplitToParamAndApply(src);
 			IEnumerable<IEnumerable<int>> appliedIndexes = GetAppliedIndexes(apply);
 			IEnumerable<IEnumerable<TestData>> testDatas = GetTestData(param, appliedIndexes);
@@ -66,6 +70,8 @@ namespace TestParser.Converter.Test
 		/// <returns>Tuple of Content object parameter and applied information.</returns>
 		protected (Content, Content) SplitToParamAndApply(Content src)
 		{
+			TRACE($"{nameof(SplitToParamAndApply)} in {nameof(TestConverter)} called.");
+
 			Content testParam = src.Take(_paramColCount);
 			Content testApply = src.Skip(_paramColCount);
 
@@ -79,6 +85,8 @@ namespace TestParser.Converter.Test
 		/// <returns>Collection of index applied test data.</returns>
 		protected IEnumerable<IEnumerable<int>> GetAppliedIndexes(Content src)
 		{
+			TRACE($"{nameof(GetAppliedIndexes)} in {nameof(TestConverter)} called.");
+
 			var converter = new TestApplyConverter();
 			IEnumerable<IEnumerable<int>> appliedIndexs = 
 				(IEnumerable<IEnumerable<int>>)Convert(src, converter);
@@ -93,6 +101,8 @@ namespace TestParser.Converter.Test
 		/// <returns>Collection of TestData.</returns>
 		protected IEnumerable<IEnumerable<TestData>> GetTestData(Content src, IEnumerable<IEnumerable<int>> appliedIndexes)
 		{
+			TRACE($"{nameof(GetTestData)} in {nameof(TestConverter)} called.");
+
 			TestDataConverter converter = new TestDataConverter(
 				expectName: _config.Exepct,
 				returnName: "戻り値",
@@ -116,6 +126,8 @@ namespace TestParser.Converter.Test
 			IEnumerable<IEnumerable<TestData>> testDatas, 
 			IEnumerable<string> testIds)
 		{
+			TRACE($"{nameof(ConvertToTestCase)} in {nameof(TestConverter)} called.");
+
 			var testCases = new List<TestCase>();
 			foreach (var indexedData in testDatas.Select((Item, Index) => new { Item, Index }))
 			{
@@ -133,6 +145,8 @@ namespace TestParser.Converter.Test
 		/// <returns>Converted TestCase object.</returns>
 		protected TestCase ConvertToTestCase(IEnumerable<TestData> testDatas)
 		{
+			TRACE($"{nameof(ConvertToTestCase)} in {nameof(TestConverter)} called.");
+
 			var inputs = testDatas.Where(_ => _.Condition.Equals(_config.Input));
 			var expects = testDatas.Where(_ => _.Condition.Equals(_config.Exepct));
 
@@ -146,6 +160,8 @@ namespace TestParser.Converter.Test
 
 		protected IEnumerable<string> GetTestId(Content src)
 		{
+			TRACE($"{nameof(GetTestId)} in {nameof(TestConverter)} called.");
+
 			IEnumerable<string> testIds = src.GetContentsInRow(0);
 
 			return testIds;
@@ -159,6 +175,8 @@ namespace TestParser.Converter.Test
 		/// <returns>Converted object.</returns>
 		protected object Convert(Content src, IContentConverter converter)
 		{
+			TRACE($"{nameof(Convert)} in {nameof(TestConverter)} called.");
+
 			return converter.Convert(src);
 		}
 	}

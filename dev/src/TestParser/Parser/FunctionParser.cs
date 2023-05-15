@@ -75,6 +75,8 @@ namespace TestParser.Parser
 		/// <returns>Converter to convert function data read from function table.</returns>
 		public override IContentConverter GetConverter()
 		{
+			TRACE($"{nameof(GetConverter)} in {nameof(FunctionParser)} called.");
+
 			var converter = new Converter.Function.FunctionConverter(Config);
 			return converter;
 		}
@@ -85,6 +87,8 @@ namespace TestParser.Parser
 		/// <returns>Function table name.</returns>
 		protected override string GetTableName()
 		{
+			TRACE($"{nameof(GetTableName)} in {nameof(FunctionParser)} called.");
+
 			string tableName = Config.Title;
 			return tableName;
 		}
@@ -99,11 +103,15 @@ namespace TestParser.Parser
 		/// <exception cref="System.Exception"></exception>
 		protected override object Read(Stream stream)
 		{
+			TRACE($"{nameof(Read)} in {nameof(FunctionParser)} called.");
+
 			try
 			{
-				INFO($"Start reading table \"{GetTableName()}\" in \"{Target}\".");
+				INFO($"Start reading table \"{GetTableName()}\" in \"{Target}\" sheet.");
 
 				var readItem = base.Read(stream);
+
+				INFO($"Stop reading table \"{GetTableName()}\" in \"{Target}\" sheet.");
 
 				OutputToLog(readItem);
 
@@ -111,7 +119,7 @@ namespace TestParser.Parser
 			}
 			catch (InvalidCastException)
 			{
-				FATAL("Function talbe object data type invalid.");
+				FATAL("Function table object data type invalid.");
 
 				throw;
 			}
@@ -126,12 +134,14 @@ namespace TestParser.Parser
 		/// <exception cref="System.Exception"></exception>
 		protected virtual void OutputToLog(object readItem)
 		{
+			TRACE($"{nameof(OutputToLog)} in {nameof(FunctionParser)} called.");
+
 			try
 			{
 				Function function = (Function)readItem;
 
-				INFO("Get the function below in the table:");
-				INFO($"\t{function.ToString()}");
+				INFO("\tGet the function below in the table:");
+				INFO($"\t\t{function.ToString()}");
 			}
 			catch (Exception ex)
 			when ((ex is InvalidCastException) ||

@@ -30,7 +30,7 @@ namespace CodeGenerator.Stub
 			{
 				INFO("Start generating stub code.");
 
-				var template = this.CreateTemplate(data);
+				var template = CreateTemplate(data);
 				string codes = template.TransformText();
 				return codes;
 			}
