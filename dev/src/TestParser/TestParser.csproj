@@ -32,20 +32,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ClosedXML, Version=0.96.0.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\lib\ClosedXML.dll</HintPath>
-    </Reference>
     <Reference Include="CSEngineer.TestSupport.Utility">
       <HintPath>..\..\bin\CSEngineer.TestSupport.Utility.dll</HintPath>
-    </Reference>
-    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\lib\DocumentFormat.OpenXml.dll</HintPath>
-    </Reference>
-    <Reference Include="ExcelNumberFormat, Version=1.1.0.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\lib\ExcelNumberFormat.dll</HintPath>
     </Reference>
     <Reference Include="Logger, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -66,6 +54,9 @@
     <Reference Include="System.Xml" />
     <Reference Include="TableReader">
       <HintPath>..\lib\TableReader.dll</HintPath>
+    </Reference>
+    <Reference Include="TableReader.ExcelDataReader">
+      <HintPath>..\lib\TableReader.ExcelDataReader.dll</HintPath>
     </Reference>
     <Reference Include="TestParser.SDK">
       <HintPath>..\..\bin\sdk\TestParser.SDK.dll</HintPath>

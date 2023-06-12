@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,7 +36,7 @@ namespace TestParser.Converter.Test
 		/// </summary>
 		/// <param name="src">Content of test table.</param>
 		/// <returns>Test object converted from the Content object.</returns>
-		public override object Convert(Content src)
+		public override object Convert(DataTable src)
 		{
 			TRACE($"{nameof(Convert)} in {nameof(TestConverter)} called.");
 
@@ -50,11 +51,11 @@ namespace TestParser.Converter.Test
 		/// </summary>
 		/// <param name="src">Test case data as Content object.</param>
 		/// <param name="testCases">Reference to collection of TestCase objet to set converted test data.</param>
-		protected void SetTo(Content src, ref List<TestCase> testCases)
+		protected void SetTo(DataTable src, ref List<TestCase> testCases)
 		{
 			TRACE($"{nameof(SetTo)} in {nameof(TestConverter)} called.");
 
-			(Content param, Content apply) = SplitToParamAndApply(src);
+			(DataTable param, DataTable apply) = SplitToParamAndApply(src);
 			IEnumerable<IEnumerable<int>> appliedIndexes = GetAppliedIndexes(apply);
 			IEnumerable<IEnumerable<TestData>> testDatas = GetTestData(param, appliedIndexes);
 			IEnumerable<string> testIds = GetTestId(apply);
@@ -68,14 +69,15 @@ namespace TestParser.Converter.Test
 		/// </summary>
 		/// <param name="src">Content of test data as Content object.</param>
 		/// <returns>Tuple of Content object parameter and applied information.</returns>
-		protected (Content, Content) SplitToParamAndApply(Content src)
+		protected (DataTable, DataTable) SplitToParamAndApply(DataTable src)
 		{
 			TRACE($"{nameof(SplitToParamAndApply)} in {nameof(TestConverter)} called.");
 
-			Content testParam = src.Take(_paramColCount);
-			Content testApply = src.Skip(_paramColCount);
+			//Content testParam = src.Take(_paramColCount);
+			//Content testApply = src.Skip(_paramColCount);
 
-			return (testParam, testApply);
+			return (null, null);
+			//return (testParam, testApply);
 		}
 
 		/// <summary>
@@ -83,7 +85,7 @@ namespace TestParser.Converter.Test
 		/// </summary>
 		/// <param name="src">Content object of applied test data.</param>
 		/// <returns>Collection of index applied test data.</returns>
-		protected IEnumerable<IEnumerable<int>> GetAppliedIndexes(Content src)
+		protected IEnumerable<IEnumerable<int>> GetAppliedIndexes(DataTable src)
 		{
 			TRACE($"{nameof(GetAppliedIndexes)} in {nameof(TestConverter)} called.");
 
@@ -99,7 +101,7 @@ namespace TestParser.Converter.Test
 		/// <param name="src">Test data table content to be converted.</param>
 		/// <param name="appliedIndexes">Collection of index to apply as test data.</param>
 		/// <returns>Collection of TestData.</returns>
-		protected IEnumerable<IEnumerable<TestData>> GetTestData(Content src, IEnumerable<IEnumerable<int>> appliedIndexes)
+		protected IEnumerable<IEnumerable<TestData>> GetTestData(DataTable src, IEnumerable<IEnumerable<int>> appliedIndexes)
 		{
 			TRACE($"{nameof(GetTestData)} in {nameof(TestConverter)} called.");
 
@@ -158,13 +160,13 @@ namespace TestParser.Converter.Test
 			return testCase;
 		}
 
-		protected IEnumerable<string> GetTestId(Content src)
+		protected IEnumerable<string> GetTestId(DataTable src)
 		{
 			TRACE($"{nameof(GetTestId)} in {nameof(TestConverter)} called.");
 
-			IEnumerable<string> testIds = src.GetContentsInRow(0);
+			DataRow row = src.Rows[0];
 
-			return testIds;
+			return null;
 		}
 
 		/// <summary>
@@ -173,7 +175,7 @@ namespace TestParser.Converter.Test
 		/// <param name="src">Content to be converted.</param>
 		/// <param name="converter">Converter which inherits IContentConverter interface.</param>
 		/// <returns>Converted object.</returns>
-		protected object Convert(Content src, IContentConverter converter)
+		protected object Convert(DataTable src, IContentConverter converter)
 		{
 			TRACE($"{nameof(Convert)} in {nameof(TestConverter)} called.");
 

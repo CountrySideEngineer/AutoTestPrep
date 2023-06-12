@@ -6,7 +6,7 @@ using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 using CSEngineer.Logger;
-using TableReader.Excel;
+using TableReader.ExcelDataReader;
 using TableReader.Interface;
 using TestParser.Config;
 using TestParser.ParserException;
@@ -173,10 +173,7 @@ namespace TestParser.Parser
 			{
 				throw new InvalidDataException();
 			}
-			var reader = new ExcelTableReader(stream)
-			{
-				SheetName = Target
-			};
+			var reader = new ExcelTableReader(stream, Target);
 			return reader;
 		}
 

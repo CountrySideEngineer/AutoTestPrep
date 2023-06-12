@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,13 +27,13 @@ namespace TestParser.Converter.Function
 		/// <returns>Collection of Parameter info object parsed from table content.</returns>
 		/// <exception cref="NullReferenceException"></exception>
 		/// <exception cref="ArgumentOutOfRangeException"></exception>
-		public override object Convert(Content src)
+		public override object Convert(DataTable src)
 		{
 			TRACE($"{nameof(Convert)} in {nameof(FunctionListConverter)} called.");
 
 			try
 			{
-				int rowCount = src.RowCount();
+				int rowCount = src.Rows.Count;
 				var tableContent = new List<ParameterInfo>();
 
 				//Skip 1st row because it will be a header.
@@ -40,7 +41,7 @@ namespace TestParser.Converter.Function
 				{
 					try
 					{
-						IEnumerable<string> rowData = src.GetContentsInRow(index);
+						DataRow rowData = src.Rows[index];
 						ParameterInfo paramInfo = Convert(rowData);
 
 						tableContent.Add(paramInfo);
@@ -67,21 +68,21 @@ namespace TestParser.Converter.Function
 		/// <exception cref="NullReferenceException"></exception>
 		/// <exception cref="ArgumentOutOfRangeException"></exception>
 		/// <exception cref="FormatException"></exception>
-		protected ParameterInfo Convert(IEnumerable<string> src)
+		protected ParameterInfo Convert(DataRow src)
 		{
 			TRACE($"{nameof(Convert)} in {nameof(FunctionListConverter)} called.");
 
 			try
 			{
-				string indexValue = src.ElementAt((int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_NO);
+				string indexValue = src[(int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_NO].ToString();
 				int index = System.Convert.ToInt32(indexValue);
-				string name = src.ElementAt((int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_TEST_NAME);
-				string sheetName = src.ElementAt((int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_TEST_SHEET_NAME);
-				string fileName = src.ElementAt((int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_TEST_SRC_FILE_NAME);
+				string name = src[(int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_TEST_NAME].ToString();
+				string sheetName = src[(int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_TEST_SHEET_NAME].ToString();
+				string fileName = src[(int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_TEST_SRC_FILE_NAME].ToString();
 				string filePath = string.Empty;
 				try
 				{
-					filePath = src.ElementAt((int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_TEST_SRC_FILE_PATH);
+					filePath = src[(int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_TEST_SRC_FILE_PATH].ToString();
 				}
 				catch (Exception ex)
 				when ((ex is ArgumentException) || (ex is ArgumentOutOfRangeException))

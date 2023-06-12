@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -58,7 +59,7 @@ namespace TestParser.Converter.Test
 		/// <exception cref="NullReferenceException"></exception>
 		/// <exception cref="ArgumentNullException"></exception>
 		/// <exception cref="FormatException"></exception>
-		public override object Convert(Content src)
+		public override object Convert(DataTable src)
 		{
 			TRACE($"{nameof(Convert)} in {nameof(TestDataConverter)} called.");
 
@@ -93,15 +94,15 @@ namespace TestParser.Converter.Test
 		/// <returns>TestData object.</returns>
 		/// <exception cref="NullReferenceException"></exception>
 		/// <exception cref="FormatException"></exception>
-		protected TestData Convert(Content src, int index)
+		protected TestData Convert(DataTable src, int index)
 		{
 			TRACE($"{nameof(Convert)} in {nameof(TestDataConverter)} called.");
 
 			try
 			{
-				IEnumerable<string> content = src.GetContentsInRow(index);
-				string condition = content.ElementAt((int)TEST_DATA_TABLE_INDEX.COL_CONDITION);
-				string description = content.ElementAt((int)TEST_DATA_TABLE_INDEX.COL_DESCRIPTION);
+				DataRow content = src.Rows[index];
+				string condition = content[(int)TEST_DATA_TABLE_INDEX.COL_CONDITION].ToString();
+				string description = content[(int)TEST_DATA_TABLE_INDEX.COL_DESCRIPTION].ToString();
 				string name = string.Empty;
 				if ((condition.Equals(_expectName)) && (description.Equals(_returnName)))
 				{
@@ -109,9 +110,9 @@ namespace TestParser.Converter.Test
 				}
 				else
 				{
-					name = content.ElementAt((int)TEST_DATA_TABLE_INDEX.COL_VARIABLE_NAME);
+					name = content[(int)TEST_DATA_TABLE_INDEX.COL_VARIABLE_NAME].ToString();
 				}
-				string theValue = content.ElementAt((int)TEST_DATA_TABLE_INDEX.COL_REPRESENTATIVE_VALUE);
+				string theValue = content[(int)TEST_DATA_TABLE_INDEX.COL_REPRESENTATIVE_VALUE].ToString();
 
 				var testData = new TestData()
 				{
