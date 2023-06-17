@@ -78,6 +78,7 @@
     <Compile Include="Converter\Test\TestApplyConverter.cs" />
     <Compile Include="Converter\Test\TestConverter.cs" />
     <Compile Include="Converter\Test\TestDataConverter.cs" />
+    <Compile Include="Extract\Extract.cs" />
     <Compile Include="Parameter\ParameterInfo.cs" />
     <Compile Include="Parser\AParser.cs" />
     <Compile Include="Parser\ATestParser.cs" />
