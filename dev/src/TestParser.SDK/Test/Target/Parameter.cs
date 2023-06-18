@@ -21,6 +21,13 @@ namespace TestParser.Target
 			None,   //No access, error mode.
 		}
 
+		/// <summary>
+		/// Convert mode string into AccessMode object.
+		/// </summary>
+		/// <param name="mode">Mode in string data type.</param>
+		/// <returns>Mode as AccessMode object.</returns>
+		/// <exception cref="ArgumentOutOfRangeException"></exception>
+		/// <remarks>The mode in string is not case sensitive.</remarks>
 		public static AccessMode ToMode(string mode)
 		{
 			var accessMode = AccessMode.None;
@@ -38,9 +45,29 @@ namespace TestParser.Target
 			}
 			else
 			{
-				throw new ArgumentException();
+				throw new ArgumentOutOfRangeException();
 			}
 			return accessMode;
+		}
+
+		/// <summary>
+		/// Convert mode string into AccessMode object.
+		/// </summary>
+		/// <param name="mode">Mode in string data type.</param>
+		/// <param name="defaultMode">Mode to be returned if the mode can not convert into the object.</param>
+		/// <returns>Mode as AccessMode object.</returns>
+		/// <remarks>The mode in string is not case sensitive.</remarks>
+		public static AccessMode ToMode(string mode, AccessMode defaultMode)
+		{
+			try
+			{
+				AccessMode accessMode = ToMode(mode);
+				return accessMode;
+			}
+			catch (ArgumentOutOfRangeException)
+			{
+				return default;
+			}
 		}
 
 		/// <summary>
