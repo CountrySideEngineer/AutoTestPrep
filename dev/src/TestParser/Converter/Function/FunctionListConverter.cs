@@ -33,9 +33,8 @@ namespace TestParser.Converter.Function
 
 			try
 			{
-				int rowCount = src.Rows.Count;
 				var tableContent = new List<ParameterInfo>();
-				for (int index = 0; index < rowCount; index++)
+				for (int index = 0; index < src.Rows.Count; index++)
 				{
 					try
 					{
