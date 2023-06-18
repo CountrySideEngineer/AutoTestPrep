@@ -176,16 +176,8 @@ namespace TestParser.Converter.Function
 					.Split(' ')
 					.Where(_ => ((!string.IsNullOrEmpty(_)) && (!string.IsNullOrWhiteSpace(_))));
 				string name = Extract.AsString(src, (int)FUNC_TABLE_COL_INDEX.COL_INDEX_NAME);
-				string in_out = Extract.AsString(src, (int)FUNC_TABLE_COL_INDEX.COL_INDEX_IN_OUT);
-				Parameter.AccessMode mode = Parameter.AccessMode.None;
-				try
-				{
-					mode = Parameter.ToMode(in_out);
-				}
-				catch (ArgumentException)
-				{
-					mode = Parameter.AccessMode.In;
-				}
+				string modeData = Extract.AsString(src, (int)FUNC_TABLE_COL_INDEX.COL_INDEX_IN_OUT);
+				Parameter.AccessMode mode = Parameter.ToMode(modeData, Parameter.AccessMode.In);
 				string description = Extract.AsString(src, (int)FUNC_TABLE_COL_INDEX.COL_INDEX_DESCRIPTION);
 				int pointerNum = 0;
 				try
