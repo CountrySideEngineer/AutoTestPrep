@@ -35,9 +35,7 @@ namespace TestParser.Converter.Function
 			{
 				int rowCount = src.Rows.Count;
 				var tableContent = new List<ParameterInfo>();
-
-				//Skip 1st row because it will be a header.
-				for (int index = 1; index < rowCount; index++)
+				for (int index = 0; index < rowCount; index++)
 				{
 					try
 					{
@@ -48,14 +46,14 @@ namespace TestParser.Converter.Function
 					}
 					catch (FormatException)
 					{
-						//Skip format exception.
+						ERROR($"Input data can not convert, skip row {index}");
 					}
 				}
-
 				return tableContent;
 			}
-			catch (Exception)
+			catch (OverflowException)
 			{
+				ERROR("Input data is too large to convert.");
 				throw;
 			}
 		}
@@ -74,21 +72,11 @@ namespace TestParser.Converter.Function
 
 			try
 			{
-				string indexValue = src[(int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_NO].ToString();
-				int index = System.Convert.ToInt32(indexValue);
-				string name = src[(int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_TEST_NAME].ToString();
-				string sheetName = src[(int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_TEST_SHEET_NAME].ToString();
-				string fileName = src[(int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_TEST_SRC_FILE_NAME].ToString();
-				string filePath = string.Empty;
-				try
-				{
-					filePath = src[(int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_TEST_SRC_FILE_PATH].ToString();
-				}
-				catch (Exception ex)
-				when ((ex is ArgumentException) || (ex is ArgumentOutOfRangeException))
-				{
-					filePath = string.Empty;
-				}
+				int index = Extract.AsInt32(src, (int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_NO);
+				string name = Extract.AsString(src, (int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_TEST_NAME);
+				string sheetName = Extract.AsString(src, (int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_TEST_SHEET_NAME);
+				string fileName = Extract.AsString(src, (int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_TEST_SRC_FILE_NAME, string.Empty);
+				string filePath = Extract.AsString(src, (int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_TEST_SRC_FILE_PATH, string.Empty);
 
 				var paramInfo = new ParameterInfo()
 				{
@@ -100,11 +88,10 @@ namespace TestParser.Converter.Function
 				};
 				return paramInfo;
 			}
-			catch (NullReferenceException)
-			{
-				throw;
-			}
-			catch (ArgumentOutOfRangeException)
+			catch (Exception ex)
+			when ((ex is ArgumentNullException) ||
+				(ex is FormatException) ||
+				(ex is OverflowException))
 			{
 				throw;
 			}
