@@ -59,10 +59,7 @@ namespace TestParser.Converter.Function
 		{
 			TRACE($"{nameof(SetTo)} in {nameof(FunctionConverter)} called.");
 
-			int rowCount = src.Rows.Count;
-
-			//Skip 1st row, it will be a header.
-			for (int rowIndex = 1; rowIndex < rowCount; rowIndex++)
+			for (int rowIndex = 0; rowIndex < src.Rows.Count; rowIndex++)
 			{
 				DataRow row = src.Rows[rowIndex];
 				SetTo(row, ref dst);
@@ -95,8 +92,8 @@ namespace TestParser.Converter.Function
 			try
 			{
 				IParameterSetter setter = null;
-				string category = src[(int)FUNC_TABLE_COL_INDEX.COL_INDEX_CATEGORY].ToString();
-				string type = src[(int)FUNC_TABLE_COL_INDEX.COL_INDEX_TYPE].ToString();
+				string category = Extract.AsString(src, (int)FUNC_TABLE_COL_INDEX.COL_INDEX_CATEGORY);
+				string type = Extract.AsString(src, (int)FUNC_TABLE_COL_INDEX.COL_INDEX_TYPE);
 
 				if (category.Equals(_config.TargetFunction.Category))
 				{
@@ -206,10 +203,13 @@ namespace TestParser.Converter.Function
 			catch (Exception ex)
 			when ((ex is ArgumentNullException) ||
 				(ex is IndexOutOfRangeException) ||
-				(ex is ArgumentOutOfRangeException) ||
-				(ex is NullReferenceException))
+				(ex is ArgumentOutOfRangeException))
 			{
 				throw new ArgumentException();
+			}
+			catch (NullReferenceException)
+			{
+				throw new ArgumentNullException();
 			}
 		}
 
