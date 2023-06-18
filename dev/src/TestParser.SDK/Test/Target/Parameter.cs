@@ -11,6 +11,10 @@ namespace TestParser.Target
 	/// </summary>
 	public class Parameter
 	{
+		protected static string _modeIn = "in";
+		protected static string _modeOut = "out";
+		protected static string _modeInOut = "in/out";
+
 		/// <summary>
 		/// Definition of access mode.
 		/// </summary>
@@ -30,16 +34,17 @@ namespace TestParser.Target
 		/// <remarks>The mode in string is not case sensitive.</remarks>
 		public static AccessMode ToMode(string mode)
 		{
+			var modeInsensitive = mode.ToLower();
 			var accessMode = AccessMode.None;
-			if (0 == string.Compare(mode, "in", true))
+			if (modeInsensitive.Equals(_modeIn))
 			{
 				accessMode = AccessMode.In;
 			}
-			else if (0 == string.Compare(mode, "out", true))
+			else if (modeInsensitive.Equals(_modeOut))
 			{
 				accessMode = AccessMode.Out;
 			}
-			else if (0 == string.Compare(mode, "in/out", true))
+			else if (modeInsensitive.Equals(_modeOut))
 			{
 				accessMode = AccessMode.Both;
 			}
@@ -100,21 +105,6 @@ namespace TestParser.Target
 			this.Overview = src.Overview;
 			this.Description = src.Description;
 		}
-
-		/// <summary>
-		/// String data of access mode input.
-		/// </summary>
-		protected static string ModeInput = "input";
-
-		/// <summary>
-		/// String data of access mode output.
-		/// </summary>
-		protected static string ModeOutput = "output";
-
-		/// <summary>
-		/// String data of access mode both, input and output.
-		/// </summary>
-		protected static string ModeBoth = "in/out";
 
 		/// <summary>
 		/// Name of parameter
