@@ -168,17 +168,15 @@ namespace TestParser.Converter.Function
 
 			try
 			{
-				IEnumerable<string> prefixes = src[(int)FUNC_TABLE_COL_INDEX.COL_INDEX_PREFIXES]
-					.ToString()
+				IEnumerable<string> prefixes = Extract.AsString(src, (int)FUNC_TABLE_COL_INDEX.COL_INDEX_PREFIXES)
 					.Split(' ')
 					.Where(_ => ((!string.IsNullOrEmpty(_)) && (!string.IsNullOrWhiteSpace(_))));
-				string dataType = src[(int)FUNC_TABLE_COL_INDEX.COL_INDEX_DATA_TYPE].ToString();
-				IEnumerable<string> postfixes = src[(int)FUNC_TABLE_COL_INDEX.COL_INDEX_POSTFIXES]
-					.ToString()
+				string dataType = Extract.AsString(src, (int)FUNC_TABLE_COL_INDEX.COL_INDEX_DATA_TYPE);
+				IEnumerable<string> postfixes = Extract.AsString(src, (int)FUNC_TABLE_COL_INDEX.COL_INDEX_POSTFIXES)
 					.Split(' ')
 					.Where(_ => ((!string.IsNullOrEmpty(_)) && (!string.IsNullOrWhiteSpace(_))));
-				string name = src[(int)FUNC_TABLE_COL_INDEX.COL_INDEX_NAME].ToString();
-				string in_out = src[(int)FUNC_TABLE_COL_INDEX.COL_INDEX_IN_OUT].ToString();
+				string name = Extract.AsString(src, (int)FUNC_TABLE_COL_INDEX.COL_INDEX_NAME);
+				string in_out = Extract.AsString(src, (int)FUNC_TABLE_COL_INDEX.COL_INDEX_IN_OUT);
 				Parameter.AccessMode mode = Parameter.AccessMode.None;
 				try
 				{
@@ -188,13 +186,11 @@ namespace TestParser.Converter.Function
 				{
 					mode = Parameter.AccessMode.In;
 				}
-				string description = src[(int)FUNC_TABLE_COL_INDEX.COL_INDEX_DESCRIPTION].ToString();
+				string description = Extract.AsString(src, (int)FUNC_TABLE_COL_INDEX.COL_INDEX_DESCRIPTION);
 				int pointerNum = 0;
 				try
 				{
-					pointerNum =
-						src[(int)FUNC_TABLE_COL_INDEX.COL_INDEX_POSTFIXES]
-						.ToString()
+					pointerNum = Extract.AsString(src, (int)FUNC_TABLE_COL_INDEX.COL_INDEX_POSTFIXES)
 						.Where(_ => _ == '*')
 						.Count();
 				}
@@ -217,6 +213,7 @@ namespace TestParser.Converter.Function
 			}
 			catch (Exception ex)
 			when ((ex is ArgumentNullException) ||
+				(ex is IndexOutOfRangeException) ||
 				(ex is ArgumentOutOfRangeException) ||
 				(ex is NullReferenceException))
 			{
