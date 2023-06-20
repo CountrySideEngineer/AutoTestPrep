@@ -15,7 +15,7 @@ namespace TestParser_ctest
 		[TestMethod]
 		public void TEST_001()
 		{
-			string filePath = @".\..\..\data\FunctoinListParser_TestData_001.xlsx";
+			string filePath = @".\..\..\data\FunctionListParser_TestData_001.xlsx";
 			var parser = new FunctionListParser("テスト一覧_001");
 			IEnumerable<TestParser.Target.ParameterInfo> functionList = null;
 			using (var file = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
@@ -37,7 +37,7 @@ namespace TestParser_ctest
 		[TestMethod]
 		public void TEST_002()
 		{
-			string filePath = @".\..\..\data\FunctoinListParser_TestData_001.xlsx";
+			string filePath = @".\..\..\data\FunctionListParser_TestData_001.xlsx";
 			var parser = new FunctionListParser("テスト一覧_002");
 			IEnumerable<TestParser.Target.ParameterInfo> functionList = null;
 			using (var file = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
@@ -66,7 +66,7 @@ namespace TestParser_ctest
 		[TestMethod]
 		public void TEST_000()
 		{
-			string filePath = @".\..\..\data\FunctoinListParser_TestData_001.xlsx";
+			string filePath = @".\..\..\data\FunctionListParser_TestData_001.xlsx";
 			var parser = new FunctionListParser("テスト一覧_000");
 			IEnumerable<TestParser.Target.ParameterInfo> functionList = null;
 			using (var file = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
