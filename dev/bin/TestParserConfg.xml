@@ -21,6 +21,7 @@
 			<Argument>引数</Argument>
 		</SubFunction>
 		<Variable>
+			<Category>グローバル変数</Category>
 			<Internal>内部</Internal>
 			<External>外部</External>
 		</Variable>
