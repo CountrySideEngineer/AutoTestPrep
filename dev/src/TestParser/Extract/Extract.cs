@@ -59,6 +59,37 @@ namespace TestParser
 			}
 		}
 
+		public static string AsString(DataRow src, string colName)
+		{
+			try
+			{
+				string content = src[colName].ToString();
+				return content;
+			}
+			catch (Exception ex)
+			when ((ex is ArgumentException) || (ex is InvalidCastException))
+			{
+				throw;
+			}
+			catch (NullReferenceException)
+			{
+				throw new ArgumentNullException();
+			}
+		}
+
+		public static string AsString(DataRow src, string colName, string defaultContent)
+		{
+			try
+			{
+				string content = AsString(src, colName);
+				return content;
+			}
+			catch (ArgumentException)
+			{
+				return defaultContent;
+			}
+		}
+
 		/// <summary>
 		/// Convert the value of the specified column by argument colIndex of a row as int, Int32 type.
 		/// </summary>
