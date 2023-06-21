@@ -41,10 +41,10 @@ namespace TestParser.Converter.Test
 
 			DataView dataView = new DataView(src);
 			var indexes = new List<List<int>>();
-			for (int index = 0; index < src.Columns.Count; index++)
+			foreach (DataColumn column in src.Columns)
 			{
-				DataColumn column = src.Columns[index];
-				IEnumerable<int> applied = GetApplied(src, column);
+				DataColumn col = src.Columns[column.ColumnName];
+				IEnumerable<int> applied = GetApplied(src, col);
 				indexes.Add(applied.ToList());
 			}
 			return indexes;
@@ -59,7 +59,9 @@ namespace TestParser.Converter.Test
 		{
 			TRACE($"{nameof(GetApplied)} in {nameof(TestApplyConverter)} called.");
 
-			var indexes = src.AsEnumerable()
+			DataView dataView = new DataView(src);
+			DataTable extracted = dataView.ToTable(false, column.ColumnName);
+			var indexes = extracted.AsEnumerable()
 				.Select(_ => _[column.ColumnName])
 				.Select((item, i) => new { Item = item, Index = i})
 				.Where(_ => _.Item.ToString().ToLower().Equals(_applySign.ToLower()))
