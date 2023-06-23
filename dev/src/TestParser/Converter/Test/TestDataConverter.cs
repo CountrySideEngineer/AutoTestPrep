@@ -36,6 +36,11 @@ namespace TestParser.Converter.Test
 			_valueColName = valueColName;
 		}
 
+		/// <summary>
+		/// /Convert test data as DataTable object into collectin of TestData object.
+		/// </summary>
+		/// <param name="src">DataTable object contains data to be converted.</param>
+		/// <returns>Collection of TestData object converted from DataTable.</returns>
 		public override object Convert(DataTable src)
 		{
 			var testDatas = new List<TestData>();
@@ -49,6 +54,11 @@ namespace TestParser.Converter.Test
 
 		}
 
+		/// <summary>
+		/// Convert DataRow into a TestData.
+		/// </summary>
+		/// <param name="src">DataRow object includes data to be converted.</param>
+		/// <returns>Converted TestData object.</returns>
 		protected virtual TestData Convert(DataRow src)
 		{
 			TRACE($"{nameof(Convert)} in {nameof(TestDataConverter)} called.");
