@@ -11,10 +11,10 @@ namespace TestParser.Converter.Test
 {
 	class TestDataConverter : AContentConverter
 	{
-		string _inputExpectColName = string.Empty;
-		string _conditionColName = string.Empty;
-		string _variableColName = string.Empty;
-		string _valueColName = string.Empty;
+		protected string _inputExpectColName = string.Empty;
+		protected string _conditionColName = string.Empty;
+		protected string _variableColName = string.Empty;
+		protected string _valueColName = string.Empty;
 
 		/// <summary>
 		/// Default constructor.
