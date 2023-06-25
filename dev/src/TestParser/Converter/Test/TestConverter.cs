@@ -60,7 +60,7 @@ namespace TestParser.Converter.Test
 				{
 					DataTable testCaseTable = GetTestCaseTable(src, testId);
 					IEnumerable<TestData> testDatas = ConvertToTestData(testCaseTable);
-					TestCase testCase = ConvertToTestCase(testDatas);
+					TestCase testCase = ConvertToTestCase(testDatas, testId);
 					testCases.Add(testCase);
 				}
 				catch (InvalidOperationException)
@@ -144,7 +144,7 @@ namespace TestParser.Converter.Test
 		/// </summary>
 		/// <param name="testDatas">Collection of TestData object.</param>
 		/// <returns>Converted TestCase object.</returns>
-		protected TestCase ConvertToTestCase(IEnumerable<TestData> testDatas)
+		protected TestCase ConvertToTestCase(IEnumerable<TestData> testDatas, string testId)
 		{
 			TRACE($"{nameof(ConvertToTestCase)} in {nameof(TestConverter)} called.");
 
@@ -153,6 +153,7 @@ namespace TestParser.Converter.Test
 
 			var testCase = new TestCase()
 			{
+				Id = testId,
 				Input = inputs,
 				Expects = expects
 			};
