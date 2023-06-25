@@ -56,10 +56,17 @@ namespace TestParser.Converter.Test
 			IEnumerable<string> testIds = GetTestId(src);
 			foreach (var testId in testIds)
 			{
-				DataTable testCaseTable = GetTestCaseTable(src, testId);
-				IEnumerable<TestData> testDatas = ConvertToTestData(testCaseTable);
-				TestCase testCase = ConvertToTestCase(testDatas);
-				testCases.Add(testCase);
+				try
+				{
+					DataTable testCaseTable = GetTestCaseTable(src, testId);
+					IEnumerable<TestData> testDatas = ConvertToTestData(testCaseTable);
+					TestCase testCase = ConvertToTestCase(testDatas);
+					testCases.Add(testCase);
+				}
+				catch (InvalidOperationException)
+				{
+					WARN($"Test data of test id {testId} failed, skip the test case.");
+				}
 			}
 			return testCases;
 		}
@@ -71,6 +78,8 @@ namespace TestParser.Converter.Test
 		/// <returns>Colelction of data table.</returns>
 		protected IEnumerable<string> GetTestId(DataTable src)
 		{
+			TRACE($"{nameof(GetTestId)} in {nameof(TestConverter)} called.");
+
 			DataTable srcCopy = src.Copy();
 			foreach (var paramColName in _paramColNames)
 			{
@@ -92,14 +101,23 @@ namespace TestParser.Converter.Test
 		/// <returns>Applied test case data.</returns>
 		protected virtual DataTable GetTestCaseTable(DataTable src, string id)
 		{
-			var paramAndId = new List<string>(_paramColNames);
-			paramAndId.Add(id);
-			DataView srcDataView = new DataView(src);
-			DataTable testTable = srcDataView.ToTable(false, paramAndId.ToArray());
-			DataTable testCaseTable = testTable.AsEnumerable()
-				.Where(_ => _[id].ToString().ToUpper().Equals(_applySign))
-				.CopyToDataTable();
-			return testCaseTable;
+			TRACE($"{nameof(GetTestCaseTable)} in {nameof(TestConverter)} called.");
+
+			try
+			{
+				var paramAndId = new List<string>(_paramColNames);
+				paramAndId.Add(id);
+				DataView srcDataView = new DataView(src);
+				DataTable testTable = srcDataView.ToTable(false, paramAndId.ToArray());
+				DataTable testCaseTable = testTable.AsEnumerable()
+					.Where(_ => _[id].ToString().ToUpper().Equals(_applySign))
+					.CopyToDataTable();
+				return testCaseTable;
+			}
+			catch (InvalidOperationException)
+			{
+				throw;
+			}
 		}
 
 		/// <summary>
@@ -109,6 +127,8 @@ namespace TestParser.Converter.Test
 		/// <returns>Collection of TestData object of applied test data.</returns>
 		protected virtual IEnumerable<TestData> ConvertToTestData(DataTable testDataTable)
 		{
+			TRACE($"{nameof(ConvertToTestData)} in {nameof(TestConverter)} called.");
+
 			IContentConverter converter = new TestDataConverter(
 				_inputExpectColName,
 				string.Empty,
