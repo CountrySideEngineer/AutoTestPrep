@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Security;
@@ -53,7 +54,7 @@ namespace TestParser.Parser
 
 			ITableReader reader = GetReader(stream);
 			string tableName = GetTableName();
-			Content content = reader.GetTable(tableName);
+			DataTable content = reader.Read(tableName);
 			IContentConverter converter = GetConverter();
 			object converted = converter.Convert(content);
 
