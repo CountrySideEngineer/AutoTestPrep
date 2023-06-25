@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,7 +40,7 @@ namespace TestParser.Converter.Function
 		/// </summary>
 		/// <param name="src">Content of function table.</param>
 		/// <returns>Function information data.</returns>
-		public override object Convert(Content src)
+		public override object Convert(DataTable src)
 		{
 			TRACE($"{nameof(Convert)} in {nameof(FunctionConverter)} called.");
 
@@ -54,17 +55,14 @@ namespace TestParser.Converter.Function
 		/// </summary>
 		/// <param name="src"></param>
 		/// <param name="dst"></param>
-		protected void SetTo(Content src, ref TestParser.Target.Function dst)
+		protected void SetTo(DataTable src, ref TestParser.Target.Function dst)
 		{
 			TRACE($"{nameof(SetTo)} in {nameof(FunctionConverter)} called.");
 
-			int rowCount = src.RowCount();
-
-			//Skip 1st row, it will be a header.
-			for (int rowIndex = 1; rowIndex < rowCount; rowIndex++)
+			for (int rowIndex = 0; rowIndex < src.Rows.Count; rowIndex++)
 			{
-				IEnumerable<string> item = src.GetContentsInRow(rowIndex);
-				SetTo(item, ref dst);
+				DataRow row = src.Rows[rowIndex];
+				SetTo(row, ref dst);
 			}
 		}
 
@@ -73,7 +71,7 @@ namespace TestParser.Converter.Function
 		/// </summary>
 		/// <param name="src">Collection of content to .</param>
 		/// <param name="dst">Function object to be set to.</param>
-		protected void SetTo(IEnumerable<string> src, ref TestParser.Target.Function dst)
+		protected void SetTo(DataRow src, ref TestParser.Target.Function dst)
 		{
 			TRACE($"{nameof(SetTo)} in {nameof(FunctionConverter)} called.");
 
@@ -87,15 +85,15 @@ namespace TestParser.Converter.Function
 		/// </summary>
 		/// <param name="src">Source content to be set .</param>
 		/// <returns>IParmaeterSetter implement object.</returns>
-		protected IParameterSetter GetSetter(IEnumerable<string> src)
+		protected IParameterSetter GetSetter(DataRow src)
 		{
 			TRACE($"{nameof(GetSetter)} in {nameof(FunctionConverter)} called.");
 
 			try
 			{
 				IParameterSetter setter = null;
-				string category = src.ElementAt((int)FUNC_TABLE_COL_INDEX.COL_INDEX_CATEGORY);
-				string type = src.ElementAt((int)FUNC_TABLE_COL_INDEX.COL_INDEX_TYPE);
+				string category = Extract.AsString(src, (int)FUNC_TABLE_COL_INDEX.COL_INDEX_CATEGORY);
+				string type = Extract.AsString(src, (int)FUNC_TABLE_COL_INDEX.COL_INDEX_TYPE);
 
 				if (category.Equals(_config.TargetFunction.Category))
 				{
@@ -161,41 +159,27 @@ namespace TestParser.Converter.Function
 		/// <param name="src"></param>
 		/// <returns>Parameter objected converted.</returns>
 		/// <exception cref="ArgumentException">Argument or argument vaue is invalid.</exception>
-		protected Parameter Convert(IEnumerable<string> src)
+		protected Parameter Convert(DataRow src)
 		{
 			TRACE($"{nameof(Convert)} in {nameof(FunctionConverter)} called.");
 
 			try
 			{
-				IEnumerable<string> prefixes = 
-					src
-					.ElementAt((int)FUNC_TABLE_COL_INDEX.COL_INDEX_PREFIXES)
+				IEnumerable<string> prefixes = Extract.AsString(src, (int)FUNC_TABLE_COL_INDEX.COL_INDEX_PREFIXES)
 					.Split(' ')
 					.Where(_ => ((!string.IsNullOrEmpty(_)) && (!string.IsNullOrWhiteSpace(_))));
-				string dataType = src.ElementAt((int)FUNC_TABLE_COL_INDEX.COL_INDEX_DATA_TYPE);
-				IEnumerable<string> postfixes =
-					src
-					.ElementAt((int)FUNC_TABLE_COL_INDEX.COL_INDEX_POSTFIXES)
+				string dataType = Extract.AsString(src, (int)FUNC_TABLE_COL_INDEX.COL_INDEX_DATA_TYPE);
+				IEnumerable<string> postfixes = Extract.AsString(src, (int)FUNC_TABLE_COL_INDEX.COL_INDEX_POSTFIXES)
 					.Split(' ')
 					.Where(_ => ((!string.IsNullOrEmpty(_)) && (!string.IsNullOrWhiteSpace(_))));
-				string name = src.ElementAt((int)FUNC_TABLE_COL_INDEX.COL_INDEX_NAME);
-				string in_out = src.ElementAt((int)FUNC_TABLE_COL_INDEX.COL_INDEX_IN_OUT);
-				Parameter.AccessMode mode = Parameter.AccessMode.None;
-				try
-				{
-					mode = Parameter.ToMode(in_out);
-				}
-				catch (ArgumentException)
-				{
-					mode = Parameter.AccessMode.In;
-				}
-				string description = src.ElementAt((int)FUNC_TABLE_COL_INDEX.COL_INDEX_DESCRIPTION);
+				string name = Extract.AsString(src, (int)FUNC_TABLE_COL_INDEX.COL_INDEX_NAME);
+				string modeData = Extract.AsString(src, (int)FUNC_TABLE_COL_INDEX.COL_INDEX_IN_OUT);
+				Parameter.AccessMode mode = Parameter.ToMode(modeData, Parameter.AccessMode.In);
+				string description = Extract.AsString(src, (int)FUNC_TABLE_COL_INDEX.COL_INDEX_DESCRIPTION);
 				int pointerNum = 0;
 				try
 				{
-					pointerNum =
-						src
-						.ElementAt((int)FUNC_TABLE_COL_INDEX.COL_INDEX_POSTFIXES)
+					pointerNum = Extract.AsString(src, (int)FUNC_TABLE_COL_INDEX.COL_INDEX_POSTFIXES)
 						.Where(_ => _ == '*')
 						.Count();
 				}
@@ -218,10 +202,14 @@ namespace TestParser.Converter.Function
 			}
 			catch (Exception ex)
 			when ((ex is ArgumentNullException) ||
-				(ex is ArgumentOutOfRangeException) ||
-				(ex is NullReferenceException))
+				(ex is IndexOutOfRangeException) ||
+				(ex is ArgumentOutOfRangeException))
 			{
 				throw new ArgumentException();
+			}
+			catch (NullReferenceException)
+			{
+				throw new ArgumentNullException();
 			}
 		}
 

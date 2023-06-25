@@ -8,7 +8,6 @@ using CSEngineer;
 using TestParser.Reader;
 using TestParser.Target;
 using TestParser.Config;
-using TableReader.Excel;
 using TableReader.TableData;
 using TestParser.ParserException;
 using System.Security;
@@ -58,7 +57,7 @@ namespace TestParser.Parser
 		/// <summary>
 		/// Constructor with argument.
 		/// </summary>
-		/// <param name="target">Function list parser sheet name in excel.</param>
+		/// <param name="target">Function list sheet name in excel.</param>
 		public FunctionListParser(string target) : base(target)
 		{
 			Config = null;

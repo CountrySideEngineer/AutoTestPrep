@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,7 +22,7 @@ namespace TestParser.Converter.Test
 		/// </summary>
 		/// <param name="src">Content object to be converted.</param>
 		/// <returns>Collection of applied data indexes.</returns>
-		public override object Convert(Content src)
+		public override object Convert(DataTable src)
 		{
 			TRACE($"{nameof(Convert)} in {nameof(TestApplyConverter)} called.");
 
@@ -34,15 +35,16 @@ namespace TestParser.Converter.Test
 		/// </summary>
 		/// <param name="src">TestData to be converted.</param>
 		/// <returns>Collecton of index of applied test data.</returns>
-		protected IEnumerable<IEnumerable<int>> GetApplied(Content src)
+		protected IEnumerable<IEnumerable<int>> GetApplied(DataTable src)
 		{
 			TRACE($"{nameof(GetApplied)} in {nameof(TestApplyConverter)} called.");
 
+			DataView dataView = new DataView(src);
 			var indexes = new List<List<int>>();
-			for (int index = 0; index < src.ColCount(); index++)
+			foreach (DataColumn column in src.Columns)
 			{
-				IEnumerable<string> contents = src.GetContentsInCol(index);
-				IEnumerable<int> applied = GetApplied(contents);
+				DataColumn col = src.Columns[column.ColumnName];
+				IEnumerable<int> applied = GetApplied(src, col);
 				indexes.Add(applied.ToList());
 			}
 			return indexes;
@@ -53,12 +55,16 @@ namespace TestParser.Converter.Test
 		/// </summary>
 		/// <param name="src">Collection of test data.</param>
 		/// <returns>Collection of index of applied test data.</returns>
-		protected IEnumerable<int> GetApplied(IEnumerable<string> src)
+		protected IEnumerable<int> GetApplied(DataTable src, DataColumn column)
 		{
 			TRACE($"{nameof(GetApplied)} in {nameof(TestApplyConverter)} called.");
 
-			IEnumerable<int> indexes = src.Select((item, i) => new { Item = item, Index = i })
-				.Where(_ => _.Item.ToLower().Equals(_applySign.ToLower()))
+			DataView dataView = new DataView(src);
+			DataTable extracted = dataView.ToTable(false, column.ColumnName);
+			var indexes = extracted.AsEnumerable()
+				.Select(_ => _[column.ColumnName])
+				.Select((item, i) => new { Item = item, Index = i})
+				.Where(_ => _.Item.ToString().ToLower().Equals(_applySign.ToLower()))
 				.Select(_ => _.Index);
 			return indexes;
 		}

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32901.82
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestParser_ctest", "TestParser_ctest\TestParser_ctest.csproj", "{F86C09F6-492A-4805-B015-8D9235931E21}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F86C09F6-492A-4805-B015-8D9235931E21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F86C09F6-492A-4805-B015-8D9235931E21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F86C09F6-492A-4805-B015-8D9235931E21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F86C09F6-492A-4805-B015-8D9235931E21}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {31F3AA74-6880-4B14-80DC-3DE296E389BA}
+	EndGlobalSection
+EndGlobal

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,35 +27,32 @@ namespace TestParser.Converter.Function
 		/// <returns>Collection of Parameter info object parsed from table content.</returns>
 		/// <exception cref="NullReferenceException"></exception>
 		/// <exception cref="ArgumentOutOfRangeException"></exception>
-		public override object Convert(Content src)
+		public override object Convert(DataTable src)
 		{
 			TRACE($"{nameof(Convert)} in {nameof(FunctionListConverter)} called.");
 
 			try
 			{
-				int rowCount = src.RowCount();
 				var tableContent = new List<ParameterInfo>();
-
-				//Skip 1st row because it will be a header.
-				for (int index = 1; index < rowCount; index++)
+				for (int index = 0; index < src.Rows.Count; index++)
 				{
 					try
 					{
-						IEnumerable<string> rowData = src.GetContentsInRow(index);
+						DataRow rowData = src.Rows[index];
 						ParameterInfo paramInfo = Convert(rowData);
 
 						tableContent.Add(paramInfo);
 					}
 					catch (FormatException)
 					{
-						//Skip format exception.
+						ERROR($"Input data can not convert, skip row {index}");
 					}
 				}
-
 				return tableContent;
 			}
-			catch (Exception)
+			catch (OverflowException)
 			{
+				ERROR("Input data is too large to convert.");
 				throw;
 			}
 		}
@@ -67,27 +65,17 @@ namespace TestParser.Converter.Function
 		/// <exception cref="NullReferenceException"></exception>
 		/// <exception cref="ArgumentOutOfRangeException"></exception>
 		/// <exception cref="FormatException"></exception>
-		protected ParameterInfo Convert(IEnumerable<string> src)
+		protected ParameterInfo Convert(DataRow src)
 		{
 			TRACE($"{nameof(Convert)} in {nameof(FunctionListConverter)} called.");
 
 			try
 			{
-				string indexValue = src.ElementAt((int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_NO);
-				int index = System.Convert.ToInt32(indexValue);
-				string name = src.ElementAt((int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_TEST_NAME);
-				string sheetName = src.ElementAt((int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_TEST_SHEET_NAME);
-				string fileName = src.ElementAt((int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_TEST_SRC_FILE_NAME);
-				string filePath = string.Empty;
-				try
-				{
-					filePath = src.ElementAt((int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_TEST_SRC_FILE_PATH);
-				}
-				catch (Exception ex)
-				when ((ex is ArgumentException) || (ex is ArgumentOutOfRangeException))
-				{
-					filePath = string.Empty;
-				}
+				int index = Extract.AsInt32(src, (int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_NO);
+				string name = Extract.AsString(src, (int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_TEST_NAME);
+				string sheetName = Extract.AsString(src, (int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_TEST_SHEET_NAME);
+				string fileName = Extract.AsString(src, (int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_TEST_SRC_FILE_NAME, string.Empty);
+				string filePath = Extract.AsString(src, (int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_TEST_SRC_FILE_PATH, string.Empty);
 
 				var paramInfo = new ParameterInfo()
 				{
@@ -99,11 +87,10 @@ namespace TestParser.Converter.Function
 				};
 				return paramInfo;
 			}
-			catch (NullReferenceException)
-			{
-				throw;
-			}
-			catch (ArgumentOutOfRangeException)
+			catch (Exception ex)
+			when ((ex is ArgumentNullException) ||
+				(ex is FormatException) ||
+				(ex is OverflowException))
 			{
 				throw;
 			}

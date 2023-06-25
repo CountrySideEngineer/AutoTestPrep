@@ -10,7 +10,6 @@ using TestParser.Target;
 using TestParser.ParserException;
 using TestParser.Config;
 using TestParser.Converter;
-using TableReader.Excel;
 using TableReader.TableData;
 using System.Security;
 using TableReader.Interface;
