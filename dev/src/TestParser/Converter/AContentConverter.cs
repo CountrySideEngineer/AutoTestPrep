@@ -5,12 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using TableReader.TableData;
 using CSEngineer.Logger;
+using System.Data;
 
 namespace TestParser.Converter
 {
 	public abstract class AContentConverter : IContentConverter, CSEngineer.Logger.Interface.ILog
 	{
-		public abstract object Convert(Content src);
+		public abstract object Convert(DataTable src);
 
 		public void TRACE(string message)
 		{

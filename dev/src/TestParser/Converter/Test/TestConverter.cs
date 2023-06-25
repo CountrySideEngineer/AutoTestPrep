@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,12 +10,24 @@ using TestParser.Data;
 
 namespace TestParser.Converter.Test
 {
-	public class TestConverter : AContentConverter
+	class TestConverter : AContentConverter
 	{
 		protected TestCaseTableConfig _config;
 
 		protected const int _testCaseStartCol = 5;
 		protected const int _paramColCount = 5;
+
+		protected static string _applySign = "A";
+
+		protected static string _inputRowName = "入力";
+		protected static string _expectRowName = "期待値";
+		protected static string _inputExpectColName = "入力/期待値";
+		protected static string _category = "条件";
+		protected static string _variableName = "変数名";
+		protected static string _variableRange = "範囲";
+		protected static string _testValue = "代表値";
+		protected static IEnumerable<string> _paramColNames =
+			new List<string>{ _inputExpectColName, _category, _variableName, _variableRange, _testValue };
 
 		/// <summary>
 		/// Default constructor.
@@ -35,107 +48,95 @@ namespace TestParser.Converter.Test
 		/// </summary>
 		/// <param name="src">Content of test table.</param>
 		/// <returns>Test object converted from the Content object.</returns>
-		public override object Convert(Content src)
+		public override object Convert(DataTable src)
 		{
 			TRACE($"{nameof(Convert)} in {nameof(TestConverter)} called.");
 
 			var testCases = new List<TestCase>();
-			SetTo(src, ref testCases);
-
+			IEnumerable<string> testIds = GetTestId(src);
+			foreach (var testId in testIds)
+			{
+				try
+				{
+					DataTable testCaseTable = GetTestCaseTable(src, testId);
+					IEnumerable<TestData> testDatas = ConvertToTestData(testCaseTable);
+					TestCase testCase = ConvertToTestCase(testDatas, testId);
+					testCases.Add(testCase);
+				}
+				catch (InvalidOperationException)
+				{
+					WARN($"Test data of test id {testId} failed, skip the test case.");
+				}
+			}
 			return testCases;
 		}
 
 		/// <summary>
-		/// Set test data as Content object to collection of TestCase object.
+		/// Returs test case id as coolection of string data type.
 		/// </summary>
-		/// <param name="src">Test case data as Content object.</param>
-		/// <param name="testCases">Reference to collection of TestCase objet to set converted test data.</param>
-		protected void SetTo(Content src, ref List<TestCase> testCases)
+		/// <param name="src">Test design data as DataTable object.</param>
+		/// <returns>Colelction of data table.</returns>
+		protected IEnumerable<string> GetTestId(DataTable src)
 		{
-			TRACE($"{nameof(SetTo)} in {nameof(TestConverter)} called.");
+			TRACE($"{nameof(GetTestId)} in {nameof(TestConverter)} called.");
 
-			(Content param, Content apply) = SplitToParamAndApply(src);
-			IEnumerable<IEnumerable<int>> appliedIndexes = GetAppliedIndexes(apply);
-			IEnumerable<IEnumerable<TestData>> testDatas = GetTestData(param, appliedIndexes);
-			IEnumerable<string> testIds = GetTestId(apply);
-			IEnumerable<TestCase> testCase = ConvertToTestCase(testDatas, testIds);
-
-			testCases = testCase.ToList();
-		}
-
-		/// <summary>
-		/// Split test case table content into test parameter and applied datas.
-		/// </summary>
-		/// <param name="src">Content of test data as Content object.</param>
-		/// <returns>Tuple of Content object parameter and applied information.</returns>
-		protected (Content, Content) SplitToParamAndApply(Content src)
-		{
-			TRACE($"{nameof(SplitToParamAndApply)} in {nameof(TestConverter)} called.");
-
-			Content testParam = src.Take(_paramColCount);
-			Content testApply = src.Skip(_paramColCount);
-
-			return (testParam, testApply);
-		}
-
-		/// <summary>
-		/// Get collection of index of applied test data.
-		/// </summary>
-		/// <param name="src">Content object of applied test data.</param>
-		/// <returns>Collection of index applied test data.</returns>
-		protected IEnumerable<IEnumerable<int>> GetAppliedIndexes(Content src)
-		{
-			TRACE($"{nameof(GetAppliedIndexes)} in {nameof(TestConverter)} called.");
-
-			var converter = new TestApplyConverter();
-			IEnumerable<IEnumerable<int>> appliedIndexs = 
-				(IEnumerable<IEnumerable<int>>)Convert(src, converter);
-			return appliedIndexs;
-		}
-
-		/// <summary>
-		/// Get TestData from Content 
-		/// </summary>
-		/// <param name="src">Test data table content to be converted.</param>
-		/// <param name="appliedIndexes">Collection of index to apply as test data.</param>
-		/// <returns>Collection of TestData.</returns>
-		protected IEnumerable<IEnumerable<TestData>> GetTestData(Content src, IEnumerable<IEnumerable<int>> appliedIndexes)
-		{
-			TRACE($"{nameof(GetTestData)} in {nameof(TestConverter)} called.");
-
-			TestDataConverter converter = new TestDataConverter(
-				expectName: _config.Exepct,
-				returnName: "戻り値",
-				returnVariableName: "_ret_val");
-			var testDatas = new List<List<TestData>>();
-			foreach (var indexesItem in appliedIndexes)
+			DataTable srcCopy = src.Copy();
+			foreach (var paramColName in _paramColNames)
 			{
-				converter.Indexes = indexesItem;
-				IEnumerable<TestData> testData = (IEnumerable<TestData>)Convert(src, converter);
-				testDatas.Add(testData.ToList());
+				srcCopy.Columns.Remove(paramColName);
 			}
+			List<string> testIds = new List<string>();
+			foreach (DataColumn column in srcCopy.Columns)
+			{
+				testIds.Add(column.ColumnName);
+			}
+			return testIds;
+		}
+
+		/// <summary>
+		/// Returs test case data as DataTable.
+		/// </summary>
+		/// <param name="src">Test case data table.</param>
+		/// <param name="id">Test id to get.</param>
+		/// <returns>Applied test case data.</returns>
+		protected virtual DataTable GetTestCaseTable(DataTable src, string id)
+		{
+			TRACE($"{nameof(GetTestCaseTable)} in {nameof(TestConverter)} called.");
+
+			try
+			{
+				var paramAndId = new List<string>(_paramColNames);
+				paramAndId.Add(id);
+				DataView srcDataView = new DataView(src);
+				DataTable testTable = srcDataView.ToTable(false, paramAndId.ToArray());
+				DataTable testCaseTable = testTable.AsEnumerable()
+					.Where(_ => _[id].ToString().ToUpper().Equals(_applySign))
+					.CopyToDataTable();
+				return testCaseTable;
+			}
+			catch (InvalidOperationException)
+			{
+				throw;
+			}
+		}
+
+		/// <summary>
+		/// Convert test case data into collection of TestData object.
+		/// </summary>
+		/// <param name="testDataTable">Test case data.</param>
+		/// <returns>Collection of TestData object of applied test data.</returns>
+		protected virtual IEnumerable<TestData> ConvertToTestData(DataTable testDataTable)
+		{
+			TRACE($"{nameof(ConvertToTestData)} in {nameof(TestConverter)} called.");
+
+			IContentConverter converter = new TestDataConverter(
+				_inputExpectColName,
+				string.Empty,
+				_variableName,
+				_testValue
+				);
+			var testDatas = (IEnumerable<TestData>)Convert(testDataTable, converter);
 			return testDatas;
-		}
-
-		/// <summary>
-		/// Convert collection of TestData to collection of TestCase object.
-		/// </summary>
-		/// <param name="testDatas">Collection of TestData to be converted.</param>
-		/// <returns>Collection of TestCase obejcts.</returns>
-		protected IEnumerable<TestCase> ConvertToTestCase(
-			IEnumerable<IEnumerable<TestData>> testDatas, 
-			IEnumerable<string> testIds)
-		{
-			TRACE($"{nameof(ConvertToTestCase)} in {nameof(TestConverter)} called.");
-
-			var testCases = new List<TestCase>();
-			foreach (var indexedData in testDatas.Select((Item, Index) => new { Item, Index }))
-			{
-				TestCase testCase = ConvertToTestCase(indexedData.Item);
-				testCase.Id = testIds.ElementAt(indexedData.Index);
-				testCases.Add(testCase);
-			}
-			return testCases;
 		}
 
 		/// <summary>
@@ -143,7 +144,7 @@ namespace TestParser.Converter.Test
 		/// </summary>
 		/// <param name="testDatas">Collection of TestData object.</param>
 		/// <returns>Converted TestCase object.</returns>
-		protected TestCase ConvertToTestCase(IEnumerable<TestData> testDatas)
+		protected TestCase ConvertToTestCase(IEnumerable<TestData> testDatas, string testId)
 		{
 			TRACE($"{nameof(ConvertToTestCase)} in {nameof(TestConverter)} called.");
 
@@ -152,19 +153,11 @@ namespace TestParser.Converter.Test
 
 			var testCase = new TestCase()
 			{
+				Id = testId,
 				Input = inputs,
 				Expects = expects
 			};
 			return testCase;
-		}
-
-		protected IEnumerable<string> GetTestId(Content src)
-		{
-			TRACE($"{nameof(GetTestId)} in {nameof(TestConverter)} called.");
-
-			IEnumerable<string> testIds = src.GetContentsInRow(0);
-
-			return testIds;
 		}
 
 		/// <summary>
@@ -173,7 +166,7 @@ namespace TestParser.Converter.Test
 		/// <param name="src">Content to be converted.</param>
 		/// <param name="converter">Converter which inherits IContentConverter interface.</param>
 		/// <returns>Converted object.</returns>
-		protected object Convert(Content src, IContentConverter converter)
+		protected object Convert(DataTable src, IContentConverter converter)
 		{
 			TRACE($"{nameof(Convert)} in {nameof(TestConverter)} called.");
 
