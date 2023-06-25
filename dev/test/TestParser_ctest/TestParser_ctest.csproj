@@ -49,7 +49,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FunctionListParser_ctest.cs" />
+    <Compile Include="FunctionParser_ctest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestCaseParser_ctest.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MSTest.TestAdapter">

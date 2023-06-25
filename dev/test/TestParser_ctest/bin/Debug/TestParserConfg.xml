@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<TestParserConfig>
+	<TestFunctionListTable>
+		<Section>テスト一覧</Section>
+		<Title>○テスト対象関数一覧</Title>
+		<TableRowOffset>1</TableRowOffset>
+		<TableColOffset>1</TableColOffset>
+	</TestFunctionListTable>
+	<FunctionTable>
+		<Title>○対象関数情報</Title>
+		<TableRowOffset>1</TableRowOffset>
+		<TableColOffset>1</TableColOffset>
+		<TargetFunction>
+			<Category>テスト対象関数</Category>
+			<Function>本体</Function>
+			<Argument>引数</Argument>
+		</TargetFunction>
+		<SubFunction>
+			<Category>子関数</Category>
+			<Function>本体</Function>
+			<Argument>引数</Argument>
+		</SubFunction>
+		<Variable>
+			<Category>グローバル変数</Category>
+			<Internal>内部</Internal>
+			<External>外部</External>
+		</Variable>
+	</FunctionTable>
+	<TestCaseTable>
+		<Title>○テスト/デシジョンテーブル</Title>
+		<TableRowOffset>1</TableRowOffset>
+		<TableColOffset>1</TableColOffset>
+		<Input>入力</Input>
+		<Expect>期待値</Expect>
+	</TestCaseTable>
+</TestParserConfig>
