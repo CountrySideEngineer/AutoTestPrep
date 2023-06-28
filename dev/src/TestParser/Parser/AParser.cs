@@ -176,24 +176,5 @@ namespace TestParser.Parser
 			var reader = new ExcelTableReader(stream, Target);
 			return reader;
 		}
-
-		protected virtual string ItemConverter(IEnumerable<string> src, int index)
-		{
-			TRACE($"{nameof(ItemConverter)} in {nameof(AParser)} called.");
-
-			try
-			{
-				string item = src.ElementAt(index);
-				if ((string.IsNullOrEmpty(item)) || (string.IsNullOrWhiteSpace(item)))
-				{
-					throw new ArgumentException();
-				}
-				return item;
-			}
-			catch (ArgumentOutOfRangeException)
-			{
-				throw;
-			}
-		}
 	}
 }
