@@ -38,128 +38,34 @@ namespace CodeGenerator.TestDriver.Template
             this.Write(" test driver source code.\r\n */\r\n");
             
             #line 10 "E:\development\AutoTestPrep\dev\src\GoogleTestDriverCodeGenerator\Template\GoogleTestSourceTemplate.tt"
-
-	foreach (var headerFile in Config.StandardHeaderFiles) {
-		if ((!string.IsNullOrEmpty(headerFile)) && (!string.IsNullOrWhiteSpace(headerFile))) {
-
+            this.Write(this.ToStringHelper.ToStringWithCulture(CreateIncludeHeaderCode(this.TargetFunction)));
             
             #line default
             #line hidden
-            this.Write("#include <");
+            this.Write("\r\n");
             
-            #line 14 "E:\development\AutoTestPrep\dev\src\GoogleTestDriverCodeGenerator\Template\GoogleTestSourceTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(headerFile));
-            
-            #line default
-            #line hidden
-            this.Write(">\r\n");
-            
-            #line 15 "E:\development\AutoTestPrep\dev\src\GoogleTestDriverCodeGenerator\Template\GoogleTestSourceTemplate.tt"
-
-		}
-	}
-
-            
-            #line default
-            #line hidden
-            this.Write("#include \"gtest/gtest.h\"\r\n");
-            
-            #line 20 "E:\development\AutoTestPrep\dev\src\GoogleTestDriverCodeGenerator\Template\GoogleTestSourceTemplate.tt"
-
-	foreach (var headerFile in Config.UserHeaderFiles) { 
-		if ((!string.IsNullOrEmpty(headerFile)) && (!string.IsNullOrWhiteSpace(headerFile))) {
-
-            
-            #line default
-            #line hidden
-            this.Write("#include \"");
-            
-            #line 24 "E:\development\AutoTestPrep\dev\src\GoogleTestDriverCodeGenerator\Template\GoogleTestSourceTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(headerFile));
-            
-            #line default
-            #line hidden
-            this.Write("\"\r\n");
-            
-            #line 25 "E:\development\AutoTestPrep\dev\src\GoogleTestDriverCodeGenerator\Template\GoogleTestSourceTemplate.tt"
-
-		}
-	}
-
-            
-            #line default
-            #line hidden
-            
-            #line 29 "E:\development\AutoTestPrep\dev\src\GoogleTestDriverCodeGenerator\Template\GoogleTestSourceTemplate.tt"
-
-	if ((!string.IsNullOrEmpty(DriverHeaderFileName)) && (!string.IsNullOrWhiteSpace(DriverHeaderFileName))) {
-
-            
-            #line default
-            #line hidden
-            this.Write("#include \"");
-            
-            #line 32 "E:\development\AutoTestPrep\dev\src\GoogleTestDriverCodeGenerator\Template\GoogleTestSourceTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(DriverHeaderFileName));
-            
-            #line default
-            #line hidden
-            this.Write("\"\r\n");
-            
-            #line 33 "E:\development\AutoTestPrep\dev\src\GoogleTestDriverCodeGenerator\Template\GoogleTestSourceTemplate.tt"
-
-	}
-
-            
-            #line default
-            #line hidden
-            
-            #line 36 "E:\development\AutoTestPrep\dev\src\GoogleTestDriverCodeGenerator\Template\GoogleTestSourceTemplate.tt"
-
-	if ((!string.IsNullOrEmpty(StubHeaderFileName)) && (!string.IsNullOrWhiteSpace(StubHeaderFileName))) {
-
-            
-            #line default
-            #line hidden
-            this.Write("#include \"");
-            
-            #line 39 "E:\development\AutoTestPrep\dev\src\GoogleTestDriverCodeGenerator\Template\GoogleTestSourceTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(StubHeaderFileName));
-            
-            #line default
-            #line hidden
-            this.Write("\"\r\n");
-            
-            #line 40 "E:\development\AutoTestPrep\dev\src\GoogleTestDriverCodeGenerator\Template\GoogleTestSourceTemplate.tt"
-
-	}
-
-            
-            #line default
-            #line hidden
-            
-            #line 43 "E:\development\AutoTestPrep\dev\src\GoogleTestDriverCodeGenerator\Template\GoogleTestSourceTemplate.tt"
+            #line 11 "E:\development\AutoTestPrep\dev\src\GoogleTestDriverCodeGenerator\Template\GoogleTestSourceTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(CreateDecalreGlobalVariable(this.TargetFunction)));
             
             #line default
             #line hidden
             this.Write("\r\n\r\n//Test target function declare\r\n");
             
-            #line 46 "E:\development\AutoTestPrep\dev\src\GoogleTestDriverCodeGenerator\Template\GoogleTestSourceTemplate.tt"
+            #line 14 "E:\development\AutoTestPrep\dev\src\GoogleTestDriverCodeGenerator\Template\GoogleTestSourceTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TargetFunction.ToString()));
             
             #line default
             #line hidden
             this.Write(";\r\n\r\n");
             
-            #line 48 "E:\development\AutoTestPrep\dev\src\GoogleTestDriverCodeGenerator\Template\GoogleTestSourceTemplate.tt"
+            #line 16 "E:\development\AutoTestPrep\dev\src\GoogleTestDriverCodeGenerator\Template\GoogleTestSourceTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(CreateSetUpCode(this.TargetFunction)));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 49 "E:\development\AutoTestPrep\dev\src\GoogleTestDriverCodeGenerator\Template\GoogleTestSourceTemplate.tt"
+            #line 17 "E:\development\AutoTestPrep\dev\src\GoogleTestDriverCodeGenerator\Template\GoogleTestSourceTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(CreateTestCaseCode(this.TargetFunction, this.Test)));
             
             #line default

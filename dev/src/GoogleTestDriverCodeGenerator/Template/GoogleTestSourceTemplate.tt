@@ -7,39 +7,7 @@
 /*
  *	<#= TargetFunction.Name #> test driver source code.
  */
-<#
-	foreach (var headerFile in Config.StandardHeaderFiles) {
-		if ((!string.IsNullOrEmpty(headerFile)) && (!string.IsNullOrWhiteSpace(headerFile))) {
-#>
-#include <<#= headerFile #>>
-<#
-		}
-	}
-#>
-#include "gtest/gtest.h"
-<#
-	foreach (var headerFile in Config.UserHeaderFiles) { 
-		if ((!string.IsNullOrEmpty(headerFile)) && (!string.IsNullOrWhiteSpace(headerFile))) {
-#>
-#include "<#= headerFile #>"
-<#
-		}
-	}
-#>
-<#
-	if ((!string.IsNullOrEmpty(DriverHeaderFileName)) && (!string.IsNullOrWhiteSpace(DriverHeaderFileName))) {
-#>
-#include "<#= DriverHeaderFileName #>"
-<#
-	}
-#>
-<#
-	if ((!string.IsNullOrEmpty(StubHeaderFileName)) && (!string.IsNullOrWhiteSpace(StubHeaderFileName))) {
-#>
-#include "<#= StubHeaderFileName #>"
-<#
-	}
-#>
+<#= CreateIncludeHeaderCode(this.TargetFunction) #>
 <#= CreateDecalreGlobalVariable(this.TargetFunction) #>
 
 //Test target function declare
