@@ -60,6 +60,7 @@
     <Compile Include="CodeGenerator\GoogleTestCodeGenerator.cs" />
     <Compile Include="CodeGenerator\GoogleTestHeaderCodeGenerator.cs" />
     <Compile Include="CodeGenerator\GoogleTestSourceCodeGenerator.cs" />
+    <Compile Include="CodeGenerator\GoogleTestSourcePerFunctionCodeGenerator.cs" />
     <Compile Include="Template\Code\GoogleTestHeaderTemplate_code.cs" />
     <Compile Include="Template\Code\GoogleTestIncludeTemplate_part.cs" />
     <Compile Include="Template\Code\GoogleTestSourceEachTestCaseTemplate_code.cs" />
