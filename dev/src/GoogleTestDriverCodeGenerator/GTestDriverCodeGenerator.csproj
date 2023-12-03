@@ -61,6 +61,7 @@
     <Compile Include="CodeGenerator\GoogleTestHeaderCodeGenerator.cs" />
     <Compile Include="CodeGenerator\GoogleTestSourceCodeGenerator.cs" />
     <Compile Include="Template\Code\GoogleTestHeaderTemplate_code.cs" />
+    <Compile Include="Template\Code\GoogleTestIncludeTemplate_part.cs" />
     <Compile Include="Template\Code\GoogleTestSourceSetUpTemplate_code.cs" />
     <Compile Include="Template\Code\GoogleTestSourceTemplate_code.cs" />
     <Compile Include="Template\Code\GoogleTestSourceTestCaseTemplate_code.cs" />
@@ -70,6 +71,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GoogleTestHeaderTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\GoogleTestIncludeTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GoogleTestIncludeTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Template\GoogleTestSourceSetUpTemplate.cs">
       <AutoGen>True</AutoGen>
@@ -96,6 +102,10 @@
     <Content Include="Template\GoogleTestHeaderTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>GoogleTestHeaderTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\GoogleTestIncludeTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>GoogleTestIncludeTemplate.cs</LastGenOutput>
       <CustomToolNamespace>CodeGenerator.TestDriver.Template</CustomToolNamespace>
     </Content>
     <Content Include="Template\GoogleTestSourceSetUpTemplate.tt">
