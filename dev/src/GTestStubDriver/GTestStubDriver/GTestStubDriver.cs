@@ -26,17 +26,17 @@ namespace StubDriverPlugin.GTestStubDriver
 		/// <summary>
 		/// Plugin input data.
 		/// </summary>
-		PluginInput pluginInput;
+		protected PluginInput _pluginInput;
 
 		/// <summary>
 		/// Plugin output data.
 		/// </summary>
-		PluginOutput pluginOutput;
+		protected PluginOutput _pluginOutput;
 
 		/// <summary>
 		/// ProgressInfo object.
 		/// </summary>
-		IProgress<ProgressInfo> _progress;
+		protected IProgress<ProgressInfo> _progress;
 
 		/// <summary>
 		/// Execute process to create stub and test driver code using google test framework.
@@ -45,12 +45,12 @@ namespace StubDriverPlugin.GTestStubDriver
 		/// <returns>Plugin ouput data containig result of the plugin.</returns>
 		public virtual PluginOutput Execute(PluginInput data)
 		{
-			pluginInput = data;
+			_pluginInput = data;
 			var task = new AsyncTask<ProgressInfo>();
 			SetupAction(ref task);
 			var progressWindow = new CSProgressWindow.ProgressWindow();
 			progressWindow.Start(task);
-			return pluginOutput;
+			return _pluginOutput;
 		}
 
 		/// <summary>
@@ -66,7 +66,7 @@ namespace StubDriverPlugin.GTestStubDriver
 				var pluginExecute = new GTestStubDriverPluginExecute();
 				pluginExecute.NotifyPluginProgressDelegate += NotifyParseProgress;
 				pluginExecute.NotifyPluginFinishDelegate += NotifyPluginFinish;
-				pluginOutput = pluginExecute.Execute(pluginInput);
+				_pluginOutput = pluginExecute.Execute(_pluginInput);
 			});
 		}
 
@@ -119,7 +119,7 @@ namespace StubDriverPlugin.GTestStubDriver
 			string title = string.Empty;
 			try
 			{
-				title = pluginInput.InputFilePath;
+				title = _pluginInput.InputFilePath;
 			}
 			catch (NullReferenceException)
 			{
@@ -146,7 +146,7 @@ namespace StubDriverPlugin.GTestStubDriver
 			string title = string.Empty;
 			try
 			{
-				title = pluginInput.InputFilePath;
+				title = _pluginInput.InputFilePath;
 			}
 			catch (NullReferenceException)
 			{
