@@ -439,5 +439,44 @@ namespace StubDriverPlugin.GTestStubDriver
 			string fileName = $"{writeData.Test.Name}_test";
 			return fileName;
 		}
+
+		/// <summary>
+		/// Create stub header file name.
+		/// </summary>
+		/// <param name="data">Wrtie data</param>
+		/// <returns>Stub header file name.</returns>
+		protected virtual string CreateStubHeaderFileName(WriteData data)
+        {
+			string stubFileName = CreateStubFileName(data);
+			string stubHeaderFileName = CreateStubHeaderFileName(stubFileName);
+
+			return stubHeaderFileName;
+        }
+
+		/// <summary>
+		/// Create stub header file name.
+		/// </summary>
+		/// <param name="stubFileName">Base stub header file name.</param>
+		/// <returns>Stub header file name.</returns>
+		protected virtual string CreateStubHeaderFileName(string stubFileName)
+        {
+			string stubHeaderFileName = $"{stubFileName}.h";
+
+			return stubHeaderFileName;
+        }
+
+		/// <summary>
+		/// Create test driver source file name and header file name.
+		/// </summary>
+		/// <param name="data">Write data.</param>
+		/// <returns>Test driver source and header file in tuple.</returns>
+		protected virtual (string, string) CreateTestDriverFileNameTuple(WriteData data)
+        {
+			string driverFileName = CreateTestDriverFileName(data);
+			string driverSourceFileName = $"{driverFileName}.cpp";
+			string driverHeaderFileName = $"{driverFileName}.h";
+
+			return (driverSourceFileName, driverHeaderFileName);
+        }
 	}
 }
