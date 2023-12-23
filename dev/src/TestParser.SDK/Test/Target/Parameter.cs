@@ -294,5 +294,34 @@ namespace TestParser.Target
 			Overview = src.Overview;
 			Description = src.Description;
 		}
+
+		/// <summary>
+		/// Shallow copy method.
+		/// </summary>
+		/// <returns>Shallow copied method.</returns>
+		public virtual Parameter ShallowCopy()
+        {
+			return (Parameter)MemberwiseClone();
+        }
+
+		/// <summary>
+		/// Deep copy method.
+		/// </summary>
+		/// <returns>Deep copied object.</returns>
+		public virtual Parameter DeepCopy()
+        {
+			var copyItem = (Parameter)MemberwiseClone();
+
+			copyItem.Name = string.Copy(Name);
+			copyItem.DataType = string.Copy(DataType);
+			copyItem.Mode = Mode;
+			copyItem.Overview = string.Copy(Overview);
+			copyItem.Description = string.Copy(Description);
+
+			copyItem.Prefix = new List<string>(Prefix);
+			copyItem.Postfix = new List<string>(Postfix);
+
+			return copyItem;
+        }
 	}
 }
