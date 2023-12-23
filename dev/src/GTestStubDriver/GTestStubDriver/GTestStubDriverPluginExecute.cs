@@ -198,11 +198,9 @@ namespace StubDriverPlugin.GTestStubDriver
 				DirectoryInfo outputDirInfo = new DirectoryInfo($@"{parentDirInfo.FullName}\driver");
 				Directory.CreateDirectory(outputDirInfo.FullName);
 
-				string stubFileName = CreateStubFileName(data);
-				string stubHeaderFileName = $"{stubFileName}.h";
-				string driverFileName = CreateTestDriverFileName(data);
-				string driverSourceFileName = $"{driverFileName}.cpp";
-				string driverHeaderFileName = $"{driverFileName}.h";
+				string stubHeaderFileName = CreateStubHeaderFileName(data);
+				(string driverSourceFileName, string driverHeaderFileName) =
+					CreateTestDriverFileNameTuple(data);
 
 				if ((null == data.Test.Target.SubFunctions) || (data.Test.Target.SubFunctions.Count() < 1))
 				{
