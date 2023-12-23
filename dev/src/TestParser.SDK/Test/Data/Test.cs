@@ -54,5 +54,14 @@ namespace TestParser.Data
 		/// Path to file to test.
 		/// </summary>
 		public string SourcePath { get; set; }
+
+		/// <summary>
+		/// Shallow copy method.
+		/// </summary>
+		/// <returns>Shallow copied method.</returns>
+		public Test ShalloCopy()
+        {
+			return (Test)MemberwiseClone();
+        }
 	}
 }
