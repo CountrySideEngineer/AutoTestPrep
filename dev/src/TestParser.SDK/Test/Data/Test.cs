@@ -63,5 +63,24 @@ namespace TestParser.Data
         {
 			return (Test)MemberwiseClone();
         }
+
+		/// <summary>
+		/// Deep copy method.
+		/// </summary>
+		/// <returns>Deep copied method.</returns>
+		public Test DeepCopy()
+        {
+			var copyItem = (Test)MemberwiseClone();
+
+			copyItem.Target = Target.DeepCopy();
+			copyItem.TestCases = new List<TestCase>(TestCases);
+
+			copyItem.Name = string.Copy(Name);
+			copyItem.TestInformation = string.Copy(TestInformation);
+			copyItem.SourceName = string.Copy(SourceName);
+			copyItem.SourcePath = string.Copy(SourcePath);
+
+			return copyItem;
+        }
 	}
 }
