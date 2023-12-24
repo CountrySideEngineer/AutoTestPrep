@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinUnitStubDriver", "MinUni
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StubCodePlugin", "StubCodePlugin\StubCodePlugin.csproj", "{87C7922E-054E-42E6-850C-3EE4DAB0F2E0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GTestStubDriverPerFunction", "GTestStubDriverPerFunction\GTestStubDriverPerFunction.csproj", "{4828A13E-3B15-40B1-A237-908A047A7582}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +38,10 @@ Global
 		{87C7922E-054E-42E6-850C-3EE4DAB0F2E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87C7922E-054E-42E6-850C-3EE4DAB0F2E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87C7922E-054E-42E6-850C-3EE4DAB0F2E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4828A13E-3B15-40B1-A237-908A047A7582}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4828A13E-3B15-40B1-A237-908A047A7582}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4828A13E-3B15-40B1-A237-908A047A7582}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4828A13E-3B15-40B1-A237-908A047A7582}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
