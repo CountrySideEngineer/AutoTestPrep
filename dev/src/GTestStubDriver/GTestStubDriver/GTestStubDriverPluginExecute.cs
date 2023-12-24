@@ -198,11 +198,9 @@ namespace StubDriverPlugin.GTestStubDriver
 				DirectoryInfo outputDirInfo = new DirectoryInfo($@"{parentDirInfo.FullName}\driver");
 				Directory.CreateDirectory(outputDirInfo.FullName);
 
-				string stubFileName = CreateStubFileName(data);
-				string stubHeaderFileName = $"{stubFileName}.h";
-				string driverFileName = CreateTestDriverFileName(data);
-				string driverSourceFileName = $"{driverFileName}.cpp";
-				string driverHeaderFileName = $"{driverFileName}.h";
+				string stubHeaderFileName = CreateStubHeaderFileName(data);
+				(string driverSourceFileName, string driverHeaderFileName) =
+					CreateTestDriverFileNameTuple(data);
 
 				if ((null == data.Test.Target.SubFunctions) || (data.Test.Target.SubFunctions.Count() < 1))
 				{
@@ -439,5 +437,44 @@ namespace StubDriverPlugin.GTestStubDriver
 			string fileName = $"{writeData.Test.Name}_test";
 			return fileName;
 		}
+
+		/// <summary>
+		/// Create stub header file name.
+		/// </summary>
+		/// <param name="data">Wrtie data</param>
+		/// <returns>Stub header file name.</returns>
+		protected virtual string CreateStubHeaderFileName(WriteData data)
+        {
+			string stubFileName = CreateStubFileName(data);
+			string stubHeaderFileName = CreateStubHeaderFileName(stubFileName);
+
+			return stubHeaderFileName;
+        }
+
+		/// <summary>
+		/// Create stub header file name.
+		/// </summary>
+		/// <param name="stubFileName">Base stub header file name.</param>
+		/// <returns>Stub header file name.</returns>
+		protected virtual string CreateStubHeaderFileName(string stubFileName)
+        {
+			string stubHeaderFileName = $"{stubFileName}.h";
+
+			return stubHeaderFileName;
+        }
+
+		/// <summary>
+		/// Create test driver source file name and header file name.
+		/// </summary>
+		/// <param name="data">Write data.</param>
+		/// <returns>Test driver source and header file in tuple.</returns>
+		protected virtual (string, string) CreateTestDriverFileNameTuple(WriteData data)
+        {
+			string driverFileName = CreateTestDriverFileName(data);
+			string driverSourceFileName = $"{driverFileName}.cpp";
+			string driverHeaderFileName = $"{driverFileName}.h";
+
+			return (driverSourceFileName, driverHeaderFileName);
+        }
 	}
 }
