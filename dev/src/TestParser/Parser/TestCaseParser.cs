@@ -142,27 +142,29 @@ namespace TestParser.Parser
 
 				INFO($"Get {testCases.Count()} test case(s) from \"{GetTableName()}\"");
 
+#if DEBUG
 				int itemIndex = 1;
 				foreach (var testCase in testCases)
 				{
-					INFO($"\t\tTest case {itemIndex}:");
-					INFO($"\t\t\tInput(s)  = {testCase.Input.Count()}");
+					DEBUG($"\t\tTest case {itemIndex}:");
+					DEBUG($"\t\t\tInput(s)  = {testCase.Input.Count()}");
 					int inputIndex = 1;
 					foreach (var inputItem in testCase.Input)
 					{
-						INFO($"\t\t\tInput {inputIndex} : {inputItem.Name} = {inputItem.Value}:");
+						DEBUG($"\t\t\tInput {inputIndex} : {inputItem.Name} = {inputItem.Value}:");
 						inputIndex++;
 					}
 
-					INFO($"\t\t\tExpect(s) = {testCase.Expects.Count()}");
+					DEBUG($"\t\t\tExpect(s) = {testCase.Expects.Count()}");
 					int expectIndex = 1;
 					foreach (var expectItem in testCase.Expects)
 					{
-						INFO($"\t\t\tExepct {expectIndex} : {expectItem.Name} = {expectItem.Value}:");
+						DEBUG($"\t\t\tExepct {expectIndex} : {expectItem.Name} = {expectItem.Value}:");
 						expectIndex++;
 					}
 					itemIndex++;
 				}
+#endif
 			}
 			catch (System.Exception ex)
 			when ((ex is InvalidCastException) ||

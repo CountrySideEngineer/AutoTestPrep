@@ -63,5 +63,27 @@ namespace CodeGenerator.Data
 				throw;
 			}
 		}
+
+		/// <summary>
+		/// Shallow copy method.
+		/// </summary>
+		/// <returns>Shallow copied object.</returns>
+		public CodeConfiguration ShallowCopy()
+        {
+			return (CodeConfiguration)MemberwiseClone();
+        }
+
+		/// <summary>
+		/// Deep copy method.
+		/// </summary>
+		/// <returns>Deep copied object.</returns>
+		public CodeConfiguration DeepCopy()
+        {
+			var copyItem = (CodeConfiguration)MemberwiseClone();
+			copyItem.StandardHeaderFiles = new List<string>(StandardHeaderFiles);
+			copyItem.UserHeaderFiles = new List<string>(UserHeaderFiles);
+
+			return copyItem;
+        }
 	}
 }

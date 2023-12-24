@@ -83,7 +83,10 @@ namespace PluginRegister.Command
 				string fileName = Path.GetFileName(pluginFilePath);
 				string currentDir = System.IO.Directory.GetCurrentDirectory();
 				string dstPath = $@"{currentDir}\{fileName}";
-				File.Copy(pluginFilePath, dstPath, true);
+				if (!pluginFilePath.Equals(dstPath))
+                {
+					File.Copy(pluginFilePath, dstPath, true);
+				}
 			}
 			catch (Exception ex)
 			{

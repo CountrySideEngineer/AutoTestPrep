@@ -135,18 +135,19 @@ namespace TestParser.Parser
 				var paramInfos = (IEnumerable<ParameterInfo>)readItems;
 
 				INFO($"\tGet {paramInfos.Count()} function information(s) in the table.");
-
+#if DEBUG
 				int itemIndex = 1;
 				foreach (var item in paramInfos)
 				{
-					INFO($"\t\tFunction info {itemIndex}:");
-					INFO($"\t\t       Index : {item.Index}");
-					INFO($"\t\t        Name : {item.Name}");
-					INFO($"\t\t    InfoName : {item.InfoName}");
-					INFO($"\t\t    FileName : {item.FileName}");
+					DEBUG($"\t\tFunction info {itemIndex}:");
+					DEBUG($"\t\t       Index : {item.Index}");
+					DEBUG($"\t\t        Name : {item.Name}");
+					DEBUG($"\t\t    InfoName : {item.InfoName}");
+					DEBUG($"\t\t    FileName : {item.FileName}");
 
 					itemIndex++;
 				}
+#endif
 			}
 			catch (System.Exception ex)
 			when ((ex is InvalidCastException) ||
