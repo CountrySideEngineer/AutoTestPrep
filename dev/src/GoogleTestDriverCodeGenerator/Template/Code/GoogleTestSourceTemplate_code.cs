@@ -1,4 +1,5 @@
 ﻿using CodeGenerator.Data;
+using CodeGenerator.TestDriver.Template;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -216,6 +217,19 @@ namespace CodeGenerator.TestDriver.Template
 			{
 				return string.Empty;
 			}
+		}
+
+		public virtual string CreateIncludeHeaderCode(Function targetFunction)
+        {
+			var template = new GoogleTestIncludeTemplate()
+			{
+				Config = Config,
+				DriverHeaderFileName = DriverHeaderFileName,
+				StubHeaderFileName = StubHeaderFileName
+			};
+			var includePart = template.TransformText();
+			return includePart;
+
 		}
 	}
 }

@@ -31,5 +31,36 @@ namespace CodeGenerator.Data
 			this.CodeConfig = new CodeConfiguration();
 			this.Test = new Test();
 		}
+
+		/// <summary>
+		/// Copy constructor.
+		/// </summary>
+		/// <param name="src">Copy soruce object.</param>
+		public WriteData(WriteData src)
+        {
+			CodeConfig = src.CodeConfig.DeepCopy();
+
+			Test = src.Test.DeepCopy();
+        }
+
+		/// <summary>
+		/// Shallow copy method.
+		/// </summary>
+		/// <returns>Shallow copied object.</returns>
+		public WriteData ShallowCopy()
+        {
+			return (WriteData)MemberwiseClone();
+        }
+
+		/// <summary>
+		/// Deep copy method.
+		/// </summary>
+		/// <returns>Deep copied method.</returns>
+		public WriteData DeepCopy()
+        {
+			var copyItem = new WriteData(this);
+
+			return copyItem;
+        }
 	}
 }

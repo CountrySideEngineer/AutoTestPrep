@@ -96,14 +96,14 @@ namespace TestParser.Target
 		/// <param name="src">Source Parameter object.</param>
 		public Parameter(Parameter src)
 		{
-			this.Name = src.Name;
-			this.DataType = src.DataType;
+			this.Name = string.Copy(src.Name);
+			this.DataType = string.Copy(src.DataType);
 			this.Prefix = new List<string>(src.Prefix);
 			this.Postfix = new List<string>(src.Postfix);
 			this.PointerNum = src.PointerNum;
 			this.Mode = src.Mode;
-			this.Overview = src.Overview;
-			this.Description = src.Description;
+			this.Overview = string.Copy(src.Overview);
+			this.Description = string.Copy(src.Description);
 		}
 
 		/// <summary>
@@ -269,14 +269,14 @@ namespace TestParser.Target
 		/// <param name="dst">Parameter object to copy to.</param>
 		public virtual void CopyTo(ref Parameter dst)
 		{
-			dst.Name = Name;
-			dst.DataType = DataType;
+			dst.Name = string.Copy(Name);
+			dst.DataType = string.Copy(DataType);
 			dst.Prefix = new List<string>(Prefix);
 			dst.Postfix = new List<string>(Postfix);
 			dst.PointerNum = PointerNum;
 			dst.Mode = Mode;
-			dst.Overview = Overview;
-			dst.Description = Description;
+			dst.Overview = string.Copy(Overview);
+			dst.Description = string.Copy(Description);
 		}
 
 		/// <summary>
@@ -285,14 +285,36 @@ namespace TestParser.Target
 		/// <param name="src"></param>
 		public virtual void CopyFrom(Parameter src)
 		{
-			Name = src.Name;
-			DataType = src.DataType;
+			Name = string.Copy(src.Name);
+			DataType = string.Copy(src.DataType);
 			Prefix = new List<string>(src.Prefix);
 			Postfix = new List<string>(src.Postfix);
 			PointerNum = src.PointerNum;
 			Mode = src.Mode;
-			Overview = src.Overview;
-			Description = src.Description;
+			Overview = string.Copy(src.Overview);
+			Description = string.Copy(src.Description);
 		}
+
+		/// <summary>
+		/// Shallow copy method.
+		/// </summary>
+		/// <returns>Shallow copied method.</returns>
+		public virtual Parameter ShallowCopy()
+        {
+			return (Parameter)MemberwiseClone();
+        }
+
+		/// <summary>
+		/// Deep copy method.
+		/// </summary>
+		/// <returns>Deep copied object.</returns>
+		public virtual Parameter DeepCopy()
+        {
+			var copyItem = (Parameter)MemberwiseClone();
+
+			CopyTo(ref copyItem);
+
+			return copyItem;
+        }
 	}
 }

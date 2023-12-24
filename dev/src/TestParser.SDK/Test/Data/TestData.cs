@@ -28,10 +28,10 @@ namespace TestParser.Data
 		/// <param name="src"></param>
 		public TestData(TestData src)
 		{
-			this.Condition = src.Condition;
-			this.Descriotion = src.Descriotion;
-			this.Name = src.Name;
-			this.Value = src.Value;
+			this.Condition = string.Copy(src.Condition);
+			this.Descriotion = string.Copy(src.Descriotion);
+			this.Name = string.Copy(src.Name);
+			this.Value = string.Copy(src.Value);
 		}
 
 		/// <summary>
@@ -53,5 +53,26 @@ namespace TestParser.Data
 		/// Test data value.
 		/// </summary>
 		public string Value { get; set; }
+
+		/// <summary>
+		/// Shallow copy method.
+		/// </summary>
+		/// <returns>Shallow copied object.</returns>
+		public TestData ShallowCopy()
+        {
+			return (TestData)MemberwiseClone();
+        }
+
+		/// <summary>
+		/// Deep copy method.
+		/// </summary>
+		/// <returns>Deep copied object.</returns>
+		public TestData DeepCopy()
+        {
+			var copyItem = new TestData(this);
+
+			return copyItem;
+        }
+
 	}
 }

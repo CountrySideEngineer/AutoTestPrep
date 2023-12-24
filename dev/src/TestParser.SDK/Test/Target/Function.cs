@@ -133,5 +133,27 @@ namespace TestParser.Target
 		/// Gloval variables declared in code the function is not implemented.
 		/// </summary>
 		public IEnumerable<Parameter> ExternalVariables { get; set; }
-	}
+
+		/// <summary>
+		/// Shallow copy method.
+		/// </summary>
+		/// <returns>Shallow copied method.</returns>
+        public new Function ShallowCopy()
+        {
+			return (Function)MemberwiseClone();
+        }
+
+		/// <summary>
+		/// Deep copy method.
+		/// </summary>
+		/// <returns>Deep copied method.</returns>
+		public new Function DeepCopy()
+        {
+			var copyItme = (Function)MemberwiseClone();
+
+			CopyTo(ref copyItme);
+
+			return copyItme;
+        }
+    }
 }

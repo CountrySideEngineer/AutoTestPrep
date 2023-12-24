@@ -19,7 +19,7 @@ namespace CodeGenerator.TestDriver.GoogleTest
 		/// <param name="data">Data for code.</param>
 		/// <returns>Generated stub code.</returns>
 		/// <exception cref="NullReferenceException">One of object refered in a template is NULL.</exception>
-		public string Generate(WriteData data)
+		public virtual string Generate(WriteData data)
 		{
 			Debug.Assert(null != data, $"{nameof(GoogleTestCodeGenerator)}.{nameof(Generate)}");
 
