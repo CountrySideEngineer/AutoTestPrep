@@ -25,7 +25,9 @@ namespace AutoTestPrep.ViewModel
 		/// <param name="index">Index in list.</param>
 		public DefineMacroInputViewModel(int index) : base(index)
 		{
-			this.DefineMacroVM = new MultiLineInputViewModel("マクロ：", string.Empty);
+			this.DefineMacroVM = new MultiLineInputViewModel(
+                Properties.Resources.ID_FUNCTION_TEST_MACRO_CONFIGURATION_MACRO_DEF_TITLE,
+                string.Empty);
 		}
 
 		/// <summary>

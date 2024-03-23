@@ -120,37 +120,37 @@
   <data name="ID_ABOUT_VIEW_INSTALLED_ITEM_TITLE" xml:space="preserve">
     <value>インストールされている製品</value>
   </data>
-  <data name="ID_FUNCTON_TEST_CONFIGURATION" xml:space="preserve">
+  <data name="ID_FUNCTION_TEST_CONFIGURATION" xml:space="preserve">
     <value>テスト入力/出力</value>
   </data>
-  <data name="ID_FUNCTON_TEST_DOUBLE_CONFIGURATION" xml:space="preserve">
+  <data name="ID_FUNCTION_TEST_DOUBLE_CONFIGURATION" xml:space="preserve">
     <value>テストダブル</value>
   </data>
-  <data name="ID_FUNCTON_TEST_HEADER_CONFIGURATION" xml:space="preserve">
+  <data name="ID_FUNCTION_TEST_HEADER_CONFIGURATION" xml:space="preserve">
     <value>ヘッダ</value>
   </data>
-  <data name="ID_FUNCTON_TEST_HEADER_CONFIGURATION_INCLUDE_DIR_TITLE" xml:space="preserve">
+  <data name="ID_FUNCTION_TEST_HEADER_CONFIGURATION_INCLUDE_DIR_TITLE" xml:space="preserve">
     <value>インクルードディレクトリ</value>
   </data>
-  <data name="ID_FUNCTON_TEST_HEADER_CONFIGURATION_STANDARD_HEADER_TITLE" xml:space="preserve">
+  <data name="ID_FUNCTION_TEST_HEADER_CONFIGURATION_STANDARD_HEADER_TITLE" xml:space="preserve">
     <value>標準ヘッダ：</value>
   </data>
-  <data name="ID_FUNCTON_TEST_HEADER_CONFIGURATION_USER_HEADER_TITLE" xml:space="preserve">
+  <data name="ID_FUNCTION_TEST_HEADER_CONFIGURATION_USER_HEADER_TITLE" xml:space="preserve">
     <value>ユーザヘッダ：</value>
   </data>
-  <data name="ID_FUNCTON_TEST_LIBRARY_CONFIGURATION" xml:space="preserve">
+  <data name="ID_FUNCTION_TEST_LIBRARY_CONFIGURATION" xml:space="preserve">
     <value>ライブラリ</value>
   </data>
-  <data name="ID_FUNCTON_TEST_LIBRARY_CONFIGURATION_LIB_DIR_TITLE" xml:space="preserve">
+  <data name="ID_FUNCTION_TEST_LIBRARY_CONFIGURATION_LIB_DIR_TITLE" xml:space="preserve">
     <value>ライブラリディレクトリ：</value>
   </data>
-  <data name="ID_FUNCTON_TEST_LIBRARY_CONFIGURATION_LIB_FILE_TITLE" xml:space="preserve">
+  <data name="ID_FUNCTION_TEST_LIBRARY_CONFIGURATION_LIB_FILE_TITLE" xml:space="preserve">
     <value>ライブラリ：</value>
   </data>
-  <data name="ID_FUNCTON_TEST_MACRO_CONFIGURATION" xml:space="preserve">
+  <data name="ID_FUNCTION_TEST_MACRO_CONFIGURATION" xml:space="preserve">
     <value>マクロ</value>
   </data>
-  <data name="ID_FUNCTON_TEST_MACRO_CONFIGURATION_MACRO_DEF_TITLE" xml:space="preserve">
+  <data name="ID_FUNCTION_TEST_MACRO_CONFIGURATION_MACRO_DEF_TITLE" xml:space="preserve">
     <value>マクロ：</value>
   </data>
   <data name="ID_MENU_ITEM_CREATE" xml:space="preserve">

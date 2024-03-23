@@ -72,99 +72,99 @@ namespace AutoTestPrep.Properties {
         /// <summary>
         ///   テスト入力/出力 に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        public static string ID_FUNCTON_TEST_CONFIGURATION {
+        public static string ID_FUNCTION_TEST_CONFIGURATION {
             get {
-                return ResourceManager.GetString("ID_FUNCTON_TEST_CONFIGURATION", resourceCulture);
+                return ResourceManager.GetString("ID_FUNCTION_TEST_CONFIGURATION", resourceCulture);
             }
         }
         
         /// <summary>
         ///   テストダブル に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        public static string ID_FUNCTON_TEST_DOUBLE_CONFIGURATION {
+        public static string ID_FUNCTION_TEST_DOUBLE_CONFIGURATION {
             get {
-                return ResourceManager.GetString("ID_FUNCTON_TEST_DOUBLE_CONFIGURATION", resourceCulture);
+                return ResourceManager.GetString("ID_FUNCTION_TEST_DOUBLE_CONFIGURATION", resourceCulture);
             }
         }
         
         /// <summary>
         ///   ヘッダ に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        public static string ID_FUNCTON_TEST_HEADER_CONFIGURATION {
+        public static string ID_FUNCTION_TEST_HEADER_CONFIGURATION {
             get {
-                return ResourceManager.GetString("ID_FUNCTON_TEST_HEADER_CONFIGURATION", resourceCulture);
+                return ResourceManager.GetString("ID_FUNCTION_TEST_HEADER_CONFIGURATION", resourceCulture);
             }
         }
         
         /// <summary>
         ///   インクルードディレクトリ に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        public static string ID_FUNCTON_TEST_HEADER_CONFIGURATION_INCLUDE_DIR_TITLE {
+        public static string ID_FUNCTION_TEST_HEADER_CONFIGURATION_INCLUDE_DIR_TITLE {
             get {
-                return ResourceManager.GetString("ID_FUNCTON_TEST_HEADER_CONFIGURATION_INCLUDE_DIR_TITLE", resourceCulture);
+                return ResourceManager.GetString("ID_FUNCTION_TEST_HEADER_CONFIGURATION_INCLUDE_DIR_TITLE", resourceCulture);
             }
         }
         
         /// <summary>
         ///   標準ヘッダ： に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        public static string ID_FUNCTON_TEST_HEADER_CONFIGURATION_STANDARD_HEADER_TITLE {
+        public static string ID_FUNCTION_TEST_HEADER_CONFIGURATION_STANDARD_HEADER_TITLE {
             get {
-                return ResourceManager.GetString("ID_FUNCTON_TEST_HEADER_CONFIGURATION_STANDARD_HEADER_TITLE", resourceCulture);
+                return ResourceManager.GetString("ID_FUNCTION_TEST_HEADER_CONFIGURATION_STANDARD_HEADER_TITLE", resourceCulture);
             }
         }
         
         /// <summary>
         ///   ユーザヘッダ： に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        public static string ID_FUNCTON_TEST_HEADER_CONFIGURATION_USER_HEADER_TITLE {
+        public static string ID_FUNCTION_TEST_HEADER_CONFIGURATION_USER_HEADER_TITLE {
             get {
-                return ResourceManager.GetString("ID_FUNCTON_TEST_HEADER_CONFIGURATION_USER_HEADER_TITLE", resourceCulture);
+                return ResourceManager.GetString("ID_FUNCTION_TEST_HEADER_CONFIGURATION_USER_HEADER_TITLE", resourceCulture);
             }
         }
         
         /// <summary>
         ///   ライブラリ に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        public static string ID_FUNCTON_TEST_LIBRARY_CONFIGURATION {
+        public static string ID_FUNCTION_TEST_LIBRARY_CONFIGURATION {
             get {
-                return ResourceManager.GetString("ID_FUNCTON_TEST_LIBRARY_CONFIGURATION", resourceCulture);
+                return ResourceManager.GetString("ID_FUNCTION_TEST_LIBRARY_CONFIGURATION", resourceCulture);
             }
         }
         
         /// <summary>
         ///   ライブラリディレクトリ： に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        public static string ID_FUNCTON_TEST_LIBRARY_CONFIGURATION_LIB_DIR_TITLE {
+        public static string ID_FUNCTION_TEST_LIBRARY_CONFIGURATION_LIB_DIR_TITLE {
             get {
-                return ResourceManager.GetString("ID_FUNCTON_TEST_LIBRARY_CONFIGURATION_LIB_DIR_TITLE", resourceCulture);
+                return ResourceManager.GetString("ID_FUNCTION_TEST_LIBRARY_CONFIGURATION_LIB_DIR_TITLE", resourceCulture);
             }
         }
         
         /// <summary>
         ///   ライブラリ： に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        public static string ID_FUNCTON_TEST_LIBRARY_CONFIGURATION_LIB_FILE_TITLE {
+        public static string ID_FUNCTION_TEST_LIBRARY_CONFIGURATION_LIB_FILE_TITLE {
             get {
-                return ResourceManager.GetString("ID_FUNCTON_TEST_LIBRARY_CONFIGURATION_LIB_FILE_TITLE", resourceCulture);
+                return ResourceManager.GetString("ID_FUNCTION_TEST_LIBRARY_CONFIGURATION_LIB_FILE_TITLE", resourceCulture);
             }
         }
         
         /// <summary>
         ///   マクロ に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        public static string ID_FUNCTON_TEST_MACRO_CONFIGURATION {
+        public static string ID_FUNCTION_TEST_MACRO_CONFIGURATION {
             get {
-                return ResourceManager.GetString("ID_FUNCTON_TEST_MACRO_CONFIGURATION", resourceCulture);
+                return ResourceManager.GetString("ID_FUNCTION_TEST_MACRO_CONFIGURATION", resourceCulture);
             }
         }
         
         /// <summary>
         ///   マクロ： に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        public static string ID_FUNCTON_TEST_MACRO_CONFIGURATION_MACRO_DEF_TITLE {
+        public static string ID_FUNCTION_TEST_MACRO_CONFIGURATION_MACRO_DEF_TITLE {
             get {
-                return ResourceManager.GetString("ID_FUNCTON_TEST_MACRO_CONFIGURATION_MACRO_DEF_TITLE", resourceCulture);
+                return ResourceManager.GetString("ID_FUNCTION_TEST_MACRO_CONFIGURATION_MACRO_DEF_TITLE", resourceCulture);
             }
         }
         
