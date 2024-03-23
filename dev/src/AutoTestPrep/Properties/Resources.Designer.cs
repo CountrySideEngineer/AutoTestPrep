@@ -19,10 +19,10 @@ namespace AutoTestPrep.Properties {
     // または Visual Studio のようなツールを使用して自動生成されました。
     // メンバーを追加または削除するには、.ResX ファイルを編集して、/str オプションと共に
     // ResGen を実行し直すか、または VS プロジェクトをビルドし直します。
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace AutoTestPrep.Properties {
         ///   このクラスで使用されているキャッシュされた ResourceManager インスタンスを返します。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AutoTestPrep.Properties.Resources", typeof(Resources).Assembly);
@@ -51,12 +51,273 @@ namespace AutoTestPrep.Properties {
         ///   現在のスレッドの CurrentUICulture プロパティをオーバーライドします。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   インストールされている製品 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ID_ABOUT_VIEW_INSTALLED_ITEM_TITLE {
+            get {
+                return ResourceManager.GetString("ID_ABOUT_VIEW_INSTALLED_ITEM_TITLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   テスト入力/出力 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ID_FUNCTON_TEST_CONFIGURATION {
+            get {
+                return ResourceManager.GetString("ID_FUNCTON_TEST_CONFIGURATION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   テストダブル に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ID_FUNCTON_TEST_DOUBLE_CONFIGURATION {
+            get {
+                return ResourceManager.GetString("ID_FUNCTON_TEST_DOUBLE_CONFIGURATION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   ヘッダ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ID_FUNCTON_TEST_HEADER_CONFIGURATION {
+            get {
+                return ResourceManager.GetString("ID_FUNCTON_TEST_HEADER_CONFIGURATION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   インクルードディレクトリ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ID_FUNCTON_TEST_HEADER_CONFIGURATION_INCLUDE_DIR_TITLE {
+            get {
+                return ResourceManager.GetString("ID_FUNCTON_TEST_HEADER_CONFIGURATION_INCLUDE_DIR_TITLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   標準ヘッダ： に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ID_FUNCTON_TEST_HEADER_CONFIGURATION_STANDARD_HEADER_TITLE {
+            get {
+                return ResourceManager.GetString("ID_FUNCTON_TEST_HEADER_CONFIGURATION_STANDARD_HEADER_TITLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   ユーザヘッダ： に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ID_FUNCTON_TEST_HEADER_CONFIGURATION_USER_HEADER_TITLE {
+            get {
+                return ResourceManager.GetString("ID_FUNCTON_TEST_HEADER_CONFIGURATION_USER_HEADER_TITLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   ライブラリ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ID_FUNCTON_TEST_LIBRARY_CONFIGURATION {
+            get {
+                return ResourceManager.GetString("ID_FUNCTON_TEST_LIBRARY_CONFIGURATION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   ライブラリディレクトリ： に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ID_FUNCTON_TEST_LIBRARY_CONFIGURATION_LIB_DIR_TITLE {
+            get {
+                return ResourceManager.GetString("ID_FUNCTON_TEST_LIBRARY_CONFIGURATION_LIB_DIR_TITLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   ライブラリ： に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ID_FUNCTON_TEST_LIBRARY_CONFIGURATION_LIB_FILE_TITLE {
+            get {
+                return ResourceManager.GetString("ID_FUNCTON_TEST_LIBRARY_CONFIGURATION_LIB_FILE_TITLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   マクロ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ID_FUNCTON_TEST_MACRO_CONFIGURATION {
+            get {
+                return ResourceManager.GetString("ID_FUNCTON_TEST_MACRO_CONFIGURATION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   マクロ： に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ID_FUNCTON_TEST_MACRO_CONFIGURATION_MACRO_DEF_TITLE {
+            get {
+                return ResourceManager.GetString("ID_FUNCTON_TEST_MACRO_CONFIGURATION_MACRO_DEF_TITLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   生成 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ID_MENU_ITEM_CREATE {
+            get {
+                return ResourceManager.GetString("ID_MENU_ITEM_CREATE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   カスタム に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ID_MENU_ITEM_CREATE_CUSTOM {
+            get {
+                return ResourceManager.GetString("ID_MENU_ITEM_CREATE_CUSTOM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   カスタムツール管理 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ID_MENU_ITEM_CREATE_MANAGE_CUSTOM {
+            get {
+                return ResourceManager.GetString("ID_MENU_ITEM_CREATE_MANAGE_CUSTOM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   ドライバ・テストダブル に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ID_MENU_ITEM_CREATE_TEST_DRIVER_AND_TEST_DOUBLE {
+            get {
+                return ResourceManager.GetString("ID_MENU_ITEM_CREATE_TEST_DRIVER_AND_TEST_DOUBLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   ファイル に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ID_MENU_ITEM_FILE {
+            get {
+                return ResourceManager.GetString("ID_MENU_ITEM_FILE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   終了 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ID_MENU_ITEM_FILE_EXIT {
+            get {
+                return ResourceManager.GetString("ID_MENU_ITEM_FILE_EXIT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   新規作成 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ID_MENU_ITEM_FILE_NEW {
+            get {
+                return ResourceManager.GetString("ID_MENU_ITEM_FILE_NEW", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   開く に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ID_MENU_ITEM_FILE_OPEN {
+            get {
+                return ResourceManager.GetString("ID_MENU_ITEM_FILE_OPEN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   上書き保存 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ID_MENU_ITEM_FILE_SAVE {
+            get {
+                return ResourceManager.GetString("ID_MENU_ITEM_FILE_SAVE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   名前を付けて保存 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ID_MENU_ITEM_FILE_SAVE_AS {
+            get {
+                return ResourceManager.GetString("ID_MENU_ITEM_FILE_SAVE_AS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   ヘルプ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ID_MENU_ITEM_HELP {
+            get {
+                return ResourceManager.GetString("ID_MENU_ITEM_HELP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   入力(テスト定義ファイル)： に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ID_TEST_CONFIGURATION_INPUT_TITLE {
+            get {
+                return ResourceManager.GetString("ID_TEST_CONFIGURATION_INPUT_TITLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   出力ファイル： に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ID_TEST_CONFIGURATION_OUTPUT_TITLE {
+            get {
+                return ResourceManager.GetString("ID_TEST_CONFIGURATION_OUTPUT_TITLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   バッファサイズ1： に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ID_TEST_DOUBLE_CONFIGURATION_BUFF_SIZE_1_TITLE {
+            get {
+                return ResourceManager.GetString("ID_TEST_DOUBLE_CONFIGURATION_BUFF_SIZE_1_TITLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   バッファサイズ2： に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ID_TEST_DOUBLE_CONFIGURATION_BUFF_SIZE_2_TITLE {
+            get {
+                return ResourceManager.GetString("ID_TEST_DOUBLE_CONFIGURATION_BUFF_SIZE_2_TITLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   のバージョン情報 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ID_WINDOW_TITLE_ABOUT_APPLICATION {
+            get {
+                return ResourceManager.GetString("ID_WINDOW_TITLE_ABOUT_APPLICATION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   プラグインの登録 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ID_WINDOW_TITLE_REGIST_PLUGIN {
+            get {
+                return ResourceManager.GetString("ID_WINDOW_TITLE_REGIST_PLUGIN", resourceCulture);
             }
         }
     }

@@ -10,7 +10,7 @@
         d:DesignHeight="248"
         WindowStartupLocation="CenterOwner"
         ResizeMode="NoResize"
-        Title="プラグインの登録" 
+        Title="{x:Static properties:Resources.ID_WINDOW_TITLE_REGIST_PLUGIN}" 
         Height="160" 
         Width="210"
         MinWidth="500"

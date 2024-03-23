@@ -46,7 +46,7 @@
     
     mimetype: application/x-microsoft.net.object.binary.base64
     value   : The object must be serialized with 
-            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
     
     mimetype: application/x-microsoft.net.object.soap.base64
@@ -60,6 +60,7 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
@@ -68,9 +69,10 @@
               <xsd:sequence>
                 <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="name" use="required" type="xsd:string" />
               <xsd:attribute name="type" type="xsd:string" />
               <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
@@ -85,9 +87,10 @@
                 <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
                 <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
               <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
               <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
@@ -109,9 +112,96 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ID_ABOUT_VIEW_INSTALLED_ITEM_TITLE" xml:space="preserve">
+    <value>インストールされている製品</value>
+  </data>
+  <data name="ID_FUNCTON_TEST_CONFIGURATION" xml:space="preserve">
+    <value>テスト入力/出力</value>
+  </data>
+  <data name="ID_FUNCTON_TEST_DOUBLE_CONFIGURATION" xml:space="preserve">
+    <value>テストダブル</value>
+  </data>
+  <data name="ID_FUNCTON_TEST_HEADER_CONFIGURATION" xml:space="preserve">
+    <value>ヘッダ</value>
+  </data>
+  <data name="ID_FUNCTON_TEST_HEADER_CONFIGURATION_INCLUDE_DIR_TITLE" xml:space="preserve">
+    <value>インクルードディレクトリ</value>
+  </data>
+  <data name="ID_FUNCTON_TEST_HEADER_CONFIGURATION_STANDARD_HEADER_TITLE" xml:space="preserve">
+    <value>標準ヘッダ：</value>
+  </data>
+  <data name="ID_FUNCTON_TEST_HEADER_CONFIGURATION_USER_HEADER_TITLE" xml:space="preserve">
+    <value>ユーザヘッダ：</value>
+  </data>
+  <data name="ID_FUNCTON_TEST_LIBRARY_CONFIGURATION" xml:space="preserve">
+    <value>ライブラリ</value>
+  </data>
+  <data name="ID_FUNCTON_TEST_LIBRARY_CONFIGURATION_LIB_DIR_TITLE" xml:space="preserve">
+    <value>ライブラリディレクトリ：</value>
+  </data>
+  <data name="ID_FUNCTON_TEST_LIBRARY_CONFIGURATION_LIB_FILE_TITLE" xml:space="preserve">
+    <value>ライブラリ：</value>
+  </data>
+  <data name="ID_FUNCTON_TEST_MACRO_CONFIGURATION" xml:space="preserve">
+    <value>マクロ</value>
+  </data>
+  <data name="ID_FUNCTON_TEST_MACRO_CONFIGURATION_MACRO_DEF_TITLE" xml:space="preserve">
+    <value>マクロ：</value>
+  </data>
+  <data name="ID_MENU_ITEM_CREATE" xml:space="preserve">
+    <value>生成</value>
+  </data>
+  <data name="ID_MENU_ITEM_CREATE_CUSTOM" xml:space="preserve">
+    <value>カスタム</value>
+  </data>
+  <data name="ID_MENU_ITEM_CREATE_MANAGE_CUSTOM" xml:space="preserve">
+    <value>カスタムツール管理</value>
+  </data>
+  <data name="ID_MENU_ITEM_CREATE_TEST_DRIVER_AND_TEST_DOUBLE" xml:space="preserve">
+    <value>ドライバ・テストダブル</value>
+  </data>
+  <data name="ID_MENU_ITEM_FILE" xml:space="preserve">
+    <value>ファイル</value>
+  </data>
+  <data name="ID_MENU_ITEM_FILE_EXIT" xml:space="preserve">
+    <value>終了</value>
+  </data>
+  <data name="ID_MENU_ITEM_FILE_NEW" xml:space="preserve">
+    <value>新規作成</value>
+  </data>
+  <data name="ID_MENU_ITEM_FILE_OPEN" xml:space="preserve">
+    <value>開く</value>
+  </data>
+  <data name="ID_MENU_ITEM_FILE_SAVE" xml:space="preserve">
+    <value>上書き保存</value>
+  </data>
+  <data name="ID_MENU_ITEM_FILE_SAVE_AS" xml:space="preserve">
+    <value>名前を付けて保存</value>
+  </data>
+  <data name="ID_MENU_ITEM_HELP" xml:space="preserve">
+    <value>ヘルプ</value>
+  </data>
+  <data name="ID_TEST_CONFIGURATION_INPUT_TITLE" xml:space="preserve">
+    <value>入力(テスト定義ファイル)：</value>
+  </data>
+  <data name="ID_TEST_CONFIGURATION_OUTPUT_TITLE" xml:space="preserve">
+    <value>出力ファイル：</value>
+  </data>
+  <data name="ID_TEST_DOUBLE_CONFIGURATION_BUFF_SIZE_1_TITLE" xml:space="preserve">
+    <value>バッファサイズ1：</value>
+  </data>
+  <data name="ID_TEST_DOUBLE_CONFIGURATION_BUFF_SIZE_2_TITLE" xml:space="preserve">
+    <value>バッファサイズ2：</value>
+  </data>
+  <data name="ID_WINDOW_TITLE_ABOUT_APPLICATION" xml:space="preserve">
+    <value>のバージョン情報</value>
+  </data>
+  <data name="ID_WINDOW_TITLE_REGIST_PLUGIN" xml:space="preserve">
+    <value>プラグインの登録</value>
+  </data>
 </root>

@@ -51,7 +51,7 @@
             <TextBlock Grid.Row="0"
                        Style="{StaticResource ResourceKey=TextBlock_About}"
                        Margin="8, 8, 8, 4"
-                       Text="{Binding Path=InstalledTitle}"
+                       Text="{x:Static properties:Resources.ID_ABOUT_VIEW_INSTALLED_ITEM_TITLE}"
                 />
             <ListBox x:Name="UsingAssembly"
                      Grid.Row="1"
