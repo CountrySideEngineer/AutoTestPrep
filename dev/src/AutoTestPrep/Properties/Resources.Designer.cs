@@ -70,6 +70,15 @@ namespace AutoTestPrep.Properties {
         }
         
         /// <summary>
+        ///   閉じる に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ID_COMMON_TITLE_CLOSE {
+            get {
+                return ResourceManager.GetString("ID_COMMON_TITLE_CLOSE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   テスト入力/出力 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string ID_FUNCTION_TEST_CONFIGURATION {

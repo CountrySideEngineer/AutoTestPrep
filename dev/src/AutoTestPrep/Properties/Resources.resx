@@ -120,6 +120,9 @@
   <data name="ID_ABOUT_VIEW_INSTALLED_ITEM_TITLE" xml:space="preserve">
     <value>インストールされている製品</value>
   </data>
+  <data name="ID_COMMON_TITLE_CLOSE" xml:space="preserve">
+    <value>閉じる</value>
+  </data>
   <data name="ID_FUNCTION_TEST_CONFIGURATION" xml:space="preserve">
     <value>テスト入力/出力</value>
   </data>
