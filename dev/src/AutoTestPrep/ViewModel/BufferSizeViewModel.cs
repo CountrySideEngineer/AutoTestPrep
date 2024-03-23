@@ -27,14 +27,18 @@ namespace AutoTestPrep.ViewModel
 
 		public BufferSizeViewModel(int index) : base(index)
 		{
-			this.BufferSize1VM = new SizeInputViewModel("バッファサイズ1", 100);
-			this.BufferSize2VM = new SizeInputViewModel("バッファサイズ2", 100);
-		}
+			this.BufferSize1VM = new SizeInputViewModel(
+                Properties.Resources.ID_TEST_DOUBLE_CONFIGURATION_BUFF_SIZE_1_TITLE,
+                100);
+            this.BufferSize2VM = new SizeInputViewModel(
+                Properties.Resources.ID_TEST_DOUBLE_CONFIGURATION_BUFF_SIZE_2_TITLE,
+                100);
+        }
 
-		/// <summary>
-		/// Propety of view model of buffer size 1.
-		/// </summary>
-		public SizeInputViewModel BufferSize1VM
+        /// <summary>
+        /// Propety of view model of buffer size 1.
+        /// </summary>
+        public SizeInputViewModel BufferSize1VM
 		{
 			get
 			{
