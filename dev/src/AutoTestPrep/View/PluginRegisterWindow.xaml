@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AutoTestPrep.View"
         xmlns:plgin="clr-namespace:PluginRegister;assembly=PluginRegister"
+        xmlns:properties="clr-namespace:AutoTestPrep.Properties"
         mc:Ignorable="d"
         d:DesignHeight="248"
         WindowStartupLocation="CenterOwner"

@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:AutoTestPrep.View"
         xmlns:cslocal="clr-namespace:CSEngineer.View"
         xmlns:vm="clr-namespace:AutoTestPrep.ViewModel"
+        xmlns:properties="clr-namespace:AutoTestPrep.Properties"
         mc:Ignorable="d"
         WindowStartupLocation="CenterOwner"
         WindowStyle="ToolWindow" 
