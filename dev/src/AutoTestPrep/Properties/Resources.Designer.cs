@@ -19,7 +19,7 @@ namespace AutoTestPrep.Properties {
     // または Visual Studio のようなツールを使用して自動生成されました。
     // メンバーを追加または削除するには、.ResX ファイルを編集して、/str オプションと共に
     // ResGen を実行し直すか、または VS プロジェクトをビルドし直します。
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Resources {
@@ -97,11 +97,11 @@ namespace AutoTestPrep.Properties {
         }
         
         /// <summary>
-        ///   ヘッダ に類似しているローカライズされた文字列を検索します。
+        ///   ヘッダ(ドライバ) に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        public static string ID_FUNCTION_TEST_HEADER_CONFIGURATION {
+        public static string ID_FUNCTION_TEST_DRIVER_HEADER_CONFIGURATION {
             get {
-                return ResourceManager.GetString("ID_FUNCTION_TEST_HEADER_CONFIGURATION", resourceCulture);
+                return ResourceManager.GetString("ID_FUNCTION_TEST_DRIVER_HEADER_CONFIGURATION", resourceCulture);
             }
         }
         
@@ -174,6 +174,15 @@ namespace AutoTestPrep.Properties {
         public static string ID_FUNCTION_TEST_MACRO_CONFIGURATION_MACRO_DEF_TITLE {
             get {
                 return ResourceManager.GetString("ID_FUNCTION_TEST_MACRO_CONFIGURATION_MACRO_DEF_TITLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   ヘッダ(テストダブル) に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ID_FUNCTION_TEST_TEST_DOUBLE_HEADER_CONFIGURATION {
+            get {
+                return ResourceManager.GetString("ID_FUNCTION_TEST_TEST_DOUBLE_HEADER_CONFIGURATION", resourceCulture);
             }
         }
         

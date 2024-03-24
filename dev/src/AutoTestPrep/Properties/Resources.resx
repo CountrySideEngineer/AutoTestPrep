@@ -129,8 +129,8 @@
   <data name="ID_FUNCTION_TEST_DOUBLE_CONFIGURATION" xml:space="preserve">
     <value>テストダブル</value>
   </data>
-  <data name="ID_FUNCTION_TEST_HEADER_CONFIGURATION" xml:space="preserve">
-    <value>ヘッダ</value>
+  <data name="ID_FUNCTION_TEST_DRIVER_HEADER_CONFIGURATION" xml:space="preserve">
+    <value>ヘッダ(ドライバ)</value>
   </data>
   <data name="ID_FUNCTION_TEST_HEADER_CONFIGURATION_INCLUDE_DIR_TITLE" xml:space="preserve">
     <value>インクルードディレクトリ</value>
@@ -155,6 +155,9 @@
   </data>
   <data name="ID_FUNCTION_TEST_MACRO_CONFIGURATION_MACRO_DEF_TITLE" xml:space="preserve">
     <value>マクロ：</value>
+  </data>
+  <data name="ID_FUNCTION_TEST_TEST_DOUBLE_HEADER_CONFIGURATION" xml:space="preserve">
+    <value>ヘッダ(テストダブル)</value>
   </data>
   <data name="ID_MENU_ITEM_CREATE" xml:space="preserve">
     <value>生成</value>
