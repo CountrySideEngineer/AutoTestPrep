@@ -46,42 +46,8 @@ namespace PluginRegister.ViewModel
 		/// </summary>
 		public PluginRegisterViewModel()
 		{
-			this.PluginNameInputAreaTitle = "名前：";
-			this.PluginPathInputAreaTitle = "パス：";
 			this.PluginName = string.Empty;
 			this.PluginPath = string.Empty;
-		}
-
-		/// <summary>
-		/// Plugin name input area title.
-		/// </summary>
-		public string PluginNameInputAreaTitle
-		{
-			get
-			{
-				return this._pluginNameInputAreaTitle;
-			}
-			set
-			{
-				this._pluginNameInputAreaTitle = value;
-				this.RaisePropertyChanged(nameof(PluginNameInputAreaTitle));
-			}
-		}
-
-		/// <summary>
-		/// Plugin paht input area title.
-		/// </summary>
-		public string PluginPathInputAreaTitle
-		{
-			get
-			{
-				return this._pluginPathInputAreaTitle;
-			}
-			set
-			{
-				this._pluginPathInputAreaTitle = value;
-				this.RaisePropertyChanged(nameof(PluginPathInputAreaTitle));
-			}
 		}
 
 		/// <summary>

@@ -1,4 +1,5 @@
 ﻿using AutoTestPrep.Model.InputInfos;
+using AutoTestPrep.Properties;
 using CSEngineer.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -31,8 +32,12 @@ namespace AutoTestPrep.ViewModel
 
 		public TestInformationInputViewModel(int index) : base(index)
 		{
-			this.InputiFilePathVM = new InformationInputViewModel("入力(テスト定義ファイル)：", string.Empty);
-			this.OutputPathVM = new InformationInputViewModel("出力ファイル：", string.Empty);
+			this.InputiFilePathVM = new InformationInputViewModel(
+                Resources.ID_TEST_CONFIGURATION_INPUT_TITLE,
+                string.Empty);
+			this.OutputPathVM = new InformationInputViewModel(
+                Resources.ID_TEST_CONFIGURATION_OUTPUT_TITLE,
+                string.Empty);
 
 			this.InputiFilePathVM.PropertyChanged += this.UserInputPropertyChanged;
 		}
