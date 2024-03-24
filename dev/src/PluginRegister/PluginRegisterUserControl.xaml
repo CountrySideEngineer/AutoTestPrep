@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PluginRegister"
              xmlns:vm="clr-namespace:PluginRegister.ViewModel"
+             xmlns:properties="clr-namespace:PluginRegister.Properties"
              mc:Ignorable="d" 
              d:DesignHeight="132" d:DesignWidth="400"
              MinHeight="124"
@@ -38,7 +39,7 @@
                    Grid.Column="0"
                    Style="{DynamicResource ResourceKey=TextBlock_InputItemTitle}"
                    TextAlignment="Right"
-                   Text="{Binding Path=PluginNameInputAreaTitle}"
+                   Text="{x:Static properties:Resources.ID_PLUGIN_REGISTER_PLUGIN_NAME_TITLE}"
                    />
         <TextBox x:Name="PluginNameInput"
                  Grid.Row="0"
@@ -52,7 +53,7 @@
                    Grid.Column="0"
                    Style="{DynamicResource ResourceKey=TextBlock_InputItemTitle}"
                    TextAlignment="Right"
-                   Text="{Binding Path=PluginPathInputAreaTitle}"
+                   Text="{x:Static properties:Resources.ID_PLUGIN_REGISTER_PLUGIN_FILE_PATH_TITLE}"
                    />
         <TextBox x:Name="PluginPathInput"
                  Grid.Row="1"
@@ -75,7 +76,7 @@
                     Grid.Column="1"
                     Style="{DynamicResource ResourceKey=Button_LineRightSide}"
                     Command="{Binding Path=RegistPluginCommand}"
-                    Content="登録"
+                    Content="{x:Static properties:Resources.ID_PLUGIN_REGISTER_REGIST_PLUGIN_TITLE}"
                     />
         </Grid>
     </Grid>

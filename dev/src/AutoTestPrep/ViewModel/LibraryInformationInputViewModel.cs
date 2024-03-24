@@ -1,4 +1,5 @@
 ﻿using AutoTestPrep.Model.InputInfos;
+using AutoTestPrep.Properties;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,8 +34,12 @@ namespace AutoTestPrep.ViewModel
 		/// <param name="index">Index in list.</param>
 		public LibraryInformationInputViewModel(int index) : base(index)
 		{
-			this.LibraryInputVM = new MultiLineInputViewModel("ライブラリ：", string.Empty);
-			this.LibraryDirectoryVM = new MultiLineInputViewModel("ライブラリディレクトリ：", string.Empty);
+            this.LibraryInputVM = new MultiLineInputViewModel(
+                Resources.ID_FUNCTION_TEST_LIBRARY_CONFIGURATION_LIB_FILE_TITLE,
+                string.Empty);
+			this.LibraryDirectoryVM = new MultiLineInputViewModel(
+                Resources.ID_FUNCTION_TEST_LIBRARY_CONFIGURATION_LIB_DIR_TITLE,
+                string.Empty);
 		}
 
 		/// <summary>

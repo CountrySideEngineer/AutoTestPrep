@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:AutoTestPrep.View"
         xmlns:cslocal="clr-namespace:CSEngineer.View"
         xmlns:vm="clr-namespace:AutoTestPrep.ViewModel"
+        xmlns:properties="clr-namespace:AutoTestPrep.Properties"
         mc:Ignorable="d"
         WindowStartupLocation="CenterOwner"
         WindowStyle="ToolWindow" 
@@ -36,7 +37,7 @@
         <cslocal:AboutView Grid.ColumnSpan="2"/>
         <Button x:Name="CloseWindow"
                 Grid.Row="1"
-                Content="閉じる"
+                Content="{x:Static properties:Resources.ID_COMMON_TITLE_CLOSE}"
                 Margin="0,8,8,8"
                 VerticalAlignment="Stretch"
                 HorizontalAlignment="Right"

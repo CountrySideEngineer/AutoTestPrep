@@ -1,4 +1,5 @@
 ﻿using AutoTestPrep.Model.InputInfos;
+using AutoTestPrep.Properties;
 using CSEngineer.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -35,15 +36,21 @@ namespace AutoTestPrep.ViewModel
 
 		public HeaderInformationInputViewModel(int index) : base(index)
 		{
-			this.StandartHeaderVM = new MultiLineInputViewModel("標準ヘッダ：", string.Empty);
-			this.UserHeaderVM = new MultiLineInputViewModel("ユーザヘッダ：", string.Empty);
-			this.IncludeDirectoryVM = new MultiLineInputViewModel("インクルードディレクトリ：", string.Empty);
-		}
+			this.StandartHeaderVM = new MultiLineInputViewModel(
+                Resources.ID_FUNCTION_TEST_HEADER_CONFIGURATION_STANDARD_HEADER_TITLE, 
+                string.Empty);
+			this.UserHeaderVM = new MultiLineInputViewModel(
+                Resources.ID_FUNCTION_TEST_HEADER_CONFIGURATION_USER_HEADER_TITLE,
+                string.Empty);
+			this.IncludeDirectoryVM = new MultiLineInputViewModel(
+                Resources.ID_FUNCTION_TEST_HEADER_CONFIGURATION_INCLUDE_DIR_TITLE,
+                string.Empty);
+        }
 
-		/// <summary>
-		/// Property of standar header view model.
-		/// </summary>
-		public MultiLineInputViewModel StandartHeaderVM
+        /// <summary>
+        /// Property of standar header view model.
+        /// </summary>
+        public MultiLineInputViewModel StandartHeaderVM
 		{
 			get
 			{
