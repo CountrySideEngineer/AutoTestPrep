@@ -10,7 +10,8 @@ using System.Collections.ObjectModel;
 namespace AutoTestPrep.ViewModel
 {
 	using AutoTestPrep.Model.Converter;
-	using CSEngineer.Logger;
+    using AutoTestPrep.Properties;
+    using CSEngineer.Logger;
 	using CSEngineer.Logger.Interface;
 	using Plugin;
 	using StubDriverPlugin.Data;
@@ -110,12 +111,12 @@ namespace AutoTestPrep.ViewModel
 		{
 			this.TestConfigurationItems = new ObservableCollection<string>
 			{
-				"テスト情報",
-				"スタブ情報",
-				"ヘッダ情報(ドライバ)",
-				"ヘッダ情報(スタブ)",
-				"ライブラリ情報",
-				"マクロ情報",
+                Resources.ID_FUNCTION_TEST_CONFIGURATION,
+                Resources.ID_FUNCTION_TEST_DOUBLE_CONFIGURATION,
+                Resources.ID_FUNCTION_TEST_DRIVER_HEADER_CONFIGURATION,
+                Resources.ID_FUNCTION_TEST_TEST_DOUBLE_HEADER_CONFIGURATION,
+                Resources.ID_FUNCTION_TEST_LIBRARY_CONFIGURATION,
+                Resources.ID_FUNCTION_TEST_MACRO_CONFIGURATION
 			};
 			this.CurrentFilePath = string.Empty;
 			this.CurrentTitle = "AutoTestPrep";

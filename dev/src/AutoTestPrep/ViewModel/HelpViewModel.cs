@@ -7,6 +7,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace AutoTestPrep.ViewModel
 {
@@ -38,7 +39,8 @@ namespace AutoTestPrep.ViewModel
 			{
 				var assmebly = Assembly.GetExecutingAssembly();
 				var fileVersionInfo = FileVersionInfo.GetVersionInfo(assmebly.Location);
-				return $"{fileVersionInfo.FileDescription}のバージョン情報";
+                string title = $"{fileVersionInfo.FileDescription}" + Properties.Resources.ID_WINDOW_TITLE_ABOUT_APPLICATION;
+                return title;
 			}
 		}
 
