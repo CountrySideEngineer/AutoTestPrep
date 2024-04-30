@@ -17,6 +17,12 @@
     <Folder Include="Properties\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="PathCommandLibrary">
+      <HintPath>..\..\bin\PathCommandLibrary.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Command="xcopy $(OutDir)*.dll $(SolutionDir)..\bin\ /E /C /I /Y" />
   </Target>
