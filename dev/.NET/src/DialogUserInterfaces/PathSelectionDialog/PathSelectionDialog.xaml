@@ -4,9 +4,74 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PathSelectionDialog"
+        xmlns:vm="clr-namespace:PathSelectionDialog.ViewModel"
         mc:Ignorable="d"
-        Title="PathSelectionDialog" Height="450" Width="800">
+        Title="{Binding Title}" 
+        Height="96" 
+        Width="800"
+        >
+    <Window.DataContext>
+        <vm:PathSelectionDialogViewModel />
+    </Window.DataContext>
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="96"/>
+            <ColumnDefinition Width="96"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="0"
+              Grid.Column="0"
+              Grid.ColumnSpan="3"
+              >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBox Name="UserInputText"
+                     Grid.Column="0"
+                     HorizontalContentAlignment="Left"
+                     VerticalContentAlignment="Center"
+                     VerticalAlignment="Stretch"
+                     Margin="8, 8, 0, 8"
+                     BorderBrush="DarkGray"
+                     BorderThickness="1" TextWrapping="Wrap"
+                     />
+            <Button Name="UseClickButton"
+                    Grid.Column="1"
+                    Content="..."
+                    HorizontalAlignment="Stretch"
+                    Margin="0, 8, 8, 8"
+                    Padding="8, 0, 8, 0"
+                    />
+        </Grid>
+        <Button Name="OKButton"
+                Grid.Row="2"
+                Grid.Column="1"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Stretch"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Content="{Binding OkTitle}"
+                Margin="8, 4, 8, 4"
+                Padding="4"
+                />
+        <Button Name="CancelButton"
+                Grid.Row="2"
+                Grid.Column="2"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Stretch"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Content="{Binding CancelTitle}"
+                Margin="8, 4, 8, 4"
+                Padding="4"
+                />
     </Grid>
 </Window>
