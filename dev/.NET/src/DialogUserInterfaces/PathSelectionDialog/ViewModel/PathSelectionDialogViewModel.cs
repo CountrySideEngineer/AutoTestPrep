@@ -50,6 +50,24 @@ namespace PathSelectionDialog.ViewModel
 		}
 
 		/// <summary>
+		/// Input path field.
+		/// </summary>
+		protected string _inputPath = string.Empty;
+
+		/// <summary>
+		/// Input path property.
+		/// </summary>
+		public string InputPath
+		{
+			get => _inputPath;
+			set
+			{
+				_inputPath = value;
+				RaisePropertyChange();
+			}
+		}
+
+		/// <summary>
 		/// Default constructor.
 		/// </summary>
 		public PathSelectionDialogViewModel() : base() { }

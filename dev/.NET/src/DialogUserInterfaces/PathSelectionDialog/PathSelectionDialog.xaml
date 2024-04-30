@@ -41,7 +41,9 @@
                      VerticalAlignment="Stretch"
                      Margin="8, 8, 0, 8"
                      BorderBrush="DarkGray"
-                     BorderThickness="1" TextWrapping="Wrap"
+                     BorderThickness="1" 
+                     TextWrapping="Wrap"
+                     Text="{Binding InputPath}"
                      />
             <Button Name="UseClickButton"
                     Grid.Column="1"
