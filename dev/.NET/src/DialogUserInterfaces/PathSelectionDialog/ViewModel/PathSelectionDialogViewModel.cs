@@ -1,15 +1,49 @@
-﻿using System;
+﻿using PathCommandLibrary;
+using PathSelectionDialog.Command;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace PathSelectionDialog.ViewModel
 {
 	public class PathSelectionDialogViewModel : ViewModelBase
 	{
+		/// <summary>
+		/// Command to select path.
+		/// </summary>
+		protected IPathSelectCommand? PathSelect { get; set; } = null;
+
+		/// <summary>
+		/// Path select command.
+		/// </summary>
+		protected DelegateCommand? _pathSelectCommand = null;
+		public DelegateCommand PathSelectCommand
+		{
+			get
+			{
+				if (null == _pathSelectCommand)
+				{
+					_pathSelectCommand = new DelegateCommand(() =>
+					{
+						try
+						{
+							InputPath = PathSelect?.Select() ?? string.Empty;
+						}
+						catch (Exception)
+						{
+							// This path will be reached when canceled.
+						}
+					});
+				}
+				return _pathSelectCommand;
+			}
+		}
+
 		/// <summary>
 		/// Field of window, dialog title.
 		/// </summary>
@@ -70,6 +104,9 @@ namespace PathSelectionDialog.ViewModel
 		/// <summary>
 		/// Default constructor.
 		/// </summary>
-		public PathSelectionDialogViewModel() : base() { }
+		public PathSelectionDialogViewModel() : base()
+		{
+			PathSelect = new FolderPathSelectCommand();
+		}
 	}
 }
