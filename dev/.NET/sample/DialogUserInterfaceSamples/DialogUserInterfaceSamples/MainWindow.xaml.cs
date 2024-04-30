@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using PathSelectionDialog.ViewModel;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -25,6 +26,11 @@ namespace DialogUserInterfaceSamples
 		{
 			var dialog = new PathSelectionDialog.PathSelectionDialog();
 			dialog.ShowDialog();
+
+			var context = dialog.DataContext;
+			var viewModel = (PathSelectionDialogViewModel)context;
+
+			UserInputText.Text = viewModel.InputPath;
 		}
 	}
 }

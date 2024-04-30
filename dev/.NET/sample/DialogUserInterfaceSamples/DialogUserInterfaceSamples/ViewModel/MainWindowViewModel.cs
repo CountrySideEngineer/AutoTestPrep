@@ -1,10 +1,12 @@
 ﻿using DialogUserInterfaceSamples.Command;
+using PathSelectionDialog.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Dynamic;
 using System.IO.Packaging;
 using System.Linq;
+using System.Security.RightsManagement;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -30,6 +32,17 @@ namespace DialogUserInterfaceSamples.ViewModel
 			get => _commandTitle;
 		}
 
+		protected string _userInputText = string.Empty;
+		public string UserInputText
+		{
+			get => _userInputText;
+			set
+			{
+				_userInputText = value;
+				RaisePropertyChanged();
+			}
+		}
+
 		/// <summary>
 		/// Default constructor.
 		/// </summary>
@@ -51,7 +64,12 @@ namespace DialogUserInterfaceSamples.ViewModel
 		public void ShowDialogCommandExecute()
 		{
 			var dialog = new PathSelectionDialog.PathSelectionDialog();
-			dialog.Show();
+			dialog.ShowDialog();
+
+			var context = dialog.DataContext;
+			var viewModel = (PathSelectionDialogViewModel)context;
+
+			UserInputText = viewModel.InputPath;
 		}
 	}
 }
