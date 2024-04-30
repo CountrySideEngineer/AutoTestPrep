@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <Reference Include="PathSelectionDialog">
-      <HintPath>..\..\..\src\bin\Debug\net8.0-windows\PathSelectionDialog.dll</HintPath>
+      <HintPath>..\..\..\src\bin\PathSelectionDialog.dll</HintPath>
     </Reference>
   </ItemGroup>
 
