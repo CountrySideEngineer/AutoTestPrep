@@ -5,7 +5,6 @@
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
     <ImplicitUsings>enable</ImplicitUsings>
-    <BaseOutputPath>..\..\bin</BaseOutputPath>
     <GenerateDocumentationFile>False</GenerateDocumentationFile>
     <ProduceReferenceAssembly>True</ProduceReferenceAssembly>
     <AssemblyVersion>0.1.0.0</AssemblyVersion>
@@ -17,5 +16,9 @@
   <ItemGroup>
     <Folder Include="Properties\" />
   </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="xcopy $(OutDir)*.dll $(SolutionDir)..\bin\ /E /C /I /Y" />
+  </Target>
 
 </Project>
