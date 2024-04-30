@@ -51,6 +51,7 @@
                     HorizontalAlignment="Stretch"
                     Margin="0, 8, 8, 8"
                     Padding="8, 0, 8, 0"
+                    Command="{Binding PathSelectCommand}"
                     />
         </Grid>
         <Button Name="OKButton"
