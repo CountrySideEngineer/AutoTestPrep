@@ -7,7 +7,7 @@
         xmlns:vm="clr-namespace:PathSelectionDialog.ViewModel"
         mc:Ignorable="d"
         Title="{Binding Title}" 
-        Height="96" 
+        Height="124" 
         Width="800"
         >
     <Window.DataContext>
@@ -59,7 +59,7 @@
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
                 Content="{Binding OkTitle}"
-                Margin="8, 4, 8, 4"
+                Margin="8, 8, 4, 8"
                 Padding="4"
                 />
         <Button Name="CancelButton"
@@ -70,7 +70,7 @@
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
                 Content="{Binding CancelTitle}"
-                Margin="8, 4, 8, 4"
+                Margin="4, 8, 8, 8"
                 Padding="4"
                 />
     </Grid>
