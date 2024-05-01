@@ -14,7 +14,7 @@ namespace PathCommandLibrary
 		/// Select a folder by folder select dialog.
 		/// </summary>
 		/// <param name="initPath">Default folder dialog.</param>
-		/// <returns>Path to folder selected by user.</returns>
+		/// <returns>Selected folder path.</returns>
 		/// <exception cref="InvalidOperationException">Operation canceled.</exception>
 		public string Select(string initPath = "")
 		{
