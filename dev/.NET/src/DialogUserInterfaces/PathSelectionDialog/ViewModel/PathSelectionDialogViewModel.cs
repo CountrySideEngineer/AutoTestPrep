@@ -104,10 +104,7 @@ namespace PathSelectionDialog.ViewModel
 		/// <summary>
 		/// Default constructor.
 		/// </summary>
-		public PathSelectionDialogViewModel() : base()
-		{
-			PathSelect = new FolderPathSelectCommand();
-		}
+		public PathSelectionDialogViewModel() : base() { }
 
 		/// <summary>
 		/// User has been selected a path or not.

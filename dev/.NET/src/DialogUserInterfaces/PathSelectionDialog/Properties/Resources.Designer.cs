@@ -70,6 +70,15 @@ namespace PathSelectionDialog.Properties {
         }
         
         /// <summary>
+        ///   ファイル選択 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string IDS_FILE_SELECT_WINDOW_TITLE {
+            get {
+                return ResourceManager.GetString("IDS_FILE_SELECT_WINDOW_TITLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   フォルダ選択 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string IDS_FOLDER_SELECT_WINDOW_TITLE {

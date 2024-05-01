@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -20,9 +21,33 @@ namespace PathSelectionDialog
 	/// </summary>
 	public partial class PathSelectionDialog : Window
 	{
+		/// <summary>
+		/// Default constructor.
+		/// </summary>
 		public PathSelectionDialog()
 		{
 			InitializeComponent();
+
+			DataContext = new FolderSelectionDialogViewModel();
+		}
+
+		public PathSelectionDialog(int mode)
+		{
+			InitializeComponent();
+
+			switch (mode)
+			{
+				case Mode.DIALOG_FOLDER_SELECT:
+					DataContext = new FolderSelectionDialogViewModel();
+					break;
+
+				case Mode.DIALOG_FILE_SELECT:
+					DataContext = new FileSelectDialogViewModel();
+					break;
+
+				default:
+					throw new ArgumentException();
+			}
 		}
 
 		/// <summary>
