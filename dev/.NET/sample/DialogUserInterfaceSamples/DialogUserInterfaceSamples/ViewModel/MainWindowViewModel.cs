@@ -64,12 +64,11 @@ namespace DialogUserInterfaceSamples.ViewModel
 		public void ShowDialogCommandExecute()
 		{
 			var dialog = new PathSelectionDialog.PathSelectionDialog();
-			dialog.ShowDialog();
 
-			var context = dialog.DataContext;
-			var viewModel = (PathSelectionDialogViewModel)context;
-
-			UserInputText = viewModel.InputPath;
+			if (true == dialog.ShowDialog())
+			{
+				UserInputText = dialog.Path;
+			}
 		}
 	}
 }
