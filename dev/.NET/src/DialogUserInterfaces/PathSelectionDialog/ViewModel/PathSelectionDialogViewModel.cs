@@ -108,5 +108,23 @@ namespace PathSelectionDialog.ViewModel
 		{
 			PathSelect = new FolderPathSelectCommand();
 		}
+
+		/// <summary>
+		/// User has been selected a path or not.
+		/// </summary>
+		public bool IsSelected
+		{
+			get
+			{
+				if ((string.IsNullOrEmpty(InputPath)) || (string.IsNullOrWhiteSpace(InputPath)))
+				{
+					return false;
+				}
+				else
+				{
+					return true;
+				}
+			}
+		}
 	}
 }
