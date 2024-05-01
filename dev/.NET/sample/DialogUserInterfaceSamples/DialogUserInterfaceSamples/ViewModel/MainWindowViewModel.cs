@@ -49,21 +49,44 @@ namespace DialogUserInterfaceSamples.ViewModel
 		public MainWindowViewModel() : base() { }
 
 		protected DelegateCommand? _showDialogCommand = null;
-		public DelegateCommand ShowDialogCommand
+		public DelegateCommand ShowFolderSelectCommand
 		{
 			get
 			{
 				if (null == _showDialogCommand)
 				{
-					_showDialogCommand = new DelegateCommand(ShowDialogCommandExecute);
+					_showDialogCommand = new DelegateCommand(ShowFolderSelectCommandExecute);
 				}
 				return _showDialogCommand;
 			}
 		}
 
-		public void ShowDialogCommandExecute()
+		protected DelegateCommand? _showFileSelectDialogCommand = null;
+		public DelegateCommand ShowFileSelectDialogCommand
 		{
-			var dialog = new PathSelectionDialog.PathSelectionDialog();
+			get
+			{
+				if (null == _showDialogCommand)
+				{
+					_showDialogCommand = new DelegateCommand(ShowFileSelectCommandExecute);
+				}
+				return _showDialogCommand;
+			}
+		}
+
+		public void ShowFolderSelectCommandExecute()
+		{
+			ShowDialogCommandExecute(PathSelectionDialog.Mode.DIALOG_FOLDER_SELECT);
+		}
+
+		public void ShowFileSelectCommandExecute()
+		{
+			ShowDialogCommandExecute(PathSelectionDialog.Mode.DIALOG_FILE_SELECT);
+		}
+
+		protected void ShowDialogCommandExecute(int mode)
+		{
+			var dialog = new PathSelectionDialog.PathSelectionDialog(mode);
 
 			if (true == dialog.ShowDialog())
 			{

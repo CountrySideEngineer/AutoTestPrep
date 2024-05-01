@@ -22,15 +22,23 @@ namespace DialogUserInterfaceSamples
 			InitializeComponent();
 		}
 
-		private void Button_Click(object sender, RoutedEventArgs e)
+		private void FolderSelectButton_Click(object sender, RoutedEventArgs e)
 		{
-			var dialog = new PathSelectionDialog.PathSelectionDialog();
-			dialog.ShowDialog();
+			ShowDialog(PathSelectionDialog.Mode.DIALOG_FOLDER_SELECT);
+		}
 
-			var context = dialog.DataContext;
-			var viewModel = (PathSelectionDialogViewModel)context;
+		private void FileSelectButton_Click(object sender, RoutedEventArgs e)
+		{
+			ShowDialog(PathSelectionDialog.Mode.DIALOG_FILE_SELECT);
+		}
 
-			UserInputText.Text = viewModel.InputPath;
+		private void ShowDialog(int mode)
+		{
+			var dialog = new PathSelectionDialog.PathSelectionDialog(mode);
+			if (true == dialog.ShowDialog())
+			{
+				UserInputText.Text = dialog.Path;
+			}
 		}
 	}
 }
