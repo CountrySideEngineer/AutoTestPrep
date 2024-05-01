@@ -47,7 +47,7 @@ namespace PathSelectionDialog.ViewModel
 		/// <summary>
 		/// Field of window, dialog title.
 		/// </summary>
-		protected string _title = "PathSelectionDialog";
+		protected string _title = Properties.Resources.IDS_WINDOW_TITLE;
 
 		/// <summary>
 		/// Window, dialog title.
@@ -56,11 +56,11 @@ namespace PathSelectionDialog.ViewModel
 		{
 			get => _title;
 		}
-		
+
 		/// <summary>
 		/// OK button title field.
 		/// </summary>
-		protected string _okTitle = "OK";
+		protected string _okTitle = Properties.Resources.IDS_OK_BUTTON_TITLE;
 
 		/// <summary>
 		/// OK button title property.s
@@ -73,7 +73,7 @@ namespace PathSelectionDialog.ViewModel
 		/// <summary>
 		/// Cancel button title field.
 		/// </summary>
-		protected string _cancelTitle = "Cancel";
+		protected string _cancelTitle = Properties.Resources.IDS_CANCEL_BUTTON_TITLE;
 
 		/// <summary>
 		/// Cancel button title property.
