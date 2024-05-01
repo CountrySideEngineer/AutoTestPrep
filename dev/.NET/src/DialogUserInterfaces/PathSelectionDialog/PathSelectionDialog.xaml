@@ -63,7 +63,7 @@
                 VerticalAlignment="Stretch"
                 Content="{Binding OkTitle}"
                 Margin="8, 8, 4, 8"
-                Padding="4"
+                Padding="4" Click="OKButton_Click"
                 />
         <Button Name="CancelButton"
                 Grid.Row="2"
@@ -74,7 +74,7 @@
                 VerticalAlignment="Stretch"
                 Content="{Binding CancelTitle}"
                 Margin="4, 8, 8, 8"
-                Padding="4"
+                Padding="4" Click="CancelButton_Click"
                 />
     </Grid>
 </Window>

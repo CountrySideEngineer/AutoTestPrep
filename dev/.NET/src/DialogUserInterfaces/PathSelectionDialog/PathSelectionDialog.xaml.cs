@@ -44,21 +44,27 @@ namespace PathSelectionDialog
 		}
 
 		/// <summary>
-		/// Whether user selected path or not.
+		/// OK button click event handler.
 		/// </summary>
-		public bool IsSelected
+		/// <param name="sender">Not in use.</param>
+		/// <param name="e">Not in user.</param>
+		private void OKButton_Click(object sender, RoutedEventArgs e)
 		{
-			get
-			{
-				try
-				{
-					return ((PathSelectionDialogViewModel)DataContext).IsSelected;
-				}
-				catch (Exception)
-				{
-					return false;
-				}
-			}
+			DialogResult = true;
+
+			Close();
+		}
+
+		/// <summary>
+		/// Cancel button click event handler.
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void CancelButton_Click(object sender, RoutedEventArgs e)
+		{
+			DialogResult = false;
+
+			Close();
 		}
 	}
 }
