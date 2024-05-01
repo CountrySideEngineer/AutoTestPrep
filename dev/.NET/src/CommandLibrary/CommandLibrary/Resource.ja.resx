@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="IDS_FILE_SELECT_DIALOG_TITLE" xml:space="preserve">
+    <value>ファイル選択</value>
+  </data>
   <data name="IDS_PATH_SELECT_DIALOG_TITLE" xml:space="preserve">
     <value>フォルダ選択</value>
   </data>
