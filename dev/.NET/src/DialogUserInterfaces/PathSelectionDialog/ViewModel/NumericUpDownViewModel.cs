@@ -9,8 +9,14 @@ namespace PathSelectionDialog.ViewModel
 {
 	public class NumericUpDownViewModel : ViewModelBase
 	{
+		/// <summary>
+		/// User input value field.
+		/// </summary>
 		protected Int64 _inputValue = 0;
 
+		/// <summary>
+		/// Inptu value property.
+		/// </summary>
 		public string InputValue
 		{
 			get
@@ -39,18 +45,14 @@ namespace PathSelectionDialog.ViewModel
 			}
 		}
 
-
-		public Int64 _InputValue
-		{
-			get => _inputValue;
-			set
-			{
-				_inputValue = value;
-				RaisePropertyChange();
-			}
-		}
-
+		/// <summary>
+		/// Up command field.
+		/// </summary>
 		protected DelegateCommand? _upCommand = null;
+
+		/// <summary>
+		/// Up command property.
+		/// </summary>
 		public DelegateCommand UpCommand
 		{
 			get
@@ -63,7 +65,14 @@ namespace PathSelectionDialog.ViewModel
 			}
 		}
 
+		/// <summary>
+		/// Down command field.
+		/// </summary>
 		protected DelegateCommand? _downCommand = null;
+
+		/// <summary>
+		/// Down command property.
+		/// </summary>
 		public DelegateCommand DownCommand
 		{
 			get
@@ -76,6 +85,9 @@ namespace PathSelectionDialog.ViewModel
 			}
 		}
 
+		/// <summary>
+		/// Execute command to increment input value.
+		/// </summary>
 		public void UpCommandExecute()
 		{
 			if (_inputValue != Int64.MaxValue)
@@ -85,6 +97,9 @@ namespace PathSelectionDialog.ViewModel
 			}
 		}
 
+		/// <summary>
+		/// Execute command to decrement input value.
+		/// </summary>
 		public void DownCommandExecute()
 		{
 			if (_inputValue != Int64.MinValue)
