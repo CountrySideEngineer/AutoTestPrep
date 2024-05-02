@@ -3,9 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:PathSelectionDialog"
+        xmlns:local="clr-namespace:PathSelectionDialog.View"
         xmlns:vm="clr-namespace:PathSelectionDialog.ViewModel"
-        xmlns:uv="clr-namespace:PathSelectionDialog.View"
         mc:Ignorable="d"
         Title="NumericSelectionDialog"
         Height="124" 
@@ -24,10 +23,11 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <uv:NumericUpDownControl Grid.Row="0"
-                                 Grid.Column="0"
-                                 Grid.ColumnSpan="3"
-                                 Margin="8, 8, 8, 4"
+        <local:NumericUpDownControl Grid.Row="0"
+                                    Grid.Column="0"
+                                    Grid.ColumnSpan="3"
+                                    Margin="8, 8, 8, 4"
+                                    DataContext="{Binding UpDownViewModel}"
                                  />
         <Button Name="OKButton"
                 Grid.Row="2"

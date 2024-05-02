@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PathSelectionDialog.View;
+using PathSelectionDialog.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +26,13 @@ namespace PathSelectionDialog
 			InitializeComponent();
 		}
 
+		public NumericSelectionDialog(Int64 inputValue)
+		{
+			InitializeComponent();
+
+			((NumericSelectionDialogViewModel)DataContext).InputValue = inputValue;
+		}
+
 		/// <summary>
 		/// OK button click event handler.
 		/// </summary>
@@ -46,6 +55,17 @@ namespace PathSelectionDialog
 			DialogResult = false;
 
 			Close();
+		}
+
+		/// <summary>
+		/// User input value.
+		/// </summary>
+		public Int64 InputValue
+		{
+			get
+			{
+				return ((NumericSelectionDialogViewModel)DataContext).InputValue;
+			}
 		}
 	}
 }
