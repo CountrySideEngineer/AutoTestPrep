@@ -26,6 +26,11 @@ namespace PathSelectionDialog.View
 			InitializeComponent();
 		}
 
+		/// <summary>
+		/// Validate input value before set it into text box.
+		/// </summary>
+		/// <param name="sender">Not in use.</param>
+		/// <param name="e">Argument which hold input value.</param>
 		private void NumericValue_PreviewTextInput(object sender, TextCompositionEventArgs e)
 		{
 			var reg = new Regex("[0-9]");
