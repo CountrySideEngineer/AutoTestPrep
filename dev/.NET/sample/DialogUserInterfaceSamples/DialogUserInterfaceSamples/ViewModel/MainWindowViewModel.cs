@@ -110,8 +110,24 @@ namespace DialogUserInterfaceSamples.ViewModel
 
 		protected void NumericCommandExecute()
 		{
-			var dialog = new NumericSelectionDialog();
-			dialog.ShowDialog();
+			Int64 initialValue = 0;
+			try
+			{
+				initialValue = Convert.ToInt64(UserInputText);
+			}
+			catch (Exception ex)
+			when ((ex is FormatException) || (ex is FormatException))
+			{
+				initialValue = 0;
+			}
+
+			var dialog = new NumericSelectionDialog(initialValue);
+			if (true == dialog.ShowDialog())
+			{
+				UserInputText = dialog.InputValue.ToString();
+			}
+
+
 		}
 	}
 }
