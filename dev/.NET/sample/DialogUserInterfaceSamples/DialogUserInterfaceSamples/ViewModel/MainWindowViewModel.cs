@@ -1,4 +1,5 @@
 ﻿using DialogUserInterfaceSamples.Command;
+using PathSelectionDialog;
 using PathSelectionDialog.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -92,6 +93,25 @@ namespace DialogUserInterfaceSamples.ViewModel
 			{
 				UserInputText = dialog.Path;
 			}
+		}
+
+		protected DelegateCommand? _numericCommand = null;
+		public DelegateCommand NumerciCommand
+		{
+			get
+			{
+				if (null == _numericCommand)
+				{
+					_numericCommand = new DelegateCommand(NumericCommandExecute);
+				}
+				return _numericCommand;
+			}
+		}
+
+		protected void NumericCommandExecute()
+		{
+			var dialog = new NumericSelectionDialog();
+			dialog.ShowDialog();
 		}
 	}
 }
