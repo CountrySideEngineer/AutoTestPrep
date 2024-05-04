@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PathSelectionDialog.ViewModel
+namespace DialogUserInterfaces.ViewModel
 {
 	public class FolderSelectionDialogViewModel : PathSelectionDialogViewModel
 	{

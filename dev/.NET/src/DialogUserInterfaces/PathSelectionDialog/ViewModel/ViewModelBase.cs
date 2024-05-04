@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PathSelectionDialog.ViewModel
+namespace DialogUserInterfaces.ViewModel
 {
 	public class ViewModelBase : INotifyPropertyChanged
 	{

@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PathSelectionDialog.View
+namespace DialogUserInterfaces.View
 {
 	/// <summary>
 	/// NumericUpDownControl.xaml の相互作用ロジック

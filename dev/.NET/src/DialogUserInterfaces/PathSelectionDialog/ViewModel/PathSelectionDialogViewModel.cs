@@ -1,5 +1,5 @@
 ﻿using PathCommandLibrary;
-using PathSelectionDialog.Command;
+using DialogUserInterfaces.Command;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace PathSelectionDialog.ViewModel
+namespace DialogUserInterfaces.ViewModel
 {
 	public class PathSelectionDialogViewModel : ViewModelBase
 	{

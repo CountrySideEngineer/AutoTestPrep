@@ -1,11 +1,11 @@
-﻿using PathSelectionDialog.Command;
+﻿using DialogUserInterfaces.Command;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PathSelectionDialog.ViewModel
+namespace DialogUserInterfaces.ViewModel
 {
 	public class NumericUpDownViewModel : ViewModelBase
 	{

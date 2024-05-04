@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace PathSelectionDialog.Command
+namespace DialogUserInterfaces.Command
 {
 	public class DelegateCommand : ICommand
     {
