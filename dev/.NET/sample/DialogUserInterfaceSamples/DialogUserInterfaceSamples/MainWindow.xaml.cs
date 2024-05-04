@@ -1,4 +1,4 @@
-﻿using PathSelectionDialog.ViewModel;
+﻿using DialogUserInterfaces.ViewModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -24,17 +24,17 @@ namespace DialogUserInterfaceSamples
 
 		private void FolderSelectButton_Click(object sender, RoutedEventArgs e)
 		{
-			ShowDialog(PathSelectionDialog.Mode.DIALOG_FOLDER_SELECT);
+			ShowDialog(DialogUserInterfaces.Mode.DIALOG_FOLDER_SELECT);
 		}
 
 		private void FileSelectButton_Click(object sender, RoutedEventArgs e)
 		{
-			ShowDialog(PathSelectionDialog.Mode.DIALOG_FILE_SELECT);
+			ShowDialog(DialogUserInterfaces.Mode.DIALOG_FILE_SELECT);
 		}
 
 		private void ShowDialog(int mode)
 		{
-			var dialog = new PathSelectionDialog.PathSelectionDialog(mode);
+			var dialog = new DialogUserInterfaces.PathSelectionDialog(mode);
 			if (true == dialog.ShowDialog())
 			{
 				UserInputText.Text = dialog.Path;

@@ -9,8 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="PathSelectionDialog">
-      <HintPath>..\..\..\src\bin\PathSelectionDialog.dll</HintPath>
+    <Reference Include="DialogUserInterfaces">
+      <HintPath>..\..\..\src\bin\DialogUserInterfaces.dll</HintPath>
     </Reference>
   </ItemGroup>
 

@@ -1,6 +1,6 @@
 ﻿using DialogUserInterfaceSamples.Command;
-using PathSelectionDialog;
-using PathSelectionDialog.ViewModel;
+using DialogUserInterfaces;
+using DialogUserInterfaces.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -77,17 +77,17 @@ namespace DialogUserInterfaceSamples.ViewModel
 
 		public void ShowFolderSelectCommandExecute()
 		{
-			ShowDialogCommandExecute(PathSelectionDialog.Mode.DIALOG_FOLDER_SELECT);
+			ShowDialogCommandExecute(DialogUserInterfaces.Mode.DIALOG_FOLDER_SELECT);
 		}
 
 		public void ShowFileSelectCommandExecute()
 		{
-			ShowDialogCommandExecute(PathSelectionDialog.Mode.DIALOG_FILE_SELECT);
+			ShowDialogCommandExecute(DialogUserInterfaces.Mode.DIALOG_FILE_SELECT);
 		}
 
 		protected void ShowDialogCommandExecute(int mode)
 		{
-			var dialog = new PathSelectionDialog.PathSelectionDialog(mode);
+			var dialog = new DialogUserInterfaces.PathSelectionDialog(mode);
 
 			if (true == dialog.ShowDialog())
 			{
