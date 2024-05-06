@@ -7,4 +7,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="xcopy $(OutDir)*.dll $(SolutionDir)..\bin\ /E /C /I /Y&#xD;&#xA;" />
+  </Target>
+
 </Project>
