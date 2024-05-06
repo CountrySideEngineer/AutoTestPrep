@@ -7,6 +7,44 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-            
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Expander x:Name="TopExpander"
+                  Grid.Column="0"
+                  Header="{Binding Category}"
+                  VerticalAlignment="Top"
+                  ExpandDirection="Down"
+                  HorizontalContentAlignment="Stretch"
+                  VerticalContentAlignment="Stretch"
+                  >
+            <DataGrid x:Name="ConfigurationGrid"
+                      Margin="32, 0, 0, 0"
+                      AutoGenerateColumns="False"
+                      CanUserAddRows="False"
+                      CanUserDeleteRows="False"
+                      CanUserReorderColumns="False"
+                      CanUserResizeColumns="True"
+                      CanUserSortColumns="False"
+                      IsReadOnly="True"
+                      HeadersVisibility="None"
+                      >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ItemTitle"
+                                        Width="3*"
+                                        CanUserReorder="False"
+                                        CanUserSort="False"
+                                        />
+                    <DataGridTextColumn Header="ItemValue"
+                                        Width="7*"
+                                        CanUserReorder="False"
+                                        CanUserSort="False"
+                                        />
+                </DataGrid.Columns>
+            </DataGrid>
+        </Expander>
     </Grid>
 </UserControl>
