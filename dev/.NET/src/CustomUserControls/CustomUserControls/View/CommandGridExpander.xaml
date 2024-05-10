@@ -15,7 +15,7 @@
         </Grid.RowDefinitions>
         <Expander x:Name="TopExpander"
                   Grid.Column="0"
-                  Header="{Binding Category}"
+                  Header="{Binding CategoryName}"
                   VerticalAlignment="Top"
                   ExpandDirection="Down"
                   HorizontalContentAlignment="Stretch"
