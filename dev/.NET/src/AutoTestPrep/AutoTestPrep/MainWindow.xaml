@@ -3,10 +3,48 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:properties="clr-namespace:AutoTestPrep.Properties"
         xmlns:local="clr-namespace:AutoTestPrep"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0"
+            >
+            <MenuItem Header="{x:Static properties:Resources.IDS_MENU_ITEM_FILE}"
+                      >
+                <MenuItem Header="{x:Static properties:Resources.IDS_MENU_ITEM_FILE_NEW}"
+                          />
+                <MenuItem Header="{x:Static properties:Resources.IDS_MENU_ITEM_FILE_OPEN}"
+                          />
+                <Separator/>
+                <MenuItem Header="{x:Static properties:Resources.IDS_MENU_ITEM_FILE_SAVE_AS}"
+                          />
+                <MenuItem Header="{x:Static properties:Resources.IDS_MENU_ITEM_FILE_SAVE}"
+                          />
+                <Separator/>
+                <MenuItem Header="{x:Static properties:Resources.IDS_MENU_ITEM_FILE_EXIT}"
+                          />
+            </MenuItem>
+            <MenuItem Header="{x:Static properties:Resources.IDS_MENU_ITEM_EXECUTE}"
+                      >
+                <MenuItem Header="{x:Static properties:Resources.IDS_MENU_ITEM_EXECUTE_TEST_DOUBLE}"
+                          />
+                <Separator/>
+                <MenuItem Header="{x:Static properties:Resources.IDS_MENU_ITEM_EXECUTE_TEST_PLUGINS}"
+                          />
+                <Separator/>
+                <MenuItem Header="{x:Static properties:Resources.IDS_MENU_ITEM_EXECUTE_TEST_PLUGIN_MANAGER}"
+                          />
+            </MenuItem>
+            <MenuItem Header="{x:Static properties:Resources.IDS_MENU_ITEM_HELP}"
+                      >
+                <MenuItem Header="{x:Static properties:Resources.IDS_MENU_ITEM_HELP_VERSION}"
+                          />
+            </MenuItem>
+        </Menu>
     </Grid>
 </Window>
