@@ -38,6 +38,27 @@
                                         CanUserReorder="False"
                                         CanUserSort="False"
                                         />
+                    <DataGridTemplateColumn Width="7*"
+                                            CanUserReorder="False"
+                                            CanUserSort="False"
+                                            >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBox Grid.Column="0"
+                                             Grid.ColumnSpan="2"/>
+                                    <Button Grid.Column="1"
+                                            Content="..."
+                                            Padding="8, 0, 8, 0"
+                                            />
+                                </Grid>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
                     <DataGridTextColumn Header="ItemValue"
                                         Width="7*"
                                         CanUserReorder="False"
