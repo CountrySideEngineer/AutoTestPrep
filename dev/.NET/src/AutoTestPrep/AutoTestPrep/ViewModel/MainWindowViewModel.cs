@@ -13,7 +13,6 @@ namespace AutoTestPrep.ViewModel
 			get => Properties.Resources.IDS_APP_TITLE;
 		}
 
-
 		/// <summary>
 		/// Default constructor.
 		/// </summary>
