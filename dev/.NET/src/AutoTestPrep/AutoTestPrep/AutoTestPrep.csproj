@@ -9,6 +9,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Window\**" />
+    <EmbeddedResource Remove="Window\**" />
+    <None Remove="Window\**" />
+    <Page Remove="Window\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="CustomUserControls">
       <HintPath>..\..\bin\CustomUserControls.dll</HintPath>
     </Reference>
@@ -45,10 +52,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Window\" />
   </ItemGroup>
 
 </Project>
