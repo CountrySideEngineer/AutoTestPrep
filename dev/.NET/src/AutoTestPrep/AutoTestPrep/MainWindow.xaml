@@ -13,42 +13,62 @@
     <Window.DataContext>
         <vm:MainWindowViewModel/>
     </Window.DataContext>
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="./Resource/MenuStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition />
         </Grid.RowDefinitions>
         <Menu Grid.Row="0"
-            >
+              Style="{StaticResource Menu_MenuBar}"
+              >
             <MenuItem Header="{x:Static properties:Resources.IDS_MENU_ITEM_FILE}"
+                      Style="{StaticResource MenuItem_MenuBar}"
                       >
                 <MenuItem Header="{x:Static properties:Resources.IDS_MENU_ITEM_FILE_NEW}"
+                          Style="{StaticResource MenuItem_MenuItem}"
                           />
                 <MenuItem Header="{x:Static properties:Resources.IDS_MENU_ITEM_FILE_OPEN}"
+                          Style="{StaticResource MenuItem_MenuItem}"
                           />
                 <Separator/>
                 <MenuItem Header="{x:Static properties:Resources.IDS_MENU_ITEM_FILE_SAVE_AS}"
+                          Style="{StaticResource MenuItem_MenuItem}"
                           />
                 <MenuItem Header="{x:Static properties:Resources.IDS_MENU_ITEM_FILE_SAVE}"
+                          Style="{StaticResource MenuItem_MenuItem}"
                           />
                 <Separator/>
                 <MenuItem Header="{x:Static properties:Resources.IDS_MENU_ITEM_FILE_EXIT}"
+                          Style="{StaticResource MenuItem_MenuItem}"
                           />
             </MenuItem>
             <MenuItem Header="{x:Static properties:Resources.IDS_MENU_ITEM_EXECUTE}"
+                      Style="{StaticResource MenuItem_MenuBar}"
                       >
                 <MenuItem Header="{x:Static properties:Resources.IDS_MENU_ITEM_EXECUTE_TEST_DOUBLE}"
+                          Style="{StaticResource MenuItem_MenuItem}"
                           />
                 <Separator/>
                 <MenuItem Header="{x:Static properties:Resources.IDS_MENU_ITEM_EXECUTE_TEST_PLUGINS}"
+                          Style="{StaticResource MenuItem_MenuItem}"
                           />
                 <Separator/>
                 <MenuItem Header="{x:Static properties:Resources.IDS_MENU_ITEM_EXECUTE_TEST_PLUGIN_MANAGER}"
+                          Style="{StaticResource MenuItem_MenuItem}"
                           />
             </MenuItem>
             <MenuItem Header="{x:Static properties:Resources.IDS_MENU_ITEM_HELP}"
+                      Style="{StaticResource MenuItem_MenuBar}"
                       >
                 <MenuItem Header="{x:Static properties:Resources.IDS_MENU_ITEM_HELP_VERSION}"
+                          Style="{StaticResource MenuItem_MenuItem}"
                           />
             </MenuItem>
         </Menu>
