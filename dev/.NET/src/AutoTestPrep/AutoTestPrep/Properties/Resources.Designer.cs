@@ -61,6 +61,15 @@ namespace AutoTestPrep.Properties {
         }
         
         /// <summary>
+        ///   AutoTestPrep に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string IDS_APP_TITLE {
+            get {
+                return ResourceManager.GetString("IDS_APP_TITLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   実行 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string IDS_MENU_ITEM_EXECUTE {
