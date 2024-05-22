@@ -13,7 +13,7 @@ namespace AutoTestPrep.ViewModel
 			get => Properties.Resources.IDS_APP_TITLE;
 		}
 
-		protected IEnumerable<ProjectItemViewModel>? _projectRootItem;
+		protected IEnumerable<ProjectItemViewModel>? _projectRootItem = null;
 
 		public IEnumerable<ProjectItemViewModel>? ProjectRootItem
 		{
@@ -22,12 +22,27 @@ namespace AutoTestPrep.ViewModel
 			{
 				_projectRootItem = value;
 				RaisePropertyChanged();
+				RaisePropertyChanged(nameof(IsProjectSet));
+			}
+		}
+
+		/// <summary>
+		/// Project set or not.
+		/// </summary>
+		public bool IsProjectSet
+		{
+			get
+			{
+				return ProjectRootItem != null;
 			}
 		}
 
 		/// <summary>
 		/// Default constructor.
 		/// </summary>
-		public MainWindowViewModel() : base() { }
+		public MainWindowViewModel() : base()
+		{
+			ProjectRootItem = null;
+		}
 	}
 }
