@@ -25,7 +25,13 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition />
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
         <Menu Grid.Row="0"
+              Grid.Column="0"
+              Grid.ColumnSpan="2"
               Style="{StaticResource Menu_MenuBar}"
               >
             <MenuItem Header="{x:Static properties:Resources.IDS_MENU_ITEM_FILE}"
@@ -72,5 +78,17 @@
                           />
             </MenuItem>
         </Menu>
+        <TreeView Grid.Row="1"
+                  Grid.Column="0"
+                  ItemsSource="{Binding ProjectRootItem}"
+                  >
+            <TreeView.ItemTemplate>
+                <HierarchicalDataTemplate ItemsSource="{Binding SubProjects}"
+                                          >
+                    <TextBlock Text="{Binding Name}"
+                               />
+                </HierarchicalDataTemplate>
+            </TreeView.ItemTemplate>
+        </TreeView>
     </Grid>
 </Window>
