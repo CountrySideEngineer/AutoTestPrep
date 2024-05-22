@@ -6,6 +6,9 @@
              xmlns:local="clr-namespace:CustomUserControls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolVisibilityConverter"/>
+    </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -50,11 +53,15 @@
                                         <ColumnDefinition Width="Auto"/>
                                     </Grid.ColumnDefinitions>
                                     <TextBox Grid.Column="0"
-                                             Grid.ColumnSpan="2"/>
+                                             Grid.ColumnSpan="2"
+                                             Text="{Binding InputData}"
+                                             />
                                     <Button Grid.Column="1"
                                             Content="..."
                                             Padding="8, 0, 8, 0"
-                                            />
+                                            Visibility="{Binding Path=IsSelected, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGridRow}, Converter={StaticResource BoolVisibilityConverter}}"
+                                            >
+                                    </Button>
                                 </Grid>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
