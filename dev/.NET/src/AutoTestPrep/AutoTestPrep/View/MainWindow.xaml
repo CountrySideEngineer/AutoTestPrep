@@ -6,6 +6,7 @@
         xmlns:properties="clr-namespace:AutoTestPrep.Properties"
         xmlns:local="clr-namespace:AutoTestPrep"
         xmlns:vm="clr-namespace:AutoTestPrep.ViewModel"
+        xmlns:cuc="clr-namespace:CustomUserControls;assembly=CustomUserControls"
         mc:Ignorable="d"
         Title="{Binding Title}" 
         Height="450" 
@@ -79,7 +80,8 @@
                           />
             </MenuItem>
         </Menu>
-        <TreeView Grid.Row="1"
+        <TreeView x:Name="SolutionTreeView"
+                  Grid.Row="1"
                   Grid.Column="0"
                   ItemsSource="{Binding ProjectRootItem}"
                   Visibility="{Binding IsProjectSet, Converter={StaticResource BoolVisibilityConverter}}"
@@ -92,5 +94,9 @@
                 </HierarchicalDataTemplate>
             </TreeView.ItemTemplate>
         </TreeView>
+        <cuc:CommandGridExpander Grid.Row="1"
+                                 Grid.Column="1"
+                                 Visibility="{Binding Path=Visibility, ElementName=SolutionTreeView}"
+                                 />
     </Grid>
 </Window>
