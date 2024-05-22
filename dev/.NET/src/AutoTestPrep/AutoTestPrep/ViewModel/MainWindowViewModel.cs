@@ -13,6 +13,18 @@ namespace AutoTestPrep.ViewModel
 			get => Properties.Resources.IDS_APP_TITLE;
 		}
 
+		protected ProjectItemViewModel? _projectRootItem;
+
+		public ProjectItemViewModel? ProjectRootItem
+		{
+			get => _projectRootItem;
+			set
+			{
+				_projectRootItem = value;
+				RaisePropertyChanged();
+			}
+		}
+
 		/// <summary>
 		/// Default constructor.
 		/// </summary>
