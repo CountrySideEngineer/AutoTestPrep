@@ -13,9 +13,9 @@ namespace AutoTestPrep.ViewModel
 			get => Properties.Resources.IDS_APP_TITLE;
 		}
 
-		protected ProjectItemViewModel? _projectRootItem;
+		protected IEnumerable<ProjectItemViewModel>? _projectRootItem;
 
-		public ProjectItemViewModel? ProjectRootItem
+		public IEnumerable<ProjectItemViewModel>? ProjectRootItem
 		{
 			get => _projectRootItem;
 			set
