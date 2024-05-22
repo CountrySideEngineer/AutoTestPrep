@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,24 @@ namespace CustomUserControls.ViewModel
 			set
 			{
 				_categoryName = value;
+				RaisePropertyChanged();
+			}
+		}
+
+		/// <summary>
+		/// The field of the collection of items to be displayed in each row of the table.
+		/// </summary>
+		protected IEnumerable<CommandGridExpanderItem>? _items;
+
+		/// <summary>
+		/// The property of the collection of items to be displayed in each row of the table.
+		/// </summary>
+		public IEnumerable<CommandGridExpanderItem>? Items
+		{
+			get => _items;
+			set
+			{
+				_items = value;
 				RaisePropertyChanged();
 			}
 		}
