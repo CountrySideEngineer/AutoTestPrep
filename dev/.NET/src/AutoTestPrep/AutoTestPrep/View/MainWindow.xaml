@@ -18,6 +18,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="./../Resource/MenuStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
+            <BooleanToVisibilityConverter x:Key="BoolVisibilityConverter"/>
         </ResourceDictionary>
     </Window.Resources>
     <Grid>
@@ -81,6 +82,7 @@
         <TreeView Grid.Row="1"
                   Grid.Column="0"
                   ItemsSource="{Binding ProjectRootItem}"
+                  Visibility="{Binding IsProjectSet, Converter={StaticResource BoolVisibilityConverter}}"
                   >
             <TreeView.ItemTemplate>
                 <HierarchicalDataTemplate ItemsSource="{Binding SubProjects}"
