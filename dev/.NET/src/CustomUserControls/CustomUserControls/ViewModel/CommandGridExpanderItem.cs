@@ -7,10 +7,28 @@ using System.Windows.Controls;
 
 namespace CustomUserControls.ViewModel
 {
-    public class CommandGridExpanderItem
+    public class CommandGridExpanderItem : ViewModelBase
     {
-		public string Title { get; set; } = string.Empty;
+		protected string _title = string.Empty;
+		public string Title
+		{
+			get => _title;
+			set
+			{
+				_title = value;
+				RaisePropertyChanged();
+			}
+		}
 
-		public string Item { get; set; } = string.Empty;
+		protected string _item = string.Empty;
+		public string Item
+		{
+			get => _item;
+			set
+			{
+				_item = value;
+				RaisePropertyChanged();
+			}
+		}
     }
 }
