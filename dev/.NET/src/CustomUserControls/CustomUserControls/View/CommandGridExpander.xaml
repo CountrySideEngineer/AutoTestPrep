@@ -34,16 +34,20 @@
                       CanUserSortColumns="False"
                       IsReadOnly="True"
                       HeadersVisibility="None"
+                      ItemsSource="{Binding Path=Items, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                       >
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="ItemTitle"
-                                        Width="3*"
+                    <DataGridTextColumn Header="Header"
+                                        Width="Auto"
                                         CanUserReorder="False"
                                         CanUserSort="False"
+                                        CanUserResize="True"
+                                        Binding="{Binding Title}"
                                         />
-                    <DataGridTemplateColumn Width="7*"
+                    <DataGridTemplateColumn Width="*"
                                             CanUserReorder="False"
                                             CanUserSort="False"
+                                            CanUserResize="True"
                                             >
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
@@ -54,7 +58,7 @@
                                     </Grid.ColumnDefinitions>
                                     <TextBox Grid.Column="0"
                                              Grid.ColumnSpan="2"
-                                             Text="{Binding InputData}"
+                                             Text="{Binding Path=Item, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                              />
                                     <Button Grid.Column="1"
                                             Content="..."
@@ -66,11 +70,6 @@
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
-                    <DataGridTextColumn Header="ItemValue"
-                                        Width="7*"
-                                        CanUserReorder="False"
-                                        CanUserSort="False"
-                                        />
                 </DataGrid.Columns>
             </DataGrid>
         </Expander>
