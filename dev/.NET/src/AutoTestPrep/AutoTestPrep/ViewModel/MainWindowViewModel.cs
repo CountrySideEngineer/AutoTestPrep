@@ -44,8 +44,8 @@ namespace AutoTestPrep.ViewModel
 			}
 		}
 
-		protected ProjectItemViewModel? _selectedItem = null;
-		public ProjectItemViewModel? SelectedItem
+		protected CommandGridExpanderViewModel? _selectedItem = null;
+		public CommandGridExpanderViewModel? SelectedItem
 		{
 			get => _selectedItem;
 			set
@@ -67,6 +67,8 @@ namespace AutoTestPrep.ViewModel
 				return _selectedItemChangedCommand;
 			}
 		}
+
+		Dictionary<string, CommandGridExpanderViewModel>? _itemCommandDictionary = null;
 
 		/// <summary>
 		/// Default constructor.
@@ -105,7 +107,7 @@ namespace AutoTestPrep.ViewModel
 				}
 			};
 
-			var _itemCommandDidctonary = new Dictionary<string, CommandGridExpanderViewModel>()
+			_itemCommandDictionary = new Dictionary<string, CommandGridExpanderViewModel>()
 			{
 				{
 					"SubItem_001_001", new CommandGridExpanderViewModel()
@@ -163,9 +165,17 @@ namespace AutoTestPrep.ViewModel
 		public void SelectedItemChangedExecute(ProjectItemViewModel selectedItem)
 		{
 			Debug.WriteLine($"{nameof(SelectedItemChangedExecute)} is called.");
-			Console.WriteLine($"{nameof(SelectedItemChangedExecute)} is called.");
 
-			SelectedItem = selectedItem;
+			try
+			{
+				var selectedItemValue = _itemCommandDictionary?[selectedItem.Name];
+				SelectedItem = (null == selectedItemValue) ? SelectedItem : selectedItemValue;
+			}
+			catch (Exception ex)
+			when (ex is KeyNotFoundException)
+			{
+				// Ignore command.
+			}
 		}
 	}
 }
