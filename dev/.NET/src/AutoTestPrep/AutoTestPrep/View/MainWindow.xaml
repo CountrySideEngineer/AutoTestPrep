@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:properties="clr-namespace:AutoTestPrep.Properties"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         xmlns:local="clr-namespace:AutoTestPrep"
         xmlns:vm="clr-namespace:AutoTestPrep.ViewModel"
         xmlns:cuc="clr-namespace:CustomUserControls;assembly=CustomUserControls"
@@ -86,6 +87,14 @@
                   ItemsSource="{Binding ProjectRootItem}"
                   Visibility="{Binding IsProjectSet, Converter={StaticResource BoolVisibilityConverter}}"
                   >
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectedItemChanged">
+                    <i:InvokeCommandAction Command="{Binding SelectedItemChangedCommand}"
+                                           CommandParameter="{Binding SelectedItem, ElementName=SolutionTreeView}"
+                                           
+                                           />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
             <TreeView.ItemTemplate>
                 <HierarchicalDataTemplate ItemsSource="{Binding SubProjects}"
                                           >
@@ -97,6 +106,7 @@
         <cuc:CommandGridExpander Grid.Row="1"
                                  Grid.Column="1"
                                  Visibility="{Binding Path=Visibility, ElementName=SolutionTreeView}"
+                                 DataContext="{Binding SelectedItem}"
                                  />
     </Grid>
 </Window>
