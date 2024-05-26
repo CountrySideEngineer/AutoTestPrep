@@ -68,6 +68,17 @@ namespace AutoTestPrep.ViewModel
 			}
 		}
 
+		protected IEnumerable<CommandGridExpanderViewModel>? _selectedNodeItems = null;
+		public IEnumerable<CommandGridExpanderViewModel>? SelectedNodeItems
+		{
+			get => _selectedNodeItems;
+			set
+			{
+				_selectedNodeItems = value;
+				RaisePropertyChanged();
+			}
+		}
+
 		Dictionary<string, CommandGridExpanderViewModel>? _itemCommandDictionary = null;
 
 		/// <summary>
@@ -136,6 +147,76 @@ namespace AutoTestPrep.ViewModel
 				},
 				{
 					"SubItem_001_002", new CommandGridExpanderViewModel()
+					{
+						CategoryName = "SubItem_001_002",
+						Items = new List<CommandGridExpanderItem>()
+						{
+							new CommandGridExpanderItem()
+							{
+								Title = "SubItem_001_003_Content_001"
+							},
+							new CommandGridExpanderItem()
+							{
+								Title = "SubItem_001_003_Content_002"
+							},
+							new CommandGridExpanderItem()
+							{
+								Title = "SubItem_001_003_Content_003"
+							},
+							new CommandGridExpanderItem()
+							{
+								Title = "SubItem_001_003_Content_004"
+							},
+						}
+					}
+				},
+			};
+
+			_selectedNodeItems = new List<CommandGridExpanderViewModel>()
+			{
+				{
+					new CommandGridExpanderViewModel()
+					{
+						CategoryName = "SubItem_001_001",
+						Items = new List<CommandGridExpanderItem>()
+						{
+							new CommandGridExpanderItem()
+							{
+								Title = "SubItem_001_001_Content_001"
+							},
+							new CommandGridExpanderItem()
+							{
+								Title = "SubItem_001_001_Content_002"
+							},
+							new CommandGridExpanderItem()
+							{
+								Title = "SubItem_001_001_Content_003"
+							},
+							new CommandGridExpanderItem()
+							{
+								Title = "SubItem_001_001_Content_004"
+							},
+							new CommandGridExpanderItem()
+							{
+								Title = "SubItem_001_001_Content_004"
+							},
+							new CommandGridExpanderItem()
+							{
+								Title = "SubItem_001_001_Content_004"
+							},
+							new CommandGridExpanderItem()
+							{
+								Title = "SubItem_001_001_Content_004"
+							},
+							new CommandGridExpanderItem()
+							{
+								Title = "SubItem_001_001_Content_004"
+							},
+						}
+					}
+				},
+				{
+					new CommandGridExpanderViewModel()
 					{
 						CategoryName = "SubItem_001_002",
 						Items = new List<CommandGridExpanderItem>()
