@@ -23,6 +23,7 @@
                   ExpandDirection="Down"
                   HorizontalContentAlignment="Stretch"
                   VerticalContentAlignment="Stretch"
+                  IsExpanded="True"
                   >
             <DataGrid x:Name="ConfigurationGrid"
                       Margin="32, 0, 0, 0"
@@ -59,11 +60,13 @@
                                     <TextBox Grid.Column="0"
                                              Grid.ColumnSpan="2"
                                              Text="{Binding Path=Item, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                             HorizontalContentAlignment="Stretch"
                                              />
                                     <Button Grid.Column="1"
                                             Content="..."
                                             Padding="8, 0, 8, 0"
                                             Visibility="{Binding Path=IsSelected, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGridRow}, Converter={StaticResource BoolVisibilityConverter}}"
+                                            HorizontalContentAlignment="Stretch"
                                             >
                                     </Button>
                                 </Grid>
