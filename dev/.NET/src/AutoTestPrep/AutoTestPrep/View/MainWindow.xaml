@@ -26,11 +26,11 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition />
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="8*"/>
         </Grid.ColumnDefinitions>
         <Menu Grid.Row="0"
               Grid.Column="0"
@@ -91,7 +91,6 @@
                 <i:EventTrigger EventName="SelectedItemChanged">
                     <i:InvokeCommandAction Command="{Binding SelectedItemChangedCommand}"
                                            CommandParameter="{Binding SelectedItem, ElementName=SolutionTreeView}"
-                                           
                                            />
                 </i:EventTrigger>
             </i:Interaction.Triggers>
@@ -103,11 +102,7 @@
                 </HierarchicalDataTemplate>
             </TreeView.ItemTemplate>
         </TreeView>
-        <cuc:CommandGridExpander Grid.Row="1"
-                                 Grid.Column="1"
-                                 Visibility="{Binding Path=Visibility, ElementName=SolutionTreeView}"
-                                 DataContext="{Binding SelectedItem}"
-                                 Height="200"
-                                 />
+        <UserControl x:Name="UserInputViewArea"
+                     />
     </Grid>
 </Window>

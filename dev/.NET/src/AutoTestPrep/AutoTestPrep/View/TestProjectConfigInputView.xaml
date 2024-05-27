@@ -21,6 +21,5 @@
             <cuc:CommandGridExpander x:Name="LibraryInformation"/>
             <cuc:CommandGridExpander x:Name="MacroInfomation"/>
         </StackPanel>
-            
     </Grid>
 </UserControl>
