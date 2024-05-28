@@ -1,4 +1,5 @@
 ﻿using AutoTestPrep.Properties;
+using CustomUserControls.ViewModel;
 using System.ComponentModel;
 
 namespace AutoTestPrep.ViewModel
@@ -20,39 +21,25 @@ namespace AutoTestPrep.ViewModel
 		public TestInformationInputViewModel(int index) : base(index) { }
 
 		/// <summary>
-		/// Path to directory which contains source code files to analysis.
-		/// </summary>
-		protected string _inputRootDirPath = string.Empty;
-
-		/// <summary>
-		/// Path to directory which contains source code files to analysis.
+		/// Path to directory to output test codes.
 		/// </summary>
 		public string InputRootDirPath
 		{
-			get => _inputRootDirPath;
-			set
-			{
-				_inputRootDirPath = value;
-				RaisePropertyChanged();
-			}
+			get => _testInOutInfo.Items?.ElementAt(0).Item ?? string.Empty;
 		}
-
-		/// <summary>
-		/// Path to directory to output test codes.
-		/// </summary>
-		protected string _outputDirPath = string.Empty;
 
 		/// <summary>
 		/// Path to directory to output test codes.
 		/// </summary>
 		public string OutputDirPath
 		{
-			get => _outputDirPath;
-			set
-			{
-				_outputDirPath = value;
-				RaisePropertyChanged();
-			}
+			get => _testInOutInfo.Items?.ElementAt(1).Item ?? string.Empty;
+		}
+
+		protected CommandGridExpanderViewModel _testInOutInfo;
+		public CommandGridExpanderViewModel TestInOutInformation
+		{
+			get => _testInOutInfo;
 		}
 	}
 }
