@@ -120,6 +120,45 @@
   <data name="IDS_APP_TITLE" xml:space="preserve">
     <value>AutoTestPrep</value>
   </data>
+  <data name="IDS_HEADER_INFORMATION_HEADER_INCLUDE_DIRS_OF_DRIVER" xml:space="preserve">
+    <value>インクルードディレクトリ</value>
+  </data>
+  <data name="IDS_HEADER_INFORMATION_HEADER_INCLUDE_DIRS_OF_STUB" xml:space="preserve">
+    <value>インクルードディレクトリ</value>
+  </data>
+  <data name="IDS_HEADER_INFORMATION_OF_DRIVER" xml:space="preserve">
+    <value>ヘッダ情報(ドライバ)</value>
+  </data>
+  <data name="IDS_HEADER_INFORMATION_OF_STUB" xml:space="preserve">
+    <value>ヘッダ情報(スタブ)</value>
+  </data>
+  <data name="IDS_HEADER_INFORMATION_STANDARD_HEADERS_OF_DRIVER" xml:space="preserve">
+    <value>標準ヘッダ</value>
+  </data>
+  <data name="IDS_HEADER_INFORMATION_STANDARD_HEADERS_OF_STUB" xml:space="preserve">
+    <value>標準ヘッダ</value>
+  </data>
+  <data name="IDS_HEADER_INFORMATION_USER_HEADERS_OF_DRIVER" xml:space="preserve">
+    <value>ユーザヘッダ</value>
+  </data>
+  <data name="IDS_HEADER_INFORMATION_USER_HEADERS_OF_STUB" xml:space="preserve">
+    <value>ユーザヘッダ</value>
+  </data>
+  <data name="IDS_LIBRARY_DIRS" xml:space="preserve">
+    <value>ライブラリディレクトリ</value>
+  </data>
+  <data name="IDS_LIBRARY_FILES" xml:space="preserve">
+    <value>ライブラリファイル</value>
+  </data>
+  <data name="IDS_LIBRARY_INFORMATION" xml:space="preserve">
+    <value>ライブラリ</value>
+  </data>
+  <data name="IDS_MACRO" xml:space="preserve">
+    <value>マクロ</value>
+  </data>
+  <data name="IDS_MACRO_ITEM" xml:space="preserve">
+    <value>マクロ</value>
+  </data>
   <data name="IDS_MENU_ITEM_EXECUTE" xml:space="preserve">
     <value>実行</value>
   </data>
@@ -155,5 +194,23 @@
   </data>
   <data name="IDS_MENU_ITEM_HELP_VERSION" xml:space="preserve">
     <value>バージョン情報</value>
+  </data>
+  <data name="IDS_STUB_BUFFER_INFORMATION" xml:space="preserve">
+    <value>スタブ情報</value>
+  </data>
+  <data name="IDS_STUB_BUFFER_SIZE_1" xml:space="preserve">
+    <value>スタブバッファサイズ1</value>
+  </data>
+  <data name="IDS_STUB_BUFFER_SIZE_2" xml:space="preserve">
+    <value>スタブバッファサイズ2</value>
+  </data>
+  <data name="IDS_TEST_INFO_CATEGORY_NAME" xml:space="preserve">
+    <value>テスト情報</value>
+  </data>
+  <data name="IDS_TEST_INFO_INPUT_ROOT_DIR_PATH" xml:space="preserve">
+    <value>入力ソースルートフォルダ</value>
+  </data>
+  <data name="IDS_TEST_INFO_OUTPUT_DIR_PATH" xml:space="preserve">
+    <value>出力先フォルダ</value>
   </data>
 </root>

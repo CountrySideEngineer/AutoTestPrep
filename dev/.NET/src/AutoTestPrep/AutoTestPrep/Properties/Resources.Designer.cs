@@ -70,6 +70,123 @@ namespace AutoTestPrep.Properties {
         }
         
         /// <summary>
+        ///   インクルードディレクトリ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string IDS_HEADER_INFORMATION_HEADER_INCLUDE_DIRS_OF_DRIVER {
+            get {
+                return ResourceManager.GetString("IDS_HEADER_INFORMATION_HEADER_INCLUDE_DIRS_OF_DRIVER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   インクルードディレクトリ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string IDS_HEADER_INFORMATION_HEADER_INCLUDE_DIRS_OF_STUB {
+            get {
+                return ResourceManager.GetString("IDS_HEADER_INFORMATION_HEADER_INCLUDE_DIRS_OF_STUB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   ヘッダ情報(ドライバ) に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string IDS_HEADER_INFORMATION_OF_DRIVER {
+            get {
+                return ResourceManager.GetString("IDS_HEADER_INFORMATION_OF_DRIVER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   ヘッダ情報(スタブ) に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string IDS_HEADER_INFORMATION_OF_STUB {
+            get {
+                return ResourceManager.GetString("IDS_HEADER_INFORMATION_OF_STUB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   標準ヘッダ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string IDS_HEADER_INFORMATION_STANDARD_HEADERS_OF_DRIVER {
+            get {
+                return ResourceManager.GetString("IDS_HEADER_INFORMATION_STANDARD_HEADERS_OF_DRIVER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   標準ヘッダ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string IDS_HEADER_INFORMATION_STANDARD_HEADERS_OF_STUB {
+            get {
+                return ResourceManager.GetString("IDS_HEADER_INFORMATION_STANDARD_HEADERS_OF_STUB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   ユーザヘッダ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string IDS_HEADER_INFORMATION_USER_HEADERS_OF_DRIVER {
+            get {
+                return ResourceManager.GetString("IDS_HEADER_INFORMATION_USER_HEADERS_OF_DRIVER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   ユーザヘッダ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string IDS_HEADER_INFORMATION_USER_HEADERS_OF_STUB {
+            get {
+                return ResourceManager.GetString("IDS_HEADER_INFORMATION_USER_HEADERS_OF_STUB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   ライブラリディレクトリ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string IDS_LIBRARY_DIRS {
+            get {
+                return ResourceManager.GetString("IDS_LIBRARY_DIRS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   ライブラリファイル に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string IDS_LIBRARY_FILES {
+            get {
+                return ResourceManager.GetString("IDS_LIBRARY_FILES", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   ライブラリ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string IDS_LIBRARY_INFORMATION {
+            get {
+                return ResourceManager.GetString("IDS_LIBRARY_INFORMATION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   マクロ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string IDS_MACRO {
+            get {
+                return ResourceManager.GetString("IDS_MACRO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   マクロ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string IDS_MACRO_ITEM {
+            get {
+                return ResourceManager.GetString("IDS_MACRO_ITEM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   実行 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string IDS_MENU_ITEM_EXECUTE {
@@ -174,6 +291,60 @@ namespace AutoTestPrep.Properties {
         public static string IDS_MENU_ITEM_HELP_VERSION {
             get {
                 return ResourceManager.GetString("IDS_MENU_ITEM_HELP_VERSION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   スタブ情報 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string IDS_STUB_BUFFER_INFORMATION {
+            get {
+                return ResourceManager.GetString("IDS_STUB_BUFFER_INFORMATION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   スタブバッファサイズ1 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string IDS_STUB_BUFFER_SIZE_1 {
+            get {
+                return ResourceManager.GetString("IDS_STUB_BUFFER_SIZE_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   スタブバッファサイズ2 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string IDS_STUB_BUFFER_SIZE_2 {
+            get {
+                return ResourceManager.GetString("IDS_STUB_BUFFER_SIZE_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   テスト情報 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string IDS_TEST_INFO_CATEGORY_NAME {
+            get {
+                return ResourceManager.GetString("IDS_TEST_INFO_CATEGORY_NAME", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   入力ソースルートフォルダ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string IDS_TEST_INFO_INPUT_ROOT_DIR_PATH {
+            get {
+                return ResourceManager.GetString("IDS_TEST_INFO_INPUT_ROOT_DIR_PATH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   出力先フォルダ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string IDS_TEST_INFO_OUTPUT_DIR_PATH {
+            get {
+                return ResourceManager.GetString("IDS_TEST_INFO_OUTPUT_DIR_PATH", resourceCulture);
             }
         }
     }
