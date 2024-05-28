@@ -18,7 +18,13 @@ namespace AutoTestPrep.ViewModel
 		/// Constructor with argument.
 		/// </summary>
 		/// <param name="index"></param>
-		public TestInformationInputViewModel(int index) : base(index) { }
+		public TestInformationInputViewModel(int index) : base(index)
+		{
+			_testInOutInfo = new CommandGridExpanderViewModel();
+
+
+
+		}
 
 		/// <summary>
 		/// Path to directory to output test codes.
@@ -36,7 +42,14 @@ namespace AutoTestPrep.ViewModel
 			get => _testInOutInfo.Items?.ElementAt(1).Item ?? string.Empty;
 		}
 
+		/// <summary>
+		/// Command expander view model field.
+		/// </summary>
 		protected CommandGridExpanderViewModel _testInOutInfo;
+
+		/// <summary>
+		/// Command expander view model property.
+		/// </summary>
 		public CommandGridExpanderViewModel TestInOutInformation
 		{
 			get => _testInOutInfo;
