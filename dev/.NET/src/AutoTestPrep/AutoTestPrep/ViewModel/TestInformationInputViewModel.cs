@@ -1,6 +1,7 @@
 ﻿using AutoTestPrep.Properties;
 using CustomUserControls.ViewModel;
 using System.ComponentModel;
+using System.Windows.Controls.Primitives;
 
 namespace AutoTestPrep.ViewModel
 {
@@ -12,18 +13,19 @@ namespace AutoTestPrep.ViewModel
 		/// <summary>
 		/// Default constructor
 		/// </summary>
-		public TestInformationInputViewModel() : this(-1) { }
-
-		/// <summary>
-		/// Constructor with argument.
-		/// </summary>
-		/// <param name="index"></param>
-		public TestInformationInputViewModel(int index) : base(index)
+		public TestInformationInputViewModel() : base()
 		{
-			_testInOutInfo = new CommandGridExpanderViewModel();
-
-
-
+			Items = new List<CommandGridExpanderItem>()
+			{
+				new CommandGridExpanderItem()
+				{
+					Title = Properties.Resources.IDS_TEST_INFO_INPUT_ROOT_DIR_PATH
+				},
+				new CommandGridExpanderItem()
+				{
+					Title = Properties.Resources.IDS_TEST_INFO_OUTPUT_DIR_PATH
+				}
+			};
 		}
 
 		/// <summary>
@@ -31,7 +33,17 @@ namespace AutoTestPrep.ViewModel
 		/// </summary>
 		public string InputRootDirPath
 		{
-			get => _testInOutInfo.Items?.ElementAt(0).Item ?? string.Empty;
+			get
+			{
+				if (null == Items)
+				{
+					return string.Empty;
+				}
+				else
+				{
+					return Items.ElementAt(0).Item.ToString();
+				}
+			}
 		}
 
 		/// <summary>
@@ -39,20 +51,17 @@ namespace AutoTestPrep.ViewModel
 		/// </summary>
 		public string OutputDirPath
 		{
-			get => _testInOutInfo.Items?.ElementAt(1).Item ?? string.Empty;
-		}
-
-		/// <summary>
-		/// Command expander view model field.
-		/// </summary>
-		protected CommandGridExpanderViewModel _testInOutInfo;
-
-		/// <summary>
-		/// Command expander view model property.
-		/// </summary>
-		public CommandGridExpanderViewModel TestInOutInformation
-		{
-			get => _testInOutInfo;
+			get
+			{
+				if (null == Items)
+				{
+					return string.Empty;
+				}
+				else
+				{
+					return Items.ElementAt(1).Item.ToString();
+				}
+			}
 		}
 	}
 }

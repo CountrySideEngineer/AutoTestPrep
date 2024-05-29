@@ -1,36 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CustomUserControls.ViewModel;
 
 namespace AutoTestPrep.ViewModel
 {
-	internal class AutoTestPrepViewModelBase : ViewModelBase
+	internal class AutoTestPrepViewModelBase : CommandGridExpanderViewModel
 	{
 		/// <summary>
 		/// Default constructor.
 		/// </summary>
 		public AutoTestPrepViewModelBase() : base()
 		{
-			ViewModelIndex = 0;
-			IsSelected = true;
+			IsSelected = false;
 		}
-
-		/// <summary>
-		/// Constructor with argument.
-		/// </summary>
-		/// <param name="viewModelIndex">View model index.</param>
-		public AutoTestPrepViewModelBase(int viewModelIndex)
-		{
-			this.ViewModelIndex = viewModelIndex;
-			this.IsSelected = true;
-		}
-
-		/// <summary>
-		/// View model index.
-		/// </summary>
-		public int ViewModelIndex { get; protected set; }
 
 		/// <summary>
 		/// Flag about the view model object has been selected or not.
@@ -44,12 +24,12 @@ namespace AutoTestPrep.ViewModel
 		{
 			get
 			{
-				return this._IsSelected;
+				return _IsSelected;
 			}
 			set
 			{
-				this._IsSelected = value;
-				this.RaisePropertyChanged(nameof(IsSelected));
+				_IsSelected = value;
+				RaisePropertyChanged(nameof(IsSelected));
 			}
 		}
 	}
