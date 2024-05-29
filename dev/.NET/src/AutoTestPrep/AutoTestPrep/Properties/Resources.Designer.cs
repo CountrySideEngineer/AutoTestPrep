@@ -297,27 +297,27 @@ namespace AutoTestPrep.Properties {
         /// <summary>
         ///   スタブ情報 に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        public static string IDS_STUB_BUFFER_INFORMATION {
+        public static string IDS_TEST_DOUBLE_BUFFER_INFORMATION {
             get {
-                return ResourceManager.GetString("IDS_STUB_BUFFER_INFORMATION", resourceCulture);
+                return ResourceManager.GetString("IDS_TEST_DOUBLE_BUFFER_INFORMATION", resourceCulture);
             }
         }
         
         /// <summary>
         ///   スタブバッファサイズ1 に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        public static string IDS_STUB_BUFFER_SIZE_1 {
+        public static string IDS_TEST_DOUBLE_BUFFER_SIZE_1 {
             get {
-                return ResourceManager.GetString("IDS_STUB_BUFFER_SIZE_1", resourceCulture);
+                return ResourceManager.GetString("IDS_TEST_DOUBLE_BUFFER_SIZE_1", resourceCulture);
             }
         }
         
         /// <summary>
         ///   スタブバッファサイズ2 に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        public static string IDS_STUB_BUFFER_SIZE_2 {
+        public static string IDS_TEST_DOUBLE_BUFFER_SIZE_2 {
             get {
-                return ResourceManager.GetString("IDS_STUB_BUFFER_SIZE_2", resourceCulture);
+                return ResourceManager.GetString("IDS_TEST_DOUBLE_BUFFER_SIZE_2", resourceCulture);
             }
         }
         
