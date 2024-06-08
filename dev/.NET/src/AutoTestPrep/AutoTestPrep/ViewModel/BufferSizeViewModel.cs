@@ -50,9 +50,16 @@ namespace AutoTestPrep.ViewModel
 			}
 			set
 			{
-				var itemsList = (List<CommandGridExpanderItem>)Items;
-				itemsList[0].Item = value.ToString();
-				RaisePropertyChanged();
+				try
+				{
+					var itemsList = (List<CommandGridExpanderItem>)Items;
+					itemsList[0].Item = value.ToString();
+					RaisePropertyChanged();
+				}
+				catch (NullReferenceException)
+				{
+					// Ignore the exceptoin.
+				}
 			}
 		}
 
@@ -75,9 +82,16 @@ namespace AutoTestPrep.ViewModel
 			}
 			set
 			{
-				var itemsList = (List<CommandGridExpanderItem>)Items;
-				itemsList[1].Item = value.ToString();
-				RaisePropertyChanged();
+				try
+				{
+					var itemsList = (List<CommandGridExpanderItem>)Items;
+					itemsList[1].Item = value.ToString();
+					RaisePropertyChanged();
+				}
+				catch (NullReferenceException)
+				{
+					// Ignore the exception.
+				}
 			}
 		}
 	}
