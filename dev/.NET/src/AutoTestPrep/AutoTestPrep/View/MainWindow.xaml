@@ -6,6 +6,7 @@
         xmlns:properties="clr-namespace:AutoTestPrep.Properties"
         xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         xmlns:local="clr-namespace:AutoTestPrep"
+        xmlns:uv="clr-namespace:AutoTestPrep.View"
         xmlns:vm="clr-namespace:AutoTestPrep.ViewModel"
         xmlns:cuc="clr-namespace:CustomUserControls;assembly=CustomUserControls"
         mc:Ignorable="d"
@@ -102,9 +103,10 @@
                 </HierarchicalDataTemplate>
             </TreeView.ItemTemplate>
         </TreeView>
-        <UserControl x:Name="UserInputViewArea"
-                     Grid.Row="1"
-                     Grid.Column="1"
-                     />
+        <uv:TestProjectConfigInputView x:Name="UserInputViewArea" 
+                                       Grid.Row="1"
+                                       Grid.Column="1"
+                                       DataContext="{Binding Path=SelectedItem}"
+                                       />
     </Grid>
 </Window>
