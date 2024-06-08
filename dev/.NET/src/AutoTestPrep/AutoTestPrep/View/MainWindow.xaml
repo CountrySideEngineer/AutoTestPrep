@@ -103,6 +103,8 @@
             </TreeView.ItemTemplate>
         </TreeView>
         <UserControl x:Name="UserInputViewArea"
+                     Grid.Row="1"
+                     Grid.Column="1"
                      />
     </Grid>
 </Window>
