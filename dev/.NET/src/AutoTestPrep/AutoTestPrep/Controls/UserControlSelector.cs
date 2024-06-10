@@ -16,12 +16,19 @@ namespace AutoTestPrep.Controls
 		{
 			var viewModel = (CommandGridExpanderViewModel)item;
 			var element = (FrameworkElement)container;
+			if ((null == viewModel) || (null == element))
+			{
+				return base.SelectTemplate(item, container);
+			}
+			else
+			{
+				DataTemplate template = (DataTemplate)element.FindResource("ItemSelect_001");
+				UserControl userControl = (UserControl)template.LoadContent();
+				userControl.DataContext = viewModel;
 
-			DataTemplate template = (DataTemplate)element.FindResource("ItemSelect_001");
-			UserControl userControl = (UserControl)template.LoadContent();
-			userControl.DataContext = viewModel;
+				return template;
+			}
 
-			return template;
 		}
 	}
 }
