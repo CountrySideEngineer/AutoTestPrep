@@ -8,6 +8,7 @@
         xmlns:local="clr-namespace:AutoTestPrep"
         xmlns:uv="clr-namespace:AutoTestPrep.View"
         xmlns:vm="clr-namespace:AutoTestPrep.ViewModel"
+        xmlns:ccs="clr-namespace:AutoTestPrep.Controls"
         xmlns:cuc="clr-namespace:CustomUserControls;assembly=CustomUserControls"
         mc:Ignorable="d"
         Title="{Binding Title}" 
@@ -22,6 +23,10 @@
                 <ResourceDictionary Source="./../Resource/MenuStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             <BooleanToVisibilityConverter x:Key="BoolVisibilityConverter"/>
+            <ccs:UserControlSelector x:Key="ControlSelector"/>
+            <DataTemplate x:Key="ItemSelect_001">
+                <uv:TestProjectConfigInputView />
+            </DataTemplate>
         </ResourceDictionary>
     </Window.Resources>
     <Grid>
@@ -103,10 +108,11 @@
                 </HierarchicalDataTemplate>
             </TreeView.ItemTemplate>
         </TreeView>
-        <uv:TestProjectConfigInputView x:Name="UserInputViewArea" 
-                                       Grid.Row="1"
-                                       Grid.Column="1"
-                                       DataContext="{Binding Path=SelectedItem}"
-                                       />
+        <UserControl x:Name="UserInputArae"
+                     Grid.Row="1"
+                     Grid.Column="1"
+                     ContentTemplateSelector="{StaticResource ControlSelector}"
+                     Content="{Binding SelectedItem}"
+                     />
     </Grid>
 </Window>
