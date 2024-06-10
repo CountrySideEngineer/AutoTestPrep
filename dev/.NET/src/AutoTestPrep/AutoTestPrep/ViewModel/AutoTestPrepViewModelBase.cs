@@ -32,5 +32,31 @@ namespace AutoTestPrep.ViewModel
 				RaisePropertyChanged(nameof(IsSelected));
 			}
 		}
+
+		/// <summary>
+		/// Extract an item from collection of item, Items property in base class.
+		/// </summary>
+		/// <param name="index">Index of the item in collection.</param>
+		/// <returns>Item in string.</returns>
+		protected virtual string ExtractItem(int index)
+		{
+			if (null == Items)
+			{
+				return string.Empty;
+			}
+			else
+			{
+				try
+				{
+					string item = Items.ElementAt(index).Item.ToString();
+					return item;
+				}
+				catch (Exception ex)
+				when ((ex is NullReferenceException) || (ex is IndexOutOfRangeException))
+				{
+					return string.Empty;
+				}
+			}
+		}
 	}
 }
