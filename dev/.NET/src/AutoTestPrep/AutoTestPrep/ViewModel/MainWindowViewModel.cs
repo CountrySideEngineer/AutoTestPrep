@@ -153,19 +153,27 @@ namespace AutoTestPrep.ViewModel
 						{
 							new CommandGridExpanderItem()
 							{
-								Title = "SubItem_001_003_Content_001"
+								Title = "SubItem_001_002_Content_001"
 							},
 							new CommandGridExpanderItem()
 							{
-								Title = "SubItem_001_003_Content_002"
+								Title = "SubItem_001_002_Content_002"
 							},
 							new CommandGridExpanderItem()
 							{
-								Title = "SubItem_001_003_Content_003"
+								Title = "SubItem_001_002_Content_003"
 							},
 							new CommandGridExpanderItem()
 							{
-								Title = "SubItem_001_003_Content_004"
+								Title = "SubItem_001_002_Content_004"
+							},
+							new CommandGridExpanderItem()
+							{
+								Title = "SubItem_001_002_Content_005"
+							},
+							new CommandGridExpanderItem()
+							{
+								Title = "SubItem_001_002_Content_006"
 							},
 						}
 					}
