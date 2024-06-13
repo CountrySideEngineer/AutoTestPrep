@@ -118,137 +118,14 @@ namespace AutoTestPrep.ViewModel
 				}
 			};
 
-			_itemCommandDictionary = new Dictionary<string, CommandGridExpanderViewModel>()
+			_itemCommandDictionary = new Dictionary<string, CommandGridExpanderViewModel>
 			{
-				{
-					"SubItem_001_001", new CommandGridExpanderViewModel()
-					{
-						CategoryName = "SubItem_001_001",
-						Items = new List<CommandGridExpanderItem>()
-						{
-							new CommandGridExpanderItem()
-							{
-								Title = "SubItem_001_001_Content_001"
-							},
-							new CommandGridExpanderItem()
-							{
-								Title = "SubItem_001_001_Content_002"
-							},
-							new CommandGridExpanderItem()
-							{
-								Title = "SubItem_001_001_Content_003"
-							},
-							new CommandGridExpanderItem()
-							{
-								Title = "SubItem_001_001_Content_004"
-							},
-						}
-					}
-				},
-				{
-					"SubItem_001_002", new CommandGridExpanderViewModel()
-					{
-						CategoryName = "SubItem_001_002",
-						Items = new List<CommandGridExpanderItem>()
-						{
-							new CommandGridExpanderItem()
-							{
-								Title = "SubItem_001_002_Content_001"
-							},
-							new CommandGridExpanderItem()
-							{
-								Title = "SubItem_001_002_Content_002"
-							},
-							new CommandGridExpanderItem()
-							{
-								Title = "SubItem_001_002_Content_003"
-							},
-							new CommandGridExpanderItem()
-							{
-								Title = "SubItem_001_002_Content_004"
-							},
-							new CommandGridExpanderItem()
-							{
-								Title = "SubItem_001_002_Content_005"
-							},
-							new CommandGridExpanderItem()
-							{
-								Title = "SubItem_001_002_Content_006"
-							},
-						}
-					}
-				},
+				{ "SubItem_001_001", new TestProjectConfigInputViewModel() },
+				{ "SubItem_001_002", new TestProjectConfigInputViewModel() },
+				{ "SubItem_001_003", new TestProjectConfigInputViewModel() },
 			};
 
-			_selectedNodeItems = new List<CommandGridExpanderViewModel>()
-			{
-				{
-					new CommandGridExpanderViewModel()
-					{
-						CategoryName = "SubItem_001_001",
-						Items = new List<CommandGridExpanderItem>()
-						{
-							new CommandGridExpanderItem()
-							{
-								Title = "SubItem_001_001_Content_001"
-							},
-							new CommandGridExpanderItem()
-							{
-								Title = "SubItem_001_001_Content_002"
-							},
-							new CommandGridExpanderItem()
-							{
-								Title = "SubItem_001_001_Content_003"
-							},
-							new CommandGridExpanderItem()
-							{
-								Title = "SubItem_001_001_Content_004"
-							},
-							new CommandGridExpanderItem()
-							{
-								Title = "SubItem_001_001_Content_005"
-							},
-							new CommandGridExpanderItem()
-							{
-								Title = "SubItem_001_001_Content_006"
-							},
-							new CommandGridExpanderItem()
-							{
-								Title = "SubItem_001_001_Content_007"
-							},
-							new CommandGridExpanderItem()
-							{
-								Title = "SubItem_001_001_Content_008"
-							},
-						}
-					}
-				},
-				{
-					new CommandGridExpanderViewModel()
-					{
-						CategoryName = "SubItem_001_002",
-						Items = new List<CommandGridExpanderItem>()
-						{
-							new CommandGridExpanderItem()
-							{
-								Title = "SubItem_001_002_Content_001"
-							},
-							new CommandGridExpanderItem()
-							{
-								Title = "SubItem_001_002_Content_002"
-							},
-							new CommandGridExpanderItem()
-							{
-								Title = "SubItem_001_002_Content_003"
-							},
-							new CommandGridExpanderItem()
-							{
-								Title = "SubItem_001_002_Content_004"
-							},
-						}
-					}
-				},
-			};
+
 		}
 
 		public void SelectedItemChangedExecute(ProjectItemViewModel selectedItem)
@@ -264,6 +141,7 @@ namespace AutoTestPrep.ViewModel
 			when (ex is KeyNotFoundException)
 			{
 				// Ignore command.
+				Debug.WriteLine("No item can be found in a command dictionary.");
 			}
 		}
 	}
