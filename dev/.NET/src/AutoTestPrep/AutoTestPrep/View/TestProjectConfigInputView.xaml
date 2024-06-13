@@ -14,12 +14,24 @@
                     CanVerticallyScroll="True"
                     CanHorizontallyScroll="False"
                     >
-            <cuc:CommandGridExpander x:Name="TestInformation"/>
-            <cuc:CommandGridExpander x:Name="TestDoubleInformation"/>
-            <cuc:CommandGridExpander x:Name="HeaderInDriverInformation"/>
-            <cuc:CommandGridExpander x:Name="HeaderInTestDoubleInformation"/>
-            <cuc:CommandGridExpander x:Name="LibraryInformation"/>
-            <cuc:CommandGridExpander x:Name="MacroInfomation"/>
+            <cuc:CommandGridExpander x:Name="TestInformation"
+                                     DataContext="{Binding TestInformation}"
+                                     />
+            <cuc:CommandGridExpander x:Name="TestDoubleInformation"
+                                     DataContext="{Binding TestDoubleInformation}"
+                                     />
+            <cuc:CommandGridExpander x:Name="HeaderInDriverInformation"
+                                     DataContext="{Binding HeaderinDriverInformation}"
+                                     />
+            <cuc:CommandGridExpander x:Name="HeaderInTestDoubleInformation"
+                                     DataContext="{Binding HeaderInTestDoubleInformation}"
+                                     />
+            <cuc:CommandGridExpander x:Name="LibraryInformation"
+                                     DataContext="{Binding LibraryInformation}"
+                                     />
+            <cuc:CommandGridExpander x:Name="MacroInfomation"
+                                     DataContext="{Binding MacroInformation}"
+                                     />
         </StackPanel>
     </Grid>
 </UserControl>
