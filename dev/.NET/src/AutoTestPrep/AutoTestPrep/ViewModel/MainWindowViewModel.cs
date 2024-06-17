@@ -124,8 +124,6 @@ namespace AutoTestPrep.ViewModel
 				{ "SubItem_001_002", new TestProjectConfigInputViewModel() },
 				{ "SubItem_001_003", new TestProjectConfigInputViewModel() },
 			};
-
-
 		}
 
 		public void SelectedItemChangedExecute(ProjectItemViewModel selectedItem)
