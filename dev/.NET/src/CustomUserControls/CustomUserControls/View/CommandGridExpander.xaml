@@ -5,12 +5,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CustomUserControls"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800"
+             Margin="0, 0, 0, -1"
+             >
     <UserControl.Resources>
         <BooleanToVisibilityConverter x:Key="BoolVisibilityConverter"/>
     </UserControl.Resources>
     <Grid Margin="0"
-          Background="Gainsboro"
+          Background="WhiteSmoke"
           >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -20,33 +22,35 @@
         </Grid.RowDefinitions>
         <Expander x:Name="TopExpander"
                   Grid.Column="0"
-                  Header="{Binding CategoryName}"
                   ExpandDirection="Down"
-                  VerticalAlignment="Top"
+                  Header="{Binding CategoryName}"
                   HorizontalContentAlignment="Stretch"
+                  VerticalAlignment="Top"
                   VerticalContentAlignment="Stretch"
                   IsExpanded="True"
-                  Background="Transparent"
+                  Background="WhiteSmoke"
                   >
             <DataGrid x:Name="ConfigurationGrid"
-                      Margin="32, 0, 0, 0"
+                      Margin="32, 0, -1, -1"
                       AutoGenerateColumns="False"
                       CanUserAddRows="False"
                       CanUserDeleteRows="False"
                       CanUserReorderColumns="False"
                       CanUserResizeColumns="True"
                       CanUserSortColumns="False"
+                      CanUserResizeRows="True"
                       IsReadOnly="True"
                       HeadersVisibility="None"
                       ItemsSource="{Binding Path=Items, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                       HorizontalScrollBarVisibility="Disabled"
                       BorderThickness="0"
-                      VerticalGridLinesBrush="gainsboro"
-                      HorizontalGridLinesBrush="gainsboro"
+                      GridLinesVisibility="All"
+                      VerticalGridLinesBrush="WhiteSmoke"
+                      HorizontalGridLinesBrush="WhiteSmoke"
                       >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Header"
-                                        Width="Auto"
+                                        Width="3*"
                                         MinWidth="136"
                                         CanUserReorder="False"
                                         CanUserSort="False"
@@ -54,7 +58,7 @@
                                         Binding="{Binding Title}"
                                         >
                     </DataGridTextColumn>
-                    <DataGridTemplateColumn Width="*"
+                    <DataGridTemplateColumn Width="7*"
                                             CanUserReorder="False"
                                             CanUserSort="False"
                                             CanUserResize="True"

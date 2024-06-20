@@ -10,14 +10,13 @@
              Background="White"
              >
         <Grid Margin="0"
-              Background="Gainsboro"
               >
         <ScrollViewer VerticalScrollBarVisibility="Auto"
                           >
             <StackPanel Orientation="Vertical"
                         CanVerticallyScroll="True"
                         CanHorizontallyScroll="False"
-                        Margin="0, 0, -2, 0"
+                        Margin="0, 0, 0, 0"
                         >
                 <cuc:CommandGridExpander x:Name="TestInformation"
                                      DataContext="{Binding TestInformation}"
