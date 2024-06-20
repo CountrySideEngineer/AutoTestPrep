@@ -9,29 +9,35 @@
              d:DesignHeight="450" d:DesignWidth="800"
              Background="White"
              >
-    <Grid>
-        <StackPanel Orientation="Vertical"
-                    CanVerticallyScroll="True"
-                    CanHorizontallyScroll="False"
-                    >
-            <cuc:CommandGridExpander x:Name="TestInformation"
+        <Grid Margin="0"
+              Background="Gainsboro"
+              >
+        <ScrollViewer VerticalScrollBarVisibility="Auto"
+                          >
+            <StackPanel Orientation="Vertical"
+                        CanVerticallyScroll="True"
+                        CanHorizontallyScroll="False"
+                        Margin="0, 0, -2, 0"
+                        >
+                <cuc:CommandGridExpander x:Name="TestInformation"
                                      DataContext="{Binding TestInformation}"
                                      />
-            <cuc:CommandGridExpander x:Name="TestDoubleInformation"
+                <cuc:CommandGridExpander x:Name="TestDoubleInformation"
                                      DataContext="{Binding TestDoubleInformation}"
                                      />
-            <cuc:CommandGridExpander x:Name="HeaderInDriverInformation"
+                <cuc:CommandGridExpander x:Name="HeaderInDriverInformation"
                                      DataContext="{Binding HeaderinDriverInformation}"
                                      />
-            <cuc:CommandGridExpander x:Name="HeaderInTestDoubleInformation"
+                <cuc:CommandGridExpander x:Name="HeaderInTestDoubleInformation"
                                      DataContext="{Binding HeaderInTestDoubleInformation}"
                                      />
-            <cuc:CommandGridExpander x:Name="LibraryInformation"
+                <cuc:CommandGridExpander x:Name="LibraryInformation"
                                      DataContext="{Binding LibraryInformation}"
                                      />
-            <cuc:CommandGridExpander x:Name="MacroInfomation"
+                <cuc:CommandGridExpander x:Name="MacroInfomation"
                                      DataContext="{Binding MacroInformation}"
                                      />
-        </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </UserControl>

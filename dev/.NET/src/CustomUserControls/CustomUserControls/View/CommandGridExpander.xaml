@@ -9,7 +9,9 @@
     <UserControl.Resources>
         <BooleanToVisibilityConverter x:Key="BoolVisibilityConverter"/>
     </UserControl.Resources>
-    <Grid>
+    <Grid Margin="0"
+          Background="Gainsboro"
+          >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
@@ -19,11 +21,12 @@
         <Expander x:Name="TopExpander"
                   Grid.Column="0"
                   Header="{Binding CategoryName}"
-                  VerticalAlignment="Top"
                   ExpandDirection="Down"
+                  VerticalAlignment="Top"
                   HorizontalContentAlignment="Stretch"
                   VerticalContentAlignment="Stretch"
                   IsExpanded="True"
+                  Background="Transparent"
                   >
             <DataGrid x:Name="ConfigurationGrid"
                       Margin="32, 0, 0, 0"
@@ -36,6 +39,10 @@
                       IsReadOnly="True"
                       HeadersVisibility="None"
                       ItemsSource="{Binding Path=Items, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                      HorizontalScrollBarVisibility="Disabled"
+                      BorderThickness="0"
+                      VerticalGridLinesBrush="gainsboro"
+                      HorizontalGridLinesBrush="gainsboro"
                       >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Header"
@@ -45,7 +52,8 @@
                                         CanUserSort="False"
                                         CanUserResize="True"
                                         Binding="{Binding Title}"
-                                        />
+                                        >
+                    </DataGridTextColumn>
                     <DataGridTemplateColumn Width="*"
                                             CanUserReorder="False"
                                             CanUserSort="False"
@@ -62,7 +70,9 @@
                                              Grid.ColumnSpan="2"
                                              Text="{Binding Path=Item, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                              HorizontalContentAlignment="Stretch"
-                                             />
+                                             BorderThickness="0"
+                                             >
+                                    </TextBox>
                                     <Button Grid.Column="1"
                                             Content="..."
                                             Padding="8, 0, 8, 0"

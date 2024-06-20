@@ -92,6 +92,7 @@
                   Grid.Column="0"
                   ItemsSource="{Binding ProjectRootItem}"
                   Visibility="{Binding IsProjectSet, Converter={StaticResource BoolVisibilityConverter}}"
+                  Margin="8"
                   >
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="SelectedItemChanged">
@@ -113,6 +114,11 @@
                      Grid.Column="1"
                      ContentTemplateSelector="{StaticResource ControlSelector}"
                      Content="{Binding SelectedItem}"
+                     BorderBrush="Gainsboro"
+                     BorderThickness="1"
+                     Padding="0"
+                     Margin="8"
+                     Background="Gainsboro"
                      />
     </Grid>
 </Window>
