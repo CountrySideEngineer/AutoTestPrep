@@ -94,7 +94,7 @@
                   ItemsSource="{Binding ProjectRootItem}"
                   Visibility="{Binding IsProjectSet, Converter={StaticResource BoolVisibilityConverter}}"
                   Margin="8"
-                  Background="#F9F9F9F"
+                  Background="#F9F9F9"
                   BorderBrush="gray"
                   >
             <i:Interaction.Triggers>
