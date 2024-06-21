@@ -1,9 +1,12 @@
-﻿using System;
+﻿using CustomUserControls.Command;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace CustomUserControls.ViewModel
@@ -32,6 +35,26 @@ namespace CustomUserControls.ViewModel
 				_item = value;
 				RaisePropertyChanged();
 			}
+		}
+
+		protected DelegateCommand _command;
+		public DelegateCommand Command
+		{
+			get
+			{
+				if (null == _command)
+				{
+					_command = new DelegateCommand(CommandExecute);
+				}
+				return _command;
+			}
+		}
+
+		public virtual void CommandExecute()
+		{
+			Debug.WriteLine($"{Title} command executed.");
+			MessageBox.Show($"{Title} is called.", "Title");
+			//throw new NotImplementedException();
 		}
     }
 

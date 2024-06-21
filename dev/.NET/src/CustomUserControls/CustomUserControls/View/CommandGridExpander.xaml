@@ -82,6 +82,7 @@
                                             Padding="8, 0, 8, 0"
                                             Visibility="{Binding Path=IsSelected, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGridRow}, Converter={StaticResource BoolVisibilityConverter}}"
                                             HorizontalContentAlignment="Stretch"
+                                            Command="{Binding Command}"
                                             >
                                     </Button>
                                 </Grid>
