@@ -13,7 +13,8 @@
         mc:Ignorable="d"
         Title="{Binding Title}" 
         Height="450" 
-        Width="800">
+        Width="800"
+        >
     <Window.DataContext>
         <vm:MainWindowViewModel/>
     </Window.DataContext>
@@ -29,7 +30,7 @@
             </DataTemplate>
         </ResourceDictionary>
     </Window.Resources>
-    <Grid>
+    <Grid Background="WhiteSmoke">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -93,6 +94,8 @@
                   ItemsSource="{Binding ProjectRootItem}"
                   Visibility="{Binding IsProjectSet, Converter={StaticResource BoolVisibilityConverter}}"
                   Margin="8"
+                  Background="#F9F9F9F"
+                  BorderBrush="gray"
                   >
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="SelectedItemChanged">
@@ -114,11 +117,11 @@
                      Grid.Column="1"
                      ContentTemplateSelector="{StaticResource ControlSelector}"
                      Content="{Binding SelectedItem}"
-                     BorderBrush="WhiteSmoke"
+                     BorderBrush="Silver"
                      BorderThickness="1"
                      Padding="0"
                      Margin="8"
-                     Background="WhiteSmoke"
+                     Background="White"
                      />
     </Grid>
 </Window>
