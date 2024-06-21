@@ -14,6 +14,8 @@ namespace AutoTestPrep.ViewModel
 		/// </summary>
 		public TestStubHeaderInformationViewModel() : base()
 		{
+			CategoryName = Properties.Resources.IDS_HEADER_INFORMATION_OF_STUB;
+
 			Items = new List<CommandGridExpanderItem>()
 			{
 				new CommandGridExpanderItem()

@@ -14,6 +14,8 @@ namespace AutoTestPrep.ViewModel
 		/// </summary>
 		public LibraryInformationViewModel() : base()
 		{
+			CategoryName = Properties.Resources.IDS_LIBRARY_INFORMATION;
+
 			Items = new List<CommandGridExpanderItem>()
 			{
 				new CommandGridExpanderItem()

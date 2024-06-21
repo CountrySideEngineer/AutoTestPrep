@@ -14,6 +14,8 @@ namespace AutoTestPrep.ViewModel
 		/// </summary>
 		public MacroInformationViewModel() : base()
 		{
+			CategoryName = Properties.Resources.IDS_MACRO;
+
 			Items = new List<CommandGridExpanderItem>()
 			{
 				new CommandGridExpanderItem()

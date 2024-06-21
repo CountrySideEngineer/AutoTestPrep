@@ -15,8 +15,11 @@ namespace AutoTestPrep.ViewModel
 		/// </summary>
 		public TestInformationInputViewModel() : base()
 		{
+			CategoryName = Properties.Resources.IDS_TEST_INFO_CATEGORY_NAME;
+
 			Items = new List<CommandGridExpanderItem>()
 			{
+				//CategoryName = Properties.Resources.IDS_TEST_INFO_CATEGORY_NAME,
 				new CommandGridExpanderItem()
 				{
 					Title = Properties.Resources.IDS_TEST_INFO_INPUT_ROOT_DIR_PATH

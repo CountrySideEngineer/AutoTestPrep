@@ -14,6 +14,8 @@ namespace AutoTestPrep.ViewModel
 		/// </summary>
 		public TestDriverHeaderInformationViewModel() : base()
 		{
+			CategoryName = Properties.Resources.IDS_HEADER_INFORMATION_OF_DRIVER;
+
 			Items = new List<CommandGridExpanderItem>()
 			{
 				new CommandGridExpanderItem()
