@@ -25,7 +25,7 @@
                                      DataContext="{Binding TestDoubleInformation}"
                                      />
                 <cuc:CommandGridExpander x:Name="HeaderInDriverInformation"
-                                     DataContext="{Binding HeaderinDriverInformation}"
+                                     DataContext="{Binding HeaderInDriverInformation}"
                                      />
                 <cuc:CommandGridExpander x:Name="HeaderInTestDoubleInformation"
                                      DataContext="{Binding HeaderInTestDoubleInformation}"
