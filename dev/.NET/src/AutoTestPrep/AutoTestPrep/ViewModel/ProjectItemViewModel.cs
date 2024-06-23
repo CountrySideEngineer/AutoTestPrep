@@ -28,7 +28,7 @@ namespace AutoTestPrep.ViewModel
 		}
 
 		/// <summary>
-		/// Collection of ProjetItem object field as sub projects.
+		/// Collection of Project object field as sub projects.
 		/// </summary>
 		protected IEnumerable<ProjectItemViewModel>? _subProjects = null;
 

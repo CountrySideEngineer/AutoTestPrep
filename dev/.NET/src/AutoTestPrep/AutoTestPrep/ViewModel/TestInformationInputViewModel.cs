@@ -22,11 +22,13 @@ namespace AutoTestPrep.ViewModel
 				//CategoryName = Properties.Resources.IDS_TEST_INFO_CATEGORY_NAME,
 				new CommandGridExpanderItem()
 				{
-					Title = Properties.Resources.IDS_TEST_INFO_INPUT_ROOT_DIR_PATH
+					Title = Properties.Resources.IDS_TEST_INFO_INPUT_ROOT_DIR_PATH,
+					Item = string.Empty
 				},
 				new CommandGridExpanderItem()
 				{
-					Title = Properties.Resources.IDS_TEST_INFO_OUTPUT_DIR_PATH
+					Title = Properties.Resources.IDS_TEST_INFO_OUTPUT_DIR_PATH,
+					Item = string.Empty
 				}
 			};
 		}

@@ -11,9 +11,9 @@ namespace AutoTestPrep.ViewModel
 	{
 		public CommandGridExpanderViewModel TestInformation { get; set; }
 
-		public CommandGridExpanderViewModel TestDoubleInformation { get; set; }
+		public CommandGridExpanderViewModel<long> TestDoubleInformation { get; set; }
 
-		public CommandGridExpanderViewModel HeaderinDriverInformation { get; set; }
+		public CommandGridExpanderViewModel HeaderInDriverInformation { get; set; }
 
 		public CommandGridExpanderViewModel HeaderInTestDoubleInformation { get; set; }
 
@@ -25,7 +25,7 @@ namespace AutoTestPrep.ViewModel
 		{
 			TestInformation = new TestInformationInputViewModel();
 			TestDoubleInformation = new BufferSizeViewModel();
-			HeaderinDriverInformation = new TestDriverHeaderInformationViewModel();
+			HeaderInDriverInformation = new TestDriverHeaderInformationViewModel();
 			HeaderInTestDoubleInformation = new TestStubHeaderInformationViewModel();
 			LibraryInformation = new LibraryInformationViewModel();
 			MacroInformation = new MacroInformationViewModel();

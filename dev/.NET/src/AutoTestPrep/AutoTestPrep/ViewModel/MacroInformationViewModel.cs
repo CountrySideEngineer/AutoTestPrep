@@ -20,7 +20,8 @@ namespace AutoTestPrep.ViewModel
 			{
 				new CommandGridExpanderItem()
 				{
-					Title = Properties.Resources.IDS_MACRO
+					Title = Properties.Resources.IDS_MACRO,
+					Item = string.Empty
 				}
 			};
 		}

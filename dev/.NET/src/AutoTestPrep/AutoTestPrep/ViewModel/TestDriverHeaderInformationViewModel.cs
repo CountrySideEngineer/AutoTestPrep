@@ -20,15 +20,18 @@ namespace AutoTestPrep.ViewModel
 			{
 				new CommandGridExpanderItem()
 				{
-					Title = Properties.Resources.IDS_HEADER_INFORMATION_STANDARD_HEADERS_OF_DRIVER
+					Title = Properties.Resources.IDS_HEADER_INFORMATION_STANDARD_HEADERS_OF_DRIVER,
+					Item = string.Empty
 				},
 				new CommandGridExpanderItem()
 				{
-					Title = Properties.Resources.IDS_HEADER_INFORMATION_USER_HEADERS_OF_DRIVER
+					Title = Properties.Resources.IDS_HEADER_INFORMATION_USER_HEADERS_OF_DRIVER,
+					Item = string.Empty
 				},
 				new CommandGridExpanderItem()
 				{
-					Title = Properties.Resources.IDS_HEADER_INFORMATION_HEADER_INCLUDE_DIRS_OF_DRIVER
+					Title = Properties.Resources.IDS_HEADER_INFORMATION_HEADER_INCLUDE_DIRS_OF_DRIVER,
+					Item = string.Empty
 				}
 			};
 		}

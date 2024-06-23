@@ -20,11 +20,13 @@ namespace AutoTestPrep.ViewModel
 			{
 				new CommandGridExpanderItem()
 				{
-					Title = Properties.Resources.IDS_LIBRARY_FILES
+					Title = Properties.Resources.IDS_LIBRARY_FILES,
+					Item = string.Empty
 				},
 				new CommandGridExpanderItem()
 				{
-					Title = Properties.Resources.IDS_LIBRARY_DIRS
+					Title = Properties.Resources.IDS_LIBRARY_DIRS,
+					Item = string.Empty
 				},
 			};
 		}
