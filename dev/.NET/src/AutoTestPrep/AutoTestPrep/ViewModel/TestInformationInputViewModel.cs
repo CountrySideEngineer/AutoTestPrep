@@ -1,4 +1,5 @@
-﻿using AutoTestPrep.Properties;
+﻿using AutoTestPrep.Command;
+using AutoTestPrep.Properties;
 using CustomUserControls.ViewModel;
 using System.ComponentModel;
 using System.Windows.Controls.Primitives;
@@ -19,11 +20,11 @@ namespace AutoTestPrep.ViewModel
 
 			Items = new List<CommandGridExpanderItem>()
 			{
-				//CategoryName = Properties.Resources.IDS_TEST_INFO_CATEGORY_NAME,
 				new CommandGridExpanderItem()
 				{
 					Title = Properties.Resources.IDS_TEST_INFO_INPUT_ROOT_DIR_PATH,
-					Item = string.Empty
+					Item = string.Empty,
+					CustomCommand = new PathSelectionCommand()
 				},
 				new CommandGridExpanderItem()
 				{
