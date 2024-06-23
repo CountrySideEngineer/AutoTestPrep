@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AutoTestPrep.ViewModel
 {
-	internal class BufferSizeViewModel : AutoTestPrepViewModelBase
+	internal class BufferSizeViewModel : AutoTestPrepViewModelBase<long>
 	{
 		/// <summary>
 		/// Default constructor.
@@ -16,17 +16,17 @@ namespace AutoTestPrep.ViewModel
 		{
 			CategoryName = Properties.Resources.IDS_TEST_DOUBLE_BUFFER_INFORMATION;
 
-			Items = new List<CommandGridExpanderItem>()
+			Items = new List<CommandGridExpanderItem<long>>()
 			{
-				new CommandGridExpanderItem()
+				new CommandGridExpanderItem<long>()
 				{
 					Title = Properties.Resources.IDS_TEST_DOUBLE_BUFFER_SIZE_1,
-					Item = "100"
+					Item = 100
 				},
-				new CommandGridExpanderItem()
+				new CommandGridExpanderItem<long>()
 				{
 					Title = Properties.Resources.IDS_TEST_DOUBLE_BUFFER_SIZE_2,
-					Item = "100"
+					Item = 100
 				}
 			};
 		}
@@ -38,15 +38,7 @@ namespace AutoTestPrep.ViewModel
 		{
 			get
 			{
-				try
-				{
-					return Convert.ToInt64(Items.ElementAt(0).Item);
-				}
-				catch (Exception ex)
-				when ((ex is ArgumentNullException) || (ex is ArgumentOutOfRangeException))
-				{
-					return 100;
-				}
+				return ExtractItem(0);
 			}
 			set
 			{
@@ -58,7 +50,7 @@ namespace AutoTestPrep.ViewModel
 				}
 				catch (NullReferenceException)
 				{
-					// Ignore the exceptoin.
+					// Ignore the exception.
 				}
 			}
 		}
@@ -70,15 +62,7 @@ namespace AutoTestPrep.ViewModel
 		{
 			get
 			{
-				try
-				{
-					return Convert.ToInt64(Items.ElementAt(0).Item);
-				}
-				catch (Exception ex)
-				when ((ex is ArgumentNullException) || (ex is ArgumentOutOfRangeException))
-				{
-					return 100;
-				}
+				return ExtractItem(1);
 			}
 			set
 			{
