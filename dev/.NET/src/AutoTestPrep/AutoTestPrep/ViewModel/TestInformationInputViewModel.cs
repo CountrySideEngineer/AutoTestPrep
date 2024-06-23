@@ -29,7 +29,8 @@ namespace AutoTestPrep.ViewModel
 				new CommandGridExpanderItem()
 				{
 					Title = Properties.Resources.IDS_TEST_INFO_OUTPUT_DIR_PATH,
-					Item = string.Empty
+					Item = string.Empty,
+					CustomCommand = new PathSelectionCommand()
 				}
 			};
 		}
