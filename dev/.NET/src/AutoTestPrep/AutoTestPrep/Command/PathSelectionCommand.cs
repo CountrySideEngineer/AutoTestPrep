@@ -19,12 +19,26 @@ namespace AutoTestPrep.Command
 		public string Execute(string parameter)
 		{
 			var pathSelectView = new PathSelectionDialog();
-			pathSelectView.ShowDialog();
+			bool? dialogResult = pathSelectView.ShowDialog();
 
-			var context = (PathSelectionDialogViewModel)pathSelectView.DataContext;
-			var selectedPath = context.InputPath;
+			if (dialogResult is null)
+			{
+				return parameter;
+			}
+			else
+			{
+				if (dialogResult.Value)
+				{
+					var context = (PathSelectionDialogViewModel)pathSelectView.DataContext;
+					var selectedPath = context.InputPath;
 
-			return selectedPath;
+					return selectedPath;
+				}
+				else
+				{
+					return parameter;
+				}
+			}
 		}
 	}
 }
