@@ -2,8 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data.SqlTypes;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -13,6 +15,10 @@ namespace CustomUserControls.ViewModel
 {
     public class CommandGridExpanderItem : ViewModelBase
     {
+		public CommandGridExpanderItem() : base() { }
+
+		public ICustomUserCommand<string>? CustomCommand { get; set; }
+
 		protected string _title = string.Empty;
 		public string Title
 		{
@@ -23,8 +29,6 @@ namespace CustomUserControls.ViewModel
 				RaisePropertyChanged();
 			}
 		}
-
-		long data;
 
 		protected string _item = string.Empty;
 		public string Item
@@ -37,7 +41,7 @@ namespace CustomUserControls.ViewModel
 			}
 		}
 
-		protected DelegateCommand _command;
+		protected DelegateCommand? _command;
 		public DelegateCommand Command
 		{
 			get
@@ -55,11 +59,16 @@ namespace CustomUserControls.ViewModel
 			Debug.WriteLine($"{Title} command executed.");
 			MessageBox.Show($"{Title} is called.", "Title");
 			//throw new NotImplementedException();
-		}
-    }
 
-	public class CommandGridExpanderItem<T> : ViewModelBase where T : struct
+			string itemBak = Item;
+			Item = CustomCommand?.Execute(itemBak) ?? itemBak;
+		}
+	}
+
+	public class CommandGridExpanderItem<T> : ViewModelBase where T : new()
 	{
+		public ICustomUserCommand<T>? CustomCommand { get; set; }
+
 		protected string _title = string.Empty;
 		public string Title
 		{
@@ -71,7 +80,7 @@ namespace CustomUserControls.ViewModel
 			}
 		}
 
-		protected T _item;
+		protected T _item = new();
 		public T Item
 		{
 			get => _item;
@@ -79,6 +88,32 @@ namespace CustomUserControls.ViewModel
 			{
 				_item = value;
 				RaisePropertyChanged();
+			}
+		}
+
+		protected DelegateCommand? _command;
+		public DelegateCommand Command
+		{
+			get
+			{
+				if (null == _command)
+				{
+					_command = new DelegateCommand(CommandExecute);
+				}
+				return _command;
+			}
+		}
+
+		public virtual void CommandExecute()
+		{
+			Debug.WriteLine($"{Title} command executed.");
+			MessageBox.Show($"{Title} is called.", "Title");
+			//throw new NotImplementedException();
+
+			if (null != CustomCommand)
+			{
+				T itemBak = Item;
+				Item = CustomCommand.Execute(itemBak);
 			}
 		}
 	}

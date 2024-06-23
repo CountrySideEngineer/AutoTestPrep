@@ -45,9 +45,11 @@ namespace CustomUserControls.Model
             }
         }
 
-        /// <summary>
-        /// Default constructor.
-        /// </summary>
-        public ModelItem() : base() { }
-    }
+		/// <summary>
+		/// Default constructor.
+		/// </summary>
+#pragma warning disable CS8618 // null 非許容のフィールドには、コンストラクターの終了時に null 以外の値が入っていなければなりません。Null 許容として宣言することをご検討ください。
+		public ModelItem() : base() { }
+#pragma warning restore CS8618 // null 非許容のフィールドには、コンストラクターの終了時に null 以外の値が入っていなければなりません。Null 許容として宣言することをご検討ください。
+	}
 }
