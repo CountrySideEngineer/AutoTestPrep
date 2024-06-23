@@ -55,14 +55,14 @@ namespace AutoTestPrep.ViewModel
 			}
 		}
 
-		protected DelegateCommand<ProjectItemViewModel>? _selectedItemChangedCommand = null;
-		public DelegateCommand<ProjectItemViewModel> SelectedItemChangedCommand
+		protected Command.DelegateCommand<ProjectItemViewModel>? _selectedItemChangedCommand = null;
+		public Command.DelegateCommand<ProjectItemViewModel> SelectedItemChangedCommand
 		{
 			get
 			{
 				if (null == _selectedItemChangedCommand)
 				{
-					_selectedItemChangedCommand = new DelegateCommand<ProjectItemViewModel>(SelectedItemChangedExecute);
+					_selectedItemChangedCommand = new Command.DelegateCommand<ProjectItemViewModel>(SelectedItemChangedExecute);
 				}
 				return _selectedItemChangedCommand;
 			}
