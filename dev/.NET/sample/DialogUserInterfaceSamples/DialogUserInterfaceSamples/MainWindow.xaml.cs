@@ -34,7 +34,7 @@ namespace DialogUserInterfaceSamples
 
 		private void ShowDialog(int mode)
 		{
-			var dialog = new DialogUserInterfaces.PathSelectionDialog(mode);
+			var dialog = new DialogUserInterfaces.View.PathSelectionDialog(mode);
 			if (true == dialog.ShowDialog())
 			{
 				UserInputText.Text = dialog.Path;

@@ -10,6 +10,7 @@ using System.Linq;
 using System.Security.RightsManagement;
 using System.Text;
 using System.Threading.Tasks;
+using DialogUserInterfaces.View;
 
 namespace DialogUserInterfaceSamples.ViewModel
 {
@@ -87,7 +88,7 @@ namespace DialogUserInterfaceSamples.ViewModel
 
 		protected void ShowDialogCommandExecute(int mode)
 		{
-			var dialog = new DialogUserInterfaces.PathSelectionDialog(mode);
+			var dialog = new DialogUserInterfaces.View.PathSelectionDialog(mode);
 
 			if (true == dialog.ShowDialog())
 			{
@@ -126,8 +127,26 @@ namespace DialogUserInterfaceSamples.ViewModel
 			{
 				UserInputText = dialog.InputValue.ToString();
 			}
-
-
 		}
+
+		protected DelegateCommand? _buttonListBoxViewCommand = null;
+		public DelegateCommand ButtonListBoxViewCommand
+		{
+			get
+			{
+				if (null == _buttonListBoxViewCommand)
+				{
+					_buttonListBoxViewCommand = new DelegateCommand(ButtonListBoxViewCommandExecute);
+				}
+				return _buttonListBoxViewCommand;
+			}
+		}
+
+		protected void ButtonListBoxViewCommandExecute()
+		{
+			var dialog = new MultiPathSelectionDialog();
+			dialog.Show();
+		}
+
 	}
 }

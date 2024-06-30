@@ -16,6 +16,7 @@
             <RowDefinition Height="56"/>
             <RowDefinition Height="56"/>
             <RowDefinition Height="40"/>
+            <RowDefinition Height="56"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -72,6 +73,12 @@
                        Padding="4"
                        />
         </Border>
-
+        <Button Grid.Row="4"
+                Grid.Column="0"
+                Margin="8"
+                Padding="8"
+                Content="Button list box"
+                Command="{Binding ButtonListBoxViewCommand}"
+                />
     </Grid>
 </Window>
