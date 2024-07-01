@@ -13,17 +13,7 @@ namespace DialogUserInterfaces.ViewModel
 		/// <summary>
 		/// Field of items to be displayed in list box view.
 		/// </summary>
-		protected IEnumerable<ButtonListItem> _items = new List<ButtonListItem>()
-		{
-			new ButtonListItem()
-			{
-				InputItem = "sample input text box."
-			},
-			new ButtonListItem()
-			{
-				InputItem = "sample input text box 002."
-			},
-		};
+		protected IEnumerable<ButtonListItem> _items = new List<ButtonListItem>();
 
 		/// <summary>
 		/// Items to be displayed in list box view.
@@ -38,8 +28,14 @@ namespace DialogUserInterfaces.ViewModel
 			}
 		}
 
+		/// <summary>
+		/// Selected item field.
+		/// </summary>
 		protected string? _selectedItem;
 
+		/// <summary>
+		/// Selected item property.
+		/// </summary>
 		public string? SelectedItem
 		{
 			get => _selectedItem;
@@ -53,6 +49,19 @@ namespace DialogUserInterfaces.ViewModel
 		/// <summary>
 		/// Default constructor.
 		/// </summary>
-		public ButtonListBoxViewModel() : base() { }
+		public ButtonListBoxViewModel() : base()
+		{
+			Items = new List<ButtonListItem>()
+			{
+				new ButtonListItem()
+				{
+					InputItem = "Sample input text box item 001"
+				},
+				new ButtonListItem()
+				{
+					InputItem = "Sample input text box item 002"
+				}
+			};
+		}
     }
 }

@@ -72,5 +72,13 @@ namespace DialogUserInterfaces.ViewModel
 				_inputPaths = splitValue;
 			}
 		}
+
+		/// <summary>
+		/// Default constructor.
+		/// </summary>
+		public MultiPathSelectionViewModel() : base()
+		{
+			UserInputPath = new();
+		}
 	}
 }

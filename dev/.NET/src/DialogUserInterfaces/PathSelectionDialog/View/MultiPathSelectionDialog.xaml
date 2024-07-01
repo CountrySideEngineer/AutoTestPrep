@@ -25,7 +25,7 @@
                                     Grid.Column="0"
                                     Grid.ColumnSpan="3"
                                     Margin="8, 8, 8, 4"
-                                    DataContext="UserInputPath"
+                                    DataContext="{Binding UserInputPath}"
                                     />
         <Button Name="OKButton"
                 Grid.Row="2"

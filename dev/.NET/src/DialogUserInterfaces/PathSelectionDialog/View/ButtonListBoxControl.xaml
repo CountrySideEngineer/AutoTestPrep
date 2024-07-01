@@ -22,12 +22,14 @@
                   Grid.ColumnSpan="2"
                   SelectionMode="Single"
                   ItemsSource="{Binding Path=Items, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                  BorderThickness="0"
+                  BorderBrush="Transparent"
+                  Background="Transparent"
                   >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid HorizontalAlignment="Stretch"
                           VerticalAlignment="Stretch"
-                          Margin="4, 0, 4, 0"
                           >
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
@@ -36,7 +38,9 @@
                         <TextBox Grid.Column="0"
                                  Grid.ColumnSpan="2"
                                  Text="{Binding Path=InputItem, UpdateSourceTrigger=PropertyChanged}"
+                                 Padding="0"
                                  BorderThickness="0"
+                                 Background="Transparent"
                                  />
                         <Button Grid.Column="1"
                                 Content="..."
@@ -46,6 +50,12 @@
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="{x:Type ListViewItem}">
+                    <Setter Property="Height" Value="Auto"/>
+                    <Setter Property="Background" Value="Transparent"/>
+                </Style>
+            </ListView.ItemContainerStyle>
         </ListView>
     </Grid>
 </UserControl>
