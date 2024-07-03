@@ -5,43 +5,34 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace DialogUserInterfaces.Command
 {
-    public class PathSelectionCommand : IDialogCommand<string>
+    public class PathSelectionCommand : DialogCommand<string>
     {
 		/// <summary>
 		/// Default constructor.
 		/// </summary>
-		public PathSelectionCommand() { }
+		public PathSelectionCommand() : base() { }
 
 		/// <summary>
-		/// Show PathSelection dialog and return the path selected in the dialog.
+		/// Extract result of window input.
 		/// </summary>
-		/// <param name="parameter">Default command value.</param>
-		/// <returns>Selected path in the dialog.</returns>
-		public string Execute(string parameter)
+		/// <param name="window">Window object to show as dialog.</param>
+		/// <returns>Result of window, dialog, a user input.</returns>
+		protected override string GetDialogResult(Window? window)
 		{
-			var dialog = new PathSelectionDialog();
-			bool? result = dialog.ShowDialog();
-
-			if (null == result)
+			try
 			{
-				return parameter;
+				PathSelectionDialogViewModel? viewModel = (PathSelectionDialogViewModel?)window?.DataContext;
+				var selectedPath = viewModel?.InputPath;
+
+				return selectedPath ?? string.Empty;
 			}
-			else
+			catch (NullReferenceException)
 			{
-				if (result.Value)
-				{
-					var viewModel = (PathSelectionDialogViewModel)dialog.DataContext;
-					var selectedPath = viewModel.InputPath;
-
-					return selectedPath;
-				}
-				else
-				{
-					return parameter;
-				}
+				throw;
 			}
 		}
 	}
