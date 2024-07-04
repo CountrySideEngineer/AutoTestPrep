@@ -25,14 +25,28 @@ namespace DialogUserInterfaces.View
 			InitializeComponent();
 		}
 
+		/// <summary>
+		/// OK button click event handler.
+		/// </summary>
+		/// <param name="sender">Event sender.</param>
+		/// <param name="e">Event argument.</param>
 		private void OKButton_Click(object sender, RoutedEventArgs e)
 		{
+			DialogResult = true;
 
+			Close();
         }
 
+		/// <summary>
+		/// Cancel button click event handler.
+		/// </summary>
+		/// <param name="sender">Event sender.</param>
+		/// <param name="e">Event argument.</param>
 		private void CancelButton_Click(object sender, RoutedEventArgs e)
 		{
+			DialogResult = false;
 
+			Close();
 		}
 	}
 }
