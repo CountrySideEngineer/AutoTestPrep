@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Automation.Peers;
 
 namespace DialogUserInterfaces.Command
 {
@@ -29,9 +30,13 @@ namespace DialogUserInterfaces.Command
 			try
 			{
 				MultiPathSelectionViewModel? context = (MultiPathSelectionViewModel?)window?.DataContext;
-				var paths = context?.InputPaths;
-
-				return paths ?? new List<string>();
+				var items = context?.UserInputPath.Items;
+				var resultItems = new List<string>();
+				foreach (var item in items)
+				{
+					resultItems.Add(item.InputItem);
+				}
+				return resultItems;
 			}
 			catch (NullReferenceException)
 			{
