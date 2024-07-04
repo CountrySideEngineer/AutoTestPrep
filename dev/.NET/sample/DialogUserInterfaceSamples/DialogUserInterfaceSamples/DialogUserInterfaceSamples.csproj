@@ -9,9 +9,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Command\DelegateCommand.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="DialogUserInterfaces">
       <HintPath>..\..\..\src\bin\DialogUserInterfaces.dll</HintPath>
     </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Command\" />
   </ItemGroup>
 
 </Project>

@@ -1,6 +1,7 @@
-﻿using DialogUserInterfaceSamples.Command;
+﻿//using DialogUserInterfaceSamples.Command;
 using DialogUserInterfaces;
 using DialogUserInterfaces.ViewModel;
+using DialogUserInterfaces.Command;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -144,8 +145,9 @@ namespace DialogUserInterfaceSamples.ViewModel
 
 		protected void ButtonListBoxViewCommandExecute()
 		{
-			var dialog = new MultiPathSelectionDialog();
-			dialog.Show();
+			var parameters = new List<string>();
+			var command = new DialogUserInterfaces.Command.MultiPathSelectionCommand();
+			IEnumerable<string> results = command.Execute(parameters);
 		}
 
 	}
