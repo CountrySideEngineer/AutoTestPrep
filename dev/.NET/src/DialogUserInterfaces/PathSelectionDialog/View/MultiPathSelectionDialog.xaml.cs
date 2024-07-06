@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DialogUserInterfaces.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -47,6 +48,18 @@ namespace DialogUserInterfaces.View
 			DialogResult = false;
 
 			Close();
+		}
+
+		/// <summary>
+		/// Content of the dialog.
+		/// </summary>
+		public IEnumerable<string> InputPath
+		{
+			get
+			{
+				IEnumerable<string> content = ((MultiPathSelectionViewModel)DataContext).GetContent();
+				return content;
+			}
 		}
 	}
 }
