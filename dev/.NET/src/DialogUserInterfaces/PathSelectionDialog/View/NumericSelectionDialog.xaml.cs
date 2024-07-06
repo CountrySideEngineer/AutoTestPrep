@@ -66,6 +66,10 @@ namespace DialogUserInterfaces
 			{
 				return ((NumericSelectionDialogViewModel)DataContext).InputValue;
 			}
+			set
+			{
+				((NumericSelectionDialogViewModel)DataContext).InputValue = value;
+			}
 		}
 	}
 }
