@@ -17,7 +17,6 @@ namespace DialogUserInterfaces.Command
 		/// </summary>
 		public MultiPathSelectionCommand() : base()
 		{
-			int mode = 1;
 			_dialog = new MultiPathSelectionDialog();
 		}
 
@@ -30,8 +29,9 @@ namespace DialogUserInterfaces.Command
 		{
 			try
 			{
-				MultiPathSelectionViewModel? context = (MultiPathSelectionViewModel?)window?.DataContext;
-				IEnumerable<string> content = context?.GetContent();
+				var dialog = (MultiPathSelectionDialog?)window;
+				IEnumerable<string>? nullableContent = dialog?.InputPath;
+				IEnumerable<string> content = nullableContent ?? new List<string>();
 
 				return content;
 			}
