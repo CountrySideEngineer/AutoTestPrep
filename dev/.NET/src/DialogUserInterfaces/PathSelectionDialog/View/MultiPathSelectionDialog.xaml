@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:DialogUserInterfaces.View"
         xmlns:vm="clr-namespace:DialogUserInterfaces.ViewModel"
         mc:Ignorable="d" 
-        Height="500"
-        Width="200"
+        Height="200"
+        Width="500"
         d:DesignHeight="200" d:DesignWidth="500"
         >
     <Window.DataContext>
