@@ -31,6 +31,11 @@ namespace DialogUserInterfaces.View
 			DataContext = new FolderSelectionDialogViewModel();
 		}
 
+		/// <summary>
+		/// Constructor with mode.
+		/// </summary>
+		/// <param name="mode">Mode of path selection dialog.</param>
+		/// <exception cref="ArgumentException">Mode is invalid.</exception>
 		public PathSelectionDialog(int mode)
 		{
 			InitializeComponent();

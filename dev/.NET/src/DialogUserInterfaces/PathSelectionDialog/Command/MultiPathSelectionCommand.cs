@@ -17,6 +17,7 @@ namespace DialogUserInterfaces.Command
 		/// </summary>
 		public MultiPathSelectionCommand() : base()
 		{
+			int mode = 1;
 			_dialog = new MultiPathSelectionDialog();
 		}
 
@@ -30,13 +31,9 @@ namespace DialogUserInterfaces.Command
 			try
 			{
 				MultiPathSelectionViewModel? context = (MultiPathSelectionViewModel?)window?.DataContext;
-				var items = context?.UserInputPath.Items;
-				var resultItems = new List<string>();
-				foreach (var item in items)
-				{
-					resultItems.Add(item.InputItem);
-				}
-				return resultItems;
+				IEnumerable<string> content = context?.GetContent();
+
+				return content;
 			}
 			catch (NullReferenceException)
 			{

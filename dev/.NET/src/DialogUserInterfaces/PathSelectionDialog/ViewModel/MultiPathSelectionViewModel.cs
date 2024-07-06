@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Security.Policy;
 using System.Text;
@@ -12,65 +13,86 @@ namespace DialogUserInterfaces.ViewModel
 	{
 		protected readonly string _splitter = ";";
 
-		protected string _title = Properties.Resources.IDS_WINDOW_TITLE;
-
-		public string Title { get => _title; }
+		public string Title { get => Properties.Resources.IDS_WINDOW_TITLE; }
 
 		public string OkTitle { get => Properties.Resources.IDS_OK_BUTTON_TITLE; }
 
 		public string CancelTitle { get => Properties.Resources.IDS_CANCEL_BUTTON_TITLE; }
 
-		protected ButtonListBoxViewModel _userInputPath = new();
+		/// <summary>
+		/// View model of sub control.
+		/// </summary>
+		protected ButtonListBoxViewModel _userInputPathViewModel = new();
 
-		public ButtonListBoxViewModel UserInputPath
+		/// <summary>
+		/// View model of sub control.
+		/// </summary>
+		public ButtonListBoxViewModel UserInputPathViewModel
 		{
-			get => _userInputPath;
+			get => _userInputPathViewModel;
 			set
 			{
-				_userInputPath = value;
+				_userInputPathViewModel = value;
 				RaisePropertyChange();
 			}
 		}
 
-		public IEnumerable<string> _inputPaths = new List<string>();
-
-		public IEnumerable<string> InputPaths
+		/// <summary>
+		/// Set content of path selection.
+		/// </summary>
+		/// <param name="content">Content of path.</param>
+		public virtual void SetContent(IEnumerable<string> content)
 		{
-			get
-			{
-				return _inputPaths;
-			}
-			set
-			{
-				_inputPaths = value;
-				RaisePropertyChange();
-			}
+			var contentViewModel = new ButtonListBoxViewModel();
+			contentViewModel.SetContent(content);
+
+			UserInputPathViewModel = contentViewModel;
 		}
 
-		public string InputPathsOneLine
+		/// <summary>
+		/// Set contetn of path selection.
+		/// </summary>
+		/// <param name="content">Content of path as string.</param>
+		/// <param name="splitter">Splitter of content.</param>
+		public virtual void SetContent(string content, string splitter = ";")
 		{
-			get
+			IEnumerable<string> splitContent =
+				content
+				.Split(splitter, StringSplitOptions.RemoveEmptyEntries)
+				.ToList();
+
+			SetContent(splitContent);
+		}
+
+		/// <summary>
+		/// Get content of dialog.
+		/// </summary>
+		/// <returns>Content of dialog in generics.</returns>
+		public virtual IEnumerable<string> GetContent()
+		{
+			var content = new List<string>();
+			foreach (var item in UserInputPathViewModel.Items)
 			{
-				string pathOneLine = string.Empty;
-				foreach (var path in InputPaths)
-				{
-					pathOneLine += path;
-					pathOneLine += _splitter;
-				}
-				if (!string.IsNullOrEmpty(pathOneLine))
-				{
-					pathOneLine += _splitter;
-				}
-				return pathOneLine;
+				content.Add(item.InputItem);
 			}
-			set
+			return content;
+		}
+
+		/// <summary>
+		/// Get content of dialog as one line string.
+		/// </summary>
+		/// <param name="splitter">Code to split item in the dialog.</param>
+		/// <returns>Content of dialog in string.</returns>
+		public virtual string GetContent(string splitter)
+		{
+			IEnumerable<string> contents = GetContent();
+			string contentOneLine = string.Empty;
+			foreach (var content in contents)
 			{
-				IEnumerable<string> splitValue = 
-					value
-					.Split(_splitter, StringSplitOptions.RemoveEmptyEntries)
-					.ToList();
-				_inputPaths = splitValue;
+				contentOneLine += content;
+				contentOneLine += splitter;
 			}
+			return contentOneLine;
 		}
 
 		/// <summary>
@@ -78,7 +100,7 @@ namespace DialogUserInterfaces.ViewModel
 		/// </summary>
 		public MultiPathSelectionViewModel() : base()
 		{
-			UserInputPath = new();
+			UserInputPathViewModel = new();
 		}
 	}
 }

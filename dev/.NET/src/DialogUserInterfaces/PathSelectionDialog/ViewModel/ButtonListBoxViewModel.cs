@@ -1,4 +1,5 @@
 ﻿using Accessibility;
+using DialogUserInterfaces.Command;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -51,17 +52,31 @@ namespace DialogUserInterfaces.ViewModel
 		/// </summary>
 		public ButtonListBoxViewModel() : base()
 		{
-			Items = new List<ButtonListItem>()
+			// Set sample content.
+			SetContent(new List<string>()
 			{
-				new ButtonListItem()
+				"Sample input text box item 001",
+				"Sample input text box item 002"
+			});
+		}
+
+		/// <summary>
+		/// Set conteont.
+		/// </summary>
+		/// <param name="items">Content to set.</param>
+		public virtual void SetContent(IEnumerable<string> items)
+		{
+			var newItems = new List<ButtonListItem>();
+			foreach (var item in items)
+			{
+				var newItem = new ButtonListItem()
 				{
-					InputItem = "Sample input text box item 001"
-				},
-				new ButtonListItem()
-				{
-					InputItem = "Sample input text box item 002"
-				}
-			};
+					InputItem = item,
+					ItemCommand = new PathSelectionCommand()
+				};
+				newItems.Add(newItem);
+			}
+			Items = newItems;
 		}
     }
 }

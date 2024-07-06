@@ -14,7 +14,22 @@ namespace DialogUserInterfaces.Command
 		/// <summary>
 		/// Default constructor.
 		/// </summary>
-		public PathSelectionCommand() : base() { }
+		public PathSelectionCommand() : base()
+		{
+			_dialog = new PathSelectionDialog(Mode.DIALOG_FILE_SELECT);
+		}
+
+		/// <summary>
+		/// Constructor with mode.
+		/// </summary>
+		/// <param name="mode">Mode of dialog.
+		/// mode  shows a dialog as folder selection, and 1 shows file dialog.
+		/// Others are invalid.
+		/// </param>
+		public PathSelectionCommand(int mode) : base()
+		{
+			_dialog = new PathSelectionDialog(mode);
+		}
 
 		/// <summary>
 		/// Extract result of window input.

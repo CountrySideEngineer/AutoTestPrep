@@ -9,8 +9,16 @@ namespace DialogUserInterfaces.ViewModel
 {
     internal class ButtonListItem : ViewModelBase
     {
+		public IDialogCommand<string>? ItemCommand { get; set; } = null;
+
+		/// <summary>
+		/// User input field.
+		/// </summary>
 		protected string _inputItem = string.Empty;
 
+		/// <summary>
+		/// User input item property.
+		/// </summary>
 		public string InputItem
 		{
 			get => _inputItem;
@@ -21,7 +29,14 @@ namespace DialogUserInterfaces.ViewModel
 			}
 		}
 
+		/// <summary>
+		/// Delegate command.
+		/// </summary>
 		protected DelegateCommand? _command = null;
+
+		/// <summary>
+		/// Delegate command.
+		/// </summary>
 		public DelegateCommand Command
 		{
 			get
@@ -34,9 +49,13 @@ namespace DialogUserInterfaces.ViewModel
 			}
 		}
 
+		/// <summary>
+		/// Executed command.
+		/// </summary>
 		public virtual void ExecuteCommand()
 		{
-
+			string? inputItem = ItemCommand?.Execute(InputItem);
+			InputItem = inputItem ?? string.Empty;
 		}
     }
 }
