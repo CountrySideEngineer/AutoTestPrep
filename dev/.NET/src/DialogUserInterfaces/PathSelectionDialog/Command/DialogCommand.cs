@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +18,17 @@ namespace DialogUserInterfaces.Command
 		/// <summary>
 		/// Default constructor
 		/// </summary>
-		public DialogCommand() : base() { }
+		public DialogCommand() { }
+
+		/// <summary>
+		/// Destructor
+		/// </summary>
+		~DialogCommand()
+		{
+			Debug.WriteLine("DialogCommand destructor called.");
+
+			_dialog = null;
+		}
 
 		protected abstract T GetDialogResult(Window? window);
 
@@ -28,23 +39,30 @@ namespace DialogUserInterfaces.Command
 		/// <returns>Result of dialog.</returns>
 		public virtual T Execute(T parameter)
 		{
-			bool? dlgResult = (null == _dialog) ? false : _dialog.ShowDialog();
-			if (null == dlgResult)
+			try
 			{
-				return parameter;
-			}
-			else
-			{
-				if (dlgResult.Value)
-				{
-					T resultData = GetDialogResult(window: _dialog);
-
-					return resultData;
-				}
-				else
+				bool? dlgResult = (null == _dialog) ? false : _dialog.ShowDialog();
+				if (null == dlgResult)
 				{
 					return parameter;
 				}
+				else
+				{
+					if (dlgResult.Value)
+					{
+						T resultData = GetDialogResult(window: _dialog);
+
+						return resultData;
+					}
+					else
+					{
+						return parameter;
+					}
+				}
+			}
+			finally
+			{
+				_dialog = null;
 			}
 		}
 	}

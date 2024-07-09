@@ -2,6 +2,7 @@
 using DialogUserInterfaces.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,12 +12,14 @@ namespace DialogUserInterfaces.Command
 {
     public class PathSelectionCommand : DialogCommand<string>
     {
+		protected int _mode = 0;
+
 		/// <summary>
 		/// Default constructor.
 		/// </summary>
 		public PathSelectionCommand() : base()
 		{
-			_dialog = new PathSelectionDialog(Mode.DIALOG_FILE_SELECT);
+			_mode = Mode.DIALOG_FILE_SELECT;
 		}
 
 		/// <summary>
@@ -28,7 +31,24 @@ namespace DialogUserInterfaces.Command
 		/// </param>
 		public PathSelectionCommand(int mode) : base()
 		{
-			_dialog = new PathSelectionDialog(mode);
+			_mode = mode;
+		}
+
+		/// <summary>
+		/// Destructor.
+		/// </summary>
+		~PathSelectionCommand()
+		{
+			Debug.WriteLine("PathSelectionCommand destructor called.");
+
+			_dialog = null;
+		}
+
+		public override string Execute(string parameter)
+		{
+			_dialog = new PathSelectionDialog(Mode.DIALOG_FILE_SELECT);
+
+			return base.Execute(parameter);
 		}
 
 		/// <summary>
@@ -38,6 +58,8 @@ namespace DialogUserInterfaces.Command
 		/// <returns>Result of window, dialog, a user input.</returns>
 		protected override string GetDialogResult(Window? window)
 		{
+			Debug.WriteLine($"{nameof(PathSelectionCommand)}::{nameof(GetDialogResult)} called");
+
 			try
 			{
 				PathSelectionDialogViewModel? viewModel = (PathSelectionDialogViewModel?)window?.DataContext;

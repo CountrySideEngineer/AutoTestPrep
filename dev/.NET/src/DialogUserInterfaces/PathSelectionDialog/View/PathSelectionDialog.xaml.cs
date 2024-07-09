@@ -1,6 +1,7 @@
 ﻿using DialogUserInterfaces.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Security.Policy;
 using System.Text;
@@ -26,6 +27,8 @@ namespace DialogUserInterfaces.View
 		/// </summary>
 		public PathSelectionDialog()
 		{
+			Debug.WriteLine($"{nameof(PathSelectionDialog)}(Default) called.");
+
 			InitializeComponent();
 
 			DataContext = new FolderSelectionDialogViewModel();
@@ -38,6 +41,8 @@ namespace DialogUserInterfaces.View
 		/// <exception cref="ArgumentException">Mode is invalid.</exception>
 		public PathSelectionDialog(int mode)
 		{
+			Debug.WriteLine($"{nameof(PathSelectionDialog)} called.");
+
 			InitializeComponent();
 
 			switch (mode)
@@ -53,6 +58,11 @@ namespace DialogUserInterfaces.View
 				default:
 					throw new ArgumentException();
 			}
+		}
+
+		~PathSelectionDialog()
+		{
+			Debug.WriteLine("PathSelectionDialog() destructor called.");
 		}
 
 		/// <summary>

@@ -34,7 +34,7 @@
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            <TextBox Name="UserInputText"
+            <TextBox x:Name="UserInputText"
                      Grid.Column="0"
                      HorizontalContentAlignment="Left"
                      VerticalContentAlignment="Center"
@@ -45,7 +45,7 @@
                      TextWrapping="Wrap"
                      Text="{Binding InputPath}"
                      />
-            <Button Name="UseClickButton"
+            <Button x:Name="UseClickButton"
                     Grid.Column="1"
                     Content="..."
                     HorizontalAlignment="Stretch"
@@ -54,7 +54,7 @@
                     Command="{Binding PathSelectCommand}"
                     />
         </Grid>
-        <Button Name="OKButton"
+        <Button x:Name="OKButton"
                 Grid.Row="2"
                 Grid.Column="1"
                 HorizontalContentAlignment="Center"
@@ -65,7 +65,7 @@
                 Margin="8, 8, 4, 8"
                 Padding="4" Click="OKButton_Click"
                 />
-        <Button Name="CancelButton"
+        <Button x:Name="CancelButton"
                 Grid.Row="2"
                 Grid.Column="2"
                 HorizontalContentAlignment="Center"

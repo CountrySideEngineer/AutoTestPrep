@@ -3,6 +3,7 @@ using DialogUserInterfaces.Command;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -75,8 +76,12 @@ namespace DialogUserInterfaces.ViewModel
 					ItemCommand = new PathSelectionCommand()
 				};
 				newItems.Add(newItem);
+
+				Debug.WriteLine($"Add content to list, item = {item}");
 			}
 			Items = newItems;
+
+			Debug.WriteLine($"Added item count = {Items.Count()}");
 		}
     }
 }

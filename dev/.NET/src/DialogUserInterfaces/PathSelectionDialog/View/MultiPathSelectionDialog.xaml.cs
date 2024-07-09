@@ -24,6 +24,8 @@ namespace DialogUserInterfaces.View
 		public MultiPathSelectionDialog()
 		{
 			InitializeComponent();
+
+			DataContext = new MultiPathSelectionViewModel();
 		}
 
 		/// <summary>

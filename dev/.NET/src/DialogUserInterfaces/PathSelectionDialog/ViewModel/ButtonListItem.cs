@@ -57,5 +57,10 @@ namespace DialogUserInterfaces.ViewModel
 			string? inputItem = ItemCommand?.Execute(InputItem);
 			InputItem = inputItem ?? string.Empty;
 		}
+
+		/// <summary>
+		/// Default constructor.
+		/// </summary>
+		public ButtonListItem() : base() { }
     }
 }
