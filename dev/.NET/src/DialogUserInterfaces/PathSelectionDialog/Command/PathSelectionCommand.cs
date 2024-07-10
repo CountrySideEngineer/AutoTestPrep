@@ -40,15 +40,13 @@ namespace DialogUserInterfaces.Command
 		~PathSelectionCommand()
 		{
 			Debug.WriteLine("PathSelectionCommand destructor called.");
-
-			_dialog = null;
 		}
 
-		public override string Execute(string parameter)
+		protected override Window GetDialog(string parameter)
 		{
-			_dialog = new PathSelectionDialog(Mode.DIALOG_FILE_SELECT);
-
-			return base.Execute(parameter);
+			var dialog = new PathSelectionDialog(_mode);
+			
+			throw new NotImplementedException();
 		}
 
 		/// <summary>

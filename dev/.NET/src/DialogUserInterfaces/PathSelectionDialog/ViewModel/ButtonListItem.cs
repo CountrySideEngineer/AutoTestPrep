@@ -9,6 +9,9 @@ namespace DialogUserInterfaces.ViewModel
 {
     internal class ButtonListItem : ViewModelBase
     {
+		/// <summary>
+		/// Command to be executed when button in list view clicked.
+		/// </summary>
 		public IDialogCommand<string>? ItemCommand { get; set; } = null;
 
 		/// <summary>

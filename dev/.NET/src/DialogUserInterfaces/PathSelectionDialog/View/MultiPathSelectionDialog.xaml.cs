@@ -62,6 +62,11 @@ namespace DialogUserInterfaces.View
 				IEnumerable<string> content = ((MultiPathSelectionViewModel)DataContext).GetContent();
 				return content;
 			}
+			set
+			{
+				var viewModel = (MultiPathSelectionViewModel)DataContext;
+				viewModel.SetContent(value);
+			}
 		}
 	}
 }

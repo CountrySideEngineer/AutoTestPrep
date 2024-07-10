@@ -13,10 +13,19 @@ namespace DialogUserInterfaces.ViewModel
 	{
 		protected readonly string _splitter = ";";
 
+		/// <summary>
+		/// Title of window.
+		/// </summary>
 		public string Title { get => Properties.Resources.IDS_WINDOW_TITLE; }
 
+		/// <summary>
+		/// Title of OK button.
+		/// </summary>
 		public string OkTitle { get => Properties.Resources.IDS_OK_BUTTON_TITLE; }
 
+		/// <summary>
+		/// Title of cancel button.
+		/// </summary>
 		public string CancelTitle { get => Properties.Resources.IDS_CANCEL_BUTTON_TITLE; }
 
 		/// <summary>

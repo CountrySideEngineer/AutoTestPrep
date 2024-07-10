@@ -15,9 +15,19 @@ namespace DialogUserInterfaces.Command
 		/// <summary>
 		/// Default constructor.
 		/// </summary>
-		public MultiPathSelectionCommand() : base()
+		public MultiPathSelectionCommand() : base() { }
+
+		/// <summary>
+		/// Returns the MultiPathSelectionDialog object.
+		/// </summary>
+		/// <param name="parameter">Collection of string to set to the dialog.</param>
+		/// <returns>MultiPathSelectionDialog object.</returns>
+		protected override Window GetDialog(IEnumerable<string> parameter)
 		{
-			_dialog = new MultiPathSelectionDialog();
+			var dialog = new MultiPathSelectionDialog();
+			dialog.InputPath = parameter;
+
+			return dialog;
 		}
 
 		/// <summary>

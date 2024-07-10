@@ -81,6 +81,11 @@ namespace DialogUserInterfaces.View
 					return string.Empty;
 				}
 			}
+			set
+			{
+				PathSelectionDialogViewModel viewModel = (PathSelectionDialogViewModel)DataContext;
+				viewModel.InputPath = value;
+			}
 		}
 
 		/// <summary>

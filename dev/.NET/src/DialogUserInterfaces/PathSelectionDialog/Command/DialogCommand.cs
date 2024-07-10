@@ -11,11 +11,6 @@ namespace DialogUserInterfaces.Command
 	public abstract class DialogCommand<T> : IDialogCommand<T>
 	{
 		/// <summary>
-		/// Field of an object Window class inherits.
-		/// </summary>
-		protected Window? _dialog = null;
-
-		/// <summary>
 		/// Default constructor
 		/// </summary>
 		public DialogCommand() { }
@@ -26,11 +21,20 @@ namespace DialogUserInterfaces.Command
 		~DialogCommand()
 		{
 			Debug.WriteLine("DialogCommand destructor called.");
-
-			_dialog = null;
 		}
 
-		protected abstract T GetDialogResult(Window? window);
+		/// <summary>
+		/// Abstract method which returns the result of dialog.
+		/// </summary>
+		/// <param name="window">Dialog.</param>
+		/// <returns>Result of dialog.</returns>
+		protected abstract T GetDialogResult(Window window);
+
+		/// <summary>
+		/// Returns a dialog object to show.
+		/// </summary>
+		/// <returns>A dialog object to show.</returns>
+		protected abstract Window GetDialog(T parameter);
 
 		/// <summary>
 		/// Execute command to show and get result of 
@@ -39,30 +43,24 @@ namespace DialogUserInterfaces.Command
 		/// <returns>Result of dialog.</returns>
 		public virtual T Execute(T parameter)
 		{
-			try
+			var dialog = GetDialog(parameter);
+			bool? result = dialog.ShowDialog();
+			if (null == result)
 			{
-				bool? dlgResult = (null == _dialog) ? false : _dialog.ShowDialog();
-				if (null == dlgResult)
+				return parameter;
+			}
+			else
+			{
+				if (result.Value)
 				{
-					return parameter;
+					T resultData = GetDialogResult(window: dialog);
+
+					return resultData;
 				}
 				else
 				{
-					if (dlgResult.Value)
-					{
-						T resultData = GetDialogResult(window: _dialog);
-
-						return resultData;
-					}
-					else
-					{
-						return parameter;
-					}
+					return parameter;
 				}
-			}
-			finally
-			{
-				_dialog = null;
 			}
 		}
 	}

@@ -13,6 +13,6 @@ namespace DialogUserInterfaces.Command
 
 	public interface IDialogCommand
 	{
-		object? Execute(object? parameter);
+		object Execute(object parameter);
 	}
 }
