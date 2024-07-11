@@ -22,6 +22,8 @@
                   Grid.ColumnSpan="2"
                   SelectionMode="Single"
                   ItemsSource="{Binding Path=Items, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                  SelectedItem="{Binding SelectedItem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                  SelectedIndex="{Binding SelectedIndex, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                   BorderThickness="0"
                   BorderBrush="Transparent"
                   Background="Transparent"

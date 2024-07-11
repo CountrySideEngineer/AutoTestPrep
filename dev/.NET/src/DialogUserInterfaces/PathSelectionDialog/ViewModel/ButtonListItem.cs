@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Permissions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,6 +10,10 @@ namespace DialogUserInterfaces.ViewModel
 {
     internal class ButtonListItem : ViewModelBase
     {
+		public delegate string ItemCommandDelegate(string input);
+
+		public ItemCommandDelegate? CommandDelegate { get; set; } = null;
+
 		/// <summary>
 		/// Command to be executed when button in list view clicked.
 		/// </summary>
@@ -57,8 +62,11 @@ namespace DialogUserInterfaces.ViewModel
 		/// </summary>
 		public virtual void ExecuteCommand()
 		{
-			string? inputItem = ItemCommand?.Execute(InputItem);
-			InputItem = inputItem ?? string.Empty;
+			//string? inputItem = ItemCommand?.Execute(InputItem);
+			//InputItem = inputItem ?? string.Empty;
+
+			string? input = CommandDelegate?.Invoke(InputItem);
+			InputItem = input ?? string.Empty;
 		}
 
 		/// <summary>

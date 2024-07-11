@@ -45,8 +45,9 @@ namespace DialogUserInterfaces.Command
 		protected override Window GetDialog(string parameter)
 		{
 			var dialog = new PathSelectionDialog(_mode);
-			
-			throw new NotImplementedException();
+			((PathSelectionDialogViewModel)dialog.DataContext).InputPath = parameter;
+
+			return dialog;
 		}
 
 		/// <summary>

@@ -17,6 +17,8 @@ namespace DialogUserInterfaces.ViewModel
 		/// </summary>
 		protected IEnumerable<ButtonListItem> _items = new List<ButtonListItem>();
 
+		protected IDialogCommand<string> _itemCommand = new PathSelectionCommand();
+
 		/// <summary>
 		/// Items to be displayed in list box view.
 		/// </summary>
@@ -30,20 +32,26 @@ namespace DialogUserInterfaces.ViewModel
 			}
 		}
 
-		/// <summary>
-		/// Selected item field.
-		/// </summary>
-		protected string? _selectedItem;
+		public ButtonListItem _selectedItem = new ButtonListItem();
 
-		/// <summary>
-		/// Selected item property.
-		/// </summary>
-		public string? SelectedItem
+		public ButtonListItem SelectedItem
 		{
 			get => _selectedItem;
 			set
 			{
 				_selectedItem = value;
+				RaisePropertyChange();
+			}
+		}
+
+		protected int _selectedIndex = 0;
+
+		public int SelectedIndex
+		{
+			get => _selectedIndex;
+			set
+			{
+				_selectedIndex = value;
 				RaisePropertyChange();
 			}
 		}
@@ -76,18 +84,29 @@ namespace DialogUserInterfaces.ViewModel
 				var newItem = new ButtonListItem()
 				{
 					InputItem = item,
-					ItemCommand = new PathSelectionCommand()
+					ItemCommand = _itemCommand,
+					CommandDelegate = DelegateCommandHandler
 				};
 				newItems.Add(newItem);
 			}
 			var tailItem = new ButtonListItem()
 			{
 				InputItem = string.Empty,
-				ItemCommand = new PathSelectionCommand()
+				ItemCommand = new PathSelectionCommand(),
+				CommandDelegate = DelegateCommandHandler
 			};
 			newItems.Add(tailItem);
 
 			Items = newItems;
+		}
+
+		public virtual string DelegateCommandHandler(string input)
+		{
+			var command = new PathSelectionCommand();
+			string userInput = command.Execute(input);
+			string inputData = userInput ?? input;
+
+			return inputData;
 		}
     }
 }
