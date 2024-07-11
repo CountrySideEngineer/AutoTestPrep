@@ -68,7 +68,10 @@ namespace DialogUserInterfaces.ViewModel
 		public virtual void SetContent(IEnumerable<string> items)
 		{
 			var newItems = new List<ButtonListItem>();
-			foreach (var item in items)
+			var notEmptyItems = items
+				.Where(_ => ((!string.IsNullOrEmpty(_)) && (!string.IsNullOrWhiteSpace(_))))
+				.ToList();
+			foreach (var item in notEmptyItems)
 			{
 				var newItem = new ButtonListItem()
 				{
@@ -76,12 +79,15 @@ namespace DialogUserInterfaces.ViewModel
 					ItemCommand = new PathSelectionCommand()
 				};
 				newItems.Add(newItem);
-
-				Debug.WriteLine($"Add content to list, item = {item}");
 			}
-			Items = newItems;
+			var tailItem = new ButtonListItem()
+			{
+				InputItem = string.Empty,
+				ItemCommand = new PathSelectionCommand()
+			};
+			newItems.Add(tailItem);
 
-			Debug.WriteLine($"Added item count = {Items.Count()}");
+			Items = newItems;
 		}
     }
 }
