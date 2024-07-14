@@ -58,10 +58,18 @@ namespace DialogUserInterfaces.ViewModel
 			get => _selectedIndex;
 			set
 			{
-				Debug.WriteLine($"{nameof(ButtonListBoxViewModel)}::{nameof(SelectedIndex)} = {SelectedIndex}");
+				Debug.WriteLine($"{nameof(ButtonListBoxViewModel)}::{nameof(SelectedIndex)} Start!");
 
-				_selectedIndex = value;
-				RaisePropertyChange();
+				if (value < 0)
+				{
+					Debug.WriteLine($"{nameof(ButtonListBoxViewModel)}::{nameof(SelectedIndex)} is invalid, {value}");
+				}
+				else
+				{
+					_selectedIndex = value;
+					RaisePropertyChange();
+					Debug.WriteLine($"{nameof(ButtonListBoxViewModel)}::{nameof(SelectedIndex)} = {SelectedIndex}");
+				}
 			}
 		}
 
@@ -125,7 +133,7 @@ namespace DialogUserInterfaces.ViewModel
 		public virtual void AddNewItem(string content = "")
 		{
 			Debug.WriteLine($"{nameof(ButtonListBoxViewModel)}::{nameof(AddNewItem)} Start!");
-			Debug.WriteLine($"Delete item index = {SelectedIndex}");
+			Debug.WriteLine($"New item index = {SelectedIndex}");
 
 			var newList = new List<ButtonListItem>(Items);
 			var newItem = new ButtonListItem()
@@ -162,6 +170,12 @@ namespace DialogUserInterfaces.ViewModel
 				{
 					AddNewItem();
 				}
+
+				// After removing selected item in list, the object corresponding to
+				// SelectedItem property has been removd at the same time.
+				// It seems to be a bug that the no item is selected.
+				// To avoid it, update SelectedItem property by setting an item at the SelectedIndex.
+				SelectedItem = Items.ElementAt(SelectedIndex);
 			}
 			catch (ArgumentOutOfRangeException)
 			{
