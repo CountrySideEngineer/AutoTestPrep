@@ -17,6 +17,7 @@
     </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
@@ -26,11 +27,41 @@
             <ColumnDefinition Width="96"/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-        <local:ButtonListBoxControl Grid.Row="0"
+        <StackPanel Grid.Row="0"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="2"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    Margin="0, 8, 8, 4"
+                    >
+            <Button x:Name="AddItemButton"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    HorizontalContentAlignment="Center"
+                    Margin="0, 0, 4, 0"
+                    Padding="4, 0"
+                    Content="+"
+                    Command="{Binding AddNewItemCommand}"
+                    />
+            <Button x:Name="DeleteItemButton"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    HorizontalContentAlignment="Center"
+                    Margin="4, 0, 0, 0"
+                    Padding="4, 0"
+                    Content="X"
+                    Command="{Binding DeleteItemCommand}"
+                    />
+        </StackPanel>
+        <local:ButtonListBoxControl Grid.Row="1"
                                     Grid.Column="0"
                                     Grid.ColumnSpan="3"
-                                    Margin="8, 8, 8, 4"
+                                    Margin="8, 4, 8, 4"
                                     DataContext="{Binding UserInputPathViewModel}"
+                                    BorderThickness="1"
+                                    BorderBrush="LightGray"
                                     />
         <Button x:Name="OKButton"
                 Grid.Row="2"

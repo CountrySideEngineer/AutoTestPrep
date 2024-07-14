@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DialogUserInterfaces.Command;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlTypes;
 using System.Linq;
@@ -12,6 +13,36 @@ namespace DialogUserInterfaces.ViewModel
 	internal class MultiPathSelectionViewModel : ViewModelBase
 	{
 		protected readonly string _splitter = ";";
+
+		protected DelegateCommand? _addNewItemCommand = null;
+
+		public DelegateCommand AddNewItemCommand
+		{
+			get
+			{
+				if (null == _addNewItemCommand)
+				{
+					_addNewItemCommand = new DelegateCommand(AddNewItem);
+				}
+				return _addNewItemCommand;
+			}
+		}
+
+		protected DelegateCommand? _deleteItemCommand = null;
+
+		public DelegateCommand DeleteItemCommand
+		{
+			get
+			{
+				if (null == _deleteItemCommand)
+				{
+					_deleteItemCommand = new DelegateCommand(RemoveItem);
+				}
+				return _deleteItemCommand;
+			}
+		}
+
+
 
 		/// <summary>
 		/// Title of window.
@@ -110,6 +141,17 @@ namespace DialogUserInterfaces.ViewModel
 		public MultiPathSelectionViewModel() : base()
 		{
 			UserInputPathViewModel = new();
+		}
+
+		public virtual void AddNewItem()
+		{
+			UserInputPathViewModel.AddNewItem();
+		}
+
+		public virtual void RemoveItem()
+		{
+			UserInputPathViewModel.DeleteItem();
+
 		}
 	}
 }

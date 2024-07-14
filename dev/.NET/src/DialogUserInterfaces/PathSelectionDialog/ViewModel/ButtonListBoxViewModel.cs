@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -44,13 +45,21 @@ namespace DialogUserInterfaces.ViewModel
 			}
 		}
 
-		protected int _selectedIndex = 0;
+		/// <summary>
+		/// Selected item index field.
+		/// </summary>
+		protected int _selectedIndex = -1;
 
+		/// <summary>
+		/// Selected item index property.
+		/// </summary>
 		public int SelectedIndex
 		{
 			get => _selectedIndex;
 			set
 			{
+				Debug.WriteLine($"{nameof(ButtonListBoxViewModel)}::{nameof(SelectedIndex)} = {SelectedIndex}");
+
 				_selectedIndex = value;
 				RaisePropertyChange();
 			}
@@ -107,6 +116,57 @@ namespace DialogUserInterfaces.ViewModel
 			string inputData = userInput ?? input;
 
 			return inputData;
+		}
+
+		/// <summary>
+		/// Add new item to user user input item.
+		/// </summary>
+		/// <param name="content">Content to add.</param>
+		public virtual void AddNewItem(string content = "")
+		{
+			Debug.WriteLine($"{nameof(ButtonListBoxViewModel)}::{nameof(AddNewItem)} Start!");
+			Debug.WriteLine($"Delete item index = {SelectedIndex}");
+
+			var newList = new List<ButtonListItem>(Items);
+			var newItem = new ButtonListItem()
+			{
+				InputItem = new string(content),
+				ItemCommand = _itemCommand,
+				CommandDelegate = DelegateCommandHandler
+			};
+			try
+			{
+				newList.Insert((SelectedIndex + 1), newItem);
+			}
+			catch (ArgumentOutOfRangeException)
+			{
+				newList.Add(newItem);
+			}
+			Items = newList;
+		}
+
+		/// <summary>
+		/// Remove item from user input.
+		/// </summary>
+		public virtual void DeleteItem()
+		{
+			Debug.WriteLine($"{nameof(ButtonListBoxViewModel)}::{nameof(DeleteItem)} Start!");
+			Debug.WriteLine($"Delete item index = {SelectedIndex}");
+
+			try
+			{
+				var newItems = new List<ButtonListItem>(Items);
+				newItems.RemoveAt(SelectedIndex);
+				Items = newItems;
+				if (0 == Items.Count())
+				{
+					AddNewItem();
+				}
+			}
+			catch (ArgumentOutOfRangeException)
+			{
+				Debug.WriteLine($"Selected item index {SelectedIndex} invalid.");
+			}
 		}
     }
 }
