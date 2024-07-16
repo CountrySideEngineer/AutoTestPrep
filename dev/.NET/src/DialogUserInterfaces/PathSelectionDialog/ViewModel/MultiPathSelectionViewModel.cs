@@ -155,7 +155,6 @@ namespace DialogUserInterfaces.ViewModel
 		public virtual void RemoveItem()
 		{
 			UserInputPathViewModel.DeleteItem();
-
 		}
 	}
 }
