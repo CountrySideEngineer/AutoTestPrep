@@ -16,6 +16,9 @@
     <Reference Include="DialogUserInterfaces">
       <HintPath>..\..\..\src\bin\DialogUserInterfaces.dll</HintPath>
     </Reference>
+    <Reference Include="Logger">
+      <HintPath>..\..\..\src\libs\Logger.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <ItemGroup>
