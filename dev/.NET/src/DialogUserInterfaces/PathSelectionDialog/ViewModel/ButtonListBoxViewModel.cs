@@ -1,4 +1,5 @@
 ﻿using Accessibility;
+using CSEngineer.Logger;
 using DialogUserInterfaces.Command;
 using System;
 using System.Collections.Generic;
@@ -58,17 +59,17 @@ namespace DialogUserInterfaces.ViewModel
 			get => _selectedIndex;
 			set
 			{
-				Debug.WriteLine($"{nameof(ButtonListBoxViewModel)}::{nameof(SelectedIndex)} Start!");
+				Log.DEBUG($"{nameof(ButtonListBoxViewModel)}::{nameof(SelectedIndex)} Start!");
 
 				if (value < 0)
 				{
-					Debug.WriteLine($"{nameof(ButtonListBoxViewModel)}::{nameof(SelectedIndex)} is invalid, {value}");
+					Log.DEBUG($"{nameof(ButtonListBoxViewModel)}::{nameof(SelectedIndex)} is invalid, {value}");
 				}
 				else
 				{
 					_selectedIndex = value;
 					RaisePropertyChange();
-					Debug.WriteLine($"{nameof(ButtonListBoxViewModel)}::{nameof(SelectedIndex)} = {SelectedIndex}");
+					Log.DEBUG($"{nameof(ButtonListBoxViewModel)}::{nameof(SelectedIndex)} = {SelectedIndex}");
 				}
 			}
 		}
@@ -132,8 +133,8 @@ namespace DialogUserInterfaces.ViewModel
 		/// <param name="content">Content to add.</param>
 		public virtual void AddNewItem(string content = "")
 		{
-			Debug.WriteLine($"{nameof(ButtonListBoxViewModel)}::{nameof(AddNewItem)} Start!");
-			Debug.WriteLine($"New item index = {SelectedIndex}");
+			Log.TRACE("START!!");
+			Log.DEBUG($"{"SelectedIndex", 32} = {SelectedIndex}");
 
 			var newList = new List<ButtonListItem>(Items);
 			var newItem = new ButtonListItem()
@@ -158,8 +159,8 @@ namespace DialogUserInterfaces.ViewModel
 		/// </summary>
 		public virtual void DeleteItem()
 		{
-			Debug.WriteLine($"{nameof(ButtonListBoxViewModel)}::{nameof(DeleteItem)} Start!");
-			Debug.WriteLine($"Delete item index = {SelectedIndex}");
+			Log.TRACE("Start!");
+			Log.DEBUG($"{"SelectedItemIndex", 32} = {SelectedIndex}");
 
 			try
 			{
@@ -179,7 +180,7 @@ namespace DialogUserInterfaces.ViewModel
 			}
 			catch (ArgumentOutOfRangeException)
 			{
-				Debug.WriteLine($"Selected item index {SelectedIndex} invalid.");
+				Log.WARN($"Selected item index {SelectedIndex} invalid.");
 			}
 		}
     }

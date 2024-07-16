@@ -42,8 +42,6 @@ namespace DialogUserInterfaces.ViewModel
 			}
 		}
 
-
-
 		/// <summary>
 		/// Title of window.
 		/// </summary>
@@ -143,11 +141,17 @@ namespace DialogUserInterfaces.ViewModel
 			UserInputPathViewModel = new();
 		}
 
+		/// <summary>
+		/// Add new item to user input path item.
+		/// </summary>
 		public virtual void AddNewItem()
 		{
 			UserInputPathViewModel.AddNewItem();
 		}
 
+		/// <summary>
+		/// Remove a item from userInputPathViewModel.
+		/// </summary>
 		public virtual void RemoveItem()
 		{
 			UserInputPathViewModel.DeleteItem();

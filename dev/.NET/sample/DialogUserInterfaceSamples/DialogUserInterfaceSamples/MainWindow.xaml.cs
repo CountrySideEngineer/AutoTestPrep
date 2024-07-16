@@ -1,4 +1,5 @@
-﻿using DialogUserInterfaces.ViewModel;
+﻿using CSEngineer.Logger;
+using DialogUserInterfaces.ViewModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -19,6 +20,8 @@ namespace DialogUserInterfaceSamples
 	{
 		public MainWindow()
 		{
+			Log.AddLogger(new CSEngineer.Logger.Console.Log());
+
 			InitializeComponent();
 		}
 
