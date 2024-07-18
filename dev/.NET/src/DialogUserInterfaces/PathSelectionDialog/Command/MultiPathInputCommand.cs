@@ -15,6 +15,11 @@ namespace DialogUserInterfaces.Command
 		/// </summary>
 		public MultiPathInputCommand() : base() { }
 
+		/// <summary>
+		/// Returns the MultiPathInputDialog object.
+		/// </summary>
+		/// <param name="parameter">Parameter to set to the dialog.</param>
+		/// <returns>MultiPathInputDialog object.</returns>
 		protected override Window GetDialog(string parameter)
 		{
 			var dialog = new MultiPathInputDialog();
@@ -23,6 +28,11 @@ namespace DialogUserInterfaces.Command
 			return dialog;
 		}
 
+		/// <summary>
+		/// Get the result of user input.
+		/// </summary>
+		/// <param name="window">Window object user controlled.</param>
+		/// <returns>Result of the dialog.</returns>
 		protected override string GetDialogResult(Window window)
 		{
 			try
