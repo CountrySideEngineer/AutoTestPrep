@@ -80,5 +80,12 @@
                 Content="Button list box"
                 Command="{Binding ButtonListBoxViewCommand}"
                 />
+        <Button Grid.Row="4"
+                Grid.Column="1"
+                Margin="8"
+                Padding="8"
+                Content="Multi line input"
+                Command="{Binding MultiLineInputCommand}"
+                />
     </Grid>
 </Window>

@@ -150,5 +150,27 @@ namespace DialogUserInterfaceSamples.ViewModel
 			IEnumerable<string> results = command.Execute(parameters);
 		}
 
+		protected DelegateCommand? _multiLineInputCommand = null;
+		public DelegateCommand MultiLineInputCommand
+		{
+			get
+			{
+				if (null == _multiLineInputCommand)
+				{
+					_multiLineInputCommand = new DelegateCommand(ButtonMultiLineInputCommandExecute);
+				}
+				return _multiLineInputCommand;
+			}
+		}
+
+		protected void ButtonMultiLineInputCommandExecute()
+		{
+			var parameter = UserInputText;
+			var command = new DialogUserInterfaces.Command.MultiPathInputCommand();
+			string result = command.Execute(parameter);
+
+			UserInputText = result;
+		}
+
 	}
 }
