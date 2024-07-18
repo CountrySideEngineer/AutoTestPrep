@@ -1,12 +1,4 @@
 ﻿using DialogUserInterfaces.Command;
-using System;
-using System.Collections.Generic;
-using System.Data.SqlTypes;
-using System.Linq;
-using System.Security.Policy;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Controls;
 
 namespace DialogUserInterfaces.ViewModel
 {
