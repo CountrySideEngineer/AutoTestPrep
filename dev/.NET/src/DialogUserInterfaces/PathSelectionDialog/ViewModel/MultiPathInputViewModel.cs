@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO.Packaging;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO.Packaging;
 
 namespace DialogUserInterfaces.ViewModel
 {
-    internal class MultiPathInputViewModel : ViewModelBase
+    public class MultiPathInputViewModel : ViewModelBase
     {
 		protected readonly string _splitter = ";";
 
@@ -35,7 +30,15 @@ namespace DialogUserInterfaces.ViewModel
 		/// <summary>
 		/// Default constructor.
 		/// </summary>
-		public MultiPathInputViewModel(string inputPath = "") : base()
+		public MultiPathInputViewModel() :base()
+		{
+			InputPath = string.Empty;
+		}
+
+		/// <summary>
+		/// Constructor with input parameter.
+		/// </summary>
+		public MultiPathInputViewModel(string inputPath) : base()
 		{
 			InputPath = inputPath;
 		}
@@ -56,8 +59,20 @@ namespace DialogUserInterfaces.ViewModel
 		/// <returns>User input path.</returns>
 		public virtual string GetContent()
 		{
-			string content = InputPath.Replace(_splitterReplace, _splitterReplace);
-
+			IEnumerable<string> inputPathList = InputPath.Split(_splitterReplace).ToList();
+			IEnumerable<string> inputPathListWithoutEmpty = 
+				inputPathList
+					.Where(_ => (!string.IsNullOrWhiteSpace(_) && (!string.IsNullOrEmpty(_))))
+					.ToList();
+			string content = string.Empty;
+			foreach (var item in inputPathListWithoutEmpty)
+			{
+				if (!string.IsNullOrEmpty(content))
+				{
+					content += _splitter;
+				}
+				content += item;
+			}
 			return content;
 		}
     }
