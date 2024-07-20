@@ -1,9 +1,5 @@
 ﻿using DialogUserInterfaces.Command;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Logger;
 
 namespace DialogUserInterfaces.ViewModel
 {
@@ -90,6 +86,8 @@ namespace DialogUserInterfaces.ViewModel
 		/// </summary>
 		public void UpCommandExecute()
 		{
+			Log.TRACE();
+
 			if (_inputValue != Int64.MaxValue)
 			{
 				_inputValue++;
@@ -102,6 +100,8 @@ namespace DialogUserInterfaces.ViewModel
 		/// </summary>
 		public void DownCommandExecute()
 		{
+			Log.TRACE();
+
 			if (_inputValue != Int64.MinValue)
 			{
 				_inputValue--;

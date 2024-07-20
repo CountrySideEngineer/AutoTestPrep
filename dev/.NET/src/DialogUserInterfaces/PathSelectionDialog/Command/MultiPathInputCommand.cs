@@ -1,10 +1,6 @@
-﻿using DialogUserInterfaces.View;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
+using DialogUserInterfaces.View;
+using Logger;
 
 namespace DialogUserInterfaces.Command
 {
@@ -22,6 +18,8 @@ namespace DialogUserInterfaces.Command
 		/// <returns>MultiPathInputDialog object.</returns>
 		protected override Window GetDialog(string parameter)
 		{
+			Log.TRACE();
+
 			var dialog = new MultiPathInputDialog();
 			dialog.Path = parameter;
 
@@ -35,6 +33,8 @@ namespace DialogUserInterfaces.Command
 		/// <returns>Result of the dialog.</returns>
 		protected override string GetDialogResult(Window window)
 		{
+			Log.TRACE();
+
 			try
 			{
 				var dialog = (MultiPathInputDialog)window;

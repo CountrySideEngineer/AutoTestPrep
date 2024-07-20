@@ -1,4 +1,4 @@
-﻿using System.IO.Packaging;
+﻿using Logger;
 
 namespace DialogUserInterfaces.ViewModel
 {
@@ -49,6 +49,8 @@ namespace DialogUserInterfaces.ViewModel
 		/// <param name="path">User input path.</param>
 		public virtual void SetContent(string path)
 		{
+			Log.TRACE();
+
 			string content = path.Replace(_splitter, _splitterReplace);
 			InputPath = content;
 		}
@@ -59,6 +61,8 @@ namespace DialogUserInterfaces.ViewModel
 		/// <returns>User input path.</returns>
 		public virtual string GetContent()
 		{
+			Log.TRACE();
+
 			IEnumerable<string> inputPathList = InputPath.Split(_splitterReplace).ToList();
 			IEnumerable<string> inputPathListWithoutEmpty = 
 				inputPathList

@@ -1,12 +1,6 @@
-﻿using DialogUserInterfaces.View;
-using DialogUserInterfaces.ViewModel;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Automation.Peers;
+﻿using System.Windows;
+using DialogUserInterfaces.View;
+using Logger;
 
 namespace DialogUserInterfaces.Command
 {
@@ -24,6 +18,8 @@ namespace DialogUserInterfaces.Command
 		/// <returns>MultiPathSelectionDialog object.</returns>
 		protected override Window GetDialog(IEnumerable<string> parameter)
 		{
+			Log.TRACE();
+
 			var dialog = new MultiPathSelectionDialog();
 			dialog.InputPath = parameter;
 
@@ -37,6 +33,8 @@ namespace DialogUserInterfaces.Command
 		/// <returns>Result of dialog.</returns>
 		protected override IEnumerable<string> GetDialogResult(Window? window)
 		{
+			Log.TRACE();
+
 			try
 			{
 				var dialog = (MultiPathSelectionDialog?)window;

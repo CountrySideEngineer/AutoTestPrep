@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
+using Logger;
 
 namespace DialogUserInterfaces.Command
 {
@@ -22,6 +17,8 @@ namespace DialogUserInterfaces.Command
 		/// <returns>NumericSelectionDialog object.</returns>
 		protected override Window GetDialog(long parameter)
 		{
+			Log.TRACE();
+
 			var dialog = new NumericSelectionDialog();
 			dialog.InputValue = parameter;
 			return dialog;
@@ -34,6 +31,8 @@ namespace DialogUserInterfaces.Command
 		/// <returns>The value the user input.</returns>
 		protected override long GetDialogResult(Window window)
 		{
+			Log.TRACE();
+
 			NumericSelectionDialog dialog = (NumericSelectionDialog)window;
 			long result = dialog.InputValue;
 

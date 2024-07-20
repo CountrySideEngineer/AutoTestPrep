@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
+using Logger;
 
 namespace DialogUserInterfaces.Command
 {
@@ -20,7 +15,7 @@ namespace DialogUserInterfaces.Command
 		/// </summary>
 		~DialogCommand()
 		{
-			Debug.WriteLine("DialogCommand destructor called.");
+			Log.DEBUG("DialogCommand destructor called.");
 		}
 
 		/// <summary>
@@ -43,6 +38,8 @@ namespace DialogUserInterfaces.Command
 		/// <returns>Result of dialog.</returns>
 		public virtual T Execute(T parameter)
 		{
+			Log.TRACE();
+
 			var dialog = GetDialog(parameter);
 			bool? result = dialog.ShowDialog();
 			if (null == result)

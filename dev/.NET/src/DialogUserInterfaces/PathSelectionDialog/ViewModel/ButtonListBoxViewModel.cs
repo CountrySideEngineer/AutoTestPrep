@@ -1,14 +1,5 @@
-﻿using Accessibility;
-using CSEngineer.Logger;
+﻿using Logger;
 using DialogUserInterfaces.Command;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Diagnostics;
-using System.Diagnostics.Contracts;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DialogUserInterfaces.ViewModel
 {
@@ -59,7 +50,7 @@ namespace DialogUserInterfaces.ViewModel
 			get => _selectedIndex;
 			set
 			{
-				Log.DEBUG($"{nameof(ButtonListBoxViewModel)}::{nameof(SelectedIndex)} Start!");
+				Log.TRACE();
 
 				if (value < 0)
 				{
@@ -93,6 +84,8 @@ namespace DialogUserInterfaces.ViewModel
 		/// <param name="items">Content to set.</param>
 		public virtual void SetContent(IEnumerable<string> items)
 		{
+			Log.TRACE();
+
 			var newItems = new List<ButtonListItem>();
 			var notEmptyItems = items
 				.Where(_ => ((!string.IsNullOrEmpty(_)) && (!string.IsNullOrWhiteSpace(_))))
@@ -120,6 +113,8 @@ namespace DialogUserInterfaces.ViewModel
 
 		public virtual string DelegateCommandHandler(string input)
 		{
+			Log.TRACE();
+
 			var command = new PathSelectionCommand();
 			string userInput = command.Execute(input);
 			string inputData = userInput ?? input;
@@ -133,7 +128,7 @@ namespace DialogUserInterfaces.ViewModel
 		/// <param name="content">Content to add.</param>
 		public virtual void AddNewItem(string content = "")
 		{
-			Log.TRACE("START!!");
+			Log.TRACE();
 			Log.DEBUG($"{"SelectedIndex", 32} = {SelectedIndex}");
 
 			var newList = new List<ButtonListItem>(Items);
@@ -159,7 +154,7 @@ namespace DialogUserInterfaces.ViewModel
 		/// </summary>
 		public virtual void DeleteItem()
 		{
-			Log.TRACE("Start!");
+			Log.TRACE();
 			Log.DEBUG($"{"SelectedItemIndex", 32} = {SelectedIndex}");
 
 			try

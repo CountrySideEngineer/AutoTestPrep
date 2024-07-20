@@ -1,5 +1,6 @@
 ﻿using DialogUserInterfaces.View;
 using DialogUserInterfaces.ViewModel;
+using Logger;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -39,11 +40,13 @@ namespace DialogUserInterfaces.Command
 		/// </summary>
 		~PathSelectionCommand()
 		{
-			Debug.WriteLine("PathSelectionCommand destructor called.");
+			Log.TRACE();
 		}
 
 		protected override Window GetDialog(string parameter)
 		{
+			Log.TRACE();
+
 			var dialog = new PathSelectionDialog(_mode);
 			((PathSelectionDialogViewModel)dialog.DataContext).InputPath = parameter;
 
@@ -57,7 +60,7 @@ namespace DialogUserInterfaces.Command
 		/// <returns>Result of window, dialog, a user input.</returns>
 		protected override string GetDialogResult(Window? window)
 		{
-			Debug.WriteLine($"{nameof(PathSelectionCommand)}::{nameof(GetDialogResult)} called");
+			Log.TRACE();
 
 			try
 			{

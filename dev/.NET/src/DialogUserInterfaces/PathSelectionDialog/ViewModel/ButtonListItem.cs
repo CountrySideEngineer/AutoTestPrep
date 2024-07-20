@@ -1,10 +1,5 @@
 ﻿using DialogUserInterfaces.Command;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Permissions;
-using System.Text;
-using System.Threading.Tasks;
+using Logger;
 
 namespace DialogUserInterfaces.ViewModel
 {
@@ -62,8 +57,7 @@ namespace DialogUserInterfaces.ViewModel
 		/// </summary>
 		public virtual void ExecuteCommand()
 		{
-			//string? inputItem = ItemCommand?.Execute(InputItem);
-			//InputItem = inputItem ?? string.Empty;
+			Log.TRACE();
 
 			string? input = CommandDelegate?.Invoke(InputItem);
 			InputItem = input ?? string.Empty;

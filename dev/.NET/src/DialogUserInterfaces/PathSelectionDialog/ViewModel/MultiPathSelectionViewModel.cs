@@ -1,4 +1,5 @@
 ﻿using DialogUserInterfaces.Command;
+using Logger;
 
 namespace DialogUserInterfaces.ViewModel
 {
@@ -73,6 +74,8 @@ namespace DialogUserInterfaces.ViewModel
 		/// <param name="content">Content of path.</param>
 		public virtual void SetContent(IEnumerable<string> content)
 		{
+			Log.TRACE();
+
 			var contentViewModel = new ButtonListBoxViewModel();
 			contentViewModel.SetContent(content);
 
@@ -86,6 +89,8 @@ namespace DialogUserInterfaces.ViewModel
 		/// <param name="splitter">Splitter of content.</param>
 		public virtual void SetContent(string content, string splitter = ";")
 		{
+			Log.TRACE();
+
 			IEnumerable<string> splitContent =
 				content
 				.Split(splitter, StringSplitOptions.RemoveEmptyEntries)
@@ -100,6 +105,8 @@ namespace DialogUserInterfaces.ViewModel
 		/// <returns>Content of dialog in generics.</returns>
 		public virtual IEnumerable<string> GetContent()
 		{
+			Log.TRACE();
+
 			var content = new List<string>();
 			foreach (var item in UserInputPathViewModel.Items)
 			{
@@ -115,6 +122,8 @@ namespace DialogUserInterfaces.ViewModel
 		/// <returns>Content of dialog in string.</returns>
 		public virtual string GetContent(string splitter)
 		{
+			Log.TRACE();
+
 			IEnumerable<string> contents = GetContent();
 			string contentOneLine = string.Empty;
 			foreach (var content in contents)
@@ -138,6 +147,8 @@ namespace DialogUserInterfaces.ViewModel
 		/// </summary>
 		public virtual void AddNewItem()
 		{
+			Log.TRACE();
+
 			UserInputPathViewModel.AddNewItem();
 		}
 
@@ -146,6 +157,8 @@ namespace DialogUserInterfaces.ViewModel
 		/// </summary>
 		public virtual void RemoveItem()
 		{
+			Log.TRACE();
+
 			UserInputPathViewModel.DeleteItem();
 		}
 	}
