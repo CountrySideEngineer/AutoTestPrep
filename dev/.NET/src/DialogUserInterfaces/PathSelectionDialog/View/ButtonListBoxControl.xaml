@@ -54,11 +54,14 @@
                                  Padding="0"
                                  BorderThickness="0"
                                  Background="Transparent"
+                                 GotFocus="TextBox_GotFocus"
+                                 LostFocus="TextBox_LostFocus"
                                  />
                         <Button Grid.Column="1"
                                 Content="..."
                                 Padding="4, 0, 4, 0"
                                 Command="{Binding Path=Command}"
+                                Visibility="{Binding ButtonVisibility}"
                                 />
                     </Grid>
                 </DataTemplate>

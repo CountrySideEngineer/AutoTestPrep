@@ -1,5 +1,6 @@
 ﻿using DialogUserInterfaces.Command;
 using Logger;
+using System.Windows;
 
 namespace DialogUserInterfaces.ViewModel
 {
@@ -67,5 +68,17 @@ namespace DialogUserInterfaces.ViewModel
 		/// Default constructor.
 		/// </summary>
 		public ButtonListItem() : base() { }
+
+		protected Visibility _buttonVisibility = Visibility.Hidden;
+
+		public Visibility ButtonVisibility
+		{
+			get => _buttonVisibility;
+			set
+			{
+				_buttonVisibility = value;
+				RaisePropertyChange();
+			}
+		}
     }
 }

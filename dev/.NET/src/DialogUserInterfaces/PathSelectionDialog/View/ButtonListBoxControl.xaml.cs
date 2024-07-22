@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DialogUserInterfaces.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,5 +25,26 @@ namespace DialogUserInterfaces.View
         {
             InitializeComponent();
         }
-    }
+
+		private void TextBox_GotFocus(object sender, RoutedEventArgs e)
+		{
+			var parent = (Grid)(((TextBox)e.Source).Parent);
+			var item = (ButtonListItem)parent.DataContext;
+			item.ButtonVisibility = Visibility.Visible;
+        }
+
+		private void TextBox_LostFocus(object sender, RoutedEventArgs e)
+		{
+			try
+			{
+				var parent = (Grid)(((TextBox)e.Source).Parent);
+				var item = (ButtonListItem)parent.DataContext;
+				item.ButtonVisibility = Visibility.Hidden;
+			}
+			catch (Exception)
+			{
+
+			}
+		}
+	}
 }
