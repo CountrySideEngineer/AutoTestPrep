@@ -1,4 +1,4 @@
-﻿using CSEngineer.Logger;
+﻿using Logger;
 using DialogUserInterfaces.ViewModel;
 using System.Text;
 using System.Windows;
@@ -20,7 +20,7 @@ namespace DialogUserInterfaceSamples
 	{
 		public MainWindow()
 		{
-			Log.AddLogger(new CSEngineer.Logger.Console.Log());
+			Log.AddLogger(new Logger.Console.Log());
 
 			InitializeComponent();
 		}
