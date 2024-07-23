@@ -25,26 +25,5 @@ namespace DialogUserInterfaces.View
         {
             InitializeComponent();
         }
-
-		private void TextBox_GotFocus(object sender, RoutedEventArgs e)
-		{
-			//var parent = (Grid)(((TextBox)e.Source).Parent);
-			//var item = (ButtonListItem)parent.DataContext;
-			//item.IsSelect = true;
-        }
-
-		private void TextBox_LostFocus(object sender, RoutedEventArgs e)
-		{
-			//try
-			//{
-			//	var parent = (Grid)(((TextBox)e.Source).Parent);
-			//	var item = (ButtonListItem)parent.DataContext;
-			//	item.IsSelect = false;
-			//}
-			//catch (Exception)
-			//{
-
-			//}
-		}
 	}
 }
