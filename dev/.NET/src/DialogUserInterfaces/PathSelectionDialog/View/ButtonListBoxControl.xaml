@@ -10,6 +10,9 @@
     <UserControl.DataContext>
         <vm:ButtonListBoxViewModel/>
     </UserControl.DataContext>
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVisibility"/>
+    </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="29*" />
@@ -61,7 +64,7 @@
                                 Content="..."
                                 Padding="4, 0, 4, 0"
                                 Command="{Binding Path=Command}"
-                                Visibility="{Binding ButtonVisibility}"
+                                Visibility="{Binding IsSelecte, Converter={StaticResource BoolToVisibility}}"
                                 />
                     </Grid>
                 </DataTemplate>

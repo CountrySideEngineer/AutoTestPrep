@@ -69,6 +69,18 @@ namespace DialogUserInterfaces.ViewModel
 		/// </summary>
 		public ButtonListItem() : base() { }
 
+		protected bool _isSelected = false;
+
+		public bool IsSelecte
+		{
+			get => _isSelected;
+			set
+			{
+				_isSelected = value;
+				RaisePropertyChange();
+			}
+		}
+
 		protected Visibility _buttonVisibility = Visibility.Hidden;
 
 		public Visibility ButtonVisibility

@@ -30,7 +30,7 @@ namespace DialogUserInterfaces.View
 		{
 			var parent = (Grid)(((TextBox)e.Source).Parent);
 			var item = (ButtonListItem)parent.DataContext;
-			item.ButtonVisibility = Visibility.Visible;
+			item.IsSelecte = true;
         }
 
 		private void TextBox_LostFocus(object sender, RoutedEventArgs e)
@@ -39,7 +39,7 @@ namespace DialogUserInterfaces.View
 			{
 				var parent = (Grid)(((TextBox)e.Source).Parent);
 				var item = (ButtonListItem)parent.DataContext;
-				item.ButtonVisibility = Visibility.Hidden;
+				item.IsSelecte = false;
 			}
 			catch (Exception)
 			{
