@@ -69,26 +69,20 @@ namespace DialogUserInterfaces.ViewModel
 		/// </summary>
 		public ButtonListItem() : base() { }
 
+		/// <summary>
+		/// Field about the ButtonListItem is selected or not.
+		/// </summary>
 		protected bool _isSelected = false;
 
-		public bool IsSelecte
+		/// <summary>
+		/// Property about the ButtonListItem is selected or not.
+		/// </summary>
+		public bool IsSelected
 		{
 			get => _isSelected;
 			set
 			{
 				_isSelected = value;
-				RaisePropertyChange();
-			}
-		}
-
-		protected Visibility _buttonVisibility = Visibility.Hidden;
-
-		public Visibility ButtonVisibility
-		{
-			get => _buttonVisibility;
-			set
-			{
-				_buttonVisibility = value;
 				RaisePropertyChange();
 			}
 		}

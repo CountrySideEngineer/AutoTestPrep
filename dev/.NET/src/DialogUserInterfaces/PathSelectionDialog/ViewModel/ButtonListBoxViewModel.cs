@@ -1,5 +1,6 @@
 ﻿using Logger;
 using DialogUserInterfaces.Command;
+using System.Diagnostics;
 
 namespace DialogUserInterfaces.ViewModel
 {
@@ -32,8 +33,28 @@ namespace DialogUserInterfaces.ViewModel
 			get => _selectedItem;
 			set
 			{
-				_selectedItem = value;
-				RaisePropertyChange();
+				try
+				{
+					if (null != _selectedItem)
+					{
+						// Reset selection status of the old item.
+						_selectedItem.IsSelected = false;
+					}
+					_selectedItem = value;
+					if (null != _selectedItem)
+					{
+						// Change selection status of the newly item.
+						_selectedItem.IsSelected = true;
+					}
+				}
+				catch (Exception)
+				{
+
+				}
+				finally
+				{
+					RaisePropertyChange();
+				}
 			}
 		}
 
