@@ -26,8 +26,14 @@ namespace DialogUserInterfaces.ViewModel
 			}
 		}
 
-		public ButtonListItem _selectedItem = new ButtonListItem();
+		/// <summary>
+		/// Field of selected item in Items proeprty.
+		/// </summary>
+		protected ButtonListItem _selectedItem = new ButtonListItem();
 
+		/// <summary>
+		/// Property of selected item in Items property.
+		/// </summary>
 		public ButtonListItem SelectedItem
 		{
 			get => _selectedItem;
