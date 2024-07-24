@@ -39,28 +39,18 @@ namespace DialogUserInterfaces.ViewModel
 			get => _selectedItem;
 			set
 			{
-				try
+				// To avoid an exception detection, the old and new values are
+				// checked respectively.
+				if (null != _selectedItem)
 				{
-					if (null != _selectedItem)
-					{
-						// Reset selection status of the old item.
-						_selectedItem.IsSelected = false;
-					}
+					_selectedItem.IsSelected = false;
+				}
+				if (null != value)
+				{
 					_selectedItem = value;
-					if (null != _selectedItem)
-					{
-						// Change selection status of the newly item.
-						_selectedItem.IsSelected = true;
-					}
+					_selectedItem.IsSelected = true;
 				}
-				catch (Exception)
-				{
-
-				}
-				finally
-				{
-					RaisePropertyChange();
-				}
+				RaisePropertyChange();
 			}
 		}
 
