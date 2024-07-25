@@ -30,6 +30,9 @@
     <Reference Include="DialogUserInterfaces">
       <HintPath>..\..\bin\DialogUserInterfaces.dll</HintPath>
     </Reference>
+    <Reference Include="Logger">
+      <HintPath>..\..\libs\Logger.dll</HintPath>
+    </Reference>
     <Reference Include="PathCommandLibrary">
       <HintPath>..\..\bin\PathCommandLibrary.dll</HintPath>
     </Reference>

@@ -1,12 +1,7 @@
-﻿using AutoTestPrep.View;
-using CustomUserControls.ViewModel;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CustomUserControls.ViewModel;
 using System.Windows;
 using System.Windows.Controls;
+using Logger;
 
 namespace AutoTestPrep.Controls
 {
@@ -14,6 +9,8 @@ namespace AutoTestPrep.Controls
 	{
 		public override DataTemplate SelectTemplate(object item, DependencyObject container)
 		{
+			Log.TRACE();
+
 			var viewModel = (CommandGridExpanderViewModel)item;
 			var element = (FrameworkElement)container;
 			if ((null == viewModel) || (null == element))

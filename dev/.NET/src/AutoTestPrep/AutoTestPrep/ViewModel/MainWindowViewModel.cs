@@ -1,6 +1,7 @@
 ﻿using AutoTestPrep.Command;
 using CustomUserControls.Command;
 using CustomUserControls.ViewModel;
+using Logger;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -128,7 +129,7 @@ namespace AutoTestPrep.ViewModel
 
 		public void SelectedItemChangedExecute(ProjectItemViewModel selectedItem)
 		{
-			Debug.WriteLine($"{nameof(SelectedItemChangedExecute)} is called.");
+			Log.TRACE();
 
 			try
 			{

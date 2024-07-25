@@ -1,5 +1,5 @@
-﻿using AutoTestPrep.Command;
-using CustomUserControls.ViewModel;
+﻿using CustomUserControls.ViewModel;
+using Logger;
 
 namespace AutoTestPrep.ViewModel
 {
@@ -41,6 +41,8 @@ namespace AutoTestPrep.ViewModel
 		/// <returns>Item in string.</returns>
 		protected virtual string ExtractItem(int index)
 		{
+			Log.TRACE();
+
 			if (null == Items)
 			{
 				return string.Empty;
@@ -99,6 +101,8 @@ namespace AutoTestPrep.ViewModel
 		/// <returns>Item in string.</returns>
 		protected virtual T ExtractItem(int index)
 		{
+			Log.TRACE();
+
 			try
 			{
 				T item = Items.ElementAt(index).Item;

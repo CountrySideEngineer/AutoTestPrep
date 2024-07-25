@@ -1,6 +1,7 @@
 ﻿using CustomUserControls.Command;
 using DialogUserInterfaces.View;
 using DialogUserInterfaces.ViewModel;
+using Logger;
 
 namespace AutoTestPrep.Command
 {
@@ -18,6 +19,8 @@ namespace AutoTestPrep.Command
 		/// <returns>Path to folder selected by user.</returns>
 		public string Execute(string parameter)
 		{
+			Log.TRACE();
+
 			var pathSelectView = new PathSelectionDialog();
 			bool? dialogResult = pathSelectView.ShowDialog();
 
