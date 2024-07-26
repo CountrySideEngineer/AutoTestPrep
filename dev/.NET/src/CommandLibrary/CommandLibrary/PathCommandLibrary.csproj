@@ -8,6 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Reference Include="Logger">
+      <HintPath>..\..\libs\Logger.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

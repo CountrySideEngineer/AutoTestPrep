@@ -1,10 +1,4 @@
-﻿using Microsoft.VisualBasic;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics.Tracing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Logger;
 
 namespace PathCommandLibrary
 {
@@ -18,6 +12,9 @@ namespace PathCommandLibrary
 		/// <exception cref="InvalidOperationException">Operation canceled.</exception>
 		public string Select(string initPath = "")
 		{
+			Log.TRACE();
+			Log.DEBUG($"({nameof(initPath)}, 16) = {initPath}");
+
 			Microsoft.Win32.OpenFolderDialog dialog = new();
 
 			dialog.Multiselect = false;

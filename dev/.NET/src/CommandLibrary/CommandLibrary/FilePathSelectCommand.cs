@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Logger;
 
 namespace PathCommandLibrary
 {
@@ -16,6 +12,9 @@ namespace PathCommandLibrary
 		/// <exception cref="InvalidOperationException">Operation canceled.</exception>
 		public string Select(string defaultPath = "")
 		{
+			Log.TRACE();
+			Log.DEBUG($"({nameof(defaultPath)}, 16) = {defaultPath}");
+
 			Microsoft.Win32.OpenFileDialog dialog = new();
 
 			dialog.Multiselect = false;
