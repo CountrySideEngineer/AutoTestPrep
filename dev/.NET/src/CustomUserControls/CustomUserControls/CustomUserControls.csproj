@@ -11,4 +11,10 @@
     <Exec Command="xcopy $(OutDir)*.dll $(SolutionDir)..\bin\ /E /C /I /Y&#xD;&#xA;" />
   </Target>
 
+  <ItemGroup>
+    <Reference Include="Logger">
+      <HintPath>..\..\libs\Logger.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

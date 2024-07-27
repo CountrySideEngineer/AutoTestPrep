@@ -1,15 +1,7 @@
 ﻿using CustomUserControls.Command;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data.SqlTypes;
+using Logger;
 using System.Diagnostics;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
 
 namespace CustomUserControls.ViewModel
 {
@@ -56,9 +48,8 @@ namespace CustomUserControls.ViewModel
 
 		public virtual void CommandExecute()
 		{
-			Debug.WriteLine($"{Title} command executed.");
-			MessageBox.Show($"{Title} is called.", "Title");
-			//throw new NotImplementedException();
+			Log.TRACE();
+			Log.DEBUG($"{Title} command executed.");
 
 			string itemBak = Item;
 			Item = CustomCommand?.Execute(itemBak) ?? itemBak;
@@ -106,9 +97,8 @@ namespace CustomUserControls.ViewModel
 
 		public virtual void CommandExecute()
 		{
-			Debug.WriteLine($"{Title} command executed.");
-			MessageBox.Show($"{Title} is called.", "Title");
-			//throw new NotImplementedException();
+			Log.TRACE();
+			Log.DEBUG($"{Title} command executed.");
 
 			if (null != CustomCommand)
 			{
