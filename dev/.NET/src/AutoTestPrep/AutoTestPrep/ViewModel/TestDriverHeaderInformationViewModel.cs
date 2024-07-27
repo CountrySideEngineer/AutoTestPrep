@@ -1,9 +1,5 @@
-﻿using CustomUserControls.ViewModel;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AutoTestPrep.Command;
+using CustomUserControls.ViewModel;
 
 namespace AutoTestPrep.ViewModel
 {
@@ -21,12 +17,14 @@ namespace AutoTestPrep.ViewModel
 				new CommandGridExpanderItem()
 				{
 					Title = Properties.Resources.IDS_HEADER_INFORMATION_STANDARD_HEADERS_OF_DRIVER,
-					Item = string.Empty
+					Item = string.Empty,
+					CustomCommand = new FileInputCommand()
 				},
 				new CommandGridExpanderItem()
 				{
 					Title = Properties.Resources.IDS_HEADER_INFORMATION_USER_HEADERS_OF_DRIVER,
-					Item = string.Empty
+					Item = string.Empty,
+					CustomCommand = new FileInputCommand()
 				},
 				new CommandGridExpanderItem()
 				{
