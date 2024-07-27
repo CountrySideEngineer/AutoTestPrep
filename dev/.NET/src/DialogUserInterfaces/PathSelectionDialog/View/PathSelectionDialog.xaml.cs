@@ -1,19 +1,7 @@
 ﻿using DialogUserInterfaces.ViewModel;
-using System;
-using System.Collections.Generic;
+using Logger;
 using System.Diagnostics;
-using System.Linq;
-using System.Security.Policy;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace DialogUserInterfaces.View
 {
@@ -27,7 +15,7 @@ namespace DialogUserInterfaces.View
 		/// </summary>
 		public PathSelectionDialog()
 		{
-			Debug.WriteLine($"{nameof(PathSelectionDialog)}(Default) called.");
+			Log.TRACE();
 
 			InitializeComponent();
 
@@ -41,7 +29,8 @@ namespace DialogUserInterfaces.View
 		/// <exception cref="ArgumentException">Mode is invalid.</exception>
 		public PathSelectionDialog(int mode)
 		{
-			Debug.WriteLine($"{nameof(PathSelectionDialog)} called.");
+			Log.TRACE();
+			Log.DEBUG($"{nameof(mode),24} = {mode}");
 
 			InitializeComponent();
 
@@ -60,10 +49,10 @@ namespace DialogUserInterfaces.View
 			}
 		}
 
-		~PathSelectionDialog()
-		{
-			Debug.WriteLine("PathSelectionDialog() destructor called.");
-		}
+		/// <summary>
+		/// Destructor
+		/// </summary>
+		~PathSelectionDialog() { }
 
 		/// <summary>
 		/// User selected path.
@@ -95,6 +84,8 @@ namespace DialogUserInterfaces.View
 		/// <param name="e">Not in user.</param>
 		private void OKButton_Click(object sender, RoutedEventArgs e)
 		{
+			Log.TRACE();
+
 			DialogResult = true;
 
 			Close();
@@ -107,6 +98,8 @@ namespace DialogUserInterfaces.View
 		/// <param name="e"></param>
 		private void CancelButton_Click(object sender, RoutedEventArgs e)
 		{
+			Log.TRACE();
+
 			DialogResult = false;
 
 			Close();

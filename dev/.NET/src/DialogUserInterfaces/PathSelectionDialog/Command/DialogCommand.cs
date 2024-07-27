@@ -11,14 +11,6 @@ namespace DialogUserInterfaces.Command
 		public DialogCommand() { }
 
 		/// <summary>
-		/// Destructor
-		/// </summary>
-		~DialogCommand()
-		{
-			Log.DEBUG("DialogCommand destructor called.");
-		}
-
-		/// <summary>
 		/// Abstract method which returns the result of dialog.
 		/// </summary>
 		/// <param name="window">Dialog.</param>
