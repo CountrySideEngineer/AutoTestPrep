@@ -7,9 +7,23 @@ namespace DialogUserInterfaces.Command
 	public class MultiPathSelectionCommand : DialogCommand<IEnumerable<string>>
 	{
 		/// <summary>
+		/// Path selection mode.
+		/// </summary>
+		public int Mode { get; set; } = DialogUserInterfaces.Mode.DIALOG_FILE_SELECT;
+
+		/// <summary>
 		/// Default constructor.
 		/// </summary>
 		public MultiPathSelectionCommand() : base() { }
+
+		/// <summary>
+		/// Constructor with path selection mode.
+		/// </summary>
+		/// <param name="mode">Path selectin mode.</param>
+		public MultiPathSelectionCommand(int mode) : base()
+		{
+			Mode = mode;
+		}
 
 		/// <summary>
 		/// Returns the MultiPathSelectionDialog object.

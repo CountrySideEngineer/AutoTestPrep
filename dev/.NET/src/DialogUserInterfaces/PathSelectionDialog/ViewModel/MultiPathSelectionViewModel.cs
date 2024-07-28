@@ -143,6 +143,15 @@ namespace DialogUserInterfaces.ViewModel
 		}
 
 		/// <summary>
+		/// Constructor with mode.
+		/// </summary>
+		/// <param name="mode">Path selection mode.</param>
+		public MultiPathSelectionViewModel(int mode) : base()
+		{
+			UserInputPathViewModel = new ButtonListBoxViewModel(mode);
+		}
+
+		/// <summary>
 		/// Add new item to user input path item.
 		/// </summary>
 		public virtual void AddNewItem()

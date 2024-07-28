@@ -21,11 +21,25 @@ namespace DialogUserInterfaces.View
 	/// </summary>
 	public partial class MultiPathSelectionDialog : Window
 	{
-		public MultiPathSelectionDialog()
+		/// <summary>
+		/// Default constructor.
+		/// </summary>
+		public MultiPathSelectionDialog() : base()
 		{
 			InitializeComponent();
 
 			DataContext = new MultiPathSelectionViewModel();
+		}
+
+		/// <summary>
+		/// Constructor with mode.
+		/// </summary>
+		/// <param name="mode">Path selection mode.</param>
+		public MultiPathSelectionDialog(int mode) : base()
+		{
+			InitializeComponent();
+
+			DataContext = new MultiPathSelectionViewModel(mode);
 		}
 
 		/// <summary>

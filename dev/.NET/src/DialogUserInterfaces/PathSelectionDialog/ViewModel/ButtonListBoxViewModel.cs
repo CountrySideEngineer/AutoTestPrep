@@ -87,6 +87,20 @@ namespace DialogUserInterfaces.ViewModel
 		/// </summary>
 		public ButtonListBoxViewModel() : base()
 		{
+			_itemCommand = new PathSelectionCommand(Mode.DIALOG_FILE_SELECT);
+
+			// Set sample content.
+			SetContent(new List<string>()
+			{
+				"Sample input text box item 001",
+				"Sample input text box item 002"
+			});
+		}
+
+		public ButtonListBoxViewModel(int mode) : base()
+		{
+			_itemCommand = new PathSelectionCommand(mode);
+
 			// Set sample content.
 			SetContent(new List<string>()
 			{
@@ -131,6 +145,7 @@ namespace DialogUserInterfaces.ViewModel
 		public virtual string DelegateCommandHandler(string input)
 		{
 			Log.TRACE();
+			Log.DEBUG($"{"input",16} = {input}");
 
 			var command = new PathSelectionCommand();
 			string userInput = command.Execute(input);
