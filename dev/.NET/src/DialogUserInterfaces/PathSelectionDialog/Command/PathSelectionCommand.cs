@@ -13,6 +13,9 @@ namespace DialogUserInterfaces.Command
 {
     public class PathSelectionCommand : DialogCommand<string>
     {
+		/// <summary>
+		/// Path selection mode, file or directory.
+		/// </summary>
 		protected int _mode = 0;
 
 		/// <summary>
