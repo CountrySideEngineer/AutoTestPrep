@@ -15,8 +15,16 @@ namespace AutoTestPrep.Command
 	{
 		protected string _dirSplitter = ";";
 
+		/// <summary>
+		/// Default constructor.
+		/// </summary>
 		public MultiDirSelectionCommnad() : base() { }
 
+		/// <summary>
+		/// Execute command 
+		/// </summary>
+		/// <param name="parameter"></param>
+		/// <returns></returns>
 		public string Execute(string parameter)
 		{
 			Log.TRACE();
