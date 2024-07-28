@@ -1,4 +1,5 @@
 ﻿using CustomUserControls.Command;
+using DialogUserInterfaces;
 using DialogUserInterfaces.Command;
 using DialogUserInterfaces.View;
 using Logger;
@@ -19,7 +20,7 @@ namespace AutoTestPrep.Command
 		public string Execute(string parameter)
 		{
 			Log.TRACE();
-			Log.DEBUG($"{"parameter", 16} = {parameter}");
+			Log.DEBUG($"{nameof(parameter),16} = {parameter}");
 
 			IEnumerable<string>? list = null;
 			try
@@ -31,7 +32,7 @@ namespace AutoTestPrep.Command
 				list = new List<string>();
 			}
 
-			var command = new MultiPathSelectionCommand();
+			var command = new MultiPathSelectionCommand(Mode.DIALOG_FOLDER_SELECT);
 			IEnumerable<string> result = command.Execute(list);
 
 			IEnumerable<string> resultWihoutEmpty 
