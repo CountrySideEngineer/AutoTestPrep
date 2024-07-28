@@ -29,7 +29,8 @@ namespace AutoTestPrep.ViewModel
 				new CommandGridExpanderItem()
 				{
 					Title = Properties.Resources.IDS_HEADER_INFORMATION_HEADER_INCLUDE_DIRS_OF_DRIVER,
-					Item = string.Empty
+					Item = string.Empty,
+					CustomCommand = new MultiDirSelectionCommnad()
 				}
 			};
 		}
