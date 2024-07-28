@@ -30,7 +30,7 @@ namespace DialogUserInterfaces.View
 		public PathSelectionDialog(int mode)
 		{
 			Log.TRACE();
-			Log.DEBUG($"{nameof(mode),24} = {mode}");
+			Log.DEBUG($"{nameof(mode),16} = {mode}");
 
 			InitializeComponent();
 

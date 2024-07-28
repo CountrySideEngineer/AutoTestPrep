@@ -34,7 +34,7 @@ namespace DialogUserInterfaces.Command
 		{
 			Log.TRACE();
 
-			var dialog = new MultiPathSelectionDialog();
+			var dialog = new MultiPathSelectionDialog(Mode);
 			dialog.InputPath = parameter;
 
 			return dialog;

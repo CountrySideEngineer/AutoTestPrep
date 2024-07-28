@@ -1,4 +1,5 @@
 ﻿using DialogUserInterfaces.ViewModel;
+using Logger;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,8 @@ namespace DialogUserInterfaces.View
 		/// </summary>
 		public MultiPathSelectionDialog() : base()
 		{
+			Log.TRACE();
+
 			InitializeComponent();
 
 			DataContext = new MultiPathSelectionViewModel();
@@ -37,6 +40,9 @@ namespace DialogUserInterfaces.View
 		/// <param name="mode">Path selection mode.</param>
 		public MultiPathSelectionDialog(int mode) : base()
 		{
+			Log.TRACE();
+			Log.DEBUG($"{"mode",12} = {mode}");
+
 			InitializeComponent();
 
 			DataContext = new MultiPathSelectionViewModel(mode);

@@ -87,6 +87,8 @@ namespace DialogUserInterfaces.ViewModel
 		/// </summary>
 		public ButtonListBoxViewModel() : base()
 		{
+			Log.TRACE();
+
 			_itemCommand = new PathSelectionCommand(Mode.DIALOG_FILE_SELECT);
 
 			// Set sample content.
@@ -99,6 +101,9 @@ namespace DialogUserInterfaces.ViewModel
 
 		public ButtonListBoxViewModel(int mode) : base()
 		{
+			Log.TRACE();
+			Log.DEBUG($"{"mode",12} = {mode}");
+
 			_itemCommand = new PathSelectionCommand(mode);
 
 			// Set sample content.
@@ -126,16 +131,14 @@ namespace DialogUserInterfaces.ViewModel
 				var newItem = new ButtonListItem()
 				{
 					InputItem = item,
-					ItemCommand = _itemCommand,
-					CommandDelegate = DelegateCommandHandler
+					ItemCommand = _itemCommand
 				};
 				newItems.Add(newItem);
 			}
 			var tailItem = new ButtonListItem()
 			{
 				InputItem = string.Empty,
-				ItemCommand = new PathSelectionCommand(),
-				CommandDelegate = DelegateCommandHandler
+				ItemCommand = _itemCommand
 			};
 			newItems.Add(tailItem);
 
@@ -147,7 +150,7 @@ namespace DialogUserInterfaces.ViewModel
 			Log.TRACE();
 			Log.DEBUG($"{"input",16} = {input}");
 
-			var command = new PathSelectionCommand();
+			var command = _itemCommand;
 			string userInput = command.Execute(input);
 			string inputData = userInput ?? input;
 
@@ -167,8 +170,7 @@ namespace DialogUserInterfaces.ViewModel
 			var newItem = new ButtonListItem()
 			{
 				InputItem = new string(content),
-				ItemCommand = _itemCommand,
-				CommandDelegate = DelegateCommandHandler
+				ItemCommand = _itemCommand
 			};
 			try
 			{

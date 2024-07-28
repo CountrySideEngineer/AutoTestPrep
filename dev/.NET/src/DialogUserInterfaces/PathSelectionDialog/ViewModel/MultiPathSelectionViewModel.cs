@@ -9,6 +9,8 @@ namespace DialogUserInterfaces.ViewModel
 
 		protected DelegateCommand? _addNewItemCommand = null;
 
+		protected int _mode = Mode.DIALOG_FOLDER_SELECT;
+
 		public DelegateCommand AddNewItemCommand
 		{
 			get
@@ -75,8 +77,9 @@ namespace DialogUserInterfaces.ViewModel
 		public virtual void SetContent(IEnumerable<string> content)
 		{
 			Log.TRACE();
+			Log.DEBUG($"{nameof(_mode),12} = {_mode}");
 
-			var contentViewModel = new ButtonListBoxViewModel();
+			var contentViewModel = new ButtonListBoxViewModel(_mode);
 			contentViewModel.SetContent(content);
 
 			UserInputPathViewModel = contentViewModel;
@@ -139,6 +142,9 @@ namespace DialogUserInterfaces.ViewModel
 		/// </summary>
 		public MultiPathSelectionViewModel() : base()
 		{
+			Log.TRACE();
+
+			_mode = Mode.DIALOG_FOLDER_SELECT;
 			UserInputPathViewModel = new();
 		}
 
@@ -148,6 +154,10 @@ namespace DialogUserInterfaces.ViewModel
 		/// <param name="mode">Path selection mode.</param>
 		public MultiPathSelectionViewModel(int mode) : base()
 		{
+			Log.TRACE();
+			Log.DEBUG($"{"mode",12} = {mode}");
+
+			_mode = mode;
 			UserInputPathViewModel = new ButtonListBoxViewModel(mode);
 		}
 

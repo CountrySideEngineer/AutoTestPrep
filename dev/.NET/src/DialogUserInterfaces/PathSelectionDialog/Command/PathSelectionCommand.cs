@@ -20,6 +20,8 @@ namespace DialogUserInterfaces.Command
 		/// </summary>
 		public PathSelectionCommand() : base()
 		{
+			Log.TRACE();
+
 			_mode = Mode.DIALOG_FILE_SELECT;
 		}
 
@@ -32,6 +34,9 @@ namespace DialogUserInterfaces.Command
 		/// </param>
 		public PathSelectionCommand(int mode) : base()
 		{
+			Log.TRACE();
+			Log.DEBUG($"{"mode",12} = {mode}");
+
 			_mode = mode;
 		}
 
@@ -46,6 +51,7 @@ namespace DialogUserInterfaces.Command
 		protected override Window GetDialog(string parameter)
 		{
 			Log.TRACE();
+			Log.DEBUG($"{"parameter",12} = {parameter}");
 
 			var dialog = new PathSelectionDialog(_mode);
 			((PathSelectionDialogViewModel)dialog.DataContext).InputPath = parameter;

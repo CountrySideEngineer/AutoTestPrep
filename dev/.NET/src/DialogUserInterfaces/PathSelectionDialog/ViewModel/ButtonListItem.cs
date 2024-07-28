@@ -60,14 +60,17 @@ namespace DialogUserInterfaces.ViewModel
 		{
 			Log.TRACE();
 
-			string? input = CommandDelegate?.Invoke(InputItem);
-			InputItem = input ?? string.Empty;
+			string userInputItem = ItemCommand?.Execute(InputItem) ?? InputItem;
+			InputItem = userInputItem;
 		}
 
 		/// <summary>
 		/// Default constructor.
 		/// </summary>
-		public ButtonListItem() : base() { }
+		public ButtonListItem() : base()
+		{
+			Log.TRACE();
+		}
 
 		/// <summary>
 		/// Field about the ButtonListItem is selected or not.
