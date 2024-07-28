@@ -1,6 +1,7 @@
 ﻿using Logger;
 using DialogUserInterfaces.Command;
 using System.Diagnostics;
+using System.Reflection;
 
 namespace DialogUserInterfaces.ViewModel
 {
@@ -11,6 +12,9 @@ namespace DialogUserInterfaces.ViewModel
 		/// </summary>
 		protected IEnumerable<ButtonListItem> _items = new List<ButtonListItem>();
 
+		/// <summary>
+		/// Command to select path.
+		/// </summary>
 		protected IDialogCommand<string> _itemCommand = new PathSelectionCommand();
 
 		/// <summary>
@@ -90,28 +94,18 @@ namespace DialogUserInterfaces.ViewModel
 			Log.TRACE();
 
 			_itemCommand = new PathSelectionCommand(Mode.DIALOG_FILE_SELECT);
-
-			// Set sample content.
-			SetContent(new List<string>()
-			{
-				"Sample input text box item 001",
-				"Sample input text box item 002"
-			});
 		}
 
+		/// <summary>
+		/// Constructor with argument.
+		/// </summary>
+		/// <param name="mode"></param>
 		public ButtonListBoxViewModel(int mode) : base()
 		{
 			Log.TRACE();
-			Log.DEBUG($"{"mode",12} = {mode}");
+			Log.DEBUG($"{nameof(mode),12} = {mode}");
 
 			_itemCommand = new PathSelectionCommand(mode);
-
-			// Set sample content.
-			SetContent(new List<string>()
-			{
-				"Sample input text box item 001",
-				"Sample input text box item 002"
-			});
 		}
 
 		/// <summary>
@@ -121,6 +115,7 @@ namespace DialogUserInterfaces.ViewModel
 		public virtual void SetContent(IEnumerable<string> items)
 		{
 			Log.TRACE();
+			Log.DEBUG($"items.Count() = {items.Count()}");
 
 			var newItems = new List<ButtonListItem>();
 			var notEmptyItems = items
@@ -145,18 +140,6 @@ namespace DialogUserInterfaces.ViewModel
 			Items = newItems;
 		}
 
-		public virtual string DelegateCommandHandler(string input)
-		{
-			Log.TRACE();
-			Log.DEBUG($"{"input",16} = {input}");
-
-			var command = _itemCommand;
-			string userInput = command.Execute(input);
-			string inputData = userInput ?? input;
-
-			return inputData;
-		}
-
 		/// <summary>
 		/// Add new item to user user input item.
 		/// </summary>
@@ -164,7 +147,8 @@ namespace DialogUserInterfaces.ViewModel
 		public virtual void AddNewItem(string content = "")
 		{
 			Log.TRACE();
-			Log.DEBUG($"{"SelectedIndex", 32} = {SelectedIndex}");
+			Log.DEBUG($"{nameof(content),16} = {SelectedIndex}");
+			Log.DEBUG($"{nameof(SelectedIndex),16} = {SelectedIndex}");
 
 			var newList = new List<ButtonListItem>(Items);
 			var newItem = new ButtonListItem()
@@ -189,7 +173,7 @@ namespace DialogUserInterfaces.ViewModel
 		public virtual void DeleteItem()
 		{
 			Log.TRACE();
-			Log.DEBUG($"{"SelectedItemIndex", 32} = {SelectedIndex}");
+			Log.DEBUG($"{nameof(SelectedIndex),16} = {SelectedIndex}");
 
 			try
 			{
