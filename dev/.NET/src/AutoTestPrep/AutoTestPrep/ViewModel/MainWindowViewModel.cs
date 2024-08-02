@@ -140,7 +140,7 @@ namespace AutoTestPrep.ViewModel
 			when (ex is KeyNotFoundException)
 			{
 				// Ignore command.
-				Debug.WriteLine("No item can be found in a command dictionary.");
+				Log.DEBUG($"{ex.Message}");
 			}
 		}
 	}
