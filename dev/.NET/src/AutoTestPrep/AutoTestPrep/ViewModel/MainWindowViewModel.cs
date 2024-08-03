@@ -8,9 +8,11 @@ using System.Configuration;
 using System.Diagnostics;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
+using System.Security.RightsManagement;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using DelegateCommand = AutoTestPrep.Command.DelegateCommand;
 
 namespace AutoTestPrep.ViewModel
 {
@@ -77,6 +79,19 @@ namespace AutoTestPrep.ViewModel
 			{
 				_selectedNodeItems = value;
 				RaisePropertyChanged();
+			}
+		}
+
+		protected DelegateCommand? _testParserCommand = null;
+		public DelegateCommand TestParserCommand
+		{
+			get
+			{
+				if (null == _testParserCommand)
+				{
+					_testParserCommand = new DelegateCommand(TestParserCommandExecute);
+				}
+				return _testParserCommand;
 			}
 		}
 
@@ -268,6 +283,14 @@ namespace AutoTestPrep.ViewModel
 				// Ignore command.
 				Log.DEBUG($"{ex.Message}");
 			}
+		}
+
+		protected virtual void TestParserCommandExecute()
+		{
+			Log.TRACE();
+
+			var command = new ExecTestParseCommand();
+			command.Execute(null);
 		}
 	}
 }

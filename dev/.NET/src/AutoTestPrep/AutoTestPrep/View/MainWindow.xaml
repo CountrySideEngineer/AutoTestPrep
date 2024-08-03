@@ -70,6 +70,7 @@
                       >
                 <MenuItem Header="{x:Static properties:Resources.IDS_MENU_ITEM_EXECUTE_TEST_DOUBLE}"
                           Style="{StaticResource MenuItem_MenuItem}"
+                          Command="{Binding TestParserCommand}"
                           />
                 <Separator/>
                 <MenuItem Header="{x:Static properties:Resources.IDS_MENU_ITEM_EXECUTE_TEST_PLUGINS}"
