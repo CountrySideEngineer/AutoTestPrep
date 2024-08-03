@@ -92,38 +92,164 @@ namespace AutoTestPrep.ViewModel
 			{
 				new ProjectItemViewModel()
 				{
-					Name = "Root",
+					Name = "Solution Name (Tree root)",
 					SubProjects = new List<ProjectItemViewModel>()
 					{
 						new ProjectItemViewModel()
 						{
-							Name = "SubItem_001",
+							Name = "TestProjectName_001",
 							SubProjects = new List<ProjectItemViewModel>()
 							{
 								new ProjectItemViewModel()
 								{
-									Name = "SubItem_001_001",
+									Name = "FunctionName_001",
+									SubProjects = new List<ProjectItemViewModel>()
+									{
+										new ProjectItemViewModel()
+										{
+											Name = "FunctionName_001_TestCase_001"
+										},
+										new ProjectItemViewModel()
+										{
+											Name = "FunctionName_001_TestCase_002"
+										},
+										new ProjectItemViewModel()
+										{
+											Name = "FunctionName_001_TestCase_003"
+										},
+									}
 								},
 								new ProjectItemViewModel()
 								{
-									Name = "SubItem_001_002",
+									Name = "FunctionName_002",
+									SubProjects = new List<ProjectItemViewModel>()
+									{
+										new ProjectItemViewModel()
+										{
+											Name = "FunctionName_002_TestCase_001"
+										},
+										new ProjectItemViewModel()
+										{
+											Name = "FunctionName_002_TestCase_002"
+										},
+										new ProjectItemViewModel()
+										{
+											Name = "FunctionName_002_TestCase_003"
+										},
+										new ProjectItemViewModel()
+										{
+											Name = "FunctionName_002_TestCase_004"
+										},
+										new ProjectItemViewModel()
+										{
+											Name = "FunctionName_002_TestCase_005"
+										},
+										new ProjectItemViewModel()
+										{
+											Name = "FunctionName_002_TestCase_006"
+										},
+									}
 								},
 								new ProjectItemViewModel()
 								{
-									Name = "SubItem_001_003",
+									Name = "FunctionName_003",
+									SubProjects = new List<ProjectItemViewModel>()
+									{
+										new ProjectItemViewModel()
+										{
+											Name = "FunctionName_003_TestCase_001"
+										},
+										new ProjectItemViewModel()
+										{
+											Name = "FunctionName_003_TestCase_002"
+										},
+									}
 								},
-
 							}
-						}
-					}
+						},
+						new ProjectItemViewModel()
+						{
+							Name = "TestProjectName_002",
+							SubProjects = new List<ProjectItemViewModel>()
+							{
+								new ProjectItemViewModel()
+								{
+									Name = "FunctionName_101",
+									SubProjects = new List<ProjectItemViewModel>()
+									{
+										new ProjectItemViewModel()
+										{
+											Name = "FunctionName_101_TestCase_001"
+										},
+										new ProjectItemViewModel()
+										{
+											Name = "FunctionName_101_TestCase_002"
+										},
+										new ProjectItemViewModel()
+										{
+											Name = "FunctionName_101_TestCase_003"
+										},
+									}
+								},
+								new ProjectItemViewModel()
+								{
+									Name = "FunctionName_102",
+									SubProjects = new List<ProjectItemViewModel>()
+									{
+										new ProjectItemViewModel()
+										{
+											Name = "FunctionName_102_TestCase_001"
+										},
+										new ProjectItemViewModel()
+										{
+											Name = "FunctionName_102_TestCase_002"
+										},
+										new ProjectItemViewModel()
+										{
+											Name = "FunctionName_102_TestCase_003"
+										},
+										new ProjectItemViewModel()
+										{
+											Name = "FunctionName_102_TestCase_004"
+										},
+										new ProjectItemViewModel()
+										{
+											Name = "FunctionName_102_TestCase_005"
+										},
+										new ProjectItemViewModel()
+										{
+											Name = "FunctionName_102_TestCase_006"
+										},
+									}
+								},
+								new ProjectItemViewModel()
+								{
+									Name = "FunctionName_103",
+									SubProjects = new List<ProjectItemViewModel>()
+									{
+										new ProjectItemViewModel()
+										{
+											Name = "FunctionName_103_TestCase_001"
+										},
+										new ProjectItemViewModel()
+										{
+											Name = "FunctionName_103_TestCase_002"
+										},
+									}
+								},
+							}
+						}                   }
 				}
 			};
 
 			_itemCommandDictionary = new Dictionary<string, CommandGridExpanderViewModel>
 			{
-				{ "SubItem_001_001", new TestProjectConfigInputViewModel() },
-				{ "SubItem_001_002", new TestProjectConfigInputViewModel() },
-				{ "SubItem_001_003", new TestProjectConfigInputViewModel() },
+				{ "FunctionName_001", new TestProjectConfigInputViewModel() },
+				{ "FunctionName_002", new TestProjectConfigInputViewModel() },
+				{ "FunctionName_003", new TestProjectConfigInputViewModel() },
+				{ "FunctionName_101", new TestProjectConfigInputViewModel() },
+				{ "FunctionName_102", new TestProjectConfigInputViewModel() },
+				{ "FunctionName_103", new TestProjectConfigInputViewModel() },
 			};
 		}
 
