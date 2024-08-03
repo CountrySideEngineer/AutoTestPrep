@@ -82,16 +82,16 @@ namespace AutoTestPrep.ViewModel
 			}
 		}
 
-		protected DelegateCommand? _testParserCommand = null;
-		public DelegateCommand TestParserCommand
+		protected DelegateCommand? _testParseCommand = null;
+		public DelegateCommand TestParseCommand
 		{
 			get
 			{
-				if (null == _testParserCommand)
+				if (null == _testParseCommand)
 				{
-					_testParserCommand = new DelegateCommand(TestParserCommandExecute);
+					_testParseCommand = new DelegateCommand(TestParseCommandExecute);
 				}
-				return _testParserCommand;
+				return _testParseCommand;
 			}
 		}
 
@@ -272,7 +272,7 @@ namespace AutoTestPrep.ViewModel
 			Log.DEBUG((null == testInformation) ? "testInformation = null" : "testInformation != null");
 		}
 
-		protected virtual void TestParserCommandExecute()
+		protected virtual void TestParseCommandExecute()
 		{
 			Log.TRACE();
 
