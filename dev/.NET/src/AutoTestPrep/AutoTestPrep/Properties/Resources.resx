@@ -162,6 +162,9 @@
   <data name="IDS_MENU_ITEM_EXECUTE" xml:space="preserve">
     <value>実行</value>
   </data>
+  <data name="IDS_MENU_ITEM_EXECUTE_READ_TEST_SPEC" xml:space="preserve">
+    <value>テスト仕様書 読み込み</value>
+  </data>
   <data name="IDS_MENU_ITEM_EXECUTE_TEST_DOUBLE" xml:space="preserve">
     <value>スタブ・ドライバ</value>
   </data>

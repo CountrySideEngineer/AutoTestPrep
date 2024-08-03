@@ -196,6 +196,15 @@ namespace AutoTestPrep.Properties {
         }
         
         /// <summary>
+        ///   テスト仕様書 読み込み に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string IDS_MENU_ITEM_EXECUTE_READ_TEST_SPEC {
+            get {
+                return ResourceManager.GetString("IDS_MENU_ITEM_EXECUTE_READ_TEST_SPEC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   スタブ・ドライバ に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string IDS_MENU_ITEM_EXECUTE_TEST_DOUBLE {
