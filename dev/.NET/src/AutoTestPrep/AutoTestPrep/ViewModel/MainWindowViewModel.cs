@@ -95,8 +95,6 @@ namespace AutoTestPrep.ViewModel
 			}
 		}
 
-		Dictionary<string, CommandGridExpanderViewModel>? _itemCommandDictionary = null;
-
 		/// <summary>
 		/// Default constructor.
 		/// </summary>
@@ -113,6 +111,7 @@ namespace AutoTestPrep.ViewModel
 						new ProjectItemViewModel()
 						{
 							Name = "TestProjectName_001",
+							TestInformation = new TestProjectConfigInputViewModel(),
 							SubProjects = new List<ProjectItemViewModel>()
 							{
 								new ProjectItemViewModel()
@@ -185,6 +184,7 @@ namespace AutoTestPrep.ViewModel
 						new ProjectItemViewModel()
 						{
 							Name = "TestProjectName_002",
+							TestInformation = new TestProjectConfigInputViewModel(),
 							SubProjects = new List<ProjectItemViewModel>()
 							{
 								new ProjectItemViewModel()
@@ -256,33 +256,20 @@ namespace AutoTestPrep.ViewModel
 						}                   }
 				}
 			};
-
-			_itemCommandDictionary = new Dictionary<string, CommandGridExpanderViewModel>
-			{
-				{ "FunctionName_001", new TestProjectConfigInputViewModel() },
-				{ "FunctionName_002", new TestProjectConfigInputViewModel() },
-				{ "FunctionName_003", new TestProjectConfigInputViewModel() },
-				{ "FunctionName_101", new TestProjectConfigInputViewModel() },
-				{ "FunctionName_102", new TestProjectConfigInputViewModel() },
-				{ "FunctionName_103", new TestProjectConfigInputViewModel() },
-			};
 		}
 
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="selectedItem"></param>
 		public void SelectedItemChangedExecute(ProjectItemViewModel selectedItem)
 		{
 			Log.TRACE();
 
-			try
-			{
-				var selectedItemValue = _itemCommandDictionary?[selectedItem.Name];
-				SelectedItem = (null == selectedItemValue) ? SelectedItem : selectedItemValue;
-			}
-			catch (Exception ex)
-			when (ex is KeyNotFoundException)
-			{
-				// Ignore command.
-				Log.DEBUG($"{ex.Message}");
-			}
+			CommandGridExpanderViewModel? testInformation = selectedItem.TestInformation;
+			SelectedItem = (null == testInformation) ? SelectedItem : testInformation;
+
+			Log.DEBUG((null == testInformation) ? "testInformation = null" : "testInformation != null");
 		}
 
 		protected virtual void TestParserCommandExecute()

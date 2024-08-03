@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CustomUserControls.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -45,7 +46,7 @@ namespace AutoTestPrep.ViewModel
 			}
 		}
 
-		Type? ItemType { get; set; } = null;
+		public CommandGridExpanderViewModel? TestInformation { get; set; } = null;
 
 		/// <summary>
 		/// Default constructor.
