@@ -13,6 +13,10 @@ namespace AutoTestPrep.Controls
 
 			var viewModel = (CommandGridExpanderViewModel)item;
 			var element = (FrameworkElement)container;
+
+			Log.DEBUG((null == viewModel) ? "viewModel == null" : "viewModel != null");
+			Log.DEBUG((null == element) ? "element == null" : "element != null");
+
 			if ((null == viewModel) || (null == element))
 			{
 				return base.SelectTemplate(item, container);
