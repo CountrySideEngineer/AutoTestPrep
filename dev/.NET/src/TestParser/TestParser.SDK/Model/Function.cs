@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Logger;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
@@ -35,6 +36,8 @@ namespace TestParser.Model
 		/// <param name="dst">Function object to copy to.</param>
 		public virtual void CopyTo(Function dst)
 		{
+			Log.TRACE();
+
 			Parameter dstParam = dst as Parameter;
 			base.CopyTo(dstParam);
 
@@ -70,6 +73,8 @@ namespace TestParser.Model
 		/// <returns>Function definition in string.</returns>
 		public override string ToString()
 		{
+			Log.TRACE();
+
 			string toString = base.ToString();
 			toString += "(";
 
@@ -93,6 +98,8 @@ namespace TestParser.Model
 		/// </returns>
 		public virtual bool HasReturn()
 		{
+			Log.TRACE();
+
 			bool hasReturn = false;
 			if ((("void").Equals(this.DataType.ToLower(), StringComparison.Ordinal)) &&
 				(PointerNum <= 0))
@@ -113,6 +120,8 @@ namespace TestParser.Model
 		/// <returns>Shallow copied object.</returns>
 		public new Function ShallowCopy()
 		{
+			Log.TRACE();
+
 			return (Function)MemberwiseClone();
 		}
 
@@ -122,6 +131,8 @@ namespace TestParser.Model
 		/// <returns>Deep copied method.</returns>
 		public new Function DeepCopy()
 		{
+			Log.TRACE();
+
 			Function copyItem = (Function)MemberwiseClone();
 			CopyTo(copyItem);
 			return copyItem;

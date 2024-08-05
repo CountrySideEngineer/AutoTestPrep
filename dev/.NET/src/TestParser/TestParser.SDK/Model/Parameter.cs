@@ -34,6 +34,8 @@ namespace TestParser.Model
 		/// <exception cref="ArgumentNullException">The mode value is null, not allowed.</exception>
 		public static ACCESS_MODE ToAccessMode(string mode)
 		{
+			Log.TRACE();
+
 			try
 			{
 				Log.TRACE();
@@ -104,6 +106,8 @@ namespace TestParser.Model
 		/// <returns>Script in one line.</returns>
 		protected virtual string ScriptToString(IEnumerable<string>? script)
 		{
+			Log.TRACE();
+
 			if ((null == script) || (0 == script.Count()))
 			{
 				return string.Empty;
@@ -123,6 +127,8 @@ namespace TestParser.Model
 		/// <returns>Prefix in one line.</returns>
 		protected virtual string PrefixToString()
 		{
+			Log.TRACE();
+
 			string prefix = ScriptToString(Prefix);
 			return prefix;
 		}
@@ -133,6 +139,8 @@ namespace TestParser.Model
 		/// <returns>Prefix in one line.</returns>
 		protected virtual string PostfixToString()
 		{
+			Log.TRACE();
+
 			string postfix = ScriptToString(Postfix);
 			return postfix;
 		}
@@ -143,6 +151,8 @@ namespace TestParser.Model
 		/// <returns>Pointer sign.</returns>
 		protected virtual string GetPointerSign()
 		{
+			Log.TRACE();
+
 			string pointerNumSign = string.Empty;
 			for (int index = 0; index < PointerNum; index++)
 			{
@@ -157,6 +167,8 @@ namespace TestParser.Model
 		/// <returns>Parameter object in strign data.</returns>
 		public override string ToString()
 		{
+			Log.TRACE();
+
 			// Create data type string with prefix, postfix, and pointer code.
 			var nameScipt = new List<string>();
 			if (null != Prefix)
@@ -182,6 +194,8 @@ namespace TestParser.Model
 		/// <returns>Actual data type.</returns>
 		public virtual string ActualDataType()
 		{
+			Log.TRACE();
+
 			string pointerSign = new string('*', PointerNum);
 			string dataType = DataType + pointerSign;
 
@@ -194,6 +208,8 @@ namespace TestParser.Model
 		/// <param name="dst">Parameter object to copy to.</param>
 		public virtual void CopyTo(Parameter dst)
 		{
+			Log.TRACE();
+
 			dst.Name = new(Name);
 			dst.DataType = new(dst.DataType);
 			if (null != Prefix)
@@ -224,6 +240,8 @@ namespace TestParser.Model
 		/// <returns>Shallow copied object.</returns>
 		public virtual Parameter ShallowCopy()
 		{
+			Log.TRACE();
+
 			return (Parameter)MemberwiseClone();
 		}
 
@@ -233,6 +251,8 @@ namespace TestParser.Model
 		/// <returns>Deep copy object.</returns>
 		public virtual Parameter DeepCopy()
 		{
+			Log.TRACE();
+
 			var copyItem = (Parameter)MemberwiseClone();
 			CopyTo(copyItem);
 
