@@ -9,10 +9,34 @@ namespace TestParser.Parser
 	public interface IParser
 	{
 		/// <summary>
-		/// Parse test spec.
+		/// Parse file specified by argument path.
 		/// </summary>
-		/// <param name="path">Path to test spec.</param>
-		/// <returns></returns>
+		/// <param name="path">Path to file to parse.</param>
+		/// <returns>Parsed object.</returns>
 		object Parse(string path);
+
+		/// <summary>
+		/// Parse file.
+		/// </summary>
+		/// <param name="stream">Stream to parse.</param>
+		/// <returns>Parsed object.</returns>
+		object Parse(Stream stream);
+	}
+
+	public interface IParser<T>
+	{
+		/// <summary>
+		/// Parse file specified by argument path.
+		/// </summary>
+		/// <param name="path">Path to file to parse.</param>
+		/// <returns>Parsed object.</returns>
+		T Parse(string path);
+
+		/// <summary>
+		/// Parse file.
+		/// </summary>
+		/// <param name="stream">Stream to parse.</param>
+		/// <returns>Parsed object.</returns>
+		T Parse(Stream stream);
 	}
 }
