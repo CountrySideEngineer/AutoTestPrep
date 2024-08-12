@@ -2,7 +2,7 @@
 
 namespace TestParser.Model.Test
 {
-	public class TestData
+	public class TestData : ICopy<TestData>
 	{
 		/// <summary>
 		/// Condition of test data.

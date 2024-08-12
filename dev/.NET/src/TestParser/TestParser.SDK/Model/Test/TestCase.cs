@@ -2,7 +2,7 @@
 
 namespace TestParser.Model.Test
 {
-	public class TestCase
+	public class TestCase : ICopy<TestCase>
 	{
 		/// <summary>
 		/// Test case input datas.

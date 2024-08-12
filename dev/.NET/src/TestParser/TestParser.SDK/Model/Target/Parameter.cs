@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace TestParser.Model
 {
-	public class Parameter
+	public class Parameter : ICopy<Parameter>
 	{
 		public enum ACCESS_MODE
 		{

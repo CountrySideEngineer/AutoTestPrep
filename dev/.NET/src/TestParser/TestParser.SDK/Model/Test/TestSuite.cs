@@ -2,7 +2,7 @@
 
 namespace TestParser.Model.Test
 {
-    public class TestSuite
+    public class TestSuite : ICopy<TestSuite>
 	{
 		/// <summary>
 		/// Function data to be tested.

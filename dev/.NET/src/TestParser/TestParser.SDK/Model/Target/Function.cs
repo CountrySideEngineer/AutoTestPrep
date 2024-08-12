@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace TestParser.Model
 {
-	public class Function : Parameter
+	public class Function : Parameter, ICopy<Function>
 	{
 		/// <summary>
 		/// Collection of argument of function.
