@@ -1,19 +1,9 @@
 ﻿using Logger;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TestParser.Model.Test
 {
 	public class TestCase
 	{
-		/// <summary>
-		/// Test case ID.
-		/// </summary>
-		public string Id { get; set; } = string.Empty;
-
 		/// <summary>
 		/// Test case input datas.
 		/// </summary>
@@ -37,7 +27,6 @@ namespace TestParser.Model.Test
 		{
 			Log.TRACE();
 
-			dst.Id = new(Id);
 			dst.Inputs = new List<TestData>(Inputs);
 			dst.Expects = new List<TestData>(Expects);
 		}
