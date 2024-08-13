@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TestParser.Parser
 {
-	public interface IParser
+	internal interface IParser
 	{
 		/// <summary>
 		/// Parse file specified by argument path.
@@ -23,7 +23,7 @@ namespace TestParser.Parser
 		object Parse(Stream stream);
 	}
 
-	public interface IParser<T>
+	internal interface IParser<T>
 	{
 		/// <summary>
 		/// Parse file specified by argument path.
