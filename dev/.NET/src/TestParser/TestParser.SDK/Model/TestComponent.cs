@@ -43,7 +43,7 @@ namespace TestParser.Model
 		/// <summary>
 		/// Copy data to other TestCompnent object.
 		/// </summary>
-		/// <param name="dst"></param>
+		/// <param name="dst">Object to copy to.</param>
 		public void CopyTo(TestComponent dst)
 		{
 			Log.TRACE();
@@ -60,7 +60,7 @@ namespace TestParser.Model
 		/// <summary>
 		/// Shallow copy object.
 		/// </summary>
-		/// <returns></returns>
+		/// <returns>Shallow copied object.</returns>
 		public TestComponent ShallowCopy()
 		{
 			Log.TRACE();
@@ -71,7 +71,7 @@ namespace TestParser.Model
 		/// <summary>
 		/// Deep copy method.
 		/// </summary>
-		/// <returns></returns>
+		/// <returns>Deep copied object.</returns>
 		public TestComponent DeepCopy()
 		{
 			Log.TRACE();
