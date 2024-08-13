@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TestParser.SDK\TestParser.SDK.csproj" />
+    <ProjectReference Include="..\TestReader.SDK\TestReader.SDK.csproj" />
   </ItemGroup>
 
   <ItemGroup>

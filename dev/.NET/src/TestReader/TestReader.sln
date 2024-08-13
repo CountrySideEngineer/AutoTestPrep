@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34616.47
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestParser", "TestParser\TestParser.csproj", "{097DE89D-72FD-48BC-90A5-CDE39FB22CB8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestReader", "TestReader\TestReader.csproj", "{097DE89D-72FD-48BC-90A5-CDE39FB22CB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestParser.SDK", "TestParser.SDK\TestParser.SDK.csproj", "{9A53261E-EE8E-4EEE-ABD7-A0DCE6C29C30}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestReader.SDK", "TestReader.SDK\TestReader.SDK.csproj", "{9A53261E-EE8E-4EEE-ABD7-A0DCE6C29C30}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
