@@ -14,6 +14,12 @@
     <Reference Include="Logger">
       <HintPath>..\..\libs\Logger.dll</HintPath>
     </Reference>
+    <Reference Include="TableReader">
+      <HintPath>..\..\libs\TableReader.dll</HintPath>
+    </Reference>
+    <Reference Include="TableReader.ClosedXML">
+      <HintPath>..\..\libs\TableReader.ClosedXML.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
