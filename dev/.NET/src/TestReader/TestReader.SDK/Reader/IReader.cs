@@ -3,11 +3,11 @@
 	public interface IReader
 	{
 		/// <summary>
-		/// Read object from path.
+		/// Read object specified by name.
 		/// </summary>
-		/// <param name="path">Path to read.</param>
+		/// <param name="name">Name to read.</param>
 		/// <returns>Read object.</returns>
-		object Read(string path);
+		object Read(string name);
 
 		/// <summary>
 		/// Read object from stream.
@@ -20,11 +20,11 @@
 	public interface IReader<T>
 	{
 		/// <summary>
-		/// Read object from path.
+		/// Read object specified by name.
 		/// </summary>
-		/// <param name="path">Path to read.</param>
+		/// <param name="name">Name to read.</param>
 		/// <returns>Read object.</returns>
-		T Read(string path);
+		T Read(string name);
 
 		/// <summary>
 		/// Read object from stream.
