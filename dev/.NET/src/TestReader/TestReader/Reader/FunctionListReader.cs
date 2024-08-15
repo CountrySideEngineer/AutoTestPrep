@@ -1,16 +1,7 @@
-﻿using Logger;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TableReader.Interface;
-using TableRange = TableReader.TableData.Range;
-using TestParser.Reader;
+﻿using System.Data;
+using Logger;
 using TestReader.Config;
 using TestReader.Model;
-using System.Diagnostics;
-using System.Data;
 
 namespace TestReader.Reader
 {

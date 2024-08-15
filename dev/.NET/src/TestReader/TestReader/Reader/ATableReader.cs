@@ -1,9 +1,4 @@
 ﻿using Logger;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TableReader.ClosedXML;
 using TableReader.Interface;
 using TableRange = TableReader.TableData.Range;
