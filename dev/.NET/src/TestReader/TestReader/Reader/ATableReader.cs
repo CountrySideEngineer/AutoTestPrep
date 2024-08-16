@@ -108,10 +108,10 @@ namespace TestReader.Reader
 
 			TableRange range = new TableRange()
 			{
-				StartRow = rowOffset,
-				StartColumn = colOffset,
-				RowCount = rowSize,
-				ColumnCount = colSize
+				StartRow = -1,
+				StartColumn = -1,
+				RowCount = rowOffset,
+				ColumnCount = colOffset
 			};
 			return (tableName, range);
 		}
