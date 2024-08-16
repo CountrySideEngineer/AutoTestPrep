@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<TestReaderConfiguration>
+	<FunctionList>
+		<name>○テスト対象関数一覧</name>
+		<rowOffset>1</rowOffset>
+		<colOffset>1</colOffset>
+	</FunctionList>
+	<Function>
+		<name>○テスト対象関数</name>
+		<rowOffset>2</rowOffset>
+		<colOffset>1</colOffset>
+	</Function>
+	<TestCase>
+		<name>○テスト対象関数テストケース</name>
+		<rowOffset>2</rowOffset>
+		<colOffset>1</colOffset>
+	</TestCase>
+</TestReaderConfiguration>
