@@ -4,7 +4,7 @@ using System.Xml.Serialization;
 namespace TestReader.Config
 {
 	[XmlRoot("TestReaderConfiguration")]
-	internal class TestConfiguration
+	public class TestConfiguration
 	{
 		[XmlElement("FunctionList")]
 		public TestConfigurationElement? FunctionList { get; set; } = null;
@@ -21,7 +21,7 @@ namespace TestReader.Config
 		/// <remarks>
 		/// TestConfiguration class is singleton. So it is not allowed to instantiate.
 		/// </remarks>
-		private TestConfiguration() { }
+		internal TestConfiguration() { }
 
 		private static string _configFilePath = @".\TestReaderConfig.xml";
 
@@ -96,8 +96,13 @@ namespace TestReader.Config
 		}
 	}
 
-	internal class TestConfigurationElement
+	public class TestConfigurationElement
 	{
+		/// <summary>
+		/// Default constructor.
+		/// </summary>
+		internal TestConfigurationElement() { }
+
 		[XmlElement("name")]
 		public string Name { get; set; } = string.Empty;
 
