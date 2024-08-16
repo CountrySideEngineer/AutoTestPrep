@@ -1,6 +1,8 @@
 ﻿using System.Data;
+using System.Runtime.Serialization.Formatters;
 using Logger;
 using TestReader.Config;
+using TestReader.Converter;
 using TestReader.Model;
 
 namespace TestReader.Reader
@@ -13,6 +15,7 @@ namespace TestReader.Reader
 			COL_INDEX_TEST_NAME,
 			COL_INDEX_TEST_SHEET_NAME,
 			COL_INDEX_TEST_SRC_FILE_NAME,
+			COL_INDEX_TEST_SRC_FILE_PATH,
 		};
 
 		/// <summary>
@@ -26,7 +29,7 @@ namespace TestReader.Reader
 
 			var testInfos = new List<TestTargetInfo>();
 
-			foreach (DataRow row in data.Rows)
+            foreach (DataRow row in data.Rows)
 			{
 				TestTargetInfo testInfo = Convert(row);
 				testInfos.Add(testInfo);
@@ -46,17 +49,19 @@ namespace TestReader.Reader
 
 			try
 			{
-				int index = (int)row[(int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_NO];
-				string testName = (string)row[(int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_TEST_NAME];
-				string sheetName = (string)row[(int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_TEST_SHEET_NAME];
-				string fileName = (string)row[(int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_TEST_SRC_FILE_NAME];
+				int index = Extract.AsInt32(row, (int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_NO, -1);
+				string testName = Extract.AsString(row, (int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_TEST_NAME, string.Empty);
+				string sheetName = Extract.AsString(row, (int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_TEST_SHEET_NAME, string.Empty);
+				string fileName = Extract.AsString(row, (int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_TEST_SRC_FILE_NAME, string.Empty);
+				string filePath = Extract.AsString(row, (int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_TEST_SRC_FILE_PATH, string.Empty);
 
 				var info = new TestTargetInfo()
 				{
 					Index = index,
 					Description = testName,
 					Name = sheetName,
-					FileName = fileName
+					FileName = fileName,
+					FilePath = filePath,
 				};
 				return info;
 			}
