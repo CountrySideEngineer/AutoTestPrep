@@ -25,7 +25,7 @@ namespace TestReader.Converter
 			}
 
 			string dataType = row["データ型"].ToString() ?? string.Empty;
-			if (!string.IsNullOrEmpty(dataType))
+			if (string.IsNullOrEmpty(dataType))
 			{
 				Log.ERROR("Data type is not set.");
 
@@ -34,7 +34,7 @@ namespace TestReader.Converter
 
 			string postfix = row["データ型後置修飾"].ToString() ?? string.Empty;
 			List<string> postfixList = new List<string>();
-			if (string.IsNullOrEmpty(postfix))
+			if (!string.IsNullOrEmpty(postfix))
 			{
 				postfixList.Add(postfix);
 			}
