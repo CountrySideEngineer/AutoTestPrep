@@ -7,6 +7,16 @@ namespace TestReader.Converter
 {
 	internal class FunctionConverter : AParameterTableConverter<Function>
 	{
+		/// <summary>
+		/// Default constructor.
+		/// </summary>
+		public FunctionConverter() : base() { }
+
+		/// <summary>
+		/// Converter DataTable data into Function object.
+		/// </summary>
+		/// <param name="data">Data table object to convert.</param>
+		/// <returns>Function object the DataTable object converted.</returns>
 		public override Function Convert(DataTable data)
 		{
 			Log.TRACE();
@@ -16,6 +26,12 @@ namespace TestReader.Converter
 			return function;
 		}
 
+		/// <summary>
+		/// Get Function object from DataTable object.
+		/// </summary>
+		/// <param name="table"></param>
+		/// <param name="data">Data table object to convert.</param>
+		/// <returns>Function object the DataTable object converted.</returns>
 		protected virtual Function GetFunction(DataTable table)
 		{
 			Log.TRACE();
@@ -29,6 +45,11 @@ namespace TestReader.Converter
 			return function;
 		}
 
+		/// <summary>
+		/// Get Function object from collection of DataRow object.
+		/// </summary>
+		/// <param name="rows">Collection of DataRow object to convert.</param>
+		/// <returns>Function object the collection of DataRow object converted.</returns>
 		protected virtual Function GetFunction(IEnumerable<DataRow> rows)
 		{
 			Log.TRACE();
@@ -37,10 +58,14 @@ namespace TestReader.Converter
 			IEnumerable<Parameter> arguments = GetArguments(rows);
 			function.Arguments = arguments;
 
-
 			return function;
 		}
 
+		/// <summary>
+		/// Get name and data type of function.
+		/// </summary>
+		/// <param name="rows">Collection of DataRow object to convert.</param>
+		/// <returns>Function object only name and data type contains.</returns>
 		protected virtual Function GetFunctionBody(IEnumerable<DataRow> rows)
 		{
 			Log.TRACE();
@@ -51,6 +76,11 @@ namespace TestReader.Converter
 			return function;
 		}
 
+		/// <summary>
+		/// Get name and data type of function.
+		/// </summary>
+		/// <param name="row">The DataRow object to convert.</param>
+		/// <returns>Function object only name and data type contains.</returns>
 		protected virtual Function GetFunctionBody(DataRow row)
 		{
 			Log.TRACE();
@@ -68,6 +98,11 @@ namespace TestReader.Converter
 			return function;
 		}
 
+		/// <summary>
+		/// Get arguments of function.
+		/// </summary>
+		/// <param name="rows">Collection of DataRow object.</param>
+		/// <returns>Collection of parameter object of arguemnt.</returns>
 		protected virtual IEnumerable<Parameter> GetArguments(IEnumerable<DataRow> rows)
 		{
 			Log.TRACE();
@@ -76,11 +111,25 @@ namespace TestReader.Converter
 			var arguments = new List<Parameter>();
 			foreach (DataRow argumentRow in argumentRows)
 			{
-				Parameter argument = Row2Parameter(argumentRow);
+				Parameter argument = GetArgument(argumentRow);
 				arguments.Add(argument);
 			}
 
 			return arguments;
+		}
+
+		/// <summary>
+		/// Get an argument from DataRow object.
+		/// </summary>
+		/// <param name="row">DataRow object to convert.</param>
+		/// <returns>Parameter object converted from DataRow.</returns>
+		protected virtual Parameter GetArgument(DataRow row)
+		{
+			Log.TRACE();
+
+			Parameter parameter= Row2Parameter(row);
+
+			return parameter;
 		}
 	}
 }
