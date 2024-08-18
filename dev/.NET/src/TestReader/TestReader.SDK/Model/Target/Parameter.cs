@@ -40,7 +40,7 @@ namespace TestParser.Model
 			try
 			{
 				Log.TRACE();
-				Log.DEBUG($"{nameof(mode)} = {mode}");
+				Log.DEBUG($"{nameof(mode), 12} = {mode}");
 
 				string modeInsentive = mode.ToLower();
 				ACCESS_MODE accessMode = _modeDictionary[modeInsentive];
@@ -177,8 +177,6 @@ namespace TestParser.Model
 				nameScipt.AddRange(Prefix);
 			}
 			nameScipt.Add(DataType);
-			string pointerSign = GetPointerSign();
-			nameScipt.Add(pointerSign);
 			if (null != Postfix)
 			{
 				nameScipt.AddRange(Postfix);
