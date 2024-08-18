@@ -107,7 +107,7 @@ namespace TestReader.Converter
 		{
 			Log.TRACE();
 
-			IEnumerable<DataRow> argumentRows = rows.Where(_ => _["内容"].ToString() == "引数").ToList();
+			IEnumerable<DataRow> argumentRows = rows.Where(_ => _["内容"].ToString() == "引数");
 			var arguments = new List<Parameter>();
 			foreach (DataRow argumentRow in argumentRows)
 			{
