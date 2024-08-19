@@ -1,4 +1,4 @@
-﻿namespace TestParser.Parser
+﻿namespace TestReader.Parser
 {
 	internal interface IParser
 	{

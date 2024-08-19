@@ -1,6 +1,6 @@
 ﻿using System.Data;
 using Logger;
-using Parameter = TestParser.Model.Parameter;
+using Parameter = TestReader.Model.Parameter;
 
 namespace TestReader.Converter
 {

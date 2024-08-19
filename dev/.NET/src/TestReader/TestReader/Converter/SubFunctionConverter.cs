@@ -1,8 +1,8 @@
 ﻿using Logger;
 using System.ComponentModel;
 using System.Data;
-using Function = TestParser.Model.Function;
-using Parameter = TestParser.Model.Parameter;
+using Function = TestReader.Model.Function;
+using Parameter = TestReader.Model.Parameter;
 
 namespace TestReader.Converter
 {

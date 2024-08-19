@@ -1,4 +1,4 @@
-﻿namespace TestParser.Reader
+﻿namespace TestReader.Reader
 {
 	public interface IReader
 	{

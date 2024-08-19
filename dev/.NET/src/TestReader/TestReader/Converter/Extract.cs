@@ -75,7 +75,7 @@ namespace TestReader.Converter
 		public static string AsString(DataRow src, string colName)
 		{
 			Log.TRACE();
-			Log.DEBUG($"{nameof(colName),16}] = {colName}");
+			Log.DEBUG($"{nameof(colName),16} = {colName}");
 
 			try
 			{

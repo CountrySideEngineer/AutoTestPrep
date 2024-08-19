@@ -1,7 +1,7 @@
 ﻿using Logger;
-using TestParser.Model.Test;
+using TestReader.Model.Test;
 
-namespace TestParser.Model
+namespace TestReader.Model
 {
 	public class TestComponent : ICopy<TestComponent>
 	{

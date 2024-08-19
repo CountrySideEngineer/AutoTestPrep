@@ -1,5 +1,5 @@
 ﻿using System.Data;
-using TestParser.Model;
+using TestReader.Model;
 using Logger;
 using System.Globalization;
 

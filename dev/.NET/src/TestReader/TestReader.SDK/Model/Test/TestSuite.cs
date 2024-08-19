@@ -1,6 +1,6 @@
 ﻿using Logger;
 
-namespace TestParser.Model.Test
+namespace TestReader.Model.Test
 {
     public class TestSuite : ICopy<TestSuite>
 	{

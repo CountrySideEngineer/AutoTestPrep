@@ -1,4 +1,4 @@
-﻿namespace TestParser.Parser
+﻿namespace TestReader.Parser
 {
 	public abstract class AParser : IParser
 	{

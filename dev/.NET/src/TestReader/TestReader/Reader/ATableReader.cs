@@ -2,7 +2,7 @@
 using TableReader.ClosedXML;
 using TableReader.Interface;
 using TableRange = TableReader.TableData.Range;
-using TestParser.Reader;
+using TestReader.Reader;
 using TestReader.Config;
 using System.Data;
 using TestReader.Converter;

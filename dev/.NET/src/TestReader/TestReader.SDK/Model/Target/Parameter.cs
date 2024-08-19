@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Properties = TestReader.Properties;
 
-namespace TestParser.Model
+namespace TestReader.Model
 {
 	public class Parameter : ICopy<Parameter>
 	{

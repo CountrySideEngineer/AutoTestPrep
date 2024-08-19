@@ -1,6 +1,6 @@
 ﻿using Logger;
 
-namespace TestParser.Parser
+namespace TestReader.Parser
 {
 	public abstract class AFileParser : IParser
 	{

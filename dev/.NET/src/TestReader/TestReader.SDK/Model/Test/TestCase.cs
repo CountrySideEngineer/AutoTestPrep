@@ -1,9 +1,14 @@
 ﻿using Logger;
 
-namespace TestParser.Model.Test
+namespace TestReader.Model.Test
 {
 	public class TestCase : ICopy<TestCase>
 	{
+		/// <summary>
+		/// Test case name.
+		/// </summary>
+		public string Name { get; set; } = string.Empty;
+
 		/// <summary>
 		/// Test case input datas.
 		/// </summary>

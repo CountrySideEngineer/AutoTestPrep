@@ -1,4 +1,4 @@
-﻿namespace TestParser.ParserException
+﻿namespace TestReader.ParserException
 {
 	public class TestParserException : Exception
 	{
