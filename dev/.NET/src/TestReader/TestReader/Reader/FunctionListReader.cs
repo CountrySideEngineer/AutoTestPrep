@@ -9,15 +9,6 @@ namespace TestReader.Reader
 {
 	public class FunctionListReader : ATableReader<IEnumerable<TestTargetInfo>>
 	{
-		protected enum FUNC_LIST_TABLE_COL_INDEX : int
-		{
-			COL_INDEX_NO,
-			COL_INDEX_TEST_NAME,
-			COL_INDEX_TEST_SHEET_NAME,
-			COL_INDEX_TEST_SRC_FILE_NAME,
-			COL_INDEX_TEST_SRC_FILE_PATH,
-		};
-
 		/// <summary>
 		/// Convert DataTable object contains function list into TestTargetInfo object.
 		/// </summary>
@@ -49,11 +40,11 @@ namespace TestReader.Reader
 
 			try
 			{
-				int index = Extract.AsInt32(row, (int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_NO, -1);
-				string testName = Extract.AsString(row, (int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_TEST_NAME, string.Empty);
-				string sheetName = Extract.AsString(row, (int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_TEST_SHEET_NAME, string.Empty);
-				string fileName = Extract.AsString(row, (int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_TEST_SRC_FILE_NAME, string.Empty);
-				string filePath = Extract.AsString(row, (int)FUNC_LIST_TABLE_COL_INDEX.COL_INDEX_TEST_SRC_FILE_PATH, string.Empty);
+				int index = Extract.AsInt32(row, "No.", -1);
+				string testName = Extract.AsString(row, "テスト名", string.Empty);
+				string sheetName = Extract.AsString(row, "テスト定義シート名", string.Empty);
+				string fileName = Extract.AsString(row, "ソースファイル名", string.Empty);
+				string filePath = Extract.AsString(row, "ソースファイルパス", string.Empty);
 
 				var info = new TestTargetInfo()
 				{
