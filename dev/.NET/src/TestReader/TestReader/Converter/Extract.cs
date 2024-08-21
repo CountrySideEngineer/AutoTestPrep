@@ -171,5 +171,36 @@ namespace TestReader.Converter
 				return defaultValue;
 			}
 		}
+
+		public static int AsInt32(DataRow src, string colName, int defaultValue)
+		{
+			Log.TRACE();
+			Log.DEBUG($"{nameof(colName),16} = {colName}");
+			Log.DEBUG($"{nameof(defaultValue),16} = {defaultValue}");
+
+			try
+			{
+				int content = Convert.ToInt32(src[colName].ToString());
+
+				return content;
+			}
+			catch (ArgumentException)
+			{
+				Log.ERROR($"The column named \"{colName}\" can not find.");
+				Log.ERROR($"Use default value \"{defaultValue}\".");
+
+				return defaultValue;
+			}
+			catch (Exception ex)
+			when ((ex is IndexOutOfRangeException) ||
+				(ex is OverflowException) ||
+				(ex is FormatException))
+			{
+				Log.ERROR($"The value of colmn \"{colName}\" can not convert.");
+				Log.ERROR($"Use default value \"{defaultValue}\".");
+
+				throw;
+			}
+		}
 	}
 }
