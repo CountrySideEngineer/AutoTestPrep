@@ -6,6 +6,7 @@ using TestReader.Reader;
 using TestReader.Config;
 using System.Data;
 using TestReader.Converter;
+using System.IO;
 
 namespace TestReader.Reader
 {
@@ -57,6 +58,8 @@ namespace TestReader.Reader
 			Log.DEBUG($"{nameof(path),12} = {path}");
 			Log.DEBUG($"{nameof(sheetName),12} = {sheetName}");
 
+			Log.INFO($"Start reading from {path}.");
+
 			using var stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read);
 
 			T tableData = Read(stream, sheetName);
@@ -75,6 +78,8 @@ namespace TestReader.Reader
 			Log.TRACE();
 			Log.DEBUG($"{nameof(sheetName),12} = {sheetName}");
 
+			Log.INFO($"Start reading {sheetName}.");
+
 			ITableReader tableReader = GetReader(stream, sheetName);
 			(string tableName, TableRange range) = GetTableRange();
 
@@ -83,6 +88,8 @@ namespace TestReader.Reader
 			Log.DEBUG($"{nameof(range.StartColumn),12} = {range.StartColumn}");
 			Log.DEBUG($"{nameof(range.RowCount),12} = {range.RowCount}");
 			Log.DEBUG($"{nameof(range.ColumnCount),12} = {range.ColumnCount}");
+
+			Log.INFO($"Start reading from ({range.StartRow}, {range.StartColumn}) to get contents of {tableName}.");
 
 			DataTable dataInTable = tableReader.Read(tableName, range);
 			T data = Convert(dataInTable);
