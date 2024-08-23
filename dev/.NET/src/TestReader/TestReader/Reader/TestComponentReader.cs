@@ -2,6 +2,7 @@
 using TestReader.Model;
 using TestReader.Model.Test;
 using Logger;
+using System.Security.Cryptography.X509Certificates;
 
 namespace TestReader.Reader
 {
@@ -45,8 +46,8 @@ namespace TestReader.Reader
 
 			Log.INFO($"Start reading file \"{path}\".");
 
-			List<TestComponent> testComponents = new List<TestComponent>();
-			IEnumerable<TestTargetInfo> targetInfos = _functionListReader.Read(path);
+			string sheetName = "テスト一覧";
+			IEnumerable<TestTargetInfo> targetInfos = _functionListReader.Read(path, sheetName);
 			foreach (var targetInfo in targetInfos)
 			{
 				TestSuite testSuite = ReadTestSuite(path, targetInfo);
@@ -58,9 +59,8 @@ namespace TestReader.Reader
 					SourcePath = targetInfo.FilePath,
 					TestSuite = testSuite
 				};
-				testComponents.Add(testCompnent);
+				yield return testCompnent;
 			}
-			return testComponents;
 		}
 
 		/// <summary>
