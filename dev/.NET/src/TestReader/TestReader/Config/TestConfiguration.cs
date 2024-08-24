@@ -65,7 +65,7 @@ namespace TestReader.Config
 
 			_instance = new TestConfiguration()
 			{
-				FunctionList = new TestConfigurationElement()
+				FunctionList = new TargetFunctionListConfigurationElement()
 				{
 					Name = Properties.Resources.IDS_TABLE_NAME_TARGET_TEST_FUNCTION_LIST,
 					RowOffset = 1,
@@ -77,7 +77,7 @@ namespace TestReader.Config
 					RowOffset = 1,
 					ColOffset = 1
 				},
-				TestCase = new TestConfigurationElement()
+				TestCase = new TestCaseConfigurationElement()
 				{
 					Name = Properties.Resources.IDS_TABLE_NAME_TEST_CASE_DEFINITION,
 					RowOffset = 1,
