@@ -125,12 +125,12 @@
     <value>○対象関数情報</value>
     <comment>テスト対象関数の定義、情報を記載するテーブルの名前</comment>
   </data>
-  <data name="IDS_TABLE_NAME_TARGET_TEST_LIST" xml:space="preserve">
+  <data name="IDS_TABLE_NAME_TARGET_TEST_FUNCTION_LIST" xml:space="preserve">
     <value>○テスト対象関数一覧</value>
     <comment>テスト対象関数の一覧を記載するテーブルの名前</comment>
   </data>
   <data name="IDS_TABLE_NAME_TEST_CASE_DEFINITION" xml:space="preserve">
-    <value>〇テスト/デシジョンテーブル</value>
+    <value>○テスト/デシジョンテーブル</value>
     <comment>テストケースを定義したテーブルの名前</comment>
   </data>
   <data name="IDS_TARGET_FUNCTION_TABLE_COL_NAME_CATEGORY" xml:space="preserve">

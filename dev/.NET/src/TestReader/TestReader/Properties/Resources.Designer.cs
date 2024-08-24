@@ -81,14 +81,14 @@ namespace TestReader.Properties {
         /// <summary>
         ///   ○テスト対象関数一覧 に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        internal static string IDS_TABLE_NAME_TARGET_TEST_LIST {
+        internal static string IDS_TABLE_NAME_TARGET_TEST_FUNCTION_LIST {
             get {
-                return ResourceManager.GetString("IDS_TABLE_NAME_TARGET_TEST_LIST", resourceCulture);
+                return ResourceManager.GetString("IDS_TABLE_NAME_TARGET_TEST_FUNCTION_LIST", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   〇テスト/デシジョンテーブル に類似しているローカライズされた文字列を検索します。
+        ///   ○テスト/デシジョンテーブル に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string IDS_TABLE_NAME_TEST_CASE_DEFINITION {
             get {
