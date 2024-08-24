@@ -61,38 +61,29 @@ namespace TestReader.Config
 		protected static TestConfiguration Load()
 		{
 			Log.TRACE();
-			Log.DEBUG($"{"ConfigFilePath",16} : {_configFilePath}");
 
-			try
+			_instance = new TestConfiguration()
 			{
-				var stream = new StreamReader(_configFilePath);
-				var deserializer = new XmlSerializer(typeof(TestConfiguration));
-				TestConfiguration? testConfig = (TestConfiguration?)deserializer.Deserialize(stream);
-				if (null != testConfig)
+				FunctionList = new TestConfigurationElement()
 				{
-					return testConfig;
-				}
-				else
+					Name = Properties.Resources.IDS_TABLE_NAME_TARGET_TEST_FUNCTION_LIST,
+					RowOffset = 1,
+					ColOffset = 1,
+				},
+				Function = new TestConfigurationElement()
 				{
-					string exMessage = "Test cofiguration file format invalid.";
-					Log.FATAL(exMessage);
-					throw new FileLoadException(exMessage);
+					Name = Properties.Resources.IDS_TABLE_NAME_TARGET_FUNCTION,
+					RowOffset = 1,
+					ColOffset = 1
+				},
+				TestCase = new TestConfigurationElement()
+				{
+					Name = Properties.Resources.IDS_TABLE_NAME_TEST_CASE_DEFINITION,
+					RowOffset = 1,
+					ColOffset = 1,
 				}
-			}
-			catch (Exception ex)
-			when ((ex is ArgumentException) 
-			|| (ex is ArgumentNullException) 
-			|| (ex is FileNotFoundException) 
-			|| (ex is IOException) 
-			|| (ex is InvalidOperationException)
-			)
-			{
-				string exMessage = "Test configuration file invalid.";
-				Log.FATAL(exMessage);
-				Log.FATAL(ex.Message);
-
-				throw new FileLoadException(exMessage, inner:ex);
-			}
+			};
+			return _instance;
 		}
 	}
 
