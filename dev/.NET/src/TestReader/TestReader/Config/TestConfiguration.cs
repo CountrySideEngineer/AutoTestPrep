@@ -1,4 +1,5 @@
 ﻿using Logger;
+using System.Security.Cryptography.X509Certificates;
 using System.Xml.Serialization;
 
 namespace TestReader.Config
@@ -70,7 +71,7 @@ namespace TestReader.Config
 					RowOffset = 1,
 					ColOffset = 1,
 				},
-				Function = new TestConfigurationElement()
+				Function = new TestFunctionParamConfigurationElement()
 				{
 					Name = Properties.Resources.IDS_TABLE_NAME_TARGET_FUNCTION,
 					RowOffset = 1,
@@ -109,4 +110,149 @@ namespace TestReader.Config
 		[XmlElement("colSize", IsNullable = true)]
 		public int? ColSize { get; set; } = 0;
 	}
+
+	public class TargetFunctionListConfigurationElement : TestConfigurationElement
+	{
+		/// <summary>
+		/// Default constructor.
+		/// </summary>
+		internal TargetFunctionListConfigurationElement() : base() { }
+
+		/// <summary>
+		/// Function number column name.
+		/// </summary>
+		public string Number
+		{
+			get => Properties.Resources.IDS_TARGET_TEST_FUNCTION_LIST_TABLE_COL_NAME_NO;
+		}
+
+		/// <summary>
+		/// Test name column name.
+		/// </summary>
+		public string TestName
+		{
+			get => Properties.Resources.IDS_TARGET_TEST_FUNCTION_LIST_TABLE_COL_NAME_TEST_NAME;
+		}
+
+		/// <summary>
+		/// Test case declared sheet name.
+		/// </summary>
+		public string SheetName
+		{
+			get => Properties.Resources.IDS_TARGET_TEST_FUNCTION_LIST_TABLE_COL_NAME_TEST_DEF_SHEET_NAME;
+		}
+
+		/// <summary>
+		/// Source file name column name.
+		/// </summary>
+		public string SourceName
+		{
+			get => Properties.Resources.IDS_TARGET_TEST_FUNCTION_LIST_TABLE_COL_NAME_TEST_FILE_NAME;
+		}
+
+		/// <summary>
+		/// Source file path column name.
+		/// </summary>
+		public string SourcePath
+		{
+			get => Properties.Resources.IDS_TARGET_TEST_FUNCTION_LIST_TABLE_COL_NAME_TEST_FILE_PATH;
+		}
+	}
+
+	public class TestFunctionParamConfigurationElement : TestConfigurationElement
+	{
+		/// <summary>
+		/// Default constructor.
+		/// </summary>
+		internal TestFunctionParamConfigurationElement() : base() { }
+
+		/// <summary>
+		/// Data type prefix column name.
+		/// </summary>
+		public string DataTypePrefix
+		{
+			get => Properties.Resources.IDS_TARGET_FUNCTION_TABLE_COL_NAME_DATA_PREFIX;
+		}
+
+		/// <summary>
+		/// Data type column name.
+		/// </summary>
+		public string DataType 
+		{ 
+			get => Properties.Resources.IDS_TARGET_FUNCTION_TABLE_COL_NAME_DATA_TYPE; 
+		}
+
+		/// <summary>
+		/// Data type postfix name.
+		/// </summary>
+		public string DataTypePostfix
+		{
+			get => Properties.Resources.IDS_TARGET_FUNCTION_TABLE_COL_NAME_DATA_POSTFIX;
+		}
+
+		/// <summary>
+		/// Function, argument, or variable name column name.
+		/// </summary>
+		public string VariableName
+		{
+			get => Properties.Resources.IDS_TARGET_FUNCTION_TABLE_COL_NAME_FUNC_PARAM_NAME;
+		}
+
+		/// <summary>
+		/// Direction column name.
+		/// </summary>
+		public string Direction
+		{
+			get => Properties.Resources.IDS_TARGET_FUNCTION_TABLE_COL_NAME_DIRECTION;
+		}
+
+		/// <summary>
+		/// Remarks column name.
+		/// </summary>
+		public string Remarks
+		{
+			get => Properties.Resources.IDS_TARGET_FUNCTION_TABLE_COL_NAME_REMARKS;
+		}
+	}
+
+	public class TestCaseConfigurationElement : TestConfigurationElement
+	{
+		/// <summary>
+		/// Default constructor.
+		/// </summary>
+		internal TestCaseConfigurationElement() : base() { }
+
+		/// <summary>
+		/// Parameter category column name.
+		/// </summary>
+		public string InputCategory
+		{
+			get => Properties.Resources.IDS_TEST_CASE_TABLE_COL_NAME_INPUT_CATEGORY;
+		}
+
+		/// <summary>
+		/// Parameter type column name.
+		/// </summary>
+		public string ParameterType
+		{
+			get => Properties.Resources.IDS_TEST_CASE_TABLE_COL_NAME_PARAM_TYPE;
+		}
+
+		/// <summary>
+		/// Variable name column name.
+		/// </summary>
+		public string VariableName
+		{
+			get => Properties.Resources.IDS_TEST_CASE_TABLE_COL_NAME_VARIABLE_NAME;
+		}
+
+		/// <summary>
+		/// Test typical value column name.
+		/// </summary>
+		public string TypicalValue
+		{
+			get => Properties.Resources.IDS_TEST_CASE_TABLE_COL_NAME_TYPICAL_VALUE;
+		}
+	}
+
 }
