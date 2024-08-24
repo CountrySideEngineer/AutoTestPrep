@@ -115,7 +115,7 @@ namespace TestReader.Properties {
         }
         
         /// <summary>
-        ///   データ型前置修飾子 に類似しているローカライズされた文字列を検索します。
+        ///   データ型後置修飾子 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string IDS_TARGET_FUNCTION_TABLE_COL_NAME_DATA_POSTFIX {
             get {
@@ -151,47 +151,65 @@ namespace TestReader.Properties {
         }
         
         /// <summary>
+        ///   名前 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string IDS_TARGET_FUNCTION_TABLE_COL_NAME_FUNC_PARAM_NAME {
+            get {
+                return ResourceManager.GetString("IDS_TARGET_FUNCTION_TABLE_COL_NAME_FUNC_PARAM_NAME", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   備考/説明 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string IDS_TARGET_FUNCTION_TABLE_COL_NAME_REMARKS {
+            get {
+                return ResourceManager.GetString("IDS_TARGET_FUNCTION_TABLE_COL_NAME_REMARKS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   No. に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        internal static string IDS_TARGET_TEST_LIST_TABLE_COL_NAME_NO {
+        internal static string IDS_TARGET_TEST_FUNCTION_LIST_TABLE_COL_NAME_NO {
             get {
-                return ResourceManager.GetString("IDS_TARGET_TEST_LIST_TABLE_COL_NAME_NO", resourceCulture);
+                return ResourceManager.GetString("IDS_TARGET_TEST_FUNCTION_LIST_TABLE_COL_NAME_NO", resourceCulture);
             }
         }
         
         /// <summary>
         ///   テスト定義シート名 に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        internal static string IDS_TARGET_TEST_LIST_TABLE_COL_NAME_TEST_DEF_SHEET_NAME {
+        internal static string IDS_TARGET_TEST_FUNCTION_LIST_TABLE_COL_NAME_TEST_DEF_SHEET_NAME {
             get {
-                return ResourceManager.GetString("IDS_TARGET_TEST_LIST_TABLE_COL_NAME_TEST_DEF_SHEET_NAME", resourceCulture);
+                return ResourceManager.GetString("IDS_TARGET_TEST_FUNCTION_LIST_TABLE_COL_NAME_TEST_DEF_SHEET_NAME", resourceCulture);
             }
         }
         
         /// <summary>
         ///   ソースファイル名 に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        internal static string IDS_TARGET_TEST_LIST_TABLE_COL_NAME_TEST_FILE_NAME {
+        internal static string IDS_TARGET_TEST_FUNCTION_LIST_TABLE_COL_NAME_TEST_FILE_NAME {
             get {
-                return ResourceManager.GetString("IDS_TARGET_TEST_LIST_TABLE_COL_NAME_TEST_FILE_NAME", resourceCulture);
+                return ResourceManager.GetString("IDS_TARGET_TEST_FUNCTION_LIST_TABLE_COL_NAME_TEST_FILE_NAME", resourceCulture);
             }
         }
         
         /// <summary>
         ///   ソースファイルパス に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        internal static string IDS_TARGET_TEST_LIST_TABLE_COL_NAME_TEST_FILE_PATH {
+        internal static string IDS_TARGET_TEST_FUNCTION_LIST_TABLE_COL_NAME_TEST_FILE_PATH {
             get {
-                return ResourceManager.GetString("IDS_TARGET_TEST_LIST_TABLE_COL_NAME_TEST_FILE_PATH", resourceCulture);
+                return ResourceManager.GetString("IDS_TARGET_TEST_FUNCTION_LIST_TABLE_COL_NAME_TEST_FILE_PATH", resourceCulture);
             }
         }
         
         /// <summary>
         ///   テスト名 に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        internal static string IDS_TARGET_TEST_LIST_TABLE_COL_NAME_TEST_NAME {
+        internal static string IDS_TARGET_TEST_FUNCTION_LIST_TABLE_COL_NAME_TEST_NAME {
             get {
-                return ResourceManager.GetString("IDS_TARGET_TEST_LIST_TABLE_COL_NAME_TEST_NAME", resourceCulture);
+                return ResourceManager.GetString("IDS_TARGET_TEST_FUNCTION_LIST_TABLE_COL_NAME_TEST_NAME", resourceCulture);
             }
         }
         

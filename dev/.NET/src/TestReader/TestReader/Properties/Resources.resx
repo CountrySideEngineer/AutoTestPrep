@@ -142,7 +142,7 @@
     <comment>対象関数情報の内容列の列名</comment>
   </data>
   <data name="IDS_TARGET_FUNCTION_TABLE_COL_NAME_DATA_POSTFIX" xml:space="preserve">
-    <value>データ型前置修飾子</value>
+    <value>データ型後置修飾子</value>
     <comment>対象関数情報のデータ型後置修飾子の列名</comment>
   </data>
   <data name="IDS_TARGET_FUNCTION_TABLE_COL_NAME_DATA_PREFIX" xml:space="preserve">
@@ -157,23 +157,31 @@
     <value>入出力</value>
     <comment>対象関数情報の入出力列の列名</comment>
   </data>
-  <data name="IDS_TARGET_TEST_LIST_TABLE_COL_NAME_NO" xml:space="preserve">
+  <data name="IDS_TARGET_FUNCTION_TABLE_COL_NAME_FUNC_PARAM_NAME" xml:space="preserve">
+    <value>名前</value>
+    <comment>対象関数情報の名前列の列名</comment>
+  </data>
+  <data name="IDS_TARGET_FUNCTION_TABLE_COL_NAME_REMARKS" xml:space="preserve">
+    <value>備考/説明</value>
+    <comment>対象関数情報の備考列の列名</comment>
+  </data>
+  <data name="IDS_TARGET_TEST_FUNCTION_LIST_TABLE_COL_NAME_NO" xml:space="preserve">
     <value>No.</value>
     <comment>テスト対象関数一覧の「No.」列の列名</comment>
   </data>
-  <data name="IDS_TARGET_TEST_LIST_TABLE_COL_NAME_TEST_DEF_SHEET_NAME" xml:space="preserve">
+  <data name="IDS_TARGET_TEST_FUNCTION_LIST_TABLE_COL_NAME_TEST_DEF_SHEET_NAME" xml:space="preserve">
     <value>テスト定義シート名</value>
     <comment>テスト対象関数一覧の「テスト定義シート名」列の列名</comment>
   </data>
-  <data name="IDS_TARGET_TEST_LIST_TABLE_COL_NAME_TEST_FILE_NAME" xml:space="preserve">
+  <data name="IDS_TARGET_TEST_FUNCTION_LIST_TABLE_COL_NAME_TEST_FILE_NAME" xml:space="preserve">
     <value>ソースファイル名</value>
     <comment>テスト対象関数一覧の「ソースファイル名」列の列名</comment>
   </data>
-  <data name="IDS_TARGET_TEST_LIST_TABLE_COL_NAME_TEST_FILE_PATH" xml:space="preserve">
+  <data name="IDS_TARGET_TEST_FUNCTION_LIST_TABLE_COL_NAME_TEST_FILE_PATH" xml:space="preserve">
     <value>ソースファイルパス</value>
     <comment>テスト対象関数一覧の「ソースファイル名」列の列名</comment>
   </data>
-  <data name="IDS_TARGET_TEST_LIST_TABLE_COL_NAME_TEST_NAME" xml:space="preserve">
+  <data name="IDS_TARGET_TEST_FUNCTION_LIST_TABLE_COL_NAME_TEST_NAME" xml:space="preserve">
     <value>テスト名</value>
     <comment>テスト対象関数一覧の「テスト名」列の列名</comment>
   </data>
