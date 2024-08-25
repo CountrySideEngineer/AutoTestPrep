@@ -40,11 +40,14 @@ namespace TestReader.Reader
 
 			try
 			{
-				int index = Extract.AsInt32(row, "No.", -1);
-				string testName = Extract.AsString(row, "テスト名", string.Empty);
-				string sheetName = Extract.AsString(row, "テスト定義シート名", string.Empty);
-				string fileName = Extract.AsString(row, "ソースファイル名", string.Empty);
-				string filePath = Extract.AsString(row, "ソースファイルパス", string.Empty);
+				var config = (TargetFunctionListConfigurationElement)
+					(TestConfiguration.Get().FunctionList ?? new TargetFunctionListConfigurationElement());
+
+				int index = Extract.AsInt32(row, config.Number, -1);
+				string testName = Extract.AsString(row, config.TestName, string.Empty);
+				string sheetName = Extract.AsString(row, config.SheetName, string.Empty);
+				string fileName = Extract.AsString(row, config.SourceName, string.Empty);
+				string filePath = Extract.AsString(row, config.SourcePath, string.Empty);
 
 				var info = new TestTargetInfo()
 				{

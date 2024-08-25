@@ -133,6 +133,34 @@
     <value>○テスト/デシジョンテーブル</value>
     <comment>テストケースを定義したテーブルの名前</comment>
   </data>
+  <data name="IDS_TARGET_FUNCTION_TABLE_CATEGORY_COL_ITEM_GLOBAL_VAR" xml:space="preserve">
+    <value>グローバル変数</value>
+    <comment>対象関数情報の種類列の「グローバル変数」を示す値。</comment>
+  </data>
+  <data name="IDS_TARGET_FUNCTION_TABLE_CATEGORY_COL_ITEM_SUB_FUNCTION" xml:space="preserve">
+    <value>子関数</value>
+    <comment>対象関数情報の種類列の「子関数」を示す値。</comment>
+  </data>
+  <data name="IDS_TARGET_FUNCTION_TABLE_CATEGORY_COL_ITEM_TARGET_FUNCTION" xml:space="preserve">
+    <value>テスト対象関数</value>
+    <comment>対象関数情報の種類列の「テスト対象関数」を示す値。</comment>
+  </data>
+  <data name="IDS_TARGET_FUNCTION_TABLE_CLASSIFICATION_COL_ITEM_ARGUMENT" xml:space="preserve">
+    <value>引数</value>
+    <comment>対象関数情報の内容列の「引数」を示す値</comment>
+  </data>
+  <data name="IDS_TARGET_FUNCTION_TABLE_CLASSIFICATION_COL_ITEM_BODY" xml:space="preserve">
+    <value>本体</value>
+    <comment>対象関数情報の内容列の「関数本体」を示す値</comment>
+  </data>
+  <data name="IDS_TARGET_FUNCTION_TABLE_CLASSIFICATION_COL_ITEM_EXTERNAL" xml:space="preserve">
+    <value>外部</value>
+    <comment>対象関数情報の内容列の「外部」を示す値</comment>
+  </data>
+  <data name="IDS_TARGET_FUNCTION_TABLE_CLASSIFICATION_COL_ITEM_INTERNAL" xml:space="preserve">
+    <value>内部</value>
+    <comment>対象関数情報の内容列の「内部」を示す値</comment>
+  </data>
   <data name="IDS_TARGET_FUNCTION_TABLE_COL_NAME_CATEGORY" xml:space="preserve">
     <value>種類</value>
     <comment>対象関数情報の種類列の列名</comment>
@@ -142,11 +170,11 @@
     <comment>対象関数情報の内容列の列名</comment>
   </data>
   <data name="IDS_TARGET_FUNCTION_TABLE_COL_NAME_DATA_POSTFIX" xml:space="preserve">
-    <value>データ型後置修飾子</value>
+    <value>データ型後置修飾</value>
     <comment>対象関数情報のデータ型後置修飾子の列名</comment>
   </data>
   <data name="IDS_TARGET_FUNCTION_TABLE_COL_NAME_DATA_PREFIX" xml:space="preserve">
-    <value>データ型前置修飾子</value>
+    <value>データ型前置修飾</value>
     <comment>対象関数情報のデータ型前置修飾列の列名</comment>
   </data>
   <data name="IDS_TARGET_FUNCTION_TABLE_COL_NAME_DATA_TYPE" xml:space="preserve">
@@ -164,6 +192,18 @@
   <data name="IDS_TARGET_FUNCTION_TABLE_COL_NAME_REMARKS" xml:space="preserve">
     <value>備考/説明</value>
     <comment>対象関数情報の備考列の列名</comment>
+  </data>
+  <data name="IDS_TARGET_FUNCTION_TABLE_DIRECTION_COL_ITEM_BOTH" xml:space="preserve">
+    <value>in/out</value>
+    <comment>対象関数情報の内容列の「入出力」が両方(in/out)を示す値</comment>
+  </data>
+  <data name="IDS_TARGET_FUNCTION_TABLE_DIRECTION_COL_ITEM_INPUT" xml:space="preserve">
+    <value>in</value>
+    <comment>対象関数情報の内容列の「入出力」が入力(in)を示す値</comment>
+  </data>
+  <data name="IDS_TARGET_FUNCTION_TABLE_DIRECTION_COL_ITEM_OUTPUT" xml:space="preserve">
+    <value>out</value>
+    <comment>対象関数情報の内容列の「入出力」が出力(out)を示す値</comment>
   </data>
   <data name="IDS_TARGET_TEST_FUNCTION_LIST_TABLE_COL_NAME_NO" xml:space="preserve">
     <value>No.</value>
@@ -204,5 +244,17 @@
   <data name="IDS_TEST_CASE_TABLE_COL_NAME_VARIABLE_NAME" xml:space="preserve">
     <value>変数名</value>
     <comment>テストケースの変数名を記載する列の列名</comment>
+  </data>
+  <data name="IDS_TEST_CASE_TABLE_INPUT_CATEGORY_COL_ITEM_EXPECT" xml:space="preserve">
+    <value>期待値</value>
+    <comment>テストケースの入力、期待値を示す列の「期待値」を示す値</comment>
+  </data>
+  <data name="IDS_TEST_CASE_TABLE_INPUT_CATEGORY_COL_ITEM_INPUT" xml:space="preserve">
+    <value>入力</value>
+    <comment>テストケースの入力、期待値を示す列の「入力」を示す値</comment>
+  </data>
+  <data name="IDS_TEST_CASE_TABLE_PARAM_TYPE_COL_ARGUMENT" xml:space="preserve">
+    <value>引数</value>
+    <comment>テストケースの分類(引数、戻り値)列の「引数」を示す値</comment>
   </data>
 </root>

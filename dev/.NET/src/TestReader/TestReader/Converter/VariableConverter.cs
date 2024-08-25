@@ -1,5 +1,6 @@
 ﻿using System.Data;
 using Logger;
+using TestReader.Config;
 using Parameter = TestReader.Model.Parameter;
 
 namespace TestReader.Converter
@@ -24,9 +25,12 @@ namespace TestReader.Converter
 		{
 			Log.TRACE();
 
+			var config = (TestFunctionParamConfigurationElement)
+				(TestConfiguration.Get().Function ?? new TestFunctionParamConfigurationElement());
+
 			IEnumerable<DataRow> variableRows = data
 				.AsEnumerable()
-				.Where(_ => _["種類"].ToString() == "グローバル変数")
+				.Where(_ => _[config.Category].ToString() == Properties.Resources.IDS_TARGET_FUNCTION_TABLE_CATEGORY_COL_ITEM_GLOBAL_VAR)
 				.ToList();
 			IEnumerable<Parameter> parameters = GetVariables(variableRows);
 			return parameters;
@@ -36,9 +40,12 @@ namespace TestReader.Converter
 		{
 			Log.TRACE();
 
+			var config = (TestFunctionParamConfigurationElement)
+				(TestConfiguration.Get().Function ?? new TestFunctionParamConfigurationElement());
+
 			string typeName = GetTypeName();
 			List<Parameter> parameters = new List<Parameter>();
-			IEnumerable<DataRow> variableRows = rows.Where(_ => _["内容"].ToString() == typeName);
+			IEnumerable<DataRow> variableRows = rows.Where(_ => _[config.Category].ToString() == typeName);
             foreach (DataRow row in variableRows)
             {
 				Parameter parameter = GetVariable(row);

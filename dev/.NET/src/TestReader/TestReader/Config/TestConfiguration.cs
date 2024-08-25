@@ -166,6 +166,16 @@ namespace TestReader.Config
 		/// </summary>
 		internal TestFunctionParamConfigurationElement() : base() { }
 
+		public string Category
+		{
+			get => Properties.Resources.IDS_TARGET_FUNCTION_TABLE_COL_NAME_CATEGORY;
+		}
+
+		public string Classification
+		{
+			get => Properties.Resources.IDS_TARGET_FUNCTION_TABLE_COL_NAME_CLASSIFICATION;
+		}
+
 		/// <summary>
 		/// Data type prefix column name.
 		/// </summary>

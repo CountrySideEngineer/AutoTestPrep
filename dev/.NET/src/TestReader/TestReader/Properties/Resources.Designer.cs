@@ -97,6 +97,69 @@ namespace TestReader.Properties {
         }
         
         /// <summary>
+        ///   グローバル変数 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string IDS_TARGET_FUNCTION_TABLE_CATEGORY_COL_ITEM_GLOBAL_VAR {
+            get {
+                return ResourceManager.GetString("IDS_TARGET_FUNCTION_TABLE_CATEGORY_COL_ITEM_GLOBAL_VAR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   子関数 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string IDS_TARGET_FUNCTION_TABLE_CATEGORY_COL_ITEM_SUB_FUNCTION {
+            get {
+                return ResourceManager.GetString("IDS_TARGET_FUNCTION_TABLE_CATEGORY_COL_ITEM_SUB_FUNCTION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   テスト対象関数 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string IDS_TARGET_FUNCTION_TABLE_CATEGORY_COL_ITEM_TARGET_FUNCTION {
+            get {
+                return ResourceManager.GetString("IDS_TARGET_FUNCTION_TABLE_CATEGORY_COL_ITEM_TARGET_FUNCTION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   引数 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string IDS_TARGET_FUNCTION_TABLE_CLASSIFICATION_COL_ITEM_ARGUMENT {
+            get {
+                return ResourceManager.GetString("IDS_TARGET_FUNCTION_TABLE_CLASSIFICATION_COL_ITEM_ARGUMENT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   本体 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string IDS_TARGET_FUNCTION_TABLE_CLASSIFICATION_COL_ITEM_BODY {
+            get {
+                return ResourceManager.GetString("IDS_TARGET_FUNCTION_TABLE_CLASSIFICATION_COL_ITEM_BODY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   外部 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string IDS_TARGET_FUNCTION_TABLE_CLASSIFICATION_COL_ITEM_EXTERNAL {
+            get {
+                return ResourceManager.GetString("IDS_TARGET_FUNCTION_TABLE_CLASSIFICATION_COL_ITEM_EXTERNAL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   内部 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string IDS_TARGET_FUNCTION_TABLE_CLASSIFICATION_COL_ITEM_INTERNAL {
+            get {
+                return ResourceManager.GetString("IDS_TARGET_FUNCTION_TABLE_CLASSIFICATION_COL_ITEM_INTERNAL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   種類 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string IDS_TARGET_FUNCTION_TABLE_COL_NAME_CATEGORY {
@@ -115,7 +178,7 @@ namespace TestReader.Properties {
         }
         
         /// <summary>
-        ///   データ型後置修飾子 に類似しているローカライズされた文字列を検索します。
+        ///   データ型後置修飾 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string IDS_TARGET_FUNCTION_TABLE_COL_NAME_DATA_POSTFIX {
             get {
@@ -124,7 +187,7 @@ namespace TestReader.Properties {
         }
         
         /// <summary>
-        ///   データ型前置修飾子 に類似しているローカライズされた文字列を検索します。
+        ///   データ型前置修飾 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string IDS_TARGET_FUNCTION_TABLE_COL_NAME_DATA_PREFIX {
             get {
@@ -165,6 +228,33 @@ namespace TestReader.Properties {
         internal static string IDS_TARGET_FUNCTION_TABLE_COL_NAME_REMARKS {
             get {
                 return ResourceManager.GetString("IDS_TARGET_FUNCTION_TABLE_COL_NAME_REMARKS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   in/out に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string IDS_TARGET_FUNCTION_TABLE_DIRECTION_COL_ITEM_BOTH {
+            get {
+                return ResourceManager.GetString("IDS_TARGET_FUNCTION_TABLE_DIRECTION_COL_ITEM_BOTH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   in に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string IDS_TARGET_FUNCTION_TABLE_DIRECTION_COL_ITEM_INPUT {
+            get {
+                return ResourceManager.GetString("IDS_TARGET_FUNCTION_TABLE_DIRECTION_COL_ITEM_INPUT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   out に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string IDS_TARGET_FUNCTION_TABLE_DIRECTION_COL_ITEM_OUTPUT {
+            get {
+                return ResourceManager.GetString("IDS_TARGET_FUNCTION_TABLE_DIRECTION_COL_ITEM_OUTPUT", resourceCulture);
             }
         }
         
@@ -255,6 +345,33 @@ namespace TestReader.Properties {
         internal static string IDS_TEST_CASE_TABLE_COL_NAME_VARIABLE_NAME {
             get {
                 return ResourceManager.GetString("IDS_TEST_CASE_TABLE_COL_NAME_VARIABLE_NAME", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   期待値 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string IDS_TEST_CASE_TABLE_INPUT_CATEGORY_COL_ITEM_EXPECT {
+            get {
+                return ResourceManager.GetString("IDS_TEST_CASE_TABLE_INPUT_CATEGORY_COL_ITEM_EXPECT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   入力 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string IDS_TEST_CASE_TABLE_INPUT_CATEGORY_COL_ITEM_INPUT {
+            get {
+                return ResourceManager.GetString("IDS_TEST_CASE_TABLE_INPUT_CATEGORY_COL_ITEM_INPUT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   引数 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string IDS_TEST_CASE_TABLE_PARAM_TYPE_COL_ARGUMENT {
+            get {
+                return ResourceManager.GetString("IDS_TEST_CASE_TABLE_PARAM_TYPE_COL_ARGUMENT", resourceCulture);
             }
         }
     }

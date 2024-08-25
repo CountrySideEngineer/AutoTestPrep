@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TestReader.Config;
 using TestReader.Model;
 
 namespace TestReader.Converter
@@ -17,14 +18,17 @@ namespace TestReader.Converter
 		{
 			Log.TRACE();
 
-			string prefix = row["データ型前置修飾"].ToString() ?? string.Empty;
+			var config = (TestFunctionParamConfigurationElement)
+				(TestConfiguration.Get().Function ?? new TestFunctionParamConfigurationElement());
+
 			List<string> prefixList = new List<string>();
+			string prefix = Extract.AsString(row, config.DataTypePrefix, string.Empty);
 			if (!string.IsNullOrEmpty(prefix))
 			{
 				prefixList.Add(prefix);
 			}
 
-			string dataType = row["データ型"].ToString() ?? string.Empty;
+			string dataType = Extract.AsString(row, config.DataType, string.Empty);
 			if (string.IsNullOrEmpty(dataType))
 			{
 				Log.ERROR("Data type is not set.");
@@ -32,14 +36,14 @@ namespace TestReader.Converter
 				throw new InvalidDataException();
 			}
 
-			string postfix = row["データ型後置修飾"].ToString() ?? string.Empty;
+			string postfix = Extract.AsString(row, config.DataTypePostfix, string.Empty);
 			List<string> postfixList = new List<string>();
 			if (!string.IsNullOrEmpty(postfix))
 			{
 				postfixList.Add(postfix);
 			}
 
-			string funcName = row["名前"].ToString() ?? string.Empty;
+			string funcName = Extract.AsString(row, config.VariableName, string.Empty);
 			if (string.IsNullOrEmpty(funcName))
 			{
 				Log.ERROR("Function name is not set.");
@@ -47,7 +51,7 @@ namespace TestReader.Converter
 				throw new InvalidDataException();
 			}
 
-			string inOut = row["入出力"].ToString() ?? string.Empty;
+			string inOut = Extract.AsString(row, config.Direction, string.Empty);
 			Parameter.ACCESS_MODE accMode = Parameter.ACCESS_MODE.NONE;
 			if (!string.IsNullOrEmpty(inOut))
 			{
@@ -64,7 +68,7 @@ namespace TestReader.Converter
 				}
 			}
 
-			string description = row["備考/説明"].ToString() ?? string.Empty;
+			string description = Extract.AsString(row, config.Remarks, string.Empty);
 
 			int pointerNum = postfix.Where(_ => _ == '*').Count();
 

@@ -15,7 +15,7 @@ namespace TestReader.Converter
 		{
 			Log.TRACE();
 
-			string typeName = "内部";
+			string typeName = Properties.Resources.IDS_TARGET_FUNCTION_TABLE_CLASSIFICATION_COL_ITEM_INTERNAL;
 			return typeName;
 		}
 	}

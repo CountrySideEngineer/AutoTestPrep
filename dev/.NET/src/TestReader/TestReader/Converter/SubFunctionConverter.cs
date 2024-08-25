@@ -1,6 +1,7 @@
 ﻿using Logger;
 using System.ComponentModel;
 using System.Data;
+using TestReader.Config;
 using Function = TestReader.Model.Function;
 using Parameter = TestReader.Model.Parameter;
 
@@ -44,9 +45,12 @@ namespace TestReader.Converter
 		{
 			Log.TRACE();
 
+			var config = (TestFunctionParamConfigurationElement)
+				(TestConfiguration.Get().Function ?? new TestFunctionParamConfigurationElement());
+
 			IEnumerable<DataRow> subFunctionRows = data
 				.AsEnumerable()
-				.Where(_ => _["種類"].ToString() == "子関数")
+				.Where(_ => _[config.Category].ToString() == Properties.Resources.IDS_TARGET_FUNCTION_TABLE_CATEGORY_COL_ITEM_SUB_FUNCTION)
 				.ToList();
 			IEnumerable<DataRow> subFuncBodyRows = GetFunctionBodyRows(subFunctionRows);
 
@@ -62,8 +66,11 @@ namespace TestReader.Converter
 		{
 			Log.TRACE();
 
+			var config = (TestFunctionParamConfigurationElement)
+				(TestConfiguration.Get().Function ?? new TestFunctionParamConfigurationElement());
+
 			IEnumerable<DataRow> subFunctionBodyRows = rows
-				.Where(_ => _["内容"].ToString() == "本体")
+				.Where(_ => _[config.Classification].ToString() == Properties.Resources.IDS_TARGET_FUNCTION_TABLE_CLASSIFICATION_COL_ITEM_BODY)
 				.ToList();
 
 			return subFunctionBodyRows;
@@ -79,14 +86,22 @@ namespace TestReader.Converter
 		{
 			Log.TRACE();
 
-			IEnumerable<DataRow> rows = data.AsEnumerable().Where(_ => _["種類"].ToString() == "子関数").ToList();
-			IEnumerable<DataRow> rowsAfterSubFuncRow = rows.Where(_ => data.Rows.IndexOf(subFuncRow) < data.Rows.IndexOf(_)).ToList();
+			var config = (TestFunctionParamConfigurationElement)
+				(TestConfiguration.Get().Function ?? new TestFunctionParamConfigurationElement());
+
+			IEnumerable<DataRow> rows = data
+				.AsEnumerable()
+				.Where(_ => _[config.Category].ToString() == Properties.Resources.IDS_TARGET_FUNCTION_TABLE_CATEGORY_COL_ITEM_SUB_FUNCTION)
+				.ToList();
+			IEnumerable<DataRow> rowsAfterSubFuncRow = rows
+				.Where(_ => data.Rows.IndexOf(subFuncRow) < data.Rows.IndexOf(_))
+				.ToList();
 
 			var argRows = new List<DataRow>();
             for (int index = 0; index < rowsAfterSubFuncRow.Count(); index++)
             {
 				DataRow argRow = rowsAfterSubFuncRow.ElementAt(index);
-				if (argRow["内容"].ToString() == "引数")
+				if (argRow[config.Classification].ToString() == Properties.Resources.IDS_TARGET_FUNCTION_TABLE_CLASSIFICATION_COL_ITEM_ARGUMENT)
 				{
 					argRows.Add(argRow);
 				}
@@ -107,7 +122,12 @@ namespace TestReader.Converter
 		{
 			Log.TRACE();
 
-			IEnumerable<DataRow> argumentRows = rows.Where(_ => _["内容"].ToString() == "引数").ToList();
+			var config = (TestFunctionParamConfigurationElement)
+				(TestConfiguration.Get().Function ?? new TestFunctionParamConfigurationElement());
+
+			IEnumerable<DataRow> argumentRows = rows
+				.Where(_ => _[config.Classification].ToString() == Properties.Resources.IDS_TARGET_FUNCTION_TABLE_CLASSIFICATION_COL_ITEM_ARGUMENT)
+				.ToList();
 			var arguments = new List<Parameter>();
 			foreach (DataRow argumentRow in argumentRows)
 			{

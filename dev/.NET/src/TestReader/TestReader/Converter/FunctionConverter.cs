@@ -2,6 +2,7 @@
 using TestReader.Model;
 using Logger;
 using System.Globalization;
+using TestReader.Config;
 
 namespace TestReader.Converter
 {
@@ -36,9 +37,12 @@ namespace TestReader.Converter
 		{
 			Log.TRACE();
 
+			var config = (TestFunctionParamConfigurationElement)
+				(TestConfiguration.Get().Function ?? new TestFunctionParamConfigurationElement());
+
 			IEnumerable<DataRow> functionRows = table
 				.AsEnumerable()
-				.Where(_ => _["種類"].ToString() == "テスト対象関数")
+				.Where(_ => _[config.Category].ToString() == Properties.Resources.IDS_TARGET_FUNCTION_TABLE_CATEGORY_COL_ITEM_TARGET_FUNCTION)
 				.ToList();
 			Function function = GetFunction(functionRows);
 
@@ -70,7 +74,12 @@ namespace TestReader.Converter
 		{
 			Log.TRACE();
 
-			DataRow bodyRow = rows.Where(_ => _["内容"].ToString() == "本体").First();
+			var config = (TestFunctionParamConfigurationElement)
+				(TestConfiguration.Get().Function ?? new TestFunctionParamConfigurationElement());
+
+			DataRow bodyRow = rows
+				.Where(_ => _[config.Classification].ToString() == Properties.Resources.IDS_TARGET_FUNCTION_TABLE_CLASSIFICATION_COL_ITEM_BODY)
+				.First();
 			Function function = GetFunctionBody(bodyRow);
 
 			return function;
@@ -107,7 +116,11 @@ namespace TestReader.Converter
 		{
 			Log.TRACE();
 
-			IEnumerable<DataRow> argumentRows = rows.Where(_ => _["内容"].ToString() == "引数");
+			var config = (TestFunctionParamConfigurationElement)
+				(TestConfiguration.Get().Function ?? new TestFunctionParamConfigurationElement());
+
+			IEnumerable<DataRow> argumentRows = rows
+				.Where(_ => _[config.Classification].ToString() == Properties.Resources.IDS_TARGET_FUNCTION_TABLE_CLASSIFICATION_COL_ITEM_ARGUMENT);
 			var arguments = new List<Parameter>();
 			foreach (DataRow argumentRow in argumentRows)
 			{
