@@ -1,5 +1,4 @@
 using System.Security.Cryptography.X509Certificates;
-using TestParser.Reader;
 using TestReader.Reader;
 using Logger;
 using TestReader.Model;
