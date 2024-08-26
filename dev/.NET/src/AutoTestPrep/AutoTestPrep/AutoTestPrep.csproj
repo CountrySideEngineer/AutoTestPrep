@@ -36,6 +36,12 @@
     <Reference Include="PathCommandLibrary">
       <HintPath>..\..\bin\PathCommandLibrary.dll</HintPath>
     </Reference>
+    <Reference Include="TestReader">
+      <HintPath>..\..\bin\TestReader.dll</HintPath>
+    </Reference>
+    <Reference Include="TestReader.SDK">
+      <HintPath>..\..\bin\TestReader.SDK.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <ItemGroup>
