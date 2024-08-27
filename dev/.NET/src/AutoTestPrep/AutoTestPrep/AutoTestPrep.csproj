@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <Compile Remove="MainWindow.xaml.cs" />
+    <Compile Remove="ViewModel\ProjectItemViewModel.cs" />
   </ItemGroup>
 
   <ItemGroup>
