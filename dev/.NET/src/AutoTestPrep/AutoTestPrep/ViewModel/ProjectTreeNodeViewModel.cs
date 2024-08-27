@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CustomUserControls.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,9 +14,6 @@ namespace AutoTestPrep.ViewModel
 		/// </summary>
 		public ProjectTreeNodeViewModel() : base() { }
 
-		/// <summary>
-		/// Collection of function tree node item view model.
-		/// </summary>
-		public IEnumerable<TreeNodeBaseViewModel> FunctionNodes = new List<TreeNodeBaseViewModel>();
+		public CommandGridExpanderViewModel? TestInformation { get; set; } = null;
 	}
 }

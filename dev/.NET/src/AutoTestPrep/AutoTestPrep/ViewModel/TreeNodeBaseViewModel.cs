@@ -17,5 +17,7 @@ namespace AutoTestPrep.ViewModel
 		/// Title of tree node.
 		/// </summary>
 		public string Title { get; set; } = string.Empty;
+
+		public IEnumerable<TreeNodeBaseViewModel>? SubNodes { get; set; } = null;
 	}
 }

@@ -36,13 +36,14 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="3*"/>
-            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition Width="75*"/>
+            <ColumnDefinition Width="143*"/>
+            <ColumnDefinition Width="582*"/>
         </Grid.ColumnDefinitions>
         <Menu Grid.Row="0"
               Grid.Column="0"
-              Grid.ColumnSpan="2"
-              Style="{StaticResource Menu_MenuBar}"
+              Grid.ColumnSpan="3"
+              Style="{StaticResource Menu_MenuBar}" Margin="0,0,0,410" Grid.RowSpan="2"
               >
             <MenuItem Header="{x:Static properties:Resources.IDS_MENU_ITEM_FILE}"
                       Style="{StaticResource MenuItem_MenuBar}"
@@ -96,11 +97,11 @@
         <TreeView x:Name="SolutionTreeView"
                   Grid.Row="1"
                   Grid.Column="0"
-                  ItemsSource="{Binding ProjectRootItem}"
+                  ItemsSource="{Binding TreeNodeItems}"
                   Visibility="{Binding IsProjectSet, Converter={StaticResource BoolVisibilityConverter}}"
-                  Margin="8"
+                  Margin="8,8,8,8"
                   Background="#F9F9F9"
-                  BorderBrush="gray"
+                  BorderBrush="gray" Grid.ColumnSpan="2"
                   >
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="SelectedItemChanged">
@@ -110,22 +111,22 @@
                 </i:EventTrigger>
             </i:Interaction.Triggers>
             <TreeView.ItemTemplate>
-                <HierarchicalDataTemplate ItemsSource="{Binding SubProjects}"
+                <HierarchicalDataTemplate ItemsSource="{Binding SubNodes}"
                                           >
-                    <TextBlock Text="{Binding Name}"
+                    <TextBlock Text="{Binding Title}"
                                />
                 </HierarchicalDataTemplate>
             </TreeView.ItemTemplate>
         </TreeView>
         <UserControl x:Name="UserInputArae"
                      Grid.Row="1"
-                     Grid.Column="1"
+                     Grid.Column="2"
                      ContentTemplateSelector="{StaticResource ControlSelector}"
                      Content="{Binding SelectedItem}"
                      BorderBrush="Silver"
                      BorderThickness="1"
                      Padding="0"
-                     Margin="8"
+                     Margin="8,8,8,8"
                      Background="White"
                      />
     </Grid>

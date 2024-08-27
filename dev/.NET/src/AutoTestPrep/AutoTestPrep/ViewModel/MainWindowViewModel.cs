@@ -11,6 +11,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Security.RightsManagement;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using DelegateCommand = AutoTestPrep.Command.DelegateCommand;
 
@@ -23,14 +24,14 @@ namespace AutoTestPrep.ViewModel
 			get => Properties.Resources.IDS_APP_TITLE;
 		}
 
-		protected IEnumerable<ProjectItemViewModel>? _projectRootItem = null;
+		protected IEnumerable<TreeNodeBaseViewModel> _treeNodeItems = null;
 
-		public IEnumerable<ProjectItemViewModel>? ProjectRootItem
+		public IEnumerable<TreeNodeBaseViewModel> TreeNodeItems
 		{
-			get => _projectRootItem;
+			get => _treeNodeItems;
 			set
 			{
-				_projectRootItem = value;
+				_treeNodeItems = value;
 				RaisePropertyChanged();
 				RaisePropertyChanged(nameof(IsProjectSet));
 			}
@@ -43,7 +44,7 @@ namespace AutoTestPrep.ViewModel
 		{
 			get
 			{
-				return ProjectRootItem != null;
+				return TreeNodeItems != null;
 			}
 		}
 
@@ -58,14 +59,14 @@ namespace AutoTestPrep.ViewModel
 			}
 		}
 
-		protected Command.DelegateCommand<ProjectItemViewModel>? _selectedItemChangedCommand = null;
-		public Command.DelegateCommand<ProjectItemViewModel> SelectedItemChangedCommand
+		protected Command.DelegateCommand<TreeNodeBaseViewModel>? _selectedItemChangedCommand = null;
+		public Command.DelegateCommand<TreeNodeBaseViewModel> SelectedItemChangedCommand
 		{
 			get
 			{
 				if (null == _selectedItemChangedCommand)
 				{
-					_selectedItemChangedCommand = new Command.DelegateCommand<ProjectItemViewModel>(SelectedItemChangedExecute);
+					_selectedItemChangedCommand = new Command.DelegateCommand<TreeNodeBaseViewModel>(SelectedItemChangedExecute);
 				}
 				return _selectedItemChangedCommand;
 			}
@@ -100,160 +101,34 @@ namespace AutoTestPrep.ViewModel
 		/// </summary>
 		public MainWindowViewModel() : base()
 		{
-			//ProjectRootItem = null;
-			ProjectRootItem = new List<ProjectItemViewModel>()
+			TreeNodeItems = new List<TreeNodeBaseViewModel>()
 			{
-				new ProjectItemViewModel()
+				new SolutionTreeNodeViewModel()
 				{
-					Name = "Solution Name (Tree root)",
-					SubProjects = new List<ProjectItemViewModel>()
+					Title = "TestSolution",
+					SubNodes = new List<TreeNodeBaseViewModel>()
 					{
-						new ProjectItemViewModel()
+						new ProjectTreeNodeViewModel()
 						{
-							Name = "TestProjectName_001",
+							Title = "TestProjectName_001",
 							TestInformation = new TestProjectConfigInputViewModel(),
-							SubProjects = new List<ProjectItemViewModel>()
+							SubNodes = new List<TreeNodeBaseViewModel>()
 							{
-								new ProjectItemViewModel()
+								new FunctionTreeNodeViewModel()
 								{
-									Name = "FunctionName_001",
-									SubProjects = new List<ProjectItemViewModel>()
-									{
-										new ProjectItemViewModel()
-										{
-											Name = "FunctionName_001_TestCase_001"
-										},
-										new ProjectItemViewModel()
-										{
-											Name = "FunctionName_001_TestCase_002"
-										},
-										new ProjectItemViewModel()
-										{
-											Name = "FunctionName_001_TestCase_003"
-										},
-									}
+									Title = "FunctionName_001_001"
 								},
-								new ProjectItemViewModel()
+								new FunctionTreeNodeViewModel()
 								{
-									Name = "FunctionName_002",
-									SubProjects = new List<ProjectItemViewModel>()
-									{
-										new ProjectItemViewModel()
-										{
-											Name = "FunctionName_002_TestCase_001"
-										},
-										new ProjectItemViewModel()
-										{
-											Name = "FunctionName_002_TestCase_002"
-										},
-										new ProjectItemViewModel()
-										{
-											Name = "FunctionName_002_TestCase_003"
-										},
-										new ProjectItemViewModel()
-										{
-											Name = "FunctionName_002_TestCase_004"
-										},
-										new ProjectItemViewModel()
-										{
-											Name = "FunctionName_002_TestCase_005"
-										},
-										new ProjectItemViewModel()
-										{
-											Name = "FunctionName_002_TestCase_006"
-										},
-									}
+									Title = "FunctionName_001_002"
 								},
-								new ProjectItemViewModel()
+								new FunctionTreeNodeViewModel()
 								{
-									Name = "FunctionName_003",
-									SubProjects = new List<ProjectItemViewModel>()
-									{
-										new ProjectItemViewModel()
-										{
-											Name = "FunctionName_003_TestCase_001"
-										},
-										new ProjectItemViewModel()
-										{
-											Name = "FunctionName_003_TestCase_002"
-										},
-									}
-								},
+									Title = "FunctionName_001_003"
+								}
 							}
-						},
-						new ProjectItemViewModel()
-						{
-							Name = "TestProjectName_002",
-							TestInformation = new TestProjectConfigInputViewModel(),
-							SubProjects = new List<ProjectItemViewModel>()
-							{
-								new ProjectItemViewModel()
-								{
-									Name = "FunctionName_101",
-									SubProjects = new List<ProjectItemViewModel>()
-									{
-										new ProjectItemViewModel()
-										{
-											Name = "FunctionName_101_TestCase_001"
-										},
-										new ProjectItemViewModel()
-										{
-											Name = "FunctionName_101_TestCase_002"
-										},
-										new ProjectItemViewModel()
-										{
-											Name = "FunctionName_101_TestCase_003"
-										},
-									}
-								},
-								new ProjectItemViewModel()
-								{
-									Name = "FunctionName_102",
-									SubProjects = new List<ProjectItemViewModel>()
-									{
-										new ProjectItemViewModel()
-										{
-											Name = "FunctionName_102_TestCase_001"
-										},
-										new ProjectItemViewModel()
-										{
-											Name = "FunctionName_102_TestCase_002"
-										},
-										new ProjectItemViewModel()
-										{
-											Name = "FunctionName_102_TestCase_003"
-										},
-										new ProjectItemViewModel()
-										{
-											Name = "FunctionName_102_TestCase_004"
-										},
-										new ProjectItemViewModel()
-										{
-											Name = "FunctionName_102_TestCase_005"
-										},
-										new ProjectItemViewModel()
-										{
-											Name = "FunctionName_102_TestCase_006"
-										},
-									}
-								},
-								new ProjectItemViewModel()
-								{
-									Name = "FunctionName_103",
-									SubProjects = new List<ProjectItemViewModel>()
-									{
-										new ProjectItemViewModel()
-										{
-											Name = "FunctionName_103_TestCase_001"
-										},
-										new ProjectItemViewModel()
-										{
-											Name = "FunctionName_103_TestCase_002"
-										},
-									}
-								},
-							}
-						}                   }
+						}
+					}
 				}
 			};
 		}
@@ -262,14 +137,24 @@ namespace AutoTestPrep.ViewModel
 		/// 
 		/// </summary>
 		/// <param name="selectedItem"></param>
-		public void SelectedItemChangedExecute(ProjectItemViewModel selectedItem)
+		public void SelectedItemChangedExecute(TreeNodeBaseViewModel selectedItem)
 		{
 			Log.TRACE();
 
-			CommandGridExpanderViewModel? testInformation = selectedItem.TestInformation;
-			SelectedItem = (null == testInformation) ? SelectedItem : testInformation;
+			if (selectedItem is ProjectTreeNodeViewModel)
+			{
+				Log.DEBUG($"{nameof(selectedItem)} data type is {nameof(ProjectTreeNodeViewModel)}");
 
-			Log.DEBUG((null == testInformation) ? "testInformation = null" : "testInformation != null");
+				ProjectTreeNodeViewModel projectNode = selectedItem as ProjectTreeNodeViewModel;
+				CommandGridExpanderViewModel? testInformation = projectNode.TestInformation;
+				SelectedItem = testInformation ?? SelectedItem;
+
+				Log.DEBUG((null == testInformation) ? "testInformation = null" : "testInformation != null");
+			}
+			else
+			{
+				Log.DEBUG($"{nameof(selectedItem)} data type is not {nameof(ProjectTreeNodeViewModel)}");
+			}
 		}
 
 		protected virtual void TestParseCommandExecute()
