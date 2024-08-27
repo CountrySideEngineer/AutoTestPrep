@@ -116,15 +116,37 @@ namespace AutoTestPrep.ViewModel
 							{
 								new FunctionTreeNodeViewModel()
 								{
-									Title = "FunctionName_001_001"
+									Title = "FunctionName_001_001",
+									FunctionInformation = new TestDriverCodeViewModel()
+									{
+										TestCode =
+											"Sample code" + Environment.NewLine +
+											"\tTab intend Line" + Environment.NewLine +
+											"Sample function 001 - 001"
+									}
 								},
 								new FunctionTreeNodeViewModel()
 								{
-									Title = "FunctionName_001_002"
+									Title = "FunctionName_001_002",
+									FunctionInformation = new TestDriverCodeViewModel()
+									{
+										TestCode =
+											"Sample code" + Environment.NewLine +
+											"\tTab intend Line" + Environment.NewLine +
+											"Sample function 001 - 002" 
+									}
 								},
 								new FunctionTreeNodeViewModel()
 								{
-									Title = "FunctionName_001_003"
+									Title = "FunctionName_001_003",
+									FunctionInformation = new TestDriverCodeViewModel()
+									{
+										TestCode =
+											"Sample code" + Environment.NewLine +
+											"\tTab intend Line" + Environment.NewLine +
+											"\tTab intend Line" + Environment.NewLine +
+											"Sample function 001 - 003"
+									}
 								}
 							}
 						}
@@ -150,6 +172,14 @@ namespace AutoTestPrep.ViewModel
 				SelectedItem = testInformation ?? SelectedItem;
 
 				Log.DEBUG((null == testInformation) ? "testInformation = null" : "testInformation != null");
+			}
+			else if (selectedItem is FunctionTreeNodeViewModel)
+			{
+				Log.DEBUG($"{nameof(selectedItem)} data type is {nameof(FunctionTreeNodeViewModel)}");
+
+				FunctionTreeNodeViewModel functioNode = selectedItem as FunctionTreeNodeViewModel;
+				CommandGridExpanderViewModel? testInformation = functioNode.FunctionInformation;
+				SelectedItem = testInformation ?? SelectedItem;
 			}
 			else
 			{

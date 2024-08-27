@@ -28,6 +28,9 @@
             <DataTemplate x:Key="ItemSelect_001">
                 <uv:TestProjectConfigInputView />
             </DataTemplate>
+            <DataTemplate x:Key="ItemSelect_002">
+                <uv:TestCodeDisplayView />
+            </DataTemplate>
         </ResourceDictionary>
     </Window.Resources>
     <Grid Background="WhiteSmoke">

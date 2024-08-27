@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CustomUserControls;
+using CustomUserControls.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,5 +15,7 @@ namespace AutoTestPrep.ViewModel
 		/// Default constructor.
 		/// </summary>
 		public FunctionTreeNodeViewModel() : base() { }
+
+		public CommandGridExpanderViewModel? FunctionInformation { get; set; } = null;
 	}
 }

@@ -2,6 +2,8 @@
 using System.Windows;
 using System.Windows.Controls;
 using Logger;
+using AutoTestPrep.ViewModel;
+using AutoTestPrep.View;
 
 namespace AutoTestPrep.Controls
 {
@@ -23,7 +25,29 @@ namespace AutoTestPrep.Controls
 			}
 			else
 			{
-				DataTemplate template = (DataTemplate)element.FindResource("ItemSelect_001");
+				string resourceName = string.Empty;
+				if (item is TestProjectConfigInputViewModel)
+				{
+					Log.DEBUG($"{nameof(item)} is {nameof(TestProjectConfigInputViewModel)}");
+
+					resourceName = "ItemSelect_001";
+				}
+				else if (item is TestDriverCodeViewModel)
+				{
+					Log.DEBUG($"{nameof(item)} is {nameof(TestDriverCodeViewModel)}");
+
+					resourceName = "ItemSelect_002";
+				}
+				else
+				{
+					Log.DEBUG($"{nameof(item)} is unknown.");
+
+					resourceName = "ItemSelect_001";
+				}
+
+				Log.DEBUG($"{nameof(resourceName),16} = {resourceName}");
+
+				DataTemplate template = (DataTemplate)element.FindResource(resourceName);
 				UserControl userControl = (UserControl)template.LoadContent();
 				userControl.DataContext = viewModel;
 
