@@ -198,6 +198,9 @@
   <data name="IDS_MENU_ITEM_HELP_VERSION" xml:space="preserve">
     <value>バージョン情報</value>
   </data>
+  <data name="IDS_SELECT_TEST_SPEC_FILE_DIALOG_TITLE" xml:space="preserve">
+    <value>テスト定義ファイルの選択</value>
+  </data>
   <data name="IDS_TEST_DOUBLE_BUFFER_INFORMATION" xml:space="preserve">
     <value>スタブ情報</value>
   </data>

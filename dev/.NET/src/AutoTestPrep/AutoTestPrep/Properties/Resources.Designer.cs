@@ -304,6 +304,15 @@ namespace AutoTestPrep.Properties {
         }
         
         /// <summary>
+        ///   テスト定義ファイルの選択 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string IDS_SELECT_TEST_SPEC_FILE_DIALOG_TITLE {
+            get {
+                return ResourceManager.GetString("IDS_SELECT_TEST_SPEC_FILE_DIALOG_TITLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   スタブ情報 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string IDS_TEST_DOUBLE_BUFFER_INFORMATION {
