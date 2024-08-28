@@ -11,11 +11,16 @@
              BorderThickness="1"
              >
     <Grid>
-        <TextBlock x:Name="TestDriverArea"
-                   Padding="8"
-                   Margin="8"
-                   Background="White"
-                   Text="{Binding TestCode}"
-                   />
+        <ScrollViewer x:Name="TestDriverScrollViewer"
+                      VerticalScrollBarVisibility="Auto"
+                      Margin="8"
+                      >
+            <TextBlock x:Name="TestDriverArea"
+                       Padding="8"
+                       Margin="0"
+                       Background="White"
+                       Text="{Binding TestCode}"
+                       />
+        </ScrollViewer>
     </Grid>
 </UserControl>
