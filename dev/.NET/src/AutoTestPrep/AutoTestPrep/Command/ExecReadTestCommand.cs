@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AutoTestPrep.Command
 {
-	internal class ExecTestParseCommand : IPluginCommand
+	internal class ExecReadTestCommand : IPluginCommand
 	{
 		public object Execute(object argument)
 		{
