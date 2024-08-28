@@ -46,7 +46,7 @@
         <Menu Grid.Row="0"
               Grid.Column="0"
               Grid.ColumnSpan="3"
-              Style="{StaticResource Menu_MenuBar}" Margin="0,0,0,410" Grid.RowSpan="2"
+              Style="{StaticResource Menu_MenuBar}"
               >
             <MenuItem Header="{x:Static properties:Resources.IDS_MENU_ITEM_FILE}"
                       Style="{StaticResource MenuItem_MenuBar}"
@@ -100,11 +100,12 @@
         <TreeView x:Name="SolutionTreeView"
                   Grid.Row="1"
                   Grid.Column="0"
+                  Grid.ColumnSpan="2"
                   ItemsSource="{Binding TreeNodeItems}"
                   Visibility="{Binding IsProjectSet, Converter={StaticResource BoolVisibilityConverter}}"
                   Margin="8,8,8,8"
                   Background="#F9F9F9"
-                  BorderBrush="gray" Grid.ColumnSpan="2"
+                  BorderBrush="gray"
                   >
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="SelectedItemChanged">
