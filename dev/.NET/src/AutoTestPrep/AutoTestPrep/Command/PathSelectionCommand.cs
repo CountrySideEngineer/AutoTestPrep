@@ -21,7 +21,7 @@ namespace AutoTestPrep.Command
 		{
 			Log.TRACE();
 
-			var pathSelectView = new PathSelectionDialog();
+			var pathSelectView = new PathSelectionDialog(DialogUserInterfaces.Mode.DIALOG_FILE_SELECT);
 			bool? dialogResult = pathSelectView.ShowDialog();
 
 			if (dialogResult is null)

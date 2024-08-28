@@ -356,5 +356,14 @@ namespace AutoTestPrep.Properties {
                 return ResourceManager.GetString("IDS_TEST_INFO_OUTPUT_DIR_PATH", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   入力(テスト定義ファイル) に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string IDS_TEST_SPEC_FILE_PATH {
+            get {
+                return ResourceManager.GetString("IDS_TEST_SPEC_FILE_PATH", resourceCulture);
+            }
+        }
     }
 }

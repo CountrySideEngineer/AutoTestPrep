@@ -22,7 +22,7 @@ namespace AutoTestPrep.ViewModel
 			{
 				new CommandGridExpanderItem()
 				{
-					Title = Properties.Resources.IDS_TEST_INFO_INPUT_ROOT_DIR_PATH,
+					Title = Properties.Resources.IDS_TEST_SPEC_FILE_PATH,
 					Item = string.Empty,
 					CustomCommand = new PathSelectionCommand()
 				},
@@ -38,7 +38,7 @@ namespace AutoTestPrep.ViewModel
 		/// <summary>
 		/// Path to directory to output test codes.
 		/// </summary>
-		public string InputRootDirPath
+		public string TestSpecFilePath
 		{
 			get
 			{

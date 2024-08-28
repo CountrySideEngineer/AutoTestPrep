@@ -216,4 +216,7 @@
   <data name="IDS_TEST_INFO_OUTPUT_DIR_PATH" xml:space="preserve">
     <value>出力先フォルダ</value>
   </data>
+  <data name="IDS_TEST_SPEC_FILE_PATH" xml:space="preserve">
+    <value>入力(テスト定義ファイル)</value>
+  </data>
 </root>

@@ -14,6 +14,6 @@ namespace AutoTestPrep.ViewModel
 		/// </summary>
 		public ProjectTreeNodeViewModel() : base() { }
 
-		public CommandGridExpanderViewModel? TestInformation { get; set; } = null;
+		public TestProjectConfigInputViewModel? TestInformation { get; set; } = null;
 	}
 }

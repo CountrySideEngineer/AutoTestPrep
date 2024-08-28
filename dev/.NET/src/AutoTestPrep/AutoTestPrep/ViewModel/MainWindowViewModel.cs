@@ -8,6 +8,7 @@ using System.Configuration;
 using System.Diagnostics;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
+using System.Security.Permissions;
 using System.Security.RightsManagement;
 using System.Text;
 using System.Threading.Tasks;
@@ -90,7 +91,7 @@ namespace AutoTestPrep.ViewModel
 			{
 				if (null == _testParseCommand)
 				{
-					_testParseCommand = new DelegateCommand(TestParseCommandExecute);
+					_testParseCommand = new DelegateCommand(ReadTestCommandExecute);
 				}
 				return _testParseCommand;
 			}
@@ -187,11 +188,11 @@ namespace AutoTestPrep.ViewModel
 			}
 		}
 
-		protected virtual void TestParseCommandExecute()
+		protected virtual void ReadTestCommandExecute()
 		{
 			Log.TRACE();
 
-			var command = new ExecTestParseCommand();
+			var command = new ExecReadTestCommand();
 			command.Execute(null);
 		}
 	}
