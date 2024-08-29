@@ -9,17 +9,17 @@ namespace AutoTestPrep.ViewModel
 {
 	internal class TestProjectConfigInputViewModel : AutoTestPrepViewModelBase
 	{
-		public CommandGridExpanderViewModel TestInformation { get; set; }
+		public TestInformationInputViewModel TestInformation { get; set; }
 
-		public CommandGridExpanderViewModel<long> TestDoubleInformation { get; set; }
+		public BufferSizeViewModel TestDoubleInformation { get; set; }
 
-		public CommandGridExpanderViewModel HeaderInDriverInformation { get; set; }
+		public TestDriverHeaderInformationViewModel HeaderInDriverInformation { get; set; }
 
-		public CommandGridExpanderViewModel HeaderInTestDoubleInformation { get; set; }
+		public TestStubHeaderInformationViewModel HeaderInTestDoubleInformation { get; set; }
 
-		public CommandGridExpanderViewModel LibraryInformation { get; set; }
+		public LibraryInformationViewModel LibraryInformation { get; set; }
 
-		public CommandGridExpanderViewModel MacroInformation { get; set; }
+		public MacroInformationViewModel MacroInformation { get; set; }
 
 		public TestProjectConfigInputViewModel()
 		{
