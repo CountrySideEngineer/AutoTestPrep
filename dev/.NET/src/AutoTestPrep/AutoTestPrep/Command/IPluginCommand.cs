@@ -10,4 +10,14 @@ namespace AutoTestPrep.Command
 	{
 		object Execute(object argument);
 	}
+
+	internal interface IPluginCommand<T>
+	{
+		T Execute(T argument);
+	}
+
+	internal interface IPluginCommand<T, R>
+	{
+		R Execute(T argument);
+	}
 }

@@ -14,6 +14,6 @@ namespace AutoTestPrep.ViewModel
 		/// </summary>
 		public ProjectTreeNodeViewModel() : base() { }
 
-		public TestProjectConfigInputViewModel? TestInformation { get; set; } = null;
+		public TestProjectConfigInputViewModel? TestProjectConfig { get; set; } = null;
 	}
 }

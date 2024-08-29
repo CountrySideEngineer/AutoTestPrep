@@ -112,7 +112,7 @@ namespace AutoTestPrep.ViewModel
 						new ProjectTreeNodeViewModel()
 						{
 							Title = "TestProjectName_001",
-							TestInformation = new TestProjectConfigInputViewModel(),
+							TestProjectConfig = new TestProjectConfigInputViewModel(),
 							SubNodes = new List<TreeNodeBaseViewModel>()
 							{
 								new FunctionTreeNodeViewModel()
@@ -169,7 +169,7 @@ namespace AutoTestPrep.ViewModel
 				Log.DEBUG($"{nameof(selectedItem)} data type is {nameof(ProjectTreeNodeViewModel)}");
 
 				ProjectTreeNodeViewModel projectNode = selectedItem as ProjectTreeNodeViewModel;
-				CommandGridExpanderViewModel? testInformation = projectNode.TestInformation;
+				CommandGridExpanderViewModel? testInformation = projectNode.TestProjectConfig;
 				SelectedItem = testInformation ?? SelectedItem;
 
 				Log.DEBUG((null == testInformation) ? "testInformation = null" : "testInformation != null");
@@ -192,8 +192,9 @@ namespace AutoTestPrep.ViewModel
 		{
 			Log.TRACE();
 
+			IEnumerable<TreeNodeBaseViewModel> testNodes = TreeNodeItems.ElementAt(0).SubNodes;
 			var command = new ExecReadTestCommand();
-			command.Execute(null);
+			command.Execute(testNodes);
 		}
 	}
 }
