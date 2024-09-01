@@ -19,8 +19,14 @@ namespace CodeGenerator.GoogleTest.Template
 		/// </summary>
 		public IEnumerable<string>? UserHeaders { get; set; } = new List<string>();
 
+		/// <summary>
+		/// The test driver header file name 
+		/// </summary>
 		public string DriverHeaderFileName { get; set; } = string.Empty;
 
+		/// <summary>
+		/// The stub header file name.
+		/// </summary>
 		public string StubHeaderFileName { get; set; } = string.Empty;
 
 		/// <summary>
