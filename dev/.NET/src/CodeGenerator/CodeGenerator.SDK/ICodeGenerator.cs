@@ -1,8 +1,8 @@
 ﻿using CodeGenerator.SDK.Data;
 
-namespace CodeGenerator.SDK
+namespace CodeGenerator
 {
-	interface ICodeGenerator
+	public interface ICodeGenerator
 	{
 		string Generate(CodeInput codeInput);
 	}

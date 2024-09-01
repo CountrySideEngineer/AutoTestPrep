@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="System.CodeDom" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="TestReader.SDK">
       <HintPath>..\..\bin\TestReader.SDK.dll</HintPath>
     </Reference>
