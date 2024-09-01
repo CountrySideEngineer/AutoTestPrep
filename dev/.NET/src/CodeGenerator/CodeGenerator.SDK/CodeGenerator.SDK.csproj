@@ -4,6 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <RootNamespace>$(MSBuildProjectName.Replace(" ", "_").Replace(".SDK", ""))</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,5 +12,9 @@
       <HintPath>..\..\bin\TestReader.SDK.dll</HintPath>
     </Reference>
   </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="xcopy $(OutDir)*.dll $(SolutionDir)..\bin\ /E /C /I /Y" />
+  </Target>
 
 </Project>
