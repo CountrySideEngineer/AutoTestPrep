@@ -32,7 +32,7 @@
 	if ((!string.IsNullOrEmpty(DriverHeaderFileName)) && (!string.IsNullOrWhiteSpace(DriverHeaderFileName)))
 	{
 #>
-#incluide <#= DriverHeaderFileName #>
+#incluide "<#= DriverHeaderFileName #>"
 <#
 	}
 #>
@@ -40,7 +40,7 @@
 	if ((!string.IsNullOrEmpty(StubHeaderFileName)) && (!string.IsNullOrWhiteSpace(StubHeaderFileName)))
 	{
 #>
-#incluide <#= StubHeaderFileName #>
+#incluide "<#= StubHeaderFileName #>"
 <#
 	}
 #>

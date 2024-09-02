@@ -94,14 +94,14 @@ namespace CodeGenerator.GoogleTest.Template
             
             #line default
             #line hidden
-            this.Write("#incluide ");
+            this.Write("#incluide \"");
             
             #line 35 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\GTestDriverCodeGenerator\GoogleTest\Template\GoogleTestSourceIncludePartTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(DriverHeaderFileName));
             
             #line default
             #line hidden
-            this.Write("\r\n");
+            this.Write("\"\r\n");
             
             #line 36 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\GTestDriverCodeGenerator\GoogleTest\Template\GoogleTestSourceIncludePartTemplate.tt"
 
@@ -119,14 +119,14 @@ namespace CodeGenerator.GoogleTest.Template
             
             #line default
             #line hidden
-            this.Write("#incluide ");
+            this.Write("#incluide \"");
             
             #line 43 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\GTestDriverCodeGenerator\GoogleTest\Template\GoogleTestSourceIncludePartTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(StubHeaderFileName));
             
             #line default
             #line hidden
-            this.Write("\r\n");
+            this.Write("\"\r\n");
             
             #line 44 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\GTestDriverCodeGenerator\GoogleTest\Template\GoogleTestSourceIncludePartTemplate.tt"
 
