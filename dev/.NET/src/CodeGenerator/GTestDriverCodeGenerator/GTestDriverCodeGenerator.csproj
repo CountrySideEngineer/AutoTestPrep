@@ -8,6 +8,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="GoogleTest\Template\GoogleTestSourceTestCasePartTemplate.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="GoogleTest\Template\GoogleTestSourceTestCasePartTemplate.tt" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="System.CodeDom" Version="8.0.0" />
   </ItemGroup>
 
@@ -29,6 +37,10 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>GoogleTestCodeTemplate.cs</LastGenOutput>
     </None>
+    <None Update="GoogleTest\Template\GoogleTestHeaderTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>GoogleTestHeaderTemplate.cs</LastGenOutput>
+    </None>
     <None Update="GoogleTest\Template\GoogleTestSourceIncludePartTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>GoogleTestSourceIncludePartTemplate.cs</LastGenOutput>
@@ -48,6 +60,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>GoogleTestCodeTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="GoogleTest\Template\GoogleTestHeaderTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>GoogleTestHeaderTemplate.tt</DependentUpon>
     </Compile>
     <Compile Update="GoogleTest\Template\GoogleTestSourceIncludePartTemplate.cs">
       <DesignTime>True</DesignTime>
