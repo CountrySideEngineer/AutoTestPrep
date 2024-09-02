@@ -45,6 +45,10 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>GoogleTestSourceTestCasePartTemplate.cs</LastGenOutput>
     </None>
+    <None Update="GoogleTest\Template\GoogleTestSourceTestDriverTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>GoogleTestSourceTestDriverTemplate.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
@@ -76,6 +80,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>GoogleTestSourceTestCasePartTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="GoogleTest\Template\GoogleTestSourceTestDriverTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>GoogleTestSourceTestDriverTemplate.tt</DependentUpon>
     </Compile>
   </ItemGroup>
 

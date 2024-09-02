@@ -30,6 +30,11 @@ namespace CodeGenerator.GoogleTest.Template
 		public string StubHeaderFileName { get; set; } = string.Empty;
 
 		/// <summary>
+		/// Code configuration.
+		/// </summary>
+		public CodeConfiguration Config { get; set; } = new CodeConfiguration();
+
+		/// <summary>
 		/// Default constructor.
 		/// </summary>
 		public GoogleTestSourceIncludePartTemplate() : base() { }
