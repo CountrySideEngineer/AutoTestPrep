@@ -1,6 +1,7 @@
 ﻿using Logger;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -104,6 +105,53 @@ namespace CodeGenerator.GoogleTest.Template
 			Log.DEBUG($"{nameof(testCaseName),32} = {testCaseName}");
 
 			return testCaseName;
+		}
+
+		/// <summary>
+		/// Create code to call target function.
+		/// </summary>
+		/// <param name="targetFunction">Target functoin data.</param>
+		/// <returns>Code to call target function.</returns>
+		protected virtual string CreateTargetFunctionCall(Function targetFunction)
+		{
+			Log.TRACE();
+
+			try
+			{
+				if ((string.IsNullOrEmpty(targetFunction.Name)) ||
+					(string.IsNullOrWhiteSpace(targetFunction.Name)))
+				{
+					throw new ArgumentException();
+				}
+
+				string targetFunctionCall = string.Empty;
+
+				if (!("void".Equals(targetFunction.DataType.ToLower())))
+				{
+					targetFunctionCall = $"{targetFunction.ActualDataType()} _ret_val = ";
+				}
+				targetFunctionCall += $"{targetFunction.Name}(";
+				bool isTop = true;
+				foreach (var argument in targetFunction.Arguments)
+				{
+					if (!isTop)
+					{
+						targetFunctionCall += ", ";
+					}
+					targetFunctionCall += argument.Name;
+					isTop = false;
+				}
+				targetFunctionCall += ")";
+
+				return targetFunctionCall;
+			}
+			catch (Exception ex)
+			when ((ex is ArgumentException) || (ex is NullReferenceException))
+			{
+				Debug.WriteLine(ex.StackTrace);
+
+				throw;
+			}
 		}
 	}
 }
