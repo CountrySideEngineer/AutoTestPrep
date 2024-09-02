@@ -33,6 +33,10 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>GoogleTestSourceIncludePartTemplate.cs</LastGenOutput>
     </None>
+    <None Update="GoogleTest\Template\GoogleTestSourceSetUpMethodPartTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>GoogleTestSourceSetUpMethodPartTemplate.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
@@ -49,6 +53,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>GoogleTestSourceIncludePartTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="GoogleTest\Template\GoogleTestSourceSetUpMethodPartTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>GoogleTestSourceSetUpMethodPartTemplate.tt</DependentUpon>
     </Compile>
   </ItemGroup>
 
