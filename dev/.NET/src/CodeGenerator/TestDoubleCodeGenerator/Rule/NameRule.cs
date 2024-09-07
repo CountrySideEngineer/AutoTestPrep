@@ -157,11 +157,17 @@ namespace TestDoubleCodeGenerator.Rule
 			return argumentBuffer;
 		}
 
+		/// <summary>
+		/// Generate code to declare parameter in a format.
+		/// </summary>
+		/// <param name="dataType">Data type of parameter.</param>
+		/// <param name="name">Parameter name.</param>
+		/// <returns>Code to declare parameter in a specified format.</returns>
 		public static string DeclareFormat(string dataType, string name)
 		{
 			Log.TRACE();
 
-			string declareCode = $"{dataType,16}\t{name}";
+			string declareCode = $"{dataType,-16}\t{name}";
 
 			Log.DEBUG($"{nameof(declareCode),20} = \"{declareCode}\"");
 
