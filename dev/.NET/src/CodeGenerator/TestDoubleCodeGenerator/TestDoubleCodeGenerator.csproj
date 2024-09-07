@@ -1,0 +1,96 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CodeGenerator.SDK\CodeGenerator.SDK.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Logger">
+      <HintPath>..\..\bin\Logger.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="TestDouble\Template\TestDoubleCodeTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>TestDoubleCodeTemplate.cs</LastGenOutput>
+    </None>
+    <None Update="TestDouble\Template\TestDoubleSourceBodyPartTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>TestDoubleSourceBodyPartTemplate.cs</LastGenOutput>
+    </None>
+    <None Update="TestDouble\Template\TestDoubleSourceCodeTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>TestDoubleSourceCodeTemplate.cs</LastGenOutput>
+    </None>
+    <None Update="TestDouble\Template\TestDoubleSourceDeclareBufferPartTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>TestDoubleSourceDeclareBufferPartTemplate.cs</LastGenOutput>
+    </None>
+    <None Update="TestDouble\Template\TestDoubleSourceImplementPartTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>TestDoubleSourceImplementPartTemplate.cs</LastGenOutput>
+    </None>
+    <None Update="TestDouble\Template\TestDoubleSourceIncludePartTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>TestDoubleSourceIncludePartTemplate.cs</LastGenOutput>
+    </None>
+    <None Update="TestDouble\Template\TestDoubleSourceInitBufferPartTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>TestDoubleSourceInitBufferPartTemplate.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="TestDouble\Template\TestDoubleCodeTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>TestDoubleCodeTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="TestDouble\Template\TestDoubleSourceBodyPartTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>TestDoubleSourceBodyPartTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="TestDouble\Template\TestDoubleSourceCodeTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>TestDoubleSourceCodeTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="TestDouble\Template\TestDoubleSourceDeclareBufferPartTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>TestDoubleSourceDeclareBufferPartTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="TestDouble\Template\TestDoubleSourceImplementPartTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>TestDoubleSourceImplementPartTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="TestDouble\Template\TestDoubleSourceIncludePartTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>TestDoubleSourceIncludePartTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="TestDouble\Template\TestDoubleSourceInitBufferPartTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>TestDoubleSourceInitBufferPartTemplate.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="TestDouble\Template\Code\" />
+  </ItemGroup>
+
+</Project>
