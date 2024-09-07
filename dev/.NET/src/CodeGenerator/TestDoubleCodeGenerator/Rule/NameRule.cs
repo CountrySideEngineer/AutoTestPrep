@@ -7,7 +7,7 @@ namespace TestDoubleCodeGenerator.Rule
 	internal class NameRule
 	{
 		/// <summary>
-		/// Get the name fo variable that keeps track of the number of times the functin has been called.
+		/// Get the name fo variable that keeps track of the number of times the function has been called.
 		/// </summary>
 		/// <param name="function">Target function.</param>
 		/// <returns>The name of variable.</returns>
@@ -155,6 +155,33 @@ namespace TestDoubleCodeGenerator.Rule
 			Log.DEBUG($"{nameof(argumentBuffer),16} = {argumentBuffer}");
 
 			return argumentBuffer;
+		}
+
+		public static string DeclareFormat(string dataType, string name)
+		{
+			Log.TRACE();
+
+			string declareCode = $"{dataType,16}\t{name}";
+
+			Log.DEBUG($"{nameof(declareCode),20} = \"{declareCode}\"");
+
+			return declareCode;
+		}
+
+		public static string BufferSize1MacroName
+		{
+			get
+			{
+				return "BUFFER_SIZE_1";
+			}
+		}
+
+		public static string BufferSize2MacroName
+		{
+			get
+			{
+				return "BUFFER_SIZE_2";
+			}
 		}
 	}
 }
