@@ -5,7 +5,7 @@ namespace TestDoubleCodeGenerator.TestDouble.Template
 {
 	public partial class TestDoubleSourceImplementCommonBasePartTemplate
 	{
-		public Function TestDoubleFunction { get; set } = new Function();
+		public Function TestDoubleFunction { get; set; } = new Function();
 
 		/// <summary>
 		/// Default constructor.

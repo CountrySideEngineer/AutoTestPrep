@@ -1,0 +1,20 @@
+﻿<#@ template language="C#" 
+	inherits="PointerArgumentBufferTemplate" 
+#>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="TestDoubleCodeGenerator.Rule" #>
+<#
+	string	dataType = Function.DataType;
+	string	buffName = NameRule.SingglePointerArgumentReturnValueBuffer(Function, Argument);
+	string	buffDeclare = NameRule.DeclareFormat(dataType, buffName);
+	string	sizeBuffName = NameRule.SingglePointerArgumentReturnValueSizeBuffer(Function, Argument);
+	string	sizeBuffDeclare = NameRule.DeclareFormat("long", sizeBuffName);
+	string	buffSize1Macro = NameRule.BufferSize1MacroName;
+	string	buffSize2Macro = NameRule.BufferSize2MacroName;
+#>
+<#= base.TransformText() #>
+<#= BufferDeclareCode() #>
+<#= BuffSizeDeclare() #>

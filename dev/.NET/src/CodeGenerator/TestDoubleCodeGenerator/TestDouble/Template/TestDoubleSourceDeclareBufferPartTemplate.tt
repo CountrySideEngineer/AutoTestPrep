@@ -5,3 +5,9 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
+// Test double buffers.
+<#= CalledCountDeclare() #>
+<#= TestDoubleReturnValueDeclare() #>
+
+// Argument buffers.
+<#= ArgumentBufferDeclare() #>

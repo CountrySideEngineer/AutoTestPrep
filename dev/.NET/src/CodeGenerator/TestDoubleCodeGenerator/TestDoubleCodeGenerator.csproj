@@ -14,9 +14,24 @@
     <Reference Include="Logger">
       <HintPath>..\..\bin\Logger.dll</HintPath>
     </Reference>
+    <Reference Include="TestReader.SDK">
+      <HintPath>..\..\bin\TestReader.SDK.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="TestDouble\Template\Buffer\ArgumentBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ArgumentBufferTemplate.cs</LastGenOutput>
+    </None>
+    <None Update="TestDouble\Template\Buffer\OutputSinglePointerArgumentBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>OutputSinglePointerArgumentBufferTemplate.cs</LastGenOutput>
+    </None>
+    <None Update="TestDouble\Template\Buffer\PointerArgumentBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>PointerArgumentBufferTemplate.cs</LastGenOutput>
+    </None>
     <None Update="TestDouble\Template\TestDoubleCodeTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>TestDoubleCodeTemplate.cs</LastGenOutput>
@@ -32,6 +47,10 @@
     <None Update="TestDouble\Template\TestDoubleSourceDeclareBufferPartTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>TestDoubleSourceDeclareBufferPartTemplate.cs</LastGenOutput>
+    </None>
+    <None Update="TestDouble\Template\TestDoubleSourceImplementCommonBasePartTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>TestDoubleSourceImplementCommonBasePartTemplate.cs</LastGenOutput>
     </None>
     <None Update="TestDouble\Template\TestDoubleSourceImplementPartTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
@@ -52,6 +71,21 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="TestDouble\Template\Buffer\ArgumentBufferTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ArgumentBufferTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="TestDouble\Template\Buffer\OutputSinglePointerArgumentBufferTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>OutputSinglePointerArgumentBufferTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="TestDouble\Template\Buffer\PointerArgumentBufferTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>PointerArgumentBufferTemplate.tt</DependentUpon>
+    </Compile>
     <Compile Update="TestDouble\Template\TestDoubleCodeTemplate.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -72,6 +106,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>TestDoubleSourceDeclareBufferPartTemplate.tt</DependentUpon>
     </Compile>
+    <Compile Update="TestDouble\Template\TestDoubleSourceImplementCommonBasePartTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>TestDoubleSourceImplementCommonBasePartTemplate.tt</DependentUpon>
+    </Compile>
     <Compile Update="TestDouble\Template\TestDoubleSourceImplementPartTemplate.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -90,7 +129,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="TestDouble\Template\Code\" />
+    <Folder Include="TestDouble\Template\Factory\" />
   </ItemGroup>
 
 </Project>

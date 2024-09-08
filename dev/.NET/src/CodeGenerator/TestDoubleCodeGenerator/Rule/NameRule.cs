@@ -169,7 +169,7 @@ namespace TestDoubleCodeGenerator.Rule
 
 			string declareCode = $"{dataType,-16}\t{name}";
 
-			Log.DEBUG($"{nameof(declareCode),20} = \"{declareCode}\"");
+			Log.DEBUG($"{nameof(declareCode),16} = \"{declareCode}\"");
 
 			return declareCode;
 		}

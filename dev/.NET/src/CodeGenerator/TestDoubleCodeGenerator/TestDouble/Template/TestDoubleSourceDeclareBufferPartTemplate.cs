@@ -28,6 +28,28 @@ namespace TestDoubleCodeGenerator.TestDouble.Template
         /// </summary>
         public override string TransformText()
         {
+            this.Write("// Test double buffers.\r\n");
+            
+            #line 9 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\TestDoubleSourceDeclareBufferPartTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(CalledCountDeclare()));
+            
+            #line default
+            #line hidden
+            this.Write("\r\n");
+            
+            #line 10 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\TestDoubleSourceDeclareBufferPartTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(TestDoubleReturnValueDeclare()));
+            
+            #line default
+            #line hidden
+            this.Write("\r\n\r\n// Argument buffers.\r\n");
+            
+            #line 13 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\TestDoubleSourceDeclareBufferPartTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(ArgumentBufferDeclare()));
+            
+            #line default
+            #line hidden
+            this.Write("\r\n");
             return this.GenerationEnvironment.ToString();
         }
     }
