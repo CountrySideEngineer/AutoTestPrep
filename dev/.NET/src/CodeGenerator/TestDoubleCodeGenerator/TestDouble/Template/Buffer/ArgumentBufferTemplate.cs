@@ -43,7 +43,7 @@ namespace TestDoubleCodeGenerator.TestDouble.Template.Buffer
             #line hidden
             
             #line 14 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\ArgumentBufferTemplate.tt"
-	Log.TRACE(); 
+ Log.TRACE(); 
             
             #line default
             #line hidden

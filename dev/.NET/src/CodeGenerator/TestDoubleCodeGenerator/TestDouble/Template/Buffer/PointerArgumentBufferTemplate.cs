@@ -13,6 +13,7 @@ namespace TestDoubleCodeGenerator.TestDouble.Template.Buffer
     using System.Text;
     using System.Collections.Generic;
     using TestDoubleCodeGenerator.Rule;
+    using Logger;
     using System;
     
     /// <summary>
@@ -30,38 +31,57 @@ namespace TestDoubleCodeGenerator.TestDouble.Template.Buffer
         public override string TransformText()
         {
             
-            #line 9 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\PointerArgumentBufferTemplate.tt"
-
-	string	dataType = Argument.DataType;
-	string	buffName = NameRule.SinglePointerArgumentValueBuffer(Function, Argument);
-	string	buffDeclare = NameRule.DeclareFormat(dataType, buffName);
-	string	sizeBuffName = NameRule.SinglePointerArgumentValueSizeBuffer(Function, Argument);
-	string	sizeBuffDeclare = NameRule.DeclareFormat("long", sizeBuffName);
-	string	buffSize1Macro = NameRule.BufferSize1MacroName;
-	string	buffSize2Macro = NameRule.BufferSize2MacroName;
-
+            #line 10 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\PointerArgumentBufferTemplate.tt"
+ Log.TRACE(); 
             
             #line default
             #line hidden
             
-            #line 18 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\PointerArgumentBufferTemplate.tt"
+            #line 11 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\PointerArgumentBufferTemplate.tt"
  base.TransformText(); 
             
             #line default
             #line hidden
             
-            #line 19 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\PointerArgumentBufferTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(BufferDeclareCode()));
+            #line 12 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\PointerArgumentBufferTemplate.tt"
+
+	string buffDataType = Argument.DataType;
+	string buffName = NameRule.SinglePointerArgumentValueBuffer(Function, Argument);
+	string buffDeclare = NameRule.DeclareFormat(buffDataType, buffName);
+	string buffDecCode = $"{buffDeclare}[{NameRule.BufferSize1MacroName}][{NameRule.BufferSize2MacroName}];";
+
+	Log.DEBUG($"{nameof(buffDecCode),16} = \"{buffDecCode}\"");
+
+            
+            #line default
+            #line hidden
+            
+            #line 20 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\PointerArgumentBufferTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(buffDecCode));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 20 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\PointerArgumentBufferTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(BuffSizeDeclare()));
+            #line 21 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\PointerArgumentBufferTemplate.tt"
+
+	string sizeBuffDataType = "long";
+	string sizeBuffName = NameRule.SinglePointerArgumentValueSizeBuffer(Function, Argument);
+	string sizeBuffDeclare = NameRule.DeclareFormat(sizeBuffDataType, sizeBuffName);
+	string buffSizeDecCode = $"{sizeBuffDeclare}[{NameRule.BufferSize1MacroName}];";
+
+	Log.DEBUG($"{nameof(buffSizeDecCode),16} = \"{buffSizeDecCode}\"");
+
             
             #line default
             #line hidden
+            
+            #line 29 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\PointerArgumentBufferTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(buffSizeDecCode));
+            
+            #line default
+            #line hidden
+            this.Write("\r\n");
             return this.GenerationEnvironment.ToString();
         }
     }

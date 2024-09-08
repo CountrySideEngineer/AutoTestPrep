@@ -6,15 +6,24 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#@ import namespace="TestDoubleCodeGenerator.Rule" #>
-<#
-	string	dataType = Argument.DataType;
-	string	buffName = NameRule.SinglePointerArgumentValueBuffer(Function, Argument);
-	string	buffDeclare = NameRule.DeclareFormat(dataType, buffName);
-	string	sizeBuffName = NameRule.SinglePointerArgumentValueSizeBuffer(Function, Argument);
-	string	sizeBuffDeclare = NameRule.DeclareFormat("long", sizeBuffName);
-	string	buffSize1Macro = NameRule.BufferSize1MacroName;
-	string	buffSize2Macro = NameRule.BufferSize2MacroName;
-#>
+<#@ import namespace="Logger" #>
+<# Log.TRACE(); #>
 <# base.TransformText(); #>
-<#= BufferDeclareCode() #>
-<#= BuffSizeDeclare() #>
+<#
+	string buffDataType = Argument.DataType;
+	string buffName = NameRule.SinglePointerArgumentValueBuffer(Function, Argument);
+	string buffDeclare = NameRule.DeclareFormat(buffDataType, buffName);
+	string buffDecCode = $"{buffDeclare}[{NameRule.BufferSize1MacroName}][{NameRule.BufferSize2MacroName}];";
+
+	Log.DEBUG($"{nameof(buffDecCode),16} = \"{buffDecCode}\"");
+#>
+<#= buffDecCode #>
+<#
+	string sizeBuffDataType = "long";
+	string sizeBuffName = NameRule.SinglePointerArgumentValueSizeBuffer(Function, Argument);
+	string sizeBuffDeclare = NameRule.DeclareFormat(sizeBuffDataType, sizeBuffName);
+	string buffSizeDecCode = $"{sizeBuffDeclare}[{NameRule.BufferSize1MacroName}];";
+
+	Log.DEBUG($"{nameof(buffSizeDecCode),16} = \"{buffSizeDecCode}\"");
+#>
+<#= buffSizeDecCode #>

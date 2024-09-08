@@ -11,5 +11,5 @@
 	string	declare = NameRule.DeclareFormat(dataType, buffName);
 	string	buffSizeMacro = NameRule.BufferSize1MacroName;
 #>
-<#	Log.TRACE(); #>
+<# Log.TRACE(); #>
 <#= declare #>[<#= buffSizeMacro#>];
