@@ -95,7 +95,7 @@ namespace TestDoubleCodeGenerator.Rule
 		/// <param name="function">Target function</param>
 		/// <param name="argument">The argument.</param>
 		/// <returns>The variable name.</returns>
-		public static string SingglePointerArgumentReturnValueBuffer(Function function, Parameter argument)
+		public static string SinglePointerArgumentReturnValueBuffer(Function function, Parameter argument)
 		{
 			Log.TRACE();
 
@@ -112,7 +112,7 @@ namespace TestDoubleCodeGenerator.Rule
 		/// <param name="function">Target function</param>
 		/// <param name="argument">The argument.</param>
 		/// <returns>The variable name.</returns>
-		public static string SingglePointerArgumentReturnValueSizeBuffer(Function function, Parameter argument)
+		public static string SinglePointerArgumentReturnValueSizeBuffer(Function function, Parameter argument)
 		{
 			Log.TRACE();
 
