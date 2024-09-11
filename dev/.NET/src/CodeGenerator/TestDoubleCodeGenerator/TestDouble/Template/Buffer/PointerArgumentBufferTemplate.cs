@@ -12,6 +12,7 @@ namespace TestDoubleCodeGenerator.TestDouble.Template.Buffer
     using System.Linq;
     using System.Text;
     using System.Collections.Generic;
+    using TestReader.Model;
     using TestDoubleCodeGenerator.Rule;
     using Logger;
     using System;
@@ -31,22 +32,22 @@ namespace TestDoubleCodeGenerator.TestDouble.Template.Buffer
         public override string TransformText()
         {
             
-            #line 10 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\PointerArgumentBufferTemplate.tt"
+            #line 11 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\PointerArgumentBufferTemplate.tt"
  Log.TRACE(); 
             
             #line default
             #line hidden
             
-            #line 11 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\PointerArgumentBufferTemplate.tt"
+            #line 12 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\PointerArgumentBufferTemplate.tt"
  base.TransformText(); 
             
             #line default
             #line hidden
             
-            #line 12 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\PointerArgumentBufferTemplate.tt"
+            #line 13 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\PointerArgumentBufferTemplate.tt"
 
 	string buffDataType = Argument.DataType;
-	string buffName = NameRule.SinglePointerArgumentValueBuffer(Function, Argument);
+	string buffName = NameRule.SinglePointerArgumentValueBuffer((Function)Target, Argument);
 	string buffDeclare = NameRule.DeclareFormat(buffDataType, buffName);
 	string buffDecCode = $"{buffDeclare}[{NameRule.BufferSize1MacroName}][{NameRule.BufferSize2MacroName}];";
 
@@ -56,17 +57,17 @@ namespace TestDoubleCodeGenerator.TestDouble.Template.Buffer
             #line default
             #line hidden
             
-            #line 20 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\PointerArgumentBufferTemplate.tt"
+            #line 21 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\PointerArgumentBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(buffDecCode));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 21 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\PointerArgumentBufferTemplate.tt"
+            #line 22 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\PointerArgumentBufferTemplate.tt"
 
 	string sizeBuffDataType = "long";
-	string sizeBuffName = NameRule.SinglePointerArgumentValueSizeBuffer(Function, Argument);
+	string sizeBuffName = NameRule.SinglePointerArgumentValueSizeBuffer((Function)Target, Argument);
 	string sizeBuffDeclare = NameRule.DeclareFormat(sizeBuffDataType, sizeBuffName);
 	string buffSizeDecCode = $"{sizeBuffDeclare}[{NameRule.BufferSize1MacroName}];";
 
@@ -76,7 +77,7 @@ namespace TestDoubleCodeGenerator.TestDouble.Template.Buffer
             #line default
             #line hidden
             
-            #line 29 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\PointerArgumentBufferTemplate.tt"
+            #line 30 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\PointerArgumentBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(buffSizeDecCode));
             
             #line default

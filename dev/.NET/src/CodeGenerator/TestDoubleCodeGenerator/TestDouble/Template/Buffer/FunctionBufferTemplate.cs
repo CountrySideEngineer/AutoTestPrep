@@ -21,9 +21,9 @@ namespace TestDoubleCodeGenerator.TestDouble.Template.Buffer
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\ArgumentBufferTemplate.tt"
+    #line 1 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\FunctionBufferTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
-    public partial class ArgumentBufferTemplate : BufferTemplateCommonBase
+    public partial class FunctionBufferTemplate : BufferTemplateCommonBase
     {
 #line hidden
         /// <summary>
@@ -32,36 +32,30 @@ namespace TestDoubleCodeGenerator.TestDouble.Template.Buffer
         public override string TransformText()
         {
             
-            #line 11 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\ArgumentBufferTemplate.tt"
-
-	string	dataType = Argument.ActualDataType();
-	string	buffName = NameRule.ArgumentBuffer((Function)Target, Argument);
-	string	declare = NameRule.DeclareFormat(dataType, buffName);
-	string	buffSizeMacro = NameRule.BufferSize1MacroName;
-
-            
-            #line default
-            #line hidden
-            
-            #line 17 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\ArgumentBufferTemplate.tt"
+            #line 11 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\FunctionBufferTemplate.tt"
  Log.TRACE(); 
             
             #line default
             #line hidden
             
-            #line 18 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\ArgumentBufferTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(declare));
+            #line 12 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\FunctionBufferTemplate.tt"
+
+	string calledCountDataType = "long";
+	string calledCountBuffName = NameRule.CalledCount((Function)Target);
+	string calledCountDec = NameRule.DeclareFormat(calledCountDataType, calledCountBuffName);
+
+	Log.DEBUG($"{nameof(calledCountDec),16} = \"{calledCountDec}\"");
+
             
             #line default
             #line hidden
-            this.Write("[");
             
-            #line 18 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\ArgumentBufferTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(buffSizeMacro));
+            #line 19 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\FunctionBufferTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(calledCountDec));
             
             #line default
             #line hidden
-            this.Write("];\r\n");
+            this.Write(";");
             return this.GenerationEnvironment.ToString();
         }
     }

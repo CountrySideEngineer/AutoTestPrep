@@ -5,13 +5,14 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="TestReader.Model" #>
 <#@ import namespace="TestDoubleCodeGenerator.Rule" #>
 <#@ import namespace="Logger" #>
 <#	Log.TRACE(); #>
 <# base.TransformText(); #>
 <#
 	string returnDataType = Argument.DataType;
-	string returnBuffName = NameRule.SingglePointerArgumentReturnValueBuffer(Function, Argument);
+	string returnBuffName = NameRule.SingglePointerArgumentReturnValueBuffer((Function)Target, Argument);
 	string returnBuffDec = NameRule.DeclareFormat(returnDataType, returnBuffName);
 	string returnBuffDecCode = $"{returnBuffDec}[{NameRule.BufferSize1MacroName}][{NameRule.BufferSize2MacroName}];";
 
@@ -20,7 +21,7 @@
 <#= returnBuffDecCode #>
 <# 
 	string sizeDataType = "long";
-	string sizeBuffName = NameRule.SingglePointerArgumentReturnValueSizeBuffer(Function, Argument);
+	string sizeBuffName = NameRule.SingglePointerArgumentReturnValueSizeBuffer((Function)Target, Argument);
 	string sizeBuffDec = NameRule.DeclareFormat(sizeDataType, sizeBuffName);
 	string sizeBuffDecCode = $"{sizeBuffDec}[{NameRule.BufferSize1MacroName}];";
 

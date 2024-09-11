@@ -10,11 +10,6 @@ namespace TestDoubleCodeGenerator.TestDouble.Template.Buffer
 	public partial class ArgumentBufferTemplate
 	{
 		/// <summary>
-		/// Target function.
-		/// </summary>
-		public Function Function { get; set; } = new Function();
-
-		/// <summary>
 		/// Target argument.
 		/// </summary>
 		public Parameter Argument { get; set; } = new Parameter();
@@ -22,6 +17,9 @@ namespace TestDoubleCodeGenerator.TestDouble.Template.Buffer
 		/// <summary>
 		/// Default constructor.
 		/// </summary>
-		public ArgumentBufferTemplate() : base() { }
+		public ArgumentBufferTemplate() : base()
+		{
+			Target = new Function();
+		}
 	}
 }

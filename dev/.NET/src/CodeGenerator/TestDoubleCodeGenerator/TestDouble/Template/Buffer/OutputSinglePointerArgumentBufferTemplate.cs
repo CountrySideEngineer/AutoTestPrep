@@ -12,6 +12,7 @@ namespace TestDoubleCodeGenerator.TestDouble.Template.Buffer
     using System.Linq;
     using System.Text;
     using System.Collections.Generic;
+    using TestReader.Model;
     using TestDoubleCodeGenerator.Rule;
     using Logger;
     using System;
@@ -31,22 +32,22 @@ namespace TestDoubleCodeGenerator.TestDouble.Template.Buffer
         public override string TransformText()
         {
             
-            #line 10 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\OutputSinglePointerArgumentBufferTemplate.tt"
+            #line 11 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\OutputSinglePointerArgumentBufferTemplate.tt"
 	Log.TRACE(); 
             
             #line default
             #line hidden
             
-            #line 11 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\OutputSinglePointerArgumentBufferTemplate.tt"
+            #line 12 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\OutputSinglePointerArgumentBufferTemplate.tt"
  base.TransformText(); 
             
             #line default
             #line hidden
             
-            #line 12 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\OutputSinglePointerArgumentBufferTemplate.tt"
+            #line 13 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\OutputSinglePointerArgumentBufferTemplate.tt"
 
 	string returnDataType = Argument.DataType;
-	string returnBuffName = NameRule.SingglePointerArgumentReturnValueBuffer(Function, Argument);
+	string returnBuffName = NameRule.SingglePointerArgumentReturnValueBuffer((Function)Target, Argument);
 	string returnBuffDec = NameRule.DeclareFormat(returnDataType, returnBuffName);
 	string returnBuffDecCode = $"{returnBuffDec}[{NameRule.BufferSize1MacroName}][{NameRule.BufferSize2MacroName}];";
 
@@ -56,17 +57,17 @@ namespace TestDoubleCodeGenerator.TestDouble.Template.Buffer
             #line default
             #line hidden
             
-            #line 20 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\OutputSinglePointerArgumentBufferTemplate.tt"
+            #line 21 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\OutputSinglePointerArgumentBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(returnBuffDecCode));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 21 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\OutputSinglePointerArgumentBufferTemplate.tt"
+            #line 22 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\OutputSinglePointerArgumentBufferTemplate.tt"
  
 	string sizeDataType = "long";
-	string sizeBuffName = NameRule.SingglePointerArgumentReturnValueSizeBuffer(Function, Argument);
+	string sizeBuffName = NameRule.SingglePointerArgumentReturnValueSizeBuffer((Function)Target, Argument);
 	string sizeBuffDec = NameRule.DeclareFormat(sizeDataType, sizeBuffName);
 	string sizeBuffDecCode = $"{sizeBuffDec}[{NameRule.BufferSize1MacroName}];";
 
@@ -76,7 +77,7 @@ namespace TestDoubleCodeGenerator.TestDouble.Template.Buffer
             #line default
             #line hidden
             
-            #line 29 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\OutputSinglePointerArgumentBufferTemplate.tt"
+            #line 30 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\OutputSinglePointerArgumentBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(sizeBuffDecCode));
             
             #line default

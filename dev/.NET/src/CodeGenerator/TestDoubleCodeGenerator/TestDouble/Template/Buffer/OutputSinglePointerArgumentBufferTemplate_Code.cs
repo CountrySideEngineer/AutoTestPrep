@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TestDoubleCodeGenerator.Rule;
+using TestReader.Model;
 
 namespace TestDoubleCodeGenerator.TestDouble.Template.Buffer
 {
@@ -13,6 +14,9 @@ namespace TestDoubleCodeGenerator.TestDouble.Template.Buffer
 		/// <summary>
 		/// Default constructor.
 		/// </summary>
-		public OutputSinglePointerArgumentBufferTemplate() : base() { }
+		public OutputSinglePointerArgumentBufferTemplate() : base()
+		{
+			Target = new Function();
+		}
 	}
 }

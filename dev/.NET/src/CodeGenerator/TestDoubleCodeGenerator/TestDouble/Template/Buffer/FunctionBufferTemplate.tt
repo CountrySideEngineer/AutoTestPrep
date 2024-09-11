@@ -8,11 +8,12 @@
 <#@ import namespace="TestReader.Model" #>
 <#@ import namespace="TestDoubleCodeGenerator.Rule" #>
 <#@ import namespace="Logger" #>
-<#
-	string	dataType = Argument.ActualDataType();
-	string	buffName = NameRule.ArgumentBuffer((Function)Target, Argument);
-	string	declare = NameRule.DeclareFormat(dataType, buffName);
-	string	buffSizeMacro = NameRule.BufferSize1MacroName;
-#>
 <# Log.TRACE(); #>
-<#= declare #>[<#= buffSizeMacro#>];
+<#
+	string calledCountDataType = "long";
+	string calledCountBuffName = NameRule.CalledCount((Function)Target);
+	string calledCountDec = NameRule.DeclareFormat(calledCountDataType, calledCountBuffName);
+
+	Log.DEBUG($"{nameof(calledCountDec),16} = \"{calledCountDec}\"");
+#>
+<#= calledCountDec #>;
