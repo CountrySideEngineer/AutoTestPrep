@@ -55,7 +55,7 @@ namespace TestDoubleCodeGenerator.TestDouble.Template.Buffer
             
             #line default
             #line hidden
-            this.Write(";");
+            this.Write(";\r\n");
             return this.GenerationEnvironment.ToString();
         }
     }
