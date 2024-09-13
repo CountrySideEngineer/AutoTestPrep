@@ -21,9 +21,9 @@ namespace TestDoubleCodeGenerator.TestDouble.Template.Buffer
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\FunctionBufferWithReturnValueTemplate.tt"
+    #line 1 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\FunctionWithReturnValueBufferTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
-    public partial class FunctionBufferWithReturnValueTemplate : FunctionBufferTemplate
+    public partial class FunctionWithReturnValueBufferTemplate : FunctionBufferTemplate
     {
 #line hidden
         /// <summary>
@@ -32,19 +32,19 @@ namespace TestDoubleCodeGenerator.TestDouble.Template.Buffer
         public override string TransformText()
         {
             
-            #line 11 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\FunctionBufferWithReturnValueTemplate.tt"
+            #line 11 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\FunctionWithReturnValueBufferTemplate.tt"
  Log.TRACE(); 
             
             #line default
             #line hidden
             
-            #line 12 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\FunctionBufferWithReturnValueTemplate.tt"
+            #line 12 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\FunctionWithReturnValueBufferTemplate.tt"
  base.TransformText(); 
             
             #line default
             #line hidden
             
-            #line 13 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\FunctionBufferWithReturnValueTemplate.tt"
+            #line 13 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\FunctionWithReturnValueBufferTemplate.tt"
 
 	if ("void" == Target.DataType.ToLower() && (0 == Target.PointerNum))
 	{
@@ -63,21 +63,21 @@ namespace TestDoubleCodeGenerator.TestDouble.Template.Buffer
             #line default
             #line hidden
             
-            #line 27 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\FunctionBufferWithReturnValueTemplate.tt"
+            #line 27 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\FunctionWithReturnValueBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(returnBuffDec));
             
             #line default
             #line hidden
             this.Write("[");
             
-            #line 27 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\FunctionBufferWithReturnValueTemplate.tt"
+            #line 27 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\FunctionWithReturnValueBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(buffSizeMacro));
             
             #line default
             #line hidden
             this.Write("];\r\n");
             
-            #line 28 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\FunctionBufferWithReturnValueTemplate.tt"
+            #line 28 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\FunctionWithReturnValueBufferTemplate.tt"
 
 	}
 
