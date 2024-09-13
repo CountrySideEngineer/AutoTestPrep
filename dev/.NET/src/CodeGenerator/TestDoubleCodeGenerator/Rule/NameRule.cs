@@ -17,7 +17,7 @@ namespace TestDoubleCodeGenerator.Rule
 
 			string calledCount = $"{function.Name}_called_count";
 
-			Log.DEBUG($"{nameof(calledCount),16} = {calledCount}");
+			Log.DEBUG($"{nameof(calledCount),16} = \"{calledCount}\"");
 
 			return calledCount;
 		}
@@ -33,7 +33,7 @@ namespace TestDoubleCodeGenerator.Rule
 
 			string returnValue = $"{function.Name}_return_value";
 
-			Log.DEBUG($"{nameof(returnValue),16} = {returnValue}");
+			Log.DEBUG($"{nameof(returnValue),16} = \"{returnValue}\"");
 
 			return returnValue;
 		}
@@ -50,7 +50,7 @@ namespace TestDoubleCodeGenerator.Rule
 
 			string argumentBuffer = $"{function.Name}_{argument.Name}";
 
-			Log.DEBUG($"{nameof(argumentBuffer),16} = {argumentBuffer}");
+			Log.DEBUG($"{nameof(argumentBuffer),16} = \"{argumentBuffer}\"");
 
 			return argumentBuffer;
 		}
@@ -67,7 +67,7 @@ namespace TestDoubleCodeGenerator.Rule
 
 			string argumentBuffer = $"{function.Name}_{argument.Name}_value";
 
-			Log.DEBUG($"{nameof(argumentBuffer),16} = {argumentBuffer}");
+			Log.DEBUG($"{nameof(argumentBuffer),16} = \"{argumentBuffer}\"");
 
 			return argumentBuffer;
 		}
@@ -84,7 +84,7 @@ namespace TestDoubleCodeGenerator.Rule
 
 			string argumentBuffer = $"{function.Name}_{argument.Name}_value_size";
 
-			Log.DEBUG($"{nameof(argumentBuffer),16} = {argumentBuffer}");
+			Log.DEBUG($"{nameof(argumentBuffer),16} = \"{argumentBuffer}\"");
 
 			return argumentBuffer;
 		}
@@ -101,7 +101,7 @@ namespace TestDoubleCodeGenerator.Rule
 
 			string argumentBuffer = $"{function.Name}_{argument.Name}_return_value";
 
-			Log.DEBUG($"{nameof(argumentBuffer),16} = {argumentBuffer}");
+			Log.DEBUG($"{nameof(argumentBuffer),16} = \"{argumentBuffer}\"");
 
 			return argumentBuffer;
 		}
@@ -118,7 +118,7 @@ namespace TestDoubleCodeGenerator.Rule
 
 			string argumentBuffer = $"{function.Name}_{argument.Name}_return_value_size";
 
-			Log.DEBUG($"{nameof(argumentBuffer),16} = {argumentBuffer}");
+			Log.DEBUG($"{nameof(argumentBuffer),16} = \"{argumentBuffer}\"");
 
 			return argumentBuffer;
 		}
@@ -135,7 +135,7 @@ namespace TestDoubleCodeGenerator.Rule
 
 			string argumentBuffer = $"{function.Name}_{argument.Name}_return_value";
 
-			Log.DEBUG($"{nameof(argumentBuffer),16} = {argumentBuffer}");
+			Log.DEBUG($"{nameof(argumentBuffer),16} = \"{argumentBuffer}\"");
 
 			return argumentBuffer;
 		}
@@ -152,7 +152,7 @@ namespace TestDoubleCodeGenerator.Rule
 
 			string argumentBuffer = $"{function.Name}_{argument.Name}_return_value_size";
 
-			Log.DEBUG($"{nameof(argumentBuffer),16} = {argumentBuffer}");
+			Log.DEBUG($"{nameof(argumentBuffer),16} = \"{argumentBuffer}\"");
 
 			return argumentBuffer;
 		}
