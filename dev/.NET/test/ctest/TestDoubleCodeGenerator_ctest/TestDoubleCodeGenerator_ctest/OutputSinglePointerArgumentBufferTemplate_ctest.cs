@@ -41,8 +41,8 @@ namespace TestDoubleCodeGenerator_ctest
 
 			var template = new OutputSinglePointerArgumentBufferTemplate()
 			{
-				Target = function,
-				Argument = argument
+				Function = function,
+				Target = argument
 			};
 			string code = template.TransformText();
 

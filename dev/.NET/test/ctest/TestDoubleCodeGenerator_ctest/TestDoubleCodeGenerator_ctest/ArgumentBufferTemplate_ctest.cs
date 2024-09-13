@@ -36,8 +36,8 @@ namespace TestDoubleCodeGenerator_ctest
 
 			var template = new ArgumentBufferTemplate()
 			{
-				Target = function,
-				Argument = argument
+				Function = function,
+				Target = argument
 			};
 			string code = template.TransformText();
 
