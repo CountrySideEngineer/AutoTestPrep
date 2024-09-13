@@ -15,7 +15,7 @@
     <Compile Include="..\..\..\..\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\ArgumentBufferTemplate.cs" Link="ArgumentBufferTemplate.cs" />
     <Compile Include="..\..\..\..\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\ArgumentBufferTemplate_Code.cs" Link="ArgumentBufferTemplate_Code.cs" />
     <Compile Include="..\..\..\..\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\FunctionBufferTemplate.cs" Link="FunctionBufferTemplate.cs" />
-    <Compile Include="..\..\..\..\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\FunctionBufferWithReturnValueTemplate.cs" Link="FunctionBufferWithReturnValueTemplate.cs" />
+    <Compile Include="..\..\..\..\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\FunctionWithReturnValueBufferTemplate.cs" Link="FunctionWithReturnValueBufferTemplate.cs" />
     <Compile Include="..\..\..\..\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\OutputDoublePointerArgumentBufferTemplate.cs" Link="OutputDoublePointerArgumentBufferTemplate.cs" />
     <Compile Include="..\..\..\..\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\OutputSinglePointerArgumentBufferTemplate.cs" Link="OutputSinglePointerArgumentBufferTemplate.cs" />
     <Compile Include="..\..\..\..\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\OutputSinglePointerArgumentBufferTemplate_Code.cs" Link="OutputSinglePointerArgumentBufferTemplate_Code.cs" />

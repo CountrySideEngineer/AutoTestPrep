@@ -40,7 +40,7 @@ namespace TestDoubleCodeGenerator_ctest
 				PointerNum = 2
 			};
 
-			var template = new FunctionBufferWithReturnValueTemplate()
+			var template = new FunctionWithReturnValueBufferTemplate()
 			{
 				Target = function
 			};
