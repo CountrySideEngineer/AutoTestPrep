@@ -56,6 +56,10 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>FunctionBufferTemplate.cs</LastGenOutput>
     </None>
+    <None Update="TestDouble\Template\Init\FunctionWithReturnValueBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>FunctionWithReturnValueBufferTemplate.cs</LastGenOutput>
+    </None>
     <None Update="TestDouble\Template\TestDoubleCodeTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>TestDoubleCodeTemplate.cs</LastGenOutput>
@@ -139,6 +143,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>FunctionBufferTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="TestDouble\Template\Init\FunctionWithReturnValueBufferTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FunctionWithReturnValueBufferTemplate.tt</DependentUpon>
     </Compile>
     <Compile Update="TestDouble\Template\TestDoubleCodeTemplate.cs">
       <DesignTime>True</DesignTime>
