@@ -10,16 +10,16 @@
 <#@ import namespace="Logger" #>
 <# Log.TRACE(); #>
 <#
-	string	dataType = Argument.ActualDataType();
-	string	argBuffName = NameRule.ArgumentBuffer((Function)Target, Argument);
+	string	dataType = Target.ActualDataType();
+	string	argBuffName = NameRule.ArgumentBuffer(Function, Target);
 	string	declare = NameRule.DeclareFormat(dataType, argBuffName);
 	string	buffSizeMacro = NameRule.BufferSize1MacroName;
 #>
 <#= declare #>[<#= buffSizeMacro#>];
 <#	Log.TRACE(); #>
 <#
-	string buffDataType = Argument.DataType;
-	string buffName = NameRule.SinglePointerArgumentValueBuffer((Function)Target, Argument);
+	string buffDataType = Target.DataType;
+	string buffName = NameRule.SinglePointerArgumentValueBuffer(Function, Target);
 	string buffDeclare = NameRule.DeclareFormat(buffDataType, buffName);
 	string buffDecCode = $"{buffDeclare}[{NameRule.BufferSize1MacroName}][{NameRule.BufferSize2MacroName}];";
 
@@ -28,7 +28,7 @@
 <#= buffDecCode #>
 <#
 	string sizeBuffDataType = "long";
-	string sizeBuffName = NameRule.SinglePointerArgumentValueSizeBuffer((Function)Target, Argument);
+	string sizeBuffName = NameRule.SinglePointerArgumentValueSizeBuffer(Function, Target);
 	string sizeBuffDeclare = NameRule.DeclareFormat(sizeBuffDataType, sizeBuffName);
 	string buffSizeDecCode = $"{sizeBuffDeclare}[{NameRule.BufferSize1MacroName}];";
 

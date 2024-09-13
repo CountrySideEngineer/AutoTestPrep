@@ -46,8 +46,8 @@ namespace TestDoubleCodeGenerator.TestDouble.Template.Buffer
             
             #line 13 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\PointerArgumentBufferTemplate.tt"
 
-	string buffDataType = Argument.DataType;
-	string buffName = NameRule.SinglePointerArgumentValueBuffer((Function)Target, Argument);
+	string buffDataType = Target.DataType;
+	string buffName = NameRule.SinglePointerArgumentValueBuffer(Function, Target);
 	string buffDeclare = NameRule.DeclareFormat(buffDataType, buffName);
 	string buffDecCode = $"{buffDeclare}[{NameRule.BufferSize1MacroName}][{NameRule.BufferSize2MacroName}];";
 
@@ -67,7 +67,7 @@ namespace TestDoubleCodeGenerator.TestDouble.Template.Buffer
             #line 22 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\PointerArgumentBufferTemplate.tt"
 
 	string sizeBuffDataType = "long";
-	string sizeBuffName = NameRule.SinglePointerArgumentValueSizeBuffer((Function)Target, Argument);
+	string sizeBuffName = NameRule.SinglePointerArgumentValueSizeBuffer(Function, Target);
 	string sizeBuffDeclare = NameRule.DeclareFormat(sizeBuffDataType, sizeBuffName);
 	string buffSizeDecCode = $"{sizeBuffDeclare}[{NameRule.BufferSize1MacroName}];";
 

@@ -10,8 +10,13 @@ namespace TestDoubleCodeGenerator.TestDouble.Template.Init
 	public partial class ArgumentBufferTemplate
 	{
 		/// <summary>
-		/// Argument information
+		/// The target arument of function.
 		/// </summary>
-		public Parameter Argument { get; set; } = new Parameter();
+		public Function Function { get; set; } = new Function();
+
+		public ArgumentBufferTemplate() : base()
+		{
+			Target = new Parameter();
+		}
 	}
 }

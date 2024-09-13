@@ -11,8 +11,8 @@
 <# Log.TRACE(); #>
 <# base.TransformText(); #>
 <#
-	string buffDataType = Argument.DataType;
-	string buffName = NameRule.SinglePointerArgumentValueBuffer((Function)Target, Argument);
+	string buffDataType = Target.DataType;
+	string buffName = NameRule.SinglePointerArgumentValueBuffer(Function, Target);
 	string buffDeclare = NameRule.DeclareFormat(buffDataType, buffName);
 	string buffDecCode = $"{buffDeclare}[{NameRule.BufferSize1MacroName}][{NameRule.BufferSize2MacroName}];";
 
@@ -21,7 +21,7 @@
 <#= buffDecCode #>
 <#
 	string sizeBuffDataType = "long";
-	string sizeBuffName = NameRule.SinglePointerArgumentValueSizeBuffer((Function)Target, Argument);
+	string sizeBuffName = NameRule.SinglePointerArgumentValueSizeBuffer(Function, Target);
 	string sizeBuffDeclare = NameRule.DeclareFormat(sizeBuffDataType, sizeBuffName);
 	string buffSizeDecCode = $"{sizeBuffDeclare}[{NameRule.BufferSize1MacroName}];";
 

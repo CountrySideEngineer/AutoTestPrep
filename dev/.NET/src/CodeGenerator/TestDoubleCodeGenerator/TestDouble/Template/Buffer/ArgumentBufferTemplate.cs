@@ -34,8 +34,8 @@ namespace TestDoubleCodeGenerator.TestDouble.Template.Buffer
             
             #line 11 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Buffer\ArgumentBufferTemplate.tt"
 
-	string	dataType = Argument.ActualDataType();
-	string	buffName = NameRule.ArgumentBuffer((Function)Target, Argument);
+	string	dataType = Target.ActualDataType();
+	string	buffName = NameRule.ArgumentBuffer(Function, Target);
 	string	declare = NameRule.DeclareFormat(dataType, buffName);
 	string	buffSizeMacro = NameRule.BufferSize1MacroName;
 

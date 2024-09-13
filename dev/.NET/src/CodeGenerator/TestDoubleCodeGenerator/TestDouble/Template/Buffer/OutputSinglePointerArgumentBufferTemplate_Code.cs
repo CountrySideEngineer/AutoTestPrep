@@ -14,9 +14,6 @@ namespace TestDoubleCodeGenerator.TestDouble.Template.Buffer
 		/// <summary>
 		/// Default constructor.
 		/// </summary>
-		public OutputSinglePointerArgumentBufferTemplate() : base()
-		{
-			Target = new Function();
-		}
+		public OutputSinglePointerArgumentBufferTemplate() : base() { }
 	}
 }
