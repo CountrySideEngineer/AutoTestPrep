@@ -1,0 +1,50 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\..\..\src\CodeGenerator\TestDoubleCodeGenerator\Rule\NameRule.cs" Link="NameRule.cs" />
+    <Compile Include="..\..\..\..\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\BufferTemplateCommonBase.cs" Link="BufferTemplateCommonBase.cs" />
+    <Compile Include="..\..\..\..\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Code\BufferTemplateCommonBase_Code.cs" Link="BufferTemplateCommonBase_Code.cs" />
+    <Compile Include="..\..\..\..\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Init\ArgumentBufferTemplate.cs" Link="ArgumentBufferTemplate.cs" />
+    <Compile Include="..\..\..\..\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Init\ArgumentBufferTemplate_Code.cs" Link="ArgumentBufferTemplate_Code.cs" />
+    <Compile Include="..\..\..\..\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Init\FunctionBufferTemplate.cs" Link="FunctionBufferTemplate.cs" />
+    <Compile Include="..\..\..\..\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Init\FunctionWithReturnValueBufferTemplate.cs" Link="FunctionWithReturnValueBufferTemplate.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="coverlet.collector" Version="6.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
+    <PackageReference Include="NUnit" Version="4.2.2" />
+    <PackageReference Include="NUnit.Analyzers" Version="4.3.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="NUnit3TestAdapter" Version="4.6.0" />
+    <PackageReference Include="System.CodeDom" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Logger">
+      <HintPath>..\..\..\..\src\bin\Logger.dll</HintPath>
+    </Reference>
+    <Reference Include="TestReader.SDK">
+      <HintPath>..\..\..\..\src\bin\TestReader.SDK.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="NUnit.Framework" />
+  </ItemGroup>
+
+</Project>
