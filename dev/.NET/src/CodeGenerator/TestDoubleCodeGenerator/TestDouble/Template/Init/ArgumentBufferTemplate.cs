@@ -43,20 +43,19 @@ namespace TestDoubleCodeGenerator.TestDouble.Template.Init
 	string	buffName = NameRule.ArgumentBuffer(Function, Target);
 	string	buffSizeMacro = NameRule.BufferSize1MacroName;
 
-
             
             #line default
             #line hidden
             this.Write("\tfor (int index = 0; index < ");
             
-            #line 17 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Init\ArgumentBufferTemplate.tt"
+            #line 16 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Init\ArgumentBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(buffSizeMacro));
             
             #line default
             #line hidden
             this.Write("; index++) {\r\n\t\t");
             
-            #line 18 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Init\ArgumentBufferTemplate.tt"
+            #line 17 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Init\ArgumentBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(buffName));
             
             #line default
