@@ -17,6 +17,7 @@
     <Compile Include="..\..\..\..\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Init\ArgumentBufferTemplate_Code.cs" Link="ArgumentBufferTemplate_Code.cs" />
     <Compile Include="..\..\..\..\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Init\FunctionBufferTemplate.cs" Link="FunctionBufferTemplate.cs" />
     <Compile Include="..\..\..\..\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Init\FunctionWithReturnValueBufferTemplate.cs" Link="FunctionWithReturnValueBufferTemplate.cs" />
+    <Compile Include="..\..\..\..\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Init\PointerArgumentBufferTemplate.cs" Link="PointerArgumentBufferTemplate.cs" />
   </ItemGroup>
 
   <ItemGroup>
