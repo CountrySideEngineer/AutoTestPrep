@@ -60,6 +60,10 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>FunctionWithReturnValueBufferTemplate.cs</LastGenOutput>
     </None>
+    <None Update="TestDouble\Template\Init\OutputSinglePointerArgumentBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>OutputSinglePointerArgumentBufferTemplate.cs</LastGenOutput>
+    </None>
     <None Update="TestDouble\Template\Init\PointerArgumentBufferTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>PointerArgumentBufferTemplate.cs</LastGenOutput>
@@ -152,6 +156,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>FunctionWithReturnValueBufferTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="TestDouble\Template\Init\OutputSinglePointerArgumentBufferTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>OutputSinglePointerArgumentBufferTemplate.tt</DependentUpon>
     </Compile>
     <Compile Update="TestDouble\Template\Init\PointerArgumentBufferTemplate.cs">
       <DesignTime>True</DesignTime>
