@@ -11,10 +11,10 @@
 <# Log.TRACE(); #>
 <#
 	string	buffName = NameRule.ArgumentBuffer(Function, Target);
-	string inputBuffName = NameRule.SinglePointerArgumentValueBuffer(Function, Target);
-	string inputSizeBuffName = NameRule.SinglePointerArgumentValueSizeBuffer(Function, Target);
-	string buffSize1Macro = NameRule.BufferSize1MacroName;
-	string buffSize2Macro = NameRule.BufferSize2MacroName;
+	string	inputBuffName = NameRule.SinglePointerArgumentValueBuffer(Function, Target);
+	string	inputSizeBuffName = NameRule.SinglePointerArgumentValueSizeBuffer(Function, Target);
+	string	buffSize1Macro = NameRule.BufferSize1MacroName;
+	string	buffSize2Macro = NameRule.BufferSize2MacroName;
 
 	Log.DEBUG($"{nameof(inputBuffName),16} = \"{inputBuffName}\"");
 	Log.DEBUG($"{nameof(inputSizeBuffName),16} = \"{inputSizeBuffName}\"");

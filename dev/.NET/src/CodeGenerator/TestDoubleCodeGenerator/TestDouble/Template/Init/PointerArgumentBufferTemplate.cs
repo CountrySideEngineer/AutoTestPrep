@@ -41,10 +41,10 @@ namespace TestDoubleCodeGenerator.TestDouble.Template.Init
             #line 12 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Init\PointerArgumentBufferTemplate.tt"
 
 	string	buffName = NameRule.ArgumentBuffer(Function, Target);
-	string inputBuffName = NameRule.SinglePointerArgumentValueBuffer(Function, Target);
-	string inputSizeBuffName = NameRule.SinglePointerArgumentValueSizeBuffer(Function, Target);
-	string buffSize1Macro = NameRule.BufferSize1MacroName;
-	string buffSize2Macro = NameRule.BufferSize2MacroName;
+	string	inputBuffName = NameRule.SinglePointerArgumentValueBuffer(Function, Target);
+	string	inputSizeBuffName = NameRule.SinglePointerArgumentValueSizeBuffer(Function, Target);
+	string	buffSize1Macro = NameRule.BufferSize1MacroName;
+	string	buffSize2Macro = NameRule.BufferSize2MacroName;
 
 	Log.DEBUG($"{nameof(inputBuffName),16} = \"{inputBuffName}\"");
 	Log.DEBUG($"{nameof(inputSizeBuffName),16} = \"{inputSizeBuffName}\"");
