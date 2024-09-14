@@ -41,13 +41,13 @@ namespace TestDoubleCodeGenerator.TestDouble.Template.Init
             #line 12 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Init\PointerArgumentBufferTemplate.tt"
 
 	string	buffName = NameRule.ArgumentBuffer(Function, Target);
-	string returnBuffName = NameRule.SinglePointerArgumentValueBuffer(Function, Target);
-	string returnSizeBuffName = NameRule.SinglePointerArgumentValueSizeBuffer(Function, Target);
+	string inputBuffName = NameRule.SinglePointerArgumentValueBuffer(Function, Target);
+	string inputSizeBuffName = NameRule.SinglePointerArgumentValueSizeBuffer(Function, Target);
 	string buffSize1Macro = NameRule.BufferSize1MacroName;
 	string buffSize2Macro = NameRule.BufferSize2MacroName;
 
-	Log.DEBUG($"{nameof(returnBuffName),16} = \"{returnBuffName}\"");
-	Log.DEBUG($"{nameof(returnSizeBuffName),16} = \"{returnSizeBuffName}\"");
+	Log.DEBUG($"{nameof(inputBuffName),16} = \"{inputBuffName}\"");
+	Log.DEBUG($"{nameof(inputSizeBuffName),16} = \"{inputSizeBuffName}\"");
 
             
             #line default
@@ -76,14 +76,14 @@ namespace TestDoubleCodeGenerator.TestDouble.Template.Init
             this.Write("; index2++) {\r\n\t\t\t");
             
             #line 25 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Init\PointerArgumentBufferTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(returnBuffName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(inputBuffName));
             
             #line default
             #line hidden
             this.Write("[index1][index2] = 0;\r\n\t\t}\r\n\t\t");
             
             #line 27 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Init\PointerArgumentBufferTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(returnSizeBuffName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(inputSizeBuffName));
             
             #line default
             #line hidden
