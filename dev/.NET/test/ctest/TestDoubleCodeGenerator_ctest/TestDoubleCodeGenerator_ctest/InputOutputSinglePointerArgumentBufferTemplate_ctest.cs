@@ -9,7 +9,7 @@ using TestReader.Model;
 
 namespace TestDoubleCodeGenerator_ctest
 {
-	public class OutputSinglePointerArgumentBufferTemplate_ctest
+	internal class InputOutputSinglePointerArgumentBufferTemplate_ctest
 	{
 		[OneTimeSetUp]
 		public void OneTimeSetUp()
@@ -39,7 +39,7 @@ namespace TestDoubleCodeGenerator_ctest
 				PointerNum = 1
 			};
 
-			var template = new OutputSinglePointerArgumentBufferTemplate()
+			var template = new InputOutputSinglePointerArgumentBufferTemplate()
 			{
 				Function = function,
 				Target = argument
@@ -47,6 +47,8 @@ namespace TestDoubleCodeGenerator_ctest
 			string code = template.TransformText();
 
 			string expect = $"{"ArgDataType*",-16}\tSampleFunction_Argument1[BUFFER_SIZE_1];" + Environment.NewLine;
+			expect += $"{"ArgDataType",-16}\tSampleFunction_Argument1_value[BUFFER_SIZE_1][BUFFER_SIZE_2];" + Environment.NewLine;
+			expect += $"{"long",-16}\tSampleFunction_Argument1_value_size[BUFFER_SIZE_1];" + Environment.NewLine;
 			expect += $"{"ArgDataType",-16}\tSampleFunction_Argument1_return_value[BUFFER_SIZE_1][BUFFER_SIZE_2];" + Environment.NewLine;
 			expect += $"{"long",-16}\tSampleFunction_Argument1_return_value_size[BUFFER_SIZE_1];" + Environment.NewLine;
 
