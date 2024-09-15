@@ -20,6 +20,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="TestDouble\Template\Body\ArgumentBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ArgumentBufferTemplate.cs</LastGenOutput>
+    </None>
     <None Update="TestDouble\Template\Body\FunctionBufferTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>FunctionBufferTemplate.cs</LastGenOutput>
@@ -139,6 +143,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="TestDouble\Template\Body\ArgumentBufferTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ArgumentBufferTemplate.tt</DependentUpon>
+    </Compile>
     <Compile Update="TestDouble\Template\Body\FunctionBufferTemplate.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
