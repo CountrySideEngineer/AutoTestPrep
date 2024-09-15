@@ -11,18 +11,18 @@
 <# Log.TRACE(); #>
 <#
 	string	buffName = NameRule.ArgumentBuffer(Function, Target);
-	string	returnBuffName = NameRule.SinglePointerArgumentReturnValueBuffer(Function, Target);
-	string	returnSizeBuffName = NameRule.SinglePointerArgumentReturnValueSizeBuffer(Function, Target);
+	string	inputBuffName = NameRule.SinglePointerArgumentValueBuffer(Function, Target);
+	string	inputSizeBuffName = NameRule.SinglePointerArgumentValueSizeBuffer(Function, Target);
 	string	buffSize1Macro = NameRule.BufferSize1MacroName;
 	string	buffSize2Macro = NameRule.BufferSize2MacroName;
 
-	Log.DEBUG($"{nameof(returnBuffName),16} = \"{returnBuffName}\"");
-	Log.DEBUG($"{nameof(returnSizeBuffName),16} = \"{returnSizeBuffName}\"");
+	Log.DEBUG($"{nameof(inputBuffName),16} = \"{inputBuffName}\"");
+	Log.DEBUG($"{nameof(inputSizeBuffName),16} = \"{inputSizeBuffName}\"");
 #>
 	for (int index1 = 0; index1 < <#= buffSize1Macro #>; index1++) {
 		<#= buffName #>[index1] = 0;
 		for (int index2 = 0; index2 < <#= buffSize2Macro #>; index2++) {
-			<#= returnBuffName #>[index1][index2] = 0;
+			<#= inputBuffName #>[index1][index2] = 0;
 		}
-		<#= returnSizeBuffName #>[index1] = 0;
+		<#= inputSizeBuffName #>[index1] = 0;
 	}

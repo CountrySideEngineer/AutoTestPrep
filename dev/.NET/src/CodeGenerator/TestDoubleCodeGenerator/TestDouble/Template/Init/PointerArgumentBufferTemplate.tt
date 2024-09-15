@@ -8,21 +8,3 @@
 <#@ import namespace="TestReader.Model" #>
 <#@ import namespace="TestDoubleCodeGenerator.Rule" #>
 <#@ import namespace="Logger" #>
-<# Log.TRACE(); #>
-<#
-	string	buffName = NameRule.ArgumentBuffer(Function, Target);
-	string	inputBuffName = NameRule.SinglePointerArgumentValueBuffer(Function, Target);
-	string	inputSizeBuffName = NameRule.SinglePointerArgumentValueSizeBuffer(Function, Target);
-	string	buffSize1Macro = NameRule.BufferSize1MacroName;
-	string	buffSize2Macro = NameRule.BufferSize2MacroName;
-
-	Log.DEBUG($"{nameof(inputBuffName),16} = \"{inputBuffName}\"");
-	Log.DEBUG($"{nameof(inputSizeBuffName),16} = \"{inputSizeBuffName}\"");
-#>
-	for (int index1 = 0; index1 < <#= buffSize1Macro #>; index1++) {
-		<#= buffName #>[index1] = 0;
-		for (int index2 = 0; index2 < <#= buffSize2Macro #>; index2++) {
-			<#= inputBuffName #>[index1][index2] = 0;
-		}
-		<#= inputSizeBuffName #>[index1] = 0;
-	}

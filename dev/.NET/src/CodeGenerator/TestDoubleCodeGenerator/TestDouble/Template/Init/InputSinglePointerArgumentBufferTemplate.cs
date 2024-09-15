@@ -21,9 +21,9 @@ namespace TestDoubleCodeGenerator.TestDouble.Template.Init
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Init\OutputSinglePointerArgumentBufferTemplate.tt"
+    #line 1 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Init\InputSinglePointerArgumentBufferTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
-    public partial class OutputSinglePointerArgumentBufferTemplate : ArgumentBufferTemplate
+    public partial class InputSinglePointerArgumentBufferTemplate : ArgumentBufferTemplate
     {
 #line hidden
         /// <summary>
@@ -32,58 +32,58 @@ namespace TestDoubleCodeGenerator.TestDouble.Template.Init
         public override string TransformText()
         {
             
-            #line 11 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Init\OutputSinglePointerArgumentBufferTemplate.tt"
+            #line 11 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Init\InputSinglePointerArgumentBufferTemplate.tt"
  Log.TRACE(); 
             
             #line default
             #line hidden
             
-            #line 12 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Init\OutputSinglePointerArgumentBufferTemplate.tt"
+            #line 12 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Init\InputSinglePointerArgumentBufferTemplate.tt"
 
 	string	buffName = NameRule.ArgumentBuffer(Function, Target);
-	string	returnBuffName = NameRule.SinglePointerArgumentReturnValueBuffer(Function, Target);
-	string	returnSizeBuffName = NameRule.SinglePointerArgumentReturnValueSizeBuffer(Function, Target);
+	string	inputBuffName = NameRule.SinglePointerArgumentValueBuffer(Function, Target);
+	string	inputSizeBuffName = NameRule.SinglePointerArgumentValueSizeBuffer(Function, Target);
 	string	buffSize1Macro = NameRule.BufferSize1MacroName;
 	string	buffSize2Macro = NameRule.BufferSize2MacroName;
 
-	Log.DEBUG($"{nameof(returnBuffName),16} = \"{returnBuffName}\"");
-	Log.DEBUG($"{nameof(returnSizeBuffName),16} = \"{returnSizeBuffName}\"");
+	Log.DEBUG($"{nameof(inputBuffName),16} = \"{inputBuffName}\"");
+	Log.DEBUG($"{nameof(inputSizeBuffName),16} = \"{inputSizeBuffName}\"");
 
             
             #line default
             #line hidden
             this.Write("\tfor (int index1 = 0; index1 < ");
             
-            #line 22 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Init\OutputSinglePointerArgumentBufferTemplate.tt"
+            #line 22 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Init\InputSinglePointerArgumentBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(buffSize1Macro));
             
             #line default
             #line hidden
             this.Write("; index1++) {\r\n\t\t");
             
-            #line 23 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Init\OutputSinglePointerArgumentBufferTemplate.tt"
+            #line 23 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Init\InputSinglePointerArgumentBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(buffName));
             
             #line default
             #line hidden
             this.Write("[index1] = 0;\r\n\t\tfor (int index2 = 0; index2 < ");
             
-            #line 24 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Init\OutputSinglePointerArgumentBufferTemplate.tt"
+            #line 24 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Init\InputSinglePointerArgumentBufferTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(buffSize2Macro));
             
             #line default
             #line hidden
             this.Write("; index2++) {\r\n\t\t\t");
             
-            #line 25 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Init\OutputSinglePointerArgumentBufferTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(returnBuffName));
+            #line 25 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Init\InputSinglePointerArgumentBufferTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(inputBuffName));
             
             #line default
             #line hidden
             this.Write("[index1][index2] = 0;\r\n\t\t}\r\n\t\t");
             
-            #line 27 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Init\OutputSinglePointerArgumentBufferTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(returnSizeBuffName));
+            #line 27 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\Init\InputSinglePointerArgumentBufferTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(inputSizeBuffName));
             
             #line default
             #line hidden
