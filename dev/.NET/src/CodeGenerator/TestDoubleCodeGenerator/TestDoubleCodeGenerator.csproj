@@ -20,6 +20,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="TestDouble\Template\Body\FunctionBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>FunctionBufferTemplate.cs</LastGenOutput>
+    </None>
+    <None Update="TestDouble\Template\Body\FunctionWithReturnValueBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>FunctionWithReturnValueBufferTemplate.cs</LastGenOutput>
+    </None>
     <None Update="TestDouble\Template\BufferTemplateCommonBase.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>BufferTemplateCommonBase.cs</LastGenOutput>
@@ -131,6 +139,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="TestDouble\Template\Body\FunctionBufferTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FunctionBufferTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="TestDouble\Template\Body\FunctionWithReturnValueBufferTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FunctionWithReturnValueBufferTemplate.tt</DependentUpon>
+    </Compile>
     <Compile Update="TestDouble\Template\BufferTemplateCommonBase.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
