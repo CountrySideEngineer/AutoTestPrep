@@ -1,10 +1,15 @@
 ﻿using Logger;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using TestDoubleCodeGenerator.TestDouble.Template.Init;
 using TestReader.Model;
 
 namespace TestDoubleCodeGenerator_Init_ctest
 {
-	internal class OutputSinglePointerArgumentBufferTemplate_Init_ctest
+	internal class InputOutputSinglePointerArgumentBufferTemplate_Init_ctest
 	{
 		[OneTimeSetUp]
 		public void OneTimeSetUp()
@@ -34,19 +39,22 @@ namespace TestDoubleCodeGenerator_Init_ctest
 				PointerNum = 2
 			};
 
-			var template = new OutputSinglePointerArgumentBufferTemplate()
+			var template = new InputOutputSinglePointerArgumentBufferTemplate()
 			{
 				Function = function,
 				Target = argument
 			};
 			string code = template.TransformText();
 
+
 			string expect =
 				$"\tfor (int index1 = 0; index1 < BUFFER_SIZE_1; index1++) {{" + Environment.NewLine +
 				$"\t\tSampleFunction_Argument1[index1] = 0;" + Environment.NewLine +
 				$"\t\tfor (int index2 = 0; index2 < BUFFER_SIZE_2; index2++) {{" + Environment.NewLine +
+				$"\t\t\tSampleFunction_Argument1_value[index1][index2] = 0;" + Environment.NewLine +
 				$"\t\t\tSampleFunction_Argument1_return_value[index1][index2] = 0;" + Environment.NewLine +
 				$"\t\t}}" + Environment.NewLine +
+				$"\t\tSampleFunction_Argument1_value_size[index1] = 0;" + Environment.NewLine +
 				$"\t\tSampleFunction_Argument1_return_value_size[index1] = 0;" + Environment.NewLine +
 				$"\t}}" + Environment.NewLine;
 
