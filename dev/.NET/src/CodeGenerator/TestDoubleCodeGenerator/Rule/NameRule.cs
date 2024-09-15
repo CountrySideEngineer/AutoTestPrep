@@ -6,6 +6,17 @@ namespace TestDoubleCodeGenerator.Rule
 {
 	internal class NameRule
 	{
+		public static string InitializeMethodName(Function function)
+		{
+			Log.TRACE();
+
+			string initFuncName = $"{function.Name}_init";
+
+			Log.DEBUG($"{nameof(initFuncName),16} = \"{initFuncName}\"");
+
+			return initFuncName;
+		}
+
 		/// <summary>
 		/// Get the name fo variable that keeps track of the number of times the function has been called.
 		/// </summary>

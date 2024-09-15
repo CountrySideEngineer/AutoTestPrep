@@ -36,6 +36,14 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>FunctionWithReturnValueBufferTemplate.cs</LastGenOutput>
     </None>
+    <None Update="TestDouble\Template\Buffer\InputOutputSinglePointerArgumentBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>InputOutputSinglePointerArgumentBufferTemplate.cs</LastGenOutput>
+    </None>
+    <None Update="TestDouble\Template\Buffer\InputSinglePointerArgumentBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>InputSinglePointerArgumentBufferTemplate.cs</LastGenOutput>
+    </None>
     <None Update="TestDouble\Template\Buffer\OutputDoublePointerArgumentBufferTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>OutputDoublePointerArgumentBufferTemplate.cs</LastGenOutput>
@@ -51,6 +59,10 @@
     <None Update="TestDouble\Template\Init\ArgumentBufferTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ArgumentBufferTemplate.cs</LastGenOutput>
+    </None>
+    <None Update="TestDouble\Template\Init\BufferInitializeMethodTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>BufferInitializeMethodTemplate.cs</LastGenOutput>
     </None>
     <None Update="TestDouble\Template\Init\FunctionBufferTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
@@ -131,6 +143,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>FunctionWithReturnValueBufferTemplate.tt</DependentUpon>
     </Compile>
+    <Compile Update="TestDouble\Template\Buffer\InputOutputSinglePointerArgumentBufferTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>InputOutputSinglePointerArgumentBufferTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="TestDouble\Template\Buffer\InputSinglePointerArgumentBufferTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>InputSinglePointerArgumentBufferTemplate.tt</DependentUpon>
+    </Compile>
     <Compile Update="TestDouble\Template\Buffer\OutputDoublePointerArgumentBufferTemplate.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -150,6 +172,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>ArgumentBufferTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="TestDouble\Template\Init\BufferInitializeMethodTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>BufferInitializeMethodTemplate.tt</DependentUpon>
     </Compile>
     <Compile Update="TestDouble\Template\Init\FunctionBufferTemplate.cs">
       <DesignTime>True</DesignTime>
