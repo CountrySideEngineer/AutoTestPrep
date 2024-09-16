@@ -32,6 +32,18 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>FunctionWithReturnValueBufferTemplate.cs</LastGenOutput>
     </None>
+    <None Update="TestDouble\Template\Body\InputOutputSinglePointerArgumentBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>InputOutputSinglePointerArgumentBufferTemplate.cs</LastGenOutput>
+    </None>
+    <None Update="TestDouble\Template\Body\InputSinglePointerArgumentBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>InputSinglePointerArgumentBufferTemplate.cs</LastGenOutput>
+    </None>
+    <None Update="TestDouble\Template\Body\OutputSinglePointerArgumentBufferTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>OutputSinglePointerArgumentBufferTemplate.cs</LastGenOutput>
+    </None>
     <None Update="TestDouble\Template\BufferTemplateCommonBase.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>BufferTemplateCommonBase.cs</LastGenOutput>
@@ -157,6 +169,21 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>FunctionWithReturnValueBufferTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="TestDouble\Template\Body\InputOutputSinglePointerArgumentBufferTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>InputOutputSinglePointerArgumentBufferTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="TestDouble\Template\Body\InputSinglePointerArgumentBufferTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>InputSinglePointerArgumentBufferTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="TestDouble\Template\Body\OutputSinglePointerArgumentBufferTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>OutputSinglePointerArgumentBufferTemplate.tt</DependentUpon>
     </Compile>
     <Compile Update="TestDouble\Template\BufferTemplateCommonBase.cs">
       <DesignTime>True</DesignTime>
