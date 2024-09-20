@@ -24,6 +24,10 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ArgumentBufferTemplate.cs</LastGenOutput>
     </None>
+    <None Update="TestDouble\Template\Body\BodyTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>BodyTemplate.cs</LastGenOutput>
+    </None>
     <None Update="TestDouble\Template\Body\FunctionBufferTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>FunctionBufferTemplate.cs</LastGenOutput>
@@ -163,6 +167,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>ArgumentBufferTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="TestDouble\Template\Body\BodyTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>BodyTemplate.tt</DependentUpon>
     </Compile>
     <Compile Update="TestDouble\Template\Body\FunctionBufferTemplate.cs">
       <DesignTime>True</DesignTime>
