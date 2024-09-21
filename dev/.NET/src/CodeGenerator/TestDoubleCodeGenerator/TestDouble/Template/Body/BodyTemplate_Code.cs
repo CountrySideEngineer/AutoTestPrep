@@ -17,14 +17,17 @@ namespace TestDoubleCodeGenerator.TestDouble.Template.Body
 			Log.DEBUG($"{nameof(targetFunction.Name),16} = {targetFunction.Name}");
 
 			string argumentCode = string.Empty;
-			if ((null == targetFunction.Arguments) || (!targetFunction.Arguments.Any()))
+			try
 			{
-				throw new NullReferenceException();
+				foreach (var argument in targetFunction.Arguments)
+				{
+					string code = ArgumentCode(targetFunction, argument);
+					argumentCode += code;
+				}
 			}
-			foreach (var argument in targetFunction.Arguments)
+			catch (NullReferenceException)
 			{
-				string code = ArgumentCode(targetFunction, argument);
-				argumentCode += code;
+				argumentCode = string.Empty;
 			}
 
 			return argumentCode;
