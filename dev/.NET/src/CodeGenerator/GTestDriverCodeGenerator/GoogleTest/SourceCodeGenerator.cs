@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CodeGenerator.GoogleTest
 {
-	public class CodeGenerator : ACodeGenerator
+	public class SourceCodeGenerator : ACodeGenerator
 	{
 		public string TestHeaderFileName { get; set; } = string.Empty;
 
@@ -18,7 +18,7 @@ namespace CodeGenerator.GoogleTest
 		/// <summary>
 		/// Default constructor.
 		/// </summary>
-		public CodeGenerator() : base() { }
+		public SourceCodeGenerator() : base() { }
 
 		/// <summary>
 		/// Create test driver code template.
