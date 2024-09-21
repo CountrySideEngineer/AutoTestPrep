@@ -5,6 +5,7 @@
 #include <windows.h>
 #include "gtest/gtest.h"
 #include "sample_function_004_test.h"
+
 //No global variables are refered by function sample_function_004.
 
 //Test target function declare
@@ -33,7 +34,7 @@ TEST_F(sample_function_004_utest, sample_function_004_utest_001)
 	int _ret_val = sample_function_004(input1, input2);
 
 	//Check the test result by comparing the output with the expected value.
-	ASSERT_EQ(0, _ret_val);
+	ASSERT_EQ(0, ret_val);
 	ASSERT_EQ(0, _input2[0]);
 	ASSERT_EQ(0, _input2[1]);
 }
@@ -55,7 +56,7 @@ TEST_F(sample_function_004_utest, sample_function_004_utest_002)
 	int _ret_val = sample_function_004(input1, input2);
 
 	//Check the test result by comparing the output with the expected value.
-	ASSERT_EQ(1, _ret_val);
+	ASSERT_EQ(1, ret_val);
 	ASSERT_EQ(0, _input2[0]);
 	ASSERT_EQ(1, _input2[1]);
 }
@@ -77,7 +78,7 @@ TEST_F(sample_function_004_utest, sample_function_004_utest_003)
 	int _ret_val = sample_function_004(input1, input2);
 
 	//Check the test result by comparing the output with the expected value.
-	ASSERT_EQ(-1, _ret_val);
+	ASSERT_EQ(-1, ret_val);
 	ASSERT_EQ(0, _input2[0]);
 	ASSERT_EQ(-1, _input2[1]);
 }
@@ -99,7 +100,7 @@ TEST_F(sample_function_004_utest, sample_function_004_utest_004)
 	int _ret_val = sample_function_004(input1, input2);
 
 	//Check the test result by comparing the output with the expected value.
-	ASSERT_EQ(2, _ret_val);
+	ASSERT_EQ(2, ret_val);
 	ASSERT_EQ(0, _input2[0]);
 	ASSERT_EQ(2, _input2[1]);
 }
@@ -121,7 +122,7 @@ TEST_F(sample_function_004_utest, sample_function_004_utest_005)
 	int _ret_val = sample_function_004(input1, input2);
 
 	//Check the test result by comparing the output with the expected value.
-	ASSERT_EQ(-2, _ret_val);
+	ASSERT_EQ(-2, ret_val);
 	ASSERT_EQ(0, _input2[0]);
 	ASSERT_EQ(-2, _input2[1]);
 }
@@ -143,7 +144,7 @@ TEST_F(sample_function_004_utest, sample_function_004_utest_006)
 	int _ret_val = sample_function_004(input1, input2);
 
 	//Check the test result by comparing the output with the expected value.
-	ASSERT_EQ(1, _ret_val);
+	ASSERT_EQ(1, ret_val);
 	ASSERT_EQ(1, _input2[0]);
 	ASSERT_EQ(0, _input2[1]);
 }
@@ -165,7 +166,7 @@ TEST_F(sample_function_004_utest, sample_function_004_utest_007)
 	int _ret_val = sample_function_004(input1, input2);
 
 	//Check the test result by comparing the output with the expected value.
-	ASSERT_EQ(2, _ret_val);
+	ASSERT_EQ(2, ret_val);
 	ASSERT_EQ(1, _input2[0]);
 	ASSERT_EQ(1, _input2[1]);
 }
@@ -187,7 +188,7 @@ TEST_F(sample_function_004_utest, sample_function_004_utest_008)
 	int _ret_val = sample_function_004(input1, input2);
 
 	//Check the test result by comparing the output with the expected value.
-	ASSERT_EQ(0, _ret_val);
+	ASSERT_EQ(0, ret_val);
 	ASSERT_EQ(1, _input2[0]);
 	ASSERT_EQ(-1, _input2[1]);
 }
@@ -209,7 +210,7 @@ TEST_F(sample_function_004_utest, sample_function_004_utest_009)
 	int _ret_val = sample_function_004(input1, input2);
 
 	//Check the test result by comparing the output with the expected value.
-	ASSERT_EQ(3, _ret_val);
+	ASSERT_EQ(3, ret_val);
 	ASSERT_EQ(1, _input2[0]);
 	ASSERT_EQ(2, _input2[1]);
 }
@@ -231,7 +232,7 @@ TEST_F(sample_function_004_utest, sample_function_004_utest_010)
 	int _ret_val = sample_function_004(input1, input2);
 
 	//Check the test result by comparing the output with the expected value.
-	ASSERT_EQ(-1, _ret_val);
+	ASSERT_EQ(-1, ret_val);
 	ASSERT_EQ(1, _input2[0]);
 	ASSERT_EQ(-2, _input2[1]);
 }
@@ -253,7 +254,7 @@ TEST_F(sample_function_004_utest, sample_function_004_utest_011)
 	int _ret_val = sample_function_004(input1, input2);
 
 	//Check the test result by comparing the output with the expected value.
-	ASSERT_EQ(-1, _ret_val);
+	ASSERT_EQ(-1, ret_val);
 	ASSERT_EQ(-1, _input2[0]);
 	ASSERT_EQ(0, _input2[1]);
 }
@@ -275,7 +276,7 @@ TEST_F(sample_function_004_utest, sample_function_004_utest_012)
 	int _ret_val = sample_function_004(input1, input2);
 
 	//Check the test result by comparing the output with the expected value.
-	ASSERT_EQ(0, _ret_val);
+	ASSERT_EQ(0, ret_val);
 	ASSERT_EQ(-1, _input2[0]);
 	ASSERT_EQ(1, _input2[1]);
 }
@@ -297,7 +298,7 @@ TEST_F(sample_function_004_utest, sample_function_004_utest_013)
 	int _ret_val = sample_function_004(input1, input2);
 
 	//Check the test result by comparing the output with the expected value.
-	ASSERT_EQ(-2, _ret_val);
+	ASSERT_EQ(-2, ret_val);
 	ASSERT_EQ(-1, _input2[0]);
 	ASSERT_EQ(-1, _input2[1]);
 }
@@ -319,7 +320,7 @@ TEST_F(sample_function_004_utest, sample_function_004_utest_014)
 	int _ret_val = sample_function_004(input1, input2);
 
 	//Check the test result by comparing the output with the expected value.
-	ASSERT_EQ(1, _ret_val);
+	ASSERT_EQ(1, ret_val);
 	ASSERT_EQ(-1, _input2[0]);
 	ASSERT_EQ(2, _input2[1]);
 }
@@ -341,7 +342,7 @@ TEST_F(sample_function_004_utest, sample_function_004_utest_015)
 	int _ret_val = sample_function_004(input1, input2);
 
 	//Check the test result by comparing the output with the expected value.
-	ASSERT_EQ(-3, _ret_val);
+	ASSERT_EQ(-3, ret_val);
 	ASSERT_EQ(-1, _input2[0]);
 	ASSERT_EQ(-2, _input2[1]);
 }
@@ -363,7 +364,7 @@ TEST_F(sample_function_004_utest, sample_function_004_utest_016)
 	int _ret_val = sample_function_004(input1, input2);
 
 	//Check the test result by comparing the output with the expected value.
-	ASSERT_EQ(2, _ret_val);
+	ASSERT_EQ(2, ret_val);
 	ASSERT_EQ(2, _input2[0]);
 	ASSERT_EQ(0, _input2[1]);
 }
@@ -385,7 +386,7 @@ TEST_F(sample_function_004_utest, sample_function_004_utest_017)
 	int _ret_val = sample_function_004(input1, input2);
 
 	//Check the test result by comparing the output with the expected value.
-	ASSERT_EQ(3, _ret_val);
+	ASSERT_EQ(3, ret_val);
 	ASSERT_EQ(2, _input2[0]);
 	ASSERT_EQ(1, _input2[1]);
 }
@@ -407,7 +408,7 @@ TEST_F(sample_function_004_utest, sample_function_004_utest_018)
 	int _ret_val = sample_function_004(input1, input2);
 
 	//Check the test result by comparing the output with the expected value.
-	ASSERT_EQ(1, _ret_val);
+	ASSERT_EQ(1, ret_val);
 	ASSERT_EQ(2, _input2[0]);
 	ASSERT_EQ(-1, _input2[1]);
 }
@@ -429,7 +430,7 @@ TEST_F(sample_function_004_utest, sample_function_004_utest_019)
 	int _ret_val = sample_function_004(input1, input2);
 
 	//Check the test result by comparing the output with the expected value.
-	ASSERT_EQ(4, _ret_val);
+	ASSERT_EQ(4, ret_val);
 	ASSERT_EQ(2, _input2[0]);
 	ASSERT_EQ(2, _input2[1]);
 }
@@ -451,7 +452,7 @@ TEST_F(sample_function_004_utest, sample_function_004_utest_020)
 	int _ret_val = sample_function_004(input1, input2);
 
 	//Check the test result by comparing the output with the expected value.
-	ASSERT_EQ(0, _ret_val);
+	ASSERT_EQ(0, ret_val);
 	ASSERT_EQ(2, _input2[0]);
 	ASSERT_EQ(-2, _input2[1]);
 }
@@ -473,7 +474,7 @@ TEST_F(sample_function_004_utest, sample_function_004_utest_021)
 	int _ret_val = sample_function_004(input1, input2);
 
 	//Check the test result by comparing the output with the expected value.
-	ASSERT_EQ(-2, _ret_val);
+	ASSERT_EQ(-2, ret_val);
 	ASSERT_EQ(-2, _input2[0]);
 	ASSERT_EQ(0, _input2[1]);
 }
@@ -495,7 +496,7 @@ TEST_F(sample_function_004_utest, sample_function_004_utest_022)
 	int _ret_val = sample_function_004(input1, input2);
 
 	//Check the test result by comparing the output with the expected value.
-	ASSERT_EQ(-1, _ret_val);
+	ASSERT_EQ(-1, ret_val);
 	ASSERT_EQ(-2, _input2[0]);
 	ASSERT_EQ(1, _input2[1]);
 }
@@ -517,7 +518,7 @@ TEST_F(sample_function_004_utest, sample_function_004_utest_023)
 	int _ret_val = sample_function_004(input1, input2);
 
 	//Check the test result by comparing the output with the expected value.
-	ASSERT_EQ(-3, _ret_val);
+	ASSERT_EQ(-3, ret_val);
 	ASSERT_EQ(-2, _input2[0]);
 	ASSERT_EQ(-1, _input2[1]);
 }
@@ -539,7 +540,7 @@ TEST_F(sample_function_004_utest, sample_function_004_utest_024)
 	int _ret_val = sample_function_004(input1, input2);
 
 	//Check the test result by comparing the output with the expected value.
-	ASSERT_EQ(0, _ret_val);
+	ASSERT_EQ(0, ret_val);
 	ASSERT_EQ(-2, _input2[0]);
 	ASSERT_EQ(2, _input2[1]);
 }
@@ -561,7 +562,7 @@ TEST_F(sample_function_004_utest, sample_function_004_utest_025)
 	int _ret_val = sample_function_004(input1, input2);
 
 	//Check the test result by comparing the output with the expected value.
-	ASSERT_EQ(-4, _ret_val);
+	ASSERT_EQ(-4, ret_val);
 	ASSERT_EQ(-2, _input2[0]);
 	ASSERT_EQ(-2, _input2[1]);
 }
