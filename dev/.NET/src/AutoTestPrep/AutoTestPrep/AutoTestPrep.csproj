@@ -1,0 +1,80 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>annotations</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Window\**" />
+    <EmbeddedResource Remove="Window\**" />
+    <None Remove="Window\**" />
+    <Page Remove="Window\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Command\ExecTestParseCommand.cs" />
+    <Compile Remove="MainWindow.xaml.cs" />
+    <Compile Remove="ViewModel\ProjectItemViewModel.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="MainWindow.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="CustomUserControls">
+      <HintPath>..\..\bin\CustomUserControls.dll</HintPath>
+    </Reference>
+    <Reference Include="DialogUserInterfaces">
+      <HintPath>..\..\bin\DialogUserInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Logger">
+      <HintPath>..\..\libs\Logger.dll</HintPath>
+    </Reference>
+    <Reference Include="PathCommandLibrary">
+      <HintPath>..\..\bin\PathCommandLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="TestReader">
+      <HintPath>..\..\bin\TestReader.dll</HintPath>
+    </Reference>
+    <Reference Include="TestReader.SDK">
+      <HintPath>..\..\bin\TestReader.SDK.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.77" />
+  </ItemGroup>
+
+</Project>
