@@ -1,0 +1,33 @@
+﻿<#@ template language="C#" 
+	inherits="TestDoubleCodeTemplate" 
+#>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="Logger" #>
+<# Log.TRACE(); #>
+<#
+	foreach (var stdHeader in StandardHeaders)
+	{
+		if ((!string.IsNullOrEmpty(stdHeader)) && (!string.IsNullOrWhiteSpace(stdHeader)))
+		{
+			Log.DEBUG($"{nameof(stdHeader), 16} = {stdHeader}");
+#>
+#include <<#= stdHeader #>>
+<#
+		}
+	}
+#>
+<#
+	foreach (var userHeader in UserHeaders)
+	{
+		if ((!string.IsNullOrEmpty(userHeader)) && (!string.IsNullOrWhiteSpace(userHeader)))
+		{
+			Log.DEBUG($"{nameof(userHeader), 16} = {userHeader}");
+#>
+#include "<#= userHeader #>
+<#
+		}
+	}
+#>

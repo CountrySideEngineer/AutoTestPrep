@@ -1,0 +1,23 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- menu -->
+    <Style TargetType="Menu" x:Key="Menu_MenuBar">
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="Padding" Value="0, 0"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Foreground" Value="Black"/>
+    </Style>
+    <Style TargetType="MenuItem" x:Key="MenuItem_Base">
+        <Style.Triggers>
+        </Style.Triggers>
+    </Style>
+    <!-- menu item (menu bar) -->
+    <Style TargetType="MenuItem" x:Key="MenuItem_MenuBar" BasedOn="{StaticResource MenuItem_Base}">
+        <Setter Property="Padding" Value="16, 2"/>
+    </Style>
+    <!-- menu item -->
+    <Style TargetType="MenuItem" x:Key="MenuItem_MenuItem" BasedOn="{StaticResource MenuItem_Base}">
+        <Setter Property="Padding" Value="0, 0"/>
+    </Style>
+</ResourceDictionary>

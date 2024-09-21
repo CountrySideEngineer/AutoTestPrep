@@ -1,0 +1,19 @@
+﻿<#@ template language="C#"
+	inherits="BufferTemplateCommonBase"
+#>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="TestReader.Model" #>
+<#@ import namespace="TestDoubleCodeGenerator.Rule" #>
+<#@ import namespace="Logger" #>
+<# Log.TRACE(); #>
+<#
+	string calledCountDataType = "long";
+	string calledCountBuffName = NameRule.CalledCount((Function)Target);
+	string calledCountDec = NameRule.DeclareFormat(calledCountDataType, calledCountBuffName);
+
+	Log.DEBUG($"{nameof(calledCountDec),16} = \"{calledCountDec}\"");
+#>
+<#= calledCountDec #>;

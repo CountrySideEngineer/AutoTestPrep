@@ -1,0 +1,29 @@
+﻿<#@ template language="C#" 
+	inherits="PointerArgumentBufferTemplate" 
+#>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="TestReader.Model" #>
+<#@ import namespace="TestDoubleCodeGenerator.Rule" #>
+<#@ import namespace="Logger" #>
+<# Log.TRACE(); #>
+<#
+	string	buffName = NameRule.ArgumentBuffer(Function, Target);
+	string	returnBuffName = NameRule.SinglePointerArgumentReturnValueBuffer(Function, Target);
+	string	returnSizeBuffName = NameRule.SinglePointerArgumentReturnValueSizeBuffer(Function, Target);
+	string	buffSize1Macro = NameRule.BufferSize1MacroName;
+	string	buffSize2Macro = NameRule.BufferSize2MacroName;
+
+	Log.DEBUG($"{nameof(buffName),16} = \"{buffName}\"");
+	Log.DEBUG($"{nameof(returnBuffName),16} = \"{returnBuffName}\"");
+	Log.DEBUG($"{nameof(returnSizeBuffName),16} = \"{returnSizeBuffName}\"");
+#>
+	for (int index1 = 0; index1 < <#= buffSize1Macro #>; index1++) {
+		<#= buffName #>[index1] = 0;
+		for (int index2 = 0; index2 < <#= buffSize2Macro #>; index2++) {
+			<#= returnBuffName #>[index1][index2] = 0;
+		}
+		<#= returnSizeBuffName #>[index1] = 0;
+	}

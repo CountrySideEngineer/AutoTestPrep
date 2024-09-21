@@ -1,0 +1,46 @@
+﻿<#@ template language="C#"
+	inherits="GoogleTestCodeTemplate" 
+#>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#
+	foreach (var stdHeader in StandardHeaders)
+	{
+		if ((!string.IsNullOrEmpty(stdHeader)) && (!string.IsNullOrWhiteSpace(stdHeader)))
+		{
+#>
+#include <<#= stdHeader #>>
+<#
+		}
+	}
+#>
+#include "gtest/gtest.h"
+<#
+	foreach (var userHeader in UserHeaders)
+	{
+		if ((!string.IsNullOrEmpty(userHeader)) && (!string.IsNullOrWhiteSpace(userHeader)))
+		{
+#>
+#include "<#= userHeader #>
+<#
+		}
+	}
+#>
+<#
+	if ((!string.IsNullOrEmpty(DriverHeaderFileName)) && (!string.IsNullOrWhiteSpace(DriverHeaderFileName)))
+	{
+#>
+#incluide "<#= DriverHeaderFileName #>"
+<#
+	}
+#>
+<#
+	if ((!string.IsNullOrEmpty(StubHeaderFileName)) && (!string.IsNullOrWhiteSpace(StubHeaderFileName)))
+	{
+#>
+#incluide "<#= StubHeaderFileName #>"
+<#
+	}
+#>

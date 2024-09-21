@@ -1,0 +1,87 @@
+﻿using DialogUserInterfaces.View;
+using DialogUserInterfaces.ViewModel;
+using Logger;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+
+namespace DialogUserInterfaces.Command
+{
+    public class PathSelectionCommand : DialogCommand<string>
+    {
+		/// <summary>
+		/// Path selection mode, file or directory.
+		/// </summary>
+		protected int _mode = 0;
+
+		/// <summary>
+		/// Default constructor.
+		/// </summary>
+		public PathSelectionCommand() : base()
+		{
+			Log.TRACE();
+
+			_mode = Mode.DIALOG_FILE_SELECT;
+		}
+
+		/// <summary>
+		/// Constructor with mode.
+		/// </summary>
+		/// <param name="mode">Mode of dialog.
+		/// mode  shows a dialog as folder selection, and 1 shows file dialog.
+		/// Others are invalid.
+		/// </param>
+		public PathSelectionCommand(int mode) : base()
+		{
+			Log.TRACE();
+			Log.DEBUG($"{"mode",12} = {mode}");
+
+			_mode = mode;
+		}
+
+		/// <summary>
+		/// Destructor.
+		/// </summary>
+		~PathSelectionCommand()
+		{
+			Log.TRACE();
+		}
+
+		protected override Window GetDialog(string parameter)
+		{
+			Log.TRACE();
+			Log.DEBUG($"{"parameter",12} = {parameter}");
+
+			var dialog = new PathSelectionDialog(_mode);
+			((PathSelectionDialogViewModel)dialog.DataContext).InputPath = parameter;
+
+			return dialog;
+		}
+
+		/// <summary>
+		/// Extract result of window input.
+		/// </summary>
+		/// <param name="window">Window object to show as dialog.</param>
+		/// <returns>Result of window, dialog, a user input.</returns>
+		protected override string GetDialogResult(Window? window)
+		{
+			Log.TRACE();
+
+			try
+			{
+				PathSelectionDialogViewModel? viewModel = (PathSelectionDialogViewModel?)window?.DataContext;
+				var selectedPath = viewModel?.InputPath;
+
+				return selectedPath ?? string.Empty;
+			}
+			catch (NullReferenceException)
+			{
+				throw;
+			}
+		}
+	}
+}
