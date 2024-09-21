@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TestDataInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <TestDataFilePath>..\..\doc\sample\test_sample_input\google_test_sample_data.xlsx</TestDataFilePath>
-  <OutputDirectoryPath>..\..\doc\sample\google_test_sample_output</OutputDirectoryPath>
+  <TestDataFilePath>..\..\..\doc\sample\test_sample_input\google_test_sample_data.xlsx</TestDataFilePath>
+  <OutputDirectoryPath>..\..\..\doc\sample\google_test_sample_output</OutputDirectoryPath>
   <StubBufferSize1>200</StubBufferSize1>
   <StubBufferSize2>300</StubBufferSize2>
   <DriverIncludeStandardHeaderFiles>
