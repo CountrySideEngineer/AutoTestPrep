@@ -1,0 +1,260 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="IDS_SHEETN_NAME_TARGET_TEST_LIST" xml:space="preserve">
+    <value>テスト一覧</value>
+    <comment>テスト対象関数一覧が記載されたシート名</comment>
+  </data>
+  <data name="IDS_TABLE_NAME_TARGET_FUNCTION" xml:space="preserve">
+    <value>○対象関数情報</value>
+    <comment>テスト対象関数の定義、情報を記載するテーブルの名前</comment>
+  </data>
+  <data name="IDS_TABLE_NAME_TARGET_TEST_FUNCTION_LIST" xml:space="preserve">
+    <value>○テスト対象関数一覧</value>
+    <comment>テスト対象関数の一覧を記載するテーブルの名前</comment>
+  </data>
+  <data name="IDS_TABLE_NAME_TEST_CASE_DEFINITION" xml:space="preserve">
+    <value>○テスト/デシジョンテーブル</value>
+    <comment>テストケースを定義したテーブルの名前</comment>
+  </data>
+  <data name="IDS_TARGET_FUNCTION_TABLE_CATEGORY_COL_ITEM_GLOBAL_VAR" xml:space="preserve">
+    <value>グローバル変数</value>
+    <comment>対象関数情報の種類列の「グローバル変数」を示す値。</comment>
+  </data>
+  <data name="IDS_TARGET_FUNCTION_TABLE_CATEGORY_COL_ITEM_SUB_FUNCTION" xml:space="preserve">
+    <value>子関数</value>
+    <comment>対象関数情報の種類列の「子関数」を示す値。</comment>
+  </data>
+  <data name="IDS_TARGET_FUNCTION_TABLE_CATEGORY_COL_ITEM_TARGET_FUNCTION" xml:space="preserve">
+    <value>テスト対象関数</value>
+    <comment>対象関数情報の種類列の「テスト対象関数」を示す値。</comment>
+  </data>
+  <data name="IDS_TARGET_FUNCTION_TABLE_CLASSIFICATION_COL_ITEM_ARGUMENT" xml:space="preserve">
+    <value>引数</value>
+    <comment>対象関数情報の内容列の「引数」を示す値</comment>
+  </data>
+  <data name="IDS_TARGET_FUNCTION_TABLE_CLASSIFICATION_COL_ITEM_BODY" xml:space="preserve">
+    <value>本体</value>
+    <comment>対象関数情報の内容列の「関数本体」を示す値</comment>
+  </data>
+  <data name="IDS_TARGET_FUNCTION_TABLE_CLASSIFICATION_COL_ITEM_EXTERNAL" xml:space="preserve">
+    <value>外部</value>
+    <comment>対象関数情報の内容列の「外部」を示す値</comment>
+  </data>
+  <data name="IDS_TARGET_FUNCTION_TABLE_CLASSIFICATION_COL_ITEM_INTERNAL" xml:space="preserve">
+    <value>内部</value>
+    <comment>対象関数情報の内容列の「内部」を示す値</comment>
+  </data>
+  <data name="IDS_TARGET_FUNCTION_TABLE_COL_NAME_CATEGORY" xml:space="preserve">
+    <value>種類</value>
+    <comment>対象関数情報の種類列の列名</comment>
+  </data>
+  <data name="IDS_TARGET_FUNCTION_TABLE_COL_NAME_CLASSIFICATION" xml:space="preserve">
+    <value>内容</value>
+    <comment>対象関数情報の内容列の列名</comment>
+  </data>
+  <data name="IDS_TARGET_FUNCTION_TABLE_COL_NAME_DATA_POSTFIX" xml:space="preserve">
+    <value>データ型後置修飾</value>
+    <comment>対象関数情報のデータ型後置修飾子の列名</comment>
+  </data>
+  <data name="IDS_TARGET_FUNCTION_TABLE_COL_NAME_DATA_PREFIX" xml:space="preserve">
+    <value>データ型前置修飾</value>
+    <comment>対象関数情報のデータ型前置修飾列の列名</comment>
+  </data>
+  <data name="IDS_TARGET_FUNCTION_TABLE_COL_NAME_DATA_TYPE" xml:space="preserve">
+    <value>データ型</value>
+    <comment>対象関数情報のデータ型列の列名</comment>
+  </data>
+  <data name="IDS_TARGET_FUNCTION_TABLE_COL_NAME_DIRECTION" xml:space="preserve">
+    <value>入出力</value>
+    <comment>対象関数情報の入出力列の列名</comment>
+  </data>
+  <data name="IDS_TARGET_FUNCTION_TABLE_COL_NAME_FUNC_PARAM_NAME" xml:space="preserve">
+    <value>名前</value>
+    <comment>対象関数情報の名前列の列名</comment>
+  </data>
+  <data name="IDS_TARGET_FUNCTION_TABLE_COL_NAME_REMARKS" xml:space="preserve">
+    <value>備考/説明</value>
+    <comment>対象関数情報の備考列の列名</comment>
+  </data>
+  <data name="IDS_TARGET_FUNCTION_TABLE_DIRECTION_COL_ITEM_BOTH" xml:space="preserve">
+    <value>in/out</value>
+    <comment>対象関数情報の内容列の「入出力」が両方(in/out)を示す値</comment>
+  </data>
+  <data name="IDS_TARGET_FUNCTION_TABLE_DIRECTION_COL_ITEM_INPUT" xml:space="preserve">
+    <value>in</value>
+    <comment>対象関数情報の内容列の「入出力」が入力(in)を示す値</comment>
+  </data>
+  <data name="IDS_TARGET_FUNCTION_TABLE_DIRECTION_COL_ITEM_OUTPUT" xml:space="preserve">
+    <value>out</value>
+    <comment>対象関数情報の内容列の「入出力」が出力(out)を示す値</comment>
+  </data>
+  <data name="IDS_TARGET_TEST_FUNCTION_LIST_TABLE_COL_NAME_NO" xml:space="preserve">
+    <value>No.</value>
+    <comment>テスト対象関数一覧の「No.」列の列名</comment>
+  </data>
+  <data name="IDS_TARGET_TEST_FUNCTION_LIST_TABLE_COL_NAME_TEST_DEF_SHEET_NAME" xml:space="preserve">
+    <value>テスト定義シート名</value>
+    <comment>テスト対象関数一覧の「テスト定義シート名」列の列名</comment>
+  </data>
+  <data name="IDS_TARGET_TEST_FUNCTION_LIST_TABLE_COL_NAME_TEST_FILE_NAME" xml:space="preserve">
+    <value>ソースファイル名</value>
+    <comment>テスト対象関数一覧の「ソースファイル名」列の列名</comment>
+  </data>
+  <data name="IDS_TARGET_TEST_FUNCTION_LIST_TABLE_COL_NAME_TEST_FILE_PATH" xml:space="preserve">
+    <value>ソースファイルパス</value>
+    <comment>テスト対象関数一覧の「ソースファイル名」列の列名</comment>
+  </data>
+  <data name="IDS_TARGET_TEST_FUNCTION_LIST_TABLE_COL_NAME_TEST_NAME" xml:space="preserve">
+    <value>テスト名</value>
+    <comment>テスト対象関数一覧の「テスト名」列の列名</comment>
+  </data>
+  <data name="IDS_TEST_CASE_TABLE_COL_NAME_INPUT_CATEGORY" xml:space="preserve">
+    <value>入力/期待値</value>
+    <comment>テストケースの入力、期待値を示す列の列名</comment>
+  </data>
+  <data name="IDS_TEST_CASE_TABLE_COL_NAME_PARAM_TYPE" xml:space="preserve">
+    <value>条件</value>
+    <comment>テストケースの分類(引数、戻り値)を示す列の列名</comment>
+  </data>
+  <data name="IDS_TEST_CASE_TABLE_COL_NAME_RANGE" xml:space="preserve">
+    <value>範囲</value>
+    <comment>テストケースの変数の範囲を記載する列の列名</comment>
+  </data>
+  <data name="IDS_TEST_CASE_TABLE_COL_NAME_TYPICAL_VALUE" xml:space="preserve">
+    <value>代表値</value>
+    <comment>テストケースの代表値を記載する列の列名</comment>
+  </data>
+  <data name="IDS_TEST_CASE_TABLE_COL_NAME_VARIABLE_NAME" xml:space="preserve">
+    <value>変数名</value>
+    <comment>テストケースの変数名を記載する列の列名</comment>
+  </data>
+  <data name="IDS_TEST_CASE_TABLE_INPUT_CATEGORY_COL_ITEM_EXPECT" xml:space="preserve">
+    <value>期待値</value>
+    <comment>テストケースの入力、期待値を示す列の「期待値」を示す値</comment>
+  </data>
+  <data name="IDS_TEST_CASE_TABLE_INPUT_CATEGORY_COL_ITEM_INPUT" xml:space="preserve">
+    <value>入力</value>
+    <comment>テストケースの入力、期待値を示す列の「入力」を示す値</comment>
+  </data>
+  <data name="IDS_TEST_CASE_TABLE_PARAM_TYPE_COL_ARGUMENT" xml:space="preserve">
+    <value>引数</value>
+    <comment>テストケースの分類(引数、戻り値)列の「引数」を示す値</comment>
+  </data>
+</root>

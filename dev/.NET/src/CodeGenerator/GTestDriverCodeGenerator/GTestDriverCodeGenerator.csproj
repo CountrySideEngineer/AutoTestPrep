@@ -1,0 +1,91 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>CodeGenerator</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.CodeDom" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CodeGenerator.SDK\CodeGenerator.SDK.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Logger">
+      <HintPath>..\..\bin\Logger.dll</HintPath>
+    </Reference>
+    <Reference Include="TestReader.SDK">
+      <HintPath>..\..\bin\TestReader.SDK.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="GoogleTest\Template\GoogleTestCodeTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>GoogleTestCodeTemplate.cs</LastGenOutput>
+    </None>
+    <None Update="GoogleTest\Template\GoogleTestHeaderTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>GoogleTestHeaderTemplate.cs</LastGenOutput>
+    </None>
+    <None Update="GoogleTest\Template\GoogleTestSourceIncludePartTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>GoogleTestSourceIncludePartTemplate.cs</LastGenOutput>
+    </None>
+    <None Update="GoogleTest\Template\GoogleTestSourceSetUpMethodPartTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>GoogleTestSourceSetUpMethodPartTemplate.cs</LastGenOutput>
+    </None>
+    <None Update="GoogleTest\Template\GoogleTestSourceTestCasePartTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>GoogleTestSourceTestCasePartTemplate.cs</LastGenOutput>
+    </None>
+    <None Update="GoogleTest\Template\GoogleTestSourceTestDriverTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>GoogleTestSourceTestDriverTemplate.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="GoogleTest\Template\GoogleTestCodeTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>GoogleTestCodeTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="GoogleTest\Template\GoogleTestHeaderTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>GoogleTestHeaderTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="GoogleTest\Template\GoogleTestSourceIncludePartTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>GoogleTestSourceIncludePartTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="GoogleTest\Template\GoogleTestSourceSetUpMethodPartTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>GoogleTestSourceSetUpMethodPartTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="GoogleTest\Template\GoogleTestSourceTestCasePartTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>GoogleTestSourceTestCasePartTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="GoogleTest\Template\GoogleTestSourceTestDriverTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>GoogleTestSourceTestDriverTemplate.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>

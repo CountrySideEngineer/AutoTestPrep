@@ -1,0 +1,32 @@
+﻿<#@ template language="C#"
+	inherits="FunctionBufferTemplate"
+#>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="TestReader.Model" #>
+<#@ import namespace="TestDoubleCodeGenerator.Rule" #>
+<#@ import namespace="Logger" #>
+<# Log.TRACE(); #>
+<# base.TransformText(); #>
+<#
+	if ("void" == Target.DataType.ToLower() && (0 == Target.PointerNum))
+	{
+		Log.DEBUG($"{Target.Name} does not return value.");
+	}
+	else
+	{
+		string	returnValueDataType = Target.ActualDataType();
+		string	returnBuffName = NameRule.ReturnValue((Function)Target);
+		string	buffSizeMacro = NameRule.BufferSize1MacroName;
+
+		Log.DEBUG($"{nameof(returnBuffName),16} = \"{returnBuffName}\"");
+		Log.DEBUG($"{nameof(buffSizeMacro),16} = \"{buffSizeMacro}\"");
+#>
+	for (int index = 0; index < <#= buffSizeMacro #>; index++) {
+		<#= returnBuffName #>[index] = 0;
+	}
+<#
+	}
+#>
