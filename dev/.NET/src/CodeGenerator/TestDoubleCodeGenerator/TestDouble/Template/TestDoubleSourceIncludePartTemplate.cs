@@ -12,6 +12,7 @@ namespace TestDoubleCodeGenerator.TestDouble.Template
     using System.Linq;
     using System.Text;
     using System.Collections.Generic;
+    using Logger;
     using System;
     
     /// <summary>
@@ -28,6 +29,70 @@ namespace TestDoubleCodeGenerator.TestDouble.Template
         /// </summary>
         public override string TransformText()
         {
+            
+            #line 9 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\TestDoubleSourceIncludePartTemplate.tt"
+ Log.TRACE(); 
+            
+            #line default
+            #line hidden
+            
+            #line 10 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\TestDoubleSourceIncludePartTemplate.tt"
+
+	foreach (var stdHeader in StandardHeaders)
+	{
+		if ((!string.IsNullOrEmpty(stdHeader)) && (!string.IsNullOrWhiteSpace(stdHeader)))
+		{
+			Log.DEBUG($"{nameof(stdHeader), 16} = {stdHeader}");
+
+            
+            #line default
+            #line hidden
+            this.Write("#include <");
+            
+            #line 17 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\TestDoubleSourceIncludePartTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(stdHeader));
+            
+            #line default
+            #line hidden
+            this.Write(">\r\n");
+            
+            #line 18 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\TestDoubleSourceIncludePartTemplate.tt"
+
+		}
+	}
+
+            
+            #line default
+            #line hidden
+            
+            #line 22 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\TestDoubleSourceIncludePartTemplate.tt"
+
+	foreach (var userHeader in UserHeaders)
+	{
+		if ((!string.IsNullOrEmpty(userHeader)) && (!string.IsNullOrWhiteSpace(userHeader)))
+		{
+			Log.DEBUG($"{nameof(userHeader), 16} = {userHeader}");
+
+            
+            #line default
+            #line hidden
+            this.Write("#include \"");
+            
+            #line 29 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\TestDoubleSourceIncludePartTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(userHeader));
+            
+            #line default
+            #line hidden
+            this.Write("\r\n");
+            
+            #line 30 "E:\development\AutoTestPrep\dev\.NET\src\CodeGenerator\TestDoubleCodeGenerator\TestDouble\Template\TestDoubleSourceIncludePartTemplate.tt"
+
+		}
+	}
+
+            
+            #line default
+            #line hidden
             return this.GenerationEnvironment.ToString();
         }
     }
